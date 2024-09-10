@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxws:bindings
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  wsdlLocation="service.wsdl">
+
+    <enableWrapperStyle>true</enableWrapperStyle>
+    <enableAsyncMapping>false</enableAsyncMapping>
+
+
+    <jaxws:bindings node="xsd:simpleType[@name='AddOffersToArchiveErrorType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OFFER_HAS_STOCKS" name="OFFER_HAS_STOCKS" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='AffectedOrderQualityRatingComponentType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DBS_CANCELLATION_RATE" name="DBS_CANCELLATION_RATE" />
+	        <jaxb:typesafeEnumMember value="DBS_LATE_DELIVERY_RATE" name="DBS_LATE_DELIVERY_RATE" />
+	        <jaxb:typesafeEnumMember value="FBS_CANCELLATION_RATE" name="FBS_CANCELLATION_RATE" />
+	        <jaxb:typesafeEnumMember value="FBS_LATE_SHIP_RATE" name="FBS_LATE_SHIP_RATE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='AgeUnitType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="YEAR" name="YEAR" />
+	        <jaxb:typesafeEnumMember value="MONTH" name="MONTH" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ApiResponseStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OK" name="OK" />
+	        <jaxb:typesafeEnumMember value="ERROR" name="ERROR" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='CalculatedTariffType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="AGENCY_COMMISSION" name="AGENCY_COMMISSION" />
+	        <jaxb:typesafeEnumMember value="PAYMENT_TRANSFER" name="PAYMENT_TRANSFER" />
+	        <jaxb:typesafeEnumMember value="FEE" name="FEE" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_TO_CUSTOMER" name="DELIVERY_TO_CUSTOMER" />
+	        <jaxb:typesafeEnumMember value="CROSSREGIONAL_DELIVERY" name="CROSSREGIONAL_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="EXPRESS_DELIVERY" name="EXPRESS_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="SORTING" name="SORTING" />
+	        <jaxb:typesafeEnumMember value="MIDDLE_MILE" name="MIDDLE_MILE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='CampaignSettingsScheduleSourceType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="WEB" name="WEB" />
+	        <jaxb:typesafeEnumMember value="YML" name="YML" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='CategoryErrorType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="UNKNOWN_CATEGORY" name="UNKNOWN_CATEGORY" />
+	        <jaxb:typesafeEnumMember value="CATEGORY_IS_NOT_LEAF" name="CATEGORY_IS_NOT_LEAF" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ChannelType']">
+    	<jaxb:typesafeEnumClass>
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ChatMessageSenderType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PARTNER" name="PARTNER" />
+	        <jaxb:typesafeEnumMember value="CUSTOMER" name="CUSTOMER" />
+	        <jaxb:typesafeEnumMember value="MARKET" name="MARKET" />
+	        <jaxb:typesafeEnumMember value="SUPPORT" name="SUPPORT" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ChatStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="NEW" name="NEW" />
+	        <jaxb:typesafeEnumMember value="WAITING_FOR_CUSTOMER" name="WAITING_FOR_CUSTOMER" />
+	        <jaxb:typesafeEnumMember value="WAITING_FOR_PARTNER" name="WAITING_FOR_PARTNER" />
+	        <jaxb:typesafeEnumMember value="WAITING_FOR_ARBITER" name="WAITING_FOR_ARBITER" />
+	        <jaxb:typesafeEnumMember value="WAITING_FOR_MARKET" name="WAITING_FOR_MARKET" />
+	        <jaxb:typesafeEnumMember value="FINISHED" name="FINISHED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ChatType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CHAT" name="CHAT" />
+	        <jaxb:typesafeEnumMember value="ARBITRAGE" name="ARBITRAGE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='CurrencyType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="RUR" name="RUR" />
+	        <jaxb:typesafeEnumMember value="USD" name="USD" />
+	        <jaxb:typesafeEnumMember value="EUR" name="EUR" />
+	        <jaxb:typesafeEnumMember value="UAH" name="UAH" />
+	        <jaxb:typesafeEnumMember value="AUD" name="AUD" />
+	        <jaxb:typesafeEnumMember value="GBP" name="GBP" />
+	        <jaxb:typesafeEnumMember value="BYR" name="BYR" />
+	        <jaxb:typesafeEnumMember value="BYN" name="BYN" />
+	        <jaxb:typesafeEnumMember value="DKK" name="DKK" />
+	        <jaxb:typesafeEnumMember value="ISK" name="ISK" />
+	        <jaxb:typesafeEnumMember value="KZT" name="KZT" />
+	        <jaxb:typesafeEnumMember value="CAD" name="CAD" />
+	        <jaxb:typesafeEnumMember value="CNY" name="CNY" />
+	        <jaxb:typesafeEnumMember value="NOK" name="NOK" />
+	        <jaxb:typesafeEnumMember value="XDR" name="XDR" />
+	        <jaxb:typesafeEnumMember value="SGD" name="SGD" />
+	        <jaxb:typesafeEnumMember value="TRY" name="TRY" />
+	        <jaxb:typesafeEnumMember value="SEK" name="SEK" />
+	        <jaxb:typesafeEnumMember value="CHF" name="CHF" />
+	        <jaxb:typesafeEnumMember value="JPY" name="JPY" />
+	        <jaxb:typesafeEnumMember value="AZN" name="AZN" />
+	        <jaxb:typesafeEnumMember value="ALL" name="ALL" />
+	        <jaxb:typesafeEnumMember value="DZD" name="DZD" />
+	        <jaxb:typesafeEnumMember value="AOA" name="AOA" />
+	        <jaxb:typesafeEnumMember value="ARS" name="ARS" />
+	        <jaxb:typesafeEnumMember value="AMD" name="AMD" />
+	        <jaxb:typesafeEnumMember value="AFN" name="AFN" />
+	        <jaxb:typesafeEnumMember value="BHD" name="BHD" />
+	        <jaxb:typesafeEnumMember value="BGN" name="BGN" />
+	        <jaxb:typesafeEnumMember value="BOB" name="BOB" />
+	        <jaxb:typesafeEnumMember value="BWP" name="BWP" />
+	        <jaxb:typesafeEnumMember value="BND" name="BND" />
+	        <jaxb:typesafeEnumMember value="BRL" name="BRL" />
+	        <jaxb:typesafeEnumMember value="BIF" name="BIF" />
+	        <jaxb:typesafeEnumMember value="HUF" name="HUF" />
+	        <jaxb:typesafeEnumMember value="VEF" name="VEF" />
+	        <jaxb:typesafeEnumMember value="KPW" name="KPW" />
+	        <jaxb:typesafeEnumMember value="VND" name="VND" />
+	        <jaxb:typesafeEnumMember value="GMD" name="GMD" />
+	        <jaxb:typesafeEnumMember value="GHS" name="GHS" />
+	        <jaxb:typesafeEnumMember value="GNF" name="GNF" />
+	        <jaxb:typesafeEnumMember value="HKD" name="HKD" />
+	        <jaxb:typesafeEnumMember value="GEL" name="GEL" />
+	        <jaxb:typesafeEnumMember value="AED" name="AED" />
+	        <jaxb:typesafeEnumMember value="EGP" name="EGP" />
+	        <jaxb:typesafeEnumMember value="ZMK" name="ZMK" />
+	        <jaxb:typesafeEnumMember value="ILS" name="ILS" />
+	        <jaxb:typesafeEnumMember value="INR" name="INR" />
+	        <jaxb:typesafeEnumMember value="IDR" name="IDR" />
+	        <jaxb:typesafeEnumMember value="JOD" name="JOD" />
+	        <jaxb:typesafeEnumMember value="IQD" name="IQD" />
+	        <jaxb:typesafeEnumMember value="IRR" name="IRR" />
+	        <jaxb:typesafeEnumMember value="YER" name="YER" />
+	        <jaxb:typesafeEnumMember value="QAR" name="QAR" />
+	        <jaxb:typesafeEnumMember value="KES" name="KES" />
+	        <jaxb:typesafeEnumMember value="KGS" name="KGS" />
+	        <jaxb:typesafeEnumMember value="COP" name="COP" />
+	        <jaxb:typesafeEnumMember value="CDF" name="CDF" />
+	        <jaxb:typesafeEnumMember value="CRC" name="CRC" />
+	        <jaxb:typesafeEnumMember value="KWD" name="KWD" />
+	        <jaxb:typesafeEnumMember value="CUP" name="CUP" />
+	        <jaxb:typesafeEnumMember value="LAK" name="LAK" />
+	        <jaxb:typesafeEnumMember value="LVL" name="LVL" />
+	        <jaxb:typesafeEnumMember value="SLL" name="SLL" />
+	        <jaxb:typesafeEnumMember value="LBP" name="LBP" />
+	        <jaxb:typesafeEnumMember value="LYD" name="LYD" />
+	        <jaxb:typesafeEnumMember value="SZL" name="SZL" />
+	        <jaxb:typesafeEnumMember value="LTL" name="LTL" />
+	        <jaxb:typesafeEnumMember value="MUR" name="MUR" />
+	        <jaxb:typesafeEnumMember value="MRO" name="MRO" />
+	        <jaxb:typesafeEnumMember value="MKD" name="MKD" />
+	        <jaxb:typesafeEnumMember value="MWK" name="MWK" />
+	        <jaxb:typesafeEnumMember value="MGA" name="MGA" />
+	        <jaxb:typesafeEnumMember value="MYR" name="MYR" />
+	        <jaxb:typesafeEnumMember value="MAD" name="MAD" />
+	        <jaxb:typesafeEnumMember value="MXN" name="MXN" />
+	        <jaxb:typesafeEnumMember value="MZN" name="MZN" />
+	        <jaxb:typesafeEnumMember value="MDL" name="MDL" />
+	        <jaxb:typesafeEnumMember value="MNT" name="MNT" />
+	        <jaxb:typesafeEnumMember value="NPR" name="NPR" />
+	        <jaxb:typesafeEnumMember value="NGN" name="NGN" />
+	        <jaxb:typesafeEnumMember value="NIO" name="NIO" />
+	        <jaxb:typesafeEnumMember value="NZD" name="NZD" />
+	        <jaxb:typesafeEnumMember value="OMR" name="OMR" />
+	        <jaxb:typesafeEnumMember value="PKR" name="PKR" />
+	        <jaxb:typesafeEnumMember value="PYG" name="PYG" />
+	        <jaxb:typesafeEnumMember value="PEN" name="PEN" />
+	        <jaxb:typesafeEnumMember value="PLN" name="PLN" />
+	        <jaxb:typesafeEnumMember value="KHR" name="KHR" />
+	        <jaxb:typesafeEnumMember value="SAR" name="SAR" />
+	        <jaxb:typesafeEnumMember value="RON" name="RON" />
+	        <jaxb:typesafeEnumMember value="SCR" name="SCR" />
+	        <jaxb:typesafeEnumMember value="SYP" name="SYP" />
+	        <jaxb:typesafeEnumMember value="SKK" name="SKK" />
+	        <jaxb:typesafeEnumMember value="SOS" name="SOS" />
+	        <jaxb:typesafeEnumMember value="SDG" name="SDG" />
+	        <jaxb:typesafeEnumMember value="SRD" name="SRD" />
+	        <jaxb:typesafeEnumMember value="TJS" name="TJS" />
+	        <jaxb:typesafeEnumMember value="THB" name="THB" />
+	        <jaxb:typesafeEnumMember value="TWD" name="TWD" />
+	        <jaxb:typesafeEnumMember value="BDT" name="BDT" />
+	        <jaxb:typesafeEnumMember value="TZS" name="TZS" />
+	        <jaxb:typesafeEnumMember value="TND" name="TND" />
+	        <jaxb:typesafeEnumMember value="TMM" name="TMM" />
+	        <jaxb:typesafeEnumMember value="UGX" name="UGX" />
+	        <jaxb:typesafeEnumMember value="UZS" name="UZS" />
+	        <jaxb:typesafeEnumMember value="UYU" name="UYU" />
+	        <jaxb:typesafeEnumMember value="PHP" name="PHP" />
+	        <jaxb:typesafeEnumMember value="DJF" name="DJF" />
+	        <jaxb:typesafeEnumMember value="XAF" name="XAF" />
+	        <jaxb:typesafeEnumMember value="XOF" name="XOF" />
+	        <jaxb:typesafeEnumMember value="HRK" name="HRK" />
+	        <jaxb:typesafeEnumMember value="CZK" name="CZK" />
+	        <jaxb:typesafeEnumMember value="CLP" name="CLP" />
+	        <jaxb:typesafeEnumMember value="LKR" name="LKR" />
+	        <jaxb:typesafeEnumMember value="EEK" name="EEK" />
+	        <jaxb:typesafeEnumMember value="ETB" name="ETB" />
+	        <jaxb:typesafeEnumMember value="RSD" name="RSD" />
+	        <jaxb:typesafeEnumMember value="ZAR" name="ZAR" />
+	        <jaxb:typesafeEnumMember value="KRW" name="KRW" />
+	        <jaxb:typesafeEnumMember value="NAD" name="NAD" />
+	        <jaxb:typesafeEnumMember value="TL" name="TL" />
+	        <jaxb:typesafeEnumMember value="UE" name="UE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='DayOfWeekType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="MONDAY" name="MONDAY" />
+	        <jaxb:typesafeEnumMember value="TUESDAY" name="TUESDAY" />
+	        <jaxb:typesafeEnumMember value="WEDNESDAY" name="WEDNESDAY" />
+	        <jaxb:typesafeEnumMember value="THURSDAY" name="THURSDAY" />
+	        <jaxb:typesafeEnumMember value="FRIDAY" name="FRIDAY" />
+	        <jaxb:typesafeEnumMember value="SATURDAY" name="SATURDAY" />
+	        <jaxb:typesafeEnumMember value="SUNDAY" name="SUNDAY" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='EacVerificationStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ACCEPTED" name="ACCEPTED" />
+	        <jaxb:typesafeEnumMember value="REJECTED" name="REJECTED" />
+	        <jaxb:typesafeEnumMember value="NEED_UPDATE" name="NEED_UPDATE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedContentErrorType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PARSE_ERROR" name="PARSE_ERROR" />
+	        <jaxb:typesafeEnumMember value="PARSE_XML_ERROR" name="PARSE_XML_ERROR" />
+	        <jaxb:typesafeEnumMember value="TOO_MANY_REJECTED_OFFERS" name="TOO_MANY_REJECTED_OFFERS" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedDownloadErrorType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DOWNLOAD_ERROR" name="ERROR" />
+	        <jaxb:typesafeEnumMember value="DOWNLOAD_HTTP_ERROR" name="HTTP_ERROR" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedIndexLogsErrorType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DOWNLOAD_ERROR" name="DOWNLOAD_ERROR" />
+	        <jaxb:typesafeEnumMember value="DOWNLOAD_HTTP_ERROR" name="DOWNLOAD_HTTP_ERROR" />
+	        <jaxb:typesafeEnumMember value="PARSE_ERROR" name="PARSE_ERROR" />
+	        <jaxb:typesafeEnumMember value="PARSE_XML_ERROR" name="PARSE_XML_ERROR" />
+	        <jaxb:typesafeEnumMember value="TOO_MANY_REJECTED_OFFERS" name="TOO_MANY_REJECTED_OFFERS" />
+	        <jaxb:typesafeEnumMember value="NOT_INDEXED" name="NOT_INDEXED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedIndexLogsIndexType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DIFF" name="DIFF" />
+	        <jaxb:typesafeEnumMember value="FAST_PRICE" name="FAST_PRICE" />
+	        <jaxb:typesafeEnumMember value="FULL" name="FULL" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedIndexLogsStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ERROR" name="ERROR" />
+	        <jaxb:typesafeEnumMember value="OK" name="OK" />
+	        <jaxb:typesafeEnumMember value="WARNING" name="WARNING" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ERROR" name="ERROR" />
+	        <jaxb:typesafeEnumMember value="NA" name="NA" />
+	        <jaxb:typesafeEnumMember value="OK" name="OK" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedbackCommentAuthorType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="USER" name="USER" />
+	        <jaxb:typesafeEnumMember value="SHOP" name="SHOP" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedbackDeliveryType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DELIVERY" name="DELIVERY" />
+	        <jaxb:typesafeEnumMember value="PICKUP" name="PICKUP" />
+	        <jaxb:typesafeEnumMember value="INSTORE" name="INSTORE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedbackReactionStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ALL" name="ALL" />
+	        <jaxb:typesafeEnumMember value="NEED_REACTION" name="NEED_REACTION" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FeedbackStateType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="LAST" name="LAST" />
+	        <jaxb:typesafeEnumMember value="PREVIOUS" name="PREVIOUS" />
+	        <jaxb:typesafeEnumMember value="DELETED" name="DELETED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='FieldStateType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="SPECIFIED" name="SPECIFIED" />
+	        <jaxb:typesafeEnumMember value="EMPTY" name="EMPTY" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='GoodsFeedbackCommentAuthorType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="USER" name="USER" />
+	        <jaxb:typesafeEnumMember value="BUSINESS" name="BUSINESS" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='GoodsFeedbackCommentStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PUBLISHED" name="PUBLISHED" />
+	        <jaxb:typesafeEnumMember value="UNMODERATED" name="UNMODERATED" />
+	        <jaxb:typesafeEnumMember value="BANNED" name="BANNED" />
+	        <jaxb:typesafeEnumMember value="DELETED" name="DELETED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='LanguageType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="RU" name="RU" />
+	        <jaxb:typesafeEnumMember value="EN" name="EN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='LicenseCheckStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="NEW" name="NEW" />
+	        <jaxb:typesafeEnumMember value="SUCCESS" name="SUCCESS" />
+	        <jaxb:typesafeEnumMember value="FAIL" name="FAIL" />
+	        <jaxb:typesafeEnumMember value="REVOKE" name="REVOKE" />
+	        <jaxb:typesafeEnumMember value="DONT_WANT" name="DONT_WANT" />
+	        <jaxb:typesafeEnumMember value="FAIL_MANUAL" name="FAIL_MANUAL" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='LicenseType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ALCOHOL" name="ALCOHOL" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='LogisticPointType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="WAREHOUSE" name="WAREHOUSE" />
+	        <jaxb:typesafeEnumMember value="PICKUP_POINT" name="PICKUP_POINT" />
+	        <jaxb:typesafeEnumMember value="PICKUP_TERMINAL" name="PICKUP_TERMINAL" />
+	        <jaxb:typesafeEnumMember value="PICKUP_POST_OFFICE" name="PICKUP_POST_OFFICE" />
+	        <jaxb:typesafeEnumMember value="PICKUP_MIXED" name="PICKUP_MIXED" />
+	        <jaxb:typesafeEnumMember value="PICKUP_RETAIL" name="PICKUP_RETAIL" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='MechanicsType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DIRECT_DISCOUNT" name="DIRECT_DISCOUNT" />
+	        <jaxb:typesafeEnumMember value="BLUE_FLASH" name="BLUE_FLASH" />
+	        <jaxb:typesafeEnumMember value="MARKET_PROMOCODE" name="MARKET_PROMOCODE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferAvailabilityStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ACTIVE" name="ACTIVE" />
+	        <jaxb:typesafeEnumMember value="INACTIVE" name="INACTIVE" />
+	        <jaxb:typesafeEnumMember value="DELISTED" name="DELISTED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferCampaignStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PUBLISHED" name="PUBLISHED" />
+	        <jaxb:typesafeEnumMember value="CHECKING" name="CHECKING" />
+	        <jaxb:typesafeEnumMember value="DISABLED_BY_PARTNER" name="DISABLED_BY_PARTNER" />
+	        <jaxb:typesafeEnumMember value="DISABLED_AUTOMATICALLY" name="DISABLED_AUTOMATICALLY" />
+	        <jaxb:typesafeEnumMember value="REJECTED_BY_MARKET" name="REJECTED_BY_MARKET" />
+	        <jaxb:typesafeEnumMember value="CREATING_CARD" name="CREATING_CARD" />
+	        <jaxb:typesafeEnumMember value="NO_CARD" name="NO_CARD" />
+	        <jaxb:typesafeEnumMember value="NO_STOCKS" name="NO_STOCKS" />
+	        <jaxb:typesafeEnumMember value="ARCHIVED" name="ARCHIVED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferCardRecommendationType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="HAS_VIDEO" name="HAS_VIDEO" />
+	        <jaxb:typesafeEnumMember value="RECOGNIZED_VENDOR" name="RECOGNIZED_VENDOR" />
+	        <jaxb:typesafeEnumMember value="MAIN" name="MAIN" />
+	        <jaxb:typesafeEnumMember value="ADDITIONAL" name="ADDITIONAL" />
+	        <jaxb:typesafeEnumMember value="DISTINCTIVE" name="DISTINCTIVE" />
+	        <jaxb:typesafeEnumMember value="FILTERABLE" name="FILTERABLE" />
+	        <jaxb:typesafeEnumMember value="PICTURE_COUNT" name="PICTURE_COUNT" />
+	        <jaxb:typesafeEnumMember value="HAS_DESCRIPTION" name="HAS_DESCRIPTION" />
+	        <jaxb:typesafeEnumMember value="HAS_BARCODE" name="HAS_BARCODE" />
+	        <jaxb:typesafeEnumMember value="FIRST_PICTURE_SIZE" name="FIRST_PICTURE_SIZE" />
+	        <jaxb:typesafeEnumMember value="TITLE_LENGTH" name="TITLE_LENGTH" />
+	        <jaxb:typesafeEnumMember value="DESCRIPTION_LENGTH" name="DESCRIPTION_LENGTH" />
+	        <jaxb:typesafeEnumMember value="AVERAGE_PICTURE_SIZE" name="AVERAGE_PICTURE_SIZE" />
+	        <jaxb:typesafeEnumMember value="FIRST_VIDEO_SIZE" name="FIRST_VIDEO_SIZE" />
+	        <jaxb:typesafeEnumMember value="FIRST_VIDEO_LENGTH" name="FIRST_VIDEO_LENGTH" />
+	        <jaxb:typesafeEnumMember value="AVERAGE_VIDEO_SIZE" name="AVERAGE_VIDEO_SIZE" />
+	        <jaxb:typesafeEnumMember value="VIDEO_COUNT" name="VIDEO_COUNT" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferCardStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="HAS_CARD_CAN_NOT_UPDATE" name="HAS_CARD_CAN_NOT_UPDATE" />
+	        <jaxb:typesafeEnumMember value="HAS_CARD_CAN_UPDATE" name="HAS_CARD_CAN_UPDATE" />
+	        <jaxb:typesafeEnumMember value="HAS_CARD_CAN_UPDATE_ERRORS" name="HAS_CARD_CAN_UPDATE_ERRORS" />
+	        <jaxb:typesafeEnumMember value="HAS_CARD_CAN_UPDATE_PROCESSING" name="HAS_CARD_CAN_UPDATE_PROCESSING" />
+	        <jaxb:typesafeEnumMember value="NO_CARD_NEED_CONTENT" name="NO_CARD_NEED_CONTENT" />
+	        <jaxb:typesafeEnumMember value="NO_CARD_MARKET_WILL_CREATE" name="NO_CARD_MARKET_WILL_CREATE" />
+	        <jaxb:typesafeEnumMember value="NO_CARD_ERRORS" name="NO_CARD_ERRORS" />
+	        <jaxb:typesafeEnumMember value="NO_CARD_PROCESSING" name="NO_CARD_PROCESSING" />
+	        <jaxb:typesafeEnumMember value="NO_CARD_ADD_TO_CAMPAIGN" name="NO_CARD_ADD_TO_CAMPAIGN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferConditionQualityType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PERFECT" name="PERFECT" />
+	        <jaxb:typesafeEnumMember value="EXCELLENT" name="EXCELLENT" />
+	        <jaxb:typesafeEnumMember value="GOOD" name="GOOD" />
+	        <jaxb:typesafeEnumMember value="NOT_SPECIFIED" name="NOT_SPECIFIED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferConditionType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PREOWNED" name="PREOWNED" />
+	        <jaxb:typesafeEnumMember value="SHOWCASESAMPLE" name="SHOWCASESAMPLE" />
+	        <jaxb:typesafeEnumMember value="REFURBISHED" name="REFURBISHED" />
+	        <jaxb:typesafeEnumMember value="REDUCTION" name="REDUCTION" />
+	        <jaxb:typesafeEnumMember value="RENOVATED" name="RENOVATED" />
+	        <jaxb:typesafeEnumMember value="NOT_SPECIFIED" name="NOT_SPECIFIED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferContentErrorType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OFFER_NOT_FOUND" name="OFFER_NOT_FOUND" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN_CATEGORY" name="UNKNOWN_CATEGORY" />
+	        <jaxb:typesafeEnumMember value="CATEGORY_MISMATCH" name="CATEGORY_MISMATCH" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN_PARAMETER" name="UNKNOWN_PARAMETER" />
+	        <jaxb:typesafeEnumMember value="UNEXPECTED_BOOLEAN_VALUE" name="UNEXPECTED_BOOLEAN_VALUE" />
+	        <jaxb:typesafeEnumMember value="NUMBER_FORMAT" name="NUMBER_FORMAT" />
+	        <jaxb:typesafeEnumMember value="VALUE_BLANK" name="VALUE_BLANK" />
+	        <jaxb:typesafeEnumMember value="INVALID_UNIT_ID" name="INVALID_UNIT_ID" />
+	        <jaxb:typesafeEnumMember value="INVALID_GROUP_ID_LENGTH" name="INVALID_GROUP_ID_LENGTH" />
+	        <jaxb:typesafeEnumMember value="INVALID_GROUP_ID_CHARACTERS" name="INVALID_GROUP_ID_CHARACTERS" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferMappingErrorType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="UNKNOWN_CATEGORY" name="UNKNOWN_CATEGORY" />
+	        <jaxb:typesafeEnumMember value="CATEGORY_MISMATCH" name="CATEGORY_MISMATCH" />
+	        <jaxb:typesafeEnumMember value="EMPTY_MARKET_CATEGORY" name="EMPTY_MARKET_CATEGORY" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN_PARAMETER" name="UNKNOWN_PARAMETER" />
+	        <jaxb:typesafeEnumMember value="UNEXPECTED_BOOLEAN_VALUE" name="UNEXPECTED_BOOLEAN_VALUE" />
+	        <jaxb:typesafeEnumMember value="NUMBER_FORMAT" name="NUMBER_FORMAT" />
+	        <jaxb:typesafeEnumMember value="VALUE_BLANK" name="VALUE_BLANK" />
+	        <jaxb:typesafeEnumMember value="INVALID_UNIT_ID" name="INVALID_UNIT_ID" />
+	        <jaxb:typesafeEnumMember value="INVALID_GROUP_ID_LENGTH" name="INVALID_GROUP_ID_LENGTH" />
+	        <jaxb:typesafeEnumMember value="INVALID_GROUP_ID_CHARACTERS" name="INVALID_GROUP_ID_CHARACTERS" />
+	        <jaxb:typesafeEnumMember value="INVALID_PICKER_URL" name="INVALID_PICKER_URL" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferMappingKindType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ACTIVE" name="ACTIVE" />
+	        <jaxb:typesafeEnumMember value="ALL" name="ALL" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferProcessingNoteType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ASSORTMENT" name="ASSORTMENT" />
+	        <jaxb:typesafeEnumMember value="CANCELLED" name="CANCELLED" />
+	        <jaxb:typesafeEnumMember value="CONFLICTING_INFORMATION" name="CONFLICTING_INFORMATION" />
+	        <jaxb:typesafeEnumMember value="OTHER" name="OTHER" />
+	        <jaxb:typesafeEnumMember value="DEPARTMENT_FROZEN" name="DEPARTMENT_FROZEN" />
+	        <jaxb:typesafeEnumMember value="INCORRECT_INFORMATION" name="INCORRECT_INFORMATION" />
+	        <jaxb:typesafeEnumMember value="LEGAL_CONFLICT" name="LEGAL_CONFLICT" />
+	        <jaxb:typesafeEnumMember value="NEED_CLASSIFICATION_INFORMATION" name="NEED_CLASSIFICATION_INFORMATION" />
+	        <jaxb:typesafeEnumMember value="NEED_INFORMATION" name="NEED_INFORMATION" />
+	        <jaxb:typesafeEnumMember value="NEED_PICTURES" name="NEED_PICTURES" />
+	        <jaxb:typesafeEnumMember value="NEED_VENDOR" name="NEED_VENDOR" />
+	        <jaxb:typesafeEnumMember value="NO_CATEGORY" name="NO_CATEGORY" />
+	        <jaxb:typesafeEnumMember value="NO_KNOWLEDGE" name="NO_KNOWLEDGE" />
+	        <jaxb:typesafeEnumMember value="NO_PARAMETERS_IN_SHOP_TITLE" name="NO_PARAMETERS_IN_SHOP_TITLE" />
+	        <jaxb:typesafeEnumMember value="NO_SIZE_MEASURE" name="NO_SIZE_MEASURE" />
+	        <jaxb:typesafeEnumMember value="SAMPLE_LINE" name="SAMPLE_LINE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferProcessingStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	        <jaxb:typesafeEnumMember value="READY" name="READY" />
+	        <jaxb:typesafeEnumMember value="IN_WORK" name="IN_WORK" />
+	        <jaxb:typesafeEnumMember value="NEED_INFO" name="NEED_INFO" />
+	        <jaxb:typesafeEnumMember value="NEED_MAPPING" name="NEED_MAPPING" />
+	        <jaxb:typesafeEnumMember value="NEED_CONTENT" name="NEED_CONTENT" />
+	        <jaxb:typesafeEnumMember value="CONTENT_PROCESSING" name="CONTENT_PROCESSING" />
+	        <jaxb:typesafeEnumMember value="SUSPENDED" name="SUSPENDED" />
+	        <jaxb:typesafeEnumMember value="REJECTED" name="REJECTED" />
+	        <jaxb:typesafeEnumMember value="REVIEW" name="REVIEW" />
+	        <jaxb:typesafeEnumMember value="CREATE_ERROR" name="CREATE_ERROR" />
+	        <jaxb:typesafeEnumMember value="UPDATE_ERROR" name="UPDATE_ERROR" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferSellingProgramStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="FINE" name="FINE" />
+	        <jaxb:typesafeEnumMember value="REJECT" name="REJECT" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OfferType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DEFAULT" name="DEFAULT" />
+	        <jaxb:typesafeEnumMember value="MEDICINE" name="MEDICINE" />
+	        <jaxb:typesafeEnumMember value="BOOK" name="BOOK" />
+	        <jaxb:typesafeEnumMember value="AUDIOBOOK" name="AUDIOBOOK" />
+	        <jaxb:typesafeEnumMember value="ARTIST_TITLE" name="ARTIST_TITLE" />
+	        <jaxb:typesafeEnumMember value="ON_DEMAND" name="ON_DEMAND" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderBuyerType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PERSON" name="PERSON" />
+	        <jaxb:typesafeEnumMember value="BUSINESS" name="BUSINESS" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderCancellationReasonType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ORDER_DELIVERED" name="DELIVERED" />
+	        <jaxb:typesafeEnumMember value="ORDER_IN_DELIVERY" name="IN_DELIVERY" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderDeliveryDateReasonType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="USER_MOVED_DELIVERY_DATES" name="USER_MOVED_DELIVERY_DATES" />
+	        <jaxb:typesafeEnumMember value="PARTNER_MOVED_DELIVERY_DATES" name="PARTNER_MOVED_DELIVERY_DATES" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderDeliveryDispatchType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	        <jaxb:typesafeEnumMember value="BUYER" name="BUYER" />
+	        <jaxb:typesafeEnumMember value="MARKET_PARTNER_OUTLET" name="MARKET_PARTNER_OUTLET" />
+	        <jaxb:typesafeEnumMember value="MARKET_BRANDED_OUTLET" name="MARKET_BRANDED_OUTLET" />
+	        <jaxb:typesafeEnumMember value="SHOP_OUTLET" name="SHOP_OUTLET" />
+	        <jaxb:typesafeEnumMember value="DROPOFF" name="DROPOFF" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderDeliveryEacType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="MERCHANT_TO_COURIER" name="MERCHANT_TO_COURIER" />
+	        <jaxb:typesafeEnumMember value="COURIER_TO_MERCHANT" name="COURIER_TO_MERCHANT" />
+	        <jaxb:typesafeEnumMember value="CHECKING_BY_MERCHANT" name="CHECKING_BY_MERCHANT" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderDeliveryPartnerType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="SHOP" name="SHOP" />
+	        <jaxb:typesafeEnumMember value="YANDEX_MARKET" name="YANDEX_MARKET" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderDeliveryType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DELIVERY" name="DELIVERY" />
+	        <jaxb:typesafeEnumMember value="PICKUP" name="PICKUP" />
+	        <jaxb:typesafeEnumMember value="POST" name="POST" />
+	        <jaxb:typesafeEnumMember value="DIGITAL" name="DIGITAL" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderDocumentStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="READY" name="READY" />
+	        <jaxb:typesafeEnumMember value="NOT_READY" name="NOT_READY" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderItemInstanceType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CIS" name="CIS" />
+	        <jaxb:typesafeEnumMember value="UIN" name="UIN" />
+	        <jaxb:typesafeEnumMember value="RNPT" name="RNPT" />
+	        <jaxb:typesafeEnumMember value="GTD" name="GTD" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderItemStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="REJECTED" name="REJECTED" />
+	        <jaxb:typesafeEnumMember value="RETURNED" name="RETURNED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderItemSubsidyType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="YANDEX_CASHBACK" name="YANDEX_CASHBACK" />
+	        <jaxb:typesafeEnumMember value="SUBSIDY" name="SUBSIDY" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderItemsModificationRequestReasonType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PARTNER_REQUESTED_REMOVE" name="PARTNER_REQUESTED_REMOVE" />
+	        <jaxb:typesafeEnumMember value="USER_REQUESTED_REMOVE" name="USER_REQUESTED_REMOVE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderLiftType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="NOT_NEEDED" name="NOT_NEEDED" />
+	        <jaxb:typesafeEnumMember value="MANUAL" name="MANUAL" />
+	        <jaxb:typesafeEnumMember value="ELEVATOR" name="ELEVATOR" />
+	        <jaxb:typesafeEnumMember value="CARGO_ELEVATOR" name="CARGO_ELEVATOR" />
+	        <jaxb:typesafeEnumMember value="FREE" name="FREE" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderPaymentMethodType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CASH_ON_DELIVERY" name="CASH_ON_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="CARD_ON_DELIVERY" name="CARD_ON_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="BOUND_CARD_ON_DELIVERY" name="BOUND_CARD_ON_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="YANDEX" name="YANDEX" />
+	        <jaxb:typesafeEnumMember value="APPLE_PAY" name="APPLE_PAY" />
+	        <jaxb:typesafeEnumMember value="EXTERNAL_CERTIFICATE" name="EXTERNAL_CERTIFICATE" />
+	        <jaxb:typesafeEnumMember value="CREDIT" name="CREDIT" />
+	        <jaxb:typesafeEnumMember value="GOOGLE_PAY" name="GOOGLE_PAY" />
+	        <jaxb:typesafeEnumMember value="TINKOFF_CREDIT" name="TINKOFF_CREDIT" />
+	        <jaxb:typesafeEnumMember value="SBP" name="SBP" />
+	        <jaxb:typesafeEnumMember value="TINKOFF_INSTALLMENTS" name="TINKOFF_INSTALLMENTS" />
+	        <jaxb:typesafeEnumMember value="B2B_ACCOUNT_PREPAYMENT" name="B2B_ACCOUNT_PREPAYMENT" />
+	        <jaxb:typesafeEnumMember value="B2B_ACCOUNT_POSTPAYMENT" name="B2B_ACCOUNT_POSTPAYMENT" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderPaymentType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PREPAID" name="PREPAID" />
+	        <jaxb:typesafeEnumMember value="POSTPAID" name="POSTPAID" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderPromoType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DIRECT_DISCOUNT" name="DIRECT_DISCOUNT" />
+	        <jaxb:typesafeEnumMember value="BLUE_SET" name="BLUE_SET" />
+	        <jaxb:typesafeEnumMember value="BLUE_FLASH" name="BLUE_FLASH" />
+	        <jaxb:typesafeEnumMember value="GENERIC_BUNDLE" name="GENERIC_BUNDLE" />
+	        <jaxb:typesafeEnumMember value="MARKET_COUPON" name="MARKET_COUPON" />
+	        <jaxb:typesafeEnumMember value="MARKET_PROMOCODE" name="MARKET_PROMOCODE" />
+	        <jaxb:typesafeEnumMember value="MARKET_DEAL" name="MARKET_DEAL" />
+	        <jaxb:typesafeEnumMember value="MARKET_BLUE" name="MARKET_BLUE" />
+	        <jaxb:typesafeEnumMember value="MARKET_PRIME" name="MARKET_PRIME" />
+	        <jaxb:typesafeEnumMember value="YANDEX_PLUS" name="YANDEX_PLUS" />
+	        <jaxb:typesafeEnumMember value="BERU_PLUS" name="BERU_PLUS" />
+	        <jaxb:typesafeEnumMember value="MARKET_COIN" name="MARKET_COIN" />
+	        <jaxb:typesafeEnumMember value="YANDEX_EMPLOYEE" name="YANDEX_EMPLOYEE" />
+	        <jaxb:typesafeEnumMember value="LIMITED_FREE_DELIVERY_PROMO" name="LIMITED_FREE_DELIVERY_PROMO" />
+	        <jaxb:typesafeEnumMember value="FREE_DELIVERY_THRESHOLD" name="FREE_DELIVERY_THRESHOLD" />
+	        <jaxb:typesafeEnumMember value="MULTICART_DISCOUNT" name="MULTICART_DISCOUNT" />
+	        <jaxb:typesafeEnumMember value="PRICE_DROP_AS_YOU_SHOP" name="PRICE_DROP_AS_YOU_SHOP" />
+	        <jaxb:typesafeEnumMember value="FREE_DELIVERY_FOR_LDI" name="FREE_DELIVERY_FOR_LDI" />
+	        <jaxb:typesafeEnumMember value="FREE_DELIVERY_FOR_LSC" name="FREE_DELIVERY_FOR_LSC" />
+	        <jaxb:typesafeEnumMember value="SECRET_SALE" name="SECRET_SALE" />
+	        <jaxb:typesafeEnumMember value="FREE_PICKUP" name="FREE_PICKUP" />
+	        <jaxb:typesafeEnumMember value="CHEAPEST_AS_GIFT" name="CHEAPEST_AS_GIFT" />
+	        <jaxb:typesafeEnumMember value="CASHBACK" name="CASHBACK" />
+	        <jaxb:typesafeEnumMember value="SUPPLIER_MULTICART_DISCOUNT" name="SUPPLIER_MULTICART_DISCOUNT" />
+	        <jaxb:typesafeEnumMember value="SPREAD_DISCOUNT_COUNT" name="SPREAD_DISCOUNT_COUNT" />
+	        <jaxb:typesafeEnumMember value="SPREAD_DISCOUNT_RECEIPT" name="SPREAD_DISCOUNT_RECEIPT" />
+	        <jaxb:typesafeEnumMember value="ANNOUNCEMENT_PROMO" name="ANNOUNCEMENT_PROMO" />
+	        <jaxb:typesafeEnumMember value="DISCOUNT_BY_PAYMENT_TYPE" name="DISCOUNT_BY_PAYMENT_TYPE" />
+	        <jaxb:typesafeEnumMember value="PERCENT_DISCOUNT" name="PERCENT_DISCOUNT" />
+	        <jaxb:typesafeEnumMember value="DCO_EXTRA_DISCOUNT" name="DCO_EXTRA_DISCOUNT" />
+	        <jaxb:typesafeEnumMember value="EMPTY_PROMO" name="EMPTY_PROMO" />
+	        <jaxb:typesafeEnumMember value="BLOCKING_PROMO" name="BLOCKING_PROMO" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderStatsStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CANCELLED_BEFORE_PROCESSING" name="CANCELLED_BEFORE_PROCESSING" />
+	        <jaxb:typesafeEnumMember value="CANCELLED_IN_DELIVERY" name="CANCELLED_IN_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="CANCELLED_IN_PROCESSING" name="CANCELLED_IN_PROCESSING" />
+	        <jaxb:typesafeEnumMember value="DELIVERY" name="DELIVERY" />
+	        <jaxb:typesafeEnumMember value="DELIVERED" name="DELIVERED" />
+	        <jaxb:typesafeEnumMember value="PARTIALLY_DELIVERED" name="PARTIALLY_DELIVERED" />
+	        <jaxb:typesafeEnumMember value="PARTIALLY_RETURNED" name="PARTIALLY_RETURNED" />
+	        <jaxb:typesafeEnumMember value="PENDING" name="PENDING" />
+	        <jaxb:typesafeEnumMember value="PICKUP" name="PICKUP" />
+	        <jaxb:typesafeEnumMember value="PROCESSING" name="PROCESSING" />
+	        <jaxb:typesafeEnumMember value="RESERVED" name="RESERVED" />
+	        <jaxb:typesafeEnumMember value="RETURNED" name="RETURNED" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	        <jaxb:typesafeEnumMember value="UNPAID" name="UNPAID" />
+	        <jaxb:typesafeEnumMember value="LOST" name="LOST" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PLACING" name="PLACING" />
+	        <jaxb:typesafeEnumMember value="RESERVED" name="RESERVED" />
+	        <jaxb:typesafeEnumMember value="UNPAID" name="UNPAID" />
+	        <jaxb:typesafeEnumMember value="PROCESSING" name="PROCESSING" />
+	        <jaxb:typesafeEnumMember value="DELIVERY" name="DELIVERY" />
+	        <jaxb:typesafeEnumMember value="PICKUP" name="PICKUP" />
+	        <jaxb:typesafeEnumMember value="DELIVERED" name="DELIVERED" />
+	        <jaxb:typesafeEnumMember value="CANCELLED" name="CANCELLED" />
+	        <jaxb:typesafeEnumMember value="PENDING" name="PENDING" />
+	        <jaxb:typesafeEnumMember value="PARTIALLY_RETURNED" name="PARTIALLY_RETURNED" />
+	        <jaxb:typesafeEnumMember value="RETURNED" name="RETURNED" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderSubsidyType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="YANDEX_CASHBACK" name="YANDEX_CASHBACK" />
+	        <jaxb:typesafeEnumMember value="SUBSIDY" name="SUBSIDY" />
+	        <jaxb:typesafeEnumMember value="DELIVERY" name="DELIVERY" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderSubstatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="RESERVATION_EXPIRED" name="RESERVATION_EXPIRED" />
+	        <jaxb:typesafeEnumMember value="USER_NOT_PAID" name="USER_NOT_PAID" />
+	        <jaxb:typesafeEnumMember value="USER_UNREACHABLE" name="USER_UNREACHABLE" />
+	        <jaxb:typesafeEnumMember value="USER_CHANGED_MIND" name="USER_CHANGED_MIND" />
+	        <jaxb:typesafeEnumMember value="USER_REFUSED_DELIVERY" name="USER_REFUSED_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="USER_REFUSED_PRODUCT" name="USER_REFUSED_PRODUCT" />
+	        <jaxb:typesafeEnumMember value="SHOP_FAILED" name="SHOP_FAILED" />
+	        <jaxb:typesafeEnumMember value="USER_REFUSED_QUALITY" name="USER_REFUSED_QUALITY" />
+	        <jaxb:typesafeEnumMember value="REPLACING_ORDER" name="REPLACING_ORDER" />
+	        <jaxb:typesafeEnumMember value="PROCESSING_EXPIRED" name="PROCESSING_EXPIRED" />
+	        <jaxb:typesafeEnumMember value="PENDING_EXPIRED" name="PENDING_EXPIRED" />
+	        <jaxb:typesafeEnumMember value="SHOP_PENDING_CANCELLED" name="SHOP_PENDING_CANCELLED" />
+	        <jaxb:typesafeEnumMember value="PENDING_CANCELLED" name="PENDING_CANCELLED" />
+	        <jaxb:typesafeEnumMember value="USER_FRAUD" name="USER_FRAUD" />
+	        <jaxb:typesafeEnumMember value="RESERVATION_FAILED" name="RESERVATION_FAILED" />
+	        <jaxb:typesafeEnumMember value="USER_PLACED_OTHER_ORDER" name="USER_PLACED_OTHER_ORDER" />
+	        <jaxb:typesafeEnumMember value="USER_BOUGHT_CHEAPER" name="USER_BOUGHT_CHEAPER" />
+	        <jaxb:typesafeEnumMember value="MISSING_ITEM" name="MISSING_ITEM" />
+	        <jaxb:typesafeEnumMember value="BROKEN_ITEM" name="BROKEN_ITEM" />
+	        <jaxb:typesafeEnumMember value="WRONG_ITEM" name="WRONG_ITEM" />
+	        <jaxb:typesafeEnumMember value="PICKUP_EXPIRED" name="PICKUP_EXPIRED" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_PROBLEMS" name="DELIVERY_PROBLEMS" />
+	        <jaxb:typesafeEnumMember value="LATE_CONTACT" name="LATE_CONTACT" />
+	        <jaxb:typesafeEnumMember value="CUSTOM" name="CUSTOM" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_SERVICE_FAILED" name="DELIVERY_SERVICE_FAILED" />
+	        <jaxb:typesafeEnumMember value="WAREHOUSE_FAILED_TO_SHIP" name="WAREHOUSE_FAILED_TO_SHIP" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_SERIVCE_UNDELIVERED" name="DELIVERY_SERIVCE_UNDELIVERED" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_SERVICE_UNDELIVERED" name="DELIVERY_SERVICE_UNDELIVERED" />
+	        <jaxb:typesafeEnumMember value="PREORDER" name="PREORDER" />
+	        <jaxb:typesafeEnumMember value="AWAIT_CONFIRMATION" name="AWAIT_CONFIRMATION" />
+	        <jaxb:typesafeEnumMember value="STARTED" name="STARTED" />
+	        <jaxb:typesafeEnumMember value="PACKAGING" name="PACKAGING" />
+	        <jaxb:typesafeEnumMember value="READY_TO_SHIP" name="READY_TO_SHIP" />
+	        <jaxb:typesafeEnumMember value="SHIPPED" name="SHIPPED" />
+	        <jaxb:typesafeEnumMember value="ASYNC_PROCESSING" name="ASYNC_PROCESSING" />
+	        <jaxb:typesafeEnumMember value="USER_REFUSED_TO_PROVIDE_PERSONAL_DATA" name="USER_REFUSED_TO_PROVIDE_PERSONAL_DATA" />
+	        <jaxb:typesafeEnumMember value="WAITING_USER_INPUT" name="WAITING_USER_INPUT" />
+	        <jaxb:typesafeEnumMember value="WAITING_BANK_DECISION" name="WAITING_BANK_DECISION" />
+	        <jaxb:typesafeEnumMember value="BANK_REJECT_CREDIT_OFFER" name="BANK_REJECT_CREDIT_OFFER" />
+	        <jaxb:typesafeEnumMember value="CUSTOMER_REJECT_CREDIT_OFFER" name="CUSTOMER_REJECT_CREDIT_OFFER" />
+	        <jaxb:typesafeEnumMember value="CREDIT_OFFER_FAILED" name="CREDIT_OFFER_FAILED" />
+	        <jaxb:typesafeEnumMember value="AWAIT_DELIVERY_DATES_CONFIRMATION" name="AWAIT_DELIVERY_DATES_CONFIRMATION" />
+	        <jaxb:typesafeEnumMember value="SERVICE_FAULT" name="SERVICE_FAULT" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_SERVICE_RECEIVED" name="DELIVERY_SERVICE_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="USER_RECEIVED" name="USER_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="WAITING_FOR_STOCKS" name="WAITING_FOR_STOCKS" />
+	        <jaxb:typesafeEnumMember value="AS_PART_OF_MULTI_ORDER" name="AS_PART_OF_MULTI_ORDER" />
+	        <jaxb:typesafeEnumMember value="READY_FOR_LAST_MILE" name="READY_FOR_LAST_MILE" />
+	        <jaxb:typesafeEnumMember value="LAST_MILE_STARTED" name="LAST_MILE_STARTED" />
+	        <jaxb:typesafeEnumMember value="ANTIFRAUD" name="ANTIFRAUD" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_USER_NOT_RECEIVED" name="DELIVERY_USER_NOT_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_SERVICE_DELIVERED" name="DELIVERY_SERVICE_DELIVERED" />
+	        <jaxb:typesafeEnumMember value="DELIVERED_USER_NOT_RECEIVED" name="DELIVERED_USER_NOT_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="USER_WANTED_ANOTHER_PAYMENT_METHOD" name="USER_WANTED_ANOTHER_PAYMENT_METHOD" />
+	        <jaxb:typesafeEnumMember value="USER_RECEIVED_TECHNICAL_ERROR" name="USER_RECEIVED_TECHNICAL_ERROR" />
+	        <jaxb:typesafeEnumMember value="USER_FORGOT_TO_USE_BONUS" name="USER_FORGOT_TO_USE_BONUS" />
+	        <jaxb:typesafeEnumMember value="RECEIVED_ON_DISTRIBUTION_CENTER" name="RECEIVED_ON_DISTRIBUTION_CENTER" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_SERVICE_NOT_RECEIVED" name="DELIVERY_SERVICE_NOT_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_SERVICE_LOST" name="DELIVERY_SERVICE_LOST" />
+	        <jaxb:typesafeEnumMember value="SHIPPED_TO_WRONG_DELIVERY_SERVICE" name="SHIPPED_TO_WRONG_DELIVERY_SERVICE" />
+	        <jaxb:typesafeEnumMember value="DELIVERED_USER_RECEIVED" name="DELIVERED_USER_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="WAITING_TINKOFF_DECISION" name="WAITING_TINKOFF_DECISION" />
+	        <jaxb:typesafeEnumMember value="COURIER_SEARCH" name="COURIER_SEARCH" />
+	        <jaxb:typesafeEnumMember value="COURIER_FOUND" name="COURIER_FOUND" />
+	        <jaxb:typesafeEnumMember value="COURIER_IN_TRANSIT_TO_SENDER" name="COURIER_IN_TRANSIT_TO_SENDER" />
+	        <jaxb:typesafeEnumMember value="COURIER_ARRIVED_TO_SENDER" name="COURIER_ARRIVED_TO_SENDER" />
+	        <jaxb:typesafeEnumMember value="COURIER_RECEIVED" name="COURIER_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="COURIER_NOT_FOUND" name="COURIER_NOT_FOUND" />
+	        <jaxb:typesafeEnumMember value="COURIER_NOT_DELIVER_ORDER" name="COURIER_NOT_DELIVER_ORDER" />
+	        <jaxb:typesafeEnumMember value="COURIER_RETURNS_ORDER" name="COURIER_RETURNS_ORDER" />
+	        <jaxb:typesafeEnumMember value="COURIER_RETURNED_ORDER" name="COURIER_RETURNED_ORDER" />
+	        <jaxb:typesafeEnumMember value="WAITING_USER_DELIVERY_INPUT" name="WAITING_USER_DELIVERY_INPUT" />
+	        <jaxb:typesafeEnumMember value="PICKUP_SERVICE_RECEIVED" name="PICKUP_SERVICE_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="PICKUP_USER_RECEIVED" name="PICKUP_USER_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="CANCELLED_COURIER_NOT_FOUND" name="CANCELLED_COURIER_NOT_FOUND" />
+	        <jaxb:typesafeEnumMember value="COURIER_NOT_COME_FOR_ORDER" name="COURIER_NOT_COME_FOR_ORDER" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_NOT_MANAGED_REGION" name="DELIVERY_NOT_MANAGED_REGION" />
+	        <jaxb:typesafeEnumMember value="INCOMPLETE_CONTACT_INFORMATION" name="INCOMPLETE_CONTACT_INFORMATION" />
+	        <jaxb:typesafeEnumMember value="INCOMPLETE_MULTI_ORDER" name="INCOMPLETE_MULTI_ORDER" />
+	        <jaxb:typesafeEnumMember value="INAPPROPRIATE_WEIGHT_SIZE" name="INAPPROPRIATE_WEIGHT_SIZE" />
+	        <jaxb:typesafeEnumMember value="TECHNICAL_ERROR" name="TECHNICAL_ERROR" />
+	        <jaxb:typesafeEnumMember value="SORTING_CENTER_LOST" name="SORTING_CENTER_LOST" />
+	        <jaxb:typesafeEnumMember value="COURIER_SEARCH_NOT_STARTED" name="COURIER_SEARCH_NOT_STARTED" />
+	        <jaxb:typesafeEnumMember value="LOST" name="LOST" />
+	        <jaxb:typesafeEnumMember value="AWAIT_PAYMENT" name="AWAIT_PAYMENT" />
+	        <jaxb:typesafeEnumMember value="AWAIT_LAVKA_RESERVATION" name="AWAIT_LAVKA_RESERVATION" />
+	        <jaxb:typesafeEnumMember value="USER_WANTS_TO_CHANGE_ADDRESS" name="USER_WANTS_TO_CHANGE_ADDRESS" />
+	        <jaxb:typesafeEnumMember value="FULL_NOT_RANSOM" name="FULL_NOT_RANSOM" />
+	        <jaxb:typesafeEnumMember value="PRESCRIPTION_MISMATCH" name="PRESCRIPTION_MISMATCH" />
+	        <jaxb:typesafeEnumMember value="DROPOFF_LOST" name="DROPOFF_LOST" />
+	        <jaxb:typesafeEnumMember value="DROPOFF_CLOSED" name="DROPOFF_CLOSED" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_TO_STORE_STARTED" name="DELIVERY_TO_STORE_STARTED" />
+	        <jaxb:typesafeEnumMember value="USER_WANTS_TO_CHANGE_DELIVERY_DATE" name="USER_WANTS_TO_CHANGE_DELIVERY_DATE" />
+	        <jaxb:typesafeEnumMember value="WRONG_ITEM_DELIVERED" name="WRONG_ITEM_DELIVERED" />
+	        <jaxb:typesafeEnumMember value="DAMAGED_BOX" name="DAMAGED_BOX" />
+	        <jaxb:typesafeEnumMember value="AWAIT_DELIVERY_DATES" name="AWAIT_DELIVERY_DATES" />
+	        <jaxb:typesafeEnumMember value="LAST_MILE_COURIER_SEARCH" name="LAST_MILE_COURIER_SEARCH" />
+	        <jaxb:typesafeEnumMember value="PICKUP_POINT_CLOSED" name="PICKUP_POINT_CLOSED" />
+	        <jaxb:typesafeEnumMember value="LEGAL_INFO_CHANGED" name="LEGAL_INFO_CHANGED" />
+	        <jaxb:typesafeEnumMember value="USER_HAS_NO_TIME_TO_PICKUP_ORDER" name="USER_HAS_NO_TIME_TO_PICKUP_ORDER" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_CUSTOMS_ARRIVED" name="DELIVERY_CUSTOMS_ARRIVED" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_CUSTOMS_CLEARED" name="DELIVERY_CUSTOMS_CLEARED" />
+	        <jaxb:typesafeEnumMember value="FIRST_MILE_DELIVERY_SERVICE_RECEIVED" name="FIRST_MILE_DELIVERY_SERVICE_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="AWAIT_AUTO_DELIVERY_DATES" name="AWAIT_AUTO_DELIVERY_DATES" />
+	        <jaxb:typesafeEnumMember value="AWAIT_USER_PERSONAL_DATA" name="AWAIT_USER_PERSONAL_DATA" />
+	        <jaxb:typesafeEnumMember value="NO_PERSONAL_DATA_EXPIRED" name="NO_PERSONAL_DATA_EXPIRED" />
+	        <jaxb:typesafeEnumMember value="CUSTOMS_PROBLEMS" name="CUSTOMS_PROBLEMS" />
+	        <jaxb:typesafeEnumMember value="AWAIT_CASHIER" name="AWAIT_CASHIER" />
+	        <jaxb:typesafeEnumMember value="WAITING_POSTPAID_BUDGET_RESERVATION" name="WAITING_POSTPAID_BUDGET_RESERVATION" />
+	        <jaxb:typesafeEnumMember value="AWAIT_SERVICEABLE_CONFIRMATION" name="AWAIT_SERVICEABLE_CONFIRMATION" />
+	        <jaxb:typesafeEnumMember value="POSTPAID_BUDGET_RESERVATION_FAILED" name="POSTPAID_BUDGET_RESERVATION_FAILED" />
+	        <jaxb:typesafeEnumMember value="AWAIT_CUSTOM_PRICE_CONFIRMATION" name="AWAIT_CUSTOM_PRICE_CONFIRMATION" />
+	        <jaxb:typesafeEnumMember value="READY_FOR_PICKUP" name="READY_FOR_PICKUP" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderTaxSystemType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OSN" name="OSN" />
+	        <jaxb:typesafeEnumMember value="USN" name="USN" />
+	        <jaxb:typesafeEnumMember value="USN_MINUS_COST" name="USN_MINUS_COST" />
+	        <jaxb:typesafeEnumMember value="ENVD" name="ENVD" />
+	        <jaxb:typesafeEnumMember value="ECHN" name="ECHN" />
+	        <jaxb:typesafeEnumMember value="PSN" name="PSN" />
+	        <jaxb:typesafeEnumMember value="NPD" name="NPD" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN_VALUE" name="UNKNOWN_VALUE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderUpdateStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OK" name="OK" />
+	        <jaxb:typesafeEnumMember value="ERROR" name="ERROR" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrderVatType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="NO_VAT" name="NO_VAT" />
+	        <jaxb:typesafeEnumMember value="VAT_0" name="VAT_0" />
+	        <jaxb:typesafeEnumMember value="VAT_10" name="VAT_10" />
+	        <jaxb:typesafeEnumMember value="VAT_10_110" name="VAT_10_110" />
+	        <jaxb:typesafeEnumMember value="VAT_20" name="VAT_20" />
+	        <jaxb:typesafeEnumMember value="VAT_20_120" name="VAT_20_120" />
+	        <jaxb:typesafeEnumMember value="VAT_18" name="VAT_18" />
+	        <jaxb:typesafeEnumMember value="VAT_18_118" name="VAT_18_118" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN_VALUE" name="UNKNOWN_VALUE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrdersStatsCommissionType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="FEE" name="FEE" />
+	        <jaxb:typesafeEnumMember value="FULFILLMENT" name="FULFILLMENT" />
+	        <jaxb:typesafeEnumMember value="LOYALTY_PARTICIPATION_FEE" name="LOYALTY_PARTICIPATION_FEE" />
+	        <jaxb:typesafeEnumMember value="AUCTION_PROMOTION" name="AUCTION_PROMOTION" />
+	        <jaxb:typesafeEnumMember value="INSTALLMENT" name="INSTALLMENT" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_TO_CUSTOMER" name="DELIVERY_TO_CUSTOMER" />
+	        <jaxb:typesafeEnumMember value="EXPRESS_DELIVERY_TO_CUSTOMER" name="EXPRESS_DELIVERY_TO_CUSTOMER" />
+	        <jaxb:typesafeEnumMember value="AGENCY" name="AGENCY" />
+	        <jaxb:typesafeEnumMember value="PAYMENT_TRANSFER" name="PAYMENT_TRANSFER" />
+	        <jaxb:typesafeEnumMember value="RETURNED_ORDERS_STORAGE" name="RETURNED_ORDERS_STORAGE" />
+	        <jaxb:typesafeEnumMember value="SORTING" name="SORTING" />
+	        <jaxb:typesafeEnumMember value="INTAKE_SORTING" name="INTAKE_SORTING" />
+	        <jaxb:typesafeEnumMember value="RETURN_PROCESSING" name="RETURN_PROCESSING" />
+	        <jaxb:typesafeEnumMember value="ILLIQUID_GOODS_SALE" name="ILLIQUID_GOODS_SALE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrdersStatsItemStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="REJECTED" name="REJECTED" />
+	        <jaxb:typesafeEnumMember value="RETURNED" name="RETURNED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrdersStatsOrderPaymentType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CREDIT" name="CREDIT" />
+	        <jaxb:typesafeEnumMember value="POSTPAID" name="POSTPAID" />
+	        <jaxb:typesafeEnumMember value="PREPAID" name="PREPAID" />
+	        <jaxb:typesafeEnumMember value="TINKOFF_CREDIT" name="TINKOFF_CREDIT" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrdersStatsPaymentSourceType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="BUYER" name="BUYER" />
+	        <jaxb:typesafeEnumMember value="CASHBACK" name="CASHBACK" />
+	        <jaxb:typesafeEnumMember value="MARKETPLACE" name="MARKETPLACE" />
+	        <jaxb:typesafeEnumMember value="SPLIT" name="SPLIT" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrdersStatsPaymentType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PAYMENT" name="PAYMENT" />
+	        <jaxb:typesafeEnumMember value="REFUND" name="REFUND" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrdersStatsPriceType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="BUYER" name="BUYER" />
+	        <jaxb:typesafeEnumMember value="CASHBACK" name="CASHBACK" />
+	        <jaxb:typesafeEnumMember value="MARKETPLACE" name="MARKETPLACE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OrdersStatsStockType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="FIT" name="FIT" />
+	        <jaxb:typesafeEnumMember value="FREEZE" name="FREEZE" />
+	        <jaxb:typesafeEnumMember value="AVAILABLE" name="AVAILABLE" />
+	        <jaxb:typesafeEnumMember value="QUARANTINE" name="QUARANTINE" />
+	        <jaxb:typesafeEnumMember value="UTILIZATION" name="UTILIZATION" />
+	        <jaxb:typesafeEnumMember value="DEFECT" name="DEFECT" />
+	        <jaxb:typesafeEnumMember value="EXPIRED" name="EXPIRED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OutletStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="AT_MODERATION" name="AT_MODERATION" />
+	        <jaxb:typesafeEnumMember value="FAILED" name="FAILED" />
+	        <jaxb:typesafeEnumMember value="MODERATED" name="MODERATED" />
+	        <jaxb:typesafeEnumMember value="NONMODERATED" name="NONMODERATED" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OutletType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DEPOT" name="DEPOT" />
+	        <jaxb:typesafeEnumMember value="MIXED" name="MIXED" />
+	        <jaxb:typesafeEnumMember value="RETAIL" name="RETAIL" />
+	        <jaxb:typesafeEnumMember value="NOT_DEFINED" name="NOT_DEFINED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='OutletVisibilityType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="HIDDEN" name="HIDDEN" />
+	        <jaxb:typesafeEnumMember value="VISIBLE" name="VISIBLE" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PageFormatType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="A7" name="A7" />
+	        <jaxb:typesafeEnumMember value="A4" name="A4" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ParameterType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="TEXT" name="TEXT" />
+	        <jaxb:typesafeEnumMember value="ENUM" name="ENUM" />
+	        <jaxb:typesafeEnumMember value="BOOLEAN" name="BOOLEAN" />
+	        <jaxb:typesafeEnumMember value="NUMERIC" name="NUMERIC" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PaymentFrequencyType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DAILY" name="DAILY" />
+	        <jaxb:typesafeEnumMember value="WEEKLY" name="WEEKLY" />
+	        <jaxb:typesafeEnumMember value="BIWEEKLY" name="BIWEEKLY" />
+	        <jaxb:typesafeEnumMember value="MONTHLY" name="MONTHLY" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PlacementType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="FBS" name="FBS" />
+	        <jaxb:typesafeEnumMember value="FBY" name="FBY" />
+	        <jaxb:typesafeEnumMember value="DBS" name="DBS" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PriceCompetitivenessType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OPTIMAL" name="OPTIMAL" />
+	        <jaxb:typesafeEnumMember value="AVERAGE" name="AVERAGE" />
+	        <jaxb:typesafeEnumMember value="LOW" name="LOW" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PriceQuarantineVerdictParamNameType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CURRENT_PRICE" name="CURRENT_PRICE" />
+	        <jaxb:typesafeEnumMember value="LAST_VALID_PRICE" name="LAST_VALID_PRICE" />
+	        <jaxb:typesafeEnumMember value="MIN_PRICE" name="MIN_PRICE" />
+	        <jaxb:typesafeEnumMember value="CURRENCY" name="CURRENCY" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PriceQuarantineVerdictType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PRICE_CHANGE" name="PRICE_CHANGE" />
+	        <jaxb:typesafeEnumMember value="LOW_PRICE" name="LOW_PRICE" />
+	        <jaxb:typesafeEnumMember value="LOW_PRICE_PROMO" name="LOW_PRICE_PROMO" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PriceSuggestType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="BUYBOX" name="BUYBOX" />
+	        <jaxb:typesafeEnumMember value="DEFAULT_OFFER" name="DEFAULT_OFFER" />
+	        <jaxb:typesafeEnumMember value="MIN_PRICE_MARKET" name="MIN_PRICE_MARKET" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PromoOfferParticipationStatusFilterType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="MANUALLY_ADDED" name="MANUALLY_ADDED" />
+	        <jaxb:typesafeEnumMember value="NOT_MANUALLY_ADDED" name="NOT_MANUALLY_ADDED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PromoOfferParticipationStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="AUTO" name="AUTO" />
+	        <jaxb:typesafeEnumMember value="PARTIALLY_AUTO" name="PARTIALLY_AUTO" />
+	        <jaxb:typesafeEnumMember value="MANUAL" name="MANUAL" />
+	        <jaxb:typesafeEnumMember value="NOT_PARTICIPATING" name="NOT_PARTICIPATING" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PromoOfferUpdateWarningCodeType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DEEP_DISCOUNT_OFFER" name="DEEP_DISCOUNT_OFFER" />
+	        <jaxb:typesafeEnumMember value="CATALOG_PRICE_IS_LOWER_THAN_PROMO" name="CATALOG_PRICE_IS_LOWER_THAN_PROMO" />
+	        <jaxb:typesafeEnumMember value="SHOP_PRICES_ARE_LOWER_THAN_PROMO" name="SHOP_PRICES_ARE_LOWER_THAN_PROMO" />
+	        <jaxb:typesafeEnumMember value="PROMOCODE_PRICE_MORE_THAN_MAX_FAIR_PRICE" name="PROMOCODE_PRICE_MORE_THAN_MAX_FAIR_PRICE" />
+	        <jaxb:typesafeEnumMember value="SHOP_OFFER_NOT_ELIGIBLE_FOR_PROMO" name="SHOP_OFFER_NOT_ELIGIBLE_FOR_PROMO" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PromoParticipationType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PARTICIPATING_NOW" name="PARTICIPATING_NOW" />
+	        <jaxb:typesafeEnumMember value="PARTICIPATED" name="PARTICIPATED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='QualityRatingComponentType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="DBS_CANCELLATION_RATE" name="DBS_CANCELLATION_RATE" />
+	        <jaxb:typesafeEnumMember value="DBS_LATE_DELIVERY_RATE" name="DBS_LATE_DELIVERY_RATE" />
+	        <jaxb:typesafeEnumMember value="FBS_CANCELLATION_RATE" name="FBS_CANCELLATION_RATE" />
+	        <jaxb:typesafeEnumMember value="FBS_LATE_SHIP_RATE" name="FBS_LATE_SHIP_RATE" />
+	        <jaxb:typesafeEnumMember value="FBY_LATE_DELIVERY_RATE" name="FBY_LATE_DELIVERY_RATE" />
+	        <jaxb:typesafeEnumMember value="FBY_CANCELLATION_RATE" name="FBY_CANCELLATION_RATE" />
+	        <jaxb:typesafeEnumMember value="FBY_DELIVERY_DIFF_RATE" name="FBY_DELIVERY_DIFF_RATE" />
+	        <jaxb:typesafeEnumMember value="FBY_LATE_EDITING_RATE" name="FBY_LATE_EDITING_RATE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='RecipientType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="SHOP" name="SHOP" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_SERVICE" name="DELIVERY_SERVICE" />
+	        <jaxb:typesafeEnumMember value="POST" name="POST" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='RefundStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="STARTED_BY_USER" name="STARTED_BY_USER" />
+	        <jaxb:typesafeEnumMember value="REFUND_IN_PROGRESS" name="REFUND_IN_PROGRESS" />
+	        <jaxb:typesafeEnumMember value="REFUNDED" name="REFUNDED" />
+	        <jaxb:typesafeEnumMember value="FAILED" name="FAILED" />
+	        <jaxb:typesafeEnumMember value="WAITING_FOR_DECISION" name="WAITING_FOR_DECISION" />
+	        <jaxb:typesafeEnumMember value="DECISION_MADE" name="DECISION_MADE" />
+	        <jaxb:typesafeEnumMember value="REFUNDED_WITH_BONUSES" name="REFUNDED_WITH_BONUSES" />
+	        <jaxb:typesafeEnumMember value="REFUNDED_BY_SHOP" name="REFUNDED_BY_SHOP" />
+	        <jaxb:typesafeEnumMember value="CANCELLED" name="CANCELLED" />
+	        <jaxb:typesafeEnumMember value="COMPLETE_WITHOUT_REFUND" name="COMPLETE_WITHOUT_REFUND" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='RegionType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OTHER" name="OTHER" />
+	        <jaxb:typesafeEnumMember value="CONTINENT" name="CONTINENT" />
+	        <jaxb:typesafeEnumMember value="REGION" name="REGION" />
+	        <jaxb:typesafeEnumMember value="COUNTRY" name="COUNTRY" />
+	        <jaxb:typesafeEnumMember value="COUNTRY_DISTRICT" name="COUNTRY_DISTRICT" />
+	        <jaxb:typesafeEnumMember value="REPUBLIC" name="REPUBLIC" />
+	        <jaxb:typesafeEnumMember value="CITY" name="CITY" />
+	        <jaxb:typesafeEnumMember value="VILLAGE" name="VILLAGE" />
+	        <jaxb:typesafeEnumMember value="CITY_DISTRICT" name="CITY_DISTRICT" />
+	        <jaxb:typesafeEnumMember value="SUBWAY_STATION" name="SUBWAY_STATION" />
+	        <jaxb:typesafeEnumMember value="REPUBLIC_AREA" name="REPUBLIC_AREA" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='RejectedPromoOfferDeleteReasonType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OFFER_DOES_NOT_EXIST" name="OFFER_DOES_NOT_EXIST" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='RejectedPromoOfferUpdateReasonType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OFFER_DOES_NOT_EXIST" name="OFFER_DOES_NOT_EXIST" />
+	        <jaxb:typesafeEnumMember value="OFFER_DUPLICATION" name="OFFER_DUPLICATION" />
+	        <jaxb:typesafeEnumMember value="OFFER_NOT_ELIGIBLE_FOR_PROMO" name="OFFER_NOT_ELIGIBLE_FOR_PROMO" />
+	        <jaxb:typesafeEnumMember value="OFFER_PROMOS_MAX_BYTE_SIZE_EXCEEDED" name="OFFER_PROMOS_MAX_BYTE_SIZE_EXCEEDED" />
+	        <jaxb:typesafeEnumMember value="DEADLINE_FOR_FOCUS_PROMOS_EXCEEDED" name="DEADLINE_FOR_FOCUS_PROMOS_EXCEEDED" />
+	        <jaxb:typesafeEnumMember value="EMPTY_OLD_PRICE" name="EMPTY_OLD_PRICE" />
+	        <jaxb:typesafeEnumMember value="EMPTY_PROMO_PRICE" name="EMPTY_PROMO_PRICE" />
+	        <jaxb:typesafeEnumMember value="MAX_PROMO_PRICE_EXCEEDED" name="MAX_PROMO_PRICE_EXCEEDED" />
+	        <jaxb:typesafeEnumMember value="PROMO_PRICE_BIGGER_THAN_MAX" name="PROMO_PRICE_BIGGER_THAN_MAX" />
+	        <jaxb:typesafeEnumMember value="PROMO_PRICE_SMALLER_THAN_MIN" name="PROMO_PRICE_SMALLER_THAN_MIN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReportFormatType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="FILE" name="FILE" />
+	        <jaxb:typesafeEnumMember value="CSV" name="CSV" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReportStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PENDING" name="PENDING" />
+	        <jaxb:typesafeEnumMember value="PROCESSING" name="PROCESSING" />
+	        <jaxb:typesafeEnumMember value="FAILED" name="FAILED" />
+	        <jaxb:typesafeEnumMember value="DONE" name="DONE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReportSubStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="NO_DATA" name="NO_DATA" />
+	        <jaxb:typesafeEnumMember value="TOO_LARGE" name="TOO_LARGE" />
+	        <jaxb:typesafeEnumMember value="RESOURCE_NOT_FOUND" name="RESOURCE_NOT_FOUND" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReturnDecisionReasonType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="BAD_QUALITY" name="BAD_QUALITY" />
+	        <jaxb:typesafeEnumMember value="DOES_NOT_FIT" name="DOES_NOT_FIT" />
+	        <jaxb:typesafeEnumMember value="WRONG_ITEM" name="WRONG_ITEM" />
+	        <jaxb:typesafeEnumMember value="DAMAGE_DELIVERY" name="DAMAGE_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="LOYALTY_FAIL" name="LOYALTY_FAIL" />
+	        <jaxb:typesafeEnumMember value="CONTENT_FAIL" name="CONTENT_FAIL" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReturnDecisionSubreasonType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="USER_DID_NOT_LIKE" name="USER_DID_NOT_LIKE" />
+	        <jaxb:typesafeEnumMember value="USER_CHANGED_MIND" name="USER_CHANGED_MIND" />
+	        <jaxb:typesafeEnumMember value="DELIVERED_TOO_LONG" name="DELIVERED_TOO_LONG" />
+	        <jaxb:typesafeEnumMember value="BAD_PACKAGE" name="BAD_PACKAGE" />
+	        <jaxb:typesafeEnumMember value="DAMAGED" name="DAMAGED" />
+	        <jaxb:typesafeEnumMember value="NOT_WORKING" name="NOT_WORKING" />
+	        <jaxb:typesafeEnumMember value="INCOMPLETENESS" name="INCOMPLETENESS" />
+	        <jaxb:typesafeEnumMember value="WRONG_ITEM" name="WRONG_ITEM" />
+	        <jaxb:typesafeEnumMember value="WRONG_COLOR" name="WRONG_COLOR" />
+	        <jaxb:typesafeEnumMember value="DID_NOT_MATCH_DESCRIPTION" name="DID_NOT_MATCH_DESCRIPTION" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReturnDecisionType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="REFUND_MONEY" name="REFUND_MONEY" />
+	        <jaxb:typesafeEnumMember value="REFUND_MONEY_INCLUDING_SHIPMENT" name="REFUND_MONEY_INCLUDING_SHIPMENT" />
+	        <jaxb:typesafeEnumMember value="REPAIR" name="REPAIR" />
+	        <jaxb:typesafeEnumMember value="REPLACE" name="REPLACE" />
+	        <jaxb:typesafeEnumMember value="SEND_TO_EXAMINATION" name="SEND_TO_EXAMINATION" />
+	        <jaxb:typesafeEnumMember value="DECLINE_REFUND" name="DECLINE_REFUND" />
+	        <jaxb:typesafeEnumMember value="OTHER_DECISION" name="OTHER_DECISION" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReturnInstanceStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CREATED" name="CREATED" />
+	        <jaxb:typesafeEnumMember value="RECEIVED" name="RECEIVED" />
+	        <jaxb:typesafeEnumMember value="IN_TRANSIT" name="IN_TRANSIT" />
+	        <jaxb:typesafeEnumMember value="READY_FOR_PICKUP" name="READY_FOR_PICKUP" />
+	        <jaxb:typesafeEnumMember value="PICKED" name="PICKED" />
+	        <jaxb:typesafeEnumMember value="RECEIVED_ON_FULFILLMENT" name="RECEIVED_ON_FULFILLMENT" />
+	        <jaxb:typesafeEnumMember value="CANCELLED" name="CANCELLED" />
+	        <jaxb:typesafeEnumMember value="LOST" name="LOST" />
+	        <jaxb:typesafeEnumMember value="UTILIZED" name="UTILIZED" />
+	        <jaxb:typesafeEnumMember value="PREPARED_FOR_UTILIZATION" name="PREPARED_FOR_UTILIZATION" />
+	        <jaxb:typesafeEnumMember value="EXPROPRIATED" name="EXPROPRIATED" />
+	        <jaxb:typesafeEnumMember value="NOT_IN_DEMAND" name="NOT_IN_DEMAND" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReturnInstanceStockType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="FIT" name="FIT" />
+	        <jaxb:typesafeEnumMember value="DEFECT" name="DEFECT" />
+	        <jaxb:typesafeEnumMember value="ANOMALY" name="ANOMALY" />
+	        <jaxb:typesafeEnumMember value="SURPLUS" name="SURPLUS" />
+	        <jaxb:typesafeEnumMember value="EXPIRED" name="EXPIRED" />
+	        <jaxb:typesafeEnumMember value="MISGRADING" name="MISGRADING" />
+	        <jaxb:typesafeEnumMember value="UNDEFINED" name="UNDEFINED" />
+	        <jaxb:typesafeEnumMember value="INCORRECT_IMEI" name="INCORRECT_IMEI" />
+	        <jaxb:typesafeEnumMember value="INCORRECT_SERIAL_NUMBER" name="INCORRECT_SERIAL_NUMBER" />
+	        <jaxb:typesafeEnumMember value="INCORRECT_CIS" name="INCORRECT_CIS" />
+	        <jaxb:typesafeEnumMember value="PART_MISSING" name="PART_MISSING" />
+	        <jaxb:typesafeEnumMember value="NON_COMPLIENT" name="NON_COMPLIENT" />
+	        <jaxb:typesafeEnumMember value="NOT_ACCEPTABLE" name="NOT_ACCEPTABLE" />
+	        <jaxb:typesafeEnumMember value="SERVICE" name="SERVICE" />
+	        <jaxb:typesafeEnumMember value="MARKDOWN" name="MARKDOWN" />
+	        <jaxb:typesafeEnumMember value="DEMO" name="DEMO" />
+	        <jaxb:typesafeEnumMember value="REPAIR" name="REPAIR" />
+	        <jaxb:typesafeEnumMember value="FIRMWARE" name="FIRMWARE" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReturnRequestDecisionType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="REFUND_MONEY" name="REFUND_MONEY" />
+	        <jaxb:typesafeEnumMember value="REFUND_MONEY_INCLUDING_SHIPMENT" name="REFUND_MONEY_INCLUDING_SHIPMENT" />
+	        <jaxb:typesafeEnumMember value="REPAIR" name="REPAIR" />
+	        <jaxb:typesafeEnumMember value="REPLACE" name="REPLACE" />
+	        <jaxb:typesafeEnumMember value="SEND_TO_EXAMINATION" name="SEND_TO_EXAMINATION" />
+	        <jaxb:typesafeEnumMember value="DECLINE_REFUND" name="DECLINE_REFUND" />
+	        <jaxb:typesafeEnumMember value="OTHER_DECISION" name="OTHER_DECISION" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReturnShipmentStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CREATED" name="CREATED" />
+	        <jaxb:typesafeEnumMember value="RECEIVED" name="RECEIVED" />
+	        <jaxb:typesafeEnumMember value="IN_TRANSIT" name="IN_TRANSIT" />
+	        <jaxb:typesafeEnumMember value="READY_FOR_PICKUP" name="READY_FOR_PICKUP" />
+	        <jaxb:typesafeEnumMember value="PICKED" name="PICKED" />
+	        <jaxb:typesafeEnumMember value="LOST" name="LOST" />
+	        <jaxb:typesafeEnumMember value="EXPIRED" name="EXPIRED" />
+	        <jaxb:typesafeEnumMember value="CANCELLED" name="CANCELLED" />
+	        <jaxb:typesafeEnumMember value="FULFILMENT_RECEIVED" name="FULFILMENT_RECEIVED" />
+	        <jaxb:typesafeEnumMember value="PREPARED_FOR_UTILIZATION" name="PREPARED_FOR_UTILIZATION" />
+	        <jaxb:typesafeEnumMember value="NOT_IN_DEMAND" name="NOT_IN_DEMAND" />
+	        <jaxb:typesafeEnumMember value="UTILIZED" name="UTILIZED" />
+	        <jaxb:typesafeEnumMember value="READY_FOR_EXPROPRIATION" name="READY_FOR_EXPROPRIATION" />
+	        <jaxb:typesafeEnumMember value="RECEIVED_FOR_EXPROPRIATION" name="RECEIVED_FOR_EXPROPRIATION" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ReturnType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="UNREDEEMED" name="UNREDEEMED" />
+	        <jaxb:typesafeEnumMember value="RETURN" name="RETURN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='SellingProgramType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="FBY" name="FBY" />
+	        <jaxb:typesafeEnumMember value="FBS" name="FBS" />
+	        <jaxb:typesafeEnumMember value="DBS" name="DBS" />
+	        <jaxb:typesafeEnumMember value="EXPRESS" name="EXPRESS" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ShelfsStatisticsAttributionType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CLICKS" name="CLICKS" />
+	        <jaxb:typesafeEnumMember value="SHOWS" name="SHOWS" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ShipmentActionType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CONFIRM" name="CONFIRM" />
+	        <jaxb:typesafeEnumMember value="DOWNLOAD_ACT" name="DOWNLOAD_ACT" />
+	        <jaxb:typesafeEnumMember value="DOWNLOAD_INBOUND_ACT" name="DOWNLOAD_INBOUND_ACT" />
+	        <jaxb:typesafeEnumMember value="DOWNLOAD_DISCREPANCY_ACT" name="DOWNLOAD_DISCREPANCY_ACT" />
+	        <jaxb:typesafeEnumMember value="CHANGE_PALLETS_COUNT" name="CHANGE_PALLETS_COUNT" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ShipmentPalletLabelPageFormatType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="A4" name="A4" />
+	        <jaxb:typesafeEnumMember value="A8" name="A8" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ShipmentStatusType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OUTBOUND_CREATED" name="OUTBOUND_CREATED" />
+	        <jaxb:typesafeEnumMember value="OUTBOUND_READY_FOR_CONFIRMATION" name="OUTBOUND_READY_FOR_CONFIRMATION" />
+	        <jaxb:typesafeEnumMember value="OUTBOUND_CONFIRMED" name="OUTBOUND_CONFIRMED" />
+	        <jaxb:typesafeEnumMember value="OUTBOUND_SIGNED" name="OUTBOUND_SIGNED" />
+	        <jaxb:typesafeEnumMember value="FINISHED" name="FINISHED" />
+	        <jaxb:typesafeEnumMember value="ACCEPTED" name="ACCEPTED" />
+	        <jaxb:typesafeEnumMember value="ACCEPTED_WITH_DISCREPANCIES" name="ACCEPTED_WITH_DISCREPANCIES" />
+	        <jaxb:typesafeEnumMember value="ERROR" name="ERROR" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ShipmentType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="IMPORT" name="IMPORT" />
+	        <jaxb:typesafeEnumMember value="WITHDRAW" name="WITHDRAW" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ShowsSalesGroupingType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CATEGORIES" name="CATEGORIES" />
+	        <jaxb:typesafeEnumMember value="OFFERS" name="OFFERS" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='SortOrderType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="ASC" name="ASC" />
+	        <jaxb:typesafeEnumMember value="DESC" name="DESC" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='TariffType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="AGENCY_COMMISSION" name="AGENCY_COMMISSION" />
+	        <jaxb:typesafeEnumMember value="PAYMENT_TRANSFER" name="PAYMENT_TRANSFER" />
+	        <jaxb:typesafeEnumMember value="STORAGE" name="STORAGE" />
+	        <jaxb:typesafeEnumMember value="WITHDRAW" name="WITHDRAW" />
+	        <jaxb:typesafeEnumMember value="SURPLUS" name="SURPLUS" />
+	        <jaxb:typesafeEnumMember value="FEE" name="FEE" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_TO_CUSTOMER" name="DELIVERY_TO_CUSTOMER" />
+	        <jaxb:typesafeEnumMember value="CROSSREGIONAL_DELIVERY" name="CROSSREGIONAL_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="CROSSREGIONAL_DELIVERY_RETURN" name="CROSSREGIONAL_DELIVERY_RETURN" />
+	        <jaxb:typesafeEnumMember value="DISPOSAL" name="DISPOSAL" />
+	        <jaxb:typesafeEnumMember value="SORTING_CENTER_STORAGE" name="SORTING_CENTER_STORAGE" />
+	        <jaxb:typesafeEnumMember value="EXPRESS_DELIVERY" name="EXPRESS_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="FF_XDOC_SUPPLY_BOX" name="FF_XDOC_SUPPLY_BOX" />
+	        <jaxb:typesafeEnumMember value="FF_XDOC_SUPPLY_PALLET" name="FF_XDOC_SUPPLY_PALLET" />
+	        <jaxb:typesafeEnumMember value="SORTING" name="SORTING" />
+	        <jaxb:typesafeEnumMember value="MIDDLE_MILE" name="MIDDLE_MILE" />
+	        <jaxb:typesafeEnumMember value="RETURN_PROCESSING" name="RETURN_PROCESSING" />
+	        <jaxb:typesafeEnumMember value="EXPRESS_CANCELLED_BY_PARTNER" name="EXPRESS_CANCELLED_BY_PARTNER" />
+	        <jaxb:typesafeEnumMember value="DELIVERY_TO_CUSTOMER_RETURN" name="DELIVERY_TO_CUSTOMER_RETURN" />
+	        <jaxb:typesafeEnumMember value="CROSSBORDER_DELIVERY" name="CROSSBORDER_DELIVERY" />
+	        <jaxb:typesafeEnumMember value="INTAKE_SORTING_BULKY_CARGO" name="INTAKE_SORTING_BULKY_CARGO" />
+	        <jaxb:typesafeEnumMember value="INTAKE_SORTING_SMALL_GOODS" name="INTAKE_SORTING_SMALL_GOODS" />
+	        <jaxb:typesafeEnumMember value="INTAKE_SORTING_DAILY" name="INTAKE_SORTING_DAILY" />
+	        <jaxb:typesafeEnumMember value="FF_STORAGE_BILLING" name="FF_STORAGE_BILLING" />
+	        <jaxb:typesafeEnumMember value="CANCELLED_ORDER_FEE_QI" name="CANCELLED_ORDER_FEE_QI" />
+	        <jaxb:typesafeEnumMember value="LATE_ORDER_EXECUTION_FEE_QI" name="LATE_ORDER_EXECUTION_FEE_QI" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='TimeUnitType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="HOUR" name="HOUR" />
+	        <jaxb:typesafeEnumMember value="DAY" name="DAY" />
+	        <jaxb:typesafeEnumMember value="WEEK" name="WEEK" />
+	        <jaxb:typesafeEnumMember value="MONTH" name="MONTH" />
+	        <jaxb:typesafeEnumMember value="YEAR" name="YEAR" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='TurnoverType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="LOW" name="LOW" />
+	        <jaxb:typesafeEnumMember value="ALMOST_LOW" name="ALMOST_LOW" />
+	        <jaxb:typesafeEnumMember value="HIGH" name="HIGH" />
+	        <jaxb:typesafeEnumMember value="VERY_HIGH" name="VERY_HIGH" />
+	        <jaxb:typesafeEnumMember value="NO_SALES" name="NO_SALES" />
+	        <jaxb:typesafeEnumMember value="FREE_STORE" name="FREE_STORE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='WarehouseStockType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="FIT" name="FIT" />
+	        <jaxb:typesafeEnumMember value="FREEZE" name="FREEZE" />
+	        <jaxb:typesafeEnumMember value="AVAILABLE" name="AVAILABLE" />
+	        <jaxb:typesafeEnumMember value="QUARANTINE" name="QUARANTINE" />
+	        <jaxb:typesafeEnumMember value="UTILIZATION" name="UTILIZATION" />
+	        <jaxb:typesafeEnumMember value="DEFECT" name="DEFECT" />
+	        <jaxb:typesafeEnumMember value="EXPIRED" name="EXPIRED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+
+</jaxws:bindings>
