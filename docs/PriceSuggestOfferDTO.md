@@ -1,0 +1,25 @@
+
+# Table `PriceSuggestOfferDTO`
+(mapped from: PriceSuggestOfferDTO)
+
+## Properties
+Name | Mapping | SQL Type | Default | Type | Description | Notes
+---- | ------- | -------- | ------- | ---- | ----------- | -----
+**marketSku** | marketSku | long |  | **kotlin.Long** | SKU на Маркете. |  [optional]
+**offerId** | offerId | text |  | **kotlin.String** | Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields)  |  [optional]
+**priceSuggestion** | `One-To-Many` | `----` | `----`  | [**kotlin.Array&lt;PriceSuggestDTO&gt;**](PriceSuggestDTO.md) | Цены для продвижения.  |  [optional]
+
+
+
+
+# **Table `PriceSuggestOfferDTOPriceSuggestDTO`**
+(mapped from: PriceSuggestOfferDTOPriceSuggestDTO)
+
+## Properties
+Name | Mapping | SQL Type | Default | Type | Description | Notes
+---- | ------- | -------- | ------- | ---- | ----------- | -----
+priceSuggestOfferDTO | priceSuggestOfferDTO | long | | kotlin.Long | Primary Key | *one*
+priceSuggestDTO | priceSuggestDTO | long | | kotlin.Long | Foreign Key | *many*
+
+
+
