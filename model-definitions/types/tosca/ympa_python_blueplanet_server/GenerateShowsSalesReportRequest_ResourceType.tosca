@@ -1,0 +1,56 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GenerateShowsSalesReportRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GenerateShowsSalesReportRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ShowsSalesGroupingType = ympa_python_blueplanet_server.resourceTypes.ShowsSalesGroupingType
+}
+resourceTypes {
+
+  GenerateShowsSalesReportRequest {
+    title = GenerateShowsSalesReportRequest
+    description = GenerateShowsSalesReportRequest
+    derivedFrom = Root
+    properties {
+        business_id {
+          type =  integer
+          description = "Идентификатор бизнеса.  Указывается, если нужно составить отчет по всем магазинам бизнеса. В запросе обязательно должен быть либо &#x60;businessID&#x60;, либо &#x60;campaignId&#x60;, но не оба сразу. "
+          optional = false
+        }
+        campaign_id {
+          type =  integer
+          description = "Идентификатор кампании.  Указывается, если нужно составить отчет по конкретному магазину. В запросе обязательно должен быть либо &#x60;businessID&#x60;, либо &#x60;campaignId&#x60;, но не оба сразу. "
+          optional = false
+        }
+        date_from {
+          type =  string
+          description = "Начало периода, включительно."
+          optional = true
+        }
+        date_to {
+          type =  string
+          description = "Конец периода, включительно."
+          optional = true
+        }
+        grouping {
+          type = ShowsSalesGroupingType
+          description = ""
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GenerateShowsSalesReportRequest {
+    title = GenerateShowsSalesReportRequest
+    description = GenerateShowsSalesReportRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GenerateShowsSalesReportRequest
+
+  }
+}

@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedbackListDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedbackListDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedbackDTO = ympa_python_blueplanet_server.resourceTypes.FeedbackDTO
+  ScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ScrollingPagerDTO
+}
+resourceTypes {
+
+  FeedbackListDTO {
+    title = FeedbackListDTO
+    description = FeedbackListDTO
+    derivedFrom = Root
+    properties {
+        paging {
+          type = ScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+        feedback_list {
+          type = array
+          items.type = FeedbackDTO
+          description = "Список отзывов.  Содержит не более 20 отзывов. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedbackListDTO {
+    title = FeedbackListDTO
+    description = FeedbackListDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedbackListDTO
+
+  }
+}

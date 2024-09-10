@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CampaignsQualityRatingDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CampaignsQualityRatingDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CampaignQualityRatingDTO = ympa_python_blueplanet_server.resourceTypes.CampaignQualityRatingDTO
+}
+resourceTypes {
+
+  CampaignsQualityRatingDTO {
+    title = CampaignsQualityRatingDTO
+    description = CampaignsQualityRatingDTO
+    derivedFrom = Root
+    properties {
+        campaign_ratings {
+          type = array
+          items.type = CampaignQualityRatingDTO
+          description = "Список магазинов c информацией об их индексе качества."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CampaignsQualityRatingDTO {
+    title = CampaignsQualityRatingDTO
+    description = CampaignsQualityRatingDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CampaignsQualityRatingDTO
+
+  }
+}

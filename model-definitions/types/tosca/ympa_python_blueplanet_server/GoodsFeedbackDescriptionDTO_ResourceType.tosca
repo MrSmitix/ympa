@@ -1,0 +1,45 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GoodsFeedbackDescriptionDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GoodsFeedbackDescriptionDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GoodsFeedbackDescriptionDTO {
+    title = GoodsFeedbackDescriptionDTO
+    description = GoodsFeedbackDescriptionDTO
+    derivedFrom = Root
+    properties {
+        advantages {
+          type =  string
+          description = "Описание плюсов товара в отзыве."
+          optional = false
+        }
+        disadvantages {
+          type =  string
+          description = "Описание минусов товара в отзыве."
+          optional = false
+        }
+        comment {
+          type =  string
+          description = "Комментарий в отзыве."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GoodsFeedbackDescriptionDTO {
+    title = GoodsFeedbackDescriptionDTO
+    description = GoodsFeedbackDescriptionDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackDescriptionDTO
+
+  }
+}

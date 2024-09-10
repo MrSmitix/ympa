@@ -1,0 +1,51 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OutletWorkingScheduleItemDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OutletWorkingScheduleItemDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  DayOfWeekType = ympa_python_blueplanet_server.resourceTypes.DayOfWeekType
+}
+resourceTypes {
+
+  OutletWorkingScheduleItemDTO {
+    title = OutletWorkingScheduleItemDTO
+    description = OutletWorkingScheduleItemDTO
+    derivedFrom = Root
+    properties {
+        start_day {
+          type = DayOfWeekType
+          description = ""
+          optional = true
+        }
+        end_day {
+          type = DayOfWeekType
+          description = ""
+          optional = true
+        }
+        start_time {
+          type =  string
+          description = "Точка продаж работает c указанного часа.  Формат: &#x60;ЧЧ:ММ&#x60;. "
+          optional = true
+        }
+        end_time {
+          type =  string
+          description = "Точка продаж работает до указанного часа.  Формат: &#x60;ЧЧ:ММ&#x60;. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OutletWorkingScheduleItemDTO {
+    title = OutletWorkingScheduleItemDTO
+    description = OutletWorkingScheduleItemDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OutletWorkingScheduleItemDTO
+
+  }
+}

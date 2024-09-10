@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GoodsFeedbackIdentifiersDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GoodsFeedbackIdentifiersDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GoodsFeedbackIdentifiersDTO {
+    title = GoodsFeedbackIdentifiersDTO
+    description = GoodsFeedbackIdentifiersDTO
+    derivedFrom = Root
+    properties {
+        order_id {
+          type =  integer
+          description = "Идентификатор заказа на Маркете."
+          optional = true
+        }
+        model_id {
+          type =  integer
+          description = "Идентификатор модели товара."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GoodsFeedbackIdentifiersDTO {
+    title = GoodsFeedbackIdentifiersDTO
+    description = GoodsFeedbackIdentifiersDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackIdentifiersDTO
+
+  }
+}

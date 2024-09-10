@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdatePromoOffersRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdatePromoOffersRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  UpdatePromoOfferDTO = ympa_python_blueplanet_server.resourceTypes.UpdatePromoOfferDTO
+}
+resourceTypes {
+
+  UpdatePromoOffersRequest {
+    title = UpdatePromoOffersRequest
+    description = UpdatePromoOffersRequest
+    derivedFrom = Root
+    properties {
+        promo_id {
+          type =  string
+          description = "Идентификатор акции."
+          optional = true
+        }
+        offers {
+          type = array
+          items.type = UpdatePromoOfferDTO
+          description = "Товары, которые необходимо добавить в акцию или цены которых нужно изменить."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdatePromoOffersRequest {
+    title = UpdatePromoOffersRequest
+    description = UpdatePromoOffersRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdatePromoOffersRequest
+
+  }
+}

@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PalletsCountDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PalletsCountDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  PalletsCountDTO {
+    title = PalletsCountDTO
+    description = PalletsCountDTO
+    derivedFrom = Root
+    properties {
+        planned {
+          type =  integer
+          description = "Количество палет, которое заявил продавец."
+          optional = false
+        }
+        fact {
+          type =  integer
+          description = "Количество палет, которое приняли в сортировочном центре."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PalletsCountDTO {
+    title = PalletsCountDTO
+    description = PalletsCountDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PalletsCountDTO
+
+  }
+}

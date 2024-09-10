@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ApiResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ApiResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+}
+resourceTypes {
+
+  ApiResponse {
+    title = ApiResponse
+    description = ApiResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ApiResponse {
+    title = ApiResponse
+    description = ApiResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.ApiResponse
+
+  }
+}

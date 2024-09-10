@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CategoryContentParametersDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CategoryContentParametersDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CategoryParameterDTO = ympa_python_blueplanet_server.resourceTypes.CategoryParameterDTO
+}
+resourceTypes {
+
+  CategoryContentParametersDTO {
+    title = CategoryContentParametersDTO
+    description = CategoryContentParametersDTO
+    derivedFrom = Root
+    properties {
+        category_id {
+          type =  integer
+          description = "Идентификатор категории на Маркете. Чтобы узнать идентификатор категории, к которой относится товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md)."
+          optional = true
+        }
+        parameters {
+          type = array
+          items.type = CategoryParameterDTO
+          description = "Список характеристик."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CategoryContentParametersDTO {
+    title = CategoryContentParametersDTO
+    description = CategoryContentParametersDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CategoryContentParametersDTO
+
+  }
+}

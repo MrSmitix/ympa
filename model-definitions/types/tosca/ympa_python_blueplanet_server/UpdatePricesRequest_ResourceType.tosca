@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdatePricesRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdatePricesRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OfferPriceDTO = ympa_python_blueplanet_server.resourceTypes.OfferPriceDTO
+}
+resourceTypes {
+
+  UpdatePricesRequest {
+    title = UpdatePricesRequest
+    description = UpdatePricesRequest
+    derivedFrom = Root
+    properties {
+        offers {
+          type = array
+          items.type = OfferPriceDTO
+          description = "Список товаров."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdatePricesRequest {
+    title = UpdatePricesRequest
+    description = UpdatePricesRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdatePricesRequest
+
+  }
+}

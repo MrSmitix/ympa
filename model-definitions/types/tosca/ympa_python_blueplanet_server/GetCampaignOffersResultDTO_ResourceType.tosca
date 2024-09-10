@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetCampaignOffersResultDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetCampaignOffersResultDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  GetCampaignOfferDTO = ympa_python_blueplanet_server.resourceTypes.GetCampaignOfferDTO
+  ScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ScrollingPagerDTO
+}
+resourceTypes {
+
+  GetCampaignOffersResultDTO {
+    title = GetCampaignOffersResultDTO
+    description = GetCampaignOffersResultDTO
+    derivedFrom = Root
+    properties {
+        paging {
+          type = ScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+        offers {
+          type = array
+          items.type = GetCampaignOfferDTO
+          description = "Страница списка товаров."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetCampaignOffersResultDTO {
+    title = GetCampaignOffersResultDTO
+    description = GetCampaignOffersResultDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetCampaignOffersResultDTO
+
+  }
+}

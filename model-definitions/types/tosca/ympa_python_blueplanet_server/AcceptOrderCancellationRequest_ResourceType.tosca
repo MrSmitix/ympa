@@ -1,0 +1,41 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server AcceptOrderCancellationRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a AcceptOrderCancellationRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderCancellationReasonType = ympa_python_blueplanet_server.resourceTypes.OrderCancellationReasonType
+}
+resourceTypes {
+
+  AcceptOrderCancellationRequest {
+    title = AcceptOrderCancellationRequest
+    description = AcceptOrderCancellationRequest
+    derivedFrom = Root
+    properties {
+        accepted {
+          type =  boolean
+          description = "Решение об отмене заказа:  * &#x60;true&#x60; — заказ отменяется, служба доставки узнала об отмене до передачи заказа покупателю. * &#x60;false&#x60; — заказ не отменяется, так как он уже доставлен покупателю курьером или передан в пункт выдачи заказов. "
+          optional = true
+        }
+        reason {
+          type = OrderCancellationReasonType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  AcceptOrderCancellationRequest {
+    title = AcceptOrderCancellationRequest
+    description = AcceptOrderCancellationRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.AcceptOrderCancellationRequest
+
+  }
+}

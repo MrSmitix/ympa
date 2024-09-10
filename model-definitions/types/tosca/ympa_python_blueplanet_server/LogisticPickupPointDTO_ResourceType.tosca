@@ -1,0 +1,62 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server LogisticPickupPointDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a LogisticPickupPointDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  LogisticPointType = ympa_python_blueplanet_server.resourceTypes.LogisticPointType
+  PickupAddressDTO = ympa_python_blueplanet_server.resourceTypes.PickupAddressDTO
+}
+resourceTypes {
+
+  LogisticPickupPointDTO {
+    title = LogisticPickupPointDTO
+    description = LogisticPickupPointDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор пункта вывоза."
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Название пункта вывоза."
+          optional = false
+        }
+        address {
+          type = PickupAddressDTO
+          description = ""
+          optional = false
+        }
+        instruction {
+          type =  string
+          description = "Дополнительные инструкции к вывозу."
+          optional = false
+        }
+        type {
+          type = LogisticPointType
+          description = ""
+          optional = false
+        }
+        logistic_partner_id {
+          type =  integer
+          description = "Идентификатор логистического партнера, к которому относится логистическая точка."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  LogisticPickupPointDTO {
+    title = LogisticPickupPointDTO
+    description = LogisticPickupPointDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.LogisticPickupPointDTO
+
+  }
+}

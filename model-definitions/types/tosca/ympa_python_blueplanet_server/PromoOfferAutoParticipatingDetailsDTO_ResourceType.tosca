@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PromoOfferAutoParticipatingDetailsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PromoOfferAutoParticipatingDetailsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  PromoOfferAutoParticipatingDetailsDTO {
+    title = PromoOfferAutoParticipatingDetailsDTO
+    description = PromoOfferAutoParticipatingDetailsDTO
+    derivedFrom = Root
+    properties {
+        campaign_ids {
+          type = array
+          items.type =  integer
+          description = "Магазины, в которых товар добавлен в акцию автоматически.  Возвращается, если статус товара в акции — &#x60;PARTIALLY_AUTO&#x60;. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PromoOfferAutoParticipatingDetailsDTO {
+    title = PromoOfferAutoParticipatingDetailsDTO
+    description = PromoOfferAutoParticipatingDetailsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PromoOfferAutoParticipatingDetailsDTO
+
+  }
+}

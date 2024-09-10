@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server SetReturnDecisionRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a SetReturnDecisionRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ReturnRequestDecisionType = ympa_python_blueplanet_server.resourceTypes.ReturnRequestDecisionType
+}
+resourceTypes {
+
+  SetReturnDecisionRequest {
+    title = SetReturnDecisionRequest
+    description = SetReturnDecisionRequest
+    derivedFrom = Root
+    properties {
+        return_item_id {
+          type =  integer
+          description = "Идентификатор товара в возврате."
+          optional = true
+        }
+        decision_type {
+          type = ReturnRequestDecisionType
+          description = ""
+          optional = true
+        }
+        comment {
+          type =  string
+          description = "Комментарий к решению. Укажите:  * для &#x60;REFUND_MONEY_INCLUDING_SHIPMENT&#x60;— стоимость обратной пересылки;  * для &#x60;REPAIR&#x60; — когда вы устраните недостатки товара;  * для &#x60;DECLINE_REFUND&#x60; — причину отказа;  * для &#x60;OTHER_DECISION&#x60; — какое решение вы предлагаете. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  SetReturnDecisionRequest {
+    title = SetReturnDecisionRequest
+    description = SetReturnDecisionRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.SetReturnDecisionRequest
+
+  }
+}

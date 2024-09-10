@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderItemSubsidyType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderItemSubsidyType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrderItemSubsidyType {
+    title = OrderItemSubsidyType
+    description = OrderItemSubsidyType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderItemSubsidyType {
+    title = OrderItemSubsidyType
+    description = OrderItemSubsidyType
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderItemSubsidyType
+
+  }
+}

@@ -1,0 +1,50 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ParameterValueDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ParameterValueDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ParameterValueDTO {
+    title = ParameterValueDTO
+    description = ParameterValueDTO
+    derivedFrom = Root
+    properties {
+        parameter_id {
+          type =  integer
+          description = "Идентификатор характеристики."
+          optional = true
+        }
+        unit_id {
+          type =  integer
+          description = "Идентификатор единицы измерения. Если вы не передали параметр &#x60;unitId&#x60;, используется единица измерения по умолчанию."
+          optional = false
+        }
+        value_id {
+          type =  integer
+          description = "Идентификатор значения.  Обязательно указывайте идентификатор, если передаете значение из перечня допустимых значений, полученного от Маркета.  Только для характеристик типа &#x60;ENUM&#x60;. "
+          optional = false
+        }
+        value {
+          type =  string
+          description = "Значение."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ParameterValueDTO {
+    title = ParameterValueDTO
+    description = ParameterValueDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ParameterValueDTO
+
+  }
+}

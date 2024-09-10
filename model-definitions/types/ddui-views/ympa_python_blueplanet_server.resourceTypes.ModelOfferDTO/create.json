@@ -1,0 +1,26 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "discount" },
+      {"model": "name" },
+      {"model": "pos" },
+      {"model": "pre_discount_price" },
+      {"model": "price" },
+      {"model": "region_id" },
+      {"model": "shipping_cost" },
+      {"model": "shop_name" },
+      {"model": "shop_rating" },
+      {"model": "in_stock" },
+    ]
+  }]
+}

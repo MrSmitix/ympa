@@ -1,0 +1,21 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "full_name" },
+      {"model": "phone" },
+      {"model": "phone_extension" },
+      {"model": "vehicle_number" },
+      {"model": "vehicle_description" },
+    ]
+  }]
+}

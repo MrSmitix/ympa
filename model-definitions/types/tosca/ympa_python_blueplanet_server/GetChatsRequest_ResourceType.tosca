@@ -1,0 +1,50 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetChatsRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetChatsRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ChatStatusType = ympa_python_blueplanet_server.resourceTypes.ChatStatusType
+  ChatType = ympa_python_blueplanet_server.resourceTypes.ChatType
+}
+resourceTypes {
+
+  GetChatsRequest {
+    title = GetChatsRequest
+    description = GetChatsRequest
+    derivedFrom = Root
+    properties {
+        order_ids {
+          type = array
+          items.type =  integer
+          description = "Фильтр по идентификаторам заказов на Маркете."
+          optional = false
+        }
+        types {
+          type = array
+          items.type = ChatType
+          description = "Фильтр по типам чатов."
+          optional = false
+        }
+        statuses {
+          type = array
+          items.type = ChatStatusType
+          description = "Фильтр по статусам чатов."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetChatsRequest {
+    title = GetChatsRequest
+    description = GetChatsRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetChatsRequest
+
+  }
+}

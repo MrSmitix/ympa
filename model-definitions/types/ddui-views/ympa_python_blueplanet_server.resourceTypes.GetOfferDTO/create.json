@@ -1,0 +1,50 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "offer_id" },
+      {"model": "name" },
+      {"model": "market_category_id" },
+      {"model": "category" },
+      {"model": "pictures" },
+      {"model": "videos" },
+      {"model": "manuals" },
+      {"model": "vendor" },
+      {"model": "barcodes" },
+      {"model": "description" },
+      {"model": "manufacturer_countries" },
+      {"model": "weight_dimensions" },
+      {"model": "vendor_code" },
+      {"model": "tags" },
+      {"model": "shelf_life" },
+      {"model": "life_time" },
+      {"model": "guarantee_period" },
+      {"model": "customs_commodity_code" },
+      {"model": "certificates" },
+      {"model": "box_count" },
+      {"model": "condition" },
+      {"model": "type" },
+      {"model": "downloadable" },
+      {"model": "adult" },
+      {"model": "age" },
+      {"model": "params" },
+      {"model": "basic_price" },
+      {"model": "purchase_price" },
+      {"model": "additional_expenses" },
+      {"model": "cofinance_price" },
+      {"model": "card_status" },
+      {"model": "campaigns" },
+      {"model": "selling_programs" },
+      {"model": "archived" },
+    ]
+  }]
+}

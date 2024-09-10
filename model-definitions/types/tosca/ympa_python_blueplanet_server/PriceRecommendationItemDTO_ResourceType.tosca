@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PriceRecommendationItemDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PriceRecommendationItemDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  PriceRecommendationItemDTO {
+    title = PriceRecommendationItemDTO
+    description = PriceRecommendationItemDTO
+    derivedFrom = Root
+    properties {
+        campaign_id {
+          type =  integer
+          description = "Идентификатор кампании."
+          optional = true
+        }
+        price {
+          type =  
+          description = "Рекомендованная цена на товар. Чтобы продвижение хорошо работало, цена на товар должна быть не выше этого значения. [Подробно о рекомендованных ценах](https://yandex.ru/support/marketplace/marketing/campaigns.html#prices) "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PriceRecommendationItemDTO {
+    title = PriceRecommendationItemDTO
+    description = PriceRecommendationItemDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PriceRecommendationItemDTO
+
+  }
+}

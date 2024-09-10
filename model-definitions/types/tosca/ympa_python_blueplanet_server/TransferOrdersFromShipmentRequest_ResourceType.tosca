@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server TransferOrdersFromShipmentRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a TransferOrdersFromShipmentRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  TransferOrdersFromShipmentRequest {
+    title = TransferOrdersFromShipmentRequest
+    description = TransferOrdersFromShipmentRequest
+    derivedFrom = Root
+    properties {
+        order_ids {
+          type = array
+          items.type =  integer
+          description = "Список заказов, которые вы не успеваете подготовить."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  TransferOrdersFromShipmentRequest {
+    title = TransferOrdersFromShipmentRequest
+    description = TransferOrdersFromShipmentRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.TransferOrdersFromShipmentRequest
+
+  }
+}

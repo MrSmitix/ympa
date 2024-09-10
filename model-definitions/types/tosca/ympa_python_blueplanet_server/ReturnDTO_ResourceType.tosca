@@ -1,0 +1,97 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ReturnDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ReturnDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  LogisticPickupPointDTO = ympa_python_blueplanet_server.resourceTypes.LogisticPickupPointDTO
+  RecipientType = ympa_python_blueplanet_server.resourceTypes.RecipientType
+  RefundStatusType = ympa_python_blueplanet_server.resourceTypes.RefundStatusType
+  ReturnItemDTO = ympa_python_blueplanet_server.resourceTypes.ReturnItemDTO
+  ReturnShipmentStatusType = ympa_python_blueplanet_server.resourceTypes.ReturnShipmentStatusType
+  ReturnType = ympa_python_blueplanet_server.resourceTypes.ReturnType
+}
+resourceTypes {
+
+  ReturnDTO {
+    title = ReturnDTO
+    description = ReturnDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор возврата."
+          optional = false
+        }
+        order_id {
+          type =  integer
+          description = "Номер заказа."
+          optional = false
+        }
+        creation_date {
+          type =  string
+          description = "Дата создания возврата клиентом."
+          optional = false
+        }
+        update_date {
+          type =  string
+          description = "Дата обновления возврата."
+          optional = false
+        }
+        refund_status {
+          type = RefundStatusType
+          description = ""
+          optional = false
+        }
+        logistic_pickup_point {
+          type = LogisticPickupPointDTO
+          description = ""
+          optional = false
+        }
+        shipment_recipient_type {
+          type = RecipientType
+          description = ""
+          optional = false
+        }
+        shipment_status {
+          type = ReturnShipmentStatusType
+          description = ""
+          optional = false
+        }
+        refund_amount {
+          type =  integer
+          description = "Сумма возврата."
+          optional = false
+        }
+        items {
+          type = array
+          items.type = ReturnItemDTO
+          description = "Список товаров в возврате."
+          optional = true
+        }
+        return_type {
+          type = ReturnType
+          description = ""
+          optional = false
+        }
+        fast_return {
+          type =  boolean
+          description = "Используется ли опция **Быстрый возврат денег за дешевый брак**. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ReturnDTO {
+    title = ReturnDTO
+    description = ReturnDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ReturnDTO
+
+  }
+}

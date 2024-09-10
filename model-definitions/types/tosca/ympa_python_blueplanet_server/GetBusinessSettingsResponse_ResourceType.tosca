@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetBusinessSettingsResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetBusinessSettingsResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+  GetBusinessSettingsInfoDTO = ympa_python_blueplanet_server.resourceTypes.GetBusinessSettingsInfoDTO
+}
+resourceTypes {
+
+  GetBusinessSettingsResponse {
+    title = GetBusinessSettingsResponse
+    description = GetBusinessSettingsResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+        result {
+          type = GetBusinessSettingsInfoDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetBusinessSettingsResponse {
+    title = GetBusinessSettingsResponse
+    description = GetBusinessSettingsResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetBusinessSettingsResponse
+
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "name" },
+      {"model": "type" },
+      {"model": "coords" },
+      {"model": "is_main" },
+      {"model": "shop_outlet_code" },
+      {"model": "visibility" },
+      {"model": "address" },
+      {"model": "phones" },
+      {"model": "working_schedule" },
+      {"model": "delivery_rules" },
+      {"model": "storage_period" },
+      {"model": "id" },
+      {"model": "status" },
+      {"model": "region" },
+      {"model": "shop_outlet_id" },
+      {"model": "working_time" },
+      {"model": "moderation_reason" },
+    ]
+  }]
+}

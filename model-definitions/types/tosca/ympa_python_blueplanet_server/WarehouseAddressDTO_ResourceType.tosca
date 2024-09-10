@@ -1,0 +1,61 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server WarehouseAddressDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a WarehouseAddressDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  GpsDTO = ympa_python_blueplanet_server.resourceTypes.GpsDTO
+}
+resourceTypes {
+
+  WarehouseAddressDTO {
+    title = WarehouseAddressDTO
+    description = WarehouseAddressDTO
+    derivedFrom = Root
+    properties {
+        city {
+          type =  string
+          description = "Город."
+          optional = true
+        }
+        street {
+          type =  string
+          description = "Улица."
+          optional = false
+        }
+        number {
+          type =  string
+          description = "Номер дома."
+          optional = false
+        }
+        building {
+          type =  string
+          description = "Номер строения."
+          optional = false
+        }
+        block {
+          type =  string
+          description = "Номер корпуса."
+          optional = false
+        }
+        gps {
+          type = GpsDTO
+          description = ""
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  WarehouseAddressDTO {
+    title = WarehouseAddressDTO
+    description = WarehouseAddressDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.WarehouseAddressDTO
+
+  }
+}

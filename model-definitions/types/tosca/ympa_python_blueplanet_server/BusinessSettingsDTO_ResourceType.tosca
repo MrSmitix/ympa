@@ -1,0 +1,41 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server BusinessSettingsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a BusinessSettingsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CurrencyType = ympa_python_blueplanet_server.resourceTypes.CurrencyType
+}
+resourceTypes {
+
+  BusinessSettingsDTO {
+    title = BusinessSettingsDTO
+    description = BusinessSettingsDTO
+    derivedFrom = Root
+    properties {
+        only_default_price {
+          type =  boolean
+          description = "Можно ли установить только [базовую цену](*rule): * &#x60;false&#x60; — можно задать и базовую цену, и цены в конкретных магазинах. * &#x60;true&#x60; — можно задать только базовую цену. "
+          optional = false
+        }
+        currency {
+          type = CurrencyType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  BusinessSettingsDTO {
+    title = BusinessSettingsDTO
+    description = BusinessSettingsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.BusinessSettingsDTO
+
+  }
+}

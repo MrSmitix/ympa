@@ -1,0 +1,53 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderBoxLayoutItemDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderBoxLayoutItemDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  BriefOrderItemInstanceDTO = ympa_python_blueplanet_server.resourceTypes.BriefOrderItemInstanceDTO
+  OrderBoxLayoutPartialCountDTO = ympa_python_blueplanet_server.resourceTypes.OrderBoxLayoutPartialCountDTO
+}
+resourceTypes {
+
+  OrderBoxLayoutItemDTO {
+    title = OrderBoxLayoutItemDTO
+    description = OrderBoxLayoutItemDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор товара в заказе.  {% cut \&quot;Где его взять\&quot; %}  Идентификатор приходит в ответе на запрос [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) и в запросе Маркета [POST order/accept](../../pushapi/reference/orderAccept.md) — параметр &#x60;id&#x60; в &#x60;items&#x60;.  {% endcut %}   "
+          optional = true
+        }
+        full_count {
+          type =  integer
+          description = "Количество единиц товара в коробке.  Используйте это поле, если в коробке поедут целые товары, не разделенные на части. Не используйте это поле одновременно с &#x60;partialCount&#x60;. "
+          optional = false
+        }
+        partial_count {
+          type = OrderBoxLayoutPartialCountDTO
+          description = ""
+          optional = false
+        }
+        instances {
+          type = array
+          items.type = BriefOrderItemInstanceDTO
+          description = "Переданные вами коды маркировки."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderBoxLayoutItemDTO {
+    title = OrderBoxLayoutItemDTO
+    description = OrderBoxLayoutItemDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderBoxLayoutItemDTO
+
+  }
+}

@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetHiddenOffersResultDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetHiddenOffersResultDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  HiddenOfferDTO = ympa_python_blueplanet_server.resourceTypes.HiddenOfferDTO
+  ScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ScrollingPagerDTO
+}
+resourceTypes {
+
+  GetHiddenOffersResultDTO {
+    title = GetHiddenOffersResultDTO
+    description = GetHiddenOffersResultDTO
+    derivedFrom = Root
+    properties {
+        paging {
+          type = ScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+        hidden_offers {
+          type = array
+          items.type = HiddenOfferDTO
+          description = "Список скрытых товаров."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetHiddenOffersResultDTO {
+    title = GetHiddenOffersResultDTO
+    description = GetHiddenOffersResultDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetHiddenOffersResultDTO
+
+  }
+}

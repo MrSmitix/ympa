@@ -1,0 +1,55 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PickupAddressDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PickupAddressDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  PickupAddressDTO {
+    title = PickupAddressDTO
+    description = PickupAddressDTO
+    derivedFrom = Root
+    properties {
+        country {
+          type =  string
+          description = "Страна."
+          optional = false
+        }
+        city {
+          type =  string
+          description = "Город."
+          optional = false
+        }
+        street {
+          type =  string
+          description = "Улица."
+          optional = false
+        }
+        house {
+          type =  string
+          description = "Номер дома."
+          optional = false
+        }
+        postcode {
+          type =  string
+          description = "Почтовый индекс."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PickupAddressDTO {
+    title = PickupAddressDTO
+    description = PickupAddressDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PickupAddressDTO
+
+  }
+}

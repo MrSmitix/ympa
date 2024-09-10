@@ -1,0 +1,45 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ChatMessagePayloadDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ChatMessagePayloadDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ChatMessagePayloadDTO {
+    title = ChatMessagePayloadDTO
+    description = ChatMessagePayloadDTO
+    derivedFrom = Root
+    properties {
+        name {
+          type =  string
+          description = "Имя файла."
+          optional = true
+        }
+        url {
+          type =  string
+          description = "Ссылка для скачивания файла."
+          optional = true
+        }
+        size {
+          type =  integer
+          description = "Размер файла в байтах."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ChatMessagePayloadDTO {
+    title = ChatMessagePayloadDTO
+    description = ChatMessagePayloadDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ChatMessagePayloadDTO
+
+  }
+}

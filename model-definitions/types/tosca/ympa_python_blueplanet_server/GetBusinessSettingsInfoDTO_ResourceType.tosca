@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetBusinessSettingsInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetBusinessSettingsInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  BusinessDTO = ympa_python_blueplanet_server.resourceTypes.BusinessDTO
+  BusinessSettingsDTO = ympa_python_blueplanet_server.resourceTypes.BusinessSettingsDTO
+}
+resourceTypes {
+
+  GetBusinessSettingsInfoDTO {
+    title = GetBusinessSettingsInfoDTO
+    description = GetBusinessSettingsInfoDTO
+    derivedFrom = Root
+    properties {
+        info {
+          type = BusinessDTO
+          description = ""
+          optional = false
+        }
+        settings {
+          type = BusinessSettingsDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetBusinessSettingsInfoDTO {
+    title = GetBusinessSettingsInfoDTO
+    description = GetBusinessSettingsInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetBusinessSettingsInfoDTO
+
+  }
+}

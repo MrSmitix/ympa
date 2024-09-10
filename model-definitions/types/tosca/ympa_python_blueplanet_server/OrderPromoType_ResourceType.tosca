@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderPromoType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderPromoType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrderPromoType {
+    title = OrderPromoType
+    description = OrderPromoType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderPromoType {
+    title = OrderPromoType
+    description = OrderPromoType
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderPromoType
+
+  }
+}

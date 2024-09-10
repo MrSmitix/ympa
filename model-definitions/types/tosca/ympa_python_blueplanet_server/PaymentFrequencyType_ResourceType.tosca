@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PaymentFrequencyType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PaymentFrequencyType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  PaymentFrequencyType {
+    title = PaymentFrequencyType
+    description = PaymentFrequencyType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  PaymentFrequencyType {
+    title = PaymentFrequencyType
+    description = PaymentFrequencyType
+    implements = ympa_python_blueplanet_server.resourceTypes.PaymentFrequencyType
+
+  }
+}

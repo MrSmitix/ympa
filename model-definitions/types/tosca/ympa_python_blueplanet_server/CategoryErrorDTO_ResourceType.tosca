@@ -1,0 +1,41 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CategoryErrorDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CategoryErrorDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CategoryErrorType = ympa_python_blueplanet_server.resourceTypes.CategoryErrorType
+}
+resourceTypes {
+
+  CategoryErrorDTO {
+    title = CategoryErrorDTO
+    description = CategoryErrorDTO
+    derivedFrom = Root
+    properties {
+        category_id {
+          type =  integer
+          description = "Идентификатор категории."
+          optional = false
+        }
+        type {
+          type = CategoryErrorType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CategoryErrorDTO {
+    title = CategoryErrorDTO
+    description = CategoryErrorDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CategoryErrorDTO
+
+  }
+}

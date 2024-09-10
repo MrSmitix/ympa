@@ -1,0 +1,25 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "return_item_id" },
+      {"model": "count" },
+      {"model": "comment" },
+      {"model": "reason_type" },
+      {"model": "subreason_type" },
+      {"model": "decision_type" },
+      {"model": "refund_amount" },
+      {"model": "partner_compensation" },
+      {"model": "images" },
+    ]
+  }]
+}

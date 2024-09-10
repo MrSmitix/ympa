@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetOffersResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetOffersResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FlippingPagerDTO = ympa_python_blueplanet_server.resourceTypes.FlippingPagerDTO
+  OfferDTO = ympa_python_blueplanet_server.resourceTypes.OfferDTO
+}
+resourceTypes {
+
+  GetOffersResponse {
+    title = GetOffersResponse
+    description = GetOffersResponse
+    derivedFrom = Root
+    properties {
+        offers {
+          type = array
+          items.type = OfferDTO
+          description = "Список предложений магазина."
+          optional = true
+        }
+        pager {
+          type = FlippingPagerDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetOffersResponse {
+    title = GetOffersResponse
+    description = GetOffersResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetOffersResponse
+
+  }
+}

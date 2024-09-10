@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedContentErrorDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedContentErrorDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedContentErrorType = ympa_python_blueplanet_server.resourceTypes.FeedContentErrorType
+}
+resourceTypes {
+
+  FeedContentErrorDTO {
+    title = FeedContentErrorDTO
+    description = FeedContentErrorDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = FeedContentErrorType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedContentErrorDTO {
+    title = FeedContentErrorDTO
+    description = FeedContentErrorDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedContentErrorDTO
+
+  }
+}

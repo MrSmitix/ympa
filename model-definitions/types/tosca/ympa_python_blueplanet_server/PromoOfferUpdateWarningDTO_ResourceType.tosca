@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PromoOfferUpdateWarningDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PromoOfferUpdateWarningDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  PromoOfferUpdateWarningCodeType = ympa_python_blueplanet_server.resourceTypes.PromoOfferUpdateWarningCodeType
+}
+resourceTypes {
+
+  PromoOfferUpdateWarningDTO {
+    title = PromoOfferUpdateWarningDTO
+    description = PromoOfferUpdateWarningDTO
+    derivedFrom = Root
+    properties {
+        code {
+          type = PromoOfferUpdateWarningCodeType
+          description = ""
+          optional = true
+        }
+        campaign_ids {
+          type = array
+          items.type =  integer
+          description = "Идентификаторы магазинов в кабинете, для которых получены предупреждения.  Не возвращается, если предупреждения действуют для всех магазинов в кабинете. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PromoOfferUpdateWarningDTO {
+    title = PromoOfferUpdateWarningDTO
+    description = PromoOfferUpdateWarningDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PromoOfferUpdateWarningDTO
+
+  }
+}

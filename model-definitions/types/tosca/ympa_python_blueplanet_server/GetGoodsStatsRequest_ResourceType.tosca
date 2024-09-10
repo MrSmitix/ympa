@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetGoodsStatsRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetGoodsStatsRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GetGoodsStatsRequest {
+    title = GetGoodsStatsRequest
+    description = GetGoodsStatsRequest
+    derivedFrom = Root
+    properties {
+        shop_skus {
+          type = array
+          items.type =  string
+          description = "Список ваших идентификаторов SKU. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetGoodsStatsRequest {
+    title = GetGoodsStatsRequest
+    description = GetGoodsStatsRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetGoodsStatsRequest
+
+  }
+}

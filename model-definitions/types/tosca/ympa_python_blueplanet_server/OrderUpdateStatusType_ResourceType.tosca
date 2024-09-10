@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderUpdateStatusType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderUpdateStatusType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrderUpdateStatusType {
+    title = OrderUpdateStatusType
+    description = OrderUpdateStatusType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderUpdateStatusType {
+    title = OrderUpdateStatusType
+    description = OrderUpdateStatusType
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderUpdateStatusType
+
+  }
+}

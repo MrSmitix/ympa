@@ -1,0 +1,50 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferWeightDimensionsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferWeightDimensionsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OfferWeightDimensionsDTO {
+    title = OfferWeightDimensionsDTO
+    description = OfferWeightDimensionsDTO
+    derivedFrom = Root
+    properties {
+        length {
+          type =  
+          description = "Длина упаковки в см. "
+          optional = true
+        }
+        width {
+          type =  
+          description = "Ширина упаковки в см. "
+          optional = true
+        }
+        height {
+          type =  
+          description = "Высота упаковки в см. "
+          optional = true
+        }
+        weight {
+          type =  
+          description = "Вес товара в кг с учетом упаковки (брутто). "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferWeightDimensionsDTO {
+    title = OfferWeightDimensionsDTO
+    description = OfferWeightDimensionsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferWeightDimensionsDTO
+
+  }
+}

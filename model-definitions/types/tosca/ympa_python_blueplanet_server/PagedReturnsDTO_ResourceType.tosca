@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PagedReturnsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PagedReturnsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ForwardScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ForwardScrollingPagerDTO
+  ReturnDTO = ympa_python_blueplanet_server.resourceTypes.ReturnDTO
+}
+resourceTypes {
+
+  PagedReturnsDTO {
+    title = PagedReturnsDTO
+    description = PagedReturnsDTO
+    derivedFrom = Root
+    properties {
+        paging {
+          type = ForwardScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+        returns {
+          type = array
+          items.type = ReturnDTO
+          description = "Список возвратов."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PagedReturnsDTO {
+    title = PagedReturnsDTO
+    description = PagedReturnsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PagedReturnsDTO
+
+  }
+}

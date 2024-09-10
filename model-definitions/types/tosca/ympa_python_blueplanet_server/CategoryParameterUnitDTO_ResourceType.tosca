@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CategoryParameterUnitDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CategoryParameterUnitDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  UnitDTO = ympa_python_blueplanet_server.resourceTypes.UnitDTO
+}
+resourceTypes {
+
+  CategoryParameterUnitDTO {
+    title = CategoryParameterUnitDTO
+    description = CategoryParameterUnitDTO
+    derivedFrom = Root
+    properties {
+        default_unit_id {
+          type =  integer
+          description = "Единица измерения по умолчанию."
+          optional = true
+        }
+        units {
+          type = array
+          items.type = UnitDTO
+          description = "Допустимые единицы измерения."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CategoryParameterUnitDTO {
+    title = CategoryParameterUnitDTO
+    description = CategoryParameterUnitDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CategoryParameterUnitDTO
+
+  }
+}

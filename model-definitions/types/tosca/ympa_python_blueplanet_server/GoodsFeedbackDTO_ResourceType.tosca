@@ -1,0 +1,74 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GoodsFeedbackDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GoodsFeedbackDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  GoodsFeedbackDescriptionDTO = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackDescriptionDTO
+  GoodsFeedbackIdentifiersDTO = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackIdentifiersDTO
+  GoodsFeedbackMediaDTO = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackMediaDTO
+  GoodsFeedbackStatisticsDTO = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackStatisticsDTO
+}
+resourceTypes {
+
+  GoodsFeedbackDTO {
+    title = GoodsFeedbackDTO
+    description = GoodsFeedbackDTO
+    derivedFrom = Root
+    properties {
+        feedback_id {
+          type =  integer
+          description = "Идентификатор отзыва. "
+          optional = true
+        }
+        created_at {
+          type =  string
+          description = "Дата и время создания отзыва."
+          optional = true
+        }
+        need_reaction {
+          type =  boolean
+          description = "Нужен ли ответ на отзыв."
+          optional = true
+        }
+        identifiers {
+          type = GoodsFeedbackIdentifiersDTO
+          description = ""
+          optional = true
+        }
+        author {
+          type =  string
+          description = "Имя автора отзыва."
+          optional = false
+        }
+        description {
+          type = GoodsFeedbackDescriptionDTO
+          description = ""
+          optional = false
+        }
+        media {
+          type = GoodsFeedbackMediaDTO
+          description = ""
+          optional = false
+        }
+        statistics {
+          type = GoodsFeedbackStatisticsDTO
+          description = ""
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GoodsFeedbackDTO {
+    title = GoodsFeedbackDTO
+    description = GoodsFeedbackDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackDTO
+
+  }
+}

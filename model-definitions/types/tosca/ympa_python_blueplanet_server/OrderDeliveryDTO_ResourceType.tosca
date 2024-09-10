@@ -1,0 +1,149 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderDeliveryDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderDeliveryDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderCourierDTO = ympa_python_blueplanet_server.resourceTypes.OrderCourierDTO
+  OrderDeliveryAddressDTO = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryAddressDTO
+  OrderDeliveryDatesDTO = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryDatesDTO
+  OrderDeliveryDispatchType = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryDispatchType
+  OrderDeliveryEacType = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryEacType
+  OrderDeliveryPartnerType = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryPartnerType
+  OrderDeliveryType = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryType
+  OrderLiftType = ympa_python_blueplanet_server.resourceTypes.OrderLiftType
+  OrderShipmentDTO = ympa_python_blueplanet_server.resourceTypes.OrderShipmentDTO
+  OrderTrackDTO = ympa_python_blueplanet_server.resourceTypes.OrderTrackDTO
+  OrderVatType = ympa_python_blueplanet_server.resourceTypes.OrderVatType
+  RegionDTO = ympa_python_blueplanet_server.resourceTypes.RegionDTO
+}
+resourceTypes {
+
+  OrderDeliveryDTO {
+    title = OrderDeliveryDTO
+    description = OrderDeliveryDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  string
+          description = "Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом [POST cart](../../pushapi/reference/cart.md). "
+          optional = false
+        }
+        type {
+          type = OrderDeliveryType
+          description = ""
+          optional = false
+        }
+        service_name {
+          type =  string
+          description = "Наименование службы доставки."
+          optional = false
+        }
+        price {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Стоимость доставки смотрите в параметре &#x60;deliveryTotal&#x60;.  {% endnote %}  Стоимость доставки в валюте заказа. "
+          optional = false
+        }
+        delivery_partner_type {
+          type = OrderDeliveryPartnerType
+          description = ""
+          optional = false
+        }
+        courier {
+          type = OrderCourierDTO
+          description = ""
+          optional = false
+        }
+        dates {
+          type = OrderDeliveryDatesDTO
+          description = ""
+          optional = false
+        }
+        region {
+          type = RegionDTO
+          description = ""
+          optional = false
+        }
+        address {
+          type = OrderDeliveryAddressDTO
+          description = ""
+          optional = false
+        }
+        vat {
+          type = OrderVatType
+          description = ""
+          optional = false
+        }
+        delivery_service_id {
+          type =  integer
+          description = "Идентификатор службы доставки."
+          optional = false
+        }
+        lift_type {
+          type = OrderLiftType
+          description = ""
+          optional = false
+        }
+        lift_price {
+          type =  
+          description = "Стоимость подъема на этаж."
+          optional = false
+        }
+        outlet_code {
+          type =  string
+          description = "Идентификатор пункта самовывоза, присвоенный магазином."
+          optional = false
+        }
+        outlet_storage_limit_date {
+          type =  string
+          description = "Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. "
+          optional = false
+        }
+        dispatch_type {
+          type = OrderDeliveryDispatchType
+          description = ""
+          optional = false
+        }
+        tracks {
+          type = array
+          items.type = OrderTrackDTO
+          description = "Информация для отслеживания перемещений посылки."
+          optional = false
+        }
+        shipments {
+          type = array
+          items.type = OrderShipmentDTO
+          description = "Информация о посылках."
+          optional = false
+        }
+        estimated {
+          type =  boolean
+          description = "Приблизительная ли дата доставки."
+          optional = false
+        }
+        eac_type {
+          type = OrderDeliveryEacType
+          description = ""
+          optional = false
+        }
+        eac_code {
+          type =  string
+          description = "Код подтверждения ЭАПП (для типа &#x60;MERCHANT_TO_COURIER&#x60;). "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderDeliveryDTO {
+    title = OrderDeliveryDTO
+    description = OrderDeliveryDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryDTO
+
+  }
+}

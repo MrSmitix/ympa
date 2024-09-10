@@ -1,0 +1,52 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderLabelDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderLabelDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ParcelBoxLabelDTO = ympa_python_blueplanet_server.resourceTypes.ParcelBoxLabelDTO
+}
+resourceTypes {
+
+  OrderLabelDTO {
+    title = OrderLabelDTO
+    description = OrderLabelDTO
+    derivedFrom = Root
+    properties {
+        order_id {
+          type =  integer
+          description = "Идентификатор заказа."
+          optional = true
+        }
+        places_number {
+          type =  integer
+          description = "Количество коробок в заказе."
+          optional = true
+        }
+        url {
+          type =  string
+          description = "URL файла с ярлыками‑наклейками на все коробки в заказе.  Соответствует URL, по которому выполняется запрос [GET campaigns/{campaignId}/orders/{orderId}/delivery/labels](../../reference/orders/generateOrderLabels.md). "
+          optional = true
+        }
+        parcel_box_labels {
+          type = array
+          items.type = ParcelBoxLabelDTO
+          description = "Информация на ярлыке."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderLabelDTO {
+    title = OrderLabelDTO
+    description = OrderLabelDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderLabelDTO
+
+  }
+}

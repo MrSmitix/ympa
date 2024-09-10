@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdatePriceWithDiscountDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdatePriceWithDiscountDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CurrencyType = ympa_python_blueplanet_server.resourceTypes.CurrencyType
+}
+resourceTypes {
+
+  UpdatePriceWithDiscountDTO {
+    title = UpdatePriceWithDiscountDTO
+    description = UpdatePriceWithDiscountDTO
+    derivedFrom = Root
+    properties {
+        value {
+          type =  
+          description = "Значение."
+          optional = true
+        }
+        currency_id {
+          type = CurrencyType
+          description = ""
+          optional = true
+        }
+        discount_base {
+          type =  
+          description = "Цена до скидки.  Число должно быть целым. Вы можете указать цену со скидкой от 5 до 99%.  Передавайте этот параметр при каждом обновлении цены, если предоставляете скидку на товар. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdatePriceWithDiscountDTO {
+    title = UpdatePriceWithDiscountDTO
+    description = UpdatePriceWithDiscountDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdatePriceWithDiscountDTO
+
+  }
+}

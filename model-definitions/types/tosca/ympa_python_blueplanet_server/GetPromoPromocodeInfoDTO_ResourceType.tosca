@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetPromoPromocodeInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetPromoPromocodeInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GetPromoPromocodeInfoDTO {
+    title = GetPromoPromocodeInfoDTO
+    description = GetPromoPromocodeInfoDTO
+    derivedFrom = Root
+    properties {
+        promocode {
+          type =  string
+          description = "Промокод."
+          optional = true
+        }
+        discount {
+          type =  integer
+          description = "Процент скидки по промокоду."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetPromoPromocodeInfoDTO {
+    title = GetPromoPromocodeInfoDTO
+    description = GetPromoPromocodeInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetPromoPromocodeInfoDTO
+
+  }
+}

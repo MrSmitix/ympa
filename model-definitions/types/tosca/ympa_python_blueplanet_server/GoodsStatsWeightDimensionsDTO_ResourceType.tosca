@@ -1,0 +1,50 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GoodsStatsWeightDimensionsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GoodsStatsWeightDimensionsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GoodsStatsWeightDimensionsDTO {
+    title = GoodsStatsWeightDimensionsDTO
+    description = GoodsStatsWeightDimensionsDTO
+    derivedFrom = Root
+    properties {
+        length {
+          type =  
+          description = "Длина товара в сантиметрах."
+          optional = false
+        }
+        width {
+          type =  
+          description = "Ширина товара в сантиметрах."
+          optional = false
+        }
+        height {
+          type =  
+          description = "Высота товара в сантиметрах."
+          optional = false
+        }
+        weight {
+          type =  
+          description = "Вес товара в килограммах."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GoodsStatsWeightDimensionsDTO {
+    title = GoodsStatsWeightDimensionsDTO
+    description = GoodsStatsWeightDimensionsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GoodsStatsWeightDimensionsDTO
+
+  }
+}

@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetCategoriesMaxSaleQuantumRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetCategoriesMaxSaleQuantumRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GetCategoriesMaxSaleQuantumRequest {
+    title = GetCategoriesMaxSaleQuantumRequest
+    description = GetCategoriesMaxSaleQuantumRequest
+    derivedFrom = Root
+    properties {
+        market_category_ids {
+          type = array
+          items.type =  integer
+          description = "Идентификаторы листовых категории на Маркете — тех, у которых нет дочерних категорий."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetCategoriesMaxSaleQuantumRequest {
+    title = GetCategoriesMaxSaleQuantumRequest
+    description = GetCategoriesMaxSaleQuantumRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetCategoriesMaxSaleQuantumRequest
+
+  }
+}

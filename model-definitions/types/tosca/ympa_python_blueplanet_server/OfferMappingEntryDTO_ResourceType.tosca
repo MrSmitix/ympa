@@ -1,0 +1,52 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferMappingEntryDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferMappingEntryDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  MappingsOfferDTO = ympa_python_blueplanet_server.resourceTypes.MappingsOfferDTO
+  OfferMappingDTO = ympa_python_blueplanet_server.resourceTypes.OfferMappingDTO
+}
+resourceTypes {
+
+  OfferMappingEntryDTO {
+    title = OfferMappingEntryDTO
+    description = OfferMappingEntryDTO
+    derivedFrom = Root
+    properties {
+        mapping {
+          type = OfferMappingDTO
+          description = ""
+          optional = false
+        }
+        awaiting_moderation_mapping {
+          type = OfferMappingDTO
+          description = ""
+          optional = false
+        }
+        rejected_mapping {
+          type = OfferMappingDTO
+          description = ""
+          optional = false
+        }
+        offer {
+          type = MappingsOfferDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferMappingEntryDTO {
+    title = OfferMappingEntryDTO
+    description = OfferMappingEntryDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferMappingEntryDTO
+
+  }
+}

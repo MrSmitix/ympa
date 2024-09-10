@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetWarehousesResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetWarehousesResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+  WarehousesDTO = ympa_python_blueplanet_server.resourceTypes.WarehousesDTO
+}
+resourceTypes {
+
+  GetWarehousesResponse {
+    title = GetWarehousesResponse
+    description = GetWarehousesResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+        result {
+          type = WarehousesDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetWarehousesResponse {
+    title = GetWarehousesResponse
+    description = GetWarehousesResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetWarehousesResponse
+
+  }
+}

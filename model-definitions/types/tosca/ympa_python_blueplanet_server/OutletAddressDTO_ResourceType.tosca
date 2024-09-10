@@ -1,0 +1,75 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OutletAddressDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OutletAddressDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OutletAddressDTO {
+    title = OutletAddressDTO
+    description = OutletAddressDTO
+    derivedFrom = Root
+    properties {
+        region_id {
+          type =  integer
+          description = "Идентификатор региона.  Идентификатор можно получить c помощью запроса [GET regions](../../reference/regions/searchRegionsByName.md).  {% note alert %}  При создании и редактировании точек продаж можно указывать только регионы типов &#x60;TOWN&#x60; (город), &#x60;CITY&#x60; (крупный город) и &#x60;REPUBLIC_AREA&#x60; (район субъекта федерации). Тип региона указан в выходных параметрах type запросов [GET regions](../../reference/regions/searchRegionsByName.md) и [GET regions/{regionId}](../../reference/regions/searchRegionsById.md).  {% endnote %} "
+          optional = true
+        }
+        street {
+          type =  string
+          description = "Улица."
+          optional = false
+        }
+        number {
+          type =  string
+          description = "Номер дома."
+          optional = false
+        }
+        building {
+          type =  string
+          description = "Номер строения."
+          optional = false
+        }
+        estate {
+          type =  string
+          description = "Номер владения."
+          optional = false
+        }
+        block {
+          type =  string
+          description = "Номер корпуса."
+          optional = false
+        }
+        additional {
+          type =  string
+          description = "Дополнительная информация."
+          optional = false
+        }
+        km {
+          type =  integer
+          description = "Порядковый номер километра дороги, на котором располагается точка продаж, если отсутствует улица."
+          optional = false
+        }
+        city {
+          type =  string
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его. Город или населенный пункт возвращается в параметре &#x60;regionId&#x60;.  {% endnote %} "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OutletAddressDTO {
+    title = OutletAddressDTO
+    description = OutletAddressDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OutletAddressDTO
+
+  }
+}

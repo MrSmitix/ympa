@@ -1,0 +1,52 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedContentDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedContentDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedContentErrorDTO = ympa_python_blueplanet_server.resourceTypes.FeedContentErrorDTO
+  FeedStatusType = ympa_python_blueplanet_server.resourceTypes.FeedStatusType
+}
+resourceTypes {
+
+  FeedContentDTO {
+    title = FeedContentDTO
+    description = FeedContentDTO
+    derivedFrom = Root
+    properties {
+        rejected_offers_count {
+          type =  integer
+          description = "Количество предложений, в которых найдены ошибки на этапе загрузки прайс-листа. Выводится, если параметр &#x60;content status&#x3D;OK&#x60;. "
+          optional = false
+        }
+        status {
+          type = FeedStatusType
+          description = ""
+          optional = false
+        }
+        total_offers_count {
+          type =  integer
+          description = "Количество предложений в прайс-листе. Выводится, если параметр &#x60;content status&#x3D;OK&#x60;. "
+          optional = false
+        }
+        error {
+          type = FeedContentErrorDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedContentDTO {
+    title = FeedContentDTO
+    description = FeedContentDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedContentDTO
+
+  }
+}

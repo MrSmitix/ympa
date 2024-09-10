@@ -1,0 +1,29 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "url" },
+      {"model": "supplier_name" },
+      {"model": "delivery_service_name" },
+      {"model": "order_id" },
+      {"model": "order_num" },
+      {"model": "recipient_name" },
+      {"model": "box_id" },
+      {"model": "fulfilment_id" },
+      {"model": "place" },
+      {"model": "weight" },
+      {"model": "delivery_service_id" },
+      {"model": "delivery_address" },
+      {"model": "shipment_date" },
+    ]
+  }]
+}

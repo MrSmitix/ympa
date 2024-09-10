@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server DeleteOffersFromArchiveRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a DeleteOffersFromArchiveRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  DeleteOffersFromArchiveRequest {
+    title = DeleteOffersFromArchiveRequest
+    description = DeleteOffersFromArchiveRequest
+    derivedFrom = Root
+    properties {
+        offer_ids {
+          type = array
+          items.type =  string
+          description = "Список товаров, которые нужно восстановить из архива."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  DeleteOffersFromArchiveRequest {
+    title = DeleteOffersFromArchiveRequest
+    description = DeleteOffersFromArchiveRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.DeleteOffersFromArchiveRequest
+
+  }
+}

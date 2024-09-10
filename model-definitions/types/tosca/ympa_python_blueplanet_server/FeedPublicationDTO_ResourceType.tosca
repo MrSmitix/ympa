@@ -1,0 +1,48 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedPublicationDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedPublicationDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedPublicationFullDTO = ympa_python_blueplanet_server.resourceTypes.FeedPublicationFullDTO
+  FeedPublicationPriceAndStockUpdateDTO = ympa_python_blueplanet_server.resourceTypes.FeedPublicationPriceAndStockUpdateDTO
+  FeedStatusType = ympa_python_blueplanet_server.resourceTypes.FeedStatusType
+}
+resourceTypes {
+
+  FeedPublicationDTO {
+    title = FeedPublicationDTO
+    description = FeedPublicationDTO
+    derivedFrom = Root
+    properties {
+        status {
+          type = FeedStatusType
+          description = ""
+          optional = false
+        }
+        full {
+          type = FeedPublicationFullDTO
+          description = ""
+          optional = false
+        }
+        price_and_stock_update {
+          type = FeedPublicationPriceAndStockUpdateDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedPublicationDTO {
+    title = FeedPublicationDTO
+    description = FeedPublicationDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedPublicationDTO
+
+  }
+}

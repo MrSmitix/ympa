@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PriceQuarantineVerdictDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PriceQuarantineVerdictDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  PriceQuarantineVerdictParameterDTO = ympa_python_blueplanet_server.resourceTypes.PriceQuarantineVerdictParameterDTO
+  PriceQuarantineVerdictType = ympa_python_blueplanet_server.resourceTypes.PriceQuarantineVerdictType
+}
+resourceTypes {
+
+  PriceQuarantineVerdictDTO {
+    title = PriceQuarantineVerdictDTO
+    description = PriceQuarantineVerdictDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = PriceQuarantineVerdictType
+          description = ""
+          optional = false
+        }
+        params {
+          type = array
+          items.type = PriceQuarantineVerdictParameterDTO
+          description = "Цена, из-за которой товар попал в карантин, и значения для сравнения. Конкретный набор параметров зависит от типа карантина."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PriceQuarantineVerdictDTO {
+    title = PriceQuarantineVerdictDTO
+    description = PriceQuarantineVerdictDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PriceQuarantineVerdictDTO
+
+  }
+}

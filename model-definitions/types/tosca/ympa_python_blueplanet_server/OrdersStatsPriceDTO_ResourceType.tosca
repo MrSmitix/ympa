@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrdersStatsPriceDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrdersStatsPriceDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrdersStatsPriceType = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPriceType
+}
+resourceTypes {
+
+  OrdersStatsPriceDTO {
+    title = OrdersStatsPriceDTO
+    description = OrdersStatsPriceDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = OrdersStatsPriceType
+          description = ""
+          optional = false
+        }
+        cost_per_item {
+          type =  
+          description = "Цена или скидка на единицу товара в заказе. Указана в рублях. Точность — два знака после запятой. "
+          optional = false
+        }
+        total {
+          type =  
+          description = "Суммарная цена или скидка на все единицы товара в заказе. Указана в рублях. Точность — два знака после запятой. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrdersStatsPriceDTO {
+    title = OrdersStatsPriceDTO
+    description = OrdersStatsPriceDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPriceDTO
+
+  }
+}

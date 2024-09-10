@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server TimePeriodDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a TimePeriodDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  TimeUnitType = ympa_python_blueplanet_server.resourceTypes.TimeUnitType
+}
+resourceTypes {
+
+  TimePeriodDTO {
+    title = TimePeriodDTO
+    description = TimePeriodDTO
+    derivedFrom = Root
+    properties {
+        time_period {
+          type =  integer
+          description = "Продолжительность в указанных единицах."
+          optional = true
+        }
+        time_unit {
+          type = TimeUnitType
+          description = ""
+          optional = true
+        }
+        comment {
+          type =  string
+          description = "Комментарий."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  TimePeriodDTO {
+    title = TimePeriodDTO
+    description = TimePeriodDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.TimePeriodDTO
+
+  }
+}

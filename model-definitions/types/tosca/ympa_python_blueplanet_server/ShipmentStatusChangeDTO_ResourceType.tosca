@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ShipmentStatusChangeDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ShipmentStatusChangeDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ShipmentStatusType = ympa_python_blueplanet_server.resourceTypes.ShipmentStatusType
+}
+resourceTypes {
+
+  ShipmentStatusChangeDTO {
+    title = ShipmentStatusChangeDTO
+    description = ShipmentStatusChangeDTO
+    derivedFrom = Root
+    properties {
+        status {
+          type = ShipmentStatusType
+          description = ""
+          optional = false
+        }
+        description {
+          type =  string
+          description = "Описание статуса отгрузки."
+          optional = false
+        }
+        update_time {
+          type =  string
+          description = "Время последнего изменения статуса отгрузки."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ShipmentStatusChangeDTO {
+    title = ShipmentStatusChangeDTO
+    description = ShipmentStatusChangeDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ShipmentStatusChangeDTO
+
+  }
+}

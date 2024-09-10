@@ -1,0 +1,32 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "price" },
+      {"model": "feed_id" },
+      {"model": "id" },
+      {"model": "shop_category_id" },
+      {"model": "market_category_id" },
+      {"model": "pre_discount_price" },
+      {"model": "discount" },
+      {"model": "cut_price" },
+      {"model": "url" },
+      {"model": "model_id" },
+      {"model": "name" },
+      {"model": "currency" },
+      {"model": "bid" },
+      {"model": "cbid" },
+      {"model": "fee" },
+      {"model": "blocked" },
+    ]
+  }]
+}

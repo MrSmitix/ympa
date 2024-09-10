@@ -1,0 +1,107 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedbackDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedbackDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedbackAuthorDTO = ympa_python_blueplanet_server.resourceTypes.FeedbackAuthorDTO
+  FeedbackCommentDTO = ympa_python_blueplanet_server.resourceTypes.FeedbackCommentDTO
+  FeedbackGradesDTO = ympa_python_blueplanet_server.resourceTypes.FeedbackGradesDTO
+  FeedbackOrderDTO = ympa_python_blueplanet_server.resourceTypes.FeedbackOrderDTO
+  FeedbackShopDTO = ympa_python_blueplanet_server.resourceTypes.FeedbackShopDTO
+  FeedbackStateType = ympa_python_blueplanet_server.resourceTypes.FeedbackStateType
+}
+resourceTypes {
+
+  FeedbackDTO {
+    title = FeedbackDTO
+    description = FeedbackDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор отзыва."
+          optional = false
+        }
+        created_at {
+          type =  string
+          description = "Дата и время создания отзыва.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:00:00+03:00&#x60;. "
+          optional = false
+        }
+        text {
+          type =  string
+          description = "Комментарий автора отзыва."
+          optional = false
+        }
+        state {
+          type = FeedbackStateType
+          description = ""
+          optional = false
+        }
+        author {
+          type = FeedbackAuthorDTO
+          description = ""
+          optional = false
+        }
+        pro {
+          type =  string
+          description = "Достоинства магазина, описанные в отзыве."
+          optional = false
+        }
+        contra {
+          type =  string
+          description = "Недостатки магазина, описанные в отзыве."
+          optional = false
+        }
+        comments {
+          type = array
+          items.type = FeedbackCommentDTO
+          description = "Переписка автора отзыва с магазином."
+          optional = true
+        }
+        shop {
+          type = FeedbackShopDTO
+          description = ""
+          optional = false
+        }
+        resolved {
+          type =  boolean
+          description = "Решена ли проблема автора отзыва:  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет.  Если проблема решена, около отзыва на странице магазина появляется соответствующая надпись. "
+          optional = false
+        }
+        verified {
+          type =  boolean
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Является ли отзыв рекомендованным:  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет. "
+          optional = false
+        }
+        recommend {
+          type =  boolean
+          description = "Купил бы автор отзыва в магазине снова:  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет. "
+          optional = false
+        }
+        grades {
+          type = FeedbackGradesDTO
+          description = ""
+          optional = false
+        }
+        order {
+          type = FeedbackOrderDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedbackDTO {
+    title = FeedbackDTO
+    description = FeedbackDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedbackDTO
+
+  }
+}

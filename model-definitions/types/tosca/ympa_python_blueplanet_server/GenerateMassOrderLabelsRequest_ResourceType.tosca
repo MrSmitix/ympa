@@ -1,0 +1,41 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GenerateMassOrderLabelsRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GenerateMassOrderLabelsRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GenerateMassOrderLabelsRequest {
+    title = GenerateMassOrderLabelsRequest
+    description = GenerateMassOrderLabelsRequest
+    derivedFrom = Root
+    properties {
+        business_id {
+          type =  integer
+          description = "Идентификатор кабинета."
+          optional = true
+        }
+        order_ids {
+          type = array
+          items.type =  integer
+          description = "Список идентификаторов заказов."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GenerateMassOrderLabelsRequest {
+    title = GenerateMassOrderLabelsRequest
+    description = GenerateMassOrderLabelsRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GenerateMassOrderLabelsRequest
+
+  }
+}

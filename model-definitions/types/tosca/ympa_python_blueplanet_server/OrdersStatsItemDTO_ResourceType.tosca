@@ -1,0 +1,97 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrdersStatsItemDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrdersStatsItemDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrdersStatsDetailsDTO = ympa_python_blueplanet_server.resourceTypes.OrdersStatsDetailsDTO
+  OrdersStatsPriceDTO = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPriceDTO
+  OrdersStatsWarehouseDTO = ympa_python_blueplanet_server.resourceTypes.OrdersStatsWarehouseDTO
+  import re = ympa_python_blueplanet_server.resourceTypes.import re
+}
+resourceTypes {
+
+  OrdersStatsItemDTO {
+    title = OrdersStatsItemDTO
+    description = OrdersStatsItemDTO
+    derivedFrom = Root
+    properties {
+        offer_name {
+          type =  string
+          description = "Название товара."
+          optional = false
+        }
+        market_sku {
+          type =  integer
+          description = "SKU на Маркете."
+          optional = false
+        }
+        shop_sku {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = false
+        }
+        count {
+          type =  integer
+          description = "Количество единиц товара с учетом удаленных единиц.  Если из заказа удалены все единицы товара, он попадет только в список &#x60;initialItems&#x60;. "
+          optional = false
+        }
+        prices {
+          type = array
+          items.type = OrdersStatsPriceDTO
+          description = "Цена или скидки на товар."
+          optional = false
+        }
+        warehouse {
+          type = OrdersStatsWarehouseDTO
+          description = ""
+          optional = false
+        }
+        details {
+          type = array
+          items.type = OrdersStatsDetailsDTO
+          description = "Информация об удалении товара из заказа."
+          optional = false
+        }
+        cis_list {
+          type = array
+          items.type =  string
+          description = "Список кодов идентификации товара [в системе «Честный ЗНАК»](https://честныйзнак.рф/)."
+          optional = false
+        }
+        initial_count {
+          type =  integer
+          description = "Первоначальное количество единиц товара."
+          optional = false
+        }
+        bid_fee {
+          type =  integer
+          description = "Списанная ставка ближайшего конкурента.  Указывается в процентах от стоимости товара и умножается на 100. Например, ставка 5% обозначается как 500. "
+          optional = false
+        }
+        cofinance_threshold {
+          type =  
+          description = "Порог для скидок с Маркетом на момент оформления заказа. [Что это такое?](https://yandex.ru/support/marketplace/marketing/smart-pricing.html#sponsored-discounts)  Указан в рублях. Точность — два знака после запятой. "
+          optional = false
+        }
+        cofinance_value {
+          type =  
+          description = "Скидка с Маркетом. [Что это такое?](https://yandex.ru/support/marketplace/marketing/smart-pricing.html#sponsored-discounts)  Указана в рублях. Точность — два знака после запятой. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrdersStatsItemDTO {
+    title = OrdersStatsItemDTO
+    description = OrdersStatsItemDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrdersStatsItemDTO
+
+  }
+}

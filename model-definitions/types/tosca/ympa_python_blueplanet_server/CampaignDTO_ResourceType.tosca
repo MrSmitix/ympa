@@ -1,0 +1,57 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CampaignDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CampaignDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  BusinessDTO = ympa_python_blueplanet_server.resourceTypes.BusinessDTO
+  PlacementType = ympa_python_blueplanet_server.resourceTypes.PlacementType
+}
+resourceTypes {
+
+  CampaignDTO {
+    title = CampaignDTO
+    description = CampaignDTO
+    derivedFrom = Root
+    properties {
+        domain {
+          type =  string
+          description = "URL магазина."
+          optional = false
+        }
+        id {
+          type =  integer
+          description = "Идентификатор кампании."
+          optional = false
+        }
+        client_id {
+          type =  integer
+          description = "Идентификатор плательщика в Яндекс Балансе."
+          optional = false
+        }
+        business {
+          type = BusinessDTO
+          description = ""
+          optional = false
+        }
+        placement_type {
+          type = PlacementType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CampaignDTO {
+    title = CampaignDTO
+    description = CampaignDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CampaignDTO
+
+  }
+}

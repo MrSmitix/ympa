@@ -1,0 +1,56 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderBusinessDocumentsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderBusinessDocumentsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  DocumentDTO = ympa_python_blueplanet_server.resourceTypes.DocumentDTO
+}
+resourceTypes {
+
+  OrderBusinessDocumentsDTO {
+    title = OrderBusinessDocumentsDTO
+    description = OrderBusinessDocumentsDTO
+    derivedFrom = Root
+    properties {
+        upd {
+          type = DocumentDTO
+          description = ""
+          optional = false
+        }
+        ukd {
+          type = DocumentDTO
+          description = ""
+          optional = false
+        }
+        torg_twelve {
+          type = DocumentDTO
+          description = ""
+          optional = false
+        }
+        sf {
+          type = DocumentDTO
+          description = ""
+          optional = false
+        }
+        ksf {
+          type = DocumentDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderBusinessDocumentsDTO {
+    title = OrderBusinessDocumentsDTO
+    description = OrderBusinessDocumentsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderBusinessDocumentsDTO
+
+  }
+}

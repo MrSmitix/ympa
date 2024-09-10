@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetCampaignRegionResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetCampaignRegionResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  RegionDTO = ympa_python_blueplanet_server.resourceTypes.RegionDTO
+}
+resourceTypes {
+
+  GetCampaignRegionResponse {
+    title = GetCampaignRegionResponse
+    description = GetCampaignRegionResponse
+    derivedFrom = Root
+    properties {
+        region {
+          type = RegionDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetCampaignRegionResponse {
+    title = GetCampaignRegionResponse
+    description = GetCampaignRegionResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetCampaignRegionResponse
+
+  }
+}

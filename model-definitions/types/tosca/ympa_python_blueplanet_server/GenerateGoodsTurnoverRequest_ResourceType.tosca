@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GenerateGoodsTurnoverRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GenerateGoodsTurnoverRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GenerateGoodsTurnoverRequest {
+    title = GenerateGoodsTurnoverRequest
+    description = GenerateGoodsTurnoverRequest
+    derivedFrom = Root
+    properties {
+        campaign_id {
+          type =  integer
+          description = "Идентификатор кампании."
+          optional = true
+        }
+        _date {
+          type =  string
+          description = "Дата, за которую нужно рассчитать оборачиваемость. Если параметр не указан, используется текущая дата."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GenerateGoodsTurnoverRequest {
+    title = GenerateGoodsTurnoverRequest
+    description = GenerateGoodsTurnoverRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GenerateGoodsTurnoverRequest
+
+  }
+}

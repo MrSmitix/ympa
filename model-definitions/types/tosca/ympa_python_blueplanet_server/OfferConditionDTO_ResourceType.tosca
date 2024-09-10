@@ -1,0 +1,47 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferConditionDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferConditionDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OfferConditionQualityType = ympa_python_blueplanet_server.resourceTypes.OfferConditionQualityType
+  OfferConditionType = ympa_python_blueplanet_server.resourceTypes.OfferConditionType
+}
+resourceTypes {
+
+  OfferConditionDTO {
+    title = OfferConditionDTO
+    description = OfferConditionDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = OfferConditionType
+          description = ""
+          optional = false
+        }
+        quality {
+          type = OfferConditionQualityType
+          description = ""
+          optional = false
+        }
+        reason {
+          type =  string
+          description = "Описание товара. Подробно опишите дефекты, насколько они заметны и где их искать. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferConditionDTO {
+    title = OfferConditionDTO
+    description = OfferConditionDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferConditionDTO
+
+  }
+}

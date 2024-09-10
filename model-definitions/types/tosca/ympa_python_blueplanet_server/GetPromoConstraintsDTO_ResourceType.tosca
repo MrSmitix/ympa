@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetPromoConstraintsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetPromoConstraintsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GetPromoConstraintsDTO {
+    title = GetPromoConstraintsDTO
+    description = GetPromoConstraintsDTO
+    derivedFrom = Root
+    properties {
+        warehouse_ids {
+          type = array
+          items.type =  integer
+          description = "Идентификаторы складов, для которых действует акция. Товары, которые лежат на других складах, не будут продаваться по акции.  Параметр возвращается, только если в условиях акции есть ограничение по складу. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetPromoConstraintsDTO {
+    title = GetPromoConstraintsDTO
+    description = GetPromoConstraintsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetPromoConstraintsDTO
+
+  }
+}

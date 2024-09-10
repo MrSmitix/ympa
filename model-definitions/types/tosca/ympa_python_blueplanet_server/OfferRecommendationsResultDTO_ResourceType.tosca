@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferRecommendationsResultDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferRecommendationsResultDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OfferRecommendationDTO = ympa_python_blueplanet_server.resourceTypes.OfferRecommendationDTO
+  ScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ScrollingPagerDTO
+}
+resourceTypes {
+
+  OfferRecommendationsResultDTO {
+    title = OfferRecommendationsResultDTO
+    description = OfferRecommendationsResultDTO
+    derivedFrom = Root
+    properties {
+        paging {
+          type = ScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+        offer_recommendations {
+          type = array
+          items.type = OfferRecommendationDTO
+          description = "Страница списка товаров."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferRecommendationsResultDTO {
+    title = OfferRecommendationsResultDTO
+    description = OfferRecommendationsResultDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferRecommendationsResultDTO
+
+  }
+}

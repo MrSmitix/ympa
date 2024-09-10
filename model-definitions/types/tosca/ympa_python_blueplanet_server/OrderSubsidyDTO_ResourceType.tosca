@@ -1,0 +1,41 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderSubsidyDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderSubsidyDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderSubsidyType = ympa_python_blueplanet_server.resourceTypes.OrderSubsidyType
+}
+resourceTypes {
+
+  OrderSubsidyDTO {
+    title = OrderSubsidyDTO
+    description = OrderSubsidyDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = OrderSubsidyType
+          description = ""
+          optional = false
+        }
+        amount {
+          type =  
+          description = "Сумма субсидии."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderSubsidyDTO {
+    title = OrderSubsidyDTO
+    description = OrderSubsidyDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderSubsidyDTO
+
+  }
+}

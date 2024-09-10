@@ -1,0 +1,109 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CategoryParameterDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CategoryParameterDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CategoryParameterUnitDTO = ympa_python_blueplanet_server.resourceTypes.CategoryParameterUnitDTO
+  OfferCardRecommendationType = ympa_python_blueplanet_server.resourceTypes.OfferCardRecommendationType
+  ParameterType = ympa_python_blueplanet_server.resourceTypes.ParameterType
+  ParameterValueConstraintsDTO = ympa_python_blueplanet_server.resourceTypes.ParameterValueConstraintsDTO
+  ParameterValueOptionDTO = ympa_python_blueplanet_server.resourceTypes.ParameterValueOptionDTO
+  ValueRestrictionDTO = ympa_python_blueplanet_server.resourceTypes.ValueRestrictionDTO
+}
+resourceTypes {
+
+  CategoryParameterDTO {
+    title = CategoryParameterDTO
+    description = CategoryParameterDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор характеристики."
+          optional = true
+        }
+        name {
+          type =  string
+          description = "Название характеристики."
+          optional = false
+        }
+        type {
+          type = ParameterType
+          description = ""
+          optional = true
+        }
+        unit {
+          type = CategoryParameterUnitDTO
+          description = ""
+          optional = false
+        }
+        description {
+          type =  string
+          description = "Описание характеристики."
+          optional = false
+        }
+        recommendation_types {
+          type = array
+          items.type = OfferCardRecommendationType
+          description = "Перечень возможных рекомендаций по заполнению карточки, к которым относится данная характеристика."
+          optional = false
+        }
+        required {
+          type =  boolean
+          description = "Обязательность характеристики."
+          optional = true
+        }
+        filtering {
+          type =  boolean
+          description = "Используется ли характеристика в фильтре."
+          optional = true
+        }
+        distinctive {
+          type =  boolean
+          description = "Является ли характеристика особенностью варианта."
+          optional = true
+        }
+        multivalue {
+          type =  boolean
+          description = "Можно ли передать сразу несколько значений."
+          optional = true
+        }
+        allow_custom_values {
+          type =  boolean
+          description = "Можно ли передавать собственное значение, которого нет в списке вариантов Маркета. Только для характеристик типа &#x60;ENUM&#x60;."
+          optional = true
+        }
+        values {
+          type = array
+          items.type = ParameterValueOptionDTO
+          description = "Список допустимых значений параметра. Только для характеристик типа &#x60;ENUM&#x60;."
+          optional = false
+        }
+        constraints {
+          type = ParameterValueConstraintsDTO
+          description = ""
+          optional = false
+        }
+        value_restrictions {
+          type = array
+          items.type = ValueRestrictionDTO
+          description = "Ограничения на значения, накладываемые другими характеристиками. Только для характеристик типа &#x60;ENUM&#x60;."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CategoryParameterDTO {
+    title = CategoryParameterDTO
+    description = CategoryParameterDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CategoryParameterDTO
+
+  }
+}

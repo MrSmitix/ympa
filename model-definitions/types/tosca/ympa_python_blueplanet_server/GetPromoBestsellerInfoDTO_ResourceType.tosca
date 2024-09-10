@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetPromoBestsellerInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetPromoBestsellerInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GetPromoBestsellerInfoDTO {
+    title = GetPromoBestsellerInfoDTO
+    description = GetPromoBestsellerInfoDTO
+    derivedFrom = Root
+    properties {
+        bestseller {
+          type =  boolean
+          description = "Является ли акция «Бестселлером Маркета». Подробнее об этой акции читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/promos/market/bestsellers)."
+          optional = true
+        }
+        entry_deadline {
+          type =  string
+          description = "До какой даты можно добавить товар в акцию «Бестселлеры Маркета».  Параметр возвращается только для текущих и будущих акций «Бестселлеры Маркета». "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetPromoBestsellerInfoDTO {
+    title = GetPromoBestsellerInfoDTO
+    description = GetPromoBestsellerInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetPromoBestsellerInfoDTO
+
+  }
+}

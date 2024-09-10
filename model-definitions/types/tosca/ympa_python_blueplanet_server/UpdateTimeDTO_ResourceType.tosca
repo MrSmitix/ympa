@@ -1,0 +1,35 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdateTimeDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdateTimeDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  UpdateTimeDTO {
+    title = UpdateTimeDTO
+    description = UpdateTimeDTO
+    derivedFrom = Root
+    properties {
+        updated_at {
+          type =  string
+          description = "Время последнего обновления."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdateTimeDTO {
+    title = UpdateTimeDTO
+    description = UpdateTimeDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdateTimeDTO
+
+  }
+}

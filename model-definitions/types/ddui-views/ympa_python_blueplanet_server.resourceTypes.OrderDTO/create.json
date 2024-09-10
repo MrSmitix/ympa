@@ -1,0 +1,39 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "id" },
+      {"model": "status" },
+      {"model": "substatus" },
+      {"model": "creation_date" },
+      {"model": "updated_at" },
+      {"model": "currency" },
+      {"model": "items_total" },
+      {"model": "delivery_total" },
+      {"model": "buyer_items_total" },
+      {"model": "buyer_total" },
+      {"model": "buyer_items_total_before_discount" },
+      {"model": "buyer_total_before_discount" },
+      {"model": "payment_type" },
+      {"model": "payment_method" },
+      {"model": "fake" },
+      {"model": "items" },
+      {"model": "subsidies" },
+      {"model": "delivery" },
+      {"model": "buyer" },
+      {"model": "notes" },
+      {"model": "tax_system" },
+      {"model": "cancel_requested" },
+      {"model": "expiry_date" },
+    ]
+  }]
+}

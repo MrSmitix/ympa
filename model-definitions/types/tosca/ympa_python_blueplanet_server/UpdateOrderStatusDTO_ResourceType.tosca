@@ -1,0 +1,58 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdateOrderStatusDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdateOrderStatusDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderStatusType = ympa_python_blueplanet_server.resourceTypes.OrderStatusType
+  OrderSubstatusType = ympa_python_blueplanet_server.resourceTypes.OrderSubstatusType
+  OrderUpdateStatusType = ympa_python_blueplanet_server.resourceTypes.OrderUpdateStatusType
+}
+resourceTypes {
+
+  UpdateOrderStatusDTO {
+    title = UpdateOrderStatusDTO
+    description = UpdateOrderStatusDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор заказа."
+          optional = false
+        }
+        status {
+          type = OrderStatusType
+          description = ""
+          optional = false
+        }
+        substatus {
+          type = OrderSubstatusType
+          description = ""
+          optional = false
+        }
+        update_status {
+          type = OrderUpdateStatusType
+          description = ""
+          optional = false
+        }
+        error_details {
+          type =  string
+          description = "Ошибка при изменении статуса заказа. Содержит описание ошибки и идентификатор заказа.  Возвращается, если параметр &#x60;updateStatus&#x60; принимает значение &#x60;ERROR&#x60;. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdateOrderStatusDTO {
+    title = UpdateOrderStatusDTO
+    description = UpdateOrderStatusDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdateOrderStatusDTO
+
+  }
+}

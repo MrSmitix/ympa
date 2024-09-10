@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server EacVerificationStatusType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a EacVerificationStatusType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  EacVerificationStatusType {
+    title = EacVerificationStatusType
+    description = EacVerificationStatusType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  EacVerificationStatusType {
+    title = EacVerificationStatusType
+    description = EacVerificationStatusType
+    implements = ympa_python_blueplanet_server.resourceTypes.EacVerificationStatusType
+
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "total" },
+      {"model": "_from" },
+      {"model": "to" },
+      {"model": "current_page" },
+      {"model": "pages_count" },
+      {"model": "page_size" },
+    ]
+  }]
+}

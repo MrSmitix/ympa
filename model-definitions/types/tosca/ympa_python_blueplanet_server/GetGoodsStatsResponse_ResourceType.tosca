@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetGoodsStatsResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetGoodsStatsResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+  GoodsStatsDTO = ympa_python_blueplanet_server.resourceTypes.GoodsStatsDTO
+}
+resourceTypes {
+
+  GetGoodsStatsResponse {
+    title = GetGoodsStatsResponse
+    description = GetGoodsStatsResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+        result {
+          type = GoodsStatsDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetGoodsStatsResponse {
+    title = GetGoodsStatsResponse
+    description = GetGoodsStatsResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetGoodsStatsResponse
+
+  }
+}

@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdateOfferMappingsResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdateOfferMappingsResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+  UpdateOfferMappingResultDTO = ympa_python_blueplanet_server.resourceTypes.UpdateOfferMappingResultDTO
+}
+resourceTypes {
+
+  UpdateOfferMappingsResponse {
+    title = UpdateOfferMappingsResponse
+    description = UpdateOfferMappingsResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+        results {
+          type = array
+          items.type = UpdateOfferMappingResultDTO
+          description = "Ошибки и предупреждения, которые появились при обработке списка характеристик. Каждый элемент списка соответствует одному товару.  Если ошибок и предупреждений нет, поле не передается. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdateOfferMappingsResponse {
+    title = UpdateOfferMappingsResponse
+    description = UpdateOfferMappingsResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdateOfferMappingsResponse
+
+  }
+}

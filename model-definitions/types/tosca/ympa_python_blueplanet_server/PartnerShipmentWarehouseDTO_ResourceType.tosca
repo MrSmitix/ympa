@@ -1,0 +1,45 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PartnerShipmentWarehouseDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PartnerShipmentWarehouseDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  PartnerShipmentWarehouseDTO {
+    title = PartnerShipmentWarehouseDTO
+    description = PartnerShipmentWarehouseDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор склада отправления."
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Наименование склада отправления."
+          optional = false
+        }
+        address {
+          type =  string
+          description = "Адрес склада отправления."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PartnerShipmentWarehouseDTO {
+    title = PartnerShipmentWarehouseDTO
+    description = PartnerShipmentWarehouseDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PartnerShipmentWarehouseDTO
+
+  }
+}

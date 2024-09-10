@@ -1,0 +1,57 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server RegionDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a RegionDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  RegionType = ympa_python_blueplanet_server.resourceTypes.RegionType
+}
+resourceTypes {
+
+  RegionDTO {
+    title = RegionDTO
+    description = RegionDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор региона."
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Название региона."
+          optional = true
+        }
+        type {
+          type = RegionType
+          description = ""
+          optional = true
+        }
+        parent {
+          type = RegionDTO
+          description = ""
+          optional = false
+        }
+        children {
+          type = array
+          items.type = RegionDTO
+          description = "Дочерние регионы."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  RegionDTO {
+    title = RegionDTO
+    description = RegionDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.RegionDTO
+
+  }
+}

@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferMappingEntriesDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferMappingEntriesDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OfferMappingEntryDTO = ympa_python_blueplanet_server.resourceTypes.OfferMappingEntryDTO
+  ScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ScrollingPagerDTO
+}
+resourceTypes {
+
+  OfferMappingEntriesDTO {
+    title = OfferMappingEntriesDTO
+    description = OfferMappingEntriesDTO
+    derivedFrom = Root
+    properties {
+        paging {
+          type = ScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+        offer_mapping_entries {
+          type = array
+          items.type = OfferMappingEntryDTO
+          description = "Информация о товарах в каталоге."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferMappingEntriesDTO {
+    title = OfferMappingEntriesDTO
+    description = OfferMappingEntriesDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferMappingEntriesDTO
+
+  }
+}

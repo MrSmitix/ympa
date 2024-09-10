@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferMappingSuggestionsListDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferMappingSuggestionsListDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  EnrichedMappingsOfferDTO = ympa_python_blueplanet_server.resourceTypes.EnrichedMappingsOfferDTO
+}
+resourceTypes {
+
+  OfferMappingSuggestionsListDTO {
+    title = OfferMappingSuggestionsListDTO
+    description = OfferMappingSuggestionsListDTO
+    derivedFrom = Root
+    properties {
+        offers {
+          type = array
+          items.type = EnrichedMappingsOfferDTO
+          description = "Список товаров."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferMappingSuggestionsListDTO {
+    title = OfferMappingSuggestionsListDTO
+    description = OfferMappingSuggestionsListDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferMappingSuggestionsListDTO
+
+  }
+}

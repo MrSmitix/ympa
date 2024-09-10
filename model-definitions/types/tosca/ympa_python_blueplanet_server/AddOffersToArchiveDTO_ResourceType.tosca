@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server AddOffersToArchiveDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a AddOffersToArchiveDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  AddOffersToArchiveErrorDTO = ympa_python_blueplanet_server.resourceTypes.AddOffersToArchiveErrorDTO
+}
+resourceTypes {
+
+  AddOffersToArchiveDTO {
+    title = AddOffersToArchiveDTO
+    description = AddOffersToArchiveDTO
+    derivedFrom = Root
+    properties {
+        not_archived_offers {
+          type = array
+          items.type = AddOffersToArchiveErrorDTO
+          description = "Список товаров, которые не удалось поместить в архив."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  AddOffersToArchiveDTO {
+    title = AddOffersToArchiveDTO
+    description = AddOffersToArchiveDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.AddOffersToArchiveDTO
+
+  }
+}

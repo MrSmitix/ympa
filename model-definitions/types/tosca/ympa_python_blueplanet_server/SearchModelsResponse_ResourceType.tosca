@@ -1,0 +1,54 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server SearchModelsResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a SearchModelsResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CurrencyType = ympa_python_blueplanet_server.resourceTypes.CurrencyType
+  FlippingPagerDTO = ympa_python_blueplanet_server.resourceTypes.FlippingPagerDTO
+  ModelDTO = ympa_python_blueplanet_server.resourceTypes.ModelDTO
+}
+resourceTypes {
+
+  SearchModelsResponse {
+    title = SearchModelsResponse
+    description = SearchModelsResponse
+    derivedFrom = Root
+    properties {
+        models {
+          type = array
+          items.type = ModelDTO
+          description = "Список моделей товаров."
+          optional = true
+        }
+        currency {
+          type = CurrencyType
+          description = ""
+          optional = false
+        }
+        region_id {
+          type =  integer
+          description = "Идентификатор региона, для которого выводится информация о предложениях модели (доставляемых в этот регион).  Информацию о регионе по идентификатору можно получить с помощью запроса [GET regions/{regionId}](../../reference/regions/searchRegionsById.md). "
+          optional = false
+        }
+        pager {
+          type = FlippingPagerDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  SearchModelsResponse {
+    title = SearchModelsResponse
+    description = SearchModelsResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.SearchModelsResponse
+
+  }
+}

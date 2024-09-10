@@ -1,0 +1,68 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetOrdersStatsRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetOrdersStatsRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderStatsStatusType = ympa_python_blueplanet_server.resourceTypes.OrderStatsStatusType
+}
+resourceTypes {
+
+  GetOrdersStatsRequest {
+    title = GetOrdersStatsRequest
+    description = GetOrdersStatsRequest
+    derivedFrom = Root
+    properties {
+        date_from {
+          type =  string
+          description = "Начальная дата, когда заказ был сформирован.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Нельзя использовать вместе с параметрами &#x60;updateFrom&#x60; и &#x60;updateTo&#x60;. "
+          optional = false
+        }
+        date_to {
+          type =  string
+          description = "Конечная дата, когда заказ был сформирован.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Нельзя использовать вместе с параметрами &#x60;updateFrom&#x60; и &#x60;updateTo&#x60;. "
+          optional = false
+        }
+        update_from {
+          type =  string
+          description = "Начальная дата периода, за который были изменения статуса заказа.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Нельзя использовать вместе с параметрами &#x60;dateFrom&#x60; и &#x60;dateTo&#x60;. "
+          optional = false
+        }
+        update_to {
+          type =  string
+          description = "Конечная дата периода, за который были изменения статуса заказа.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Нельзя использовать вместе с параметрами &#x60;dateFrom&#x60; и &#x60;dateTo&#x60;. "
+          optional = false
+        }
+        orders {
+          type = array
+          items.type =  integer
+          description = "Список идентификаторов заказов."
+          optional = false
+        }
+        statuses {
+          type = array
+          items.type = OrderStatsStatusType
+          description = "Список статусов заказов."
+          optional = false
+        }
+        has_cis {
+          type =  boolean
+          description = "Нужно ли вернуть только те заказы, в составе которых есть хотя бы один товар с кодом идентификации [в системе «Честный ЗНАК»](https://честныйзнак.рф/):  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет. Такие коды присваиваются товарам, которые подлежат маркировке и относятся к определенным категориям. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetOrdersStatsRequest {
+    title = GetOrdersStatsRequest
+    description = GetOrdersStatsRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetOrdersStatsRequest
+
+  }
+}

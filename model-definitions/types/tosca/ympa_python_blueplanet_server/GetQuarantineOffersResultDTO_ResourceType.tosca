@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetQuarantineOffersResultDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetQuarantineOffersResultDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  QuarantineOfferDTO = ympa_python_blueplanet_server.resourceTypes.QuarantineOfferDTO
+  ScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ScrollingPagerDTO
+}
+resourceTypes {
+
+  GetQuarantineOffersResultDTO {
+    title = GetQuarantineOffersResultDTO
+    description = GetQuarantineOffersResultDTO
+    derivedFrom = Root
+    properties {
+        paging {
+          type = ScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+        offers {
+          type = array
+          items.type = QuarantineOfferDTO
+          description = "Страница списка товаров в карантине."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetQuarantineOffersResultDTO {
+    title = GetQuarantineOffersResultDTO
+    description = GetQuarantineOffersResultDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetQuarantineOffersResultDTO
+
+  }
+}

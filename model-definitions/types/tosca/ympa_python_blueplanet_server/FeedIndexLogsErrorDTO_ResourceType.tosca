@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedIndexLogsErrorDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedIndexLogsErrorDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedIndexLogsErrorType = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsErrorType
+}
+resourceTypes {
+
+  FeedIndexLogsErrorDTO {
+    title = FeedIndexLogsErrorDTO
+    description = FeedIndexLogsErrorDTO
+    derivedFrom = Root
+    properties {
+        http_status_code {
+          type =  integer
+          description = "HTTP-код ошибки индексации прайс-листа.  Выводится, если &#x60;type&#x3D;DOWNLOAD_HTTP_ERROR&#x60;. "
+          optional = false
+        }
+        type {
+          type = FeedIndexLogsErrorType
+          description = ""
+          optional = false
+        }
+        description {
+          type =  string
+          description = "Описание ошибки.  Выводится, если &#x60;type&#x3D;DOWNLOAD_ERROR&#x60;. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedIndexLogsErrorDTO {
+    title = FeedIndexLogsErrorDTO
+    description = FeedIndexLogsErrorDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsErrorDTO
+
+  }
+}

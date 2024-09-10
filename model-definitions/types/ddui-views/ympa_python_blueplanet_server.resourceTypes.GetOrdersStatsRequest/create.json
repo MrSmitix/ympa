@@ -1,0 +1,23 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "date_from" },
+      {"model": "date_to" },
+      {"model": "update_from" },
+      {"model": "update_to" },
+      {"model": "orders" },
+      {"model": "statuses" },
+      {"model": "has_cis" },
+    ]
+  }]
+}

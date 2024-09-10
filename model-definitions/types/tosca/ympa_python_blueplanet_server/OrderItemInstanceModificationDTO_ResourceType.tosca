@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderItemInstanceModificationDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderItemInstanceModificationDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  BriefOrderItemInstanceDTO = ympa_python_blueplanet_server.resourceTypes.BriefOrderItemInstanceDTO
+}
+resourceTypes {
+
+  OrderItemInstanceModificationDTO {
+    title = OrderItemInstanceModificationDTO
+    description = OrderItemInstanceModificationDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор товара в заказе.  Он приходит в ответе на запрос [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) и в запросе Маркета [POST order/accept](../../pushapi/reference/orderAccept.md) — параметр &#x60;id&#x60; в &#x60;items&#x60;. "
+          optional = true
+        }
+        instances {
+          type = array
+          items.type = BriefOrderItemInstanceDTO
+          description = "Список кодов маркировки единиц товара. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderItemInstanceModificationDTO {
+    title = OrderItemInstanceModificationDTO
+    description = OrderItemInstanceModificationDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderItemInstanceModificationDTO
+
+  }
+}

@@ -1,0 +1,55 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderItemInstanceDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderItemInstanceDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrderItemInstanceDTO {
+    title = OrderItemInstanceDTO
+    description = OrderItemInstanceDTO
+    derivedFrom = Root
+    properties {
+        cis {
+          type =  string
+          description = "Код идентификации единицы товара [в системе «Честный ЗНАК»](https://честныйзнак.рф/) без криптохвоста."
+          optional = false
+        }
+        cis_full {
+          type =  string
+          description = "Код идентификации единицы товара [в системе «Честный ЗНАК»](https://честныйзнак.рф/) с криптохвостом."
+          optional = false
+        }
+        uin {
+          type =  string
+          description = "УИН ювелирного изделия (16-значный код) Производитель получает УИН, когда регистрирует изделие в системе контроля за оборотом драгоценных металлов и камней — ГИИС ДМДК. "
+          optional = false
+        }
+        rnpt {
+          type =  string
+          description = "Регистрационный номер партии товара.  Представляет собой строку из четырех чисел, разделенных косой чертой: ХХХХХХХХ/ХХХХХХ/ХХХХХХХ/ХХХ.  Первая часть — код таможни, которая зарегистрировала декларацию на партию товара. Далее — дата, номер декларации и номер маркированного товара в декларации. "
+          optional = false
+        }
+        gtd {
+          type =  string
+          description = "Грузовая таможенная декларация.  Представляет собой строку из трех чисел, разделенных косой чертой: ХХХХХХХХ/ХХХХХХ/ХХХХХХХ.  Первая часть — код таможни, которая зарегистрировала декларацию на ввезенные товары. Далее — дата и номер декларации. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderItemInstanceDTO {
+    title = OrderItemInstanceDTO
+    description = OrderItemInstanceDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderItemInstanceDTO
+
+  }
+}

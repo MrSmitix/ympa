@@ -1,0 +1,37 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "id" },
+      {"model": "type" },
+      {"model": "service_name" },
+      {"model": "price" },
+      {"model": "delivery_partner_type" },
+      {"model": "courier" },
+      {"model": "dates" },
+      {"model": "region" },
+      {"model": "address" },
+      {"model": "vat" },
+      {"model": "delivery_service_id" },
+      {"model": "lift_type" },
+      {"model": "lift_price" },
+      {"model": "outlet_code" },
+      {"model": "outlet_storage_limit_date" },
+      {"model": "dispatch_type" },
+      {"model": "tracks" },
+      {"model": "shipments" },
+      {"model": "estimated" },
+      {"model": "eac_type" },
+      {"model": "eac_code" },
+    ]
+  }]
+}

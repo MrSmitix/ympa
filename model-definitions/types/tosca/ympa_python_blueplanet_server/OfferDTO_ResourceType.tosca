@@ -1,0 +1,111 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CurrencyType = ympa_python_blueplanet_server.resourceTypes.CurrencyType
+}
+resourceTypes {
+
+  OfferDTO {
+    title = OfferDTO
+    description = OfferDTO
+    derivedFrom = Root
+    properties {
+        price {
+          type =  
+          description = "Цена предложения.  До версии 2.0 партнерского API у параметра был тип String. "
+          optional = false
+        }
+        feed_id {
+          type =  integer
+          description = "Идентификатор прайс-листа, содержащего предложение.  Параметр доступен начиная с версии 2.0 партнерского API. "
+          optional = false
+        }
+        id {
+          type =  string
+          description = "Идентификатор предложения из прайс-листа.  Параметр выводится, если в прайс-листе задан уникальный идентификатор. Если в прайс-листе содержится несколько предложений с одинаковыми идентификаторами, параметр &#x60;id&#x60; указывается только для первого из них, для остальных параметры &#x60;id&#x60; и &#x60;feedId&#x60; не выводятся.  Параметр доступен начиная с версии 2.0 партнерского API. "
+          optional = false
+        }
+        shop_category_id {
+          type =  string
+          description = "Идентификатор категории предложения, указанный магазином в прайс-листе.  Параметр выводится только для предложений, у которых указана категория в прайс-листе.  Параметр доступен начиная с версии 2.0 партнерского API. "
+          optional = false
+        }
+        market_category_id {
+          type =  integer
+          description = "Идентификатор категории предложения в дереве категорий Маркета. Параметр доступен начиная с версии 2.0 партнерского API. "
+          optional = false
+        }
+        pre_discount_price {
+          type =  
+          description = "Цена предложения без скидки."
+          optional = false
+        }
+        discount {
+          type =  integer
+          description = "Скидка на предложение в процентах."
+          optional = false
+        }
+        cut_price {
+          type =  boolean
+          description = "Является ли предложение уцененным:  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет.  Параметр доступен начиная с версии 2.58 партнерского API. "
+          optional = false
+        }
+        url {
+          type =  string
+          description = "URL-адрес предложения на сайте магазина."
+          optional = false
+        }
+        model_id {
+          type =  integer
+          description = "Идентификатор модели Маркета, с которой соотнесено предложение.  Если предложение не соотнесено ни с какой карточкой модели, то параметр &#x60;modelid&#x60; содержит значение &#x60;0&#x60;.  {% note info %}  Идентификатор модели присутствует в URL карточки модели в виде значения параметра &#x60;product&#x60;. Например: &#x60;https://market.yandex.ru/product/13584121&#x60;.  {% endnote %} "
+          optional = true
+        }
+        name {
+          type =  string
+          description = "Наименование предложения."
+          optional = false
+        }
+        currency {
+          type = CurrencyType
+          description = ""
+          optional = false
+        }
+        bid {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Ставка на клик. "
+          optional = false
+        }
+        cbid {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Ставка на клик. "
+          optional = false
+        }
+        fee {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Процент комиссии на товар при продаже по CPA. "
+          optional = false
+        }
+        blocked {
+          type =  boolean
+          description = "Признак блокировки предложения. Возможные значения: * &#x60;false&#x60; — предложение активно, параметр не выводится. * &#x60;true&#x60; — предложение заблокировано. Параметр выводится, если предложение заблокировано и не попадает в выдачу Маркета. Это может произойти из-за отключения магазина. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferDTO {
+    title = OfferDTO
+    description = OfferDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferDTO
+
+  }
+}

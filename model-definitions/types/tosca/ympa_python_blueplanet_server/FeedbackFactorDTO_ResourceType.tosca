@@ -1,0 +1,50 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedbackFactorDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedbackFactorDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  FeedbackFactorDTO {
+    title = FeedbackFactorDTO
+    description = FeedbackFactorDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор параметра."
+          optional = false
+        }
+        title {
+          type =  string
+          description = "Название параметра. Например, &#x60;Скорость обработки заказа&#x60;."
+          optional = false
+        }
+        description {
+          type =  string
+          description = "Описание параметра. Например, &#x60;Как быстро с вами связались для подтверждения заказа?&#x60;."
+          optional = false
+        }
+        value {
+          type =  integer
+          description = "Оценка по параметру, указанная в отзыве: от &#x60;1&#x60; (низшая оценка) до &#x60;5&#x60; (высшая оценка). "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedbackFactorDTO {
+    title = FeedbackFactorDTO
+    description = FeedbackFactorDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedbackFactorDTO
+
+  }
+}

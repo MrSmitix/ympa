@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server SearchShipmentsResponseDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a SearchShipmentsResponseDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ForwardScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ForwardScrollingPagerDTO
+  ShipmentInfoDTO = ympa_python_blueplanet_server.resourceTypes.ShipmentInfoDTO
+}
+resourceTypes {
+
+  SearchShipmentsResponseDTO {
+    title = SearchShipmentsResponseDTO
+    description = SearchShipmentsResponseDTO
+    derivedFrom = Root
+    properties {
+        shipments {
+          type = array
+          items.type = ShipmentInfoDTO
+          description = "Список с информацией об отгрузках."
+          optional = true
+        }
+        paging {
+          type = ForwardScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  SearchShipmentsResponseDTO {
+    title = SearchShipmentsResponseDTO
+    description = SearchShipmentsResponseDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.SearchShipmentsResponseDTO
+
+  }
+}

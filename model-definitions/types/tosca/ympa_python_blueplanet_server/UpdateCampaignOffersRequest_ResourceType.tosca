@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdateCampaignOffersRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdateCampaignOffersRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  UpdateCampaignOfferDTO = ympa_python_blueplanet_server.resourceTypes.UpdateCampaignOfferDTO
+}
+resourceTypes {
+
+  UpdateCampaignOffersRequest {
+    title = UpdateCampaignOffersRequest
+    description = UpdateCampaignOffersRequest
+    derivedFrom = Root
+    properties {
+        offers {
+          type = array
+          items.type = UpdateCampaignOfferDTO
+          description = "Параметры размещения товаров в заданном магазине."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdateCampaignOffersRequest {
+    title = UpdateCampaignOffersRequest
+    description = UpdateCampaignOffersRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdateCampaignOffersRequest
+
+  }
+}

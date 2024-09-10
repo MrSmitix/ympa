@@ -1,0 +1,80 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferCardDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferCardDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  GetMappingDTO = ympa_python_blueplanet_server.resourceTypes.GetMappingDTO
+  OfferCardRecommendationDTO = ympa_python_blueplanet_server.resourceTypes.OfferCardRecommendationDTO
+  OfferCardStatusType = ympa_python_blueplanet_server.resourceTypes.OfferCardStatusType
+  OfferErrorDTO = ympa_python_blueplanet_server.resourceTypes.OfferErrorDTO
+  ParameterValueDTO = ympa_python_blueplanet_server.resourceTypes.ParameterValueDTO
+  import re = ympa_python_blueplanet_server.resourceTypes.import re
+}
+resourceTypes {
+
+  OfferCardDTO {
+    title = OfferCardDTO
+    description = OfferCardDTO
+    derivedFrom = Root
+    properties {
+        offer_id {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = true
+        }
+        mapping {
+          type = GetMappingDTO
+          description = ""
+          optional = false
+        }
+        parameter_values {
+          type = array
+          items.type = ParameterValueDTO
+          description = "Список характеристик с их значениями. "
+          optional = false
+        }
+        card_status {
+          type = OfferCardStatusType
+          description = ""
+          optional = false
+        }
+        content_rating {
+          type =  integer
+          description = "Процент заполненности карточки."
+          optional = false
+        }
+        recommendations {
+          type = array
+          items.type = OfferCardRecommendationDTO
+          description = "Список рекомендаций к заполнению карточки.  Рекомендации Маркета помогают заполнять карточку так, чтобы покупателям было проще найти ваш товар и решиться на покупку. "
+          optional = false
+        }
+        errors {
+          type = array
+          items.type = OfferErrorDTO
+          description = "Ошибки в контенте, препятствующие размещению товара на витрине."
+          optional = false
+        }
+        warnings {
+          type = array
+          items.type = OfferErrorDTO
+          description = "Связанные с контентом предупреждения, не препятствующие размещению товара на витрине."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferCardDTO {
+    title = OfferCardDTO
+    description = OfferCardDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferCardDTO
+
+  }
+}

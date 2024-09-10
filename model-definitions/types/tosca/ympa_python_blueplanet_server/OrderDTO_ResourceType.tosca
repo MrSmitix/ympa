@@ -1,0 +1,157 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CurrencyType = ympa_python_blueplanet_server.resourceTypes.CurrencyType
+  OrderBuyerDTO = ympa_python_blueplanet_server.resourceTypes.OrderBuyerDTO
+  OrderDeliveryDTO = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryDTO
+  OrderItemDTO = ympa_python_blueplanet_server.resourceTypes.OrderItemDTO
+  OrderPaymentMethodType = ympa_python_blueplanet_server.resourceTypes.OrderPaymentMethodType
+  OrderPaymentType = ympa_python_blueplanet_server.resourceTypes.OrderPaymentType
+  OrderStatusType = ympa_python_blueplanet_server.resourceTypes.OrderStatusType
+  OrderSubsidyDTO = ympa_python_blueplanet_server.resourceTypes.OrderSubsidyDTO
+  OrderSubstatusType = ympa_python_blueplanet_server.resourceTypes.OrderSubstatusType
+  OrderTaxSystemType = ympa_python_blueplanet_server.resourceTypes.OrderTaxSystemType
+}
+resourceTypes {
+
+  OrderDTO {
+    title = OrderDTO
+    description = OrderDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор заказа."
+          optional = false
+        }
+        status {
+          type = OrderStatusType
+          description = ""
+          optional = false
+        }
+        substatus {
+          type = OrderSubstatusType
+          description = ""
+          optional = false
+        }
+        creation_date {
+          type =  string
+          description = ""
+          optional = false
+        }
+        updated_at {
+          type =  string
+          description = ""
+          optional = false
+        }
+        currency {
+          type = CurrencyType
+          description = ""
+          optional = false
+        }
+        items_total {
+          type =  
+          description = "Платеж покупателя. "
+          optional = false
+        }
+        delivery_total {
+          type =  
+          description = "Стоимость доставки. "
+          optional = false
+        }
+        buyer_items_total {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и без учета стоимости доставки. "
+          optional = false
+        }
+        buyer_total {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и с учетом стоимости доставки. "
+          optional = false
+        }
+        buyer_items_total_before_discount {
+          type =  
+          description = "Стоимость всех товаров в заказе в валюте покупателя без учета стоимости доставки и до применения скидок по:  * акциям; * купонам; * промокодам. "
+          optional = false
+        }
+        buyer_total_before_discount {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя до применения скидок и с учетом стоимости доставки (&#x60;buyerItemsTotalBeforeDiscount&#x60; + стоимость доставки). "
+          optional = false
+        }
+        payment_type {
+          type = OrderPaymentType
+          description = ""
+          optional = false
+        }
+        payment_method {
+          type = OrderPaymentMethodType
+          description = ""
+          optional = false
+        }
+        fake {
+          type =  boolean
+          description = "Тип заказа:  * &#x60;false&#x60; — настоящий заказ покупателя.  * &#x60;true&#x60; — [тестовый](../../pushapi/concepts/sandbox.md) заказ Маркета. "
+          optional = false
+        }
+        items {
+          type = array
+          items.type = OrderItemDTO
+          description = "Список товаров в заказе."
+          optional = true
+        }
+        subsidies {
+          type = array
+          items.type = OrderSubsidyDTO
+          description = "Список субсидий по типам."
+          optional = false
+        }
+        delivery {
+          type = OrderDeliveryDTO
+          description = ""
+          optional = false
+        }
+        buyer {
+          type = OrderBuyerDTO
+          description = ""
+          optional = false
+        }
+        notes {
+          type =  string
+          description = "Комментарий к заказу."
+          optional = false
+        }
+        tax_system {
+          type = OrderTaxSystemType
+          description = ""
+          optional = false
+        }
+        cancel_requested {
+          type =  boolean
+          description = "**Только для модели DBS**  Запрошена ли отмена. "
+          optional = false
+        }
+        expiry_date {
+          type =  string
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderDTO {
+    title = OrderDTO
+    description = OrderDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderDTO
+
+  }
+}

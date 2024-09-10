@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PromoPeriodDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PromoPeriodDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  PromoPeriodDTO {
+    title = PromoPeriodDTO
+    description = PromoPeriodDTO
+    derivedFrom = Root
+    properties {
+        date_time_from {
+          type =  string
+          description = "Дата и время начала акции."
+          optional = true
+        }
+        date_time_to {
+          type =  string
+          description = "Дата и время окончания акции."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PromoPeriodDTO {
+    title = PromoPeriodDTO
+    description = PromoPeriodDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PromoPeriodDTO
+
+  }
+}

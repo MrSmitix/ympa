@@ -1,0 +1,60 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FlippingPagerDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FlippingPagerDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  FlippingPagerDTO {
+    title = FlippingPagerDTO
+    description = FlippingPagerDTO
+    derivedFrom = Root
+    properties {
+        total {
+          type =  integer
+          description = "Сколько всего найдено элементов."
+          optional = false
+        }
+        _from {
+          type =  integer
+          description = "Начальный номер найденного элемента на странице."
+          optional = false
+        }
+        to {
+          type =  integer
+          description = "Конечный номер найденного элемента на странице."
+          optional = false
+        }
+        current_page {
+          type =  integer
+          description = "Текущая страница."
+          optional = false
+        }
+        pages_count {
+          type =  integer
+          description = "Общее количество страниц."
+          optional = false
+        }
+        page_size {
+          type =  integer
+          description = "Размер страницы."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FlippingPagerDTO {
+    title = FlippingPagerDTO
+    description = FlippingPagerDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FlippingPagerDTO
+
+  }
+}

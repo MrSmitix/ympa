@@ -1,0 +1,65 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CalculateTariffsOfferDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CalculateTariffsOfferDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  CalculateTariffsOfferDTO {
+    title = CalculateTariffsOfferDTO
+    description = CalculateTariffsOfferDTO
+    derivedFrom = Root
+    properties {
+        category_id {
+          type =  integer
+          description = "Идентификатор категории товара на Маркете.  Для расчета стоимости услуг необходимо указать идентификатор листовой категории товара — той, которая не имеет дочерних категорий.  Чтобы узнать идентификатор категории, к которой относится товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md). "
+          optional = true
+        }
+        price {
+          type =  
+          description = "Цена на товар в рублях."
+          optional = true
+        }
+        length {
+          type =  
+          description = "Длина товара в сантиметрах."
+          optional = true
+        }
+        width {
+          type =  
+          description = "Ширина товара в сантиметрах."
+          optional = true
+        }
+        height {
+          type =  
+          description = "Высота товара в сантиметрах."
+          optional = true
+        }
+        weight {
+          type =  
+          description = "Вес товара в килограммах."
+          optional = true
+        }
+        quantity {
+          type =  integer
+          description = "Квант продажи — количество единиц товара в одном товарном предложении."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CalculateTariffsOfferDTO {
+    title = CalculateTariffsOfferDTO
+    description = CalculateTariffsOfferDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CalculateTariffsOfferDTO
+
+  }
+}

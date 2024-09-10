@@ -1,0 +1,48 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ChatMessagesResultDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ChatMessagesResultDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ChatMessageDTO = ympa_python_blueplanet_server.resourceTypes.ChatMessageDTO
+  ForwardScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ForwardScrollingPagerDTO
+}
+resourceTypes {
+
+  ChatMessagesResultDTO {
+    title = ChatMessagesResultDTO
+    description = ChatMessagesResultDTO
+    derivedFrom = Root
+    properties {
+        order_id {
+          type =  integer
+          description = "Идентификатор заказа."
+          optional = true
+        }
+        messages {
+          type = array
+          items.type = ChatMessageDTO
+          description = "Информация о сообщениях."
+          optional = true
+        }
+        paging {
+          type = ForwardScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ChatMessagesResultDTO {
+    title = ChatMessagesResultDTO
+    description = ChatMessagesResultDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ChatMessagesResultDTO
+
+  }
+}

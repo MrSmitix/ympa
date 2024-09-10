@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server EnrichedOrderBoxLayoutDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a EnrichedOrderBoxLayoutDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderBoxLayoutItemDTO = ympa_python_blueplanet_server.resourceTypes.OrderBoxLayoutItemDTO
+}
+resourceTypes {
+
+  EnrichedOrderBoxLayoutDTO {
+    title = EnrichedOrderBoxLayoutDTO
+    description = EnrichedOrderBoxLayoutDTO
+    derivedFrom = Root
+    properties {
+        items {
+          type = array
+          items.type = OrderBoxLayoutItemDTO
+          description = "Список товаров в коробке.  Если в коробке едет часть большого товара, в списке может быть только один пункт. "
+          optional = true
+        }
+        box_id {
+          type =  integer
+          description = "Идентификатор коробки."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  EnrichedOrderBoxLayoutDTO {
+    title = EnrichedOrderBoxLayoutDTO
+    description = EnrichedOrderBoxLayoutDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.EnrichedOrderBoxLayoutDTO
+
+  }
+}

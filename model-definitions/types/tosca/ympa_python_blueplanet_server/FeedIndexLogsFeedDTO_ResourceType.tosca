@@ -1,0 +1,35 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedIndexLogsFeedDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedIndexLogsFeedDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  FeedIndexLogsFeedDTO {
+    title = FeedIndexLogsFeedDTO
+    description = FeedIndexLogsFeedDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор прайс-листа."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedIndexLogsFeedDTO {
+    title = FeedIndexLogsFeedDTO
+    description = FeedIndexLogsFeedDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsFeedDTO
+
+  }
+}

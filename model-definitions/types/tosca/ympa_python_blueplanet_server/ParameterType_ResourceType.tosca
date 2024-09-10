@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ParameterType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ParameterType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ParameterType {
+    title = ParameterType
+    description = ParameterType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  ParameterType {
+    title = ParameterType
+    description = ParameterType
+    implements = ympa_python_blueplanet_server.resourceTypes.ParameterType
+
+  }
+}

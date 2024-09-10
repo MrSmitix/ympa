@@ -1,0 +1,24 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "id" },
+      {"model": "outlet_id" },
+      {"model": "license_type" },
+      {"model": "number" },
+      {"model": "date_of_issue" },
+      {"model": "date_of_expiry" },
+      {"model": "check_status" },
+      {"model": "check_comment" },
+    ]
+  }]
+}

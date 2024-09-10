@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetFeedResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetFeedResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedDTO = ympa_python_blueplanet_server.resourceTypes.FeedDTO
+}
+resourceTypes {
+
+  GetFeedResponse {
+    title = GetFeedResponse
+    description = GetFeedResponse
+    derivedFrom = Root
+    properties {
+        feed {
+          type = FeedDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetFeedResponse {
+    title = GetFeedResponse
+    description = GetFeedResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetFeedResponse
+
+  }
+}

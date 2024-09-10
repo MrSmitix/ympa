@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferContentErrorDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferContentErrorDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OfferContentErrorType = ympa_python_blueplanet_server.resourceTypes.OfferContentErrorType
+}
+resourceTypes {
+
+  OfferContentErrorDTO {
+    title = OfferContentErrorDTO
+    description = OfferContentErrorDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = OfferContentErrorType
+          description = ""
+          optional = true
+        }
+        parameter_id {
+          type =  integer
+          description = "Идентификатор характеристики, с которой связана ошибка."
+          optional = false
+        }
+        message {
+          type =  string
+          description = "Текст ошибки."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferContentErrorDTO {
+    title = OfferContentErrorDTO
+    description = OfferContentErrorDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferContentErrorDTO
+
+  }
+}

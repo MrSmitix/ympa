@@ -1,0 +1,53 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server TariffDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a TariffDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  TariffParameterDTO = ympa_python_blueplanet_server.resourceTypes.TariffParameterDTO
+  TariffType = ympa_python_blueplanet_server.resourceTypes.TariffType
+}
+resourceTypes {
+
+  TariffDTO {
+    title = TariffDTO
+    description = TariffDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = TariffType
+          description = ""
+          optional = true
+        }
+        percent {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Значение тарифа в процентах. "
+          optional = false
+        }
+        amount {
+          type =  
+          description = "Значение тарифа в рублях."
+          optional = true
+        }
+        parameters {
+          type = array
+          items.type = TariffParameterDTO
+          description = "Параметры расчета тарифа."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  TariffDTO {
+    title = TariffDTO
+    description = TariffDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.TariffDTO
+
+  }
+}

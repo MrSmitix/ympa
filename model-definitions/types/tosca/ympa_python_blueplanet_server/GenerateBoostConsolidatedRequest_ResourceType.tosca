@@ -1,0 +1,45 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GenerateBoostConsolidatedRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GenerateBoostConsolidatedRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GenerateBoostConsolidatedRequest {
+    title = GenerateBoostConsolidatedRequest
+    description = GenerateBoostConsolidatedRequest
+    derivedFrom = Root
+    properties {
+        business_id {
+          type =  integer
+          description = "Идентификатор бизнеса."
+          optional = true
+        }
+        date_from {
+          type =  string
+          description = "Начало периода, включительно."
+          optional = true
+        }
+        date_to {
+          type =  string
+          description = "Конец периода, включительно."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GenerateBoostConsolidatedRequest {
+    title = GenerateBoostConsolidatedRequest
+    description = GenerateBoostConsolidatedRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GenerateBoostConsolidatedRequest
+
+  }
+}

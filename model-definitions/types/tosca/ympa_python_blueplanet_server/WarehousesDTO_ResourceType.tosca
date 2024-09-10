@@ -1,0 +1,44 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server WarehousesDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a WarehousesDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  WarehouseDTO = ympa_python_blueplanet_server.resourceTypes.WarehouseDTO
+  WarehouseGroupDTO = ympa_python_blueplanet_server.resourceTypes.WarehouseGroupDTO
+}
+resourceTypes {
+
+  WarehousesDTO {
+    title = WarehousesDTO
+    description = WarehousesDTO
+    derivedFrom = Root
+    properties {
+        warehouses {
+          type = array
+          items.type = WarehouseDTO
+          description = "Список складов, не входящих в группы."
+          optional = true
+        }
+        warehouse_groups {
+          type = array
+          items.type = WarehouseGroupDTO
+          description = "Список групп складов."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  WarehousesDTO {
+    title = WarehousesDTO
+    description = WarehousesDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.WarehousesDTO
+
+  }
+}

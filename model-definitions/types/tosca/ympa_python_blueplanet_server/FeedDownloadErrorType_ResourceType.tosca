@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedDownloadErrorType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedDownloadErrorType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  FeedDownloadErrorType {
+    title = FeedDownloadErrorType
+    description = FeedDownloadErrorType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedDownloadErrorType {
+    title = FeedDownloadErrorType
+    description = FeedDownloadErrorType
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedDownloadErrorType
+
+  }
+}

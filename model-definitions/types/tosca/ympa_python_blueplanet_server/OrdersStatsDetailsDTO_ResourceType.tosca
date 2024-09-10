@@ -1,0 +1,52 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrdersStatsDetailsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrdersStatsDetailsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrdersStatsItemStatusType = ympa_python_blueplanet_server.resourceTypes.OrdersStatsItemStatusType
+  OrdersStatsStockType = ympa_python_blueplanet_server.resourceTypes.OrdersStatsStockType
+}
+resourceTypes {
+
+  OrdersStatsDetailsDTO {
+    title = OrdersStatsDetailsDTO
+    description = OrdersStatsDetailsDTO
+    derivedFrom = Root
+    properties {
+        item_status {
+          type = OrdersStatsItemStatusType
+          description = ""
+          optional = false
+        }
+        item_count {
+          type =  integer
+          description = "Количество товара со статусом, указанном в параметре &#x60;itemStatus&#x60;."
+          optional = false
+        }
+        update_date {
+          type =  string
+          description = "Дата, когда товар получил статус, указанный в параметре &#x60;itemStatus&#x60;.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. "
+          optional = false
+        }
+        stock_type {
+          type = OrdersStatsStockType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrdersStatsDetailsDTO {
+    title = OrdersStatsDetailsDTO
+    description = OrdersStatsDetailsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrdersStatsDetailsDTO
+
+  }
+}

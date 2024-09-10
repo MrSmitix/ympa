@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server DeletePromoOffersRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a DeletePromoOffersRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  DeletePromoOffersRequest {
+    title = DeletePromoOffersRequest
+    description = DeletePromoOffersRequest
+    derivedFrom = Root
+    properties {
+        promo_id {
+          type =  string
+          description = "Идентификатор акции."
+          optional = true
+        }
+        delete_all_offers {
+          type =  boolean
+          description = "Чтобы убрать все товары из акции и больше не участвовать в ней, передайте значение &#x60;true&#x60; и не передавайте параметр &#x60;offerIds&#x60;."
+          optional = false
+        }
+        offer_ids {
+          type = array
+          items.type =  string
+          description = "Товары, которые нужно убрать из акции."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  DeletePromoOffersRequest {
+    title = DeletePromoOffersRequest
+    description = DeletePromoOffersRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.DeletePromoOffersRequest
+
+  }
+}

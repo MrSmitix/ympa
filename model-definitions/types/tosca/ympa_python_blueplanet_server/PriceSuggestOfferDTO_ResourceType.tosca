@@ -1,0 +1,48 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PriceSuggestOfferDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PriceSuggestOfferDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  PriceSuggestDTO = ympa_python_blueplanet_server.resourceTypes.PriceSuggestDTO
+  import re = ympa_python_blueplanet_server.resourceTypes.import re
+}
+resourceTypes {
+
+  PriceSuggestOfferDTO {
+    title = PriceSuggestOfferDTO
+    description = PriceSuggestOfferDTO
+    derivedFrom = Root
+    properties {
+        market_sku {
+          type =  integer
+          description = "SKU на Маркете."
+          optional = false
+        }
+        offer_id {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = false
+        }
+        price_suggestion {
+          type = array
+          items.type = PriceSuggestDTO
+          description = "Цены для продвижения. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PriceSuggestOfferDTO {
+    title = PriceSuggestOfferDTO
+    description = PriceSuggestOfferDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PriceSuggestOfferDTO
+
+  }
+}

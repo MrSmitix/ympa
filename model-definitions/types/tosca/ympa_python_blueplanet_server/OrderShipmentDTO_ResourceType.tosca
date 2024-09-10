@@ -1,0 +1,59 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderShipmentDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderShipmentDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderParcelBoxDTO = ympa_python_blueplanet_server.resourceTypes.OrderParcelBoxDTO
+  OrderTrackDTO = ympa_python_blueplanet_server.resourceTypes.OrderTrackDTO
+}
+resourceTypes {
+
+  OrderShipmentDTO {
+    title = OrderShipmentDTO
+    description = OrderShipmentDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор посылки, присвоенный Маркетом."
+          optional = false
+        }
+        shipment_date {
+          type =  string
+          description = "Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. "
+          optional = false
+        }
+        shipment_time {
+          type =  string
+          description = "**Только для модели Экспресс**  Время, к которому магазин должен упаковать заказ и перевести его в статус &#x60;READY_TO_SHIP&#x60;. После смены статуса за заказом приедет курьер.  Поле может появиться не сразу. Запрашивайте информацию о заказе в течении 5–10 минут, пока оно не вернется.  Формат времени: 24-часовой, &#x60;ЧЧ:ММ&#x60;.  Если заказ сделан организацией, параметр не возвращается до согласования даты доставки. "
+          optional = false
+        }
+        tracks {
+          type = array
+          items.type = OrderTrackDTO
+          description = "**Только для модели DBS**  Информация для отслеживания перемещений посылки. "
+          optional = false
+        }
+        boxes {
+          type = array
+          items.type = OrderParcelBoxDTO
+          description = "Список грузовых мест."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderShipmentDTO {
+    title = OrderShipmentDTO
+    description = OrderShipmentDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderShipmentDTO
+
+  }
+}

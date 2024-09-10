@@ -1,0 +1,41 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server EacVerificationResultDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a EacVerificationResultDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  EacVerificationStatusType = ympa_python_blueplanet_server.resourceTypes.EacVerificationStatusType
+}
+resourceTypes {
+
+  EacVerificationResultDTO {
+    title = EacVerificationResultDTO
+    description = EacVerificationResultDTO
+    derivedFrom = Root
+    properties {
+        verification_result {
+          type = EacVerificationStatusType
+          description = ""
+          optional = false
+        }
+        attempts_left {
+          type =  integer
+          description = "Количество оставшихся попыток проверки кода.  Возвращается, если магазин отправил некорректный код.  Когда все попытки будут исчерпаны, код обновится. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  EacVerificationResultDTO {
+    title = EacVerificationResultDTO
+    description = EacVerificationResultDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.EacVerificationResultDTO
+
+  }
+}

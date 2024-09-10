@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrdersStatsDeliveryRegionDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrdersStatsDeliveryRegionDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrdersStatsDeliveryRegionDTO {
+    title = OrdersStatsDeliveryRegionDTO
+    description = OrdersStatsDeliveryRegionDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор региона доставки."
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Название региона доставки."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrdersStatsDeliveryRegionDTO {
+    title = OrdersStatsDeliveryRegionDTO
+    description = OrdersStatsDeliveryRegionDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrdersStatsDeliveryRegionDTO
+
+  }
+}

@@ -1,0 +1,52 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedbackGradesDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedbackGradesDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedbackFactorDTO = ympa_python_blueplanet_server.resourceTypes.FeedbackFactorDTO
+}
+resourceTypes {
+
+  FeedbackGradesDTO {
+    title = FeedbackGradesDTO
+    description = FeedbackGradesDTO
+    derivedFrom = Root
+    properties {
+        average {
+          type =  
+          description = "Общая оценка, указанная в отзыве: от &#x60;1&#x60; («Ужасный магазин») до &#x60;5&#x60; («Отличный магазин»)."
+          optional = false
+        }
+        agree_count {
+          type =  integer
+          description = "Количество пользователей, считающих отзыв полезным."
+          optional = false
+        }
+        reject_count {
+          type =  integer
+          description = "Количество пользователей, считающих отзыв бесполезным."
+          optional = false
+        }
+        factors {
+          type = array
+          items.type = FeedbackFactorDTO
+          description = "Информация об оценках по параметрам, указанных в отзыве.  При создании отзыва автору предлагается поставить оценки магазину по нескольким параметрам: например, за скорость обработки заказа или удобство самовывоза. Набор параметров зависит от того, какой способ покупки (параметр &#x60;delivery&#x60;) указал автор. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedbackGradesDTO {
+    title = FeedbackGradesDTO
+    description = FeedbackGradesDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedbackGradesDTO
+
+  }
+}

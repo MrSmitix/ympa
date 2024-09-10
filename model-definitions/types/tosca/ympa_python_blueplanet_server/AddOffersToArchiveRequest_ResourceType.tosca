@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server AddOffersToArchiveRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a AddOffersToArchiveRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  AddOffersToArchiveRequest {
+    title = AddOffersToArchiveRequest
+    description = AddOffersToArchiveRequest
+    derivedFrom = Root
+    properties {
+        offer_ids {
+          type = array
+          items.type =  string
+          description = "Список товаров, которые нужно поместить в архив."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  AddOffersToArchiveRequest {
+    title = AddOffersToArchiveRequest
+    description = AddOffersToArchiveRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.AddOffersToArchiveRequest
+
+  }
+}

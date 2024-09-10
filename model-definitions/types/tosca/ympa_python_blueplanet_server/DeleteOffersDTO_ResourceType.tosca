@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server DeleteOffersDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a DeleteOffersDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  DeleteOffersDTO {
+    title = DeleteOffersDTO
+    description = DeleteOffersDTO
+    derivedFrom = Root
+    properties {
+        not_deleted_offer_ids {
+          type = array
+          items.type =  string
+          description = "Список SKU товаров, которые не удалось удалить."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  DeleteOffersDTO {
+    title = DeleteOffersDTO
+    description = DeleteOffersDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.DeleteOffersDTO
+
+  }
+}

@@ -1,0 +1,35 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ConfirmShipmentRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ConfirmShipmentRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ConfirmShipmentRequest {
+    title = ConfirmShipmentRequest
+    description = ConfirmShipmentRequest
+    derivedFrom = Root
+    properties {
+        external_shipment_id {
+          type =  string
+          description = "Идентификатор отгрузки в системе поставщика."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ConfirmShipmentRequest {
+    title = ConfirmShipmentRequest
+    description = ConfirmShipmentRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.ConfirmShipmentRequest
+
+  }
+}

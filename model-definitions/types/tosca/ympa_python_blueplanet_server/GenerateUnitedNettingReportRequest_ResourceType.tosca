@@ -1,0 +1,84 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GenerateUnitedNettingReportRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GenerateUnitedNettingReportRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  PlacementType = ympa_python_blueplanet_server.resourceTypes.PlacementType
+}
+resourceTypes {
+
+  GenerateUnitedNettingReportRequest {
+    title = GenerateUnitedNettingReportRequest
+    description = GenerateUnitedNettingReportRequest
+    derivedFrom = Root
+    properties {
+        business_id {
+          type =  integer
+          description = "Идентификатор бизнеса."
+          optional = true
+        }
+        date_time_from {
+          type =  string
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Начало периода, включительно. "
+          optional = false
+        }
+        date_time_to {
+          type =  string
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Конец периода, включительно. Максимальный период — 1 год. "
+          optional = false
+        }
+        date_from {
+          type =  string
+          description = "Начало периода, включительно."
+          optional = false
+        }
+        date_to {
+          type =  string
+          description = "Конец периода, включительно. Максимальный период — 1 год."
+          optional = false
+        }
+        bank_order_id {
+          type =  integer
+          description = "Номер платежного поручения."
+          optional = false
+        }
+        bank_order_date_time {
+          type =  string
+          description = "Дата платежного поручения."
+          optional = false
+        }
+        placement_programs {
+          type = array
+          items.type = PlacementType
+          description = "Список моделей, которые нужны в отчете. "
+          optional = false
+        }
+        inns {
+          type = array
+          items.type =  string
+          description = "Список ИНН, которые нужны в отчете."
+          optional = false
+        }
+        campaign_ids {
+          type = array
+          items.type =  integer
+          description = "Список магазинов, которые нужны в отчете."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GenerateUnitedNettingReportRequest {
+    title = GenerateUnitedNettingReportRequest
+    description = GenerateUnitedNettingReportRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GenerateUnitedNettingReportRequest
+
+  }
+}

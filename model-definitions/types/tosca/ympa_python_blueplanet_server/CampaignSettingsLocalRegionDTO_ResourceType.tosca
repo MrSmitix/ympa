@@ -1,0 +1,58 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CampaignSettingsLocalRegionDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CampaignSettingsLocalRegionDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CampaignSettingsDeliveryDTO = ympa_python_blueplanet_server.resourceTypes.CampaignSettingsDeliveryDTO
+  CampaignSettingsScheduleSourceType = ympa_python_blueplanet_server.resourceTypes.CampaignSettingsScheduleSourceType
+  RegionType = ympa_python_blueplanet_server.resourceTypes.RegionType
+}
+resourceTypes {
+
+  CampaignSettingsLocalRegionDTO {
+    title = CampaignSettingsLocalRegionDTO
+    description = CampaignSettingsLocalRegionDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор региона."
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Название региона."
+          optional = false
+        }
+        type {
+          type = RegionType
+          description = ""
+          optional = false
+        }
+        delivery_options_source {
+          type = CampaignSettingsScheduleSourceType
+          description = ""
+          optional = false
+        }
+        delivery {
+          type = CampaignSettingsDeliveryDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CampaignSettingsLocalRegionDTO {
+    title = CampaignSettingsLocalRegionDTO
+    description = CampaignSettingsLocalRegionDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CampaignSettingsLocalRegionDTO
+
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "offer_id" },
+      {"model": "mapping" },
+      {"model": "parameter_values" },
+      {"model": "card_status" },
+      {"model": "content_rating" },
+      {"model": "recommendations" },
+      {"model": "errors" },
+      {"model": "warnings" },
+    ]
+  }]
+}

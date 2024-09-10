@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ReturnDecisionSubreasonType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ReturnDecisionSubreasonType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ReturnDecisionSubreasonType {
+    title = ReturnDecisionSubreasonType
+    description = ReturnDecisionSubreasonType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  ReturnDecisionSubreasonType {
+    title = ReturnDecisionSubreasonType
+    description = ReturnDecisionSubreasonType
+    implements = ympa_python_blueplanet_server.resourceTypes.ReturnDecisionSubreasonType
+
+  }
+}

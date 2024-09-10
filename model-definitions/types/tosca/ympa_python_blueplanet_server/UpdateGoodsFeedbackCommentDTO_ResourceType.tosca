@@ -1,0 +1,45 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdateGoodsFeedbackCommentDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdateGoodsFeedbackCommentDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  UpdateGoodsFeedbackCommentDTO {
+    title = UpdateGoodsFeedbackCommentDTO
+    description = UpdateGoodsFeedbackCommentDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор комментария к отзыву. "
+          optional = false
+        }
+        parent_id {
+          type =  integer
+          description = "Идентификатор комментария к отзыву. "
+          optional = false
+        }
+        text {
+          type =  string
+          description = "Текст комментария."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdateGoodsFeedbackCommentDTO {
+    title = UpdateGoodsFeedbackCommentDTO
+    description = UpdateGoodsFeedbackCommentDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdateGoodsFeedbackCommentDTO
+
+  }
+}

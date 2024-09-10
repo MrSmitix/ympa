@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GoodsFeedbackCommentListDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GoodsFeedbackCommentListDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ForwardScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ForwardScrollingPagerDTO
+  GoodsFeedbackCommentDTO = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackCommentDTO
+}
+resourceTypes {
+
+  GoodsFeedbackCommentListDTO {
+    title = GoodsFeedbackCommentListDTO
+    description = GoodsFeedbackCommentListDTO
+    derivedFrom = Root
+    properties {
+        comments {
+          type = array
+          items.type = GoodsFeedbackCommentDTO
+          description = "Список комментариев."
+          optional = true
+        }
+        paging {
+          type = ForwardScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GoodsFeedbackCommentListDTO {
+    title = GoodsFeedbackCommentListDTO
+    description = GoodsFeedbackCommentListDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackCommentListDTO
+
+  }
+}

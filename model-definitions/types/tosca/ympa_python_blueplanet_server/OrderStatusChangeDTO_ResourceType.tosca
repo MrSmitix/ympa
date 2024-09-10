@@ -1,0 +1,48 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderStatusChangeDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderStatusChangeDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderStatusChangeDeliveryDTO = ympa_python_blueplanet_server.resourceTypes.OrderStatusChangeDeliveryDTO
+  OrderStatusType = ympa_python_blueplanet_server.resourceTypes.OrderStatusType
+  OrderSubstatusType = ympa_python_blueplanet_server.resourceTypes.OrderSubstatusType
+}
+resourceTypes {
+
+  OrderStatusChangeDTO {
+    title = OrderStatusChangeDTO
+    description = OrderStatusChangeDTO
+    derivedFrom = Root
+    properties {
+        status {
+          type = OrderStatusType
+          description = ""
+          optional = true
+        }
+        substatus {
+          type = OrderSubstatusType
+          description = ""
+          optional = false
+        }
+        delivery {
+          type = OrderStatusChangeDeliveryDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderStatusChangeDTO {
+    title = OrderStatusChangeDTO
+    description = OrderStatusChangeDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderStatusChangeDTO
+
+  }
+}

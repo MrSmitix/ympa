@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetQualityRatingRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetQualityRatingRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GetQualityRatingRequest {
+    title = GetQualityRatingRequest
+    description = GetQualityRatingRequest
+    derivedFrom = Root
+    properties {
+        date_from {
+          type =  string
+          description = "Начало периода.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Не может быть раньше 30 дней от текущей даты. "
+          optional = false
+        }
+        date_to {
+          type =  string
+          description = "Конец периода.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Не может быть позже текущей даты. "
+          optional = false
+        }
+        campaign_ids {
+          type = array
+          items.type =  integer
+          description = "Список идентификаторов магазинов."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetQualityRatingRequest {
+    title = GetQualityRatingRequest
+    description = GetQualityRatingRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetQualityRatingRequest
+
+  }
+}

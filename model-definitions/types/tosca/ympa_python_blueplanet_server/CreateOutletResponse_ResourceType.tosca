@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CreateOutletResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CreateOutletResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+  OutletResponseDTO = ympa_python_blueplanet_server.resourceTypes.OutletResponseDTO
+}
+resourceTypes {
+
+  CreateOutletResponse {
+    title = CreateOutletResponse
+    description = CreateOutletResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+        result {
+          type = OutletResponseDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CreateOutletResponse {
+    title = CreateOutletResponse
+    description = CreateOutletResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.CreateOutletResponse
+
+  }
+}

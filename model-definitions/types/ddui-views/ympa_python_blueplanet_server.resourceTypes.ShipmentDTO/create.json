@@ -1,0 +1,31 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "id" },
+      {"model": "plan_interval_from" },
+      {"model": "plan_interval_to" },
+      {"model": "shipment_type" },
+      {"model": "warehouse" },
+      {"model": "warehouse_to" },
+      {"model": "external_id" },
+      {"model": "delivery_service" },
+      {"model": "pallets_count" },
+      {"model": "order_ids" },
+      {"model": "draft_count" },
+      {"model": "planned_count" },
+      {"model": "fact_count" },
+      {"model": "current_status" },
+      {"model": "available_actions" },
+    ]
+  }]
+}

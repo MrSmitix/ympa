@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OutletLicensesResponseDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OutletLicensesResponseDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FullOutletLicenseDTO = ympa_python_blueplanet_server.resourceTypes.FullOutletLicenseDTO
+}
+resourceTypes {
+
+  OutletLicensesResponseDTO {
+    title = OutletLicensesResponseDTO
+    description = OutletLicensesResponseDTO
+    derivedFrom = Root
+    properties {
+        licenses {
+          type = array
+          items.type = FullOutletLicenseDTO
+          description = "Список лицензий."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OutletLicensesResponseDTO {
+    title = OutletLicensesResponseDTO
+    description = OutletLicensesResponseDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OutletLicensesResponseDTO
+
+  }
+}

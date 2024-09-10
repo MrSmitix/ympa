@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedPublicationFullDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedPublicationFullDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  FeedPublicationFullDTO {
+    title = FeedPublicationFullDTO
+    description = FeedPublicationFullDTO
+    derivedFrom = Root
+    properties {
+        file_time {
+          type =  string
+          description = "Дата и время, которые магазин указал в прайс-листе.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;. "
+          optional = false
+        }
+        published_time {
+          type =  string
+          description = "Дата и время публикации предложений из прайс-листа на Маркете.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedPublicationFullDTO {
+    title = FeedPublicationFullDTO
+    description = FeedPublicationFullDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedPublicationFullDTO
+
+  }
+}

@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferCampaignStatusType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferCampaignStatusType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OfferCampaignStatusType {
+    title = OfferCampaignStatusType
+    description = OfferCampaignStatusType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferCampaignStatusType {
+    title = OfferCampaignStatusType
+    description = OfferCampaignStatusType
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferCampaignStatusType
+
+  }
+}

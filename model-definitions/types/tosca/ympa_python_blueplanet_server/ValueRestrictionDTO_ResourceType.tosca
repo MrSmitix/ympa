@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ValueRestrictionDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ValueRestrictionDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OptionValuesLimitedDTO = ympa_python_blueplanet_server.resourceTypes.OptionValuesLimitedDTO
+}
+resourceTypes {
+
+  ValueRestrictionDTO {
+    title = ValueRestrictionDTO
+    description = ValueRestrictionDTO
+    derivedFrom = Root
+    properties {
+        limiting_parameter_id {
+          type =  integer
+          description = "Идентификатор ограничивающей характеристики."
+          optional = true
+        }
+        limited_values {
+          type = array
+          items.type = OptionValuesLimitedDTO
+          description = "Значения ограничивающей характеристики и соответствующие допустимые значения текущей характеристики."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ValueRestrictionDTO {
+    title = ValueRestrictionDTO
+    description = ValueRestrictionDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ValueRestrictionDTO
+
+  }
+}

@@ -1,0 +1,54 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server WarehouseOfferDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a WarehouseOfferDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  TurnoverDTO = ympa_python_blueplanet_server.resourceTypes.TurnoverDTO
+  WarehouseStockDTO = ympa_python_blueplanet_server.resourceTypes.WarehouseStockDTO
+  import re = ympa_python_blueplanet_server.resourceTypes.import re
+}
+resourceTypes {
+
+  WarehouseOfferDTO {
+    title = WarehouseOfferDTO
+    description = WarehouseOfferDTO
+    derivedFrom = Root
+    properties {
+        offer_id {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = true
+        }
+        turnover_summary {
+          type = TurnoverDTO
+          description = ""
+          optional = false
+        }
+        stocks {
+          type = array
+          items.type = WarehouseStockDTO
+          description = "Информация об остатках."
+          optional = true
+        }
+        updated_at {
+          type =  string
+          description = "Дата и время последнего обновления информации об остатках.  Формат даты и времени: ISO 8601 со смещением относительно UTC. Например, &#x60;2023-11-21T00:42:42+03:00&#x60;. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  WarehouseOfferDTO {
+    title = WarehouseOfferDTO
+    description = WarehouseOfferDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.WarehouseOfferDTO
+
+  }
+}

@@ -1,0 +1,56 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderBuyerBasicInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderBuyerBasicInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderBuyerType = ympa_python_blueplanet_server.resourceTypes.OrderBuyerType
+}
+resourceTypes {
+
+  OrderBuyerBasicInfoDTO {
+    title = OrderBuyerBasicInfoDTO
+    description = OrderBuyerBasicInfoDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  string
+          description = "Идентификатор покупателя."
+          optional = false
+        }
+        last_name {
+          type =  string
+          description = "Фамилия покупателя."
+          optional = false
+        }
+        first_name {
+          type =  string
+          description = "Имя покупателя."
+          optional = false
+        }
+        middle_name {
+          type =  string
+          description = "Отчество покупателя."
+          optional = false
+        }
+        type {
+          type = OrderBuyerType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderBuyerBasicInfoDTO {
+    title = OrderBuyerBasicInfoDTO
+    description = OrderBuyerBasicInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderBuyerBasicInfoDTO
+
+  }
+}

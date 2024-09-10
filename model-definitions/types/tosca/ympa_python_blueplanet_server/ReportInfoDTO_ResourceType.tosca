@@ -1,0 +1,62 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ReportInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ReportInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ReportStatusType = ympa_python_blueplanet_server.resourceTypes.ReportStatusType
+  ReportSubStatusType = ympa_python_blueplanet_server.resourceTypes.ReportSubStatusType
+}
+resourceTypes {
+
+  ReportInfoDTO {
+    title = ReportInfoDTO
+    description = ReportInfoDTO
+    derivedFrom = Root
+    properties {
+        status {
+          type = ReportStatusType
+          description = ""
+          optional = true
+        }
+        sub_status {
+          type = ReportSubStatusType
+          description = ""
+          optional = false
+        }
+        generation_requested_at {
+          type =  string
+          description = "Дата и время запроса на генерацию."
+          optional = true
+        }
+        generation_finished_at {
+          type =  string
+          description = "Дата и время завершения генерации."
+          optional = false
+        }
+        file {
+          type =  string
+          description = "Ссылка на готовый отчет."
+          optional = false
+        }
+        estimated_generation_time {
+          type =  integer
+          description = "Ожидаемая продолжительность генерации в миллисекундах."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ReportInfoDTO {
+    title = ReportInfoDTO
+    description = ReportInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ReportInfoDTO
+
+  }
+}

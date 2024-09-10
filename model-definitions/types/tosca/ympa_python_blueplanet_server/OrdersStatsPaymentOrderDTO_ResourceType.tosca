@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrdersStatsPaymentOrderDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrdersStatsPaymentOrderDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrdersStatsPaymentOrderDTO {
+    title = OrdersStatsPaymentOrderDTO
+    description = OrdersStatsPaymentOrderDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  string
+          description = "Номер платежного поручения."
+          optional = false
+        }
+        _date {
+          type =  string
+          description = "Дата платежного поручения.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrdersStatsPaymentOrderDTO {
+    title = OrdersStatsPaymentOrderDTO
+    description = OrdersStatsPaymentOrderDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPaymentOrderDTO
+
+  }
+}

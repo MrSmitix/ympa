@@ -1,0 +1,53 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "name" },
+      {"model": "shop_sku" },
+      {"model": "category" },
+      {"model": "vendor" },
+      {"model": "vendor_code" },
+      {"model": "description" },
+      {"model": "id" },
+      {"model": "feed_id" },
+      {"model": "barcodes" },
+      {"model": "urls" },
+      {"model": "pictures" },
+      {"model": "manufacturer" },
+      {"model": "manufacturer_countries" },
+      {"model": "min_shipment" },
+      {"model": "transport_unit_size" },
+      {"model": "quantum_of_supply" },
+      {"model": "delivery_duration_days" },
+      {"model": "box_count" },
+      {"model": "customs_commodity_codes" },
+      {"model": "weight_dimensions" },
+      {"model": "supply_schedule_days" },
+      {"model": "shelf_life_days" },
+      {"model": "life_time_days" },
+      {"model": "guarantee_period_days" },
+      {"model": "processing_state" },
+      {"model": "availability" },
+      {"model": "shelf_life" },
+      {"model": "life_time" },
+      {"model": "guarantee_period" },
+      {"model": "certificate" },
+      {"model": "price" },
+      {"model": "market_category_id" },
+      {"model": "market_category_name" },
+      {"model": "market_model_id" },
+      {"model": "market_model_name" },
+      {"model": "market_sku" },
+      {"model": "market_sku_name" },
+    ]
+  }]
+}

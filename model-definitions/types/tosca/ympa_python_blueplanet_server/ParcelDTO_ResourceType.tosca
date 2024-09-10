@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ParcelDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ParcelDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ParcelBoxDTO = ympa_python_blueplanet_server.resourceTypes.ParcelBoxDTO
+}
+resourceTypes {
+
+  ParcelDTO {
+    title = ParcelDTO
+    description = ParcelDTO
+    derivedFrom = Root
+    properties {
+        boxes {
+          type = array
+          items.type = ParcelBoxDTO
+          description = "Список грузовых мест. Маркет определяет количество мест по длине этого списка."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ParcelDTO {
+    title = ParcelDTO
+    description = ParcelDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ParcelDTO
+
+  }
+}

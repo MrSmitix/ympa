@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ReturnType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ReturnType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ReturnType {
+    title = ReturnType
+    description = ReturnType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  ReturnType {
+    title = ReturnType
+    description = ReturnType
+    implements = ympa_python_blueplanet_server.resourceTypes.ReturnType
+
+  }
+}

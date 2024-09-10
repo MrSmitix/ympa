@@ -1,0 +1,44 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdatePromoOffersResultDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdatePromoOffersResultDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  RejectedPromoOfferUpdateDTO = ympa_python_blueplanet_server.resourceTypes.RejectedPromoOfferUpdateDTO
+  WarningPromoOfferUpdateDTO = ympa_python_blueplanet_server.resourceTypes.WarningPromoOfferUpdateDTO
+}
+resourceTypes {
+
+  UpdatePromoOffersResultDTO {
+    title = UpdatePromoOffersResultDTO
+    description = UpdatePromoOffersResultDTO
+    derivedFrom = Root
+    properties {
+        rejected_offers {
+          type = array
+          items.type = RejectedPromoOfferUpdateDTO
+          description = "Изменения, которые были отклонены.  Возвращается, только если есть отклоненные изменения. "
+          optional = false
+        }
+        warning_offers {
+          type = array
+          items.type = WarningPromoOfferUpdateDTO
+          description = "Изменения, по которым есть предупреждения. Они информируют о возможных проблемах. Информация о товарах обновится.  Возвращается, только если есть предупреждения. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdatePromoOffersResultDTO {
+    title = UpdatePromoOffersResultDTO
+    description = UpdatePromoOffersResultDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdatePromoOffersResultDTO
+
+  }
+}

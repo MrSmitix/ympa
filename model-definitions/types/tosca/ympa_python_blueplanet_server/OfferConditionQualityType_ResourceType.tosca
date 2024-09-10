@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferConditionQualityType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferConditionQualityType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OfferConditionQualityType {
+    title = OfferConditionQualityType
+    description = OfferConditionQualityType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferConditionQualityType {
+    title = OfferConditionQualityType
+    description = OfferConditionQualityType
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferConditionQualityType
+
+  }
+}

@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferSellingProgramDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferSellingProgramDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OfferSellingProgramStatusType = ympa_python_blueplanet_server.resourceTypes.OfferSellingProgramStatusType
+  SellingProgramType = ympa_python_blueplanet_server.resourceTypes.SellingProgramType
+}
+resourceTypes {
+
+  OfferSellingProgramDTO {
+    title = OfferSellingProgramDTO
+    description = OfferSellingProgramDTO
+    derivedFrom = Root
+    properties {
+        selling_program {
+          type = SellingProgramType
+          description = ""
+          optional = true
+        }
+        status {
+          type = OfferSellingProgramStatusType
+          description = ""
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferSellingProgramDTO {
+    title = OfferSellingProgramDTO
+    description = OfferSellingProgramDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferSellingProgramDTO
+
+  }
+}

@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server DeletePromoOffersResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a DeletePromoOffersResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+  DeletePromoOffersResultDTO = ympa_python_blueplanet_server.resourceTypes.DeletePromoOffersResultDTO
+}
+resourceTypes {
+
+  DeletePromoOffersResponse {
+    title = DeletePromoOffersResponse
+    description = DeletePromoOffersResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+        result {
+          type = DeletePromoOffersResultDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  DeletePromoOffersResponse {
+    title = DeletePromoOffersResponse
+    description = DeletePromoOffersResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.DeletePromoOffersResponse
+
+  }
+}

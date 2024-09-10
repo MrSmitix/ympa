@@ -1,0 +1,22 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "date_time_from" },
+      {"model": "date_time_to" },
+      {"model": "reaction_status" },
+      {"model": "rating_values" },
+      {"model": "model_ids" },
+      {"model": "paid" },
+    ]
+  }]
+}

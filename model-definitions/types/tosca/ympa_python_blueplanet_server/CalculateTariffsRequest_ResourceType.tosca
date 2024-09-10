@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CalculateTariffsRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CalculateTariffsRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CalculateTariffsOfferDTO = ympa_python_blueplanet_server.resourceTypes.CalculateTariffsOfferDTO
+  CalculateTariffsParametersDTO = ympa_python_blueplanet_server.resourceTypes.CalculateTariffsParametersDTO
+}
+resourceTypes {
+
+  CalculateTariffsRequest {
+    title = CalculateTariffsRequest
+    description = CalculateTariffsRequest
+    derivedFrom = Root
+    properties {
+        parameters {
+          type = CalculateTariffsParametersDTO
+          description = ""
+          optional = true
+        }
+        offers {
+          type = array
+          items.type = CalculateTariffsOfferDTO
+          description = "Товары, для которых нужно рассчитать стоимость услуг."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CalculateTariffsRequest {
+    title = CalculateTariffsRequest
+    description = CalculateTariffsRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.CalculateTariffsRequest
+
+  }
+}

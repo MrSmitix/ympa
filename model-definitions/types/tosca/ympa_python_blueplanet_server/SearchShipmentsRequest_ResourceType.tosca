@@ -1,0 +1,58 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server SearchShipmentsRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a SearchShipmentsRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ShipmentStatusType = ympa_python_blueplanet_server.resourceTypes.ShipmentStatusType
+}
+resourceTypes {
+
+  SearchShipmentsRequest {
+    title = SearchShipmentsRequest
+    description = SearchShipmentsRequest
+    derivedFrom = Root
+    properties {
+        date_from {
+          type =  string
+          description = "Начальная дата для фильтрации по дате отгрузки (включительно).  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. "
+          optional = true
+        }
+        date_to {
+          type =  string
+          description = "Конечная дата для фильтрации по дате отгрузки (включительно).  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. "
+          optional = true
+        }
+        statuses {
+          type = array
+          items.type = ShipmentStatusType
+          description = "Список статусов отгрузок."
+          optional = false
+        }
+        order_ids {
+          type = array
+          items.type =  integer
+          description = "Список идентификаторов заказов из отгрузок."
+          optional = false
+        }
+        cancelled_orders {
+          type =  boolean
+          description = "Возвращать ли отмененные заказы.  Значение по умолчанию — &#x60;true&#x60;. Если возвращать отмененные заказы не нужно, передайте значение &#x60;false&#x60;. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  SearchShipmentsRequest {
+    title = SearchShipmentsRequest
+    description = SearchShipmentsRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.SearchShipmentsRequest
+
+  }
+}

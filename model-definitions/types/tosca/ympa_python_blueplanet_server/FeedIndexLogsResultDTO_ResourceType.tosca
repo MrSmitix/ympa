@@ -1,0 +1,48 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedIndexLogsResultDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedIndexLogsResultDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedIndexLogsFeedDTO = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsFeedDTO
+  FeedIndexLogsRecordDTO = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsRecordDTO
+}
+resourceTypes {
+
+  FeedIndexLogsResultDTO {
+    title = FeedIndexLogsResultDTO
+    description = FeedIndexLogsResultDTO
+    derivedFrom = Root
+    properties {
+        feed {
+          type = FeedIndexLogsFeedDTO
+          description = ""
+          optional = false
+        }
+        index_log_records {
+          type = array
+          items.type = FeedIndexLogsRecordDTO
+          description = "Список отчетов по индексации прайс-листа."
+          optional = true
+        }
+        total {
+          type =  integer
+          description = "Количество отчетов на всех страницах выходных данных."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedIndexLogsResultDTO {
+    title = FeedIndexLogsResultDTO
+    description = FeedIndexLogsResultDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsResultDTO
+
+  }
+}

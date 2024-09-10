@@ -1,0 +1,74 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedIndexLogsRecordDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedIndexLogsRecordDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedIndexLogsErrorDTO = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsErrorDTO
+  FeedIndexLogsIndexType = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsIndexType
+  FeedIndexLogsOffersDTO = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsOffersDTO
+  FeedIndexLogsStatusType = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsStatusType
+}
+resourceTypes {
+
+  FeedIndexLogsRecordDTO {
+    title = FeedIndexLogsRecordDTO
+    description = FeedIndexLogsRecordDTO
+    derivedFrom = Root
+    properties {
+        download_time {
+          type =  string
+          description = "Дата и время загрузки прайс-листа.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;. "
+          optional = false
+        }
+        file_time {
+          type =  string
+          description = "Дата и время, которые магазин указал в прайс-листе.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;. "
+          optional = false
+        }
+        generation_id {
+          type =  integer
+          description = "Идентификатор индексации."
+          optional = false
+        }
+        index_type {
+          type = FeedIndexLogsIndexType
+          description = ""
+          optional = false
+        }
+        published_time {
+          type =  string
+          description = "Дата и время публикации предложений из прайс-листа на Яндекс Маркете.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;. "
+          optional = false
+        }
+        status {
+          type = FeedIndexLogsStatusType
+          description = ""
+          optional = false
+        }
+        error {
+          type = FeedIndexLogsErrorDTO
+          description = ""
+          optional = false
+        }
+        offers {
+          type = FeedIndexLogsOffersDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedIndexLogsRecordDTO {
+    title = FeedIndexLogsRecordDTO
+    description = FeedIndexLogsRecordDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedIndexLogsRecordDTO
+
+  }
+}

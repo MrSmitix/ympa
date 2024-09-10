@@ -1,0 +1,28 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "offer_name" },
+      {"model": "market_sku" },
+      {"model": "shop_sku" },
+      {"model": "count" },
+      {"model": "prices" },
+      {"model": "warehouse" },
+      {"model": "details" },
+      {"model": "cis_list" },
+      {"model": "initial_count" },
+      {"model": "bid_fee" },
+      {"model": "cofinance_threshold" },
+      {"model": "cofinance_value" },
+    ]
+  }]
+}

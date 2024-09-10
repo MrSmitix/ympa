@@ -1,0 +1,35 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CreateChatRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CreateChatRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  CreateChatRequest {
+    title = CreateChatRequest
+    description = CreateChatRequest
+    derivedFrom = Root
+    properties {
+        order_id {
+          type =  integer
+          description = "Идентификатор заказа на Маркете."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CreateChatRequest {
+    title = CreateChatRequest
+    description = CreateChatRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.CreateChatRequest
+
+  }
+}

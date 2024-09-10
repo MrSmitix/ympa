@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OutletStatusType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OutletStatusType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OutletStatusType {
+    title = OutletStatusType
+    description = OutletStatusType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  OutletStatusType {
+    title = OutletStatusType
+    description = OutletStatusType
+    implements = ympa_python_blueplanet_server.resourceTypes.OutletStatusType
+
+  }
+}

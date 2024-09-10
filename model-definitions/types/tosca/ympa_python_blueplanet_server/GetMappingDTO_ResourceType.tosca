@@ -1,0 +1,60 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetMappingDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetMappingDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GetMappingDTO {
+    title = GetMappingDTO
+    description = GetMappingDTO
+    derivedFrom = Root
+    properties {
+        market_sku {
+          type =  integer
+          description = "SKU на Маркете."
+          optional = false
+        }
+        market_sku_name {
+          type =  string
+          description = "Название карточки товара.  Может отсутствовать в ответе, если товар еще не привязан к карточке. "
+          optional = false
+        }
+        market_model_id {
+          type =  integer
+          description = "Идентификатор модели на Маркете.  Может отсутствовать в ответе, если товар еще не привязан к карточке. "
+          optional = false
+        }
+        market_model_name {
+          type =  string
+          description = "Название модели на Маркете.  Может отсутствовать в ответе, если товар еще не привязан к карточке. "
+          optional = false
+        }
+        market_category_id {
+          type =  integer
+          description = "Идентификатор категории на Маркете, в которую попал товар.  Может отсутствовать в ответе, если Маркет еще не определил категорию товара. "
+          optional = false
+        }
+        market_category_name {
+          type =  string
+          description = "Название категории карточки на Маркете.  Может отсутствовать в ответе, если Маркет еще не определил категорию товара. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetMappingDTO {
+    title = GetMappingDTO
+    description = GetMappingDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetMappingDTO
+
+  }
+}

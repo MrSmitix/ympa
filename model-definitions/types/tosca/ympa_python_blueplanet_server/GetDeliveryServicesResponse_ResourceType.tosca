@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetDeliveryServicesResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetDeliveryServicesResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  DeliveryServicesDTO = ympa_python_blueplanet_server.resourceTypes.DeliveryServicesDTO
+}
+resourceTypes {
+
+  GetDeliveryServicesResponse {
+    title = GetDeliveryServicesResponse
+    description = GetDeliveryServicesResponse
+    derivedFrom = Root
+    properties {
+        result {
+          type = DeliveryServicesDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetDeliveryServicesResponse {
+    title = GetDeliveryServicesResponse
+    description = GetDeliveryServicesResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetDeliveryServicesResponse
+
+  }
+}

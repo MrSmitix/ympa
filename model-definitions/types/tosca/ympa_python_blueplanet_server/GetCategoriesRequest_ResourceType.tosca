@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetCategoriesRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetCategoriesRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  LanguageType = ympa_python_blueplanet_server.resourceTypes.LanguageType
+}
+resourceTypes {
+
+  GetCategoriesRequest {
+    title = GetCategoriesRequest
+    description = GetCategoriesRequest
+    derivedFrom = Root
+    properties {
+        language {
+          type = LanguageType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetCategoriesRequest {
+    title = GetCategoriesRequest
+    description = GetCategoriesRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetCategoriesRequest
+
+  }
+}

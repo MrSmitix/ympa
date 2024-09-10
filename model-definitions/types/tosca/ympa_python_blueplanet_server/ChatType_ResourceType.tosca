@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ChatType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ChatType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ChatType {
+    title = ChatType
+    description = ChatType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  ChatType {
+    title = ChatType
+    description = ChatType
+    implements = ympa_python_blueplanet_server.resourceTypes.ChatType
+
+  }
+}

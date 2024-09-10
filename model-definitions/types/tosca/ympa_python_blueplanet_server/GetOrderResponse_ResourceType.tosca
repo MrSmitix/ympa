@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetOrderResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetOrderResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderDTO = ympa_python_blueplanet_server.resourceTypes.OrderDTO
+}
+resourceTypes {
+
+  GetOrderResponse {
+    title = GetOrderResponse
+    description = GetOrderResponse
+    derivedFrom = Root
+    properties {
+        order {
+          type = OrderDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetOrderResponse {
+    title = GetOrderResponse
+    description = GetOrderResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetOrderResponse
+
+  }
+}

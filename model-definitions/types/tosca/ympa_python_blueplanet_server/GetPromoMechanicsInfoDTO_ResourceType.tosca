@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetPromoMechanicsInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetPromoMechanicsInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  GetPromoPromocodeInfoDTO = ympa_python_blueplanet_server.resourceTypes.GetPromoPromocodeInfoDTO
+  MechanicsType = ympa_python_blueplanet_server.resourceTypes.MechanicsType
+}
+resourceTypes {
+
+  GetPromoMechanicsInfoDTO {
+    title = GetPromoMechanicsInfoDTO
+    description = GetPromoMechanicsInfoDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = MechanicsType
+          description = ""
+          optional = true
+        }
+        promocode_info {
+          type = GetPromoPromocodeInfoDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetPromoMechanicsInfoDTO {
+    title = GetPromoMechanicsInfoDTO
+    description = GetPromoMechanicsInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetPromoMechanicsInfoDTO
+
+  }
+}

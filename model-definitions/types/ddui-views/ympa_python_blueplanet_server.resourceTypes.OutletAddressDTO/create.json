@@ -1,0 +1,25 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "region_id" },
+      {"model": "street" },
+      {"model": "number" },
+      {"model": "building" },
+      {"model": "estate" },
+      {"model": "block" },
+      {"model": "additional" },
+      {"model": "km" },
+      {"model": "city" },
+    ]
+  }]
+}

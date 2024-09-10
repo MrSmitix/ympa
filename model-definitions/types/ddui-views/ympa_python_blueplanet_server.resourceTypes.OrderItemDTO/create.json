@@ -1,0 +1,33 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "id" },
+      {"model": "offer_id" },
+      {"model": "offer_name" },
+      {"model": "price" },
+      {"model": "buyer_price" },
+      {"model": "buyer_price_before_discount" },
+      {"model": "price_before_discount" },
+      {"model": "count" },
+      {"model": "vat" },
+      {"model": "shop_sku" },
+      {"model": "subsidy" },
+      {"model": "partner_warehouse_id" },
+      {"model": "promos" },
+      {"model": "instances" },
+      {"model": "details" },
+      {"model": "subsidies" },
+      {"model": "required_instance_types" },
+    ]
+  }]
+}

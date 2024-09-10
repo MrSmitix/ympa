@@ -1,0 +1,84 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedContentDTO = ympa_python_blueplanet_server.resourceTypes.FeedContentDTO
+  FeedDownloadDTO = ympa_python_blueplanet_server.resourceTypes.FeedDownloadDTO
+  FeedPlacementDTO = ympa_python_blueplanet_server.resourceTypes.FeedPlacementDTO
+  FeedPublicationDTO = ympa_python_blueplanet_server.resourceTypes.FeedPublicationDTO
+}
+resourceTypes {
+
+  FeedDTO {
+    title = FeedDTO
+    description = FeedDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор прайс-листа."
+          optional = false
+        }
+        login {
+          type =  string
+          description = "Логин для авторизации при скачивании прайс-листа. Параметр выводится при размещении прайс-листа на сайте магазина и в случае ограничения доступа к нему. "
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Имя файла, содержащего прайс-лист. Параметр выводится при размещении прайс-листа на сервере Маркета. "
+          optional = false
+        }
+        password {
+          type =  string
+          description = "Пароль для авторизации при скачивании прайс-листа. Параметр выводится при размещении прайс-листа на сайте магазина и в случае ограничения доступа к нему. "
+          optional = false
+        }
+        upload_date {
+          type =  string
+          description = "Дата загрузки прайс-листа на Маркет.  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;.  Параметр выводится при размещении прайс-листа на сервере Маркета. "
+          optional = false
+        }
+        url {
+          type =  string
+          description = "URL прайс-листа. Параметр выводится при размещении прайс-листа на сайте магазина. "
+          optional = false
+        }
+        content {
+          type = FeedContentDTO
+          description = ""
+          optional = false
+        }
+        download {
+          type = FeedDownloadDTO
+          description = ""
+          optional = false
+        }
+        placement {
+          type = FeedPlacementDTO
+          description = ""
+          optional = false
+        }
+        publication {
+          type = FeedPublicationDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedDTO {
+    title = FeedDTO
+    description = FeedDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedDTO
+
+  }
+}

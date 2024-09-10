@@ -1,0 +1,57 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GenerateStocksOnWarehousesReportRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GenerateStocksOnWarehousesReportRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GenerateStocksOnWarehousesReportRequest {
+    title = GenerateStocksOnWarehousesReportRequest
+    description = GenerateStocksOnWarehousesReportRequest
+    derivedFrom = Root
+    properties {
+        campaign_id {
+          type =  integer
+          description = "Идентификатор магазина."
+          optional = true
+        }
+        warehouse_ids {
+          type = array
+          items.type =  integer
+          description = "Фильтр по идентификаторам складов (только модель FBY). Чтобы узнать идентификатор, воспользуйтесь запросом [GET warehouses](../../reference/warehouses/getFulfillmentWarehouses.md)."
+          optional = false
+        }
+        report_date {
+          type =  string
+          description = "Фильтр по дате (для модели FBY). В отчет попадут данные за **предшествующий** дате день."
+          optional = false
+        }
+        category_ids {
+          type = array
+          items.type =  integer
+          description = "Фильтр по категориям на Маркете (кроме модели FBY)."
+          optional = false
+        }
+        has_stocks {
+          type =  boolean
+          description = "Фильтр по наличию остатков (кроме модели FBY)."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GenerateStocksOnWarehousesReportRequest {
+    title = GenerateStocksOnWarehousesReportRequest
+    description = GenerateStocksOnWarehousesReportRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GenerateStocksOnWarehousesReportRequest
+
+  }
+}

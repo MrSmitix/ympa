@@ -1,0 +1,49 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetOfferCardsContentStatusRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetOfferCardsContentStatusRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OfferCardStatusType = ympa_python_blueplanet_server.resourceTypes.OfferCardStatusType
+}
+resourceTypes {
+
+  GetOfferCardsContentStatusRequest {
+    title = GetOfferCardsContentStatusRequest
+    description = GetOfferCardsContentStatusRequest
+    derivedFrom = Root
+    properties {
+        offer_ids {
+          type = array
+          items.type =  string
+          description = "Идентификаторы товаров, информация о которых нужна. &lt;br&gt;&lt;br&gt; ⚠️ Не используйте это поле одновременно с фильтрами по статусам карточек, категориям, брендам или тегам. Если вы хотите воспользоваться фильтрами, оставьте поле пустым. "
+          optional = false
+        }
+        card_statuses {
+          type = array
+          items.type = OfferCardStatusType
+          description = "Фильтр по статусам карточек.  [Что такое карточка товара](https://yandex.ru/support/marketplace/assortment/content/index.html) "
+          optional = false
+        }
+        category_ids {
+          type = array
+          items.type =  integer
+          description = "Фильтр по категориям на Маркете."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetOfferCardsContentStatusRequest {
+    title = GetOfferCardsContentStatusRequest
+    description = GetOfferCardsContentStatusRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetOfferCardsContentStatusRequest
+
+  }
+}

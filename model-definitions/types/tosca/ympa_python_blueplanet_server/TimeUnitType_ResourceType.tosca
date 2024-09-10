@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server TimeUnitType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a TimeUnitType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  TimeUnitType {
+    title = TimeUnitType
+    description = TimeUnitType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  TimeUnitType {
+    title = TimeUnitType
+    description = TimeUnitType
+    implements = ympa_python_blueplanet_server.resourceTypes.TimeUnitType
+
+  }
+}

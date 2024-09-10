@@ -1,0 +1,127 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderItemDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderItemDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderItemDetailDTO = ympa_python_blueplanet_server.resourceTypes.OrderItemDetailDTO
+  OrderItemInstanceDTO = ympa_python_blueplanet_server.resourceTypes.OrderItemInstanceDTO
+  OrderItemInstanceType = ympa_python_blueplanet_server.resourceTypes.OrderItemInstanceType
+  OrderItemPromoDTO = ympa_python_blueplanet_server.resourceTypes.OrderItemPromoDTO
+  OrderItemSubsidyDTO = ympa_python_blueplanet_server.resourceTypes.OrderItemSubsidyDTO
+  OrderVatType = ympa_python_blueplanet_server.resourceTypes.OrderVatType
+  import re = ympa_python_blueplanet_server.resourceTypes.import re
+}
+resourceTypes {
+
+  OrderItemDTO {
+    title = OrderItemDTO
+    description = OrderItemDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор товара в заказе.  Позволяет идентифицировать товар в рамках данного заказа. "
+          optional = false
+        }
+        offer_id {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = false
+        }
+        offer_name {
+          type =  string
+          description = "Название товара."
+          optional = false
+        }
+        price {
+          type =  
+          description = "Цена на товар в валюте заказа без учета вознаграждения партнеру за скидки по промокодам, купонам и акциям (параметр &#x60;subsidies&#x60;). "
+          optional = false
+        }
+        buyer_price {
+          type =  
+          description = "Цена на товар в валюте покупателя. В цене уже учтены скидки по:  * акциям; * купонам; * промокодам. "
+          optional = false
+        }
+        buyer_price_before_discount {
+          type =  
+          description = "Стоимость товара в валюте покупателя до применения скидок по:  * акциям; * купонам; * промокодам. "
+          optional = false
+        }
+        price_before_discount {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел.  {% endnote %}  Стоимость товара в валюте магазина до применения скидок. "
+          optional = false
+        }
+        count {
+          type =  integer
+          description = "Количество единиц товара."
+          optional = false
+        }
+        vat {
+          type = OrderVatType
+          description = ""
+          optional = false
+        }
+        shop_sku {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = false
+        }
+        subsidy {
+          type =  
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Вместо него используйте &#x60;subsidies&#x60;.  {% endnote %}  Общее вознаграждение партнеру за DBS-доставку и все скидки на товар:  * по промокодам; * по купонам; * по баллам Плюса; * по акциям.  Передается в валюте заказа. "
+          optional = false
+        }
+        partner_warehouse_id {
+          type =  string
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Идентификатор склада в системе партнера, на который сформирован заказ. "
+          optional = false
+        }
+        promos {
+          type = array
+          items.type = OrderItemPromoDTO
+          description = "Информация о вознаграждениях партнеру за скидки на товар по промокодам, купонам и акциям."
+          optional = false
+        }
+        instances {
+          type = array
+          items.type = OrderItemInstanceDTO
+          description = "Информация о маркировке единиц товара.  Возвращаются данные для маркировки, переданные в запросе [PUT campaigns/{campaignId}/orders/{orderId}/cis](../../reference/orders/provideOrderItemCis.md).  Если магазин еще не передавал коды для этого заказа, &#x60;instances&#x60; отсутствует. "
+          optional = false
+        }
+        details {
+          type = array
+          items.type = OrderItemDetailDTO
+          description = "Информация об удалении товара из заказа. "
+          optional = false
+        }
+        subsidies {
+          type = array
+          items.type = OrderItemSubsidyDTO
+          description = "Список субсидий по типам."
+          optional = false
+        }
+        required_instance_types {
+          type = array
+          items.type = OrderItemInstanceType
+          description = "Список необходимых маркировок товара."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderItemDTO {
+    title = OrderItemDTO
+    description = OrderItemDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderItemDTO
+
+  }
+}

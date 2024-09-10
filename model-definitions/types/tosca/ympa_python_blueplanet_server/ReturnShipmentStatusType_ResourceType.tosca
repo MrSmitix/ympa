@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ReturnShipmentStatusType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ReturnShipmentStatusType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ReturnShipmentStatusType {
+    title = ReturnShipmentStatusType
+    description = ReturnShipmentStatusType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  ReturnShipmentStatusType {
+    title = ReturnShipmentStatusType
+    description = ReturnShipmentStatusType
+    implements = ympa_python_blueplanet_server.resourceTypes.ReturnShipmentStatusType
+
+  }
+}

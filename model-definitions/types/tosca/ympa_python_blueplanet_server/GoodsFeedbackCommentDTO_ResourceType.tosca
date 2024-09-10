@@ -1,0 +1,62 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GoodsFeedbackCommentDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GoodsFeedbackCommentDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  GoodsFeedbackCommentAuthorDTO = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackCommentAuthorDTO
+  GoodsFeedbackCommentStatusType = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackCommentStatusType
+}
+resourceTypes {
+
+  GoodsFeedbackCommentDTO {
+    title = GoodsFeedbackCommentDTO
+    description = GoodsFeedbackCommentDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор комментария к отзыву. "
+          optional = true
+        }
+        text {
+          type =  string
+          description = "Текст комментария."
+          optional = true
+        }
+        can_modify {
+          type =  boolean
+          description = "Может ли продавец изменять комментарий или удалять его."
+          optional = false
+        }
+        parent_id {
+          type =  integer
+          description = "Идентификатор комментария к отзыву. "
+          optional = false
+        }
+        author {
+          type = GoodsFeedbackCommentAuthorDTO
+          description = ""
+          optional = true
+        }
+        status {
+          type = GoodsFeedbackCommentStatusType
+          description = ""
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GoodsFeedbackCommentDTO {
+    title = GoodsFeedbackCommentDTO
+    description = GoodsFeedbackCommentDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GoodsFeedbackCommentDTO
+
+  }
+}

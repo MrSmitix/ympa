@@ -1,0 +1,55 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderCourierDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderCourierDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrderCourierDTO {
+    title = OrderCourierDTO
+    description = OrderCourierDTO
+    derivedFrom = Root
+    properties {
+        full_name {
+          type =  string
+          description = "Полное имя курьера."
+          optional = false
+        }
+        phone {
+          type =  string
+          description = "Номер телефона курьера."
+          optional = false
+        }
+        phone_extension {
+          type =  string
+          description = "Добавочный номер телефона."
+          optional = false
+        }
+        vehicle_number {
+          type =  string
+          description = "Номер транспортного средства."
+          optional = false
+        }
+        vehicle_description {
+          type =  string
+          description = "Описание машины. Например, модель и цвет."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderCourierDTO {
+    title = OrderCourierDTO
+    description = OrderCourierDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderCourierDTO
+
+  }
+}

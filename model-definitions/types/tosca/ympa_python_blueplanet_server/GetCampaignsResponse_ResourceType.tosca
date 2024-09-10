@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetCampaignsResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetCampaignsResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CampaignDTO = ympa_python_blueplanet_server.resourceTypes.CampaignDTO
+  FlippingPagerDTO = ympa_python_blueplanet_server.resourceTypes.FlippingPagerDTO
+}
+resourceTypes {
+
+  GetCampaignsResponse {
+    title = GetCampaignsResponse
+    description = GetCampaignsResponse
+    derivedFrom = Root
+    properties {
+        campaigns {
+          type = array
+          items.type = CampaignDTO
+          description = "Список с информацией по каждому магазину."
+          optional = true
+        }
+        pager {
+          type = FlippingPagerDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetCampaignsResponse {
+    title = GetCampaignsResponse
+    description = GetCampaignsResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetCampaignsResponse
+
+  }
+}

@@ -1,0 +1,41 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PriceSuggestDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PriceSuggestDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  PriceSuggestType = ympa_python_blueplanet_server.resourceTypes.PriceSuggestType
+}
+resourceTypes {
+
+  PriceSuggestDTO {
+    title = PriceSuggestDTO
+    description = PriceSuggestDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = PriceSuggestType
+          description = ""
+          optional = false
+        }
+        price {
+          type =  
+          description = "Цена в рублях."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PriceSuggestDTO {
+    title = PriceSuggestDTO
+    description = PriceSuggestDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PriceSuggestDTO
+
+  }
+}

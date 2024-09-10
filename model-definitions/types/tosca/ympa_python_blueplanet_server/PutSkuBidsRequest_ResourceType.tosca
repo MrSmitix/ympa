@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PutSkuBidsRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PutSkuBidsRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  SkuBidItemDTO = ympa_python_blueplanet_server.resourceTypes.SkuBidItemDTO
+}
+resourceTypes {
+
+  PutSkuBidsRequest {
+    title = PutSkuBidsRequest
+    description = PutSkuBidsRequest
+    derivedFrom = Root
+    properties {
+        bids {
+          type = array
+          items.type = SkuBidItemDTO
+          description = "Список товаров и ставки для продвижения, которые на них нужно установить."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PutSkuBidsRequest {
+    title = PutSkuBidsRequest
+    description = PutSkuBidsRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.PutSkuBidsRequest
+
+  }
+}

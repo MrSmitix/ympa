@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedDownloadDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedDownloadDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedDownloadErrorDTO = ympa_python_blueplanet_server.resourceTypes.FeedDownloadErrorDTO
+  FeedStatusType = ympa_python_blueplanet_server.resourceTypes.FeedStatusType
+}
+resourceTypes {
+
+  FeedDownloadDTO {
+    title = FeedDownloadDTO
+    description = FeedDownloadDTO
+    derivedFrom = Root
+    properties {
+        status {
+          type = FeedStatusType
+          description = ""
+          optional = false
+        }
+        error {
+          type = FeedDownloadErrorDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedDownloadDTO {
+    title = FeedDownloadDTO
+    description = FeedDownloadDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedDownloadDTO
+
+  }
+}

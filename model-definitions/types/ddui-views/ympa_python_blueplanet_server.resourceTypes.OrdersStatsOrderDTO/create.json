@@ -1,0 +1,28 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "id" },
+      {"model": "creation_date" },
+      {"model": "status_update_date" },
+      {"model": "status" },
+      {"model": "partner_order_id" },
+      {"model": "payment_type" },
+      {"model": "fake" },
+      {"model": "delivery_region" },
+      {"model": "items" },
+      {"model": "initial_items" },
+      {"model": "payments" },
+      {"model": "commissions" },
+    ]
+  }]
+}

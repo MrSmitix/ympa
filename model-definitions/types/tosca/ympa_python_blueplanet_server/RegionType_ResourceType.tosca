@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server RegionType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a RegionType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  RegionType {
+    title = RegionType
+    description = RegionType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  RegionType {
+    title = RegionType
+    description = RegionType
+    implements = ympa_python_blueplanet_server.resourceTypes.RegionType
+
+  }
+}

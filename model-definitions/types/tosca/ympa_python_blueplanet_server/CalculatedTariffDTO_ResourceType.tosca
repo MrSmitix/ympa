@@ -1,0 +1,48 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CalculatedTariffDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CalculatedTariffDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CalculatedTariffType = ympa_python_blueplanet_server.resourceTypes.CalculatedTariffType
+  TariffParameterDTO = ympa_python_blueplanet_server.resourceTypes.TariffParameterDTO
+}
+resourceTypes {
+
+  CalculatedTariffDTO {
+    title = CalculatedTariffDTO
+    description = CalculatedTariffDTO
+    derivedFrom = Root
+    properties {
+        type {
+          type = CalculatedTariffType
+          description = ""
+          optional = true
+        }
+        amount {
+          type =  
+          description = "Стоимость услуги в рублях."
+          optional = false
+        }
+        parameters {
+          type = array
+          items.type = TariffParameterDTO
+          description = "Параметры расчета тарифа."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CalculatedTariffDTO {
+    title = CalculatedTariffDTO
+    description = CalculatedTariffDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CalculatedTariffDTO
+
+  }
+}

@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ModelsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ModelsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ModelDTO = ympa_python_blueplanet_server.resourceTypes.ModelDTO
+}
+resourceTypes {
+
+  ModelsDTO {
+    title = ModelsDTO
+    description = ModelsDTO
+    derivedFrom = Root
+    properties {
+        models {
+          type = array
+          items.type = ModelDTO
+          description = "Список моделей товаров."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ModelsDTO {
+    title = ModelsDTO
+    description = ModelsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ModelsDTO
+
+  }
+}

@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ApiClientDataErrorResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ApiClientDataErrorResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiErrorDTO = ympa_python_blueplanet_server.resourceTypes.ApiErrorDTO
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+}
+resourceTypes {
+
+  ApiClientDataErrorResponse {
+    title = ApiClientDataErrorResponse
+    description = ApiClientDataErrorResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+        errors {
+          type = array
+          items.type = ApiErrorDTO
+          description = "Список ошибок."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ApiClientDataErrorResponse {
+    title = ApiClientDataErrorResponse
+    description = ApiClientDataErrorResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.ApiClientDataErrorResponse
+
+  }
+}

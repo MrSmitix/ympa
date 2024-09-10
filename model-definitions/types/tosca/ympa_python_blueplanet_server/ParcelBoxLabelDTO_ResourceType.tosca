@@ -1,0 +1,95 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ParcelBoxLabelDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ParcelBoxLabelDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ParcelBoxLabelDTO {
+    title = ParcelBoxLabelDTO
+    description = ParcelBoxLabelDTO
+    derivedFrom = Root
+    properties {
+        url {
+          type =  string
+          description = "Соответствует URL, по которому выполняется запрос [GET campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes/{boxId}/label](../../reference/orders/generateOrderLabel.md). "
+          optional = true
+        }
+        supplier_name {
+          type =  string
+          description = "Юридическое название магазина."
+          optional = true
+        }
+        delivery_service_name {
+          type =  string
+          description = "Юридическое название службы доставки."
+          optional = true
+        }
+        order_id {
+          type =  integer
+          description = "Идентификатор заказа в системе Маркета."
+          optional = true
+        }
+        order_num {
+          type =  string
+          description = "Идентификатор заказа в информационной системе магазина.  Совпадает с &#x60;orderId&#x60;, если Маркету неизвестен номер заказа в системе магазина. "
+          optional = true
+        }
+        recipient_name {
+          type =  string
+          description = "Фамилия и инициалы получателя заказа."
+          optional = true
+        }
+        box_id {
+          type =  integer
+          description = "Идентификатор коробки."
+          optional = true
+        }
+        fulfilment_id {
+          type =  string
+          description = "Идентификатор коробки в информационной системе магазина.  Возвращается в формате: &#x60;номер заказа на Маркете-номер коробки&#x60;. Например, &#x60;7206821‑1&#x60;, &#x60;7206821‑2&#x60; и т. д. "
+          optional = true
+        }
+        place {
+          type =  string
+          description = "Номер коробки в заказе. Возвращается в формате: &#x60;номер места/общее количество мест&#x60;. "
+          optional = true
+        }
+        weight {
+          type =  string
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Общая масса всех товаров в заказе. Возвращается в формате: &#x60;weight кг&#x60;. "
+          optional = true
+        }
+        delivery_service_id {
+          type =  string
+          description = "Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md)."
+          optional = true
+        }
+        delivery_address {
+          type =  string
+          description = "Адрес получателя."
+          optional = false
+        }
+        shipment_date {
+          type =  string
+          description = "Дата отгрузки в формате &#x60;dd.MM.yyyy&#x60;."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ParcelBoxLabelDTO {
+    title = ParcelBoxLabelDTO
+    description = ParcelBoxLabelDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ParcelBoxLabelDTO
+
+  }
+}

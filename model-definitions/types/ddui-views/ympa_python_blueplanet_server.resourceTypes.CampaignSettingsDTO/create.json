@@ -1,0 +1,22 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "country_region" },
+      {"model": "shop_name" },
+      {"model": "show_in_context" },
+      {"model": "show_in_premium" },
+      {"model": "use_open_stat" },
+      {"model": "local_region" },
+    ]
+  }]
+}

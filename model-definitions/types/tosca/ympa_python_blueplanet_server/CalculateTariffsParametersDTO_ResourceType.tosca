@@ -1,0 +1,47 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CalculateTariffsParametersDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CalculateTariffsParametersDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  PaymentFrequencyType = ympa_python_blueplanet_server.resourceTypes.PaymentFrequencyType
+  SellingProgramType = ympa_python_blueplanet_server.resourceTypes.SellingProgramType
+}
+resourceTypes {
+
+  CalculateTariffsParametersDTO {
+    title = CalculateTariffsParametersDTO
+    description = CalculateTariffsParametersDTO
+    derivedFrom = Root
+    properties {
+        campaign_id {
+          type =  integer
+          description = "Идентификатор кампании. У пользователя, который выполняет запрос, должен быть доступ к этой кампании.  Используйте параметр &#x60;campaignId&#x60;, если уже завершили подключение магазина на Маркете. Иначе вернется пустой список.  Обязательный параметр, если не указан параметр &#x60;sellingProgram&#x60;. Совместное использование параметров приведет к ошибке. "
+          optional = false
+        }
+        selling_program {
+          type = SellingProgramType
+          description = ""
+          optional = false
+        }
+        frequency {
+          type = PaymentFrequencyType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CalculateTariffsParametersDTO {
+    title = CalculateTariffsParametersDTO
+    description = CalculateTariffsParametersDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CalculateTariffsParametersDTO
+
+  }
+}

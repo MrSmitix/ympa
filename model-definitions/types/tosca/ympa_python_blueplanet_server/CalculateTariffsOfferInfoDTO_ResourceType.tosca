@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CalculateTariffsOfferInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CalculateTariffsOfferInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CalculateTariffsOfferDTO = ympa_python_blueplanet_server.resourceTypes.CalculateTariffsOfferDTO
+  CalculatedTariffDTO = ympa_python_blueplanet_server.resourceTypes.CalculatedTariffDTO
+}
+resourceTypes {
+
+  CalculateTariffsOfferInfoDTO {
+    title = CalculateTariffsOfferInfoDTO
+    description = CalculateTariffsOfferInfoDTO
+    derivedFrom = Root
+    properties {
+        offer {
+          type = CalculateTariffsOfferDTO
+          description = ""
+          optional = true
+        }
+        tariffs {
+          type = array
+          items.type = CalculatedTariffDTO
+          description = "Список услуг и их стоимость.  По некоторым услугам могут возвращаться несколько разных стоимостей. Например, в модели FBS стоимость услуги &#x60;SORTING&#x60; (обработка заказа) зависит от способа отгрузки и количества заказов в отгрузке. Подробнее о тарифах на услуги читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/introduction/rates/models/). "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CalculateTariffsOfferInfoDTO {
+    title = CalculateTariffsOfferInfoDTO
+    description = CalculateTariffsOfferInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CalculateTariffsOfferInfoDTO
+
+  }
+}

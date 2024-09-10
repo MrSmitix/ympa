@@ -1,0 +1,28 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "id" },
+      {"model": "order_id" },
+      {"model": "creation_date" },
+      {"model": "update_date" },
+      {"model": "refund_status" },
+      {"model": "logistic_pickup_point" },
+      {"model": "shipment_recipient_type" },
+      {"model": "shipment_status" },
+      {"model": "refund_amount" },
+      {"model": "items" },
+      {"model": "return_type" },
+      {"model": "fast_return" },
+    ]
+  }]
+}

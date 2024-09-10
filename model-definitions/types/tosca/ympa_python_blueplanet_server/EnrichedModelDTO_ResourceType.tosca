@@ -1,0 +1,63 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server EnrichedModelDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a EnrichedModelDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ModelOfferDTO = ympa_python_blueplanet_server.resourceTypes.ModelOfferDTO
+  ModelPriceDTO = ympa_python_blueplanet_server.resourceTypes.ModelPriceDTO
+}
+resourceTypes {
+
+  EnrichedModelDTO {
+    title = EnrichedModelDTO
+    description = EnrichedModelDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор модели товара."
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Название модели товара."
+          optional = false
+        }
+        prices {
+          type = ModelPriceDTO
+          description = ""
+          optional = false
+        }
+        offers {
+          type = array
+          items.type = ModelOfferDTO
+          description = "Список первых десяти предложений, расположенных на карточке модели.  В ответе на запрос возвращаются предложения различных магазинов. Если есть несколько предложений от одного магазина, в ответе отображается только одно, наиболее релевантное из них. "
+          optional = false
+        }
+        offline_offers {
+          type =  integer
+          description = "Суммарное количество предложений в розничных магазинах в регионе. Учитываются все предложения от каждого магазина."
+          optional = false
+        }
+        online_offers {
+          type =  integer
+          description = "Суммарное количество предложений в интернет-магазинах в регионе. Учитываются все предложения от каждого магазина."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  EnrichedModelDTO {
+    title = EnrichedModelDTO
+    description = EnrichedModelDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.EnrichedModelDTO
+
+  }
+}

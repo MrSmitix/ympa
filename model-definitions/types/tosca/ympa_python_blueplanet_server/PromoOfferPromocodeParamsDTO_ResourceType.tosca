@@ -1,0 +1,35 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server PromoOfferPromocodeParamsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a PromoOfferPromocodeParamsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  PromoOfferPromocodeParamsDTO {
+    title = PromoOfferPromocodeParamsDTO
+    description = PromoOfferPromocodeParamsDTO
+    derivedFrom = Root
+    properties {
+        max_price {
+          type =  integer
+          description = "Максимально возможная цена для участия в акции до применения промокода.  Указывается в рублях.  Возвращается для всех товаров. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  PromoOfferPromocodeParamsDTO {
+    title = PromoOfferPromocodeParamsDTO
+    description = PromoOfferPromocodeParamsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.PromoOfferPromocodeParamsDTO
+
+  }
+}

@@ -1,0 +1,35 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CreateChatResultDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CreateChatResultDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  CreateChatResultDTO {
+    title = CreateChatResultDTO
+    description = CreateChatResultDTO
+    derivedFrom = Root
+    properties {
+        chat_id {
+          type =  integer
+          description = "Идентификатор чата."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CreateChatResultDTO {
+    title = CreateChatResultDTO
+    description = CreateChatResultDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CreateChatResultDTO
+
+  }
+}

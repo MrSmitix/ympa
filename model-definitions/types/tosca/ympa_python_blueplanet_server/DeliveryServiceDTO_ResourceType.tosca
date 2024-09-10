@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server DeliveryServiceDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a DeliveryServiceDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  DeliveryServiceDTO {
+    title = DeliveryServiceDTO
+    description = DeliveryServiceDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор службы доставки."
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Наименование службы доставки."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  DeliveryServiceDTO {
+    title = DeliveryServiceDTO
+    description = DeliveryServiceDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.DeliveryServiceDTO
+
+  }
+}

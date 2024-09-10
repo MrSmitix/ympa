@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server SetFeedParamsRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a SetFeedParamsRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedParameterDTO = ympa_python_blueplanet_server.resourceTypes.FeedParameterDTO
+}
+resourceTypes {
+
+  SetFeedParamsRequest {
+    title = SetFeedParamsRequest
+    description = SetFeedParamsRequest
+    derivedFrom = Root
+    properties {
+        parameters {
+          type = array
+          items.type = FeedParameterDTO
+          description = "Параметры прайс-листа.  Обязательный параметр. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  SetFeedParamsRequest {
+    title = SetFeedParamsRequest
+    description = SetFeedParamsRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.SetFeedParamsRequest
+
+  }
+}

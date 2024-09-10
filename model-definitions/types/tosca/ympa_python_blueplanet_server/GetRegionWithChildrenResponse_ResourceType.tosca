@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetRegionWithChildrenResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetRegionWithChildrenResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FlippingPagerDTO = ympa_python_blueplanet_server.resourceTypes.FlippingPagerDTO
+  RegionDTO = ympa_python_blueplanet_server.resourceTypes.RegionDTO
+}
+resourceTypes {
+
+  GetRegionWithChildrenResponse {
+    title = GetRegionWithChildrenResponse
+    description = GetRegionWithChildrenResponse
+    derivedFrom = Root
+    properties {
+        pager {
+          type = FlippingPagerDTO
+          description = ""
+          optional = false
+        }
+        regions {
+          type = RegionDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetRegionWithChildrenResponse {
+    title = GetRegionWithChildrenResponse
+    description = GetRegionWithChildrenResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetRegionWithChildrenResponse
+
+  }
+}

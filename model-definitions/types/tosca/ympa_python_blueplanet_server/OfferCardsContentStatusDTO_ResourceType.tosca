@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferCardsContentStatusDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferCardsContentStatusDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ForwardScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ForwardScrollingPagerDTO
+  OfferCardDTO = ympa_python_blueplanet_server.resourceTypes.OfferCardDTO
+}
+resourceTypes {
+
+  OfferCardsContentStatusDTO {
+    title = OfferCardsContentStatusDTO
+    description = OfferCardsContentStatusDTO
+    derivedFrom = Root
+    properties {
+        offer_cards {
+          type = array
+          items.type = OfferCardDTO
+          description = "Страница списка товаров с информацией о состоянии карточек."
+          optional = true
+        }
+        paging {
+          type = ForwardScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferCardsContentStatusDTO {
+    title = OfferCardsContentStatusDTO
+    description = OfferCardsContentStatusDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferCardsContentStatusDTO
+
+  }
+}

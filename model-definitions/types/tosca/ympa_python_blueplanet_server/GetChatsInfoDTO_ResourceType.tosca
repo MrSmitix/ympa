@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetChatsInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetChatsInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ForwardScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ForwardScrollingPagerDTO
+  GetChatInfoDTO = ympa_python_blueplanet_server.resourceTypes.GetChatInfoDTO
+}
+resourceTypes {
+
+  GetChatsInfoDTO {
+    title = GetChatsInfoDTO
+    description = GetChatsInfoDTO
+    derivedFrom = Root
+    properties {
+        chats {
+          type = array
+          items.type = GetChatInfoDTO
+          description = "Информация о чатах."
+          optional = true
+        }
+        paging {
+          type = ForwardScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetChatsInfoDTO {
+    title = GetChatsInfoDTO
+    description = GetChatsInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetChatsInfoDTO
+
+  }
+}

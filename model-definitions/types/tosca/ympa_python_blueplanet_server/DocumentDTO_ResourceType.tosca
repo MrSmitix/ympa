@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server DocumentDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a DocumentDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderDocumentStatusType = ympa_python_blueplanet_server.resourceTypes.OrderDocumentStatusType
+}
+resourceTypes {
+
+  DocumentDTO {
+    title = DocumentDTO
+    description = DocumentDTO
+    derivedFrom = Root
+    properties {
+        status {
+          type = OrderDocumentStatusType
+          description = ""
+          optional = false
+        }
+        number {
+          type =  string
+          description = "Номер документа."
+          optional = false
+        }
+        _date {
+          type =  string
+          description = "Дата создания документа."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  DocumentDTO {
+    title = DocumentDTO
+    description = DocumentDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.DocumentDTO
+
+  }
+}

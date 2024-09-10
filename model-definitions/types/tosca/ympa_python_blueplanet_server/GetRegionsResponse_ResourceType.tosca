@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetRegionsResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetRegionsResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ForwardScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ForwardScrollingPagerDTO
+  RegionDTO = ympa_python_blueplanet_server.resourceTypes.RegionDTO
+}
+resourceTypes {
+
+  GetRegionsResponse {
+    title = GetRegionsResponse
+    description = GetRegionsResponse
+    derivedFrom = Root
+    properties {
+        regions {
+          type = array
+          items.type = RegionDTO
+          description = "Регион доставки."
+          optional = true
+        }
+        paging {
+          type = ForwardScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetRegionsResponse {
+    title = GetRegionsResponse
+    description = GetRegionsResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetRegionsResponse
+
+  }
+}

@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GpsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GpsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GpsDTO {
+    title = GpsDTO
+    description = GpsDTO
+    derivedFrom = Root
+    properties {
+        latitude {
+          type =  
+          description = "Широта."
+          optional = true
+        }
+        longitude {
+          type =  
+          description = "Долгота."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GpsDTO {
+    title = GpsDTO
+    description = GpsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GpsDTO
+
+  }
+}

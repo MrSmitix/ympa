@@ -1,0 +1,50 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GenerateCompetitorsPositionReportRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GenerateCompetitorsPositionReportRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GenerateCompetitorsPositionReportRequest {
+    title = GenerateCompetitorsPositionReportRequest
+    description = GenerateCompetitorsPositionReportRequest
+    derivedFrom = Root
+    properties {
+        business_id {
+          type =  integer
+          description = "Идентификатор бизнеса."
+          optional = true
+        }
+        category_id {
+          type =  integer
+          description = "Идентификатор категории."
+          optional = true
+        }
+        date_from {
+          type =  string
+          description = "Начало периода, включительно."
+          optional = true
+        }
+        date_to {
+          type =  string
+          description = "Конец периода, включительно."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GenerateCompetitorsPositionReportRequest {
+    title = GenerateCompetitorsPositionReportRequest
+    description = GenerateCompetitorsPositionReportRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GenerateCompetitorsPositionReportRequest
+
+  }
+}

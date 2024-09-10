@@ -1,0 +1,100 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrdersStatsOrderDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrdersStatsOrderDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderStatsStatusType = ympa_python_blueplanet_server.resourceTypes.OrderStatsStatusType
+  OrdersStatsCommissionDTO = ympa_python_blueplanet_server.resourceTypes.OrdersStatsCommissionDTO
+  OrdersStatsDeliveryRegionDTO = ympa_python_blueplanet_server.resourceTypes.OrdersStatsDeliveryRegionDTO
+  OrdersStatsItemDTO = ympa_python_blueplanet_server.resourceTypes.OrdersStatsItemDTO
+  OrdersStatsOrderPaymentType = ympa_python_blueplanet_server.resourceTypes.OrdersStatsOrderPaymentType
+  OrdersStatsPaymentDTO = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPaymentDTO
+}
+resourceTypes {
+
+  OrdersStatsOrderDTO {
+    title = OrdersStatsOrderDTO
+    description = OrdersStatsOrderDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор заказа."
+          optional = false
+        }
+        creation_date {
+          type =  string
+          description = "Дата создания заказа.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. "
+          optional = false
+        }
+        status_update_date {
+          type =  string
+          description = "Дата и время, когда статус заказа был изменен в последний раз.  Формат даты и времени: ISO 8601. Например, &#x60;2017-11-21T00:00:00&#x60;. Часовой пояс — UTC+03:00 (Москва). "
+          optional = false
+        }
+        status {
+          type = OrderStatsStatusType
+          description = ""
+          optional = false
+        }
+        partner_order_id {
+          type =  string
+          description = "Идентификатор заказа в информационной системе магазина."
+          optional = false
+        }
+        payment_type {
+          type = OrdersStatsOrderPaymentType
+          description = ""
+          optional = false
+        }
+        fake {
+          type =  boolean
+          description = "Тип заказа:  * &#x60;false&#x60; — настоящий заказ покупателя.  * &#x60;true&#x60; — [тестовый](../../pushapi/concepts/sandbox.md) заказ Маркета. "
+          optional = false
+        }
+        delivery_region {
+          type = OrdersStatsDeliveryRegionDTO
+          description = ""
+          optional = false
+        }
+        items {
+          type = array
+          items.type = OrdersStatsItemDTO
+          description = "Список товаров в заказе после возможных изменений."
+          optional = true
+        }
+        initial_items {
+          type = array
+          items.type = OrdersStatsItemDTO
+          description = "Список товаров в заказе до изменений."
+          optional = false
+        }
+        payments {
+          type = array
+          items.type = OrdersStatsPaymentDTO
+          description = "Информация о денежных переводах по заказу."
+          optional = true
+        }
+        commissions {
+          type = array
+          items.type = OrdersStatsCommissionDTO
+          description = "Информация о комиссиях за заказ."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrdersStatsOrderDTO {
+    title = OrdersStatsOrderDTO
+    description = OrdersStatsOrderDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrdersStatsOrderDTO
+
+  }
+}

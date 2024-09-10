@@ -1,0 +1,54 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server QuarantineOfferDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a QuarantineOfferDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  BasePriceDTO = ympa_python_blueplanet_server.resourceTypes.BasePriceDTO
+  PriceQuarantineVerdictDTO = ympa_python_blueplanet_server.resourceTypes.PriceQuarantineVerdictDTO
+  import re = ympa_python_blueplanet_server.resourceTypes.import re
+}
+resourceTypes {
+
+  QuarantineOfferDTO {
+    title = QuarantineOfferDTO
+    description = QuarantineOfferDTO
+    derivedFrom = Root
+    properties {
+        offer_id {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = false
+        }
+        current_price {
+          type = BasePriceDTO
+          description = ""
+          optional = false
+        }
+        last_valid_price {
+          type = BasePriceDTO
+          description = ""
+          optional = false
+        }
+        verdicts {
+          type = array
+          items.type = PriceQuarantineVerdictDTO
+          description = "Причины попадания товара в карантин."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  QuarantineOfferDTO {
+    title = QuarantineOfferDTO
+    description = QuarantineOfferDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.QuarantineOfferDTO
+
+  }
+}

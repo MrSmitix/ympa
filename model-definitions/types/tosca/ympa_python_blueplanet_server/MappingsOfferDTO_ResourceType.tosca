@@ -1,0 +1,197 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server MappingsOfferDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a MappingsOfferDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  DayOfWeekType = ympa_python_blueplanet_server.resourceTypes.DayOfWeekType
+  OfferAvailabilityStatusType = ympa_python_blueplanet_server.resourceTypes.OfferAvailabilityStatusType
+  OfferProcessingStateDTO = ympa_python_blueplanet_server.resourceTypes.OfferProcessingStateDTO
+  OfferWeightDimensionsDTO = ympa_python_blueplanet_server.resourceTypes.OfferWeightDimensionsDTO
+  TimePeriodDTO = ympa_python_blueplanet_server.resourceTypes.TimePeriodDTO
+  import re = ympa_python_blueplanet_server.resourceTypes.import re
+}
+resourceTypes {
+
+  MappingsOfferDTO {
+    title = MappingsOfferDTO
+    description = MappingsOfferDTO
+    derivedFrom = Root
+    properties {
+        name {
+          type =  string
+          description = "Составляйте название по схеме: тип + бренд или производитель + модель + особенности, если есть (например, цвет, размер или вес) и количество в упаковке.  Не включайте в название условия продажи (например, «скидка», «бесплатная доставка» и т. д.), эмоциональные характеристики («хит», «супер» и т. д.). Не пишите слова большими буквами — кроме устоявшихся названий брендов и моделей.  Оптимальная длина — 50–60 символов, максимальная — 256.  [Рекомендации и правила](https://yandex.ru/support/marketplace/assortment/fields/title.html) "
+          optional = false
+        }
+        shop_sku {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = false
+        }
+        category {
+          type =  string
+          description = "Категория товара в вашем магазине. Значение будет использовано для определения категории товара на Маркете в случае, если вы не передали категорию в параметре &#x60;marketCategoryId&#x60;.  Указывайте конкретные категории — например, набор ножей лучше отнести к категории **Столовые приборы**, а не просто **Посуда**.  Выбирайте категории, которые описывают товар, а не абстрактный признак — например, **Духи**, а не **Подарки**.  Значение будет использовано для определения категории товара на Маркете в случае, если вы не передали категорию в параметре &#x60;marketCategoryId&#x60;. "
+          optional = false
+        }
+        vendor {
+          type =  string
+          description = "Название бренда или производителя. Должно быть записано так, как его пишет сам бренд."
+          optional = false
+        }
+        vendor_code {
+          type =  string
+          description = "Артикул товара от производителя."
+          optional = false
+        }
+        description {
+          type =  string
+          description = "Подробное описание товара: например, его преимущества и особенности.  Не давайте в описании инструкций по установке и сборке. Не используйте слова «скидка», «распродажа», «дешевый», «подарок» (кроме подарочных категорий), «бесплатно», «акция», «специальная цена», «новинка», «new», «аналог», «заказ», «хит». Не указывайте никакой контактной информации и не давайте ссылок.  Можно использовать теги:  * \\&lt;h&gt;, \\&lt;h1&gt;, \\&lt;h2&gt; и так далее — для заголовков; * \\&lt;br&gt; и \\&lt;p&gt; — для переноса строки; * \\&lt;ol&gt; — для нумерованного списка; * \\&lt;ul&gt; — для маркированного списка; * \\&lt;li&gt; — для создания элементов списка (должен находиться внутри \\&lt;ol&gt; или \\&lt;ul&gt;); * \\&lt;div&gt; — поддерживается, но не влияет на отображение текста.  Оптимальная длина — 400–600 символов, максимальная — 6000.  [Рекомендации и правила](https://yandex.ru/support/marketplace/assortment/fields/description.html) "
+          optional = false
+        }
+        id {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = false
+        }
+        feed_id {
+          type =  integer
+          description = "Идентификатор фида."
+          optional = false
+        }
+        barcodes {
+          type = array
+          items.type =  string
+          description = "Указывайте в виде последовательности цифр. Подойдут коды EAN-13, EAN-8, UPC-A, UPC-E или Code 128.  Для книг указывайте ISBN.  Для товаров [определенных категорий и торговых марок](https://yastatic.net/s3/doc-binary/src/support/market/ru/yandex-market-list-for-gtin.xlsx) штрихкод должен быть действительным кодом GTIN. Обратите внимание: внутренние штрихкоды, начинающиеся на 2 или 02, и коды формата Code 128 не являются GTIN.  [Что такое GTIN](*gtin)  "
+          optional = false
+        }
+        urls {
+          type = array
+          items.type =  string
+          description = "URL фотографии товара или страницы с описанием на вашем сайте.  Переданные данные не будут отображаться на витрине, но они помогут специалистам Маркета найти карточку для вашего товара.  Должен содержать один вложенный параметр url. "
+          optional = false
+        }
+        pictures {
+          type = array
+          items.type =  string
+          description = "Ссылки (URL) изображений товара в хорошем качестве.  Можно указать до 30 ссылок. При этом изображение по первой ссылке будет основным. Оно используется в качестве изображения товара в поиске Маркета и на карточке товара. Другие изображения товара доступны в режиме просмотра увеличенных изображений.  Обязательный параметр.  Должен содержать хотя бы один вложенный параметр &#x60;picture&#x60;. "
+          optional = false
+        }
+        manufacturer {
+          type =  string
+          description = "Изготовитель товара: компания, которая произвела товар, ее адрес и регистрационный номер (если есть).  Необязательный параметр. "
+          optional = false
+        }
+        manufacturer_countries {
+          type = array
+          items.type =  string
+          description = "Список стран, в которых произведен товар.  Обязательный параметр.  Должен содержать хотя бы одну, но не больше 5 стран. "
+          optional = false
+        }
+        min_shipment {
+          type =  integer
+          description = "Минимальное количество единиц товара, которое вы поставляете на склад.  Например, если вы поставляете детское питание партиями минимум по 10 коробок, а в каждой коробке по 6 баночек, укажите значение 60. "
+          optional = false
+        }
+        transport_unit_size {
+          type =  integer
+          description = "Количество единиц товара в одной упаковке, которую вы поставляете на склад.  Например, если вы поставляете детское питание коробками по 6 баночек, укажите значение 6. "
+          optional = false
+        }
+        quantum_of_supply {
+          type =  integer
+          description = "Добавочная партия: по сколько единиц товара можно добавлять к минимальному количеству minShipment.  Например, если вы поставляете детское питание партиями минимум по 10 коробок и хотите добавлять к минимальной партии по 2 коробки, а в каждой коробке по 6 баночек, укажите значение 12. "
+          optional = false
+        }
+        delivery_duration_days {
+          type =  integer
+          description = "Срок, за который продавец поставляет товары на склад, в днях."
+          optional = false
+        }
+        box_count {
+          type =  integer
+          description = "Сколько мест (если больше одного) занимает товар.  Параметр указывается, только если товар занимает больше одного места (например, кондиционер занимает два места: внешний и внутренний блоки в двух коробках). Если товар занимает одно место, не указывайте этот параметр. "
+          optional = false
+        }
+        customs_commodity_codes {
+          type = array
+          items.type =  string
+          description = "Список кодов товара в единой Товарной номенклатуре внешнеэкономической деятельности (ТН ВЭД).  Обязательный параметр, если товар подлежит особому учету (например, в системе «Меркурий» как продукция животного происхождения или в системе «Честный ЗНАК»).  Может содержать только один вложенный код ТН ВЭД. "
+          optional = false
+        }
+        weight_dimensions {
+          type = OfferWeightDimensionsDTO
+          description = ""
+          optional = false
+        }
+        supply_schedule_days {
+          type = array
+          items.type = DayOfWeekType
+          description = "Дни недели, в которые продавец поставляет товары на склад."
+          optional = false
+        }
+        shelf_life_days {
+          type =  integer
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Вместо него используйте &#x60;shelfLife&#x60;. Совместное использование обоих параметров приведет к ошибке.  {% endnote %}  Срок годности: через сколько дней товар станет непригоден для использования. "
+          optional = false
+        }
+        life_time_days {
+          type =  integer
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Вместо него используйте &#x60;lifeTime&#x60;. Совместное использование обоих параметров приведет к ошибке.  {% endnote %}  Срок службы: сколько дней товар будет исправно выполнять свою функцию, а изготовитель — нести ответственность за его существенные недостатки. "
+          optional = false
+        }
+        guarantee_period_days {
+          type =  integer
+          description = "Гарантийный срок товара: сколько дней возможно обслуживание и ремонт товара или возврат денег, а изготовитель или продавец будет нести ответственность за недостатки товара. "
+          optional = false
+        }
+        processing_state {
+          type = OfferProcessingStateDTO
+          description = ""
+          optional = false
+        }
+        availability {
+          type = OfferAvailabilityStatusType
+          description = ""
+          optional = false
+        }
+        shelf_life {
+          type = TimePeriodDTO
+          description = ""
+          optional = false
+        }
+        life_time {
+          type = TimePeriodDTO
+          description = ""
+          optional = false
+        }
+        guarantee_period {
+          type = TimePeriodDTO
+          description = ""
+          optional = false
+        }
+        certificate {
+          type =  string
+          description = "Номер документа на товар.  Перед указанием номера документ нужно загрузить в кабинете продавца на Маркете. [Инструкция](https://yandex.ru/support/marketplace/assortment/restrictions/certificates.html) "
+          optional = false
+        }
+        price {
+          type =  
+          description = "Цена на товар в рублях."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  MappingsOfferDTO {
+    title = MappingsOfferDTO
+    description = MappingsOfferDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.MappingsOfferDTO
+
+  }
+}

@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetQuarantineOffersResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetQuarantineOffersResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+  GetQuarantineOffersResultDTO = ympa_python_blueplanet_server.resourceTypes.GetQuarantineOffersResultDTO
+}
+resourceTypes {
+
+  GetQuarantineOffersResponse {
+    title = GetQuarantineOffersResponse
+    description = GetQuarantineOffersResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+        result {
+          type = GetQuarantineOffersResultDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetQuarantineOffersResponse {
+    title = GetQuarantineOffersResponse
+    description = GetQuarantineOffersResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetQuarantineOffersResponse
+
+  }
+}

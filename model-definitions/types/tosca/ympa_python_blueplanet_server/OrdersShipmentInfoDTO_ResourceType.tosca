@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrdersShipmentInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrdersShipmentInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrdersShipmentInfoDTO {
+    title = OrdersShipmentInfoDTO
+    description = OrdersShipmentInfoDTO
+    derivedFrom = Root
+    properties {
+        order_ids_with_labels {
+          type = array
+          items.type =  integer
+          description = "Идентификаторы заказов в отгрузке, для которых можно распечатать ярлыки."
+          optional = true
+        }
+        order_ids_without_labels {
+          type = array
+          items.type =  integer
+          description = "Идентификаторы заказов в отгрузке, для которых нельзя распечатать ярлыки."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrdersShipmentInfoDTO {
+    title = OrdersShipmentInfoDTO
+    description = OrdersShipmentInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrdersShipmentInfoDTO
+
+  }
+}

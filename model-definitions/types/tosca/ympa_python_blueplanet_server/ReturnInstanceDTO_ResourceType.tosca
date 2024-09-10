@@ -1,0 +1,52 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ReturnInstanceDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ReturnInstanceDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ReturnInstanceStatusType = ympa_python_blueplanet_server.resourceTypes.ReturnInstanceStatusType
+  ReturnInstanceStockType = ympa_python_blueplanet_server.resourceTypes.ReturnInstanceStockType
+}
+resourceTypes {
+
+  ReturnInstanceDTO {
+    title = ReturnInstanceDTO
+    description = ReturnInstanceDTO
+    derivedFrom = Root
+    properties {
+        stock_type {
+          type = ReturnInstanceStockType
+          description = ""
+          optional = false
+        }
+        status {
+          type = ReturnInstanceStatusType
+          description = ""
+          optional = false
+        }
+        cis {
+          type =  string
+          description = "Код идентификации единицы товара [в системе «Честный ЗНАК»](https://честныйзнак.рф/)."
+          optional = false
+        }
+        imei {
+          type =  string
+          description = "Международный идентификатор мобильного оборудования."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ReturnInstanceDTO {
+    title = ReturnInstanceDTO
+    description = ReturnInstanceDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ReturnInstanceDTO
+
+  }
+}

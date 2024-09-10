@@ -1,0 +1,24 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "feedback_id" },
+      {"model": "created_at" },
+      {"model": "need_reaction" },
+      {"model": "identifiers" },
+      {"model": "author" },
+      {"model": "description" },
+      {"model": "media" },
+      {"model": "statistics" },
+    ]
+  }]
+}

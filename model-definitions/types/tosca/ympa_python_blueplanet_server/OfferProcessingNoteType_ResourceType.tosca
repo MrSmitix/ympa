@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferProcessingNoteType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferProcessingNoteType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OfferProcessingNoteType {
+    title = OfferProcessingNoteType
+    description = OfferProcessingNoteType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferProcessingNoteType {
+    title = OfferProcessingNoteType
+    description = OfferProcessingNoteType
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferProcessingNoteType
+
+  }
+}

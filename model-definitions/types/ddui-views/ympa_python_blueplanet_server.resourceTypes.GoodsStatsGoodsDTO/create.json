@@ -1,0 +1,26 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "shop_sku" },
+      {"model": "market_sku" },
+      {"model": "name" },
+      {"model": "price" },
+      {"model": "category_id" },
+      {"model": "category_name" },
+      {"model": "weight_dimensions" },
+      {"model": "warehouses" },
+      {"model": "tariffs" },
+      {"model": "pictures" },
+    ]
+  }]
+}

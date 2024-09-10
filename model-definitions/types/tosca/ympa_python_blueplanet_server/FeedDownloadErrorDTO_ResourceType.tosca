@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedDownloadErrorDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedDownloadErrorDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedDownloadErrorType = ympa_python_blueplanet_server.resourceTypes.FeedDownloadErrorType
+}
+resourceTypes {
+
+  FeedDownloadErrorDTO {
+    title = FeedDownloadErrorDTO
+    description = FeedDownloadErrorDTO
+    derivedFrom = Root
+    properties {
+        http_status_code {
+          type =  integer
+          description = "HTTP-код ошибки индексации прайс-листа. Выводится, если &#x60;type&#x3D;DOWNLOAD_HTTP_ERROR&#x60;. "
+          optional = false
+        }
+        type {
+          type = FeedDownloadErrorType
+          description = ""
+          optional = false
+        }
+        description {
+          type =  string
+          description = "Описание ошибки. Выводится, если &#x60;type&#x3D;DOWNLOAD_ERROR&#x60;. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedDownloadErrorDTO {
+    title = FeedDownloadErrorDTO
+    description = FeedDownloadErrorDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedDownloadErrorDTO
+
+  }
+}

@@ -1,0 +1,113 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ShipmentDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ShipmentDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  DeliveryServiceDTO = ympa_python_blueplanet_server.resourceTypes.DeliveryServiceDTO
+  PalletsCountDTO = ympa_python_blueplanet_server.resourceTypes.PalletsCountDTO
+  PartnerShipmentWarehouseDTO = ympa_python_blueplanet_server.resourceTypes.PartnerShipmentWarehouseDTO
+  ShipmentActionType = ympa_python_blueplanet_server.resourceTypes.ShipmentActionType
+  ShipmentStatusChangeDTO = ympa_python_blueplanet_server.resourceTypes.ShipmentStatusChangeDTO
+  ShipmentType = ympa_python_blueplanet_server.resourceTypes.ShipmentType
+}
+resourceTypes {
+
+  ShipmentDTO {
+    title = ShipmentDTO
+    description = ShipmentDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор отгрузки."
+          optional = false
+        }
+        plan_interval_from {
+          type =  string
+          description = "Начало планового интервала отгрузки."
+          optional = false
+        }
+        plan_interval_to {
+          type =  string
+          description = "Конец планового интервала отгрузки."
+          optional = false
+        }
+        shipment_type {
+          type = ShipmentType
+          description = ""
+          optional = false
+        }
+        warehouse {
+          type = PartnerShipmentWarehouseDTO
+          description = ""
+          optional = false
+        }
+        warehouse_to {
+          type = PartnerShipmentWarehouseDTO
+          description = ""
+          optional = false
+        }
+        external_id {
+          type =  string
+          description = "Идентификатор отгрузки в вашей системе. Если вы еще не передавали идентификатор, вернется идентификатор из параметра &#x60;id&#x60;."
+          optional = false
+        }
+        delivery_service {
+          type = DeliveryServiceDTO
+          description = ""
+          optional = false
+        }
+        pallets_count {
+          type = PalletsCountDTO
+          description = ""
+          optional = false
+        }
+        order_ids {
+          type = array
+          items.type =  integer
+          description = "Идентификаторы заказов в отгрузке."
+          optional = true
+        }
+        draft_count {
+          type =  integer
+          description = "Количество заказов, которое Маркет запланировал к отгрузке."
+          optional = false
+        }
+        planned_count {
+          type =  integer
+          description = "Количество заказов, которое Маркет подтвердил к отгрузке."
+          optional = false
+        }
+        fact_count {
+          type =  integer
+          description = "Количество заказов, принятых в сортировочном центре или пункте приема."
+          optional = false
+        }
+        current_status {
+          type = ShipmentStatusChangeDTO
+          description = ""
+          optional = false
+        }
+        available_actions {
+          type = array
+          items.type = ShipmentActionType
+          description = "Доступные действия над отгрузкой."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ShipmentDTO {
+    title = ShipmentDTO
+    description = ShipmentDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ShipmentDTO
+
+  }
+}

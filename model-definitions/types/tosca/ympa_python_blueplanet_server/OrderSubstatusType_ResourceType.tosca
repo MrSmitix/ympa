@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderSubstatusType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderSubstatusType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrderSubstatusType {
+    title = OrderSubstatusType
+    description = OrderSubstatusType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderSubstatusType {
+    title = OrderSubstatusType
+    description = OrderSubstatusType
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderSubstatusType
+
+  }
+}

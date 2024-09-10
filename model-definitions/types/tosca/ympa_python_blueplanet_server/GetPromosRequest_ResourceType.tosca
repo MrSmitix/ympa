@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetPromosRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetPromosRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  MechanicsType = ympa_python_blueplanet_server.resourceTypes.MechanicsType
+  PromoParticipationType = ympa_python_blueplanet_server.resourceTypes.PromoParticipationType
+}
+resourceTypes {
+
+  GetPromosRequest {
+    title = GetPromosRequest
+    description = GetPromosRequest
+    derivedFrom = Root
+    properties {
+        participation {
+          type = PromoParticipationType
+          description = ""
+          optional = false
+        }
+        mechanics {
+          type = MechanicsType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetPromosRequest {
+    title = GetPromosRequest
+    description = GetPromosRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetPromosRequest
+
+  }
+}

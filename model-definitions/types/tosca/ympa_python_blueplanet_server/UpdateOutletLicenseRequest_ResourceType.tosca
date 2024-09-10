@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdateOutletLicenseRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdateOutletLicenseRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OutletLicenseDTO = ympa_python_blueplanet_server.resourceTypes.OutletLicenseDTO
+}
+resourceTypes {
+
+  UpdateOutletLicenseRequest {
+    title = UpdateOutletLicenseRequest
+    description = UpdateOutletLicenseRequest
+    derivedFrom = Root
+    properties {
+        licenses {
+          type = array
+          items.type = OutletLicenseDTO
+          description = "Список лицензий. Обязательный параметр, должен содержать информацию хотя бы об одной лицензии. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdateOutletLicenseRequest {
+    title = UpdateOutletLicenseRequest
+    description = UpdateOutletLicenseRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdateOutletLicenseRequest
+
+  }
+}

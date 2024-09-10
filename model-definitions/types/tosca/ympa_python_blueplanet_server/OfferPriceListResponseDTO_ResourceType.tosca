@@ -1,0 +1,48 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferPriceListResponseDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferPriceListResponseDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OfferPriceResponseDTO = ympa_python_blueplanet_server.resourceTypes.OfferPriceResponseDTO
+  ScrollingPagerDTO = ympa_python_blueplanet_server.resourceTypes.ScrollingPagerDTO
+}
+resourceTypes {
+
+  OfferPriceListResponseDTO {
+    title = OfferPriceListResponseDTO
+    description = OfferPriceListResponseDTO
+    derivedFrom = Root
+    properties {
+        offers {
+          type = array
+          items.type = OfferPriceResponseDTO
+          description = "Страница списка."
+          optional = true
+        }
+        paging {
+          type = ScrollingPagerDTO
+          description = ""
+          optional = false
+        }
+        total {
+          type =  integer
+          description = "Количество всех цен магазина, измененных через API."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferPriceListResponseDTO {
+    title = OfferPriceListResponseDTO
+    description = OfferPriceListResponseDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferPriceListResponseDTO
+
+  }
+}

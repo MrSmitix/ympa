@@ -1,0 +1,55 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderDeliveryDatesDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderDeliveryDatesDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrderDeliveryDatesDTO {
+    title = OrderDeliveryDatesDTO
+    description = OrderDeliveryDatesDTO
+    derivedFrom = Root
+    properties {
+        from_date {
+          type =  string
+          description = "Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. "
+          optional = false
+        }
+        to_date {
+          type =  string
+          description = "Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. "
+          optional = false
+        }
+        from_time {
+          type =  string
+          description = "Начало интервала времени доставки.  Передается только совместно с параметром &#x60;type&#x3D;DELIVERY&#x60;.  Формат времени: 24-часовой, &#x60;ЧЧ:ММ&#x60;. В качестве минут всегда должно быть указано &#x60;00&#x60; (исключение — &#x60;23:59&#x60;).  Минимальное значение: &#x60;00:00&#x60;. "
+          optional = false
+        }
+        to_time {
+          type =  string
+          description = "Конец интервала времени доставки.  Передается только совместно с параметром &#x60;type&#x3D;DELIVERY&#x60;.  Формат времени: 24-часовой, &#x60;ЧЧ:ММ&#x60;. В качестве минут всегда должно быть указано &#x60;00&#x60; (исключение — &#x60;23:59&#x60;).  Максимальное значение: &#x60;23:59&#x60;. "
+          optional = false
+        }
+        real_delivery_date {
+          type =  string
+          description = "Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderDeliveryDatesDTO {
+    title = OrderDeliveryDatesDTO
+    description = OrderDeliveryDatesDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryDatesDTO
+
+  }
+}

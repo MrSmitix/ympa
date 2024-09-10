@@ -1,0 +1,35 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OutletResponseDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OutletResponseDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OutletResponseDTO {
+    title = OutletResponseDTO
+    description = OutletResponseDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  integer
+          description = "Идентификатор точки продаж, присвоенный Маркетом."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OutletResponseDTO {
+    title = OutletResponseDTO
+    description = OutletResponseDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OutletResponseDTO
+
+  }
+}

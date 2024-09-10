@@ -1,0 +1,41 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetPromoOffersRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetPromoOffersRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  PromoOfferParticipationStatusFilterType = ympa_python_blueplanet_server.resourceTypes.PromoOfferParticipationStatusFilterType
+}
+resourceTypes {
+
+  GetPromoOffersRequest {
+    title = GetPromoOffersRequest
+    description = GetPromoOffersRequest
+    derivedFrom = Root
+    properties {
+        promo_id {
+          type =  string
+          description = "Идентификатор акции."
+          optional = true
+        }
+        status_type {
+          type = PromoOfferParticipationStatusFilterType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetPromoOffersRequest {
+    title = GetPromoOffersRequest
+    description = GetPromoOffersRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetPromoOffersRequest
+
+  }
+}

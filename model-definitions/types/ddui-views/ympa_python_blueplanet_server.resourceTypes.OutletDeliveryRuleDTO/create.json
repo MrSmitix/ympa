@@ -1,0 +1,22 @@
+{
+  "type": "form",
+  "version": "2.0",
+  "cells": [{
+    "label": "General",
+    "children": [
+      {"model": "label"},
+      {"model": "description"}
+    ]
+  },{
+    "label": "Details",
+    "model": "properties",
+    "children": [
+      {"model": "min_delivery_days" },
+      {"model": "max_delivery_days" },
+      {"model": "delivery_service_id" },
+      {"model": "order_before" },
+      {"model": "price_free_pickup" },
+      {"model": "unspecified_delivery_interval" },
+    ]
+  }]
+}

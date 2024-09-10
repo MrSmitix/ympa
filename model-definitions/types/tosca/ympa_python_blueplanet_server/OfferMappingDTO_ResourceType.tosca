@@ -1,0 +1,45 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferMappingDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferMappingDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OfferMappingDTO {
+    title = OfferMappingDTO
+    description = OfferMappingDTO
+    derivedFrom = Root
+    properties {
+        market_sku {
+          type =  integer
+          description = "SKU на Маркете."
+          optional = false
+        }
+        model_id {
+          type =  integer
+          description = "Идентификатор модели для текущей карточки товара на Маркете.  Например, две лопатки разных цветов имеют разные SKU на Маркете (параметр &#x60;marketSku&#x60;), но одинаковый идентификатор модели товара. "
+          optional = false
+        }
+        category_id {
+          type =  integer
+          description = "Идентификатор категории для текущей карточки товара на Маркете."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferMappingDTO {
+    title = OfferMappingDTO
+    description = OfferMappingDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferMappingDTO
+
+  }
+}

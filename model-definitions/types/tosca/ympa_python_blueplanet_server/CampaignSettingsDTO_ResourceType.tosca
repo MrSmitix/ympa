@@ -1,0 +1,61 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server CampaignSettingsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a CampaignSettingsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CampaignSettingsLocalRegionDTO = ympa_python_blueplanet_server.resourceTypes.CampaignSettingsLocalRegionDTO
+}
+resourceTypes {
+
+  CampaignSettingsDTO {
+    title = CampaignSettingsDTO
+    description = CampaignSettingsDTO
+    derivedFrom = Root
+    properties {
+        country_region {
+          type =  integer
+          description = "Идентификатор региона, в котором находится магазин."
+          optional = false
+        }
+        shop_name {
+          type =  string
+          description = "Наименование магазина на Яндекс Маркете. Если наименование отсутствует, значение параметра выводится — &#x60;null&#x60;. "
+          optional = false
+        }
+        show_in_context {
+          type =  boolean
+          description = "Признак размещения магазина на сайтах партнеров Яндекс Дистрибуции. Возможные значения: * &#x60;false&#x60; — магазин не размещен на сайтах партнеров Яндекс Дистрибуции. * &#x60;true&#x60; — магазин размещен на сайтах партнеров Яндекс Дистрибуции. "
+          optional = false
+        }
+        show_in_premium {
+          type =  boolean
+          description = "Признак показа предложений магазина в рекламном блоке над результатами поиска (cпецразмещение). Возможные значения: * &#x60;false&#x60; — предложения не показываются в блоке cпецразмещения. * &#x60;true&#x60; — предложения показываются в блоке cпецразмещения. "
+          optional = false
+        }
+        use_open_stat {
+          type =  boolean
+          description = "Признак использования внешней интернет-статистики. Возможные значения: * &#x60;false&#x60; — внешняя интернет-статистика не используется. * &#x60;true&#x60; — внешняя интернет-статистика используется. "
+          optional = false
+        }
+        local_region {
+          type = CampaignSettingsLocalRegionDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  CampaignSettingsDTO {
+    title = CampaignSettingsDTO
+    description = CampaignSettingsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.CampaignSettingsDTO
+
+  }
+}

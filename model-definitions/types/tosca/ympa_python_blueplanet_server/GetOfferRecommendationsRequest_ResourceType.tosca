@@ -1,0 +1,53 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetOfferRecommendationsRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetOfferRecommendationsRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FieldStateType = ympa_python_blueplanet_server.resourceTypes.FieldStateType
+  PriceCompetitivenessType = ympa_python_blueplanet_server.resourceTypes.PriceCompetitivenessType
+}
+resourceTypes {
+
+  GetOfferRecommendationsRequest {
+    title = GetOfferRecommendationsRequest
+    description = GetOfferRecommendationsRequest
+    derivedFrom = Root
+    properties {
+        offer_ids {
+          type = array
+          items.type =  string
+          description = "Идентификаторы товаров, информация о которых нужна. ⚠️ Не используйте это поле одновременно с остальными фильтрами. Если вы хотите воспользоваться фильтрами, оставьте поле пустым."
+          optional = false
+        }
+        cofinance_price_filter {
+          type = FieldStateType
+          description = ""
+          optional = false
+        }
+        recommended_cofinance_price_filter {
+          type = FieldStateType
+          description = ""
+          optional = false
+        }
+        competitiveness_filter {
+          type = PriceCompetitivenessType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetOfferRecommendationsRequest {
+    title = GetOfferRecommendationsRequest
+    description = GetOfferRecommendationsRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetOfferRecommendationsRequest
+
+  }
+}

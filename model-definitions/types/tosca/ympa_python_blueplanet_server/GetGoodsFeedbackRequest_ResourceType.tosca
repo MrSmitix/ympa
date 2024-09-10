@@ -1,0 +1,63 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetGoodsFeedbackRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetGoodsFeedbackRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedbackReactionStatusType = ympa_python_blueplanet_server.resourceTypes.FeedbackReactionStatusType
+}
+resourceTypes {
+
+  GetGoodsFeedbackRequest {
+    title = GetGoodsFeedbackRequest
+    description = GetGoodsFeedbackRequest
+    derivedFrom = Root
+    properties {
+        date_time_from {
+          type =  string
+          description = "Начало периода. Не включительно.  Если параметр не указан, возвращается информация за 6 месяцев до указанной в &#x60;dateTimeTo&#x60; даты. "
+          optional = false
+        }
+        date_time_to {
+          type =  string
+          description = "Конец периода. Не включительно.  Если параметр не указан, используется текущая дата. "
+          optional = false
+        }
+        reaction_status {
+          type = FeedbackReactionStatusType
+          description = ""
+          optional = false
+        }
+        rating_values {
+          type = array
+          items.type =  integer
+          description = "Оценка товара."
+          optional = false
+        }
+        model_ids {
+          type = array
+          items.type =  integer
+          description = "Фильтр по идентификатору модели товара.  Получить идентификатор модели можно с помощью одного из запросов:  * [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md);  * [POST businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md);  * [POST models](../../reference/models/getModels.md). "
+          optional = false
+        }
+        paid {
+          type =  boolean
+          description = "Фильтр отзывов за баллы Плюса."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetGoodsFeedbackRequest {
+    title = GetGoodsFeedbackRequest
+    description = GetGoodsFeedbackRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetGoodsFeedbackRequest
+
+  }
+}

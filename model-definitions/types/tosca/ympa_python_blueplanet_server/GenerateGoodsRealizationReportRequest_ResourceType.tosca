@@ -1,0 +1,45 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GenerateGoodsRealizationReportRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GenerateGoodsRealizationReportRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GenerateGoodsRealizationReportRequest {
+    title = GenerateGoodsRealizationReportRequest
+    description = GenerateGoodsRealizationReportRequest
+    derivedFrom = Root
+    properties {
+        campaign_id {
+          type =  integer
+          description = "Идентификатор кампании."
+          optional = true
+        }
+        year {
+          type =  integer
+          description = "Год."
+          optional = true
+        }
+        month {
+          type =  integer
+          description = "Номер месяца."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GenerateGoodsRealizationReportRequest {
+    title = GenerateGoodsRealizationReportRequest
+    description = GenerateGoodsRealizationReportRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GenerateGoodsRealizationReportRequest
+
+  }
+}

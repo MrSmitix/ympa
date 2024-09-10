@@ -1,0 +1,37 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetSuggestedOfferMappingEntriesRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetSuggestedOfferMappingEntriesRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  MappingsOfferDTO = ympa_python_blueplanet_server.resourceTypes.MappingsOfferDTO
+}
+resourceTypes {
+
+  GetSuggestedOfferMappingEntriesRequest {
+    title = GetSuggestedOfferMappingEntriesRequest
+    description = GetSuggestedOfferMappingEntriesRequest
+    derivedFrom = Root
+    properties {
+        offers {
+          type = array
+          items.type = MappingsOfferDTO
+          description = "Список товаров."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetSuggestedOfferMappingEntriesRequest {
+    title = GetSuggestedOfferMappingEntriesRequest
+    description = GetSuggestedOfferMappingEntriesRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GetSuggestedOfferMappingEntriesRequest
+
+  }
+}

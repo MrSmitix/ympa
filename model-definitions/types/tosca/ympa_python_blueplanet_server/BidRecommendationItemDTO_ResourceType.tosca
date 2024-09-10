@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server BidRecommendationItemDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a BidRecommendationItemDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  BidRecommendationItemDTO {
+    title = BidRecommendationItemDTO
+    description = BidRecommendationItemDTO
+    derivedFrom = Root
+    properties {
+        bid {
+          type =  integer
+          description = "Значение ставки."
+          optional = true
+        }
+        show_percent {
+          type =  integer
+          description = "Доля показов. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  BidRecommendationItemDTO {
+    title = BidRecommendationItemDTO
+    description = BidRecommendationItemDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.BidRecommendationItemDTO
+
+  }
+}

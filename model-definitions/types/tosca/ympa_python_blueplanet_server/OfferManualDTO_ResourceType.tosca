@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OfferManualDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OfferManualDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OfferManualDTO {
+    title = OfferManualDTO
+    description = OfferManualDTO
+    derivedFrom = Root
+    properties {
+        url {
+          type =  string
+          description = "Ссылка на инструкцию."
+          optional = true
+        }
+        title {
+          type =  string
+          description = "Название инструкции, которое будет отображаться на карточке товара. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OfferManualDTO {
+    title = OfferManualDTO
+    description = OfferManualDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OfferManualDTO
+
+  }
+}

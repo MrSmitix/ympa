@@ -1,0 +1,36 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server SkipGoodsFeedbackReactionRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a SkipGoodsFeedbackReactionRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  SkipGoodsFeedbackReactionRequest {
+    title = SkipGoodsFeedbackReactionRequest
+    description = SkipGoodsFeedbackReactionRequest
+    derivedFrom = Root
+    properties {
+        feedback_ids {
+          type = array
+          items.type =  integer
+          description = "Список идентификаторов отзывов, на которые магазин не будет отвечать."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  SkipGoodsFeedbackReactionRequest {
+    title = SkipGoodsFeedbackReactionRequest
+    description = SkipGoodsFeedbackReactionRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.SkipGoodsFeedbackReactionRequest
+
+  }
+}

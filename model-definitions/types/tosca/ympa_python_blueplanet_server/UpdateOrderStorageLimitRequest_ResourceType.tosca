@@ -1,0 +1,35 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdateOrderStorageLimitRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdateOrderStorageLimitRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  UpdateOrderStorageLimitRequest {
+    title = UpdateOrderStorageLimitRequest
+    description = UpdateOrderStorageLimitRequest
+    derivedFrom = Root
+    properties {
+        new_date {
+          type =  string
+          description = "Новая дата, до которой заказ будет храниться в пункте выдачи.  Срок хранения можно увеличить не больше, чем на 30 дней.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdateOrderStorageLimitRequest {
+    title = UpdateOrderStorageLimitRequest
+    description = UpdateOrderStorageLimitRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdateOrderStorageLimitRequest
+
+  }
+}

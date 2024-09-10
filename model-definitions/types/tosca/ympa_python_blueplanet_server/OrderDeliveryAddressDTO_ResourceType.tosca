@@ -1,0 +1,106 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderDeliveryAddressDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderDeliveryAddressDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  GpsDTO = ympa_python_blueplanet_server.resourceTypes.GpsDTO
+}
+resourceTypes {
+
+  OrderDeliveryAddressDTO {
+    title = OrderDeliveryAddressDTO
+    description = OrderDeliveryAddressDTO
+    derivedFrom = Root
+    properties {
+        country {
+          type =  string
+          description = "Страна.  Обязательный параметр. "
+          optional = false
+        }
+        postcode {
+          type =  string
+          description = "Почтовый индекс.  Указывается, если выбрана доставка почтой (&#x60;delivery type&#x3D;POST&#x60;). "
+          optional = false
+        }
+        city {
+          type =  string
+          description = "Город или населенный пункт.  Обязательный параметр. "
+          optional = false
+        }
+        district {
+          type =  string
+          description = "Район."
+          optional = false
+        }
+        subway {
+          type =  string
+          description = "Станция метро."
+          optional = false
+        }
+        street {
+          type =  string
+          description = "Улица.  Обязательный параметр. "
+          optional = false
+        }
+        house {
+          type =  string
+          description = "Дом или владение.  Обязательный параметр. "
+          optional = false
+        }
+        block {
+          type =  string
+          description = "Корпус или строение."
+          optional = false
+        }
+        entrance {
+          type =  string
+          description = "Подъезд."
+          optional = false
+        }
+        entryphone {
+          type =  string
+          description = "Код домофона."
+          optional = false
+        }
+        floor {
+          type =  string
+          description = "Этаж."
+          optional = false
+        }
+        apartment {
+          type =  string
+          description = "Квартира или офис."
+          optional = false
+        }
+        phone {
+          type =  string
+          description = "Телефон получателя заказа.  Обязательный параметр. "
+          optional = false
+        }
+        recipient {
+          type =  string
+          description = "Фамилия, имя и отчество получателя заказа.  Обязательный параметр. "
+          optional = false
+        }
+        gps {
+          type = GpsDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderDeliveryAddressDTO {
+    title = OrderDeliveryAddressDTO
+    description = OrderDeliveryAddressDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryAddressDTO
+
+  }
+}

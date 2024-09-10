@@ -1,0 +1,42 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetHiddenOffersResponse"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetHiddenOffersResponse"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ApiResponseStatusType = ympa_python_blueplanet_server.resourceTypes.ApiResponseStatusType
+  GetHiddenOffersResultDTO = ympa_python_blueplanet_server.resourceTypes.GetHiddenOffersResultDTO
+}
+resourceTypes {
+
+  GetHiddenOffersResponse {
+    title = GetHiddenOffersResponse
+    description = GetHiddenOffersResponse
+    derivedFrom = Root
+    properties {
+        status {
+          type = ApiResponseStatusType
+          description = ""
+          optional = false
+        }
+        result {
+          type = GetHiddenOffersResultDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetHiddenOffersResponse {
+    title = GetHiddenOffersResponse
+    description = GetHiddenOffersResponse
+    implements = ympa_python_blueplanet_server.resourceTypes.GetHiddenOffersResponse
+
+  }
+}

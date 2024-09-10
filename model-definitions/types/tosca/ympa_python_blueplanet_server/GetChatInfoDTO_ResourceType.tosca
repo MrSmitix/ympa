@@ -1,0 +1,62 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetChatInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetChatInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ChatStatusType = ympa_python_blueplanet_server.resourceTypes.ChatStatusType
+  ChatType = ympa_python_blueplanet_server.resourceTypes.ChatType
+}
+resourceTypes {
+
+  GetChatInfoDTO {
+    title = GetChatInfoDTO
+    description = GetChatInfoDTO
+    derivedFrom = Root
+    properties {
+        chat_id {
+          type =  integer
+          description = "Идентификатор чата."
+          optional = true
+        }
+        order_id {
+          type =  integer
+          description = "Идентификатор заказа."
+          optional = true
+        }
+        type {
+          type = ChatType
+          description = ""
+          optional = true
+        }
+        status {
+          type = ChatStatusType
+          description = ""
+          optional = true
+        }
+        created_at {
+          type =  string
+          description = "Дата и время создания чата.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:00:00+03:00&#x60;. "
+          optional = true
+        }
+        updated_at {
+          type =  string
+          description = "Дата и время последнего сообщения в чате."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetChatInfoDTO {
+    title = GetChatInfoDTO
+    description = GetChatInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetChatInfoDTO
+
+  }
+}

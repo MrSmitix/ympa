@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ExtensionShipmentDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ExtensionShipmentDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ShipmentActionType = ympa_python_blueplanet_server.resourceTypes.ShipmentActionType
+  ShipmentStatusChangeDTO = ympa_python_blueplanet_server.resourceTypes.ShipmentStatusChangeDTO
+}
+resourceTypes {
+
+  ExtensionShipmentDTO {
+    title = ExtensionShipmentDTO
+    description = ExtensionShipmentDTO
+    derivedFrom = Root
+    properties {
+        current_status {
+          type = ShipmentStatusChangeDTO
+          description = ""
+          optional = false
+        }
+        available_actions {
+          type = array
+          items.type = ShipmentActionType
+          description = "Доступные действия над отгрузкой."
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ExtensionShipmentDTO {
+    title = ExtensionShipmentDTO
+    description = ExtensionShipmentDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ExtensionShipmentDTO
+
+  }
+}

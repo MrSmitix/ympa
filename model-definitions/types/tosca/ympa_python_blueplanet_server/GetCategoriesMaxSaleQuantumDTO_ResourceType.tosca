@@ -1,0 +1,44 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetCategoriesMaxSaleQuantumDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetCategoriesMaxSaleQuantumDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  CategoryErrorDTO = ympa_python_blueplanet_server.resourceTypes.CategoryErrorDTO
+  MaxSaleQuantumDTO = ympa_python_blueplanet_server.resourceTypes.MaxSaleQuantumDTO
+}
+resourceTypes {
+
+  GetCategoriesMaxSaleQuantumDTO {
+    title = GetCategoriesMaxSaleQuantumDTO
+    description = GetCategoriesMaxSaleQuantumDTO
+    derivedFrom = Root
+    properties {
+        results {
+          type = array
+          items.type = MaxSaleQuantumDTO
+          description = "Категории и лимит на установку кванта и минимального количества товаров."
+          optional = true
+        }
+        errors {
+          type = array
+          items.type = CategoryErrorDTO
+          description = "Ошибки, которые появились из-за переданных категорий."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetCategoriesMaxSaleQuantumDTO {
+    title = GetCategoriesMaxSaleQuantumDTO
+    description = GetCategoriesMaxSaleQuantumDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetCategoriesMaxSaleQuantumDTO
+
+  }
+}

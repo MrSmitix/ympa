@@ -1,0 +1,56 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GenerateUnitedOrdersRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GenerateUnitedOrdersRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GenerateUnitedOrdersRequest {
+    title = GenerateUnitedOrdersRequest
+    description = GenerateUnitedOrdersRequest
+    derivedFrom = Root
+    properties {
+        business_id {
+          type =  integer
+          description = "Идентификатор бизнеса."
+          optional = true
+        }
+        date_from {
+          type =  string
+          description = "Начало периода, включительно."
+          optional = true
+        }
+        date_to {
+          type =  string
+          description = "Конец периода, включительно. Максимальный период — 1 год."
+          optional = true
+        }
+        campaign_ids {
+          type = array
+          items.type =  integer
+          description = "Список магазинов, которые нужны в отчете."
+          optional = false
+        }
+        promo_id {
+          type =  string
+          description = "Идентификатор акции, товары из которой нужны в отчете."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GenerateUnitedOrdersRequest {
+    title = GenerateUnitedOrdersRequest
+    description = GenerateUnitedOrdersRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.GenerateUnitedOrdersRequest
+
+  }
+}

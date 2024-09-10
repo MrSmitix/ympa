@@ -1,0 +1,45 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetPromoAssortmentInfoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetPromoAssortmentInfoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  GetPromoAssortmentInfoDTO {
+    title = GetPromoAssortmentInfoDTO
+    description = GetPromoAssortmentInfoDTO
+    derivedFrom = Root
+    properties {
+        active_offers {
+          type =  integer
+          description = "Количество товаров, которые участвуют или участвовали в акции.  Учитываются только товары, которые были добавлены вручную.  Об автоматическом и ручном добавлении товаров в акцию читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/promos/market/index). "
+          optional = true
+        }
+        potential_offers {
+          type =  integer
+          description = "Количество доступных товаров в акции.  Параметр возвращается только для текущих и будущих акций. "
+          optional = false
+        }
+        processing {
+          type =  boolean
+          description = "Есть ли изменения в ассортименте, которые еще не применились. Сохранение изменений занимает некоторое время.  Параметр возвращается только для текущих и будущих акций. "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetPromoAssortmentInfoDTO {
+    title = GetPromoAssortmentInfoDTO
+    description = GetPromoAssortmentInfoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetPromoAssortmentInfoDTO
+
+  }
+}

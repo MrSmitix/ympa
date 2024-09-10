@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server RejectedPromoOfferDeleteReasonType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a RejectedPromoOfferDeleteReasonType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  RejectedPromoOfferDeleteReasonType {
+    title = RejectedPromoOfferDeleteReasonType
+    description = RejectedPromoOfferDeleteReasonType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  RejectedPromoOfferDeleteReasonType {
+    title = RejectedPromoOfferDeleteReasonType
+    description = RejectedPromoOfferDeleteReasonType
+    implements = ympa_python_blueplanet_server.resourceTypes.RejectedPromoOfferDeleteReasonType
+
+  }
+}

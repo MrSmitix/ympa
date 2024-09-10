@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server QualityRatingAffectedOrderDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a QualityRatingAffectedOrderDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  AffectedOrderQualityRatingComponentType = ympa_python_blueplanet_server.resourceTypes.AffectedOrderQualityRatingComponentType
+}
+resourceTypes {
+
+  QualityRatingAffectedOrderDTO {
+    title = QualityRatingAffectedOrderDTO
+    description = QualityRatingAffectedOrderDTO
+    derivedFrom = Root
+    properties {
+        order_id {
+          type =  integer
+          description = "Идентификатор заказа."
+          optional = true
+        }
+        description {
+          type =  string
+          description = "Описание проблемы."
+          optional = true
+        }
+        component_type {
+          type = AffectedOrderQualityRatingComponentType
+          description = ""
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  QualityRatingAffectedOrderDTO {
+    title = QualityRatingAffectedOrderDTO
+    description = QualityRatingAffectedOrderDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.QualityRatingAffectedOrderDTO
+
+  }
+}

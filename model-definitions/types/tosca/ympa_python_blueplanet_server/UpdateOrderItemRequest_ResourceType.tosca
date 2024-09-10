@@ -1,0 +1,43 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server UpdateOrderItemRequest"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a UpdateOrderItemRequest"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrderItemModificationDTO = ympa_python_blueplanet_server.resourceTypes.OrderItemModificationDTO
+  OrderItemsModificationRequestReasonType = ympa_python_blueplanet_server.resourceTypes.OrderItemsModificationRequestReasonType
+}
+resourceTypes {
+
+  UpdateOrderItemRequest {
+    title = UpdateOrderItemRequest
+    description = UpdateOrderItemRequest
+    derivedFrom = Root
+    properties {
+        items {
+          type = array
+          items.type = OrderItemModificationDTO
+          description = "Список товаров в заказе.  Если магазин не передал информацию о товаре во входных данных, он будет удален из заказа.  Обязательный параметр. "
+          optional = true
+        }
+        reason {
+          type = OrderItemsModificationRequestReasonType
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  UpdateOrderItemRequest {
+    title = UpdateOrderItemRequest
+    description = UpdateOrderItemRequest
+    implements = ympa_python_blueplanet_server.resourceTypes.UpdateOrderItemRequest
+
+  }
+}

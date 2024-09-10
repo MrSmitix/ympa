@@ -1,0 +1,41 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server FeedPlacementDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a FeedPlacementDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  FeedStatusType = ympa_python_blueplanet_server.resourceTypes.FeedStatusType
+}
+resourceTypes {
+
+  FeedPlacementDTO {
+    title = FeedPlacementDTO
+    description = FeedPlacementDTO
+    derivedFrom = Root
+    properties {
+        status {
+          type = FeedStatusType
+          description = ""
+          optional = false
+        }
+        total_offers_count {
+          type =  integer
+          description = "Количество предложений из прайс-листа, которые размещаются на Яндекс Маркете в момент выполнения запроса."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  FeedPlacementDTO {
+    title = FeedPlacementDTO
+    description = FeedPlacementDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.FeedPlacementDTO
+
+  }
+}

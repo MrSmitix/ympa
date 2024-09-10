@@ -1,0 +1,82 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GetPromoDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GetPromoDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ChannelType = ympa_python_blueplanet_server.resourceTypes.ChannelType
+  GetPromoAssortmentInfoDTO = ympa_python_blueplanet_server.resourceTypes.GetPromoAssortmentInfoDTO
+  GetPromoBestsellerInfoDTO = ympa_python_blueplanet_server.resourceTypes.GetPromoBestsellerInfoDTO
+  GetPromoConstraintsDTO = ympa_python_blueplanet_server.resourceTypes.GetPromoConstraintsDTO
+  GetPromoMechanicsInfoDTO = ympa_python_blueplanet_server.resourceTypes.GetPromoMechanicsInfoDTO
+  PromoPeriodDTO = ympa_python_blueplanet_server.resourceTypes.PromoPeriodDTO
+}
+resourceTypes {
+
+  GetPromoDTO {
+    title = GetPromoDTO
+    description = GetPromoDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  string
+          description = "Идентификатор акции."
+          optional = true
+        }
+        name {
+          type =  string
+          description = "Название акции."
+          optional = true
+        }
+        period {
+          type = PromoPeriodDTO
+          description = ""
+          optional = true
+        }
+        participating {
+          type =  boolean
+          description = "Участвует или участвовал ли продавец в этой акции.  Для текущих и будущих акций возвращается со значением &#x60;true&#x60;, если в акции есть товары, которые были добавлены вручную. Если товары не участвуют в акции или добавлены в нее автоматически, параметр возвращается со значением &#x60;false&#x60;.  Для прошедших акций всегда возвращается со значением &#x60;true&#x60;.  Об автоматическом и ручном добавлении товаров в акцию читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/promos/market/index). "
+          optional = true
+        }
+        assortment_info {
+          type = GetPromoAssortmentInfoDTO
+          description = ""
+          optional = true
+        }
+        mechanics_info {
+          type = GetPromoMechanicsInfoDTO
+          description = ""
+          optional = true
+        }
+        bestseller_info {
+          type = GetPromoBestsellerInfoDTO
+          description = ""
+          optional = true
+        }
+        channels {
+          type = array
+          items.type = ChannelType
+          description = "Список каналов продвижения товаров."
+          optional = false
+        }
+        constraints {
+          type = GetPromoConstraintsDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GetPromoDTO {
+    title = GetPromoDTO
+    description = GetPromoDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GetPromoDTO
+
+  }
+}

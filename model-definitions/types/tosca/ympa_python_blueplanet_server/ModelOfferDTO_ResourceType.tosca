@@ -1,0 +1,80 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server ModelOfferDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a ModelOfferDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ModelOfferDTO {
+    title = ModelOfferDTO
+    description = ModelOfferDTO
+    derivedFrom = Root
+    properties {
+        discount {
+          type =  integer
+          description = "Скидка на предложение в процентах."
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Наименование предложения."
+          optional = false
+        }
+        pos {
+          type =  integer
+          description = "Позиция предложения в выдаче Маркета на карточке модели."
+          optional = false
+        }
+        pre_discount_price {
+          type =  
+          description = "Цена предложения без скидки магазина."
+          optional = false
+        }
+        price {
+          type =  
+          description = "Цена предложения без скидки, которую получает покупатель при оплате через Yandex Pay."
+          optional = false
+        }
+        region_id {
+          type =  integer
+          description = "Идентификатор региона предложения (регион, откуда доставляется товар).  Сначала показываются предложения, доставляемые из региона, указанного в запросе в параметре &#x60;regionId&#x60;. Предложения, доставляемые из других регионов, показываются после них. "
+          optional = false
+        }
+        shipping_cost {
+          type =  
+          description = "Стоимость доставки товара в регион:  * &#x60;0&#x60; — доставка осуществляется бесплатно. * &#x60;-1&#x60; — магазин не осуществляет доставку этого товара (самовывоз).  Если стоимость доставки неизвестна, параметр не выводится. "
+          optional = false
+        }
+        shop_name {
+          type =  string
+          description = "Название магазина (в том виде, в котором отображается на Маркете)."
+          optional = false
+        }
+        shop_rating {
+          type =  integer
+          description = "Рейтинг магазина.  Возможные значения: * &#x60;-1&#x60; — у магазинов, недавно появившихся на Маркете, рейтинг появляется не сразу. До момента появления рейтинга для таких магазинов возвращается значение &#x60;-1&#x60;. * &#x60;1&#x60;. * &#x60;2&#x60;. * &#x60;3&#x60;. * &#x60;4&#x60;. * &#x60;5&#x60;. "
+          optional = false
+        }
+        in_stock {
+          type =  integer
+          description = "{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %} "
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ModelOfferDTO {
+    title = ModelOfferDTO
+    description = ModelOfferDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.ModelOfferDTO
+
+  }
+}

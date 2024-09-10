@@ -1,0 +1,87 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server GoodsStatsGoodsDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a GoodsStatsGoodsDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  GoodsStatsWarehouseDTO = ympa_python_blueplanet_server.resourceTypes.GoodsStatsWarehouseDTO
+  GoodsStatsWeightDimensionsDTO = ympa_python_blueplanet_server.resourceTypes.GoodsStatsWeightDimensionsDTO
+  TariffDTO = ympa_python_blueplanet_server.resourceTypes.TariffDTO
+  import re = ympa_python_blueplanet_server.resourceTypes.import re
+}
+resourceTypes {
+
+  GoodsStatsGoodsDTO {
+    title = GoodsStatsGoodsDTO
+    description = GoodsStatsGoodsDTO
+    derivedFrom = Root
+    properties {
+        shop_sku {
+          type =  string
+          description = "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+          optional = false
+        }
+        market_sku {
+          type =  integer
+          description = "SKU на Маркете."
+          optional = false
+        }
+        name {
+          type =  string
+          description = "Название товара."
+          optional = false
+        }
+        price {
+          type =  
+          description = "Цена на товар в валюте, которая установлена [в кабинете продавца на Маркете](https://partner.market.yandex.ru/)."
+          optional = false
+        }
+        category_id {
+          type =  integer
+          description = "Идентификатор категории товара на Маркете."
+          optional = false
+        }
+        category_name {
+          type =  string
+          description = "Название категории товара на Маркете."
+          optional = false
+        }
+        weight_dimensions {
+          type = GoodsStatsWeightDimensionsDTO
+          description = ""
+          optional = false
+        }
+        warehouses {
+          type = array
+          items.type = GoodsStatsWarehouseDTO
+          description = "Информация о складах, на которых хранится товар.  Параметр не приходит, если товара нет ни на одном складе. "
+          optional = false
+        }
+        tariffs {
+          type = array
+          items.type = TariffDTO
+          description = "Информация о тарифах, по которым нужно заплатить за услуги Маркета.  По некоторым услугам могут возвращаться несколько разных стоимостей. Например, в модели FBS стоимость услуги &#x60;SORTING&#x60; (обработка заказа) зависит от способа отгрузки и количества заказов в отгрузке. Подробнее о тарифах на услуги читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/introduction/rates/models/). "
+          optional = false
+        }
+        pictures {
+          type = array
+          items.type =  string
+          description = "Ссылки (URL) изображений товара в хорошем качестве."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  GoodsStatsGoodsDTO {
+    title = GoodsStatsGoodsDTO
+    description = GoodsStatsGoodsDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.GoodsStatsGoodsDTO
+
+  }
+}

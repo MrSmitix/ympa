@@ -1,0 +1,35 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrderDeliveryDateDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrderDeliveryDateDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrderDeliveryDateDTO {
+    title = OrderDeliveryDateDTO
+    description = OrderDeliveryDateDTO
+    derivedFrom = Root
+    properties {
+        to_date {
+          type =  string
+          description = "Новая дата доставки заказа.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. "
+          optional = true
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrderDeliveryDateDTO {
+    title = OrderDeliveryDateDTO
+    description = OrderDeliveryDateDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrderDeliveryDateDTO
+
+  }
+}

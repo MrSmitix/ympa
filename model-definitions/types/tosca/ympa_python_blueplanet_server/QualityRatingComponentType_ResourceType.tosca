@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server QualityRatingComponentType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a QualityRatingComponentType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  QualityRatingComponentType {
+    title = QualityRatingComponentType
+    description = QualityRatingComponentType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  QualityRatingComponentType {
+    title = QualityRatingComponentType
+    description = QualityRatingComponentType
+    implements = ympa_python_blueplanet_server.resourceTypes.QualityRatingComponentType
+
+  }
+}

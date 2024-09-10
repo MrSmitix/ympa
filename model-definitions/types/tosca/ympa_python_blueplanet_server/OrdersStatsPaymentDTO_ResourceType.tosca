@@ -1,0 +1,63 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrdersStatsPaymentDTO"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrdersStatsPaymentDTO"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  OrdersStatsPaymentOrderDTO = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPaymentOrderDTO
+  OrdersStatsPaymentSourceType = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPaymentSourceType
+  OrdersStatsPaymentType = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPaymentType
+}
+resourceTypes {
+
+  OrdersStatsPaymentDTO {
+    title = OrdersStatsPaymentDTO
+    description = OrdersStatsPaymentDTO
+    derivedFrom = Root
+    properties {
+        id {
+          type =  string
+          description = "Идентификатор денежного перевода."
+          optional = false
+        }
+        _date {
+          type =  string
+          description = "Дата денежного перевода.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. "
+          optional = false
+        }
+        type {
+          type = OrdersStatsPaymentType
+          description = ""
+          optional = false
+        }
+        source {
+          type = OrdersStatsPaymentSourceType
+          description = ""
+          optional = false
+        }
+        total {
+          type =  
+          description = "Сумма денежного перевода. Значение указывается в рублях независимо от способа денежного перевода. Точность — два знака после запятой. "
+          optional = false
+        }
+        payment_order {
+          type = OrdersStatsPaymentOrderDTO
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrdersStatsPaymentDTO {
+    title = OrdersStatsPaymentDTO
+    description = OrdersStatsPaymentDTO
+    implements = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPaymentDTO
+
+  }
+}

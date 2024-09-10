@@ -1,0 +1,30 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "ympa_python_blueplanet_server OrdersStatsPriceType"
+package     = ympa_python_blueplanet_server
+version     = "1.0"
+description = "Defines a OrdersStatsPriceType"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  OrdersStatsPriceType {
+    title = OrdersStatsPriceType
+    description = OrdersStatsPriceType
+    derivedFrom = Root
+    properties {
+    }
+  }
+}
+
+serviceTemplates {
+
+  OrdersStatsPriceType {
+    title = OrdersStatsPriceType
+    description = OrdersStatsPriceType
+    implements = ympa_python_blueplanet_server.resourceTypes.OrdersStatsPriceType
+
+  }
+}
