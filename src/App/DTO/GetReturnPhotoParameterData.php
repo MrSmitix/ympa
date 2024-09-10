@@ -1,0 +1,53 @@
+<?php
+declare(strict_types=1);
+
+namespace App\DTO;
+
+use Articus\DataTransfer\Annotation as DTA;
+
+/**
+ * Parameters for getReturnPhoto
+ */
+class GetReturnPhotoParameterData
+{
+    /**
+     * Идентификатор товара в возврате.
+     * @DTA\Data(subset="path", field="itemId")
+     * @DTA\Strategy(subset="path", name="QueryStringScalar", options={"type":"int"})
+     * @DTA\Validator(subset="path", name="QueryStringScalar", options={"type":"int"})
+     */
+    public ?int $item_id = null;
+
+    /**
+     * Идентификатор заказа.
+     * @DTA\Data(subset="path", field="orderId")
+     * @DTA\Strategy(subset="path", name="QueryStringScalar", options={"type":"int"})
+     * @DTA\Validator(subset="path", name="QueryStringScalar", options={"type":"int"})
+     */
+    public ?int $order_id = null;
+
+    /**
+     * Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+     * @DTA\Data(subset="path", field="campaignId")
+     * @DTA\Strategy(subset="path", name="QueryStringScalar", options={"type":"int"})
+     * @DTA\Validator(subset="path", name="QueryStringScalar", options={"type":"int"})
+     */
+    public ?int $campaign_id = null;
+
+    /**
+     * Идентификатор возврата.
+     * @DTA\Data(subset="path", field="returnId")
+     * @DTA\Strategy(subset="path", name="QueryStringScalar", options={"type":"int"})
+     * @DTA\Validator(subset="path", name="QueryStringScalar", options={"type":"int"})
+     */
+    public ?int $return_id = null;
+
+    /**
+     * Хеш ссылки изображения для загрузки.
+     * @DTA\Data(subset="path", field="imageHash")
+     * @DTA\Strategy(subset="path", name="QueryStringScalar", options={"type":"string"})
+     * @DTA\Validator(subset="path", name="QueryStringScalar", options={"type":"string"})
+     */
+    public ?string $image_hash = null;
+
+}
