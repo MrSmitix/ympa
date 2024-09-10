@@ -1,0 +1,29 @@
+namespace ympa_fsharp_functions_server.Model
+
+open System
+open System.Collections.Generic
+open Newtonsoft.Json
+
+module OfferProcessingNoteType =
+
+  //#region OfferProcessingNoteType
+
+  let ASSORTMENTEnum = "ASSORTMENT"
+  let CANCELLEDEnum = "CANCELLED"
+  let CONFLICTINGINFORMATIONEnum = "CONFLICTING_INFORMATION"
+  let OTHEREnum = "OTHER"
+  let DEPARTMENTFROZENEnum = "DEPARTMENT_FROZEN"
+  let INCORRECTINFORMATIONEnum = "INCORRECT_INFORMATION"
+  let LEGALCONFLICTEnum = "LEGAL_CONFLICT"
+  let NEEDCLASSIFICATIONINFORMATIONEnum = "NEED_CLASSIFICATION_INFORMATION"
+  let NEEDINFORMATIONEnum = "NEED_INFORMATION"
+  let NEEDPICTURESEnum = "NEED_PICTURES"
+  let NEEDVENDOREnum = "NEED_VENDOR"
+  let NOCATEGORYEnum = "NO_CATEGORY"
+  let NOKNOWLEDGEEnum = "NO_KNOWLEDGE"
+  let NOPARAMETERSINSHOPTITLEEnum = "NO_PARAMETERS_IN_SHOP_TITLE"
+  let NOSIZEMEASUREEnum = "NO_SIZE_MEASURE"
+  let SAMPLELINEEnum = "SAMPLE_LINE"
+  type OfferProcessingNoteType = string
+
+  //#endregion
