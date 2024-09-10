@@ -1,0 +1,9 @@
+
+
+# CalculatedTariffType
+
+## Enum
+
+
+
+

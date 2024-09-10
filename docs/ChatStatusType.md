@@ -1,0 +1,9 @@
+
+
+# ChatStatusType
+
+## Enum
+
+
+
+

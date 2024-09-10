@@ -1,0 +1,9 @@
+
+
+# QualityRatingComponentType
+
+## Enum
+
+
+
+

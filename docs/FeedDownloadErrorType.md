@@ -1,0 +1,9 @@
+
+
+# FeedDownloadErrorType
+
+## Enum
+
+
+
+

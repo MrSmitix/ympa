@@ -1,0 +1,9 @@
+
+
+# CampaignSettingsScheduleSourceType
+
+## Enum
+
+
+
+

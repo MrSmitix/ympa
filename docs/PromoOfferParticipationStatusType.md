@@ -1,0 +1,9 @@
+
+
+# PromoOfferParticipationStatusType
+
+## Enum
+
+
+
+

@@ -1,0 +1,9 @@
+
+
+# RejectedPromoOfferUpdateReasonType
+
+## Enum
+
+
+
+

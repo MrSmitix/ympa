@@ -1,0 +1,9 @@
+
+
+# OutletStatusType
+
+## Enum
+
+
+
+

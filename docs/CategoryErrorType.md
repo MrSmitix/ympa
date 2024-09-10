@@ -1,0 +1,9 @@
+
+
+# CategoryErrorType
+
+## Enum
+
+
+
+
