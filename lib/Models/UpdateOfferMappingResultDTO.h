@@ -1,0 +1,80 @@
+
+/*
+ * UpdateOfferMappingResultDTO.h
+ *
+ * Ошибки и предупреждения, которые появились из-за переданных характеристик.
+ */
+
+#ifndef TINY_CPP_CLIENT_UpdateOfferMappingResultDTO_H_
+#define TINY_CPP_CLIENT_UpdateOfferMappingResultDTO_H_
+
+
+#include <string>
+#include "bourne/json.hpp"
+#include "Helpers.h"
+#include "OfferMappingErrorDTO.h"
+#include <list>
+
+namespace Tiny {
+
+
+/*! \brief Ошибки и предупреждения, которые появились из-за переданных характеристик.
+ *
+ *  \ingroup Models
+ *
+ */
+
+class UpdateOfferMappingResultDTO{
+public:
+
+    /*! \brief Constructor.
+	 */
+    UpdateOfferMappingResultDTO();
+    UpdateOfferMappingResultDTO(std::string jsonString);
+
+
+    /*! \brief Destructor.
+	 */
+    virtual ~UpdateOfferMappingResultDTO();
+
+
+    /*! \brief Retrieve a bourne JSON representation of this class.
+	 */
+    bourne::json toJson();
+
+
+    /*! \brief Fills in members of this class from bourne JSON object representing it.
+	 */
+    void fromJson(std::string jsonObj);
+
+	/*! \brief Get Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) 
+	 */
+	std::string getOfferId();
+
+	/*! \brief Set Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) 
+	 */
+	void setOfferId(std::string  offerId);
+	/*! \brief Get Ошибки — информация в каталоге не обновится.
+	 */
+	std::list<OfferMappingErrorDTO> getErrors();
+
+	/*! \brief Set Ошибки — информация в каталоге не обновится.
+	 */
+	void setErrors(std::list <OfferMappingErrorDTO> errors);
+	/*! \brief Get Предупреждения — информация в каталоге обновится.
+	 */
+	std::list<OfferMappingErrorDTO> getWarnings();
+
+	/*! \brief Set Предупреждения — информация в каталоге обновится.
+	 */
+	void setWarnings(std::list <OfferMappingErrorDTO> warnings);
+
+
+    private:
+    std::string offerId{};
+    std::list<OfferMappingErrorDTO> errors;
+    std::list<OfferMappingErrorDTO> warnings;
+};
+}
+
+#endif /* TINY_CPP_CLIENT_UpdateOfferMappingResultDTO_H_ */

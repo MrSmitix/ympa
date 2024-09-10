@@ -1,0 +1,11 @@
+# AgeDTO
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**value** | **float** | Значение. | 
+**ageUnit** | [**OpenAPI\Server\Model\AgeUnitType**](AgeUnitType.md) |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
