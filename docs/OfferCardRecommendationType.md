@@ -1,0 +1,9 @@
+
+
+# OfferCardRecommendationType
+
+## Enum
+
+
+
+

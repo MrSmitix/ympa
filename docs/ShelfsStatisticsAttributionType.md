@@ -1,0 +1,9 @@
+
+
+# ShelfsStatisticsAttributionType
+
+## Enum
+
+
+
+

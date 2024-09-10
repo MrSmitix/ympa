@@ -1,0 +1,9 @@
+
+
+# RecipientType
+
+## Enum
+
+
+
+

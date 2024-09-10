@@ -1,0 +1,9 @@
+
+
+# OfferConditionType
+
+## Enum
+
+
+
+

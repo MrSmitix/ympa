@@ -1,0 +1,9 @@
+
+
+# PromoOfferUpdateWarningCodeType
+
+## Enum
+
+
+
+

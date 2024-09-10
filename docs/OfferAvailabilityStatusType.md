@@ -1,0 +1,9 @@
+
+
+# OfferAvailabilityStatusType
+
+## Enum
+
+
+
+

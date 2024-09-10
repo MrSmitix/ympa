@@ -1,0 +1,9 @@
+
+
+# OrderPaymentMethodType
+
+## Enum
+
+
+
+

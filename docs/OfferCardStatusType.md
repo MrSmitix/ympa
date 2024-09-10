@@ -1,0 +1,9 @@
+
+
+# OfferCardStatusType
+
+## Enum
+
+
+
+
