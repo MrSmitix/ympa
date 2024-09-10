@@ -1,0 +1,13 @@
+# LanguageType
+
+Язык:  * `RU` — русский.  * `EN` — английский. 
+
+## Enum
+
+* `RU` (value: `'RU'`)
+
+* `EN` (value: `'EN'`)
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

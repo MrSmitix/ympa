@@ -1,0 +1,44 @@
+# OfferDTO
+
+Предложение.
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**price** | **float** | Цена предложения.  До версии 2.0 партнерского API у параметра был тип String.  | [optional] 
+**feed_id** | **int** | Идентификатор прайс-листа, содержащего предложение.  Параметр доступен начиная с версии 2.0 партнерского API.  | [optional] 
+**id** | **str** | Идентификатор предложения из прайс-листа.  Параметр выводится, если в прайс-листе задан уникальный идентификатор. Если в прайс-листе содержится несколько предложений с одинаковыми идентификаторами, параметр &#x60;id&#x60; указывается только для первого из них, для остальных параметры &#x60;id&#x60; и &#x60;feedId&#x60; не выводятся.  Параметр доступен начиная с версии 2.0 партнерского API.  | [optional] 
+**shop_category_id** | **str** | Идентификатор категории предложения, указанный магазином в прайс-листе.  Параметр выводится только для предложений, у которых указана категория в прайс-листе.  Параметр доступен начиная с версии 2.0 партнерского API.  | [optional] 
+**market_category_id** | **int** | Идентификатор категории предложения в дереве категорий Маркета. Параметр доступен начиная с версии 2.0 партнерского API.  | [optional] 
+**pre_discount_price** | **float** | Цена предложения без скидки. | [optional] 
+**discount** | **int** | Скидка на предложение в процентах. | [optional] 
+**cut_price** | **bool** | Является ли предложение уцененным:  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет.  Параметр доступен начиная с версии 2.58 партнерского API.  | [optional] 
+**url** | **str** | URL-адрес предложения на сайте магазина. | [optional] 
+**model_id** | **int** | Идентификатор модели Маркета, с которой соотнесено предложение.  Если предложение не соотнесено ни с какой карточкой модели, то параметр &#x60;modelid&#x60; содержит значение &#x60;0&#x60;.  {% note info %}  Идентификатор модели присутствует в URL карточки модели в виде значения параметра &#x60;product&#x60;. Например: &#x60;https://market.yandex.ru/product/13584121&#x60;.  {% endnote %}  | 
+**name** | **str** | Наименование предложения. | [optional] 
+**currency** | [**CurrencyType**](CurrencyType.md) |  | [optional] 
+**bid** | **float** | {% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Ставка на клик.  | [optional] 
+**cbid** | **float** | {% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Ставка на клик.  | [optional] 
+**fee** | **float** | {% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Процент комиссии на товар при продаже по CPA.  | [optional] 
+**blocked** | **bool** | Признак блокировки предложения. Возможные значения: * &#x60;false&#x60; — предложение активно, параметр не выводится. * &#x60;true&#x60; — предложение заблокировано. Параметр выводится, если предложение заблокировано и не попадает в выдачу Маркета. Это может произойти из-за отключения магазина.  | [optional] 
+
+## Example
+
+```python
+from ympa_python_pydantic_v1_client.models.offer_dto import OfferDTO
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of OfferDTO from a JSON string
+offer_dto_instance = OfferDTO.from_json(json)
+# print the JSON string representation of the object
+print OfferDTO.to_json()
+
+# convert the object into a dict
+offer_dto_dict = offer_dto_instance.to_dict()
+# create an instance of OfferDTO from a dict
+offer_dto_from_dict = OfferDTO.from_dict(offer_dto_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

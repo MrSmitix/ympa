@@ -1,0 +1,13 @@
+# OfferSellingProgramStatusType
+
+Информация о доступности или недоступности.  * `FINE` — доступно. * `REJECT` — недоступно. 
+
+## Enum
+
+* `FINE` (value: `'FINE'`)
+
+* `REJECT` (value: `'REJECT'`)
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
