@@ -1,0 +1,98 @@
+#' @docType class
+#' @title OrderSubstatusType
+#' @description OrderSubstatusType Class
+#' @format An \code{R6Class} generator object
+#' @importFrom R6 R6Class
+#' @importFrom jsonlite fromJSON toJSON
+#' @export
+OrderSubstatusType <- R6::R6Class(
+  "OrderSubstatusType",
+  public = list(
+    #' Initialize a new OrderSubstatusType class.
+    #'
+    #' @description
+    #' Initialize a new OrderSubstatusType class.
+    #'
+    #' @param ... Optional arguments.
+    #' @export
+    initialize = function(...) {
+      local.optional.var <- list(...)
+      val <- unlist(local.optional.var)
+      enumvec <- .parse_OrderSubstatusType()
+
+      if (length(val) == 0L) {
+        val = "DUMMY_ENUM"
+      } else {
+        stopifnot(length(val) == 1L)
+      }
+
+      if (!val %in% enumvec) {
+        if (!(val=="DUMMY_ENUM")) {
+          stop("Use one of the valid values: ",
+            paste0(enumvec, collapse = ", "))
+        }
+        warning("Initializing OrderSubstatusType with DUMMY_ENUM. Use one of the valid values: ",
+          paste0(enumvec, collapse = ", "),
+          ". If you did not manually initialize OrderSubstatusType, this may already be overwritten by an enum loaded from a JSON config.")
+      }
+      private$value <- val
+    },
+    #' To JSON string
+    #'
+    #' @description
+    #' To JSON String
+    #'
+    #' @return OrderSubstatusType in JSON format
+    #' @export
+    toJSON = function() {
+        jsonlite::toJSON(private$value, auto_unbox = TRUE)
+    },
+    #' Deserialize JSON string into an instance of OrderSubstatusType
+    #'
+    #' @description
+    #' Deserialize JSON string into an instance of OrderSubstatusType
+    #'
+    #' @param input_json the JSON input
+    #' @return the instance of OrderSubstatusType
+    #' @export
+    fromJSON = function(input_json) {
+      private$value <- jsonlite::fromJSON(input_json,
+          simplifyVector = FALSE)
+      self
+    },
+    #' To JSON string
+    #'
+    #' @description
+    #' To JSON String
+    #'
+    #' @return OrderSubstatusType in JSON format
+    #' @export
+    toJSONString = function() {
+      as.character(jsonlite::toJSON(private$value,
+          auto_unbox = TRUE))
+    },
+    #' Deserialize JSON string into an instance of OrderSubstatusType
+    #'
+    #' @description
+    #' Deserialize JSON string into an instance of OrderSubstatusType
+    #'
+    #' @param input_json the JSON input
+    #' @return the instance of OrderSubstatusType
+    #' @export
+    fromJSONString = function(input_json) {
+      private$value <- jsonlite::fromJSON(input_json,
+          simplifyVector = FALSE)
+      self
+    }
+  ),
+  private = list(
+    value = NULL
+  )
+)
+
+# add to utils.R
+.parse_OrderSubstatusType <- function(vals) {
+  res <- gsub("^\\[|\\]$", "", "[RESERVATION_EXPIRED, USER_NOT_PAID, USER_UNREACHABLE, USER_CHANGED_MIND, USER_REFUSED_DELIVERY, USER_REFUSED_PRODUCT, SHOP_FAILED, USER_REFUSED_QUALITY, REPLACING_ORDER, PROCESSING_EXPIRED, PENDING_EXPIRED, SHOP_PENDING_CANCELLED, PENDING_CANCELLED, USER_FRAUD, RESERVATION_FAILED, USER_PLACED_OTHER_ORDER, USER_BOUGHT_CHEAPER, MISSING_ITEM, BROKEN_ITEM, WRONG_ITEM, PICKUP_EXPIRED, DELIVERY_PROBLEMS, LATE_CONTACT, CUSTOM, DELIVERY_SERVICE_FAILED, WAREHOUSE_FAILED_TO_SHIP, DELIVERY_SERIVCE_UNDELIVERED, DELIVERY_SERVICE_UNDELIVERED, PREORDER, AWAIT_CONFIRMATION, STARTED, PACKAGING, READY_TO_SHIP, SHIPPED, ASYNC_PROCESSING, USER_REFUSED_TO_PROVIDE_PERSONAL_DATA, WAITING_USER_INPUT, WAITING_BANK_DECISION, BANK_REJECT_CREDIT_OFFER, CUSTOMER_REJECT_CREDIT_OFFER, CREDIT_OFFER_FAILED, AWAIT_DELIVERY_DATES_CONFIRMATION, SERVICE_FAULT, DELIVERY_SERVICE_RECEIVED, USER_RECEIVED, WAITING_FOR_STOCKS, AS_PART_OF_MULTI_ORDER, READY_FOR_LAST_MILE, LAST_MILE_STARTED, ANTIFRAUD, DELIVERY_USER_NOT_RECEIVED, DELIVERY_SERVICE_DELIVERED, DELIVERED_USER_NOT_RECEIVED, USER_WANTED_ANOTHER_PAYMENT_METHOD, USER_RECEIVED_TECHNICAL_ERROR, USER_FORGOT_TO_USE_BONUS, RECEIVED_ON_DISTRIBUTION_CENTER, DELIVERY_SERVICE_NOT_RECEIVED, DELIVERY_SERVICE_LOST, SHIPPED_TO_WRONG_DELIVERY_SERVICE, DELIVERED_USER_RECEIVED, WAITING_TINKOFF_DECISION, COURIER_SEARCH, COURIER_FOUND, COURIER_IN_TRANSIT_TO_SENDER, COURIER_ARRIVED_TO_SENDER, COURIER_RECEIVED, COURIER_NOT_FOUND, COURIER_NOT_DELIVER_ORDER, COURIER_RETURNS_ORDER, COURIER_RETURNED_ORDER, WAITING_USER_DELIVERY_INPUT, PICKUP_SERVICE_RECEIVED, PICKUP_USER_RECEIVED, CANCELLED_COURIER_NOT_FOUND, COURIER_NOT_COME_FOR_ORDER, DELIVERY_NOT_MANAGED_REGION, INCOMPLETE_CONTACT_INFORMATION, INCOMPLETE_MULTI_ORDER, INAPPROPRIATE_WEIGHT_SIZE, TECHNICAL_ERROR, SORTING_CENTER_LOST, COURIER_SEARCH_NOT_STARTED, LOST, AWAIT_PAYMENT, AWAIT_LAVKA_RESERVATION, USER_WANTS_TO_CHANGE_ADDRESS, FULL_NOT_RANSOM, PRESCRIPTION_MISMATCH, DROPOFF_LOST, DROPOFF_CLOSED, DELIVERY_TO_STORE_STARTED, USER_WANTS_TO_CHANGE_DELIVERY_DATE, WRONG_ITEM_DELIVERED, DAMAGED_BOX, AWAIT_DELIVERY_DATES, LAST_MILE_COURIER_SEARCH, PICKUP_POINT_CLOSED, LEGAL_INFO_CHANGED, USER_HAS_NO_TIME_TO_PICKUP_ORDER, DELIVERY_CUSTOMS_ARRIVED, DELIVERY_CUSTOMS_CLEARED, FIRST_MILE_DELIVERY_SERVICE_RECEIVED, AWAIT_AUTO_DELIVERY_DATES, AWAIT_USER_PERSONAL_DATA, NO_PERSONAL_DATA_EXPIRED, CUSTOMS_PROBLEMS, AWAIT_CASHIER, WAITING_POSTPAID_BUDGET_RESERVATION, AWAIT_SERVICEABLE_CONFIRMATION, POSTPAID_BUDGET_RESERVATION_FAILED, AWAIT_CUSTOM_PRICE_CONFIRMATION, READY_FOR_PICKUP, UNKNOWN]")
+  unlist(strsplit(res, ", "))
+}
+
