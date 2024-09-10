@@ -1,0 +1,17 @@
+-module(ympa_erlang_client_generate_report_dto).
+
+-export([encode/1]).
+
+-export_type([ympa_erlang_client_generate_report_dto/0]).
+
+-type ympa_erlang_client_generate_report_dto() ::
+    #{ 'reportId' := binary(),
+       'estimatedGenerationTime' := integer()
+     }.
+
+encode(#{ 'reportId' := ReportId,
+          'estimatedGenerationTime' := EstimatedGenerationTime
+        }) ->
+    #{ 'reportId' => ReportId,
+       'estimatedGenerationTime' => EstimatedGenerationTime
+     }.
