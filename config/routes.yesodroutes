@@ -1,0 +1,138 @@
+-- By default this file is used by `parseRoutesFile` in Foundation.hs
+-- Syntax for this file here: https://www.yesodweb.com/book/routing-and-handlers
+
+-- /static StaticR Static appStatic
+
+/businesses/#Int64/settings BusinessesByInt64SettingsR POST POST POST POST POST
+/campaigns CampaignsR GET GET GET GET GET
+/campaigns/#Int64 CampaignsByInt64R GET GET GET GET GET
+/campaigns/#Int64/logins CampaignsByInt64LoginsR GET GET GET GET GET
+/campaigns/#Int64/settings CampaignsByInt64SettingsR GET GET GET GET GET
+!/campaigns/by_login/#Text CampaignsByLoginByTextR GET GET GET GET GET
+/campaigns/#Int64/region CampaignsByInt64RegionR GET GET GET GET GET
+/campaigns/#Int64/orders/#Int64 CampaignsByInt64OrdersByInt64R GET GET GET GET GET
+/campaigns/#Int64/orders CampaignsByInt64OrdersR GET GET GET GET GET
+/campaigns/#Int64/orders/#Int64/identifiers CampaignsByInt64OrdersByInt64IdentifiersR PUT PUT PUT PUT
+/campaigns/#Int64/orders/#Int64/items CampaignsByInt64OrdersByInt64ItemsR PUT PUT PUT PUT
+/campaigns/#Int64/orders/#Int64/status CampaignsByInt64OrdersByInt64StatusR PUT PUT PUT PUT
+!/campaigns/#Int64/orders/status-update CampaignsByInt64OrdersStatusUpdateR POST POST POST POST
+/campaigns/#Int64/orders/#Int64/delivery/shipments/#Int64/boxes CampaignsByInt64OrdersByInt64DeliveryShipmentsByInt64BoxesR PUT PUT PUT PUT
+/campaigns/#Int64/orders/#Int64/cancellation/accept CampaignsByInt64OrdersByInt64CancellationAcceptR PUT PUT
+/campaigns/#Int64/orders/#Int64/deliverDigitalGoods CampaignsByInt64OrdersByInt64DeliverDigitalGoodsR POST POST
+/campaigns/#Int64/orders/#Int64/boxes CampaignsByInt64OrdersByInt64BoxesR PUT PUT PUT PUT
+/campaigns/#Int64/orders/#Int64/delivery/date CampaignsByInt64OrdersByInt64DeliveryDateR PUT PUT
+/campaigns/#Int64/orders/#Int64/delivery/track CampaignsByInt64OrdersByInt64DeliveryTrackR POST POST
+/campaigns/#Int64/orders/#Int64/buyer CampaignsByInt64OrdersByInt64BuyerR GET GET
+/campaigns/#Int64/orders/#Int64/verifyEac CampaignsByInt64OrdersByInt64VerifyEacR PUT PUT
+/campaigns/#Int64/orders/#Int64/delivery/storage-limit CampaignsByInt64OrdersByInt64DeliveryStorageLimitR PUT PUT
+/campaigns/#Int64/orders/#Int64/delivery/shipments/#Int64/boxes/#Int64/label CampaignsByInt64OrdersByInt64DeliveryShipmentsByInt64BoxesByInt64LabelR GET GET GET GET
+/campaigns/#Int64/orders/#Int64/delivery/labels CampaignsByInt64OrdersByInt64DeliveryLabelsR GET GET GET GET
+/campaigns/#Int64/orders/#Int64/delivery/labels/data CampaignsByInt64OrdersByInt64DeliveryLabelsDataR GET GET GET GET
+/campaigns/#Int64/orders/#Int64/business-buyer CampaignsByInt64OrdersByInt64BusinessBuyerR POST POST POST POST POST
+/campaigns/#Int64/orders/#Int64/documents CampaignsByInt64OrdersByInt64DocumentsR POST POST POST POST POST
+/campaigns/#Int64/returns CampaignsByInt64ReturnsR GET GET GET GET GET
+/campaigns/#Int64/orders/#Int64/returns/#Int64 CampaignsByInt64OrdersByInt64ReturnsByInt64R GET GET GET GET GET
+/campaigns/#Int64/orders/#Int64/returns/#Int64/decision CampaignsByInt64OrdersByInt64ReturnsByInt64DecisionR POST POST
+/campaigns/#Int64/orders/#Int64/returns/#Int64/decision/submit CampaignsByInt64OrdersByInt64ReturnsByInt64DecisionSubmitR POST POST
+/campaigns/#Int64/orders/#Int64/returns/#Int64/application CampaignsByInt64OrdersByInt64ReturnsByInt64ApplicationR GET GET GET GET
+/campaigns/#Int64/orders/#Int64/returns/#Int64/decision/#Int64/image/#Text CampaignsByInt64OrdersByInt64ReturnsByInt64DecisionByInt64ImageByTextR GET GET GET GET GET
+/regions RegionsR GET GET GET GET GET
+/regions/#Int64 RegionsByInt64R GET GET GET GET GET
+/regions/#Int64/children RegionsByInt64ChildrenR GET GET GET GET GET
+/campaigns/#Int64/shipments/reception-transfer-act CampaignsByInt64ShipmentsReceptionTransferActR GET GET
+/campaigns/#Int64/first-mile/shipments/#Int64 CampaignsByInt64FirstMileShipmentsByInt64R GET GET
+/campaigns/#Int64/first-mile/shipments/#Int64/orders/info CampaignsByInt64FirstMileShipmentsByInt64OrdersInfoR GET GET
+/campaigns/#Int64/first-mile/shipments/#Int64/confirm CampaignsByInt64FirstMileShipmentsByInt64ConfirmR POST POST
+/campaigns/#Int64/first-mile/shipments/#Int64/act CampaignsByInt64FirstMileShipmentsByInt64ActR GET GET
+/campaigns/#Int64/first-mile/shipments/#Int64/inbound-act CampaignsByInt64FirstMileShipmentsByInt64InboundActR GET GET
+/campaigns/#Int64/first-mile/shipments/#Int64/transportation-waybill CampaignsByInt64FirstMileShipmentsByInt64TransportationWaybillR GET GET
+/campaigns/#Int64/first-mile/shipments/#Int64/discrepancy-act CampaignsByInt64FirstMileShipmentsByInt64DiscrepancyActR GET GET
+/campaigns/#Int64/first-mile/shipments/#Int64/pallets CampaignsByInt64FirstMileShipmentsByInt64PalletsR PUT PUT
+/campaigns/#Int64/first-mile/shipments/#Int64/pallet/labels CampaignsByInt64FirstMileShipmentsByInt64PalletLabelsR GET GET
+/campaigns/#Int64/first-mile/shipments CampaignsByInt64FirstMileShipmentsR PUT PUT
+/campaigns/#Int64/first-mile/shipments/#Int64/orders/transfer CampaignsByInt64FirstMileShipmentsByInt64OrdersTransferR POST POST
+/businesses/#Int64/offer-mappings/delete BusinessesByInt64OfferMappingsDeleteR POST POST POST POST POST
+/businesses/#Int64/offer-mappings BusinessesByInt64OfferMappingsR POST POST POST POST POST
+/businesses/#Int64/offer-mappings/update BusinessesByInt64OfferMappingsUpdateR POST POST POST POST POST
+/businesses/#Int64/offer-mappings/suggestions BusinessesByInt64OfferMappingsSuggestionsR POST POST POST POST POST
+/businesses/#Int64/offer-mappings/archive BusinessesByInt64OfferMappingsArchiveR POST POST POST POST POST
+/businesses/#Int64/offer-mappings/unarchive BusinessesByInt64OfferMappingsUnarchiveR POST POST POST POST POST
+/campaigns/#Int64/offer-mapping-entries CampaignsByInt64OfferMappingEntriesR GET GET GET GET GET
+/campaigns/#Int64/offer-mapping-entries/updates CampaignsByInt64OfferMappingEntriesUpdatesR POST POST POST POST POST
+/campaigns/#Int64/offer-mapping-entries/suggestions CampaignsByInt64OfferMappingEntriesSuggestionsR POST POST POST POST POST
+/businesses/#Int64/offer-prices/updates BusinessesByInt64OfferPricesUpdatesR POST POST POST POST POST
+/campaigns/#Int64/offer-prices/updates CampaignsByInt64OfferPricesUpdatesR POST POST POST POST POST
+/campaigns/#Int64/offer-prices CampaignsByInt64OfferPricesR GET GET GET GET GET POST POST POST POST POST
+/campaigns/#Int64/offer-prices/suggestions CampaignsByInt64OfferPricesSuggestionsR POST POST POST POST POST
+/businesses/#Int64/price-quarantine BusinessesByInt64PriceQuarantineR POST POST POST POST POST
+/businesses/#Int64/price-quarantine/confirm BusinessesByInt64PriceQuarantineConfirmR POST POST POST POST POST
+/campaigns/#Int64/price-quarantine CampaignsByInt64PriceQuarantineR POST POST POST POST POST
+/campaigns/#Int64/price-quarantine/confirm CampaignsByInt64PriceQuarantineConfirmR POST POST POST POST POST
+/campaigns/#Int64/hidden-offers CampaignsByInt64HiddenOffersR GET GET GET GET GET POST POST POST POST POST
+/campaigns/#Int64/hidden-offers/delete CampaignsByInt64HiddenOffersDeleteR POST POST POST POST POST
+/campaigns/#Int64/offers/stocks CampaignsByInt64OffersStocksR PUT PUT PUT PUT POST POST POST POST POST
+/delivery/services DeliveryServicesR GET GET GET GET
+/campaigns/#Int64/stats/orders CampaignsByInt64StatsOrdersR POST POST POST POST POST
+/campaigns/#Int64/stats/skus CampaignsByInt64StatsSkusR POST POST POST POST POST
+/reports/info/#Text ReportsInfoByTextR GET GET GET GET GET
+/reports/united-netting/generate ReportsUnitedNettingGenerateR POST POST POST POST POST
+/reports/united-marketplace-services/generate ReportsUnitedMarketplaceServicesGenerateR POST POST POST POST POST
+/reports/united-orders/generate ReportsUnitedOrdersGenerateR POST POST POST POST POST
+/reports/goods-realization/generate ReportsGoodsRealizationGenerateR POST POST POST POST
+/reports/prices/generate ReportsPricesGenerateR POST POST POST POST POST
+/reports/stocks-on-warehouses/generate ReportsStocksOnWarehousesGenerateR POST POST POST POST POST
+/reports/goods-movement/generate ReportsGoodsMovementGenerateR POST POST
+/reports/shows-sales/generate ReportsShowsSalesGenerateR POST POST POST POST POST
+/reports/competitors-position/generate ReportsCompetitorsPositionGenerateR POST POST POST POST POST
+/reports/goods-turnover/generate ReportsGoodsTurnoverGenerateR POST POST
+/reports/boost-consolidated/generate ReportsBoostConsolidatedGenerateR POST POST POST POST POST
+/reports/documents/shipment-list/generate ReportsDocumentsShipmentListGenerateR POST POST
+/reports/shelf-statistics/generate ReportsShelfStatisticsGenerateR POST POST POST POST POST
+/reports/documents/labels/generate ReportsDocumentsLabelsGenerateR POST POST POST POST
+/reports/goods-feedback/generate ReportsGoodsFeedbackGenerateR POST POST POST POST POST
+/campaigns/#Int64/outlets CampaignsByInt64OutletsR GET GET POST POST
+/campaigns/#Int64/outlets/#Int64 CampaignsByInt64OutletsByInt64R GET GET PUT PUT DELETE DELETE
+!/campaigns/#Int64/outlets/licenses CampaignsByInt64OutletsLicensesR GET GET POST POST DELETE DELETE
+/campaigns/#Int64/feedback/updates CampaignsByInt64FeedbackUpdatesR GET GET GET GET GET
+/businesses/#Int64/goods-feedback BusinessesByInt64GoodsFeedbackR POST POST POST POST POST
+/businesses/#Int64/goods-feedback/skip-reaction BusinessesByInt64GoodsFeedbackSkipReactionR POST POST POST POST POST
+/businesses/#Int64/goods-feedback/comments/update BusinessesByInt64GoodsFeedbackCommentsUpdateR POST POST POST POST POST
+/businesses/#Int64/goods-feedback/comments/delete BusinessesByInt64GoodsFeedbackCommentsDeleteR POST POST POST POST POST
+/businesses/#Int64/goods-feedback/comments BusinessesByInt64GoodsFeedbackCommentsR POST POST POST POST POST
+/campaigns/#Int64/offers CampaignsByInt64OffersR GET GET GET GET GET POST POST POST POST POST
+/campaigns/#Int64/offers/update CampaignsByInt64OffersUpdateR POST POST POST POST POST
+/campaigns/#Int64/offers/delete CampaignsByInt64OffersDeleteR POST POST POST POST POST
+/campaigns/#Int64/offers/all CampaignsByInt64OffersAllR GET GET GET GET GET
+/businesses/#Int64/offers/recommendations BusinessesByInt64OffersRecommendationsR POST POST POST POST POST
+/campaigns/#Int64/feeds/#Int64 CampaignsByInt64FeedsByInt64R GET GET GET GET GET
+/campaigns/#Int64/feeds CampaignsByInt64FeedsR GET GET GET GET GET
+/campaigns/#Int64/feeds/#Int64/index-logs CampaignsByInt64FeedsByInt64IndexLogsR GET GET GET GET GET
+/campaigns/#Int64/feeds/#Int64/params CampaignsByInt64FeedsByInt64ParamsR POST POST POST POST POST
+/campaigns/#Int64/feeds/#Int64/refresh CampaignsByInt64FeedsByInt64RefreshR POST POST POST POST POST
+/models ModelsR GET GET POST POST
+/models/#Int64 ModelsByInt64R GET GET
+!/models/offers ModelsOffersR POST POST
+/models/#Int64/offers ModelsByInt64OffersR GET GET
+/businesses/#Int64/bids BusinessesByInt64BidsR PUT PUT PUT PUT PUT
+/campaigns/#Int64/bids CampaignsByInt64BidsR PUT PUT PUT PUT PUT
+/businesses/#Int64/bids/info BusinessesByInt64BidsInfoR POST POST POST POST POST
+/businesses/#Int64/bids/recommendations BusinessesByInt64BidsRecommendationsR POST POST POST POST POST
+/businesses/#Int64/warehouses BusinessesByInt64WarehousesR GET GET GET GET
+/warehouses WarehousesR GET GET
+/category/#Int64/parameters CategoryByInt64ParametersR POST POST POST POST POST
+/businesses/#Int64/offer-cards BusinessesByInt64OfferCardsR POST POST POST POST POST
+/businesses/#Int64/offer-cards/update BusinessesByInt64OfferCardsUpdateR POST POST POST POST POST
+/businesses/#Int64/chats/new BusinessesByInt64ChatsNewR POST POST POST POST POST
+/businesses/#Int64/chats BusinessesByInt64ChatsR POST POST POST POST POST
+/businesses/#Int64/chats/file/send BusinessesByInt64ChatsFileSendR POST POST POST POST POST
+/businesses/#Int64/chats/message BusinessesByInt64ChatsMessageR POST POST POST POST POST
+/businesses/#Int64/chats/history BusinessesByInt64ChatsHistoryR POST POST POST POST POST
+/tariffs/calculate TariffsCalculateR POST POST POST POST POST
+/categories/tree CategoriesTreeR POST POST POST POST POST
+/categories/max-sale-quantum CategoriesMaxSaleQuantumR POST POST POST POST POST
+/businesses/#Int64/ratings/quality BusinessesByInt64RatingsQualityR POST POST POST POST POST
+/campaigns/#Int64/ratings/quality/details CampaignsByInt64RatingsQualityDetailsR POST POST POST POST
+/businesses/#Int64/promos BusinessesByInt64PromosR POST POST POST POST POST
+/businesses/#Int64/promos/offers BusinessesByInt64PromosOffersR POST POST POST POST POST
+/businesses/#Int64/promos/offers/update BusinessesByInt64PromosOffersUpdateR POST POST POST POST POST
+/businesses/#Int64/promos/offers/delete BusinessesByInt64PromosOffersDeleteR POST POST POST POST POST
