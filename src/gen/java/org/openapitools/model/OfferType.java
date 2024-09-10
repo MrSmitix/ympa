@@ -1,0 +1,50 @@
+package org.openapitools.model;
+
+import io.swagger.annotations.ApiModel;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+/**
+ * Особый тип товара:  * &#x60;MEDICINE&#x60; — лекарства. * &#x60;BOOK&#x60; — бумажные и электронные книги. * &#x60;AUDIOBOOK&#x60; — аудиокниги. * &#x60;ARTIST_TITLE&#x60; — музыкальная и видеопродукция. * &#x60;ON_DEMAND&#x60; — товары на заказ.  {% note info \&quot;Если ваш товар — книга\&quot; %}  Укажите год издания в характеристиках товара. [Подробнее о параметре](../../reference/business-assortment/updateOfferMappings.md#offerparamdto)  {% endnote %} 
+ */
+public enum OfferType {
+  
+  DEFAULT("DEFAULT"),
+  
+  MEDICINE("MEDICINE"),
+  
+  BOOK("BOOK"),
+  
+  AUDIOBOOK("AUDIOBOOK"),
+  
+  ARTIST_TITLE("ARTIST_TITLE"),
+  
+  ON_DEMAND("ON_DEMAND");
+
+  private String value;
+
+  OfferType(String value) {
+    this.value = value;
+  }
+
+  @Override
+  @JsonValue
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  @JsonCreator
+  public static OfferType fromValue(String value) {
+    for (OfferType b : OfferType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+}
+

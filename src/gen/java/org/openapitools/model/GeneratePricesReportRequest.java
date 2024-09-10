@@ -1,0 +1,230 @@
+package org.openapitools.model;
+
+import io.swagger.annotations.ApiModel;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.joda.time.LocalDate;
+import org.openapitools.jackson.nullable.JsonNullable;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+/**
+ * Данные, необходимые для генерации отчета.
+ */
+@ApiModel(description="Данные, необходимые для генерации отчета.")
+
+public class GeneratePricesReportRequest  {
+  
+ /**
+  * Идентификатор бизнеса.  В большинстве случаев обязателен. Не указывается, если задан `campaignId`. 
+  */
+  @ApiModelProperty(value = "Идентификатор бизнеса.  В большинстве случаев обязателен. Не указывается, если задан `campaignId`. ")
+  private Long businessId;
+
+ /**
+  * Идентификатор кампании.  Как правило, не используется. Передавайте только если в кабинете есть магазины с уникальными ценами и вы хотите получить отчет для них. В этом случае передавать `businessId` не нужно. 
+  */
+  @ApiModelProperty(value = "Идентификатор кампании.  Как правило, не используется. Передавайте только если в кабинете есть магазины с уникальными ценами и вы хотите получить отчет для них. В этом случае передавать `businessId` не нужно. ")
+  private Long campaignId;
+
+ /**
+  * Фильтр по категориям на Маркете.
+  */
+  @ApiModelProperty(value = "Фильтр по категориям на Маркете.")
+  private List<Long> categoryIds;
+
+ /**
+  * Фильтр по времени появления предложения — начало периода.  Формат даты: `ДД-ММ-ГГГГ`. 
+  */
+  @ApiModelProperty(value = "Фильтр по времени появления предложения — начало периода.  Формат даты: `ДД-ММ-ГГГГ`. ")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  private LocalDate creationDateFrom;
+
+ /**
+  * Фильтр по времени появления предложения — окончание периода.  Формат даты: `ДД-ММ-ГГГГ`. 
+  */
+  @ApiModelProperty(value = "Фильтр по времени появления предложения — окончание периода.  Формат даты: `ДД-ММ-ГГГГ`. ")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  private LocalDate creationDateTo;
+ /**
+  * Идентификатор бизнеса.  В большинстве случаев обязателен. Не указывается, если задан &#x60;campaignId&#x60;. 
+  * @return businessId
+  */
+  @JsonProperty("businessId")
+  public Long getBusinessId() {
+    return businessId;
+  }
+
+  /**
+   * Sets the <code>businessId</code> property.
+   */
+ public void setBusinessId(Long businessId) {
+    this.businessId = businessId;
+  }
+
+  /**
+   * Sets the <code>businessId</code> property.
+   */
+  public GeneratePricesReportRequest businessId(Long businessId) {
+    this.businessId = businessId;
+    return this;
+  }
+
+ /**
+  * Идентификатор кампании.  Как правило, не используется. Передавайте только если в кабинете есть магазины с уникальными ценами и вы хотите получить отчет для них. В этом случае передавать &#x60;businessId&#x60; не нужно. 
+  * @return campaignId
+  */
+  @JsonProperty("campaignId")
+  public Long getCampaignId() {
+    return campaignId;
+  }
+
+  /**
+   * Sets the <code>campaignId</code> property.
+   */
+ public void setCampaignId(Long campaignId) {
+    this.campaignId = campaignId;
+  }
+
+  /**
+   * Sets the <code>campaignId</code> property.
+   */
+  public GeneratePricesReportRequest campaignId(Long campaignId) {
+    this.campaignId = campaignId;
+    return this;
+  }
+
+ /**
+  * Фильтр по категориям на Маркете.
+  * @return categoryIds
+  */
+  @JsonProperty("categoryIds")
+  public List<Long> getCategoryIds() {
+    return categoryIds;
+  }
+
+  /**
+   * Sets the <code>categoryIds</code> property.
+   */
+ public void setCategoryIds(List<Long> categoryIds) {
+    this.categoryIds = categoryIds;
+  }
+
+  /**
+   * Sets the <code>categoryIds</code> property.
+   */
+  public GeneratePricesReportRequest categoryIds(List<Long> categoryIds) {
+    this.categoryIds = categoryIds;
+    return this;
+  }
+
+  /**
+   * Adds a new item to the <code>categoryIds</code> list.
+   */
+  public GeneratePricesReportRequest addCategoryIdsItem(Long categoryIdsItem) {
+    this.categoryIds.add(categoryIdsItem);
+    return this;
+  }
+
+ /**
+  * Фильтр по времени появления предложения — начало периода.  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. 
+  * @return creationDateFrom
+  */
+  @JsonProperty("creationDateFrom")
+  public LocalDate getCreationDateFrom() {
+    return creationDateFrom;
+  }
+
+  /**
+   * Sets the <code>creationDateFrom</code> property.
+   */
+ public void setCreationDateFrom(LocalDate creationDateFrom) {
+    this.creationDateFrom = creationDateFrom;
+  }
+
+  /**
+   * Sets the <code>creationDateFrom</code> property.
+   */
+  public GeneratePricesReportRequest creationDateFrom(LocalDate creationDateFrom) {
+    this.creationDateFrom = creationDateFrom;
+    return this;
+  }
+
+ /**
+  * Фильтр по времени появления предложения — окончание периода.  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. 
+  * @return creationDateTo
+  */
+  @JsonProperty("creationDateTo")
+  public LocalDate getCreationDateTo() {
+    return creationDateTo;
+  }
+
+  /**
+   * Sets the <code>creationDateTo</code> property.
+   */
+ public void setCreationDateTo(LocalDate creationDateTo) {
+    this.creationDateTo = creationDateTo;
+  }
+
+  /**
+   * Sets the <code>creationDateTo</code> property.
+   */
+  public GeneratePricesReportRequest creationDateTo(LocalDate creationDateTo) {
+    this.creationDateTo = creationDateTo;
+    return this;
+  }
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    GeneratePricesReportRequest generatePricesReportRequest = (GeneratePricesReportRequest) o;
+    return Objects.equals(this.businessId, generatePricesReportRequest.businessId) &&
+        Objects.equals(this.campaignId, generatePricesReportRequest.campaignId) &&
+        Objects.equals(this.categoryIds, generatePricesReportRequest.categoryIds) &&
+        Objects.equals(this.creationDateFrom, generatePricesReportRequest.creationDateFrom) &&
+        Objects.equals(this.creationDateTo, generatePricesReportRequest.creationDateTo);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(businessId, campaignId, categoryIds, creationDateFrom, creationDateTo);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class GeneratePricesReportRequest {\n");
+    
+    sb.append("    businessId: ").append(toIndentedString(businessId)).append("\n");
+    sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
+    sb.append("    categoryIds: ").append(toIndentedString(categoryIds)).append("\n");
+    sb.append("    creationDateFrom: ").append(toIndentedString(creationDateFrom)).append("\n");
+    sb.append("    creationDateTo: ").append(toIndentedString(creationDateTo)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private static String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

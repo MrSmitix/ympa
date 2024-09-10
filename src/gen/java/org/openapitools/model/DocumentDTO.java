@@ -1,0 +1,154 @@
+package org.openapitools.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import org.joda.time.LocalDate;
+import org.openapitools.model.OrderDocumentStatusType;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+/**
+ * Информация о документе.
+ */
+@ApiModel(description="Информация о документе.")
+
+public class DocumentDTO  {
+  
+  @ApiModelProperty(value = "")
+  @Valid
+  private OrderDocumentStatusType status;
+
+ /**
+  * Номер документа.
+  */
+  @ApiModelProperty(value = "Номер документа.")
+  private String number;
+
+ /**
+  * Дата создания документа.
+  */
+  @ApiModelProperty(value = "Дата создания документа.")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  private LocalDate date;
+ /**
+  * Get status
+  * @return status
+  */
+  @JsonProperty("status")
+  public OrderDocumentStatusType getStatus() {
+    return status;
+  }
+
+  /**
+   * Sets the <code>status</code> property.
+   */
+ public void setStatus(OrderDocumentStatusType status) {
+    this.status = status;
+  }
+
+  /**
+   * Sets the <code>status</code> property.
+   */
+  public DocumentDTO status(OrderDocumentStatusType status) {
+    this.status = status;
+    return this;
+  }
+
+ /**
+  * Номер документа.
+  * @return number
+  */
+  @JsonProperty("number")
+  public String getNumber() {
+    return number;
+  }
+
+  /**
+   * Sets the <code>number</code> property.
+   */
+ public void setNumber(String number) {
+    this.number = number;
+  }
+
+  /**
+   * Sets the <code>number</code> property.
+   */
+  public DocumentDTO number(String number) {
+    this.number = number;
+    return this;
+  }
+
+ /**
+  * Дата создания документа.
+  * @return date
+  */
+  @JsonProperty("date")
+  public LocalDate getDate() {
+    return date;
+  }
+
+  /**
+   * Sets the <code>date</code> property.
+   */
+ public void setDate(LocalDate date) {
+    this.date = date;
+  }
+
+  /**
+   * Sets the <code>date</code> property.
+   */
+  public DocumentDTO date(LocalDate date) {
+    this.date = date;
+    return this;
+  }
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    DocumentDTO documentDTO = (DocumentDTO) o;
+    return Objects.equals(this.status, documentDTO.status) &&
+        Objects.equals(this.number, documentDTO.number) &&
+        Objects.equals(this.date, documentDTO.date);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(status, number, date);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class DocumentDTO {\n");
+    
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    sb.append("    date: ").append(toIndentedString(date)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private static String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+
