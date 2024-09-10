@@ -1,0 +1,2 @@
+testCase,httpStatusCode,campaignId,addHiddenOffersRequest,campaignId,deleteHiddenOffersRequest,campaignId,offerId,pageToken,limit,offset,page,pageSize
+Success,200,0,0,0,0,0,0,0,0,0,0,0

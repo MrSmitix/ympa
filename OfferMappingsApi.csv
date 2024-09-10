@@ -1,0 +1,2 @@
+testCase,httpStatusCode,campaignId,offerId,shopSku,mappingKind,status,availability,categoryId,vendor,pageToken,limit,campaignId,getSuggestedOfferMappingEntriesRequest,campaignId,updateOfferMappingEntryRequest
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0

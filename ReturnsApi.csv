@@ -1,0 +1,2 @@
+testCase,httpStatusCode,campaignId,orderId,returnId,campaignId,orderId,returnId,campaignId,orderId,returnId,itemId,imageHash,campaignId,pageToken,limit,orderIds,statuses,type,fromDate,toDate,fromDate2,toDate2,campaignId,orderId,returnId,setReturnDecisionRequest,campaignId,orderId,returnId
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

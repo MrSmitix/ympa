@@ -1,0 +1,2 @@
+testCase,httpStatusCode,businessId,deletePromoOffersRequest,businessId,getPromoOffersRequest,pageToken,limit,businessId,getPromosRequest,businessId,updatePromoOffersRequest
+Success,200,0,0,0,0,0,0,0,0,0,0

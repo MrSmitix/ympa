@@ -1,0 +1,2 @@
+testCase,httpStatusCode,businessId,addOffersToArchiveRequest,businessId,deleteOffersRequest,businessId,deleteOffersFromArchiveRequest,businessId,pageToken,limit,getOfferMappingsRequest,businessId,getSuggestedOfferMappingsRequest,businessId,updateOfferMappingsRequest
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0

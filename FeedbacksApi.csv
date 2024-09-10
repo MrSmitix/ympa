@@ -1,0 +1,2 @@
+testCase,httpStatusCode,campaignId,pageToken,limit,fromDate
+Success,200,0,0,0,0

@@ -1,0 +1,2 @@
+testCase,httpStatusCode,campaignId,deleteCampaignOffersRequest,campaignId,feedId,chunk,campaignId,getCampaignOffersRequest,pageToken,limit,businessId,getOfferRecommendationsRequest,pageToken,limit,campaignId,query,feedId,shopCategoryId,currency,matched,page,pageSize,campaignId,updateCampaignOffersRequest
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

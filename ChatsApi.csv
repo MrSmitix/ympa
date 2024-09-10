@@ -1,0 +1,2 @@
+testCase,httpStatusCode,businessId,createChatRequest,businessId,chatId,getChatHistoryRequest,pageToken,limit,businessId,getChatsRequest,pageToken,limit,businessId,chatId,file,businessId,chatId,sendMessageToChatRequest
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

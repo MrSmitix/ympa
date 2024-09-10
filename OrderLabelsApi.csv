@@ -1,0 +1,2 @@
+testCase,httpStatusCode,campaignId,orderId,shipmentId,boxId,format,campaignId,orderId,format,campaignId,orderId
+Success,200,0,0,0,0,0,0,0,0,0,0

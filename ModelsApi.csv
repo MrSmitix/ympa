@@ -1,0 +1,2 @@
+testCase,httpStatusCode,modelId,regionId,currency,modelId,regionId,currency,orderByPrice,count,page,regionId,getModelsRequest,currency,regionId,getModelsRequest,currency,orderByPrice,query,regionId,currency,page,pageSize
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -1,0 +1,2 @@
+testCase,httpStatusCode,businessId,confirmPricesRequest,campaignId,confirmPricesRequest,businessId,getQuarantineOffersRequest,pageToken,limit,campaignId,getQuarantineOffersRequest,pageToken,limit
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0

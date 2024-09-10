@@ -1,0 +1,2 @@
+testCase,httpStatusCode,businessId,deleteGoodsFeedbackCommentRequest,businessId,getGoodsFeedbackCommentsRequest,pageToken,limit,businessId,pageToken,limit,getGoodsFeedbackRequest,businessId,skipGoodsFeedbackReactionRequest,businessId,updateGoodsFeedbackCommentRequest
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0

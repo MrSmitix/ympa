@@ -1,0 +1,2 @@
+testCase,httpStatusCode,businessId,pageToken,limit,getBidsInfoRequest,businessId,getBidsRecommendationsRequest,businessId,putSkuBidsRequest,campaignId,putSkuBidsRequest
+Success,200,0,0,0,0,0,0,0,0,0,0

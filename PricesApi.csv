@@ -1,0 +1,2 @@
+testCase,httpStatusCode,campaignId,pageToken,limit,archived,campaignId,pageToken,limit,getPricesByOfferIdsRequest,campaignId,suggestPricesRequest,businessId,updateBusinessPricesRequest,campaignId,updatePricesRequest
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0

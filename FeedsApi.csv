@@ -1,0 +1,2 @@
+testCase,httpStatusCode,campaignId,feedId,campaignId,feedId,limit,publishedTimeFrom,publishedTimeTo,status,campaignId,campaignId,feedId,campaignId,feedId,setFeedParamsRequest
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0

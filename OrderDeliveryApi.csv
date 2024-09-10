@@ -1,0 +1,2 @@
+testCase,httpStatusCode,campaignId,orderId,campaignId,orderId,setOrderDeliveryDateRequest,campaignId,orderId,setOrderDeliveryTrackCodeRequest,campaignId,orderId,updateOrderStorageLimitRequest,campaignId,orderId,verifyOrderEacRequest
+Success,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0

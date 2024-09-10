@@ -1,0 +1,2 @@
+testCase,httpStatusCode,categoryId,businessId,pageToken,limit,getOfferCardsContentStatusRequest,businessId,updateOfferContentRequest
+Success,200,0,0,0,0,0,0,0
