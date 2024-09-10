@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ympa_aspnetcore_server", "src\ympa_aspnetcore_server\ympa_aspnetcore_server.csproj", "{49D7CBFF-51A7-4CA6-B987-0DE89639B21D}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {49D7CBFF-51A7-4CA6-B987-0DE89639B21D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {49D7CBFF-51A7-4CA6-B987-0DE89639B21D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {49D7CBFF-51A7-4CA6-B987-0DE89639B21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {49D7CBFF-51A7-4CA6-B987-0DE89639B21D}.Release|Any CPU.Build.0 = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+EndGlobal
