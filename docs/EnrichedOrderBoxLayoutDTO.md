@@ -1,0 +1,16 @@
+# WWW::OpenAPIClient::Object::EnrichedOrderBoxLayoutDTO
+
+## Load the model package
+```perl
+use WWW::OpenAPIClient::Object::EnrichedOrderBoxLayoutDTO;
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**items** | [**ARRAY[OrderBoxLayoutItemDTO]**](OrderBoxLayoutItemDTO.md) | Список товаров в коробке.  Если в коробке едет часть большого товара, в списке может быть только один пункт.  | 
+**box_id** | **int** | Идентификатор коробки. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

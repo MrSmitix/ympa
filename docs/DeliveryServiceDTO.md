@@ -1,0 +1,16 @@
+# WWW::OpenAPIClient::Object::DeliveryServiceDTO
+
+## Load the model package
+```perl
+use WWW::OpenAPIClient::Object::DeliveryServiceDTO;
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** | Идентификатор службы доставки. | [optional] 
+**name** | **string** | Наименование службы доставки. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

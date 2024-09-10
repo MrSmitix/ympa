@@ -1,0 +1,16 @@
+# WWW::OpenAPIClient::Object::UpdateOrderStatusesResponse
+
+## Load the model package
+```perl
+use WWW::OpenAPIClient::Object::UpdateOrderStatusesResponse;
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**status** | [**ApiResponseStatusType**](ApiResponseStatusType.md) |  | [optional] 
+**result** | [**UpdateOrderStatusesDTO**](UpdateOrderStatusesDTO.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
