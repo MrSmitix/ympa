@@ -1,0 +1,88 @@
+package org.openapitools.model;
+
+import groovy.transform.Canonical
+import io.swagger.annotations.ApiModel;
+
+enum OrderPromoType {
+
+    DIRECT_DISCOUNT("DIRECT_DISCOUNT"),
+    
+    BLUE_SET("BLUE_SET"),
+    
+    BLUE_FLASH("BLUE_FLASH"),
+    
+    GENERIC_BUNDLE("GENERIC_BUNDLE"),
+    
+    MARKET_COUPON("MARKET_COUPON"),
+    
+    MARKET_PROMOCODE("MARKET_PROMOCODE"),
+    
+    MARKET_DEAL("MARKET_DEAL"),
+    
+    MARKET_BLUE("MARKET_BLUE"),
+    
+    MARKET_PRIME("MARKET_PRIME"),
+    
+    YANDEX_PLUS("YANDEX_PLUS"),
+    
+    BERU_PLUS("BERU_PLUS"),
+    
+    MARKET_COIN("MARKET_COIN"),
+    
+    YANDEX_EMPLOYEE("YANDEX_EMPLOYEE"),
+    
+    LIMITED_FREE_DELIVERY_PROMO("LIMITED_FREE_DELIVERY_PROMO"),
+    
+    FREE_DELIVERY_THRESHOLD("FREE_DELIVERY_THRESHOLD"),
+    
+    MULTICART_DISCOUNT("MULTICART_DISCOUNT"),
+    
+    PRICE_DROP_AS_YOU_SHOP("PRICE_DROP_AS_YOU_SHOP"),
+    
+    FREE_DELIVERY_FOR_LDI("FREE_DELIVERY_FOR_LDI"),
+    
+    FREE_DELIVERY_FOR_LSC("FREE_DELIVERY_FOR_LSC"),
+    
+    SECRET_SALE("SECRET_SALE"),
+    
+    FREE_PICKUP("FREE_PICKUP"),
+    
+    CHEAPEST_AS_GIFT("CHEAPEST_AS_GIFT"),
+    
+    CASHBACK("CASHBACK"),
+    
+    SUPPLIER_MULTICART_DISCOUNT("SUPPLIER_MULTICART_DISCOUNT"),
+    
+    SPREAD_DISCOUNT_COUNT("SPREAD_DISCOUNT_COUNT"),
+    
+    SPREAD_DISCOUNT_RECEIPT("SPREAD_DISCOUNT_RECEIPT"),
+    
+    ANNOUNCEMENT_PROMO("ANNOUNCEMENT_PROMO"),
+    
+    DISCOUNT_BY_PAYMENT_TYPE("DISCOUNT_BY_PAYMENT_TYPE"),
+    
+    PERCENT_DISCOUNT("PERCENT_DISCOUNT"),
+    
+    DCO_EXTRA_DISCOUNT("DCO_EXTRA_DISCOUNT"),
+    
+    EMPTY_PROMO("EMPTY_PROMO"),
+    
+    BLOCKING_PROMO("BLOCKING_PROMO"),
+    
+    UNKNOWN("UNKNOWN")
+
+    private final String value
+
+    OrderPromoType(String value) {
+        this.value = value
+    }
+
+    String getValue() {
+        value
+    }
+
+    @Override
+    String toString() {
+        String.valueOf(value)
+    }
+}
