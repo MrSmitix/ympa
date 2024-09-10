@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ympa_python_client"
+name = "ympa"
 version = "24.08.29"
 description = "Партнерский API Маркета"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
