@@ -1,0 +1,31 @@
+# ApiClientDataErrorResponse
+
+Ошибка в данных переданных от клиента.
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**status** | [**ApiResponseStatusType**](ApiResponseStatusType.md) |  | [optional] 
+**errors** | [**List[ApiErrorDTO]**](ApiErrorDTO.md) | Список ошибок. | [optional] 
+
+## Example
+
+```python
+from ympa_python_client.models.api_client_data_error_response import ApiClientDataErrorResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ApiClientDataErrorResponse from a JSON string
+api_client_data_error_response_instance = ApiClientDataErrorResponse.from_json(json)
+# print the JSON string representation of the object
+print(ApiClientDataErrorResponse.to_json())
+
+# convert the object into a dict
+api_client_data_error_response_dict = api_client_data_error_response_instance.to_dict()
+# create an instance of ApiClientDataErrorResponse from a dict
+api_client_data_error_response_from_dict = ApiClientDataErrorResponse.from_dict(api_client_data_error_response_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

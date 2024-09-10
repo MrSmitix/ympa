@@ -1,0 +1,45 @@
+# ShipmentInfoDTO
+
+Список с информацией об отгрузках.
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** | Идентификатор отгрузки. | [optional] 
+**plan_interval_from** | **datetime** | Начало планового интервала отгрузки. | [optional] 
+**plan_interval_to** | **datetime** | Конец планового интервала отгрузки. | [optional] 
+**shipment_type** | [**ShipmentType**](ShipmentType.md) |  | [optional] 
+**warehouse** | [**PartnerShipmentWarehouseDTO**](PartnerShipmentWarehouseDTO.md) |  | [optional] 
+**warehouse_to** | [**PartnerShipmentWarehouseDTO**](PartnerShipmentWarehouseDTO.md) |  | [optional] 
+**external_id** | **str** | Идентификатор отгрузки в вашей системе. Если вы еще не передавали идентификатор, вернется идентификатор из параметра &#x60;id&#x60;. | [optional] 
+**delivery_service** | [**DeliveryServiceDTO**](DeliveryServiceDTO.md) |  | [optional] 
+**pallets_count** | [**PalletsCountDTO**](PalletsCountDTO.md) |  | [optional] 
+**order_ids** | **List[int]** | Идентификаторы заказов в отгрузке. | 
+**draft_count** | **int** | Количество заказов, которое Маркет запланировал к отгрузке. | [optional] 
+**planned_count** | **int** | Количество заказов, которое Маркет подтвердил к отгрузке. | [optional] 
+**fact_count** | **int** | Количество заказов, принятых в сортировочном центре или пункте приема. | [optional] 
+**status** | [**ShipmentStatusType**](ShipmentStatusType.md) |  | [optional] 
+**status_description** | **str** | Описание статуса отгрузки. | [optional] 
+**status_update_time** | **datetime** | Время последнего изменения статуса отгрузки. | [optional] 
+
+## Example
+
+```python
+from ympa_python_client.models.shipment_info_dto import ShipmentInfoDTO
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ShipmentInfoDTO from a JSON string
+shipment_info_dto_instance = ShipmentInfoDTO.from_json(json)
+# print the JSON string representation of the object
+print(ShipmentInfoDTO.to_json())
+
+# convert the object into a dict
+shipment_info_dto_dict = shipment_info_dto_instance.to_dict()
+# create an instance of ShipmentInfoDTO from a dict
+shipment_info_dto_from_dict = ShipmentInfoDTO.from_dict(shipment_info_dto_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

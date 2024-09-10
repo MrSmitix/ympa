@@ -1,0 +1,42 @@
+# flake8: noqa
+
+# import apis into api package
+from ympa_python_client.api.bids_api import BidsApi
+from ympa_python_client.api.business_offer_mappings_api import BusinessOfferMappingsApi
+from ympa_python_client.api.businesses_api import BusinessesApi
+from ympa_python_client.api.campaigns_api import CampaignsApi
+from ympa_python_client.api.categories_api import CategoriesApi
+from ympa_python_client.api.chats_api import ChatsApi
+from ympa_python_client.api.content_api import ContentApi
+from ympa_python_client.api.dbs_api import DbsApi
+from ympa_python_client.api.delivery_services_api import DeliveryServicesApi
+from ympa_python_client.api.express_api import ExpressApi
+from ympa_python_client.api.fbs_api import FbsApi
+from ympa_python_client.api.fby_api import FbyApi
+from ympa_python_client.api.feedbacks_api import FeedbacksApi
+from ympa_python_client.api.feeds_api import FeedsApi
+from ympa_python_client.api.goods_feedback_api import GoodsFeedbackApi
+from ympa_python_client.api.goods_stats_api import GoodsStatsApi
+from ympa_python_client.api.hidden_offers_api import HiddenOffersApi
+from ympa_python_client.api.models_api import ModelsApi
+from ympa_python_client.api.offer_mappings_api import OfferMappingsApi
+from ympa_python_client.api.offers_api import OffersApi
+from ympa_python_client.api.order_business_information_api import OrderBusinessInformationApi
+from ympa_python_client.api.order_delivery_api import OrderDeliveryApi
+from ympa_python_client.api.order_labels_api import OrderLabelsApi
+from ympa_python_client.api.orders_api import OrdersApi
+from ympa_python_client.api.orders_stats_api import OrdersStatsApi
+from ympa_python_client.api.outlet_licenses_api import OutletLicensesApi
+from ympa_python_client.api.outlets_api import OutletsApi
+from ympa_python_client.api.price_quarantine_api import PriceQuarantineApi
+from ympa_python_client.api.prices_api import PricesApi
+from ympa_python_client.api.promos_api import PromosApi
+from ympa_python_client.api.ratings_api import RatingsApi
+from ympa_python_client.api.regions_api import RegionsApi
+from ympa_python_client.api.reports_api import ReportsApi
+from ympa_python_client.api.returns_api import ReturnsApi
+from ympa_python_client.api.shipments_api import ShipmentsApi
+from ympa_python_client.api.stocks_api import StocksApi
+from ympa_python_client.api.tariffs_api import TariffsApi
+from ympa_python_client.api.warehouses_api import WarehousesApi
+

@@ -1,0 +1,30 @@
+# UpdateOrderStatusesRequest
+
+Список заказов.
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**orders** | [**List[OrderStateDTO]**](OrderStateDTO.md) | Список заказов. | 
+
+## Example
+
+```python
+from ympa_python_client.models.update_order_statuses_request import UpdateOrderStatusesRequest
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of UpdateOrderStatusesRequest from a JSON string
+update_order_statuses_request_instance = UpdateOrderStatusesRequest.from_json(json)
+# print the JSON string representation of the object
+print(UpdateOrderStatusesRequest.to_json())
+
+# convert the object into a dict
+update_order_statuses_request_dict = update_order_statuses_request_instance.to_dict()
+# create an instance of UpdateOrderStatusesRequest from a dict
+update_order_statuses_request_from_dict = UpdateOrderStatusesRequest.from_dict(update_order_statuses_request_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
