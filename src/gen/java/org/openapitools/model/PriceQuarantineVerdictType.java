@@ -1,0 +1,59 @@
+package org.openapitools.model;
+
+import io.swagger.annotations.ApiModel;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+/**
+ * Типы карантина:  * &#x60;PRICE_CHANGE&#x60; — новая цена слишком сильно отличается от прежней. В поле &#x60;params&#x60; будет  новая цена &#x60;CURRENT_PRICE&#x60; и последняя цена до попадания в карантин &#x60;LAST_VALID_PRICE&#x60;. * &#x60;LOW_PRICE&#x60; — установленная цена слишком сильно отличается от рыночной. В поле &#x60;params&#x60; будет установленная вами цена &#x60;CURRENT_PRICE&#x60; и порог попадания в карантин &#x60;MIN_PRICE&#x60;. * &#x60;LOW_PRICE_PROMO&#x60; — цена после применения акций слишком сильно отличается от рыночной. В поле &#x60;params&#x60; будет цена после применения акций &#x60;CURRENT_PRICE&#x60; и порог попадания в карантин &#x60;MIN_PRICE&#x60;. 
+ */
+public enum PriceQuarantineVerdictType {
+  
+  PRICE_CHANGE("PRICE_CHANGE"),
+  
+  LOW_PRICE("LOW_PRICE"),
+  
+  LOW_PRICE_PROMO("LOW_PRICE_PROMO");
+
+  private String value;
+
+  PriceQuarantineVerdictType(String value) {
+    this.value = value;
+  }
+
+    /**
+     * Convert a String into String, as specified in the
+     * <a href="https://download.oracle.com/otndocs/jcp/jaxrs-2_0-fr-eval-spec/index.html">See JAX RS 2.0 Specification, section 3.2, p. 12</a>
+     */
+    public static PriceQuarantineVerdictType fromString(String s) {
+      for (PriceQuarantineVerdictType b : PriceQuarantineVerdictType.values()) {
+        // using Objects.toString() to be safe if value type non-object type
+        // because types like 'int' etc. will be auto-boxed
+        if (java.util.Objects.toString(b.value).equals(s)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected string value '" + s + "'");
+    }
+
+  @Override
+  @JsonValue
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  @JsonCreator
+  public static PriceQuarantineVerdictType fromValue(String value) {
+    for (PriceQuarantineVerdictType b : PriceQuarantineVerdictType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+}
+
+
