@@ -20,7 +20,7 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "ympa-python-client"
+NAME = "ympa"
 VERSION = "24.08.29"
 PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
