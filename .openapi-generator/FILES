@@ -1,0 +1,7 @@
+.openapi-generator-ignore
+README.md
+Setup.hs
+lib/ПартнерскийAPIМаркета/API.hs
+lib/ПартнерскийAPIМаркета/Types.hs
+stack.yaml
+партнерский-api-маркета.cabal
