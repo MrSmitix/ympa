@@ -1,0 +1,10 @@
+# Api.GetBusinessDocumentsInfoResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**status** | [**ApiResponseStatusType**](ApiResponseStatusType.md) |  | [optional] 
+**result** | [**OrderBusinessDocumentsDTO**](OrderBusinessDocumentsDTO.md) |  | [optional] 
+
+
