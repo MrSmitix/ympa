@@ -1,0 +1,10 @@
+# Api.OrderDeliveryDateReasonType
+
+## Enum
+
+
+* `USER_MOVED_DELIVERY_DATES` (value: `"USER_MOVED_DELIVERY_DATES"`)
+
+* `PARTNER_MOVED_DELIVERY_DATES` (value: `"PARTNER_MOVED_DELIVERY_DATES"`)
+
+
