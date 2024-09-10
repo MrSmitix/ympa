@@ -1,2 +1,7 @@
-# ympa
-YMPA - Yandex Market Partner API
+# Swagger Inflector
+
+Run with
+
+```
+mvn package jetty:run
+``

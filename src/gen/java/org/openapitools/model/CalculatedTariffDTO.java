@@ -1,0 +1,130 @@
+package org.openapitools.model;
+
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.openapitools.model.CalculatedTariffType;
+import org.openapitools.model.TariffParameterDTO;
+
+
+
+/**
+ * Информация об услугах Маркета.
+ **/
+
+@ApiModel(description = "Информация об услугах Маркета.")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-09-09T22:20:23.877037640Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+public class CalculatedTariffDTO   {
+  @JsonProperty("type")
+  private CalculatedTariffType type;
+
+  @JsonProperty("amount")
+  private BigDecimal amount;
+
+  @JsonProperty("parameters")
+  private List<TariffParameterDTO> parameters = new ArrayList<>();
+
+  /**
+   **/
+  public CalculatedTariffDTO type(CalculatedTariffType type) {
+    this.type = type;
+    return this;
+  }
+
+  
+  @ApiModelProperty(required = true, value = "")
+  @JsonProperty("type")
+  public CalculatedTariffType getType() {
+    return type;
+  }
+  public void setType(CalculatedTariffType type) {
+    this.type = type;
+  }
+
+  /**
+   * Стоимость услуги в рублях.
+   **/
+  public CalculatedTariffDTO amount(BigDecimal amount) {
+    this.amount = amount;
+    return this;
+  }
+
+  
+  @ApiModelProperty(value = "Стоимость услуги в рублях.")
+  @JsonProperty("amount")
+  public BigDecimal getAmount() {
+    return amount;
+  }
+  public void setAmount(BigDecimal amount) {
+    this.amount = amount;
+  }
+
+  /**
+   * Параметры расчета тарифа.
+   **/
+  public CalculatedTariffDTO parameters(List<TariffParameterDTO> parameters) {
+    this.parameters = parameters;
+    return this;
+  }
+
+  
+  @ApiModelProperty(required = true, value = "Параметры расчета тарифа.")
+  @JsonProperty("parameters")
+  public List<TariffParameterDTO> getParameters() {
+    return parameters;
+  }
+  public void setParameters(List<TariffParameterDTO> parameters) {
+    this.parameters = parameters;
+  }
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    CalculatedTariffDTO calculatedTariffDTO = (CalculatedTariffDTO) o;
+    return Objects.equals(type, calculatedTariffDTO.type) &&
+        Objects.equals(amount, calculatedTariffDTO.amount) &&
+        Objects.equals(parameters, calculatedTariffDTO.parameters);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(type, amount, parameters);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CalculatedTariffDTO {\n");
+    
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+
