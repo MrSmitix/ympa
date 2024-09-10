@@ -1,0 +1,121 @@
+<div class="main-content">
+  <h2><a name=""></a></h2>
+  <p>This is the  API</p>
+
+  <h2><a name="searchRegionChildren"></a>searchRegionChildren</h2>
+  <hr>
+  <p></p>
+  <p>Возвращает информацию о регионах, являющихся дочерними по отношению к региону, идентификатор которого указан в запросе.  Для методов &#x60;GET regions&#x60;, &#x60;GET regions/{regionId}&#x60; и &#x60;GET regions/{regionId}/children&#x60; действует групповое ресурсное ограничение. Ограничение вводится на суммарное количество регионов, информация о которых запрошена при помощи этих методов (не более 100 000 регионов).  Объем запросов к ресурсу, который возможно выполнить в течение суток, зависит от суммарного количества регионов.  |**⚙️ Лимит:** 50 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/regions/{regionId}/children</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="GetRegionWithChildrenResponse"><a href="">GetRegionWithChildrenResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">regionId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET regions](../../reference/regions/searchRegionsByName.md). </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">page</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">Номер страницы результатов.  Значение по умолчанию: 1.  Используется вместе с параметром &#x60;page_size&#x60;.  &#x60;page_number&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">pageSize</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">Размер страницы.  Используется вместе с параметром &#x60;page_number&#x60;.  &#x60;page_size&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. </p>
+      </li>
+  </ul>
+  <h2><a name="searchRegionsById"></a>searchRegionsById</h2>
+  <hr>
+  <p></p>
+  <p>Возвращает информацию о регионе.  Для методов &#x60;GET regions&#x60;, &#x60;GET regions/{regionId}&#x60; и &#x60;GET regions/{regionId}/children&#x60; действует групповое ресурсное ограничение. Ограничение вводится на суммарное количество регионов, информация о которых запрошена при помощи этих методов (не более 100 000 регионов).  Объем запросов к ресурсу, который возможно выполнить в течение суток, зависит от суммарного количества регионов.  |**⚙️ Лимит:** 50 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/regions/{regionId}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="GetRegionsResponse"><a href="">GetRegionsResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">regionId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET regions](../../reference/regions/searchRegionsByName.md). </p>
+      </li>
+  </ul>
+  <h2><a name="searchRegionsByName"></a>searchRegionsByName</h2>
+  <hr>
+  <p></p>
+  <p>Возвращает информацию о регионе, удовлетворяющем заданным в запросе условиям поиска.  Если найдено несколько регионов, удовлетворяющих условиям поиска, возвращается информация по каждому найденному региону (но не более десяти регионов) для возможности определения нужного региона по родительским регионам.  Для методов &#x60;GET regions&#x60;, &#x60;GET regions/{regionId}&#x60; и &#x60;GET regions/{regionId}/children&#x60; действует групповое ресурсное ограничение. Ограничение вводится на суммарное количество регионов, информация о которых запрошена при помощи этих методов (не более 100 000 регионов).  Объем запросов к ресурсу, который возможно выполнить в течение суток, зависит от суммарного количества регионов.  |**⚙️ Лимит:** 50 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/regions</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="GetRegionsResponse"><a href="">GetRegionsResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">name</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Название региона.  Важно учитывать регистр: первая буква должна быть заглавной, остальные — строчными. Например, &#x60;Москва&#x60;. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">page_token</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">limit</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">Количество значений на одной странице. </p>
+      </li>
+  </ul>
+</div>

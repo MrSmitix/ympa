@@ -1,0 +1,17 @@
+
+<h2>SetReturnDecisionRequest</h2>
+<ul class="parameter">
+  <li class="param-required-true">returnItemId : Long
+    <br/>Идентификатор товара в возврате.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">decisionType : ReturnRequestDecisionType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">comment : String
+    <br/>Комментарий к решению. Укажите:  * для &#x60;REFUND_MONEY_INCLUDING_SHIPMENT&#x60;— стоимость обратной пересылки;  * для &#x60;REPAIR&#x60; — когда вы устраните недостатки товара;  * для &#x60;DECLINE_REFUND&#x60; — причину отказа;  * для &#x60;OTHER_DECISION&#x60; — какое решение вы предлагаете. 
+  </li>
+</ul>

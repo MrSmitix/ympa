@@ -1,0 +1,27 @@
+
+<h2>UpdateOrderStatusDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">id : Long
+    <br/>Идентификатор заказа.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">status : OrderStatusType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">substatus : OrderSubstatusType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">updateStatus : OrderUpdateStatusType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">errorDetails : String
+    <br/>Ошибка при изменении статуса заказа. Содержит описание ошибки и идентификатор заказа.  Возвращается, если параметр &#x60;updateStatus&#x60; принимает значение &#x60;ERROR&#x60;. 
+  </li>
+</ul>

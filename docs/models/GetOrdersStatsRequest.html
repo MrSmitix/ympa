@@ -1,0 +1,37 @@
+
+<h2>GetOrdersStatsRequest</h2>
+<ul class="parameter">
+  <li class="param-required-false">dateFrom : date
+    <br/>Начальная дата, когда заказ был сформирован.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Нельзя использовать вместе с параметрами &#x60;updateFrom&#x60; и &#x60;updateTo&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">dateTo : date
+    <br/>Конечная дата, когда заказ был сформирован.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Нельзя использовать вместе с параметрами &#x60;updateFrom&#x60; и &#x60;updateTo&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">updateFrom : date
+    <br/>Начальная дата периода, за который были изменения статуса заказа.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Нельзя использовать вместе с параметрами &#x60;dateFrom&#x60; и &#x60;dateTo&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">updateTo : date
+    <br/>Конечная дата периода, за который были изменения статуса заказа.  Формат даты: &#x60;ГГГГ‑ММ‑ДД&#x60;.  Нельзя использовать вместе с параметрами &#x60;dateFrom&#x60; и &#x60;dateTo&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">orders : List
+    <br/>Список идентификаторов заказов.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">statuses : List
+    <br/>Список статусов заказов.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">hasCis : Boolean
+    <br/>Нужно ли вернуть только те заказы, в составе которых есть хотя бы один товар с кодом идентификации [в системе «Честный ЗНАК»](https://честныйзнак.рф/):  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет. Такие коды присваиваются товарам, которые подлежат маркировке и относятся к определенным категориям. 
+  </li>
+</ul>

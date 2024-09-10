@@ -1,0 +1,82 @@
+
+<h2>OfferDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">price : BigDecimal
+    <br/>Цена предложения.  До версии 2.0 партнерского API у параметра был тип String. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">feedId : Long
+    <br/>Идентификатор прайс-листа, содержащего предложение.  Параметр доступен начиная с версии 2.0 партнерского API. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">id : String
+    <br/>Идентификатор предложения из прайс-листа.  Параметр выводится, если в прайс-листе задан уникальный идентификатор. Если в прайс-листе содержится несколько предложений с одинаковыми идентификаторами, параметр &#x60;id&#x60; указывается только для первого из них, для остальных параметры &#x60;id&#x60; и &#x60;feedId&#x60; не выводятся.  Параметр доступен начиная с версии 2.0 партнерского API. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">shopCategoryId : String
+    <br/>Идентификатор категории предложения, указанный магазином в прайс-листе.  Параметр выводится только для предложений, у которых указана категория в прайс-листе.  Параметр доступен начиная с версии 2.0 партнерского API. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">marketCategoryId : Integer
+    <br/>Идентификатор категории предложения в дереве категорий Маркета. Параметр доступен начиная с версии 2.0 партнерского API. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">preDiscountPrice : BigDecimal
+    <br/>Цена предложения без скидки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">discount : Integer
+    <br/>Скидка на предложение в процентах.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cutPrice : Boolean
+    <br/>Является ли предложение уцененным:  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет.  Параметр доступен начиная с версии 2.58 партнерского API. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">url : String
+    <br/>URL-адрес предложения на сайте магазина.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">modelId : Long
+    <br/>Идентификатор модели Маркета, с которой соотнесено предложение.  Если предложение не соотнесено ни с какой карточкой модели, то параметр &#x60;modelid&#x60; содержит значение &#x60;0&#x60;.  {% note info %}  Идентификатор модели присутствует в URL карточки модели в виде значения параметра &#x60;product&#x60;. Например: &#x60;https://market.yandex.ru/product/13584121&#x60;.  {% endnote %} 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">name : String
+    <br/>Наименование предложения.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">currency : CurrencyType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">bid : BigDecimal
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Ставка на клик. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cbid : BigDecimal
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Ставка на клик. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">fee : BigDecimal
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Процент комиссии на товар при продаже по CPA. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">blocked : Boolean
+    <br/>Признак блокировки предложения. Возможные значения: * &#x60;false&#x60; — предложение активно, параметр не выводится. * &#x60;true&#x60; — предложение заблокировано. Параметр выводится, если предложение заблокировано и не попадает в выдачу Маркета. Это может произойти из-за отключения магазина. 
+  </li>
+</ul>

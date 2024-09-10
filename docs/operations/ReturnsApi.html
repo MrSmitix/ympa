@@ -1,0 +1,391 @@
+<div class="main-content">
+  <h2><a name=""></a></h2>
+  <p>This is the  API</p>
+
+  <h2><a name="getReturn"></a>getReturn</h2>
+  <hr>
+  <p></p>
+  <p>Получает информацию по одному невыкупу или возврату.  |**⚙️ Лимит:** 10 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="GetReturnResponse"><a href="">GetReturnResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">orderId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор заказа.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">returnId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор возврата.</p>
+      </li>
+  </ul>
+  <h2><a name="getReturnApplication"></a>getReturnApplication</h2>
+  <hr>
+  <p></p>
+  <p>Загружает заявление покупателя на возврат товара.  |**⚙️ Лимит:** 10 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/application</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="file"><a href="">File</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">orderId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор заказа.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">returnId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор возврата.</p>
+      </li>
+  </ul>
+  <h2><a name="getReturnPhoto"></a>getReturnPhoto</h2>
+  <hr>
+  <p></p>
+  <p>Получает фотографии, которые покупатель приложил к заявлению на возврат товара.  |**⚙️ Лимит:** 10 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/{itemId}/image/{imageHash}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="file"><a href="">File</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">orderId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор заказа.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">returnId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор возврата.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">itemId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор товара в возврате.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">imageHash</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Хеш ссылки изображения для загрузки.</p>
+      </li>
+  </ul>
+  <h2><a name="getReturns"></a>getReturns</h2>
+  <hr>
+  <p></p>
+  <p>Получает список невыкупов и возвратов.  Чтобы получить информацию по одному возврату или невыкупу, выполните запрос [GET campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/orders/getReturn.md).  |**⚙️ Лимит:** 10 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/returns</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="GetReturnsResponse"><a href="">GetReturnsResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">page_token</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">limit</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">Количество значений на одной странице. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">orderIds</span>
+      <span class="param-type">List(Long)</span>
+      
+      <p class="param-description">Идентификаторы заказов — для фильтрации результатов.  Несколько идентификаторов перечисляются через запятую без пробела. Максимальное количество идентификаторов — 50. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">statuses</span>
+      <span class="param-type">List(RefundStatusType)</span>
+      
+      <p class="param-description">Статусы возвратов или невыкупов — для фильтрации результатов.  Несколько статусов перечисляются через запятую. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">type</span>
+      <span class="param-type">ReturnType</span>
+      
+      <p class="param-description">Тип заказа для фильтрации:  * &#x60;RETURN&#x60; — возврат.  * &#x60;UNREDEEMED&#x60; — невыкуп.  Если не указывать, в ответе будут и возвраты, и невыкупы. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">fromDate</span>
+      <span class="param-type">date</span>
+      
+      <p class="param-description">Начальная дата для фильтрации возвратов или невыкупов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">toDate</span>
+      <span class="param-type">date</span>
+      
+      <p class="param-description">Конечная дата для фильтрации возвратов или невыкупов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">from_date</span>
+      <span class="param-type">date</span>
+      
+      <p class="param-description">{% note warning \&quot;\&quot; %}  Этот параметр устарел. Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации возвратов или невыкупов по дате обновления. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">to_date</span>
+      <span class="param-type">date</span>
+      
+      <p class="param-description">{% note warning \&quot;\&quot; %}  Этот параметр устарел. Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации возвратов или невыкупов по дате обновления. </p>
+      </li>
+  </ul>
+  <h2><a name="setReturnDecision"></a>setReturnDecision</h2>
+  <hr>
+  <p></p>
+  <p>Выбирает решение по возврату от покупателя. После этого для подтверждения решения нужно выполнить запрос [POST campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit](../../reference/orders/submitReturnDecision.md).  |**⚙️ Лимит:** 10 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>POST</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="EmptyApiResponse"><a href="">EmptyApiResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">orderId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор заказа.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">returnId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор возврата.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">SetReturnDecisionRequest</span>
+      <span class="param-type">SetReturnDecisionRequest(SetReturnDecisionRequest)</span>
+      
+      <p class="param-description"></p>
+      </li>
+  </ul>
+  <h2><a name="submitReturnDecision"></a>submitReturnDecision</h2>
+  <hr>
+  <p></p>
+  <p>Подтверждает выбранное решение по возврату, отправленное в запросе [POST campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision](../../reference/orders/setReturnDecision.md).  |**⚙️ Лимит:** 10 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>POST</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="EmptyApiResponse"><a href="">EmptyApiResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">orderId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор заказа.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">returnId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор возврата.</p>
+      </li>
+  </ul>
+</div>

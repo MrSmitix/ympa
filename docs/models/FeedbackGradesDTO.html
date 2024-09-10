@@ -1,0 +1,22 @@
+
+<h2>FeedbackGradesDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">average : BigDecimal
+    <br/>Общая оценка, указанная в отзыве: от &#x60;1&#x60; («Ужасный магазин») до &#x60;5&#x60; («Отличный магазин»).
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">agreeCount : Long
+    <br/>Количество пользователей, считающих отзыв полезным.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">rejectCount : Long
+    <br/>Количество пользователей, считающих отзыв бесполезным.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">factors : List
+    <br/>Информация об оценках по параметрам, указанных в отзыве.  При создании отзыва автору предлагается поставить оценки магазину по нескольким параметрам: например, за скорость обработки заказа или удобство самовывоза. Набор параметров зависит от того, какой способ покупки (параметр &#x60;delivery&#x60;) указал автор. 
+  </li>
+</ul>

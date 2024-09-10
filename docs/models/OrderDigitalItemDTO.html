@@ -1,0 +1,22 @@
+
+<h2>OrderDigitalItemDTO</h2>
+<ul class="parameter">
+  <li class="param-required-true">id : Long
+    <br/>Идентификатор товара в заказе.  Он приходит в ответе на запрос [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) и в запросе Маркета [POST order/accept](../../pushapi/reference/orderAccept.md) — параметр &#x60;id&#x60; в &#x60;items&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">code : String
+    <br/>Сам ключ.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">slip : String
+    <br/>Инструкция по активации.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">activateUnderscoretill : date
+    <br/>Дата, до которой нужно активировать ключ. Если ключ действует бессрочно, укажите любую дату в отдаленном будущем.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. 
+  </li>
+</ul>

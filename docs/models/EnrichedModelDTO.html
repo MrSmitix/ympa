@@ -1,0 +1,32 @@
+
+<h2>EnrichedModelDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">id : Long
+    <br/>Идентификатор модели товара.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">name : String
+    <br/>Название модели товара.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">prices : ModelPriceDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">offers : List
+    <br/>Список первых десяти предложений, расположенных на карточке модели.  В ответе на запрос возвращаются предложения различных магазинов. Если есть несколько предложений от одного магазина, в ответе отображается только одно, наиболее релевантное из них. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">offlineOffers : Integer
+    <br/>Суммарное количество предложений в розничных магазинах в регионе. Учитываются все предложения от каждого магазина.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">onlineOffers : Integer
+    <br/>Суммарное количество предложений в интернет-магазинах в регионе. Учитываются все предложения от каждого магазина.
+  </li>
+</ul>

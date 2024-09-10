@@ -1,0 +1,121 @@
+<div class="main-content">
+  <h2><a name=""></a></h2>
+  <p>This is the  API</p>
+
+  <h2><a name="deleteOutletLicenses"></a>deleteOutletLicenses</h2>
+  <hr>
+  <p></p>
+  <p>Удаляет информацию о лицензиях для точек продаж.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/outlets/licenses</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>DELETE</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="EmptyApiResponse"><a href="">EmptyApiResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">ids</span>
+      <span class="param-type">Set(Long)</span>
+      
+      <p class="param-description">Список идентификаторов лицензий.</p>
+      </li>
+  </ul>
+  <h2><a name="getOutletLicenses"></a>getOutletLicenses</h2>
+  <hr>
+  <p></p>
+  <p>Возвращает информацию о лицензиях для точек продаж.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/outlets/licenses</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="GetOutletLicensesResponse"><a href="">GetOutletLicensesResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">outletIds</span>
+      <span class="param-type">Set(Long)</span>
+      
+      <p class="param-description">Список идентификаторов точек продаж, для которых нужно получить информацию о лицензиях. Идентификаторы указываются через запятую.  В запросе должен быть либо параметр &#x60;outletIds&#x60;, либо параметр &#x60;ids&#x60;. Запрос с обоими параметрами или без них приведет к ошибке. </p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">ids</span>
+      <span class="param-type">Set(Long)</span>
+      
+      <p class="param-description">Список идентификаторов лицензий.</p>
+      </li>
+  </ul>
+  <h2><a name="updateOutletLicenses"></a>updateOutletLicenses</h2>
+  <hr>
+  <p></p>
+  <p>Передает информацию о новых и существующих лицензиях для точек продаж. Поддерживаются только лицензии на розничную продажу алкоголя.  Чтобы размещать алкогольную продукцию на Маркете, надо также прислать гарантийное письмо (если вы еще не делали этого раньше) и правильно оформить предложения в прайс-листе. Далее информация о лицензиях проходит проверку.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/outlets/licenses</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>POST</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="EmptyApiResponse"><a href="">EmptyApiResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">UpdateOutletLicenseRequest</span>
+      <span class="param-type">UpdateOutletLicenseRequest(UpdateOutletLicenseRequest)</span>
+      
+      <p class="param-description"></p>
+      </li>
+  </ul>
+</div>

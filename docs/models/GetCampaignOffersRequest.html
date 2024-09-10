@@ -1,0 +1,27 @@
+
+<h2>GetCampaignOffersRequest</h2>
+<ul class="parameter">
+  <li class="param-required-false">offerIds : List
+    <br/>Идентификаторы товаров, информация о которых нужна.  {% note warning \&quot;Такой список возвращается только целиком\&quot; %}  Не используйте это поле одновременно с фильтрами по статусам карточек, категориям, брендам или тегам. Если вы хотите воспользоваться фильтрами, оставьте поле пустым.  Если вы запрашиваете информацию по конкретным SKU, не заполняйте:  * &#x60;page_token&#x60; * &#x60;limit&#x60;  {% endnote %}    
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">statuses : List
+    <br/>Фильтр по статусам товаров. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">categoryIds : List
+    <br/>Фильтр по категориям на Маркете.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">vendorNames : List
+    <br/>Фильтр по брендам.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">tags : List
+    <br/>Фильтр по тегам.
+  </li>
+</ul>

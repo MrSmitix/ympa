@@ -1,0 +1,154 @@
+<div class="main-content">
+  <h2><a name=""></a></h2>
+  <p>This is the  API</p>
+
+  <h2><a name="generateOrderLabel"></a>generateOrderLabel</h2>
+  <hr>
+  <p></p>
+  <p>Формирует ярлык‑наклейку для коробки в заказе и возвращает ярлык в PDF‑файле.  |**⚙️ Лимит:** 1 000 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes/{boxId}/label</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="file"><a href="">File</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">orderId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор заказа.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">shipmentId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор грузоместа.</p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">boxId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор коробки.</p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">format</span>
+      <span class="param-type">PageFormatType</span>
+      
+      <p class="param-description">Настройка размещения ярлыков на странице. Если параметра нет, возвращается PDF с ярлыками формата A6.</p>
+      </li>
+  </ul>
+  <h2><a name="generateOrderLabels"></a>generateOrderLabels</h2>
+  <hr>
+  <p></p>
+  <p>Возвращает PDF-файл с ярлыками, которые нужно наклеить на коробки перед отгрузкой. Подробно о том, зачем они нужны и как выглядят, рассказано [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/orders/fbs/packaging/marking.html).  На вход нужно передать идентификатор заказа и один необязательный параметр, который управляет версткой PDF-файла.  |**⚙️ Лимит:** 1 000 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/orders/{orderId}/delivery/labels</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="file"><a href="">File</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">orderId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор заказа.</p>
+      </li>
+      <li class="parameter">
+      
+      <span class="param-in">Query: </span>
+      
+      
+      
+      <span class="param-name">format</span>
+      <span class="param-type">PageFormatType</span>
+      
+      <p class="param-description">Настройка размещения ярлыков на странице. Если параметра нет, возвращается PDF с ярлыками формата A6.</p>
+      </li>
+  </ul>
+  <h2><a name="getOrderLabelsData"></a>getOrderLabelsData</h2>
+  <hr>
+  <p></p>
+  <p>Возвращает информацию на ярлыках, которые клеятся на коробки в заказе.  |**⚙️ Лимит:** 1 000 000 запросов в час| |-| </p>
+  <h3 class="section">URL</h3>
+  <code>https://api.partner.market.yandex.ru/campaigns/{campaignId}/orders/{orderId}/delivery/labels/data</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="GetOrderLabelsDataResponse"><a href="">GetOrderLabelsDataResponse</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">campaignId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) </p>
+      </li>
+      <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">orderId</span>
+      <span class="param-type">Long</span>
+      
+      <p class="param-description">Идентификатор заказа.</p>
+      </li>
+  </ul>
+</div>

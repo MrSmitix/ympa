@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="assets/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+  <script src="assets/js/main.js" type="text/javascript"></script>
+
+  <title>REST API Resources</title>
+</head>
+<body>
+  <div class="header">
+    <div class="top-bar">
+      <h1 id="logo"><a class="logo" href="/"><span>OpenAPI</span><span class="light">API Docs</span></a></h1>
+    </div>
+  </div>
+  <div class="model-container"></div>
+  <div class="content">
+    <div class="box clearfix">
+      <div class="sidebar">
+        <div class="section-box">
+          <div class="section-header">
+            Overview
+          </div>
+          <ul>
+            <li>Getting Started</li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/BidsApi">BidsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/BidsApi#getBidsInfoForBusiness">getBidsInfoForBusiness</a></li>
+            <li><a href="#!/BidsApi#getBidsRecommendations">getBidsRecommendations</a></li>
+            <li><a href="#!/BidsApi#putBidsForBusiness">putBidsForBusiness</a></li>
+            <li><a href="#!/BidsApi#putBidsForCampaign">putBidsForCampaign</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/BusinessOfferMappingsApi">BusinessOfferMappingsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/BusinessOfferMappingsApi#addOffersToArchive">addOffersToArchive</a></li>
+            <li><a href="#!/BusinessOfferMappingsApi#deleteOffers">deleteOffers</a></li>
+            <li><a href="#!/BusinessOfferMappingsApi#deleteOffersFromArchive">deleteOffersFromArchive</a></li>
+            <li><a href="#!/BusinessOfferMappingsApi#getOfferMappings">getOfferMappings</a></li>
+            <li><a href="#!/BusinessOfferMappingsApi#getSuggestedOfferMappings">getSuggestedOfferMappings</a></li>
+            <li><a href="#!/BusinessOfferMappingsApi#updateOfferMappings">updateOfferMappings</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/BusinessesApi">BusinessesApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/BusinessesApi#getBusinessSettings">getBusinessSettings</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CampaignsApi">CampaignsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CampaignsApi#getCampaign">getCampaign</a></li>
+            <li><a href="#!/CampaignsApi#getCampaignLogins">getCampaignLogins</a></li>
+            <li><a href="#!/CampaignsApi#getCampaignRegion">getCampaignRegion</a></li>
+            <li><a href="#!/CampaignsApi#getCampaignSettings">getCampaignSettings</a></li>
+            <li><a href="#!/CampaignsApi#getCampaigns">getCampaigns</a></li>
+            <li><a href="#!/CampaignsApi#getCampaignsByLogin">getCampaignsByLogin</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CategoriesApi">CategoriesApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CategoriesApi#getCategoriesMaxSaleQuantum">getCategoriesMaxSaleQuantum</a></li>
+            <li><a href="#!/CategoriesApi#getCategoriesTree">getCategoriesTree</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/ChatsApi">ChatsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/ChatsApi#createChat">createChat</a></li>
+            <li><a href="#!/ChatsApi#getChatHistory">getChatHistory</a></li>
+            <li><a href="#!/ChatsApi#getChats">getChats</a></li>
+            <li><a href="#!/ChatsApi#sendFileToChat">sendFileToChat</a></li>
+            <li><a href="#!/ChatsApi#sendMessageToChat">sendMessageToChat</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/ContentApi">ContentApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/ContentApi#getCategoryContentParameters">getCategoryContentParameters</a></li>
+            <li><a href="#!/ContentApi#getOfferCardsContentStatus">getOfferCardsContentStatus</a></li>
+            <li><a href="#!/ContentApi#updateOfferContent">updateOfferContent</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/DbsApi">DbsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/DbsApi#acceptOrderCancellation">acceptOrderCancellation</a></li>
+            <li><a href="#!/DbsApi#addHiddenOffers">addHiddenOffers</a></li>
+            <li><a href="#!/DbsApi#addOffersToArchive">addOffersToArchive</a></li>
+            <li><a href="#!/DbsApi#calculateTariffs">calculateTariffs</a></li>
+            <li><a href="#!/DbsApi#confirmBusinessPrices">confirmBusinessPrices</a></li>
+            <li><a href="#!/DbsApi#confirmCampaignPrices">confirmCampaignPrices</a></li>
+            <li><a href="#!/DbsApi#createChat">createChat</a></li>
+            <li><a href="#!/DbsApi#createOutlet">createOutlet</a></li>
+            <li><a href="#!/DbsApi#deleteCampaignOffers">deleteCampaignOffers</a></li>
+            <li><a href="#!/DbsApi#deleteGoodsFeedbackComment">deleteGoodsFeedbackComment</a></li>
+            <li><a href="#!/DbsApi#deleteHiddenOffers">deleteHiddenOffers</a></li>
+            <li><a href="#!/DbsApi#deleteOffers">deleteOffers</a></li>
+            <li><a href="#!/DbsApi#deleteOffersFromArchive">deleteOffersFromArchive</a></li>
+            <li><a href="#!/DbsApi#deleteOutlet">deleteOutlet</a></li>
+            <li><a href="#!/DbsApi#deleteOutletLicenses">deleteOutletLicenses</a></li>
+            <li><a href="#!/DbsApi#deletePromoOffers">deletePromoOffers</a></li>
+            <li><a href="#!/DbsApi#generateBoostConsolidatedReport">generateBoostConsolidatedReport</a></li>
+            <li><a href="#!/DbsApi#generateCompetitorsPositionReport">generateCompetitorsPositionReport</a></li>
+            <li><a href="#!/DbsApi#generateGoodsFeedbackReport">generateGoodsFeedbackReport</a></li>
+            <li><a href="#!/DbsApi#generateMassOrderLabelsReport">generateMassOrderLabelsReport</a></li>
+            <li><a href="#!/DbsApi#generateOrderLabel">generateOrderLabel</a></li>
+            <li><a href="#!/DbsApi#generateOrderLabels">generateOrderLabels</a></li>
+            <li><a href="#!/DbsApi#generatePricesReport">generatePricesReport</a></li>
+            <li><a href="#!/DbsApi#generateShelfsStatisticsReport">generateShelfsStatisticsReport</a></li>
+            <li><a href="#!/DbsApi#generateShowsSalesReport">generateShowsSalesReport</a></li>
+            <li><a href="#!/DbsApi#generateStocksOnWarehousesReport">generateStocksOnWarehousesReport</a></li>
+            <li><a href="#!/DbsApi#generateUnitedMarketplaceServicesReport">generateUnitedMarketplaceServicesReport</a></li>
+            <li><a href="#!/DbsApi#generateUnitedNettingReport">generateUnitedNettingReport</a></li>
+            <li><a href="#!/DbsApi#generateUnitedOrdersReport">generateUnitedOrdersReport</a></li>
+            <li><a href="#!/DbsApi#getAllOffers">getAllOffers</a></li>
+            <li><a href="#!/DbsApi#getBidsInfoForBusiness">getBidsInfoForBusiness</a></li>
+            <li><a href="#!/DbsApi#getBidsRecommendations">getBidsRecommendations</a></li>
+            <li><a href="#!/DbsApi#getBusinessQuarantineOffers">getBusinessQuarantineOffers</a></li>
+            <li><a href="#!/DbsApi#getBusinessSettings">getBusinessSettings</a></li>
+            <li><a href="#!/DbsApi#getCampaign">getCampaign</a></li>
+            <li><a href="#!/DbsApi#getCampaignLogins">getCampaignLogins</a></li>
+            <li><a href="#!/DbsApi#getCampaignOffers">getCampaignOffers</a></li>
+            <li><a href="#!/DbsApi#getCampaignQuarantineOffers">getCampaignQuarantineOffers</a></li>
+            <li><a href="#!/DbsApi#getCampaignRegion">getCampaignRegion</a></li>
+            <li><a href="#!/DbsApi#getCampaignSettings">getCampaignSettings</a></li>
+            <li><a href="#!/DbsApi#getCampaigns">getCampaigns</a></li>
+            <li><a href="#!/DbsApi#getCampaignsByLogin">getCampaignsByLogin</a></li>
+            <li><a href="#!/DbsApi#getCategoriesMaxSaleQuantum">getCategoriesMaxSaleQuantum</a></li>
+            <li><a href="#!/DbsApi#getCategoriesTree">getCategoriesTree</a></li>
+            <li><a href="#!/DbsApi#getCategoryContentParameters">getCategoryContentParameters</a></li>
+            <li><a href="#!/DbsApi#getChatHistory">getChatHistory</a></li>
+            <li><a href="#!/DbsApi#getChats">getChats</a></li>
+            <li><a href="#!/DbsApi#getDeliveryServices">getDeliveryServices</a></li>
+            <li><a href="#!/DbsApi#getFeed">getFeed</a></li>
+            <li><a href="#!/DbsApi#getFeedIndexLogs">getFeedIndexLogs</a></li>
+            <li><a href="#!/DbsApi#getFeedbackAndCommentUpdates">getFeedbackAndCommentUpdates</a></li>
+            <li><a href="#!/DbsApi#getFeeds">getFeeds</a></li>
+            <li><a href="#!/DbsApi#getGoodsFeedbackComments">getGoodsFeedbackComments</a></li>
+            <li><a href="#!/DbsApi#getGoodsFeedbacks">getGoodsFeedbacks</a></li>
+            <li><a href="#!/DbsApi#getGoodsStats">getGoodsStats</a></li>
+            <li><a href="#!/DbsApi#getHiddenOffers">getHiddenOffers</a></li>
+            <li><a href="#!/DbsApi#getModel">getModel</a></li>
+            <li><a href="#!/DbsApi#getModelOffers">getModelOffers</a></li>
+            <li><a href="#!/DbsApi#getModels">getModels</a></li>
+            <li><a href="#!/DbsApi#getModelsOffers">getModelsOffers</a></li>
+            <li><a href="#!/DbsApi#getOfferCardsContentStatus">getOfferCardsContentStatus</a></li>
+            <li><a href="#!/DbsApi#getOfferMappingEntries">getOfferMappingEntries</a></li>
+            <li><a href="#!/DbsApi#getOfferMappings">getOfferMappings</a></li>
+            <li><a href="#!/DbsApi#getOfferRecommendations">getOfferRecommendations</a></li>
+            <li><a href="#!/DbsApi#getOffers">getOffers</a></li>
+            <li><a href="#!/DbsApi#getOrder">getOrder</a></li>
+            <li><a href="#!/DbsApi#getOrderBusinessBuyerInfo">getOrderBusinessBuyerInfo</a></li>
+            <li><a href="#!/DbsApi#getOrderBusinessDocumentsInfo">getOrderBusinessDocumentsInfo</a></li>
+            <li><a href="#!/DbsApi#getOrderBuyerInfo">getOrderBuyerInfo</a></li>
+            <li><a href="#!/DbsApi#getOrderLabelsData">getOrderLabelsData</a></li>
+            <li><a href="#!/DbsApi#getOrders">getOrders</a></li>
+            <li><a href="#!/DbsApi#getOrdersStats">getOrdersStats</a></li>
+            <li><a href="#!/DbsApi#getOutlet">getOutlet</a></li>
+            <li><a href="#!/DbsApi#getOutletLicenses">getOutletLicenses</a></li>
+            <li><a href="#!/DbsApi#getOutlets">getOutlets</a></li>
+            <li><a href="#!/DbsApi#getPrices">getPrices</a></li>
+            <li><a href="#!/DbsApi#getPricesByOfferIds">getPricesByOfferIds</a></li>
+            <li><a href="#!/DbsApi#getPromoOffers">getPromoOffers</a></li>
+            <li><a href="#!/DbsApi#getPromos">getPromos</a></li>
+            <li><a href="#!/DbsApi#getQualityRatingDetails">getQualityRatingDetails</a></li>
+            <li><a href="#!/DbsApi#getQualityRatings">getQualityRatings</a></li>
+            <li><a href="#!/DbsApi#getReportInfo">getReportInfo</a></li>
+            <li><a href="#!/DbsApi#getReturn">getReturn</a></li>
+            <li><a href="#!/DbsApi#getReturnApplication">getReturnApplication</a></li>
+            <li><a href="#!/DbsApi#getReturnPhoto">getReturnPhoto</a></li>
+            <li><a href="#!/DbsApi#getReturns">getReturns</a></li>
+            <li><a href="#!/DbsApi#getStocks">getStocks</a></li>
+            <li><a href="#!/DbsApi#getSuggestedOfferMappingEntries">getSuggestedOfferMappingEntries</a></li>
+            <li><a href="#!/DbsApi#getSuggestedOfferMappings">getSuggestedOfferMappings</a></li>
+            <li><a href="#!/DbsApi#getSuggestedPrices">getSuggestedPrices</a></li>
+            <li><a href="#!/DbsApi#getWarehouses">getWarehouses</a></li>
+            <li><a href="#!/DbsApi#provideOrderDigitalCodes">provideOrderDigitalCodes</a></li>
+            <li><a href="#!/DbsApi#provideOrderItemIdentifiers">provideOrderItemIdentifiers</a></li>
+            <li><a href="#!/DbsApi#putBidsForBusiness">putBidsForBusiness</a></li>
+            <li><a href="#!/DbsApi#putBidsForCampaign">putBidsForCampaign</a></li>
+            <li><a href="#!/DbsApi#refreshFeed">refreshFeed</a></li>
+            <li><a href="#!/DbsApi#searchModels">searchModels</a></li>
+            <li><a href="#!/DbsApi#searchRegionChildren">searchRegionChildren</a></li>
+            <li><a href="#!/DbsApi#searchRegionsById">searchRegionsById</a></li>
+            <li><a href="#!/DbsApi#searchRegionsByName">searchRegionsByName</a></li>
+            <li><a href="#!/DbsApi#sendFileToChat">sendFileToChat</a></li>
+            <li><a href="#!/DbsApi#sendMessageToChat">sendMessageToChat</a></li>
+            <li><a href="#!/DbsApi#setFeedParams">setFeedParams</a></li>
+            <li><a href="#!/DbsApi#setOrderBoxLayout">setOrderBoxLayout</a></li>
+            <li><a href="#!/DbsApi#setOrderDeliveryDate">setOrderDeliveryDate</a></li>
+            <li><a href="#!/DbsApi#setOrderDeliveryTrackCode">setOrderDeliveryTrackCode</a></li>
+            <li><a href="#!/DbsApi#setOrderShipmentBoxes">setOrderShipmentBoxes</a></li>
+            <li><a href="#!/DbsApi#setReturnDecision">setReturnDecision</a></li>
+            <li><a href="#!/DbsApi#skipGoodsFeedbacksReaction">skipGoodsFeedbacksReaction</a></li>
+            <li><a href="#!/DbsApi#submitReturnDecision">submitReturnDecision</a></li>
+            <li><a href="#!/DbsApi#updateBusinessPrices">updateBusinessPrices</a></li>
+            <li><a href="#!/DbsApi#updateCampaignOffers">updateCampaignOffers</a></li>
+            <li><a href="#!/DbsApi#updateGoodsFeedbackComment">updateGoodsFeedbackComment</a></li>
+            <li><a href="#!/DbsApi#updateOfferContent">updateOfferContent</a></li>
+            <li><a href="#!/DbsApi#updateOfferMappingEntries">updateOfferMappingEntries</a></li>
+            <li><a href="#!/DbsApi#updateOfferMappings">updateOfferMappings</a></li>
+            <li><a href="#!/DbsApi#updateOrderItems">updateOrderItems</a></li>
+            <li><a href="#!/DbsApi#updateOrderStatus">updateOrderStatus</a></li>
+            <li><a href="#!/DbsApi#updateOrderStatuses">updateOrderStatuses</a></li>
+            <li><a href="#!/DbsApi#updateOrderStorageLimit">updateOrderStorageLimit</a></li>
+            <li><a href="#!/DbsApi#updateOutlet">updateOutlet</a></li>
+            <li><a href="#!/DbsApi#updateOutletLicenses">updateOutletLicenses</a></li>
+            <li><a href="#!/DbsApi#updatePrices">updatePrices</a></li>
+            <li><a href="#!/DbsApi#updatePromoOffers">updatePromoOffers</a></li>
+            <li><a href="#!/DbsApi#updateStocks">updateStocks</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/DeliveryServicesApi">DeliveryServicesApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/DeliveryServicesApi#getDeliveryServices">getDeliveryServices</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/ExpressApi">ExpressApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/ExpressApi#addHiddenOffers">addHiddenOffers</a></li>
+            <li><a href="#!/ExpressApi#addOffersToArchive">addOffersToArchive</a></li>
+            <li><a href="#!/ExpressApi#calculateTariffs">calculateTariffs</a></li>
+            <li><a href="#!/ExpressApi#confirmBusinessPrices">confirmBusinessPrices</a></li>
+            <li><a href="#!/ExpressApi#confirmCampaignPrices">confirmCampaignPrices</a></li>
+            <li><a href="#!/ExpressApi#createChat">createChat</a></li>
+            <li><a href="#!/ExpressApi#deleteCampaignOffers">deleteCampaignOffers</a></li>
+            <li><a href="#!/ExpressApi#deleteGoodsFeedbackComment">deleteGoodsFeedbackComment</a></li>
+            <li><a href="#!/ExpressApi#deleteHiddenOffers">deleteHiddenOffers</a></li>
+            <li><a href="#!/ExpressApi#deleteOffers">deleteOffers</a></li>
+            <li><a href="#!/ExpressApi#deleteOffersFromArchive">deleteOffersFromArchive</a></li>
+            <li><a href="#!/ExpressApi#deletePromoOffers">deletePromoOffers</a></li>
+            <li><a href="#!/ExpressApi#generateBoostConsolidatedReport">generateBoostConsolidatedReport</a></li>
+            <li><a href="#!/ExpressApi#generateCompetitorsPositionReport">generateCompetitorsPositionReport</a></li>
+            <li><a href="#!/ExpressApi#generateGoodsFeedbackReport">generateGoodsFeedbackReport</a></li>
+            <li><a href="#!/ExpressApi#generateGoodsRealizationReport">generateGoodsRealizationReport</a></li>
+            <li><a href="#!/ExpressApi#generateMassOrderLabelsReport">generateMassOrderLabelsReport</a></li>
+            <li><a href="#!/ExpressApi#generateOrderLabel">generateOrderLabel</a></li>
+            <li><a href="#!/ExpressApi#generateOrderLabels">generateOrderLabels</a></li>
+            <li><a href="#!/ExpressApi#generatePricesReport">generatePricesReport</a></li>
+            <li><a href="#!/ExpressApi#generateShelfsStatisticsReport">generateShelfsStatisticsReport</a></li>
+            <li><a href="#!/ExpressApi#generateShowsSalesReport">generateShowsSalesReport</a></li>
+            <li><a href="#!/ExpressApi#generateStocksOnWarehousesReport">generateStocksOnWarehousesReport</a></li>
+            <li><a href="#!/ExpressApi#generateUnitedMarketplaceServicesReport">generateUnitedMarketplaceServicesReport</a></li>
+            <li><a href="#!/ExpressApi#generateUnitedNettingReport">generateUnitedNettingReport</a></li>
+            <li><a href="#!/ExpressApi#generateUnitedOrdersReport">generateUnitedOrdersReport</a></li>
+            <li><a href="#!/ExpressApi#getAllOffers">getAllOffers</a></li>
+            <li><a href="#!/ExpressApi#getBidsInfoForBusiness">getBidsInfoForBusiness</a></li>
+            <li><a href="#!/ExpressApi#getBidsRecommendations">getBidsRecommendations</a></li>
+            <li><a href="#!/ExpressApi#getBusinessQuarantineOffers">getBusinessQuarantineOffers</a></li>
+            <li><a href="#!/ExpressApi#getBusinessSettings">getBusinessSettings</a></li>
+            <li><a href="#!/ExpressApi#getCampaign">getCampaign</a></li>
+            <li><a href="#!/ExpressApi#getCampaignLogins">getCampaignLogins</a></li>
+            <li><a href="#!/ExpressApi#getCampaignOffers">getCampaignOffers</a></li>
+            <li><a href="#!/ExpressApi#getCampaignQuarantineOffers">getCampaignQuarantineOffers</a></li>
+            <li><a href="#!/ExpressApi#getCampaignRegion">getCampaignRegion</a></li>
+            <li><a href="#!/ExpressApi#getCampaignSettings">getCampaignSettings</a></li>
+            <li><a href="#!/ExpressApi#getCampaigns">getCampaigns</a></li>
+            <li><a href="#!/ExpressApi#getCampaignsByLogin">getCampaignsByLogin</a></li>
+            <li><a href="#!/ExpressApi#getCategoriesMaxSaleQuantum">getCategoriesMaxSaleQuantum</a></li>
+            <li><a href="#!/ExpressApi#getCategoriesTree">getCategoriesTree</a></li>
+            <li><a href="#!/ExpressApi#getCategoryContentParameters">getCategoryContentParameters</a></li>
+            <li><a href="#!/ExpressApi#getChatHistory">getChatHistory</a></li>
+            <li><a href="#!/ExpressApi#getChats">getChats</a></li>
+            <li><a href="#!/ExpressApi#getDeliveryServices">getDeliveryServices</a></li>
+            <li><a href="#!/ExpressApi#getFeed">getFeed</a></li>
+            <li><a href="#!/ExpressApi#getFeedIndexLogs">getFeedIndexLogs</a></li>
+            <li><a href="#!/ExpressApi#getFeedbackAndCommentUpdates">getFeedbackAndCommentUpdates</a></li>
+            <li><a href="#!/ExpressApi#getFeeds">getFeeds</a></li>
+            <li><a href="#!/ExpressApi#getGoodsFeedbackComments">getGoodsFeedbackComments</a></li>
+            <li><a href="#!/ExpressApi#getGoodsFeedbacks">getGoodsFeedbacks</a></li>
+            <li><a href="#!/ExpressApi#getGoodsStats">getGoodsStats</a></li>
+            <li><a href="#!/ExpressApi#getHiddenOffers">getHiddenOffers</a></li>
+            <li><a href="#!/ExpressApi#getOfferCardsContentStatus">getOfferCardsContentStatus</a></li>
+            <li><a href="#!/ExpressApi#getOfferMappingEntries">getOfferMappingEntries</a></li>
+            <li><a href="#!/ExpressApi#getOfferMappings">getOfferMappings</a></li>
+            <li><a href="#!/ExpressApi#getOfferRecommendations">getOfferRecommendations</a></li>
+            <li><a href="#!/ExpressApi#getOffers">getOffers</a></li>
+            <li><a href="#!/ExpressApi#getOrder">getOrder</a></li>
+            <li><a href="#!/ExpressApi#getOrderBusinessBuyerInfo">getOrderBusinessBuyerInfo</a></li>
+            <li><a href="#!/ExpressApi#getOrderBusinessDocumentsInfo">getOrderBusinessDocumentsInfo</a></li>
+            <li><a href="#!/ExpressApi#getOrderLabelsData">getOrderLabelsData</a></li>
+            <li><a href="#!/ExpressApi#getOrders">getOrders</a></li>
+            <li><a href="#!/ExpressApi#getOrdersStats">getOrdersStats</a></li>
+            <li><a href="#!/ExpressApi#getPrices">getPrices</a></li>
+            <li><a href="#!/ExpressApi#getPricesByOfferIds">getPricesByOfferIds</a></li>
+            <li><a href="#!/ExpressApi#getPromoOffers">getPromoOffers</a></li>
+            <li><a href="#!/ExpressApi#getPromos">getPromos</a></li>
+            <li><a href="#!/ExpressApi#getQualityRatingDetails">getQualityRatingDetails</a></li>
+            <li><a href="#!/ExpressApi#getQualityRatings">getQualityRatings</a></li>
+            <li><a href="#!/ExpressApi#getReportInfo">getReportInfo</a></li>
+            <li><a href="#!/ExpressApi#getReturn">getReturn</a></li>
+            <li><a href="#!/ExpressApi#getReturnApplication">getReturnApplication</a></li>
+            <li><a href="#!/ExpressApi#getReturnPhoto">getReturnPhoto</a></li>
+            <li><a href="#!/ExpressApi#getReturns">getReturns</a></li>
+            <li><a href="#!/ExpressApi#getStocks">getStocks</a></li>
+            <li><a href="#!/ExpressApi#getSuggestedOfferMappingEntries">getSuggestedOfferMappingEntries</a></li>
+            <li><a href="#!/ExpressApi#getSuggestedOfferMappings">getSuggestedOfferMappings</a></li>
+            <li><a href="#!/ExpressApi#getSuggestedPrices">getSuggestedPrices</a></li>
+            <li><a href="#!/ExpressApi#getWarehouses">getWarehouses</a></li>
+            <li><a href="#!/ExpressApi#provideOrderItemIdentifiers">provideOrderItemIdentifiers</a></li>
+            <li><a href="#!/ExpressApi#putBidsForBusiness">putBidsForBusiness</a></li>
+            <li><a href="#!/ExpressApi#putBidsForCampaign">putBidsForCampaign</a></li>
+            <li><a href="#!/ExpressApi#refreshFeed">refreshFeed</a></li>
+            <li><a href="#!/ExpressApi#searchRegionChildren">searchRegionChildren</a></li>
+            <li><a href="#!/ExpressApi#searchRegionsById">searchRegionsById</a></li>
+            <li><a href="#!/ExpressApi#searchRegionsByName">searchRegionsByName</a></li>
+            <li><a href="#!/ExpressApi#sendFileToChat">sendFileToChat</a></li>
+            <li><a href="#!/ExpressApi#sendMessageToChat">sendMessageToChat</a></li>
+            <li><a href="#!/ExpressApi#setFeedParams">setFeedParams</a></li>
+            <li><a href="#!/ExpressApi#setOrderBoxLayout">setOrderBoxLayout</a></li>
+            <li><a href="#!/ExpressApi#setOrderShipmentBoxes">setOrderShipmentBoxes</a></li>
+            <li><a href="#!/ExpressApi#skipGoodsFeedbacksReaction">skipGoodsFeedbacksReaction</a></li>
+            <li><a href="#!/ExpressApi#updateBusinessPrices">updateBusinessPrices</a></li>
+            <li><a href="#!/ExpressApi#updateCampaignOffers">updateCampaignOffers</a></li>
+            <li><a href="#!/ExpressApi#updateGoodsFeedbackComment">updateGoodsFeedbackComment</a></li>
+            <li><a href="#!/ExpressApi#updateOfferContent">updateOfferContent</a></li>
+            <li><a href="#!/ExpressApi#updateOfferMappingEntries">updateOfferMappingEntries</a></li>
+            <li><a href="#!/ExpressApi#updateOfferMappings">updateOfferMappings</a></li>
+            <li><a href="#!/ExpressApi#updateOrderItems">updateOrderItems</a></li>
+            <li><a href="#!/ExpressApi#updateOrderStatus">updateOrderStatus</a></li>
+            <li><a href="#!/ExpressApi#updateOrderStatuses">updateOrderStatuses</a></li>
+            <li><a href="#!/ExpressApi#updatePrices">updatePrices</a></li>
+            <li><a href="#!/ExpressApi#updatePromoOffers">updatePromoOffers</a></li>
+            <li><a href="#!/ExpressApi#updateStocks">updateStocks</a></li>
+            <li><a href="#!/ExpressApi#verifyOrderEac">verifyOrderEac</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/FbsApi">FbsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/FbsApi#addHiddenOffers">addHiddenOffers</a></li>
+            <li><a href="#!/FbsApi#addOffersToArchive">addOffersToArchive</a></li>
+            <li><a href="#!/FbsApi#calculateTariffs">calculateTariffs</a></li>
+            <li><a href="#!/FbsApi#confirmBusinessPrices">confirmBusinessPrices</a></li>
+            <li><a href="#!/FbsApi#confirmCampaignPrices">confirmCampaignPrices</a></li>
+            <li><a href="#!/FbsApi#confirmShipment">confirmShipment</a></li>
+            <li><a href="#!/FbsApi#createChat">createChat</a></li>
+            <li><a href="#!/FbsApi#deleteCampaignOffers">deleteCampaignOffers</a></li>
+            <li><a href="#!/FbsApi#deleteGoodsFeedbackComment">deleteGoodsFeedbackComment</a></li>
+            <li><a href="#!/FbsApi#deleteHiddenOffers">deleteHiddenOffers</a></li>
+            <li><a href="#!/FbsApi#deleteOffers">deleteOffers</a></li>
+            <li><a href="#!/FbsApi#deleteOffersFromArchive">deleteOffersFromArchive</a></li>
+            <li><a href="#!/FbsApi#deletePromoOffers">deletePromoOffers</a></li>
+            <li><a href="#!/FbsApi#downloadShipmentAct">downloadShipmentAct</a></li>
+            <li><a href="#!/FbsApi#downloadShipmentDiscrepancyAct">downloadShipmentDiscrepancyAct</a></li>
+            <li><a href="#!/FbsApi#downloadShipmentInboundAct">downloadShipmentInboundAct</a></li>
+            <li><a href="#!/FbsApi#downloadShipmentPalletLabels">downloadShipmentPalletLabels</a></li>
+            <li><a href="#!/FbsApi#downloadShipmentReceptionTransferAct">downloadShipmentReceptionTransferAct</a></li>
+            <li><a href="#!/FbsApi#downloadShipmentTransportationWaybill">downloadShipmentTransportationWaybill</a></li>
+            <li><a href="#!/FbsApi#generateBoostConsolidatedReport">generateBoostConsolidatedReport</a></li>
+            <li><a href="#!/FbsApi#generateCompetitorsPositionReport">generateCompetitorsPositionReport</a></li>
+            <li><a href="#!/FbsApi#generateGoodsFeedbackReport">generateGoodsFeedbackReport</a></li>
+            <li><a href="#!/FbsApi#generateGoodsRealizationReport">generateGoodsRealizationReport</a></li>
+            <li><a href="#!/FbsApi#generateMassOrderLabelsReport">generateMassOrderLabelsReport</a></li>
+            <li><a href="#!/FbsApi#generateOrderLabel">generateOrderLabel</a></li>
+            <li><a href="#!/FbsApi#generateOrderLabels">generateOrderLabels</a></li>
+            <li><a href="#!/FbsApi#generatePricesReport">generatePricesReport</a></li>
+            <li><a href="#!/FbsApi#generateShelfsStatisticsReport">generateShelfsStatisticsReport</a></li>
+            <li><a href="#!/FbsApi#generateShipmentListDocumentReport">generateShipmentListDocumentReport</a></li>
+            <li><a href="#!/FbsApi#generateShowsSalesReport">generateShowsSalesReport</a></li>
+            <li><a href="#!/FbsApi#generateStocksOnWarehousesReport">generateStocksOnWarehousesReport</a></li>
+            <li><a href="#!/FbsApi#generateUnitedMarketplaceServicesReport">generateUnitedMarketplaceServicesReport</a></li>
+            <li><a href="#!/FbsApi#generateUnitedNettingReport">generateUnitedNettingReport</a></li>
+            <li><a href="#!/FbsApi#generateUnitedOrdersReport">generateUnitedOrdersReport</a></li>
+            <li><a href="#!/FbsApi#getAllOffers">getAllOffers</a></li>
+            <li><a href="#!/FbsApi#getBidsInfoForBusiness">getBidsInfoForBusiness</a></li>
+            <li><a href="#!/FbsApi#getBidsRecommendations">getBidsRecommendations</a></li>
+            <li><a href="#!/FbsApi#getBusinessQuarantineOffers">getBusinessQuarantineOffers</a></li>
+            <li><a href="#!/FbsApi#getBusinessSettings">getBusinessSettings</a></li>
+            <li><a href="#!/FbsApi#getCampaign">getCampaign</a></li>
+            <li><a href="#!/FbsApi#getCampaignLogins">getCampaignLogins</a></li>
+            <li><a href="#!/FbsApi#getCampaignOffers">getCampaignOffers</a></li>
+            <li><a href="#!/FbsApi#getCampaignQuarantineOffers">getCampaignQuarantineOffers</a></li>
+            <li><a href="#!/FbsApi#getCampaignRegion">getCampaignRegion</a></li>
+            <li><a href="#!/FbsApi#getCampaignSettings">getCampaignSettings</a></li>
+            <li><a href="#!/FbsApi#getCampaigns">getCampaigns</a></li>
+            <li><a href="#!/FbsApi#getCampaignsByLogin">getCampaignsByLogin</a></li>
+            <li><a href="#!/FbsApi#getCategoriesMaxSaleQuantum">getCategoriesMaxSaleQuantum</a></li>
+            <li><a href="#!/FbsApi#getCategoriesTree">getCategoriesTree</a></li>
+            <li><a href="#!/FbsApi#getCategoryContentParameters">getCategoryContentParameters</a></li>
+            <li><a href="#!/FbsApi#getChatHistory">getChatHistory</a></li>
+            <li><a href="#!/FbsApi#getChats">getChats</a></li>
+            <li><a href="#!/FbsApi#getDeliveryServices">getDeliveryServices</a></li>
+            <li><a href="#!/FbsApi#getFeed">getFeed</a></li>
+            <li><a href="#!/FbsApi#getFeedIndexLogs">getFeedIndexLogs</a></li>
+            <li><a href="#!/FbsApi#getFeedbackAndCommentUpdates">getFeedbackAndCommentUpdates</a></li>
+            <li><a href="#!/FbsApi#getFeeds">getFeeds</a></li>
+            <li><a href="#!/FbsApi#getGoodsFeedbackComments">getGoodsFeedbackComments</a></li>
+            <li><a href="#!/FbsApi#getGoodsFeedbacks">getGoodsFeedbacks</a></li>
+            <li><a href="#!/FbsApi#getGoodsStats">getGoodsStats</a></li>
+            <li><a href="#!/FbsApi#getHiddenOffers">getHiddenOffers</a></li>
+            <li><a href="#!/FbsApi#getOfferCardsContentStatus">getOfferCardsContentStatus</a></li>
+            <li><a href="#!/FbsApi#getOfferMappingEntries">getOfferMappingEntries</a></li>
+            <li><a href="#!/FbsApi#getOfferMappings">getOfferMappings</a></li>
+            <li><a href="#!/FbsApi#getOfferRecommendations">getOfferRecommendations</a></li>
+            <li><a href="#!/FbsApi#getOffers">getOffers</a></li>
+            <li><a href="#!/FbsApi#getOrder">getOrder</a></li>
+            <li><a href="#!/FbsApi#getOrderBusinessBuyerInfo">getOrderBusinessBuyerInfo</a></li>
+            <li><a href="#!/FbsApi#getOrderBusinessDocumentsInfo">getOrderBusinessDocumentsInfo</a></li>
+            <li><a href="#!/FbsApi#getOrderLabelsData">getOrderLabelsData</a></li>
+            <li><a href="#!/FbsApi#getOrders">getOrders</a></li>
+            <li><a href="#!/FbsApi#getOrdersStats">getOrdersStats</a></li>
+            <li><a href="#!/FbsApi#getPrices">getPrices</a></li>
+            <li><a href="#!/FbsApi#getPricesByOfferIds">getPricesByOfferIds</a></li>
+            <li><a href="#!/FbsApi#getPromoOffers">getPromoOffers</a></li>
+            <li><a href="#!/FbsApi#getPromos">getPromos</a></li>
+            <li><a href="#!/FbsApi#getQualityRatingDetails">getQualityRatingDetails</a></li>
+            <li><a href="#!/FbsApi#getQualityRatings">getQualityRatings</a></li>
+            <li><a href="#!/FbsApi#getReportInfo">getReportInfo</a></li>
+            <li><a href="#!/FbsApi#getReturn">getReturn</a></li>
+            <li><a href="#!/FbsApi#getReturnApplication">getReturnApplication</a></li>
+            <li><a href="#!/FbsApi#getReturnPhoto">getReturnPhoto</a></li>
+            <li><a href="#!/FbsApi#getReturns">getReturns</a></li>
+            <li><a href="#!/FbsApi#getShipment">getShipment</a></li>
+            <li><a href="#!/FbsApi#getShipmentOrdersInfo">getShipmentOrdersInfo</a></li>
+            <li><a href="#!/FbsApi#getStocks">getStocks</a></li>
+            <li><a href="#!/FbsApi#getSuggestedOfferMappingEntries">getSuggestedOfferMappingEntries</a></li>
+            <li><a href="#!/FbsApi#getSuggestedOfferMappings">getSuggestedOfferMappings</a></li>
+            <li><a href="#!/FbsApi#getSuggestedPrices">getSuggestedPrices</a></li>
+            <li><a href="#!/FbsApi#getWarehouses">getWarehouses</a></li>
+            <li><a href="#!/FbsApi#provideOrderItemIdentifiers">provideOrderItemIdentifiers</a></li>
+            <li><a href="#!/FbsApi#putBidsForBusiness">putBidsForBusiness</a></li>
+            <li><a href="#!/FbsApi#putBidsForCampaign">putBidsForCampaign</a></li>
+            <li><a href="#!/FbsApi#refreshFeed">refreshFeed</a></li>
+            <li><a href="#!/FbsApi#searchRegionChildren">searchRegionChildren</a></li>
+            <li><a href="#!/FbsApi#searchRegionsById">searchRegionsById</a></li>
+            <li><a href="#!/FbsApi#searchRegionsByName">searchRegionsByName</a></li>
+            <li><a href="#!/FbsApi#searchShipments">searchShipments</a></li>
+            <li><a href="#!/FbsApi#sendFileToChat">sendFileToChat</a></li>
+            <li><a href="#!/FbsApi#sendMessageToChat">sendMessageToChat</a></li>
+            <li><a href="#!/FbsApi#setFeedParams">setFeedParams</a></li>
+            <li><a href="#!/FbsApi#setOrderBoxLayout">setOrderBoxLayout</a></li>
+            <li><a href="#!/FbsApi#setOrderShipmentBoxes">setOrderShipmentBoxes</a></li>
+            <li><a href="#!/FbsApi#setShipmentPalletsCount">setShipmentPalletsCount</a></li>
+            <li><a href="#!/FbsApi#skipGoodsFeedbacksReaction">skipGoodsFeedbacksReaction</a></li>
+            <li><a href="#!/FbsApi#transferOrdersFromShipment">transferOrdersFromShipment</a></li>
+            <li><a href="#!/FbsApi#updateBusinessPrices">updateBusinessPrices</a></li>
+            <li><a href="#!/FbsApi#updateCampaignOffers">updateCampaignOffers</a></li>
+            <li><a href="#!/FbsApi#updateGoodsFeedbackComment">updateGoodsFeedbackComment</a></li>
+            <li><a href="#!/FbsApi#updateOfferContent">updateOfferContent</a></li>
+            <li><a href="#!/FbsApi#updateOfferMappingEntries">updateOfferMappingEntries</a></li>
+            <li><a href="#!/FbsApi#updateOfferMappings">updateOfferMappings</a></li>
+            <li><a href="#!/FbsApi#updateOrderItems">updateOrderItems</a></li>
+            <li><a href="#!/FbsApi#updateOrderStatus">updateOrderStatus</a></li>
+            <li><a href="#!/FbsApi#updateOrderStatuses">updateOrderStatuses</a></li>
+            <li><a href="#!/FbsApi#updatePrices">updatePrices</a></li>
+            <li><a href="#!/FbsApi#updatePromoOffers">updatePromoOffers</a></li>
+            <li><a href="#!/FbsApi#updateStocks">updateStocks</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/FbyApi">FbyApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/FbyApi#addHiddenOffers">addHiddenOffers</a></li>
+            <li><a href="#!/FbyApi#addOffersToArchive">addOffersToArchive</a></li>
+            <li><a href="#!/FbyApi#calculateTariffs">calculateTariffs</a></li>
+            <li><a href="#!/FbyApi#confirmBusinessPrices">confirmBusinessPrices</a></li>
+            <li><a href="#!/FbyApi#confirmCampaignPrices">confirmCampaignPrices</a></li>
+            <li><a href="#!/FbyApi#createChat">createChat</a></li>
+            <li><a href="#!/FbyApi#deleteCampaignOffers">deleteCampaignOffers</a></li>
+            <li><a href="#!/FbyApi#deleteGoodsFeedbackComment">deleteGoodsFeedbackComment</a></li>
+            <li><a href="#!/FbyApi#deleteHiddenOffers">deleteHiddenOffers</a></li>
+            <li><a href="#!/FbyApi#deleteOffers">deleteOffers</a></li>
+            <li><a href="#!/FbyApi#deleteOffersFromArchive">deleteOffersFromArchive</a></li>
+            <li><a href="#!/FbyApi#deletePromoOffers">deletePromoOffers</a></li>
+            <li><a href="#!/FbyApi#generateBoostConsolidatedReport">generateBoostConsolidatedReport</a></li>
+            <li><a href="#!/FbyApi#generateCompetitorsPositionReport">generateCompetitorsPositionReport</a></li>
+            <li><a href="#!/FbyApi#generateGoodsFeedbackReport">generateGoodsFeedbackReport</a></li>
+            <li><a href="#!/FbyApi#generateGoodsMovementReport">generateGoodsMovementReport</a></li>
+            <li><a href="#!/FbyApi#generateGoodsRealizationReport">generateGoodsRealizationReport</a></li>
+            <li><a href="#!/FbyApi#generateGoodsTurnoverReport">generateGoodsTurnoverReport</a></li>
+            <li><a href="#!/FbyApi#generatePricesReport">generatePricesReport</a></li>
+            <li><a href="#!/FbyApi#generateShelfsStatisticsReport">generateShelfsStatisticsReport</a></li>
+            <li><a href="#!/FbyApi#generateShowsSalesReport">generateShowsSalesReport</a></li>
+            <li><a href="#!/FbyApi#generateStocksOnWarehousesReport">generateStocksOnWarehousesReport</a></li>
+            <li><a href="#!/FbyApi#generateUnitedMarketplaceServicesReport">generateUnitedMarketplaceServicesReport</a></li>
+            <li><a href="#!/FbyApi#generateUnitedNettingReport">generateUnitedNettingReport</a></li>
+            <li><a href="#!/FbyApi#generateUnitedOrdersReport">generateUnitedOrdersReport</a></li>
+            <li><a href="#!/FbyApi#getAllOffers">getAllOffers</a></li>
+            <li><a href="#!/FbyApi#getBidsInfoForBusiness">getBidsInfoForBusiness</a></li>
+            <li><a href="#!/FbyApi#getBidsRecommendations">getBidsRecommendations</a></li>
+            <li><a href="#!/FbyApi#getBusinessQuarantineOffers">getBusinessQuarantineOffers</a></li>
+            <li><a href="#!/FbyApi#getBusinessSettings">getBusinessSettings</a></li>
+            <li><a href="#!/FbyApi#getCampaign">getCampaign</a></li>
+            <li><a href="#!/FbyApi#getCampaignLogins">getCampaignLogins</a></li>
+            <li><a href="#!/FbyApi#getCampaignOffers">getCampaignOffers</a></li>
+            <li><a href="#!/FbyApi#getCampaignQuarantineOffers">getCampaignQuarantineOffers</a></li>
+            <li><a href="#!/FbyApi#getCampaignRegion">getCampaignRegion</a></li>
+            <li><a href="#!/FbyApi#getCampaignSettings">getCampaignSettings</a></li>
+            <li><a href="#!/FbyApi#getCampaigns">getCampaigns</a></li>
+            <li><a href="#!/FbyApi#getCampaignsByLogin">getCampaignsByLogin</a></li>
+            <li><a href="#!/FbyApi#getCategoriesMaxSaleQuantum">getCategoriesMaxSaleQuantum</a></li>
+            <li><a href="#!/FbyApi#getCategoriesTree">getCategoriesTree</a></li>
+            <li><a href="#!/FbyApi#getCategoryContentParameters">getCategoryContentParameters</a></li>
+            <li><a href="#!/FbyApi#getChatHistory">getChatHistory</a></li>
+            <li><a href="#!/FbyApi#getChats">getChats</a></li>
+            <li><a href="#!/FbyApi#getFeed">getFeed</a></li>
+            <li><a href="#!/FbyApi#getFeedIndexLogs">getFeedIndexLogs</a></li>
+            <li><a href="#!/FbyApi#getFeedbackAndCommentUpdates">getFeedbackAndCommentUpdates</a></li>
+            <li><a href="#!/FbyApi#getFeeds">getFeeds</a></li>
+            <li><a href="#!/FbyApi#getFulfillmentWarehouses">getFulfillmentWarehouses</a></li>
+            <li><a href="#!/FbyApi#getGoodsFeedbackComments">getGoodsFeedbackComments</a></li>
+            <li><a href="#!/FbyApi#getGoodsFeedbacks">getGoodsFeedbacks</a></li>
+            <li><a href="#!/FbyApi#getGoodsStats">getGoodsStats</a></li>
+            <li><a href="#!/FbyApi#getHiddenOffers">getHiddenOffers</a></li>
+            <li><a href="#!/FbyApi#getOfferCardsContentStatus">getOfferCardsContentStatus</a></li>
+            <li><a href="#!/FbyApi#getOfferMappingEntries">getOfferMappingEntries</a></li>
+            <li><a href="#!/FbyApi#getOfferMappings">getOfferMappings</a></li>
+            <li><a href="#!/FbyApi#getOfferRecommendations">getOfferRecommendations</a></li>
+            <li><a href="#!/FbyApi#getOffers">getOffers</a></li>
+            <li><a href="#!/FbyApi#getOrder">getOrder</a></li>
+            <li><a href="#!/FbyApi#getOrderBusinessBuyerInfo">getOrderBusinessBuyerInfo</a></li>
+            <li><a href="#!/FbyApi#getOrderBusinessDocumentsInfo">getOrderBusinessDocumentsInfo</a></li>
+            <li><a href="#!/FbyApi#getOrders">getOrders</a></li>
+            <li><a href="#!/FbyApi#getOrdersStats">getOrdersStats</a></li>
+            <li><a href="#!/FbyApi#getPrices">getPrices</a></li>
+            <li><a href="#!/FbyApi#getPricesByOfferIds">getPricesByOfferIds</a></li>
+            <li><a href="#!/FbyApi#getPromoOffers">getPromoOffers</a></li>
+            <li><a href="#!/FbyApi#getPromos">getPromos</a></li>
+            <li><a href="#!/FbyApi#getQualityRatings">getQualityRatings</a></li>
+            <li><a href="#!/FbyApi#getReportInfo">getReportInfo</a></li>
+            <li><a href="#!/FbyApi#getReturn">getReturn</a></li>
+            <li><a href="#!/FbyApi#getReturnPhoto">getReturnPhoto</a></li>
+            <li><a href="#!/FbyApi#getReturns">getReturns</a></li>
+            <li><a href="#!/FbyApi#getStocks">getStocks</a></li>
+            <li><a href="#!/FbyApi#getSuggestedOfferMappingEntries">getSuggestedOfferMappingEntries</a></li>
+            <li><a href="#!/FbyApi#getSuggestedOfferMappings">getSuggestedOfferMappings</a></li>
+            <li><a href="#!/FbyApi#getSuggestedPrices">getSuggestedPrices</a></li>
+            <li><a href="#!/FbyApi#putBidsForBusiness">putBidsForBusiness</a></li>
+            <li><a href="#!/FbyApi#putBidsForCampaign">putBidsForCampaign</a></li>
+            <li><a href="#!/FbyApi#refreshFeed">refreshFeed</a></li>
+            <li><a href="#!/FbyApi#searchRegionChildren">searchRegionChildren</a></li>
+            <li><a href="#!/FbyApi#searchRegionsById">searchRegionsById</a></li>
+            <li><a href="#!/FbyApi#searchRegionsByName">searchRegionsByName</a></li>
+            <li><a href="#!/FbyApi#sendFileToChat">sendFileToChat</a></li>
+            <li><a href="#!/FbyApi#sendMessageToChat">sendMessageToChat</a></li>
+            <li><a href="#!/FbyApi#setFeedParams">setFeedParams</a></li>
+            <li><a href="#!/FbyApi#skipGoodsFeedbacksReaction">skipGoodsFeedbacksReaction</a></li>
+            <li><a href="#!/FbyApi#updateBusinessPrices">updateBusinessPrices</a></li>
+            <li><a href="#!/FbyApi#updateCampaignOffers">updateCampaignOffers</a></li>
+            <li><a href="#!/FbyApi#updateGoodsFeedbackComment">updateGoodsFeedbackComment</a></li>
+            <li><a href="#!/FbyApi#updateOfferContent">updateOfferContent</a></li>
+            <li><a href="#!/FbyApi#updateOfferMappingEntries">updateOfferMappingEntries</a></li>
+            <li><a href="#!/FbyApi#updateOfferMappings">updateOfferMappings</a></li>
+            <li><a href="#!/FbyApi#updatePrices">updatePrices</a></li>
+            <li><a href="#!/FbyApi#updatePromoOffers">updatePromoOffers</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/FeedbacksApi">FeedbacksApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/FeedbacksApi#getFeedbackAndCommentUpdates">getFeedbackAndCommentUpdates</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/FeedsApi">FeedsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/FeedsApi#getFeed">getFeed</a></li>
+            <li><a href="#!/FeedsApi#getFeedIndexLogs">getFeedIndexLogs</a></li>
+            <li><a href="#!/FeedsApi#getFeeds">getFeeds</a></li>
+            <li><a href="#!/FeedsApi#refreshFeed">refreshFeed</a></li>
+            <li><a href="#!/FeedsApi#setFeedParams">setFeedParams</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/GoodsFeedbackApi">GoodsFeedbackApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/GoodsFeedbackApi#deleteGoodsFeedbackComment">deleteGoodsFeedbackComment</a></li>
+            <li><a href="#!/GoodsFeedbackApi#getGoodsFeedbackComments">getGoodsFeedbackComments</a></li>
+            <li><a href="#!/GoodsFeedbackApi#getGoodsFeedbacks">getGoodsFeedbacks</a></li>
+            <li><a href="#!/GoodsFeedbackApi#skipGoodsFeedbacksReaction">skipGoodsFeedbacksReaction</a></li>
+            <li><a href="#!/GoodsFeedbackApi#updateGoodsFeedbackComment">updateGoodsFeedbackComment</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/GoodsStatsApi">GoodsStatsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/GoodsStatsApi#getGoodsStats">getGoodsStats</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/HiddenOffersApi">HiddenOffersApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/HiddenOffersApi#addHiddenOffers">addHiddenOffers</a></li>
+            <li><a href="#!/HiddenOffersApi#deleteHiddenOffers">deleteHiddenOffers</a></li>
+            <li><a href="#!/HiddenOffersApi#getHiddenOffers">getHiddenOffers</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/ModelsApi">ModelsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/ModelsApi#getModel">getModel</a></li>
+            <li><a href="#!/ModelsApi#getModelOffers">getModelOffers</a></li>
+            <li><a href="#!/ModelsApi#getModels">getModels</a></li>
+            <li><a href="#!/ModelsApi#getModelsOffers">getModelsOffers</a></li>
+            <li><a href="#!/ModelsApi#searchModels">searchModels</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/OfferMappingsApi">OfferMappingsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/OfferMappingsApi#getOfferMappingEntries">getOfferMappingEntries</a></li>
+            <li><a href="#!/OfferMappingsApi#getSuggestedOfferMappingEntries">getSuggestedOfferMappingEntries</a></li>
+            <li><a href="#!/OfferMappingsApi#updateOfferMappingEntries">updateOfferMappingEntries</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/OffersApi">OffersApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/OffersApi#deleteCampaignOffers">deleteCampaignOffers</a></li>
+            <li><a href="#!/OffersApi#getAllOffers">getAllOffers</a></li>
+            <li><a href="#!/OffersApi#getCampaignOffers">getCampaignOffers</a></li>
+            <li><a href="#!/OffersApi#getOfferRecommendations">getOfferRecommendations</a></li>
+            <li><a href="#!/OffersApi#getOffers">getOffers</a></li>
+            <li><a href="#!/OffersApi#updateCampaignOffers">updateCampaignOffers</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/OrderBusinessInformationApi">OrderBusinessInformationApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/OrderBusinessInformationApi#getOrderBusinessBuyerInfo">getOrderBusinessBuyerInfo</a></li>
+            <li><a href="#!/OrderBusinessInformationApi#getOrderBusinessDocumentsInfo">getOrderBusinessDocumentsInfo</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/OrderDeliveryApi">OrderDeliveryApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/OrderDeliveryApi#getOrderBuyerInfo">getOrderBuyerInfo</a></li>
+            <li><a href="#!/OrderDeliveryApi#setOrderDeliveryDate">setOrderDeliveryDate</a></li>
+            <li><a href="#!/OrderDeliveryApi#setOrderDeliveryTrackCode">setOrderDeliveryTrackCode</a></li>
+            <li><a href="#!/OrderDeliveryApi#updateOrderStorageLimit">updateOrderStorageLimit</a></li>
+            <li><a href="#!/OrderDeliveryApi#verifyOrderEac">verifyOrderEac</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/OrderLabelsApi">OrderLabelsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/OrderLabelsApi#generateOrderLabel">generateOrderLabel</a></li>
+            <li><a href="#!/OrderLabelsApi#generateOrderLabels">generateOrderLabels</a></li>
+            <li><a href="#!/OrderLabelsApi#getOrderLabelsData">getOrderLabelsData</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/OrdersApi">OrdersApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/OrdersApi#acceptOrderCancellation">acceptOrderCancellation</a></li>
+            <li><a href="#!/OrdersApi#getOrder">getOrder</a></li>
+            <li><a href="#!/OrdersApi#getOrders">getOrders</a></li>
+            <li><a href="#!/OrdersApi#provideOrderDigitalCodes">provideOrderDigitalCodes</a></li>
+            <li><a href="#!/OrdersApi#provideOrderItemIdentifiers">provideOrderItemIdentifiers</a></li>
+            <li><a href="#!/OrdersApi#setOrderBoxLayout">setOrderBoxLayout</a></li>
+            <li><a href="#!/OrdersApi#setOrderShipmentBoxes">setOrderShipmentBoxes</a></li>
+            <li><a href="#!/OrdersApi#updateOrderItems">updateOrderItems</a></li>
+            <li><a href="#!/OrdersApi#updateOrderStatus">updateOrderStatus</a></li>
+            <li><a href="#!/OrdersApi#updateOrderStatuses">updateOrderStatuses</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/OrdersStatsApi">OrdersStatsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/OrdersStatsApi#getOrdersStats">getOrdersStats</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/OutletLicensesApi">OutletLicensesApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/OutletLicensesApi#deleteOutletLicenses">deleteOutletLicenses</a></li>
+            <li><a href="#!/OutletLicensesApi#getOutletLicenses">getOutletLicenses</a></li>
+            <li><a href="#!/OutletLicensesApi#updateOutletLicenses">updateOutletLicenses</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/OutletsApi">OutletsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/OutletsApi#createOutlet">createOutlet</a></li>
+            <li><a href="#!/OutletsApi#deleteOutlet">deleteOutlet</a></li>
+            <li><a href="#!/OutletsApi#getOutlet">getOutlet</a></li>
+            <li><a href="#!/OutletsApi#getOutlets">getOutlets</a></li>
+            <li><a href="#!/OutletsApi#updateOutlet">updateOutlet</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/PriceQuarantineApi">PriceQuarantineApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/PriceQuarantineApi#confirmBusinessPrices">confirmBusinessPrices</a></li>
+            <li><a href="#!/PriceQuarantineApi#confirmCampaignPrices">confirmCampaignPrices</a></li>
+            <li><a href="#!/PriceQuarantineApi#getBusinessQuarantineOffers">getBusinessQuarantineOffers</a></li>
+            <li><a href="#!/PriceQuarantineApi#getCampaignQuarantineOffers">getCampaignQuarantineOffers</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/PricesApi">PricesApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/PricesApi#getPrices">getPrices</a></li>
+            <li><a href="#!/PricesApi#getPricesByOfferIds">getPricesByOfferIds</a></li>
+            <li><a href="#!/PricesApi#getSuggestedPrices">getSuggestedPrices</a></li>
+            <li><a href="#!/PricesApi#updateBusinessPrices">updateBusinessPrices</a></li>
+            <li><a href="#!/PricesApi#updatePrices">updatePrices</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/PromosApi">PromosApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/PromosApi#deletePromoOffers">deletePromoOffers</a></li>
+            <li><a href="#!/PromosApi#getPromoOffers">getPromoOffers</a></li>
+            <li><a href="#!/PromosApi#getPromos">getPromos</a></li>
+            <li><a href="#!/PromosApi#updatePromoOffers">updatePromoOffers</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/RatingsApi">RatingsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/RatingsApi#getQualityRatingDetails">getQualityRatingDetails</a></li>
+            <li><a href="#!/RatingsApi#getQualityRatings">getQualityRatings</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/RegionsApi">RegionsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/RegionsApi#searchRegionChildren">searchRegionChildren</a></li>
+            <li><a href="#!/RegionsApi#searchRegionsById">searchRegionsById</a></li>
+            <li><a href="#!/RegionsApi#searchRegionsByName">searchRegionsByName</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/ReportsApi">ReportsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/ReportsApi#generateBoostConsolidatedReport">generateBoostConsolidatedReport</a></li>
+            <li><a href="#!/ReportsApi#generateCompetitorsPositionReport">generateCompetitorsPositionReport</a></li>
+            <li><a href="#!/ReportsApi#generateGoodsFeedbackReport">generateGoodsFeedbackReport</a></li>
+            <li><a href="#!/ReportsApi#generateGoodsMovementReport">generateGoodsMovementReport</a></li>
+            <li><a href="#!/ReportsApi#generateGoodsRealizationReport">generateGoodsRealizationReport</a></li>
+            <li><a href="#!/ReportsApi#generateGoodsTurnoverReport">generateGoodsTurnoverReport</a></li>
+            <li><a href="#!/ReportsApi#generateMassOrderLabelsReport">generateMassOrderLabelsReport</a></li>
+            <li><a href="#!/ReportsApi#generatePricesReport">generatePricesReport</a></li>
+            <li><a href="#!/ReportsApi#generateShelfsStatisticsReport">generateShelfsStatisticsReport</a></li>
+            <li><a href="#!/ReportsApi#generateShipmentListDocumentReport">generateShipmentListDocumentReport</a></li>
+            <li><a href="#!/ReportsApi#generateShowsSalesReport">generateShowsSalesReport</a></li>
+            <li><a href="#!/ReportsApi#generateStocksOnWarehousesReport">generateStocksOnWarehousesReport</a></li>
+            <li><a href="#!/ReportsApi#generateUnitedMarketplaceServicesReport">generateUnitedMarketplaceServicesReport</a></li>
+            <li><a href="#!/ReportsApi#generateUnitedNettingReport">generateUnitedNettingReport</a></li>
+            <li><a href="#!/ReportsApi#generateUnitedOrdersReport">generateUnitedOrdersReport</a></li>
+            <li><a href="#!/ReportsApi#getReportInfo">getReportInfo</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/ReturnsApi">ReturnsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/ReturnsApi#getReturn">getReturn</a></li>
+            <li><a href="#!/ReturnsApi#getReturnApplication">getReturnApplication</a></li>
+            <li><a href="#!/ReturnsApi#getReturnPhoto">getReturnPhoto</a></li>
+            <li><a href="#!/ReturnsApi#getReturns">getReturns</a></li>
+            <li><a href="#!/ReturnsApi#setReturnDecision">setReturnDecision</a></li>
+            <li><a href="#!/ReturnsApi#submitReturnDecision">submitReturnDecision</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/ShipmentsApi">ShipmentsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/ShipmentsApi#confirmShipment">confirmShipment</a></li>
+            <li><a href="#!/ShipmentsApi#downloadShipmentAct">downloadShipmentAct</a></li>
+            <li><a href="#!/ShipmentsApi#downloadShipmentDiscrepancyAct">downloadShipmentDiscrepancyAct</a></li>
+            <li><a href="#!/ShipmentsApi#downloadShipmentInboundAct">downloadShipmentInboundAct</a></li>
+            <li><a href="#!/ShipmentsApi#downloadShipmentPalletLabels">downloadShipmentPalletLabels</a></li>
+            <li><a href="#!/ShipmentsApi#downloadShipmentReceptionTransferAct">downloadShipmentReceptionTransferAct</a></li>
+            <li><a href="#!/ShipmentsApi#downloadShipmentTransportationWaybill">downloadShipmentTransportationWaybill</a></li>
+            <li><a href="#!/ShipmentsApi#getShipment">getShipment</a></li>
+            <li><a href="#!/ShipmentsApi#getShipmentOrdersInfo">getShipmentOrdersInfo</a></li>
+            <li><a href="#!/ShipmentsApi#searchShipments">searchShipments</a></li>
+            <li><a href="#!/ShipmentsApi#setShipmentPalletsCount">setShipmentPalletsCount</a></li>
+            <li><a href="#!/ShipmentsApi#transferOrdersFromShipment">transferOrdersFromShipment</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/StocksApi">StocksApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/StocksApi#getStocks">getStocks</a></li>
+            <li><a href="#!/StocksApi#updateStocks">updateStocks</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/TariffsApi">TariffsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/TariffsApi#calculateTariffs">calculateTariffs</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/WarehousesApi">WarehousesApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/WarehousesApi#getFulfillmentWarehouses">getFulfillmentWarehouses</a></li>
+            <li><a href="#!/WarehousesApi#getWarehouses">getWarehouses</a></li>
+          </ul>
+        </div>
+      </div>
+    <div class="non-sidebar">
+      <div class="main-content">
+        <h2>Getting Started</h2>
+        <p>To begin using your fancy HTTP API, follow the steps below.</p>
+        <p>You can add some helpful tips, here</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

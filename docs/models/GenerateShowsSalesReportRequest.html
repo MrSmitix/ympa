@@ -1,0 +1,27 @@
+
+<h2>GenerateShowsSalesReportRequest</h2>
+<ul class="parameter">
+  <li class="param-required-false">businessId : Long
+    <br/>Идентификатор бизнеса.  Указывается, если нужно составить отчет по всем магазинам бизнеса. В запросе обязательно должен быть либо &#x60;businessID&#x60;, либо &#x60;campaignId&#x60;, но не оба сразу. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">campaignId : Long
+    <br/>Идентификатор кампании.  Указывается, если нужно составить отчет по конкретному магазину. В запросе обязательно должен быть либо &#x60;businessID&#x60;, либо &#x60;campaignId&#x60;, но не оба сразу. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">dateFrom : date
+    <br/>Начало периода, включительно.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">dateTo : date
+    <br/>Конец периода, включительно.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">grouping : ShowsSalesGroupingType
+    <br/>
+  </li>
+</ul>

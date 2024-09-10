@@ -1,0 +1,62 @@
+
+<h2>OrdersStatsOrderDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">id : Long
+    <br/>Идентификатор заказа.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">creationDate : date
+    <br/>Дата создания заказа.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">statusUpdateDate : Date
+    <br/>Дата и время, когда статус заказа был изменен в последний раз.  Формат даты и времени: ISO 8601. Например, &#x60;2017-11-21T00:00:00&#x60;. Часовой пояс — UTC+03:00 (Москва). 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">status : OrderStatsStatusType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">partnerOrderId : String
+    <br/>Идентификатор заказа в информационной системе магазина.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">paymentType : OrdersStatsOrderPaymentType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">fake : Boolean
+    <br/>Тип заказа:  * &#x60;false&#x60; — настоящий заказ покупателя.  * &#x60;true&#x60; — [тестовый](../../pushapi/concepts/sandbox.md) заказ Маркета. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">deliveryRegion : OrdersStatsDeliveryRegionDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">items : List
+    <br/>Список товаров в заказе после возможных изменений.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">initialItems : List
+    <br/>Список товаров в заказе до изменений.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">payments : List
+    <br/>Информация о денежных переводах по заказу.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">commissions : List
+    <br/>Информация о комиссиях за заказ.
+  </li>
+</ul>

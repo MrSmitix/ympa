@@ -1,0 +1,77 @@
+
+<h2>ShipmentDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">id : Long
+    <br/>Идентификатор отгрузки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">planIntervalFrom : Date
+    <br/>Начало планового интервала отгрузки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">planIntervalTo : Date
+    <br/>Конец планового интервала отгрузки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">shipmentType : ShipmentType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">warehouse : PartnerShipmentWarehouseDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">warehouseTo : PartnerShipmentWarehouseDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">externalId : String
+    <br/>Идентификатор отгрузки в вашей системе. Если вы еще не передавали идентификатор, вернется идентификатор из параметра &#x60;id&#x60;.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">deliveryService : DeliveryServiceDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">palletsCount : PalletsCountDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">orderIds : Set
+    <br/>Идентификаторы заказов в отгрузке.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">draftCount : Integer
+    <br/>Количество заказов, которое Маркет запланировал к отгрузке.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">plannedCount : Integer
+    <br/>Количество заказов, которое Маркет подтвердил к отгрузке.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">factCount : Integer
+    <br/>Количество заказов, принятых в сортировочном центре или пункте приема.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">currentStatus : ShipmentStatusChangeDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">availableActions : Set
+    <br/>Доступные действия над отгрузкой.
+  </li>
+</ul>

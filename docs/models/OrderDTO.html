@@ -1,0 +1,117 @@
+
+<h2>OrderDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">id : Long
+    <br/>Идентификатор заказа.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">status : OrderStatusType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">substatus : OrderSubstatusType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">creationDate : String
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">updatedAt : String
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">currency : CurrencyType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">itemsTotal : BigDecimal
+    <br/>Платеж покупателя. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">deliveryTotal : BigDecimal
+    <br/>Стоимость доставки. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">buyerItemsTotal : BigDecimal
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и без учета стоимости доставки. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">buyerTotal : BigDecimal
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и с учетом стоимости доставки. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">buyerItemsTotalBeforeDiscount : BigDecimal
+    <br/>Стоимость всех товаров в заказе в валюте покупателя без учета стоимости доставки и до применения скидок по:  * акциям; * купонам; * промокодам. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">buyerTotalBeforeDiscount : BigDecimal
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя до применения скидок и с учетом стоимости доставки (&#x60;buyerItemsTotalBeforeDiscount&#x60; + стоимость доставки). 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">paymentType : OrderPaymentType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">paymentMethod : OrderPaymentMethodType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">fake : Boolean
+    <br/>Тип заказа:  * &#x60;false&#x60; — настоящий заказ покупателя.  * &#x60;true&#x60; — [тестовый](../../pushapi/concepts/sandbox.md) заказ Маркета. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">items : List
+    <br/>Список товаров в заказе.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">subsidies : List
+    <br/>Список субсидий по типам.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">delivery : OrderDeliveryDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">buyer : OrderBuyerDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">notes : String
+    <br/>Комментарий к заказу.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">taxSystem : OrderTaxSystemType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cancelRequested : Boolean
+    <br/>**Только для модели DBS**  Запрошена ли отмена. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">expiryDate : String
+    <br/>
+  </li>
+</ul>

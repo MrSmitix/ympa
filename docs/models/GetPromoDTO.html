@@ -1,0 +1,47 @@
+
+<h2>GetPromoDTO</h2>
+<ul class="parameter">
+  <li class="param-required-true">id : String
+    <br/>Идентификатор акции.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">name : String
+    <br/>Название акции.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">period : PromoPeriodDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">participating : Boolean
+    <br/>Участвует или участвовал ли продавец в этой акции.  Для текущих и будущих акций возвращается со значением &#x60;true&#x60;, если в акции есть товары, которые были добавлены вручную. Если товары не участвуют в акции или добавлены в нее автоматически, параметр возвращается со значением &#x60;false&#x60;.  Для прошедших акций всегда возвращается со значением &#x60;true&#x60;.  Об автоматическом и ручном добавлении товаров в акцию читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/promos/market/index). 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">assortmentInfo : GetPromoAssortmentInfoDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">mechanicsInfo : GetPromoMechanicsInfoDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">bestsellerInfo : GetPromoBestsellerInfoDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">channels : List
+    <br/>Список каналов продвижения товаров.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">constraints : GetPromoConstraintsDTO
+    <br/>
+  </li>
+</ul>

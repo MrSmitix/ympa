@@ -1,0 +1,22 @@
+
+<h2>OrderBoxLayoutItemDTO</h2>
+<ul class="parameter">
+  <li class="param-required-true">id : Long
+    <br/>Идентификатор товара в заказе.  {% cut \&quot;Где его взять\&quot; %}  Идентификатор приходит в ответе на запрос [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) и в запросе Маркета [POST order/accept](../../pushapi/reference/orderAccept.md) — параметр &#x60;id&#x60; в &#x60;items&#x60;.  {% endcut %}   
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">fullCount : Integer
+    <br/>Количество единиц товара в коробке.  Используйте это поле, если в коробке поедут целые товары, не разделенные на части. Не используйте это поле одновременно с &#x60;partialCount&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">partialCount : OrderBoxLayoutPartialCountDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">instances : List
+    <br/>Переданные вами коды маркировки.
+  </li>
+</ul>

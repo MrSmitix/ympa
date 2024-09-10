@@ -1,0 +1,67 @@
+
+<h2>ParcelBoxLabelDTO</h2>
+<ul class="parameter">
+  <li class="param-required-true">url : String
+    <br/>Соответствует URL, по которому выполняется запрос [GET campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes/{boxId}/label](../../reference/orders/generateOrderLabel.md). 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">supplierName : String
+    <br/>Юридическое название магазина.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">deliveryServiceName : String
+    <br/>Юридическое название службы доставки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">orderId : Long
+    <br/>Идентификатор заказа в системе Маркета.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">orderNum : String
+    <br/>Идентификатор заказа в информационной системе магазина.  Совпадает с &#x60;orderId&#x60;, если Маркету неизвестен номер заказа в системе магазина. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">recipientName : String
+    <br/>Фамилия и инициалы получателя заказа.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">boxId : Long
+    <br/>Идентификатор коробки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">fulfilmentId : String
+    <br/>Идентификатор коробки в информационной системе магазина.  Возвращается в формате: &#x60;номер заказа на Маркете-номер коробки&#x60;. Например, &#x60;7206821‑1&#x60;, &#x60;7206821‑2&#x60; и т. д. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">place : String
+    <br/>Номер коробки в заказе. Возвращается в формате: &#x60;номер места/общее количество мест&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">weight : String
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Общая масса всех товаров в заказе. Возвращается в формате: &#x60;weight кг&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">deliveryServiceId : String
+    <br/>Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md).
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">deliveryAddress : String
+    <br/>Адрес получателя.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">shipmentDate : String
+    <br/>Дата отгрузки в формате &#x60;dd.MM.yyyy&#x60;.
+  </li>
+</ul>

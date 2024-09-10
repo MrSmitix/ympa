@@ -1,0 +1,72 @@
+
+<h2>FeedbackDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">id : Long
+    <br/>Идентификатор отзыва.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">createdAt : Date
+    <br/>Дата и время создания отзыва.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:00:00+03:00&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">text : String
+    <br/>Комментарий автора отзыва.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">state : FeedbackStateType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">author : FeedbackAuthorDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">pro : String
+    <br/>Достоинства магазина, описанные в отзыве.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">contra : String
+    <br/>Недостатки магазина, описанные в отзыве.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">comments : List
+    <br/>Переписка автора отзыва с магазином.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">shop : FeedbackShopDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">resolved : Boolean
+    <br/>Решена ли проблема автора отзыва:  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет.  Если проблема решена, около отзыва на странице магазина появляется соответствующая надпись. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">verified : Boolean
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Является ли отзыв рекомендованным:  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">recommend : Boolean
+    <br/>Купил бы автор отзыва в магазине снова:  * &#x60;true&#x60; — да. * &#x60;false&#x60; — нет. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">grades : FeedbackGradesDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">order : FeedbackOrderDTO
+    <br/>
+  </li>
+</ul>

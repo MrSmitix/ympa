@@ -1,0 +1,52 @@
+
+<h2>GoodsStatsGoodsDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">shopSku : String
+    <br/>Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">marketSku : Long
+    <br/>SKU на Маркете.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">name : String
+    <br/>Название товара.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">price : BigDecimal
+    <br/>Цена на товар в валюте, которая установлена [в кабинете продавца на Маркете](https://partner.market.yandex.ru/).
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">categoryId : Long
+    <br/>Идентификатор категории товара на Маркете.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">categoryName : String
+    <br/>Название категории товара на Маркете.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">weightDimensions : GoodsStatsWeightDimensionsDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">warehouses : List
+    <br/>Информация о складах, на которых хранится товар.  Параметр не приходит, если товара нет ни на одном складе. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">tariffs : List
+    <br/>Информация о тарифах, по которым нужно заплатить за услуги Маркета.  По некоторым услугам могут возвращаться несколько разных стоимостей. Например, в модели FBS стоимость услуги &#x60;SORTING&#x60; (обработка заказа) зависит от способа отгрузки и количества заказов в отгрузке. Подробнее о тарифах на услуги читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/introduction/rates/models/). 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">pictures : List
+    <br/>Ссылки (URL) изображений товара в хорошем качестве.
+  </li>
+</ul>

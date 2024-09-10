@@ -1,0 +1,72 @@
+
+<h2>CategoryParameterDTO</h2>
+<ul class="parameter">
+  <li class="param-required-true">id : Long
+    <br/>Идентификатор характеристики.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">name : String
+    <br/>Название характеристики.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">type : ParameterType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">unit : CategoryParameterUnitDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">description : String
+    <br/>Описание характеристики.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">recommendationTypes : List
+    <br/>Перечень возможных рекомендаций по заполнению карточки, к которым относится данная характеристика.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">required : Boolean
+    <br/>Обязательность характеристики.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">filtering : Boolean
+    <br/>Используется ли характеристика в фильтре.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">distinctive : Boolean
+    <br/>Является ли характеристика особенностью варианта.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">multivalue : Boolean
+    <br/>Можно ли передать сразу несколько значений.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">allowCustomValues : Boolean
+    <br/>Можно ли передавать собственное значение, которого нет в списке вариантов Маркета. Только для характеристик типа &#x60;ENUM&#x60;.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">values : List
+    <br/>Список допустимых значений параметра. Только для характеристик типа &#x60;ENUM&#x60;.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">constraints : ParameterValueConstraintsDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">valueRestrictions : List
+    <br/>Ограничения на значения, накладываемые другими характеристиками. Только для характеристик типа &#x60;ENUM&#x60;.
+  </li>
+</ul>

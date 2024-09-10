@@ -1,0 +1,47 @@
+
+<h2>OutletAddressDTO</h2>
+<ul class="parameter">
+  <li class="param-required-true">regionId : Long
+    <br/>Идентификатор региона.  Идентификатор можно получить c помощью запроса [GET regions](../../reference/regions/searchRegionsByName.md).  {% note alert %}  При создании и редактировании точек продаж можно указывать только регионы типов &#x60;TOWN&#x60; (город), &#x60;CITY&#x60; (крупный город) и &#x60;REPUBLIC_AREA&#x60; (район субъекта федерации). Тип региона указан в выходных параметрах type запросов [GET regions](../../reference/regions/searchRegionsByName.md) и [GET regions/{regionId}](../../reference/regions/searchRegionsById.md).  {% endnote %} 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">street : String
+    <br/>Улица.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">number : String
+    <br/>Номер дома.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">building : String
+    <br/>Номер строения.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">estate : String
+    <br/>Номер владения.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">block : String
+    <br/>Номер корпуса.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">additional : String
+    <br/>Дополнительная информация.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">km : Integer
+    <br/>Порядковый номер километра дороги, на котором располагается точка продаж, если отсутствует улица.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">city : String
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел. Не используйте его. Город или населенный пункт возвращается в параметре &#x60;regionId&#x60;.  {% endnote %} 
+  </li>
+</ul>

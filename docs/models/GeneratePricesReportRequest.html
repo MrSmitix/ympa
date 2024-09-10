@@ -1,0 +1,27 @@
+
+<h2>GeneratePricesReportRequest</h2>
+<ul class="parameter">
+  <li class="param-required-false">businessId : Long
+    <br/>Идентификатор бизнеса.  В большинстве случаев обязателен. Не указывается, если задан &#x60;campaignId&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">campaignId : Long
+    <br/>Идентификатор кампании.  Как правило, не используется. Передавайте только если в кабинете есть магазины с уникальными ценами и вы хотите получить отчет для них. В этом случае передавать &#x60;businessId&#x60; не нужно. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">categoryIds : List
+    <br/>Фильтр по категориям на Маркете.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">creationDateFrom : date
+    <br/>Фильтр по времени появления предложения — начало периода.  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">creationDateTo : date
+    <br/>Фильтр по времени появления предложения — окончание периода.  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. 
+  </li>
+</ul>

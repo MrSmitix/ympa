@@ -1,0 +1,107 @@
+
+<h2>OrderDeliveryDTO</h2>
+<ul class="parameter">
+  <li class="param-required-false">id : String
+    <br/>Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом [POST cart](../../pushapi/reference/cart.md). 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">type : OrderDeliveryType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">serviceName : String
+    <br/>Наименование службы доставки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">price : BigDecimal
+    <br/>{% note warning \&quot;\&quot; %}  Этот параметр устарел. Стоимость доставки смотрите в параметре &#x60;deliveryTotal&#x60;.  {% endnote %}  Стоимость доставки в валюте заказа. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">deliveryPartnerType : OrderDeliveryPartnerType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">courier : OrderCourierDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">dates : OrderDeliveryDatesDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">region : RegionDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">address : OrderDeliveryAddressDTO
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">vat : OrderVatType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">deliveryServiceId : Long
+    <br/>Идентификатор службы доставки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">liftType : OrderLiftType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">liftPrice : BigDecimal
+    <br/>Стоимость подъема на этаж.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">outletCode : String
+    <br/>Идентификатор пункта самовывоза, присвоенный магазином.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">outletStorageLimitDate : String
+    <br/>Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">dispatchType : OrderDeliveryDispatchType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">tracks : List
+    <br/>Информация для отслеживания перемещений посылки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">shipments : List
+    <br/>Информация о посылках.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">estimated : Boolean
+    <br/>Приблизительная ли дата доставки.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">eacType : OrderDeliveryEacType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">eacCode : String
+    <br/>Код подтверждения ЭАПП (для типа &#x60;MERCHANT_TO_COURIER&#x60;). 
+  </li>
+</ul>

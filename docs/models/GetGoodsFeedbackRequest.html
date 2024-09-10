@@ -1,0 +1,32 @@
+
+<h2>GetGoodsFeedbackRequest</h2>
+<ul class="parameter">
+  <li class="param-required-false">dateTimeFrom : Date
+    <br/>Начало периода. Не включительно.  Если параметр не указан, возвращается информация за 6 месяцев до указанной в &#x60;dateTimeTo&#x60; даты. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">dateTimeTo : Date
+    <br/>Конец периода. Не включительно.  Если параметр не указан, используется текущая дата. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">reactionStatus : FeedbackReactionStatusType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">ratingValues : Set
+    <br/>Оценка товара.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">modelIds : Set
+    <br/>Фильтр по идентификатору модели товара.  Получить идентификатор модели можно с помощью одного из запросов:  * [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md);  * [POST businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md);  * [POST models](../../reference/models/getModels.md). 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">paid : Boolean
+    <br/>Фильтр отзывов за баллы Плюса.
+  </li>
+</ul>

@@ -1,0 +1,27 @@
+
+<h2>SearchShipmentsRequest</h2>
+<ul class="parameter">
+  <li class="param-required-true">dateFrom : date
+    <br/>Начальная дата для фильтрации по дате отгрузки (включительно).  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">dateTo : date
+    <br/>Конечная дата для фильтрации по дате отгрузки (включительно).  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">statuses : Set
+    <br/>Список статусов отгрузок.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">orderIds : Set
+    <br/>Список идентификаторов заказов из отгрузок.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cancelledOrders : Boolean
+    <br/>Возвращать ли отмененные заказы.  Значение по умолчанию — &#x60;true&#x60;. Если возвращать отмененные заказы не нужно, передайте значение &#x60;false&#x60;. 
+  </li>
+</ul>

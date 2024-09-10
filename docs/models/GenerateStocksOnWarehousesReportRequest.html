@@ -1,0 +1,27 @@
+
+<h2>GenerateStocksOnWarehousesReportRequest</h2>
+<ul class="parameter">
+  <li class="param-required-true">campaignId : Long
+    <br/>Идентификатор магазина.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">warehouseIds : List
+    <br/>Фильтр по идентификаторам складов (только модель FBY). Чтобы узнать идентификатор, воспользуйтесь запросом [GET warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">reportDate : date
+    <br/>Фильтр по дате (для модели FBY). В отчет попадут данные за **предшествующий** дате день.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">categoryIds : List
+    <br/>Фильтр по категориям на Маркете (кроме модели FBY).
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">hasStocks : Boolean
+    <br/>Фильтр по наличию остатков (кроме модели FBY).
+  </li>
+</ul>
