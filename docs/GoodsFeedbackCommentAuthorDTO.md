@@ -1,0 +1,11 @@
+
+# GoodsFeedbackCommentAuthorDTO
+
+## Properties
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **type** | [**GoodsFeedbackCommentAuthorType**](GoodsFeedbackCommentAuthorType.md) |  |  [optional] |
+| **name** | **kotlin.String** | Имя автора или название кабинета. |  [optional] |
+
+
+

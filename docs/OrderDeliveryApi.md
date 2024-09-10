@@ -1,0 +1,271 @@
+# OrderDeliveryApi
+
+All URIs are relative to *https://api.partner.market.yandex.ru*
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getOrderBuyerInfo**](OrderDeliveryApi.md#getOrderBuyerInfo) | **GET** /campaigns/{campaignId}/orders/{orderId}/buyer | Информация о покупателе — физическом лице |
+| [**setOrderDeliveryDate**](OrderDeliveryApi.md#setOrderDeliveryDate) | **PUT** /campaigns/{campaignId}/orders/{orderId}/delivery/date | Изменение даты доставки заказа |
+| [**setOrderDeliveryTrackCode**](OrderDeliveryApi.md#setOrderDeliveryTrackCode) | **POST** /campaigns/{campaignId}/orders/{orderId}/delivery/track | Передача трек‑номера посылки |
+| [**updateOrderStorageLimit**](OrderDeliveryApi.md#updateOrderStorageLimit) | **PUT** /campaigns/{campaignId}/orders/{orderId}/delivery/storage-limit | Продление срока хранения заказа |
+| [**verifyOrderEac**](OrderDeliveryApi.md#verifyOrderEac) | **PUT** /campaigns/{campaignId}/orders/{orderId}/verifyEac | Передача кода подтверждения |
+
+
+<a id="getOrderBuyerInfo"></a>
+# **getOrderBuyerInfo**
+> GetOrderBuyerInfoResponse getOrderBuyerInfo(campaignId, orderId)
+
+Информация о покупателе — физическом лице
+
+Возвращает информацию о покупателе по идентификатору заказа.  {% note info \&quot;\&quot; %}  Чтобы получить информацию о покупателе, который является юридическим лицом, воспользуйтесь запросом [POST campaigns/{campaignId}/orders/{orderId}/business-buyer](../../reference/order-business-information/getOrderBusinessBuyerInfo.md).  {% endnote %}  Получить данные можно, только если заказ находится в статусе &#x60;PROCESSING&#x60;, &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60;.  Если у вас настроена работа с push-компонентом, Маркет отправит уведомление о смене статуса заказа с помощью запроса [POST order/status](../../pushapi/reference/postOrderStatus.md).  |**⚙️ Лимит:** 3 000 запросов в час| |-| 
+
+### Example
+```kotlin
+// Import classes:
+//import ympa_kotlin_client.infrastructure.*
+//import ympa_kotlin_client.models.*
+
+val apiInstance = OrderDeliveryApi()
+val campaignId : kotlin.Long = 789 // kotlin.Long | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+val orderId : kotlin.Long = 789 // kotlin.Long | Идентификатор заказа.
+try {
+    val result : GetOrderBuyerInfoResponse = apiInstance.getOrderBuyerInfo(campaignId, orderId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling OrderDeliveryApi#getOrderBuyerInfo")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling OrderDeliveryApi#getOrderBuyerInfo")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **campaignId** | **kotlin.Long**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **orderId** | **kotlin.Long**| Идентификатор заказа. | |
+
+### Return type
+
+[**GetOrderBuyerInfoResponse**](GetOrderBuyerInfoResponse.md)
+
+### Authorization
+
+
+Configure OAuth:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="setOrderDeliveryDate"></a>
+# **setOrderDeliveryDate**
+> EmptyApiResponse setOrderDeliveryDate(campaignId, orderId, setOrderDeliveryDateRequest)
+
+Изменение даты доставки заказа
+
+Метод изменяет дату доставки заказа в статусе &#x60;PROCESSING&#x60; или &#x60;DELIVERY&#x60;. Для заказов с другими статусами дату доставки изменить нельзя.  |**⚙️ Лимит:** 1 000 000 запросов в час| |-| 
+
+### Example
+```kotlin
+// Import classes:
+//import ympa_kotlin_client.infrastructure.*
+//import ympa_kotlin_client.models.*
+
+val apiInstance = OrderDeliveryApi()
+val campaignId : kotlin.Long = 789 // kotlin.Long | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+val orderId : kotlin.Long = 789 // kotlin.Long | Идентификатор заказа.
+val setOrderDeliveryDateRequest : SetOrderDeliveryDateRequest =  // SetOrderDeliveryDateRequest | 
+try {
+    val result : EmptyApiResponse = apiInstance.setOrderDeliveryDate(campaignId, orderId, setOrderDeliveryDateRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling OrderDeliveryApi#setOrderDeliveryDate")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling OrderDeliveryApi#setOrderDeliveryDate")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **campaignId** | **kotlin.Long**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  | |
+| **orderId** | **kotlin.Long**| Идентификатор заказа. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **setOrderDeliveryDateRequest** | [**SetOrderDeliveryDateRequest**](SetOrderDeliveryDateRequest.md)|  | |
+
+### Return type
+
+[**EmptyApiResponse**](EmptyApiResponse.md)
+
+### Authorization
+
+
+Configure OAuth:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="setOrderDeliveryTrackCode"></a>
+# **setOrderDeliveryTrackCode**
+> EmptyApiResponse setOrderDeliveryTrackCode(campaignId, orderId, setOrderDeliveryTrackCodeRequest)
+
+Передача трек‑номера посылки
+
+{% note warning \&quot;Этот запрос только для DBS\&quot; %}  Вы можете использовать запрос, чтобы повысить лояльность покупателей. Если они могут узнать, на каком этапе доставки находятся их заказы, доверие покупателей к вашему магазину может возрасти.  {% endnote %}  Передает Маркету трек‑номер, по которому покупатель может отследить посылку со своим заказом через службу доставки.  Передать трек‑номер можно, только если заказ находится в статусе &#x60;PROCESSING&#x60;, &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60;.  |**⚙️ Лимит:** 1 000 000 запросов в час| |-| 
+
+### Example
+```kotlin
+// Import classes:
+//import ympa_kotlin_client.infrastructure.*
+//import ympa_kotlin_client.models.*
+
+val apiInstance = OrderDeliveryApi()
+val campaignId : kotlin.Long = 789 // kotlin.Long | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+val orderId : kotlin.Long = 789 // kotlin.Long | Идентификатор заказа.
+val setOrderDeliveryTrackCodeRequest : SetOrderDeliveryTrackCodeRequest =  // SetOrderDeliveryTrackCodeRequest | 
+try {
+    val result : EmptyApiResponse = apiInstance.setOrderDeliveryTrackCode(campaignId, orderId, setOrderDeliveryTrackCodeRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling OrderDeliveryApi#setOrderDeliveryTrackCode")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling OrderDeliveryApi#setOrderDeliveryTrackCode")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **campaignId** | **kotlin.Long**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  | |
+| **orderId** | **kotlin.Long**| Идентификатор заказа. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **setOrderDeliveryTrackCodeRequest** | [**SetOrderDeliveryTrackCodeRequest**](SetOrderDeliveryTrackCodeRequest.md)|  | |
+
+### Return type
+
+[**EmptyApiResponse**](EmptyApiResponse.md)
+
+### Authorization
+
+
+Configure OAuth:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="updateOrderStorageLimit"></a>
+# **updateOrderStorageLimit**
+> EmptyApiResponse updateOrderStorageLimit(campaignId, orderId, updateOrderStorageLimitRequest)
+
+Продление срока хранения заказа
+
+Продлевает срок хранения заказа в пункте выдачи продавца.  Заказ должен быть в статусе &#x60;PICKUP&#x60;. Продлить срок можно только один раз, не больше чем на 30 дней.  Новый срок хранения можно получить в параметре &#x60;outletStorageLimitDate&#x60; запроса [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md).  |**⚙️ Лимит:** 1 000 000 запросов в час| |-| 
+
+### Example
+```kotlin
+// Import classes:
+//import ympa_kotlin_client.infrastructure.*
+//import ympa_kotlin_client.models.*
+
+val apiInstance = OrderDeliveryApi()
+val campaignId : kotlin.Long = 789 // kotlin.Long | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+val orderId : kotlin.Long = 789 // kotlin.Long | Идентификатор заказа.
+val updateOrderStorageLimitRequest : UpdateOrderStorageLimitRequest =  // UpdateOrderStorageLimitRequest | 
+try {
+    val result : EmptyApiResponse = apiInstance.updateOrderStorageLimit(campaignId, orderId, updateOrderStorageLimitRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling OrderDeliveryApi#updateOrderStorageLimit")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling OrderDeliveryApi#updateOrderStorageLimit")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **campaignId** | **kotlin.Long**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  | |
+| **orderId** | **kotlin.Long**| Идентификатор заказа. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateOrderStorageLimitRequest** | [**UpdateOrderStorageLimitRequest**](UpdateOrderStorageLimitRequest.md)|  | |
+
+### Return type
+
+[**EmptyApiResponse**](EmptyApiResponse.md)
+
+### Authorization
+
+
+Configure OAuth:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="verifyOrderEac"></a>
+# **verifyOrderEac**
+> VerifyOrderEacResponse verifyOrderEac(campaignId, orderId, verifyOrderEacRequest)
+
+Передача кода подтверждения
+
+Отправляет Маркету код подтверждения для его проверки.  Код подтверждает передачу заказа или невыкупа:  * курьеру — курьер должен назвать магазину код; * магазину — магазин называет код курьеру.  Если магазин получает невыкупленный заказ, то ему нужно назвать курьеру код из кабинета или приложения.  Если у магазина настроена работа с кодами подтверждения, в запросах [POST order/status](../../pushapi/reference/postOrderStatus.md), [PUT campaigns/{campaignId}/orders/{orderId}/status](../../reference/orders/updateOrderStatus.md), [GET campaigns/{campaignId}/orders](../../reference/orders/getOrders.md), [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) в параметре &#x60;delivery&#x60;, вложенном в &#x60;order&#x60; будет возвращаться параметр &#x60;eacType&#x60; с типом &#x60;Enum&#x60; — тип кода подтверждения для передачи заказа.  Возможные значения: &#x60;MERCHANT_TO_COURIER&#x60; — магазин называет код курьеру, &#x60;COURIER_TO_MERCHANT&#x60; — курьер называет код магазину.  Параметр &#x60;eacType&#x60; возвращается при статусах заказа &#x60;COURIER_FOUND&#x60;, &#x60;COURIER_ARRIVED_TO_SENDER&#x60; и &#x60;DELIVERY_SERVICE_UNDELIVERED&#x60;. Если заказ в других статусах, параметр может отсутствовать.  |**⚙️ Лимит:** 1 000 000 запросов в час| |-| 
+
+### Example
+```kotlin
+// Import classes:
+//import ympa_kotlin_client.infrastructure.*
+//import ympa_kotlin_client.models.*
+
+val apiInstance = OrderDeliveryApi()
+val campaignId : kotlin.Long = 789 // kotlin.Long | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+val orderId : kotlin.Long = 789 // kotlin.Long | Идентификатор заказа.
+val verifyOrderEacRequest : VerifyOrderEacRequest =  // VerifyOrderEacRequest | 
+try {
+    val result : VerifyOrderEacResponse = apiInstance.verifyOrderEac(campaignId, orderId, verifyOrderEacRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling OrderDeliveryApi#verifyOrderEac")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling OrderDeliveryApi#verifyOrderEac")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **campaignId** | **kotlin.Long**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  | |
+| **orderId** | **kotlin.Long**| Идентификатор заказа. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **verifyOrderEacRequest** | [**VerifyOrderEacRequest**](VerifyOrderEacRequest.md)|  | |
+
+### Return type
+
+[**VerifyOrderEacResponse**](VerifyOrderEacResponse.md)
+
+### Authorization
+
+
+Configure OAuth:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
