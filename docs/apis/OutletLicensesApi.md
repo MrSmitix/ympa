@@ -1,0 +1,121 @@
+# OutletLicensesApi
+
+All URIs are relative to *https://api.partner.market.yandex.ru*
+
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteOutletLicenses**](OutletLicensesApi.md#deleteOutletLicenses) | **DELETE** /campaigns/{campaignId}/outlets/licenses | Удаление лицензий для точек продаж |
+| [**getOutletLicenses**](OutletLicensesApi.md#getOutletLicenses) | **GET** /campaigns/{campaignId}/outlets/licenses | Информация о лицензиях для точек продаж |
+| [**updateOutletLicenses**](OutletLicensesApi.md#updateOutletLicenses) | **POST** /campaigns/{campaignId}/outlets/licenses | Создание и изменение лицензий для точек продаж |
+
+
+## Creating OutletLicensesApi
+
+To initiate an instance of `OutletLicensesApi`, you can use micronaut's `ApplicationContext`:
+```java
+/* imports
+import io.micronaut.runtime.Micronaut;
+import io.micronaut.context.ApplicationContext;
+import org.openapitools.api.OutletLicensesApi;
+*/
+
+ApplicationContext context = Micronaut.run(/* ... */);
+PetApi apiInstance = context.getBean(OutletLicensesApi.class);
+```
+
+Or the `@Inject` annotation:
+```java
+@Singleton
+class MyClass {
+    @Inject
+    OutletLicensesApi outletLicensesApi;
+
+    /* ... use the injected variable */
+}
+```
+Note that the class needs to be annotated with one of Micronaut's [scope annotations](https://docs.micronaut.io/latest/guide/#scopes) like `Singleton` in order to be processed.
+
+More information can be found inside [Inversion of Control guide section](https://docs.micronaut.io/latest/guide/#ioc).
+
+<a id="deleteOutletLicenses"></a>
+# **deleteOutletLicenses**
+```java
+Mono<EmptyApiResponse> OutletLicensesApi.deleteOutletLicenses(campaignIdids)
+```
+
+Удаление лицензий для точек продаж
+
+Удаляет информацию о лицензиях для точек продаж.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| 
+
+### Parameters
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **campaignId** | `Long`| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  | |
+| **ids** | [**Set&lt;Long&gt;**](Long.md)| Список идентификаторов лицензий. | [optional parameter] |
+
+
+### Return type
+[**EmptyApiResponse**](EmptyApiResponse.md)
+
+### Authorization
+* **[OAuth](auth.md#OAuth)**, scopes: `market:partner-api`
+
+### HTTP request headers
+ - **Content-Type**: Not defined
+ - **Accept**: `application/json`
+
+<a id="getOutletLicenses"></a>
+# **getOutletLicenses**
+```java
+Mono<GetOutletLicensesResponse> OutletLicensesApi.getOutletLicenses(campaignIdoutletIdsids)
+```
+
+Информация о лицензиях для точек продаж
+
+Возвращает информацию о лицензиях для точек продаж.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| 
+
+### Parameters
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **campaignId** | `Long`| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  | |
+| **outletIds** | [**Set&lt;Long&gt;**](Long.md)| Список идентификаторов точек продаж, для которых нужно получить информацию о лицензиях. Идентификаторы указываются через запятую.  В запросе должен быть либо параметр &#x60;outletIds&#x60;, либо параметр &#x60;ids&#x60;. Запрос с обоими параметрами или без них приведет к ошибке.  | [optional parameter] |
+| **ids** | [**Set&lt;Long&gt;**](Long.md)| Список идентификаторов лицензий. | [optional parameter] |
+
+
+### Return type
+[**GetOutletLicensesResponse**](GetOutletLicensesResponse.md)
+
+### Authorization
+* **[OAuth](auth.md#OAuth)**, scopes: `market:partner-api`
+
+### HTTP request headers
+ - **Content-Type**: Not defined
+ - **Accept**: `application/json`
+
+<a id="updateOutletLicenses"></a>
+# **updateOutletLicenses**
+```java
+Mono<EmptyApiResponse> OutletLicensesApi.updateOutletLicenses(campaignIdupdateOutletLicenseRequest)
+```
+
+Создание и изменение лицензий для точек продаж
+
+Передает информацию о новых и существующих лицензиях для точек продаж. Поддерживаются только лицензии на розничную продажу алкоголя.  Чтобы размещать алкогольную продукцию на Маркете, надо также прислать гарантийное письмо (если вы еще не делали этого раньше) и правильно оформить предложения в прайс-листе. Далее информация о лицензиях проходит проверку.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| 
+
+### Parameters
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **campaignId** | `Long`| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  | |
+| **updateOutletLicenseRequest** | [**UpdateOutletLicenseRequest**](UpdateOutletLicenseRequest.md)|  | |
+
+
+### Return type
+[**EmptyApiResponse**](EmptyApiResponse.md)
+
+### Authorization
+* **[OAuth](auth.md#OAuth)**, scopes: `market:partner-api`
+
+### HTTP request headers
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
+

@@ -1,0 +1,52 @@
+package org.openapitools.api;
+
+import org.openapitools.model.ApiClientDataErrorResponse;
+import org.openapitools.model.ApiForbiddenErrorResponse;
+import org.openapitools.model.ApiLimitErrorResponse;
+import org.openapitools.model.ApiNotFoundErrorResponse;
+import org.openapitools.model.ApiServerErrorResponse;
+import org.openapitools.model.ApiUnauthorizedErrorResponse;
+import org.openapitools.model.CalculateTariffsRequest;
+import org.openapitools.model.CalculateTariffsResponse;
+import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import jakarta.inject.Inject;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.HashSet;
+
+/**
+ * API tests for TariffsApi
+ */
+@MicronautTest
+public class TariffsApiTest {
+
+    @Inject
+    TariffsApi api;
+
+    
+    /**
+     * Калькулятор стоимости услуг
+     *
+     * Рассчитывает стоимость услуг Маркета для товаров с заданными параметрами. Порядок товаров в запросе и ответе сохраняется, чтобы определить, для какого товара рассчитана стоимость услуги.  Обратите внимание: калькулятор осуществляет примерные расчеты. Финальная стоимость для каждого заказа зависит от предоставленных услуг.  В запросе можно указать либо параметр &#x60;campaignId&#x60;, либо &#x60;sellingProgram&#x60;. Совместное использование параметров приведет к ошибке.  |**⚙️ Лимит:** 100 запросов в минуту| |-| 
+     */
+    @Test
+    @Disabled("Not Implemented")
+    public void calculateTariffsTest() {
+        // given
+        CalculateTariffsRequest calculateTariffsRequest = new CalculateTariffsRequest(null, Arrays.asList());
+
+        // when
+        CalculateTariffsResponse body = api.calculateTariffs(calculateTariffsRequest).block();
+
+        // then
+        // TODO implement the calculateTariffsTest()
+    }
+
+    
+}
