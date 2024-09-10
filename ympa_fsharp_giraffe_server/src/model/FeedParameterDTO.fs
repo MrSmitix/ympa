@@ -1,0 +1,16 @@
+namespace ympa_fsharp_giraffe_server.Model
+
+open System
+open System.Collections.Generic
+
+module FeedParameterDTO =
+
+  //#region FeedParameterDTO
+
+
+  type FeedParameterDTO = {
+    Deleted : bool;
+    Name : string;
+    Values : int[];
+  }
+  //#endregion
