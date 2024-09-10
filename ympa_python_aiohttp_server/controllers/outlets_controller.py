@@ -1,0 +1,95 @@
+from typing import List, Dict
+from aiohttp import web
+
+from ympa_python_aiohttp_server.models.api_client_data_error_response import ApiClientDataErrorResponse
+from ympa_python_aiohttp_server.models.api_forbidden_error_response import ApiForbiddenErrorResponse
+from ympa_python_aiohttp_server.models.api_limit_error_response import ApiLimitErrorResponse
+from ympa_python_aiohttp_server.models.api_not_found_error_response import ApiNotFoundErrorResponse
+from ympa_python_aiohttp_server.models.api_server_error_response import ApiServerErrorResponse
+from ympa_python_aiohttp_server.models.api_unauthorized_error_response import ApiUnauthorizedErrorResponse
+from ympa_python_aiohttp_server.models.change_outlet_request import ChangeOutletRequest
+from ympa_python_aiohttp_server.models.create_outlet_response import CreateOutletResponse
+from ympa_python_aiohttp_server.models.empty_api_response import EmptyApiResponse
+from ympa_python_aiohttp_server.models.get_outlet_response import GetOutletResponse
+from ympa_python_aiohttp_server.models.get_outlets_response import GetOutletsResponse
+from ympa_python_aiohttp_server import util
+
+
+async def create_outlet(request: web.Request, campaign_id, body) -> web.Response:
+    """Создание точки продаж
+
+    Создает точку продаж магазина на Маркете.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| 
+
+    :param campaign_id: Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+    :type campaign_id: int
+    :param body: 
+    :type body: dict | bytes
+
+    """
+    body = ChangeOutletRequest.from_dict(body)
+    return web.Response(status=200)
+
+
+async def delete_outlet(request: web.Request, campaign_id, outlet_id) -> web.Response:
+    """Удаление точки продаж
+
+    Удаляет точку продаж магазина на Маркете.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| 
+
+    :param campaign_id: Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+    :type campaign_id: int
+    :param outlet_id: Идентификатор точки продаж.
+    :type outlet_id: int
+
+    """
+    return web.Response(status=200)
+
+
+async def get_outlet(request: web.Request, campaign_id, outlet_id) -> web.Response:
+    """Информация об одной точке продаж
+
+    Возвращает информацию о точках продаж магазина.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| 
+
+    :param campaign_id: Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+    :type campaign_id: int
+    :param outlet_id: Идентификатор точки продаж.
+    :type outlet_id: int
+
+    """
+    return web.Response(status=200)
+
+
+async def get_outlets(request: web.Request, campaign_id, page_token=None, region_id=None, shop_outlet_code=None, region_id2=None) -> web.Response:
+    """Информация о нескольких точках продаж
+
+    Возвращает список точек продаж магазина.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| 
+
+    :param campaign_id: Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+    :type campaign_id: int
+    :param page_token: Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. 
+    :type page_token: str
+    :param region_id: Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET regions](../../reference/regions/searchRegionsByName.md). 
+    :type region_id: int
+    :param shop_outlet_code: Идентификатор точки продаж, присвоенный магазином.
+    :type shop_outlet_code: str
+    :param region_id2: {% note warning \&quot;\&quot; %}  Этот параметр устарел. Для указания региона используйте &#x60;region_id&#x60;.  {% endnote %} 
+    :type region_id2: int
+
+    """
+    return web.Response(status=200)
+
+
+async def update_outlet(request: web.Request, campaign_id, outlet_id, body) -> web.Response:
+    """Изменение информации о точке продаж
+
+    Изменяет информацию о точке продаж магазина на Маркете.  В течение суток этим и другими запросами о точках продаж, кроме запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md), можно получить и изменить информацию об определенном суммарном количестве точек продаж. Оно зависит от количества точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-| 
+
+    :param campaign_id: Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) 
+    :type campaign_id: int
+    :param outlet_id: Идентификатор точки продаж.
+    :type outlet_id: int
+    :param body: 
+    :type body: dict | bytes
+
+    """
+    body = ChangeOutletRequest.from_dict(body)
+    return web.Response(status=200)
