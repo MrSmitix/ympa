@@ -1,0 +1,36 @@
+package org.openapitools.model;
+
+import java.util.Objects;
+import java.util.ArrayList;
+import io.swagger.annotations.ApiModel;
+import com.fasterxml.jackson.annotation.JsonValue;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+public enum TariffType {
+  AGENCY_COMMISSION,
+  PAYMENT_TRANSFER,
+  STORAGE,
+  WITHDRAW,
+  SURPLUS,
+  FEE,
+  DELIVERY_TO_CUSTOMER,
+  CROSSREGIONAL_DELIVERY,
+  CROSSREGIONAL_DELIVERY_RETURN,
+  DISPOSAL,
+  SORTING_CENTER_STORAGE,
+  EXPRESS_DELIVERY,
+  FF_XDOC_SUPPLY_BOX,
+  FF_XDOC_SUPPLY_PALLET,
+  SORTING,
+  MIDDLE_MILE,
+  RETURN_PROCESSING,
+  EXPRESS_CANCELLED_BY_PARTNER,
+  DELIVERY_TO_CUSTOMER_RETURN,
+  CROSSBORDER_DELIVERY,
+  INTAKE_SORTING_BULKY_CARGO,
+  INTAKE_SORTING_SMALL_GOODS,
+  INTAKE_SORTING_DAILY,
+  FF_STORAGE_BILLING,
+  CANCELLED_ORDER_FEE_QI,
+  LATE_ORDER_EXECUTION_FEE_QI;
+}
