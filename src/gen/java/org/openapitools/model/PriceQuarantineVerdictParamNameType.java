@@ -1,0 +1,45 @@
+package org.openapitools.model;
+
+import io.swagger.annotations.ApiModel;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+/**
+ * Имя параметра причины скрытия товара по цене.  * &#x60;CURRENT_PRICE&#x60; — цена, из-за которой товар попал в карантин. * &#x60;LAST_VALID_PRICE&#x60; — последняя цена до попадания в карантин (только для карантина типа &#x60;PRICE_CHANGE&#x60;). * &#x60;MIN_PRICE&#x60; — порог попадания в карантин (только для карантина типов &#x60;LOW_PRICE&#x60; и &#x60;LOW_PRICE_PROMO&#x60;). * &#x60;CURRENCY&#x60; — валюта. 
+ **/
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public enum PriceQuarantineVerdictParamNameType {
+
+    @JsonProperty("CURRENT_PRICE") CURRENT_PRICE(String.valueOf("CURRENT_PRICE")), @JsonProperty("LAST_VALID_PRICE") LAST_VALID_PRICE(String.valueOf("LAST_VALID_PRICE")), @JsonProperty("MIN_PRICE") MIN_PRICE(String.valueOf("MIN_PRICE")), @JsonProperty("CURRENCY") CURRENCY(String.valueOf("CURRENCY"));
+
+
+    private String value;
+
+    PriceQuarantineVerdictParamNameType(String v) {
+        value = v;
+    }
+
+    public String value() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
+
+    public static PriceQuarantineVerdictParamNameType fromValue(String value) {
+        for (PriceQuarantineVerdictParamNameType b : PriceQuarantineVerdictParamNameType.values()) {
+            if (b.value.equals(value)) {
+                return b;
+            }
+        }
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+}
+
+
+
