@@ -1,0 +1,3403 @@
+@startuml
+
+title Партнерский API Маркета Schemas Diagram
+
+entity AcceptOrderCancellationRequest {
+    * accepted: Boolean
+    reason: OrderCancellationReasonType
+}
+
+entity AddHiddenOffersRequest {
+    * hiddenOffers: List<HiddenOfferDTO>
+}
+
+entity AddOffersToArchiveDTO {
+    notArchivedOffers: List<AddOffersToArchiveErrorDTO>
+}
+
+entity AddOffersToArchiveErrorDTO {
+    * offerId: String
+    * error: AddOffersToArchiveErrorType
+}
+
+entity AddOffersToArchiveErrorType {
+}
+
+entity AddOffersToArchiveRequest {
+    * offerIds: List<String>
+}
+
+entity AddOffersToArchiveResponse {
+}
+
+entity AffectedOrderQualityRatingComponentType {
+}
+
+entity AgeDTO {
+    * value: BigDecimal
+    * ageUnit: AgeUnitType
+}
+
+entity AgeUnitType {
+}
+
+entity ApiClientDataErrorResponse {
+}
+
+entity ApiErrorDTO {
+    * code: String
+    message: String
+}
+
+entity ApiErrorResponse {
+}
+
+entity ApiForbiddenErrorResponse {
+}
+
+entity ApiLimitErrorResponse {
+}
+
+entity ApiLockedErrorResponse {
+}
+
+entity ApiNotFoundErrorResponse {
+}
+
+entity ApiResponse {
+    status: ApiResponseStatusType
+}
+
+entity ApiResponseStatusType {
+}
+
+entity ApiServerErrorResponse {
+}
+
+entity ApiUnauthorizedErrorResponse {
+}
+
+entity BaseCampaignOfferDTO {
+    * offerId: String
+    quantum: QuantumDTO
+    available: Boolean
+}
+
+entity BaseOfferDTO {
+    * offerId: String
+    name: String
+    marketCategoryId: Long
+    category: String
+    pictures: List<String>
+    videos: List<String>
+    manuals: List<OfferManualDTO>
+    vendor: String
+    barcodes: List<String>
+    description: String
+    manufacturerCountries: List<String>
+    weightDimensions: OfferWeightDimensionsDTO
+    vendorCode: String
+    tags: List<String>
+    shelfLife: TimePeriodDTO
+    lifeTime: TimePeriodDTO
+    guaranteePeriod: TimePeriodDTO
+    customsCommodityCode: String
+    certificates: List<String>
+    boxCount: Integer
+    condition: OfferConditionDTO
+    type: OfferType
+    downloadable: Boolean
+    adult: Boolean
+    age: AgeDTO
+    params: List<OfferParamDTO>
+}
+
+entity BasePriceDTO {
+    * value: BigDecimal
+    * currencyId: CurrencyType
+}
+
+entity BaseShipmentDTO {
+    id: Long
+    planIntervalFrom: Date
+    planIntervalTo: Date
+    shipmentType: ShipmentType
+    warehouse: PartnerShipmentWarehouseDTO
+    warehouseTo: PartnerShipmentWarehouseDTO
+    externalId: String
+    deliveryService: DeliveryServiceDTO
+    palletsCount: PalletsCountDTO
+    * orderIds: List<Long>
+    draftCount: Integer
+    plannedCount: Integer
+    factCount: Integer
+}
+
+entity BidRecommendationItemDTO {
+    * bid: Integer
+    * showPercent: Long
+}
+
+entity BriefOrderItemDTO {
+    id: Long
+    vat: OrderVatType
+    count: Integer
+    price: BigDecimal
+    offerName: String
+    offerId: String
+    instances: List<OrderItemInstanceDTO>
+}
+
+entity BriefOrderItemInstanceDTO {
+    cis: String
+    uin: String
+    rnpt: String
+    gtd: String
+}
+
+entity BusinessDTO {
+    id: Long
+    name: String
+}
+
+entity BusinessSettingsDTO {
+    onlyDefaultPrice: Boolean
+    currency: CurrencyType
+}
+
+entity CalculateTariffsOfferDTO {
+    * categoryId: Long
+    * price: BigDecimal
+    * length: BigDecimal
+    * width: BigDecimal
+    * height: BigDecimal
+    * weight: BigDecimal
+    quantity: Integer
+}
+
+entity CalculateTariffsOfferInfoDTO {
+    * offer: CalculateTariffsOfferDTO
+    * tariffs: List<CalculatedTariffDTO>
+}
+
+entity CalculateTariffsParametersDTO {
+    campaignId: Long
+    sellingProgram: SellingProgramType
+    frequency: PaymentFrequencyType
+}
+
+entity CalculateTariffsRequest {
+    * parameters: CalculateTariffsParametersDTO
+    * offers: List<CalculateTariffsOfferDTO>
+}
+
+entity CalculateTariffsResponse {
+}
+
+entity CalculateTariffsResponseDTO {
+    * offers: List<CalculateTariffsOfferInfoDTO>
+}
+
+entity CalculatedTariffDTO {
+    * type: CalculatedTariffType
+    amount: BigDecimal
+    * parameters: List<TariffParameterDTO>
+}
+
+entity CalculatedTariffType {
+}
+
+entity CampaignDTO {
+    domain: String
+    id: Long
+    clientId: Long
+    business: BusinessDTO
+    placementType: PlacementType
+}
+
+entity CampaignQualityRatingDTO {
+    * campaignId: Long
+    * ratings: List<QualityRatingDTO>
+}
+
+entity CampaignSettingsDTO {
+    countryRegion: Long
+    shopName: String
+    showInContext: Boolean
+    showInPremium: Boolean
+    useOpenStat: Boolean
+    localRegion: CampaignSettingsLocalRegionDTO
+}
+
+entity CampaignSettingsDeliveryDTO {
+    schedule: CampaignSettingsScheduleDTO
+}
+
+entity CampaignSettingsLocalRegionDTO {
+    id: Long
+    name: String
+    type: RegionType
+    deliveryOptionsSource: CampaignSettingsScheduleSourceType
+    delivery: CampaignSettingsDeliveryDTO
+}
+
+entity CampaignSettingsScheduleDTO {
+    availableOnHolidays: Boolean
+    * customHolidays: List<String>
+    * customWorkingDays: List<String>
+    period: CampaignSettingsTimePeriodDTO
+    * totalHolidays: List<String>
+    * weeklyHolidays: List<Integer>
+}
+
+entity CampaignSettingsScheduleSourceType {
+}
+
+entity CampaignSettingsTimePeriodDTO {
+    fromDate: String
+    toDate: String
+}
+
+entity CampaignsQualityRatingDTO {
+    * campaignRatings: List<CampaignQualityRatingDTO>
+}
+
+entity CategoryContentParametersDTO {
+    * categoryId: Integer
+    parameters: List<CategoryParameterDTO>
+}
+
+entity CategoryDTO {
+    * id: Long
+    * name: String
+    children: List<CategoryDTO>
+}
+
+entity CategoryErrorDTO {
+    categoryId: Long
+    type: CategoryErrorType
+}
+
+entity CategoryErrorType {
+}
+
+entity CategoryParameterDTO {
+    * id: Long
+    name: String
+    * type: ParameterType
+    unit: CategoryParameterUnitDTO
+    description: String
+    recommendationTypes: List<OfferCardRecommendationType>
+    * required: Boolean
+    * filtering: Boolean
+    * distinctive: Boolean
+    * multivalue: Boolean
+    * allowCustomValues: Boolean
+    values: List<ParameterValueOptionDTO>
+    constraints: ParameterValueConstraintsDTO
+    valueRestrictions: List<ValueRestrictionDTO>
+}
+
+entity CategoryParameterUnitDTO {
+    * defaultUnitId: Long
+    * units: List<UnitDTO>
+}
+
+entity ChangeOutletRequest {
+}
+
+entity ChannelType {
+}
+
+entity ChatMessageDTO {
+    * messageId: Long
+    * createdAt: Date
+    * sender: ChatMessageSenderType
+    message: String
+    payload: List<ChatMessagePayloadDTO>
+}
+
+entity ChatMessagePayloadDTO {
+    * name: String
+    * url: String
+    * size: Integer
+}
+
+entity ChatMessageSenderType {
+}
+
+entity ChatMessagesResultDTO {
+    * orderId: Long
+    * messages: List<ChatMessageDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity ChatStatusType {
+}
+
+entity ChatType {
+}
+
+entity ConfirmPricesRequest {
+    * offerIds: List<String>
+}
+
+entity ConfirmShipmentRequest {
+    externalShipmentId: String
+}
+
+entity CreateChatRequest {
+    * orderId: Long
+}
+
+entity CreateChatResponse {
+}
+
+entity CreateChatResultDTO {
+    * chatId: Long
+}
+
+entity CreateOutletResponse {
+}
+
+entity CurrencyType {
+}
+
+entity DayOfWeekType {
+}
+
+entity DeleteCampaignOffersDTO {
+    notDeletedOfferIds: List<String>
+}
+
+entity DeleteCampaignOffersRequest {
+    * offerIds: List<String>
+}
+
+entity DeleteCampaignOffersResponse {
+}
+
+entity DeleteGoodsFeedbackCommentRequest {
+    * id: Long
+}
+
+entity DeleteHiddenOffersRequest {
+    * hiddenOffers: List<HiddenOfferDTO>
+}
+
+entity DeleteOffersDTO {
+    notDeletedOfferIds: List<String>
+}
+
+entity DeleteOffersFromArchiveDTO {
+    notUnarchivedOfferIds: List<String>
+}
+
+entity DeleteOffersFromArchiveRequest {
+    * offerIds: List<String>
+}
+
+entity DeleteOffersFromArchiveResponse {
+}
+
+entity DeleteOffersRequest {
+    * offerIds: List<String>
+}
+
+entity DeleteOffersResponse {
+}
+
+entity DeletePromoOffersRequest {
+    * promoId: String
+    deleteAllOffers: Boolean
+    offerIds: List<String>
+}
+
+entity DeletePromoOffersResponse {
+}
+
+entity DeletePromoOffersResultDTO {
+    rejectedOffers: List<RejectedPromoOfferDeleteDTO>
+}
+
+entity DeliveryServiceDTO {
+    id: Long
+    name: String
+}
+
+entity DeliveryServiceInfoDTO {
+    * id: Long
+    * name: String
+}
+
+entity DeliveryServicesDTO {
+    * deliveryService: List<DeliveryServiceInfoDTO>
+}
+
+entity DocumentDTO {
+    status: OrderDocumentStatusType
+    number: String
+    date: Date
+}
+
+entity EacVerificationResultDTO {
+    verificationResult: EacVerificationStatusType
+    attemptsLeft: Integer
+}
+
+entity EacVerificationStatusType {
+}
+
+entity EmptyApiResponse {
+}
+
+entity EnrichedMappingsOfferDTO {
+}
+
+entity EnrichedModelDTO {
+}
+
+entity EnrichedModelsDTO {
+    * models: List<EnrichedModelDTO>
+}
+
+entity EnrichedOrderBoxLayoutDTO {
+}
+
+entity ExtensionShipmentDTO {
+    currentStatus: ShipmentStatusChangeDTO
+    * availableActions: List<ShipmentActionType>
+}
+
+entity FeedContentDTO {
+    rejectedOffersCount: Long
+    status: FeedStatusType
+    totalOffersCount: Long
+    error: FeedContentErrorDTO
+}
+
+entity FeedContentErrorDTO {
+    type: FeedContentErrorType
+}
+
+entity FeedContentErrorType {
+}
+
+entity FeedDTO {
+    id: Long
+    login: String
+    name: String
+    password: String
+    uploadDate: Date
+    url: String
+    content: FeedContentDTO
+    download: FeedDownloadDTO
+    placement: FeedPlacementDTO
+    publication: FeedPublicationDTO
+}
+
+entity FeedDownloadDTO {
+    status: FeedStatusType
+    error: FeedDownloadErrorDTO
+}
+
+entity FeedDownloadErrorDTO {
+    httpStatusCode: Integer
+    type: FeedDownloadErrorType
+    description: String
+}
+
+entity FeedDownloadErrorType {
+}
+
+entity FeedIndexLogsErrorDTO {
+    httpStatusCode: Integer
+    type: FeedIndexLogsErrorType
+    description: String
+}
+
+entity FeedIndexLogsErrorType {
+}
+
+entity FeedIndexLogsFeedDTO {
+    id: Long
+}
+
+entity FeedIndexLogsIndexType {
+}
+
+entity FeedIndexLogsOffersDTO {
+    rejectedCount: Long
+    totalCount: Long
+}
+
+entity FeedIndexLogsRecordDTO {
+    downloadTime: Date
+    fileTime: Date
+    generationId: Long
+    indexType: FeedIndexLogsIndexType
+    publishedTime: Date
+    status: FeedIndexLogsStatusType
+    error: FeedIndexLogsErrorDTO
+    offers: FeedIndexLogsOffersDTO
+}
+
+entity FeedIndexLogsResultDTO {
+    feed: FeedIndexLogsFeedDTO
+    * indexLogRecords: List<FeedIndexLogsRecordDTO>
+    total: Long
+}
+
+entity FeedIndexLogsStatusType {
+}
+
+entity FeedParameterDTO {
+    deleted: Boolean
+    * name: String
+    values: List<Integer>
+}
+
+entity FeedPlacementDTO {
+    status: FeedStatusType
+    totalOffersCount: Integer
+}
+
+entity FeedPublicationDTO {
+    status: FeedStatusType
+    full: FeedPublicationFullDTO
+    priceAndStockUpdate: FeedPublicationPriceAndStockUpdateDTO
+}
+
+entity FeedPublicationFullDTO {
+    fileTime: Date
+    publishedTime: Date
+}
+
+entity FeedPublicationPriceAndStockUpdateDTO {
+    fileTime: Date
+    publishedTime: Date
+}
+
+entity FeedStatusType {
+}
+
+entity FeedbackAuthorDTO {
+    name: String
+    region: RegionDTO
+}
+
+entity FeedbackCommentAuthorDTO {
+    type: FeedbackCommentAuthorType
+    name: String
+}
+
+entity FeedbackCommentAuthorType {
+}
+
+entity FeedbackCommentDTO {
+    id: Long
+    parentId: Long
+    body: String
+    createdAt: Date
+    updatedAt: Date
+    author: FeedbackCommentAuthorDTO
+    children: List<FeedbackCommentDTO>
+}
+
+entity FeedbackDTO {
+    id: Long
+    createdAt: Date
+    text: String
+    state: FeedbackStateType
+    author: FeedbackAuthorDTO
+    pro: String
+    contra: String
+    * comments: List<FeedbackCommentDTO>
+    shop: FeedbackShopDTO
+    resolved: Boolean
+    verified: Boolean
+    recommend: Boolean
+    grades: FeedbackGradesDTO
+    order: FeedbackOrderDTO
+}
+
+entity FeedbackDeliveryType {
+}
+
+entity FeedbackFactorDTO {
+    id: Long
+    title: String
+    description: String
+    value: Integer
+}
+
+entity FeedbackGradesDTO {
+    average: BigDecimal
+    agreeCount: Long
+    rejectCount: Long
+    * factors: List<FeedbackFactorDTO>
+}
+
+entity FeedbackListDTO {
+    paging: ScrollingPagerDTO
+    * feedbackList: List<FeedbackDTO>
+}
+
+entity FeedbackOrderDTO {
+    shopOrderId: String
+    delivery: FeedbackDeliveryType
+}
+
+entity FeedbackReactionStatusType {
+}
+
+entity FeedbackShopDTO {
+    name: String
+}
+
+entity FeedbackStateType {
+}
+
+entity FieldStateType {
+}
+
+entity FlippingPagerDTO {
+    total: Integer
+    from: Integer
+    to: Integer
+    currentPage: Integer
+    pagesCount: Integer
+    pageSize: Integer
+}
+
+entity ForwardScrollingPagerDTO {
+    nextPageToken: String
+}
+
+entity FulfillmentWarehouseDTO {
+    * id: Long
+    * name: String
+    address: WarehouseAddressDTO
+}
+
+entity FulfillmentWarehousesDTO {
+    * warehouses: List<FulfillmentWarehouseDTO>
+}
+
+entity FullOutletDTO {
+}
+
+entity FullOutletLicenseDTO {
+}
+
+entity GenerateBoostConsolidatedRequest {
+    * businessId: Long
+    * dateFrom: Date
+    * dateTo: Date
+}
+
+entity GenerateCompetitorsPositionReportRequest {
+    * businessId: Long
+    * categoryId: Long
+    * dateFrom: Date
+    * dateTo: Date
+}
+
+entity GenerateGoodsFeedbackRequest {
+    * businessId: Long
+}
+
+entity GenerateGoodsMovementReportRequest {
+    * campaignId: Long
+    * dateFrom: Date
+    * dateTo: Date
+    shopSku: String
+}
+
+entity GenerateGoodsRealizationReportRequest {
+    * campaignId: Long
+    * year: Integer
+    * month: Integer
+}
+
+entity GenerateGoodsTurnoverRequest {
+    * campaignId: Long
+    date: Date
+}
+
+entity GenerateMassOrderLabelsRequest {
+    * businessId: Long
+    * orderIds: List<Long>
+}
+
+entity GeneratePricesReportRequest {
+    businessId: Long
+    campaignId: Long
+    categoryIds: List<Long>
+    creationDateFrom: Date
+    creationDateTo: Date
+}
+
+entity GenerateReportDTO {
+    * reportId: String
+    * estimatedGenerationTime: Long
+}
+
+entity GenerateReportResponse {
+}
+
+entity GenerateShelfsStatisticsRequest {
+    * businessId: Long
+    * dateFrom: Date
+    * dateTo: Date
+    * attributionType: ShelfsStatisticsAttributionType
+}
+
+entity GenerateShipmentListDocumentReportRequest {
+    * campaignId: Long
+    shipmentId: Long
+    orderIds: List<Long>
+}
+
+entity GenerateShowsSalesReportRequest {
+    businessId: Long
+    campaignId: Long
+    * dateFrom: Date
+    * dateTo: Date
+    * grouping: ShowsSalesGroupingType
+}
+
+entity GenerateStocksOnWarehousesReportRequest {
+    * campaignId: Long
+    warehouseIds: List<Long>
+    reportDate: Date
+    categoryIds: List<Long>
+    hasStocks: Boolean
+}
+
+entity GenerateUnitedMarketplaceServicesReportRequest {
+    * businessId: Long
+    dateTimeFrom: Date
+    dateTimeTo: Date
+    dateFrom: Date
+    dateTo: Date
+    yearFrom: Integer
+    monthFrom: Integer
+    yearTo: Integer
+    monthTo: Integer
+    placementPrograms: List<PlacementType>
+    inns: List<String>
+    campaignIds: List<Long>
+}
+
+entity GenerateUnitedNettingReportRequest {
+    * businessId: Long
+    dateTimeFrom: Date
+    dateTimeTo: Date
+    dateFrom: Date
+    dateTo: Date
+    bankOrderId: Long
+    bankOrderDateTime: Date
+    placementPrograms: List<PlacementType>
+    inns: List<String>
+    campaignIds: List<Long>
+}
+
+entity GenerateUnitedOrdersRequest {
+    * businessId: Long
+    * dateFrom: Date
+    * dateTo: Date
+    campaignIds: List<Long>
+    promoId: String
+}
+
+entity GetAllOffersResponse {
+}
+
+entity GetBidsInfoRequest {
+    skus: List<String>
+}
+
+entity GetBidsInfoResponse {
+}
+
+entity GetBidsInfoResponseDTO {
+    * bids: List<SkuBidItemDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity GetBidsRecommendationsRequest {
+    * skus: List<String>
+}
+
+entity GetBidsRecommendationsResponse {
+}
+
+entity GetBidsRecommendationsResponseDTO {
+    * recommendations: List<SkuBidRecommendationItemDTO>
+}
+
+entity GetBusinessBuyerInfoResponse {
+}
+
+entity GetBusinessDocumentsInfoResponse {
+}
+
+entity GetBusinessSettingsInfoDTO {
+    info: BusinessDTO
+    settings: BusinessSettingsDTO
+}
+
+entity GetBusinessSettingsResponse {
+}
+
+entity GetCampaignLoginsResponse {
+    * logins: List<String>
+}
+
+entity GetCampaignOfferDTO {
+}
+
+entity GetCampaignOffersRequest {
+    offerIds: List<String>
+    statuses: List<OfferCampaignStatusType>
+    categoryIds: List<Integer>
+    vendorNames: List<String>
+    tags: List<String>
+}
+
+entity GetCampaignOffersResponse {
+}
+
+entity GetCampaignOffersResultDTO {
+    paging: ScrollingPagerDTO
+    * offers: List<GetCampaignOfferDTO>
+}
+
+entity GetCampaignRegionResponse {
+    region: RegionDTO
+}
+
+entity GetCampaignResponse {
+    campaign: CampaignDTO
+}
+
+entity GetCampaignSettingsResponse {
+    settings: CampaignSettingsDTO
+}
+
+entity GetCampaignsResponse {
+    * campaigns: List<CampaignDTO>
+    pager: FlippingPagerDTO
+}
+
+entity GetCategoriesMaxSaleQuantumDTO {
+    * results: List<MaxSaleQuantumDTO>
+    errors: List<CategoryErrorDTO>
+}
+
+entity GetCategoriesMaxSaleQuantumRequest {
+    * marketCategoryIds: List<Long>
+}
+
+entity GetCategoriesMaxSaleQuantumResponse {
+}
+
+entity GetCategoriesRequest {
+    language: LanguageType
+}
+
+entity GetCategoriesResponse {
+}
+
+entity GetCategoryContentParametersResponse {
+}
+
+entity GetChatHistoryRequest {
+    messageIdFrom: Long
+}
+
+entity GetChatHistoryResponse {
+}
+
+entity GetChatInfoDTO {
+    * chatId: Long
+    * orderId: Long
+    * type: ChatType
+    * status: ChatStatusType
+    * createdAt: Date
+    * updatedAt: Date
+}
+
+entity GetChatsInfoDTO {
+    * chats: List<GetChatInfoDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity GetChatsRequest {
+    orderIds: List<Long>
+    types: List<ChatType>
+    statuses: List<ChatStatusType>
+}
+
+entity GetChatsResponse {
+}
+
+entity GetDeliveryServicesResponse {
+    result: DeliveryServicesDTO
+}
+
+entity GetFeedIndexLogsResponse {
+}
+
+entity GetFeedResponse {
+    feed: FeedDTO
+}
+
+entity GetFeedbackListResponse {
+}
+
+entity GetFeedsResponse {
+    * feeds: List<FeedDTO>
+}
+
+entity GetFulfillmentWarehousesResponse {
+}
+
+entity GetGoodsFeedbackCommentsRequest {
+    * feedbackId: Long
+}
+
+entity GetGoodsFeedbackCommentsResponse {
+}
+
+entity GetGoodsFeedbackRequest {
+    dateTimeFrom: Date
+    dateTimeTo: Date
+    reactionStatus: FeedbackReactionStatusType
+    ratingValues: List<Integer>
+    modelIds: List<Long>
+    paid: Boolean
+}
+
+entity GetGoodsFeedbackResponse {
+}
+
+entity GetGoodsStatsRequest {
+    * shopSkus: List<String>
+}
+
+entity GetGoodsStatsResponse {
+}
+
+entity GetHiddenOffersResponse {
+}
+
+entity GetHiddenOffersResultDTO {
+    paging: ScrollingPagerDTO
+    * hiddenOffers: List<HiddenOfferDTO>
+}
+
+entity GetMappingDTO {
+}
+
+entity GetModelsOffersResponse {
+}
+
+entity GetModelsRequest {
+    * models: List<Long>
+}
+
+entity GetModelsResponse {
+}
+
+entity GetOfferCardsContentStatusRequest {
+    offerIds: List<String>
+    cardStatuses: List<OfferCardStatusType>
+    categoryIds: List<Integer>
+}
+
+entity GetOfferCardsContentStatusResponse {
+}
+
+entity GetOfferDTO {
+}
+
+entity GetOfferMappingDTO {
+    offer: GetOfferDTO
+    mapping: GetMappingDTO
+}
+
+entity GetOfferMappingEntriesResponse {
+}
+
+entity GetOfferMappingsRequest {
+    offerIds: List<String>
+    cardStatuses: List<OfferCardStatusType>
+    categoryIds: List<Integer>
+    vendorNames: List<String>
+    tags: List<String>
+    archived: Boolean
+}
+
+entity GetOfferMappingsResponse {
+}
+
+entity GetOfferMappingsResultDTO {
+    paging: ScrollingPagerDTO
+    * offerMappings: List<GetOfferMappingDTO>
+}
+
+entity GetOfferRecommendationsRequest {
+    offerIds: List<String>
+    cofinancePriceFilter: FieldStateType
+    recommendedCofinancePriceFilter: FieldStateType
+    competitivenessFilter: PriceCompetitivenessType
+}
+
+entity GetOfferRecommendationsResponse {
+}
+
+entity GetOffersResponse {
+}
+
+entity GetOrderBuyerInfoResponse {
+}
+
+entity GetOrderLabelsDataResponse {
+}
+
+entity GetOrderResponse {
+    order: OrderDTO
+}
+
+entity GetOrdersResponse {
+    pager: FlippingPagerDTO
+    * orders: List<OrderDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity GetOrdersStatsRequest {
+    dateFrom: Date
+    dateTo: Date
+    updateFrom: Date
+    updateTo: Date
+    orders: List<Long>
+    statuses: List<OrderStatsStatusType>
+    hasCis: Boolean
+}
+
+entity GetOrdersStatsResponse {
+}
+
+entity GetOutletLicensesResponse {
+}
+
+entity GetOutletResponse {
+    outlet: FullOutletDTO
+}
+
+entity GetOutletsResponse {
+    * outlets: List<FullOutletDTO>
+    paging: ScrollingPagerDTO
+    pager: FlippingPagerDTO
+}
+
+entity GetPriceDTO {
+}
+
+entity GetPriceWithDiscountDTO {
+}
+
+entity GetPriceWithVatDTO {
+}
+
+entity GetPricesByOfferIdsRequest {
+    offerIds: List<String>
+}
+
+entity GetPricesByOfferIdsResponse {
+}
+
+entity GetPricesResponse {
+}
+
+entity GetPromoAssortmentInfoDTO {
+    * activeOffers: Integer
+    potentialOffers: Integer
+    processing: Boolean
+}
+
+entity GetPromoBestsellerInfoDTO {
+    * bestseller: Boolean
+    entryDeadline: Date
+}
+
+entity GetPromoConstraintsDTO {
+    warehouseIds: List<Long>
+}
+
+entity GetPromoDTO {
+    * id: String
+    * name: String
+    * period: PromoPeriodDTO
+    * participating: Boolean
+    * assortmentInfo: GetPromoAssortmentInfoDTO
+    * mechanicsInfo: GetPromoMechanicsInfoDTO
+    * bestsellerInfo: GetPromoBestsellerInfoDTO
+    channels: List<ChannelType>
+    constraints: GetPromoConstraintsDTO
+}
+
+entity GetPromoMechanicsInfoDTO {
+    * type: MechanicsType
+    promocodeInfo: GetPromoPromocodeInfoDTO
+}
+
+entity GetPromoOfferDTO {
+    * offerId: String
+    * status: PromoOfferParticipationStatusType
+    * params: PromoOfferParamsDTO
+    autoParticipatingDetails: PromoOfferAutoParticipatingDetailsDTO
+}
+
+entity GetPromoOffersRequest {
+    * promoId: String
+    statusType: PromoOfferParticipationStatusFilterType
+}
+
+entity GetPromoOffersResponse {
+}
+
+entity GetPromoOffersResultDTO {
+    * offers: List<GetPromoOfferDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity GetPromoPromocodeInfoDTO {
+    * promocode: String
+    * discount: Integer
+}
+
+entity GetPromosRequest {
+    participation: PromoParticipationType
+    mechanics: MechanicsType
+}
+
+entity GetPromosResponse {
+}
+
+entity GetPromosResultDTO {
+    * promos: List<GetPromoDTO>
+}
+
+entity GetQualityRatingDetailsResponse {
+}
+
+entity GetQualityRatingRequest {
+    dateFrom: Date
+    dateTo: Date
+    * campaignIds: List<Long>
+}
+
+entity GetQualityRatingResponse {
+}
+
+entity GetQuarantineOffersRequest {
+    offerIds: List<String>
+    cardStatuses: List<OfferCardStatusType>
+    categoryIds: List<Integer>
+    vendorNames: List<String>
+    tags: List<String>
+}
+
+entity GetQuarantineOffersResponse {
+}
+
+entity GetQuarantineOffersResultDTO {
+    paging: ScrollingPagerDTO
+    * offers: List<QuarantineOfferDTO>
+}
+
+entity GetRegionWithChildrenResponse {
+    pager: FlippingPagerDTO
+    regions: RegionDTO
+}
+
+entity GetRegionsResponse {
+    * regions: List<RegionDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity GetReportInfoResponse {
+}
+
+entity GetReturnResponse {
+}
+
+entity GetReturnsResponse {
+}
+
+entity GetShipmentOrdersInfoResponse {
+}
+
+entity GetShipmentResponse {
+}
+
+entity GetSuggestedOfferMappingEntriesRequest {
+    * offers: List<MappingsOfferDTO>
+}
+
+entity GetSuggestedOfferMappingEntriesResponse {
+}
+
+entity GetSuggestedOfferMappingsRequest {
+    offers: List<SuggestedOfferDTO>
+}
+
+entity GetSuggestedOfferMappingsResponse {
+}
+
+entity GetSuggestedOfferMappingsResultDTO {
+    * offers: List<SuggestedOfferMappingDTO>
+}
+
+entity GetWarehouseStocksDTO {
+    paging: ScrollingPagerDTO
+    * warehouses: List<WarehouseOffersDTO>
+}
+
+entity GetWarehouseStocksRequest {
+    withTurnover: Boolean
+    archived: Boolean
+    offerIds: List<String>
+}
+
+entity GetWarehouseStocksResponse {
+}
+
+entity GetWarehousesResponse {
+}
+
+entity GoodsFeedbackCommentAuthorDTO {
+    type: GoodsFeedbackCommentAuthorType
+    name: String
+}
+
+entity GoodsFeedbackCommentAuthorType {
+}
+
+entity GoodsFeedbackCommentDTO {
+    * id: Long
+    * text: String
+    canModify: Boolean
+    parentId: Long
+    * author: GoodsFeedbackCommentAuthorDTO
+    * status: GoodsFeedbackCommentStatusType
+}
+
+entity GoodsFeedbackCommentListDTO {
+    * comments: List<GoodsFeedbackCommentDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity GoodsFeedbackCommentStatusType {
+}
+
+entity GoodsFeedbackDTO {
+    * feedbackId: Long
+    * createdAt: Date
+    * needReaction: Boolean
+    * identifiers: GoodsFeedbackIdentifiersDTO
+    author: String
+    description: GoodsFeedbackDescriptionDTO
+    media: GoodsFeedbackMediaDTO
+    * statistics: GoodsFeedbackStatisticsDTO
+}
+
+entity GoodsFeedbackDescriptionDTO {
+    advantages: String
+    disadvantages: String
+    comment: String
+}
+
+entity GoodsFeedbackIdentifiersDTO {
+    * orderId: Long
+    * modelId: Long
+}
+
+entity GoodsFeedbackListDTO {
+    * feedbacks: List<GoodsFeedbackDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity GoodsFeedbackMediaDTO {
+    photos: List<String>
+    videos: List<String>
+}
+
+entity GoodsFeedbackStatisticsDTO {
+    * rating: Integer
+    * commentsCount: Long
+    recommended: Boolean
+    paidAmount: Long
+}
+
+entity GoodsStatsDTO {
+    * shopSkus: List<GoodsStatsGoodsDTO>
+}
+
+entity GoodsStatsGoodsDTO {
+    shopSku: String
+    marketSku: Long
+    name: String
+    price: BigDecimal
+    categoryId: Long
+    categoryName: String
+    weightDimensions: GoodsStatsWeightDimensionsDTO
+    warehouses: List<GoodsStatsWarehouseDTO>
+    tariffs: List<TariffDTO>
+    pictures: List<String>
+}
+
+entity GoodsStatsWarehouseDTO {
+    id: Long
+    name: String
+    * stocks: List<WarehouseStockDTO>
+}
+
+entity GoodsStatsWeightDimensionsDTO {
+    length: BigDecimal
+    width: BigDecimal
+    height: BigDecimal
+    weight: BigDecimal
+}
+
+entity GpsDTO {
+    * latitude: BigDecimal
+    * longitude: BigDecimal
+}
+
+entity HiddenOfferDTO {
+    * offerId: String
+}
+
+entity LanguageType {
+}
+
+entity LicenseCheckStatusType {
+}
+
+entity LicenseType {
+}
+
+entity LogisticPickupPointDTO {
+    id: Long
+    name: String
+    address: PickupAddressDTO
+    instruction: String
+    type: LogisticPointType
+    logisticPartnerId: Long
+}
+
+entity LogisticPointType {
+}
+
+entity MappingsOfferDTO {
+}
+
+entity MappingsOfferInfoDTO {
+    name: String
+    shopSku: String
+    category: String
+    vendor: String
+    vendorCode: String
+    description: String
+    id: String
+    feedId: Long
+    barcodes: List<String>
+    urls: List<String>
+    pictures: List<String>
+    manufacturer: String
+    manufacturerCountries: List<String>
+    minShipment: Integer
+    transportUnitSize: Integer
+    quantumOfSupply: Integer
+    deliveryDurationDays: Integer
+    boxCount: Integer
+    customsCommodityCodes: List<String>
+    weightDimensions: OfferWeightDimensionsDTO
+    supplyScheduleDays: List<DayOfWeekType>
+    shelfLifeDays: Integer
+    lifeTimeDays: Integer
+    guaranteePeriodDays: Integer
+    processingState: OfferProcessingStateDTO
+    availability: OfferAvailabilityStatusType
+    shelfLife: TimePeriodDTO
+    lifeTime: TimePeriodDTO
+    guaranteePeriod: TimePeriodDTO
+    certificate: String
+}
+
+entity MaxSaleQuantumDTO {
+    * id: Long
+    name: String
+    maxSaleQuantum: Integer
+}
+
+entity MechanicsType {
+}
+
+entity ModelDTO {
+    id: Long
+    name: String
+    prices: ModelPriceDTO
+}
+
+entity ModelOfferDTO {
+    discount: Integer
+    name: String
+    pos: Integer
+    preDiscountPrice: BigDecimal
+    price: BigDecimal
+    regionId: Long
+    shippingCost: BigDecimal
+    shopName: String
+    shopRating: Integer
+    inStock: Integer
+}
+
+entity ModelPriceDTO {
+    avg: BigDecimal
+    max: BigDecimal
+    min: BigDecimal
+}
+
+entity ModelsDTO {
+    * models: List<ModelDTO>
+}
+
+entity OfferAvailabilityStatusType {
+}
+
+entity OfferCampaignStatusDTO {
+    * campaignId: Long
+    * status: OfferCampaignStatusType
+}
+
+entity OfferCampaignStatusType {
+}
+
+entity OfferCardDTO {
+    * offerId: String
+    mapping: GetMappingDTO
+    parameterValues: List<ParameterValueDTO>
+    cardStatus: OfferCardStatusType
+    contentRating: Integer
+    recommendations: List<OfferCardRecommendationDTO>
+    errors: List<OfferErrorDTO>
+    warnings: List<OfferErrorDTO>
+}
+
+entity OfferCardRecommendationDTO {
+    * type: OfferCardRecommendationType
+    percent: Integer
+}
+
+entity OfferCardRecommendationType {
+}
+
+entity OfferCardStatusType {
+}
+
+entity OfferCardsContentStatusDTO {
+    * offerCards: List<OfferCardDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity OfferConditionDTO {
+    type: OfferConditionType
+    quality: OfferConditionQualityType
+    reason: String
+}
+
+entity OfferConditionQualityType {
+}
+
+entity OfferConditionType {
+}
+
+entity OfferContentDTO {
+    * offerId: String
+    * categoryId: Integer
+    * parameterValues: List<ParameterValueDTO>
+}
+
+entity OfferContentErrorDTO {
+    * type: OfferContentErrorType
+    parameterId: Long
+    * message: String
+}
+
+entity OfferContentErrorType {
+}
+
+entity OfferDTO {
+    price: BigDecimal
+    feedId: Long
+    id: String
+    shopCategoryId: String
+    marketCategoryId: Integer
+    preDiscountPrice: BigDecimal
+    discount: Integer
+    cutPrice: Boolean
+    url: String
+    * modelId: Long
+    name: String
+    currency: CurrencyType
+    bid: BigDecimal
+    cbid: BigDecimal
+    fee: BigDecimal
+    blocked: Boolean
+}
+
+entity OfferErrorDTO {
+    message: String
+    comment: String
+}
+
+entity OfferForRecommendationDTO {
+    offerId: String
+    price: BasePriceDTO
+    cofinancePrice: GetPriceDTO
+    competitiveness: PriceCompetitivenessType
+    shows: Long
+}
+
+entity OfferManualDTO {
+    * url: String
+    title: String
+}
+
+entity OfferMappingDTO {
+    marketSku: Long
+    modelId: Long
+    categoryId: Long
+}
+
+entity OfferMappingEntriesDTO {
+    paging: ScrollingPagerDTO
+    * offerMappingEntries: List<OfferMappingEntryDTO>
+}
+
+entity OfferMappingEntryDTO {
+}
+
+entity OfferMappingErrorDTO {
+    * type: OfferMappingErrorType
+    parameterId: Long
+    * message: String
+}
+
+entity OfferMappingErrorType {
+}
+
+entity OfferMappingInfoDTO {
+    mapping: OfferMappingDTO
+    awaitingModerationMapping: OfferMappingDTO
+    rejectedMapping: OfferMappingDTO
+}
+
+entity OfferMappingKindType {
+}
+
+entity OfferMappingSuggestionsListDTO {
+    * offers: List<EnrichedMappingsOfferDTO>
+}
+
+entity OfferParamDTO {
+    * name: String
+    * value: String
+}
+
+entity OfferPriceByOfferIdsListResponseDTO {
+    * offers: List<OfferPriceByOfferIdsResponseDTO>
+    paging: ScrollingPagerDTO
+}
+
+entity OfferPriceByOfferIdsResponseDTO {
+    offerId: String
+    price: PriceDTO
+    updatedAt: Date
+}
+
+entity OfferPriceDTO {
+    offerId: String
+    price: PriceDTO
+}
+
+entity OfferPriceListResponseDTO {
+    * offers: List<OfferPriceResponseDTO>
+    paging: ScrollingPagerDTO
+    total: Integer
+}
+
+entity OfferPriceResponseDTO {
+    id: String
+    price: PriceDTO
+    marketSku: Long
+    updatedAt: Date
+}
+
+entity OfferProcessingNoteDTO {
+    type: OfferProcessingNoteType
+    payload: String
+}
+
+entity OfferProcessingNoteType {
+}
+
+entity OfferProcessingStateDTO {
+    status: OfferProcessingStatusType
+    notes: List<OfferProcessingNoteDTO>
+}
+
+entity OfferProcessingStatusType {
+}
+
+entity OfferRecommendationDTO {
+    offer: OfferForRecommendationDTO
+    recommendation: OfferRecommendationInfoDTO
+}
+
+entity OfferRecommendationInfoDTO {
+    offerId: String
+    recommendedCofinancePrice: BasePriceDTO
+    competitivenessThresholds: PriceCompetitivenessThresholdsDTO
+}
+
+entity OfferRecommendationsResultDTO {
+    paging: ScrollingPagerDTO
+    * offerRecommendations: List<OfferRecommendationDTO>
+}
+
+entity OfferSellingProgramDTO {
+    * sellingProgram: SellingProgramType
+    * status: OfferSellingProgramStatusType
+}
+
+entity OfferSellingProgramStatusType {
+}
+
+entity OfferType {
+}
+
+entity OfferWeightDimensionsDTO {
+    * length: BigDecimal
+    * width: BigDecimal
+    * height: BigDecimal
+    * weight: BigDecimal
+}
+
+entity OffersDTO {
+    * offers: List<OfferDTO>
+}
+
+entity OptionValuesLimitedDTO {
+    * limitingOptionValueId: Long
+    * optionValueIds: List<Long>
+}
+
+entity OrderBoxLayoutDTO {
+    * items: List<OrderBoxLayoutItemDTO>
+}
+
+entity OrderBoxLayoutItemDTO {
+    * id: Long
+    fullCount: Integer
+    partialCount: OrderBoxLayoutPartialCountDTO
+    instances: List<BriefOrderItemInstanceDTO>
+}
+
+entity OrderBoxLayoutPartialCountDTO {
+    * current: Integer
+    * total: Integer
+}
+
+entity OrderBoxesLayoutDTO {
+    * boxes: List<EnrichedOrderBoxLayoutDTO>
+}
+
+entity OrderBusinessBuyerDTO {
+    inn: String
+    kpp: String
+    organizationName: String
+    organizationJurAddress: String
+}
+
+entity OrderBusinessDocumentsDTO {
+    upd: DocumentDTO
+    ukd: DocumentDTO
+    torgTwelve: DocumentDTO
+    sf: DocumentDTO
+    ksf: DocumentDTO
+}
+
+entity OrderBuyerBasicInfoDTO {
+    id: String
+    lastName: String
+    firstName: String
+    middleName: String
+    type: OrderBuyerType
+}
+
+entity OrderBuyerDTO {
+}
+
+entity OrderBuyerInfoDTO {
+}
+
+entity OrderBuyerType {
+}
+
+entity OrderCancellationReasonType {
+}
+
+entity OrderCourierDTO {
+    fullName: String
+    phone: String
+    phoneExtension: String
+    vehicleNumber: String
+    vehicleDescription: String
+}
+
+entity OrderDTO {
+    id: Long
+    status: OrderStatusType
+    substatus: OrderSubstatusType
+    creationDate: String
+    updatedAt: String
+    currency: CurrencyType
+    itemsTotal: BigDecimal
+    deliveryTotal: BigDecimal
+    buyerItemsTotal: BigDecimal
+    buyerTotal: BigDecimal
+    buyerItemsTotalBeforeDiscount: BigDecimal
+    buyerTotalBeforeDiscount: BigDecimal
+    paymentType: OrderPaymentType
+    paymentMethod: OrderPaymentMethodType
+    fake: Boolean
+    * items: List<OrderItemDTO>
+    subsidies: List<OrderSubsidyDTO>
+    delivery: OrderDeliveryDTO
+    buyer: OrderBuyerDTO
+    notes: String
+    taxSystem: OrderTaxSystemType
+    cancelRequested: Boolean
+    expiryDate: String
+}
+
+entity OrderDeliveryAddressDTO {
+    country: String
+    postcode: String
+    city: String
+    district: String
+    subway: String
+    street: String
+    house: String
+    block: String
+    entrance: String
+    entryphone: String
+    floor: String
+    apartment: String
+    phone: String
+    recipient: String
+    gps: GpsDTO
+}
+
+entity OrderDeliveryDTO {
+    id: String
+    type: OrderDeliveryType
+    serviceName: String
+    price: BigDecimal
+    deliveryPartnerType: OrderDeliveryPartnerType
+    courier: OrderCourierDTO
+    dates: OrderDeliveryDatesDTO
+    region: RegionDTO
+    address: OrderDeliveryAddressDTO
+    vat: OrderVatType
+    deliveryServiceId: Long
+    liftType: OrderLiftType
+    liftPrice: BigDecimal
+    outletCode: String
+    outletStorageLimitDate: String
+    dispatchType: OrderDeliveryDispatchType
+    tracks: List<OrderTrackDTO>
+    shipments: List<OrderShipmentDTO>
+    estimated: Boolean
+    eacType: OrderDeliveryEacType
+    eacCode: String
+}
+
+entity OrderDeliveryDateDTO {
+    * toDate: Date
+}
+
+entity OrderDeliveryDateReasonType {
+}
+
+entity OrderDeliveryDatesDTO {
+    fromDate: String
+    toDate: String
+    fromTime: String
+    toTime: String
+    realDeliveryDate: String
+}
+
+entity OrderDeliveryDispatchType {
+}
+
+entity OrderDeliveryEacType {
+}
+
+entity OrderDeliveryPartnerType {
+}
+
+entity OrderDeliveryType {
+}
+
+entity OrderDigitalItemDTO {
+    * id: Long
+    * code: String
+    * slip: String
+    * activate_till: Date
+}
+
+entity OrderDocumentStatusType {
+}
+
+entity OrderItemDTO {
+    id: Long
+    offerId: String
+    offerName: String
+    price: BigDecimal
+    buyerPrice: BigDecimal
+    buyerPriceBeforeDiscount: BigDecimal
+    priceBeforeDiscount: BigDecimal
+    count: Integer
+    vat: OrderVatType
+    shopSku: String
+    subsidy: BigDecimal
+    partnerWarehouseId: String
+    promos: List<OrderItemPromoDTO>
+    instances: List<OrderItemInstanceDTO>
+    details: List<OrderItemDetailDTO>
+    subsidies: List<OrderItemSubsidyDTO>
+    requiredInstanceTypes: List<OrderItemInstanceType>
+}
+
+entity OrderItemDetailDTO {
+    itemCount: Long
+    itemStatus: OrderItemStatusType
+    updateDate: String
+}
+
+entity OrderItemInstanceDTO {
+    cis: String
+    cisFull: String
+    uin: String
+    rnpt: String
+    gtd: String
+}
+
+entity OrderItemInstanceModificationDTO {
+    * id: Long
+    * instances: List<BriefOrderItemInstanceDTO>
+}
+
+entity OrderItemInstanceType {
+}
+
+entity OrderItemModificationDTO {
+    * id: Long
+    * count: Integer
+    instances: List<BriefOrderItemInstanceDTO>
+}
+
+entity OrderItemPromoDTO {
+    * type: OrderPromoType
+    discount: BigDecimal
+    subsidy: BigDecimal
+    shopPromoId: String
+    marketPromoId: String
+}
+
+entity OrderItemStatusType {
+}
+
+entity OrderItemSubsidyDTO {
+    type: OrderItemSubsidyType
+    amount: BigDecimal
+}
+
+entity OrderItemSubsidyType {
+}
+
+entity OrderItemsModificationRequestReasonType {
+}
+
+entity OrderItemsModificationResultDTO {
+    * items: List<BriefOrderItemDTO>
+}
+
+entity OrderLabelDTO {
+    * orderId: Long
+    * placesNumber: Integer
+    * url: String
+    * parcelBoxLabels: List<ParcelBoxLabelDTO>
+}
+
+entity OrderLiftType {
+}
+
+entity OrderParcelBoxDTO {
+    id: Long
+    fulfilmentId: String
+}
+
+entity OrderPaymentMethodType {
+}
+
+entity OrderPaymentType {
+}
+
+entity OrderPromoType {
+}
+
+entity OrderShipmentDTO {
+    id: Long
+    shipmentDate: String
+    shipmentTime: String
+    tracks: List<OrderTrackDTO>
+    boxes: List<OrderParcelBoxDTO>
+}
+
+entity OrderStateDTO {
+    * id: Long
+    * status: OrderStatusType
+    substatus: OrderSubstatusType
+}
+
+entity OrderStatsStatusType {
+}
+
+entity OrderStatusChangeDTO {
+    * status: OrderStatusType
+    substatus: OrderSubstatusType
+    delivery: OrderStatusChangeDeliveryDTO
+}
+
+entity OrderStatusChangeDeliveryDTO {
+    dates: OrderStatusChangeDeliveryDatesDTO
+}
+
+entity OrderStatusChangeDeliveryDatesDTO {
+    realDeliveryDate: Date
+}
+
+entity OrderStatusType {
+}
+
+entity OrderSubsidyDTO {
+    type: OrderSubsidyType
+    amount: BigDecimal
+}
+
+entity OrderSubsidyType {
+}
+
+entity OrderSubstatusType {
+}
+
+entity OrderTaxSystemType {
+}
+
+entity OrderTrackDTO {
+    trackCode: String
+    deliveryServiceId: Long
+}
+
+entity OrderUpdateStatusType {
+}
+
+entity OrderVatType {
+}
+
+entity OrdersShipmentInfoDTO {
+    * orderIdsWithLabels: List<Long>
+    * orderIdsWithoutLabels: List<Long>
+}
+
+entity OrdersStatsCommissionDTO {
+    type: OrdersStatsCommissionType
+    actual: BigDecimal
+}
+
+entity OrdersStatsCommissionType {
+}
+
+entity OrdersStatsDTO {
+    * orders: List<OrdersStatsOrderDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity OrdersStatsDeliveryRegionDTO {
+    id: Long
+    name: String
+}
+
+entity OrdersStatsDetailsDTO {
+    itemStatus: OrdersStatsItemStatusType
+    itemCount: Long
+    updateDate: Date
+    stockType: OrdersStatsStockType
+}
+
+entity OrdersStatsItemDTO {
+    offerName: String
+    marketSku: Long
+    shopSku: String
+    count: Integer
+    prices: List<OrdersStatsPriceDTO>
+    warehouse: OrdersStatsWarehouseDTO
+    details: List<OrdersStatsDetailsDTO>
+    cisList: List<String>
+    initialCount: Integer
+    bidFee: Integer
+    cofinanceThreshold: BigDecimal
+    cofinanceValue: BigDecimal
+}
+
+entity OrdersStatsItemStatusType {
+}
+
+entity OrdersStatsOrderDTO {
+    id: Long
+    creationDate: Date
+    statusUpdateDate: Date
+    status: OrderStatsStatusType
+    partnerOrderId: String
+    paymentType: OrdersStatsOrderPaymentType
+    fake: Boolean
+    deliveryRegion: OrdersStatsDeliveryRegionDTO
+    * items: List<OrdersStatsItemDTO>
+    initialItems: List<OrdersStatsItemDTO>
+    * payments: List<OrdersStatsPaymentDTO>
+    * commissions: List<OrdersStatsCommissionDTO>
+}
+
+entity OrdersStatsOrderPaymentType {
+}
+
+entity OrdersStatsPaymentDTO {
+    id: String
+    date: Date
+    type: OrdersStatsPaymentType
+    source: OrdersStatsPaymentSourceType
+    total: BigDecimal
+    paymentOrder: OrdersStatsPaymentOrderDTO
+}
+
+entity OrdersStatsPaymentOrderDTO {
+    id: String
+    date: Date
+}
+
+entity OrdersStatsPaymentSourceType {
+}
+
+entity OrdersStatsPaymentType {
+}
+
+entity OrdersStatsPriceDTO {
+    type: OrdersStatsPriceType
+    costPerItem: BigDecimal
+    total: BigDecimal
+}
+
+entity OrdersStatsPriceType {
+}
+
+entity OrdersStatsStockType {
+}
+
+entity OrdersStatsWarehouseDTO {
+    id: Long
+    name: String
+}
+
+entity OutletAddressDTO {
+    * regionId: Long
+    street: String
+    number: String
+    building: String
+    estate: String
+    block: String
+    additional: String
+    km: Integer
+    city: String
+}
+
+entity OutletDTO {
+    * name: String
+    * type: OutletType
+    coords: String
+    isMain: Boolean
+    shopOutletCode: String
+    visibility: OutletVisibilityType
+    * address: OutletAddressDTO
+    * phones: List<String>
+    * workingSchedule: OutletWorkingScheduleDTO
+    deliveryRules: List<OutletDeliveryRuleDTO>
+    storagePeriod: Long
+}
+
+entity OutletDeliveryRuleDTO {
+    minDeliveryDays: Integer
+    maxDeliveryDays: Integer
+    deliveryServiceId: Long
+    orderBefore: Integer
+    priceFreePickup: BigDecimal
+    unspecifiedDeliveryInterval: Boolean
+}
+
+entity OutletLicenseDTO {
+    id: Long
+    outletId: Long
+    licenseType: LicenseType
+    number: String
+    dateOfIssue: Date
+    dateOfExpiry: Date
+}
+
+entity OutletLicensesResponseDTO {
+    * licenses: List<FullOutletLicenseDTO>
+}
+
+entity OutletResponseDTO {
+    id: Long
+}
+
+entity OutletStatusType {
+}
+
+entity OutletType {
+}
+
+entity OutletVisibilityType {
+}
+
+entity OutletWorkingScheduleDTO {
+    workInHoliday: Boolean
+    * scheduleItems: List<OutletWorkingScheduleItemDTO>
+}
+
+entity OutletWorkingScheduleItemDTO {
+    * startDay: DayOfWeekType
+    * endDay: DayOfWeekType
+    * startTime: String
+    * endTime: String
+}
+
+entity PageFormatType {
+}
+
+entity PagedReturnsDTO {
+    paging: ForwardScrollingPagerDTO
+    * returns: List<ReturnDTO>
+}
+
+entity PalletsCountDTO {
+    planned: Integer
+    fact: Integer
+}
+
+entity ParameterType {
+}
+
+entity ParameterValueConstraintsDTO {
+    minValue: Double
+    maxValue: Double
+    maxLength: Integer
+}
+
+entity ParameterValueDTO {
+    * parameterId: Long
+    unitId: Long
+    valueId: Long
+    value: String
+}
+
+entity ParameterValueOptionDTO {
+    * id: Long
+    * value: String
+    description: String
+}
+
+entity ParcelBoxDTO {
+    id: Long
+    fulfilmentId: String
+}
+
+entity ParcelBoxLabelDTO {
+    * url: String
+    * supplierName: String
+    * deliveryServiceName: String
+    * orderId: Long
+    * orderNum: String
+    * recipientName: String
+    * boxId: Long
+    * fulfilmentId: String
+    * place: String
+    * weight: String
+    * deliveryServiceId: String
+    deliveryAddress: String
+    shipmentDate: String
+}
+
+entity ParcelDTO {
+    * boxes: List<ParcelBoxDTO>
+}
+
+entity PartnerShipmentWarehouseDTO {
+    id: Long
+    name: String
+    address: String
+}
+
+entity PaymentFrequencyType {
+}
+
+entity PickupAddressDTO {
+    country: String
+    city: String
+    street: String
+    house: String
+    postcode: String
+}
+
+entity PlacementType {
+}
+
+entity PriceCompetitivenessThresholdsDTO {
+    optimalPrice: BasePriceDTO
+    averagePrice: BasePriceDTO
+}
+
+entity PriceCompetitivenessType {
+}
+
+entity PriceDTO {
+    value: BigDecimal
+    discountBase: BigDecimal
+    currencyId: CurrencyType
+    vat: Integer
+}
+
+entity PriceQuarantineVerdictDTO {
+    type: PriceQuarantineVerdictType
+    * params: List<PriceQuarantineVerdictParameterDTO>
+}
+
+entity PriceQuarantineVerdictParamNameType {
+}
+
+entity PriceQuarantineVerdictParameterDTO {
+    * name: PriceQuarantineVerdictParamNameType
+    * value: String
+}
+
+entity PriceQuarantineVerdictType {
+}
+
+entity PriceRecommendationItemDTO {
+    * campaignId: Long
+    * price: BigDecimal
+}
+
+entity PriceSuggestDTO {
+    type: PriceSuggestType
+    price: BigDecimal
+}
+
+entity PriceSuggestOfferDTO {
+    marketSku: Long
+    offerId: String
+    priceSuggestion: List<PriceSuggestDTO>
+}
+
+entity PriceSuggestType {
+}
+
+entity PromoOfferAutoParticipatingDetailsDTO {
+    campaignIds: List<Long>
+}
+
+entity PromoOfferDiscountParamsDTO {
+    price: Long
+    promoPrice: Long
+    * maxPromoPrice: Long
+}
+
+entity PromoOfferParamsDTO {
+    discountParams: PromoOfferDiscountParamsDTO
+    promocodeParams: PromoOfferPromocodeParamsDTO
+}
+
+entity PromoOfferParticipationStatusFilterType {
+}
+
+entity PromoOfferParticipationStatusType {
+}
+
+entity PromoOfferPromocodeParamsDTO {
+    * maxPrice: Long
+}
+
+entity PromoOfferUpdateWarningCodeType {
+}
+
+entity PromoOfferUpdateWarningDTO {
+    * code: PromoOfferUpdateWarningCodeType
+    campaignIds: List<Long>
+}
+
+entity PromoParticipationType {
+}
+
+entity PromoPeriodDTO {
+    * dateTimeFrom: Date
+    * dateTimeTo: Date
+}
+
+entity ProvideOrderDigitalCodesRequest {
+    * items: List<OrderDigitalItemDTO>
+}
+
+entity ProvideOrderItemIdentifiersRequest {
+    * items: List<OrderItemInstanceModificationDTO>
+}
+
+entity ProvideOrderItemIdentifiersResponse {
+}
+
+entity PutSkuBidsRequest {
+    * bids: List<SkuBidItemDTO>
+}
+
+entity QualityRatingAffectedOrderDTO {
+    * orderId: Long
+    * description: String
+    * componentType: AffectedOrderQualityRatingComponentType
+}
+
+entity QualityRatingComponentDTO {
+    * value: Double
+    * componentType: QualityRatingComponentType
+}
+
+entity QualityRatingComponentType {
+}
+
+entity QualityRatingDTO {
+    * rating: Long
+    * calculationDate: Date
+    * components: List<QualityRatingComponentDTO>
+}
+
+entity QualityRatingDetailsDTO {
+    * affectedOrders: List<QualityRatingAffectedOrderDTO>
+}
+
+entity QuantumDTO {
+    minQuantity: Integer
+    stepQuantity: Integer
+}
+
+entity QuarantineOfferDTO {
+    offerId: String
+    currentPrice: BasePriceDTO
+    lastValidPrice: BasePriceDTO
+    verdicts: List<PriceQuarantineVerdictDTO>
+}
+
+entity RecipientType {
+}
+
+entity RefundStatusType {
+}
+
+entity RegionDTO {
+    id: Long
+    * name: String
+    * type: RegionType
+    parent: RegionDTO
+    children: List<RegionDTO>
+}
+
+entity RegionType {
+}
+
+entity RegionalModelInfoDTO {
+    currency: CurrencyType
+    regionId: Long
+}
+
+entity RejectedPromoOfferDeleteDTO {
+    * offerId: String
+    * reason: RejectedPromoOfferDeleteReasonType
+}
+
+entity RejectedPromoOfferDeleteReasonType {
+}
+
+entity RejectedPromoOfferUpdateDTO {
+    * offerId: String
+    * reason: RejectedPromoOfferUpdateReasonType
+}
+
+entity RejectedPromoOfferUpdateReasonType {
+}
+
+entity ReportFormatType {
+}
+
+entity ReportInfoDTO {
+    * status: ReportStatusType
+    subStatus: ReportSubStatusType
+    * generationRequestedAt: Date
+    generationFinishedAt: Date
+    file: String
+    estimatedGenerationTime: Long
+}
+
+entity ReportStatusType {
+}
+
+entity ReportSubStatusType {
+}
+
+entity ReturnDTO {
+    id: Long
+    orderId: Long
+    creationDate: Date
+    updateDate: Date
+    refundStatus: RefundStatusType
+    logisticPickupPoint: LogisticPickupPointDTO
+    shipmentRecipientType: RecipientType
+    shipmentStatus: ReturnShipmentStatusType
+    refundAmount: Long
+    * items: List<ReturnItemDTO>
+    returnType: ReturnType
+    fastReturn: Boolean
+}
+
+entity ReturnDecisionDTO {
+    returnItemId: Long
+    count: Integer
+    comment: String
+    reasonType: ReturnDecisionReasonType
+    subreasonType: ReturnDecisionSubreasonType
+    decisionType: ReturnDecisionType
+    refundAmount: Long
+    partnerCompensation: Long
+    images: List<String>
+}
+
+entity ReturnDecisionReasonType {
+}
+
+entity ReturnDecisionSubreasonType {
+}
+
+entity ReturnDecisionType {
+}
+
+entity ReturnInstanceDTO {
+    stockType: ReturnInstanceStockType
+    status: ReturnInstanceStatusType
+    cis: String
+    imei: String
+}
+
+entity ReturnInstanceStatusType {
+}
+
+entity ReturnInstanceStockType {
+}
+
+entity ReturnItemDTO {
+    marketSku: Long
+    * shopSku: String
+    * count: Long
+    decisions: List<ReturnDecisionDTO>
+    instances: List<ReturnInstanceDTO>
+    tracks: List<TrackDTO>
+}
+
+entity ReturnRequestDecisionType {
+}
+
+entity ReturnShipmentStatusType {
+}
+
+entity ReturnType {
+}
+
+entity ScrollingPagerDTO {
+}
+
+entity SearchModelsResponse {
+}
+
+entity SearchShipmentsRequest {
+    * dateFrom: Date
+    * dateTo: Date
+    statuses: List<ShipmentStatusType>
+    orderIds: List<Long>
+    cancelledOrders: Boolean
+}
+
+entity SearchShipmentsResponse {
+}
+
+entity SearchShipmentsResponseDTO {
+    * shipments: List<ShipmentInfoDTO>
+    paging: ForwardScrollingPagerDTO
+}
+
+entity SellingProgramType {
+}
+
+entity SendMessageToChatRequest {
+    * message: String
+}
+
+entity SetFeedParamsRequest {
+    * parameters: List<FeedParameterDTO>
+}
+
+entity SetOrderBoxLayoutRequest {
+    * boxes: List<OrderBoxLayoutDTO>
+    allowRemove: Boolean
+}
+
+entity SetOrderBoxLayoutResponse {
+}
+
+entity SetOrderDeliveryDateRequest {
+    * dates: OrderDeliveryDateDTO
+    * reason: OrderDeliveryDateReasonType
+}
+
+entity SetOrderDeliveryTrackCodeRequest {
+    * trackCode: String
+    * deliveryServiceId: Long
+}
+
+entity SetOrderShipmentBoxesRequest {
+}
+
+entity SetOrderShipmentBoxesResponse {
+}
+
+entity SetReturnDecisionRequest {
+    * returnItemId: Long
+    * decisionType: ReturnRequestDecisionType
+    comment: String
+}
+
+entity SetShipmentPalletsCountRequest {
+    * placesCount: Integer
+}
+
+entity ShelfsStatisticsAttributionType {
+}
+
+entity ShipmentActionType {
+}
+
+entity ShipmentBoxesDTO {
+    * boxes: List<ParcelBoxDTO>
+}
+
+entity ShipmentDTO {
+}
+
+entity ShipmentInfoDTO {
+}
+
+entity ShipmentPalletLabelPageFormatType {
+}
+
+entity ShipmentStatusChangeDTO {
+    status: ShipmentStatusType
+    description: String
+    updateTime: Date
+}
+
+entity ShipmentStatusType {
+}
+
+entity ShipmentType {
+}
+
+entity ShowsSalesGroupingType {
+}
+
+entity SkipGoodsFeedbackReactionRequest {
+    * feedbackIds: List<Long>
+}
+
+entity SkuBidItemDTO {
+    * sku: String
+    * bid: Integer
+}
+
+entity SkuBidRecommendationItemDTO {
+    * sku: String
+    * bid: Integer
+    bidRecommendations: List<BidRecommendationItemDTO>
+    priceRecommendations: List<PriceRecommendationItemDTO>
+}
+
+entity SortOrderType {
+}
+
+entity SuggestOfferPriceDTO {
+    offerId: String
+    marketSku: Long
+}
+
+entity SuggestPricesRequest {
+    * offers: List<SuggestOfferPriceDTO>
+}
+
+entity SuggestPricesResponse {
+}
+
+entity SuggestPricesResultDTO {
+    * offers: List<PriceSuggestOfferDTO>
+}
+
+entity SuggestedOfferDTO {
+    offerId: String
+    name: String
+    category: String
+    vendor: String
+    barcodes: List<String>
+    description: String
+    vendorCode: String
+    basicPrice: BasePriceDTO
+}
+
+entity SuggestedOfferMappingDTO {
+    offer: SuggestedOfferDTO
+    mapping: GetMappingDTO
+}
+
+entity TariffDTO {
+    * type: TariffType
+    percent: BigDecimal
+    * amount: BigDecimal
+    * parameters: List<TariffParameterDTO>
+}
+
+entity TariffParameterDTO {
+    * name: String
+    * value: String
+}
+
+entity TariffType {
+}
+
+entity TimePeriodDTO {
+    * timePeriod: Integer
+    * timeUnit: TimeUnitType
+    comment: String
+}
+
+entity TimeUnitType {
+}
+
+entity TrackDTO {
+    trackCode: String
+}
+
+entity TransferOrdersFromShipmentRequest {
+    * orderIds: List<Long>
+}
+
+entity TurnoverDTO {
+    * turnover: TurnoverType
+    turnoverDays: Double
+}
+
+entity TurnoverType {
+}
+
+entity UnitDTO {
+    * id: Long
+    * name: String
+    * fullName: String
+}
+
+entity UpdateBusinessOfferPriceDTO {
+    * offerId: String
+    * price: UpdatePriceWithDiscountDTO
+}
+
+entity UpdateBusinessPricesRequest {
+    * offers: List<UpdateBusinessOfferPriceDTO>
+}
+
+entity UpdateCampaignOfferDTO {
+}
+
+entity UpdateCampaignOffersRequest {
+    * offers: List<UpdateCampaignOfferDTO>
+}
+
+entity UpdateGoodsFeedbackCommentDTO {
+    id: Long
+    parentId: Long
+    * text: String
+}
+
+entity UpdateGoodsFeedbackCommentRequest {
+    * feedbackId: Long
+    * comment: UpdateGoodsFeedbackCommentDTO
+}
+
+entity UpdateGoodsFeedbackCommentResponse {
+}
+
+entity UpdateMappingDTO {
+    marketSku: Long
+}
+
+entity UpdateMappingsOfferDTO {
+}
+
+entity UpdateOfferContentRequest {
+    * offersContent: List<OfferContentDTO>
+}
+
+entity UpdateOfferContentResponse {
+}
+
+entity UpdateOfferContentResultDTO {
+    * offerId: String
+    errors: List<OfferContentErrorDTO>
+    warnings: List<OfferContentErrorDTO>
+}
+
+entity UpdateOfferDTO {
+}
+
+entity UpdateOfferMappingDTO {
+    * offer: UpdateOfferDTO
+    mapping: UpdateMappingDTO
+}
+
+entity UpdateOfferMappingEntryDTO {
+}
+
+entity UpdateOfferMappingEntryRequest {
+    * offerMappingEntries: List<UpdateOfferMappingEntryDTO>
+}
+
+entity UpdateOfferMappingResultDTO {
+    * offerId: String
+    errors: List<OfferMappingErrorDTO>
+    warnings: List<OfferMappingErrorDTO>
+}
+
+entity UpdateOfferMappingsRequest {
+    * offerMappings: List<UpdateOfferMappingDTO>
+    onlyPartnerMediaContent: Boolean
+}
+
+entity UpdateOfferMappingsResponse {
+}
+
+entity UpdateOrderItemRequest {
+    * items: List<OrderItemModificationDTO>
+    reason: OrderItemsModificationRequestReasonType
+}
+
+entity UpdateOrderStatusDTO {
+    id: Long
+    status: OrderStatusType
+    substatus: OrderSubstatusType
+    updateStatus: OrderUpdateStatusType
+    errorDetails: String
+}
+
+entity UpdateOrderStatusRequest {
+    * order: OrderStatusChangeDTO
+}
+
+entity UpdateOrderStatusResponse {
+    order: OrderDTO
+}
+
+entity UpdateOrderStatusesDTO {
+    * orders: List<UpdateOrderStatusDTO>
+}
+
+entity UpdateOrderStatusesRequest {
+    * orders: List<OrderStateDTO>
+}
+
+entity UpdateOrderStatusesResponse {
+}
+
+entity UpdateOrderStorageLimitRequest {
+    * newDate: Date
+}
+
+entity UpdateOutletLicenseRequest {
+    * licenses: List<OutletLicenseDTO>
+}
+
+entity UpdatePriceWithDiscountDTO {
+}
+
+entity UpdatePricesRequest {
+    * offers: List<OfferPriceDTO>
+}
+
+entity UpdatePromoOfferDTO {
+    * offerId: String
+    params: UpdatePromoOfferParamsDTO
+}
+
+entity UpdatePromoOfferDiscountParamsDTO {
+    price: Long
+    promoPrice: Long
+}
+
+entity UpdatePromoOfferParamsDTO {
+    discountParams: UpdatePromoOfferDiscountParamsDTO
+}
+
+entity UpdatePromoOffersRequest {
+    * promoId: String
+    * offers: List<UpdatePromoOfferDTO>
+}
+
+entity UpdatePromoOffersResponse {
+}
+
+entity UpdatePromoOffersResultDTO {
+    rejectedOffers: List<RejectedPromoOfferUpdateDTO>
+    warningOffers: List<WarningPromoOfferUpdateDTO>
+}
+
+entity UpdateStockDTO {
+    * sku: String
+    * items: List<UpdateStockItemDTO>
+}
+
+entity UpdateStockItemDTO {
+    * count: Long
+    updatedAt: Date
+}
+
+entity UpdateStocksRequest {
+    * skus: List<UpdateStockDTO>
+}
+
+entity UpdateTimeDTO {
+    * updatedAt: Date
+}
+
+entity ValueRestrictionDTO {
+    * limitingParameterId: Long
+    * limitedValues: List<OptionValuesLimitedDTO>
+}
+
+entity VerifyOrderEacRequest {
+    code: String
+}
+
+entity VerifyOrderEacResponse {
+}
+
+entity WarehouseAddressDTO {
+    * city: String
+    street: String
+    number: String
+    building: String
+    block: String
+    * gps: GpsDTO
+}
+
+entity WarehouseDTO {
+    * id: Long
+    * name: String
+    * campaignId: Long
+    * express: Boolean
+    address: WarehouseAddressDTO
+}
+
+entity WarehouseGroupDTO {
+    * name: String
+    * mainWarehouse: WarehouseDTO
+    * warehouses: List<WarehouseDTO>
+}
+
+entity WarehouseOfferDTO {
+    * offerId: String
+    turnoverSummary: TurnoverDTO
+    * stocks: List<WarehouseStockDTO>
+    updatedAt: Date
+}
+
+entity WarehouseOffersDTO {
+    * warehouseId: Long
+    * offers: List<WarehouseOfferDTO>
+}
+
+entity WarehouseStockDTO {
+    * type: WarehouseStockType
+    * count: Long
+}
+
+entity WarehouseStockType {
+}
+
+entity WarehousesDTO {
+    * warehouses: List<WarehouseDTO>
+    * warehouseGroups: List<WarehouseGroupDTO>
+}
+
+entity WarningPromoOfferUpdateDTO {
+    * offerId: String
+    * warnings: List<PromoOfferUpdateWarningDTO>
+}
+
+ApiResponse <|--- AddOffersToArchiveResponse
+ApiErrorResponse <|--- ApiClientDataErrorResponse
+ApiResponse <|--- ApiErrorResponse
+ApiErrorResponse <|--- ApiForbiddenErrorResponse
+ApiErrorResponse <|--- ApiLimitErrorResponse
+ApiErrorResponse <|--- ApiLockedErrorResponse
+ApiErrorResponse <|--- ApiNotFoundErrorResponse
+ApiErrorResponse <|--- ApiServerErrorResponse
+ApiErrorResponse <|--- ApiUnauthorizedErrorResponse
+ApiResponse <|--- CalculateTariffsResponse
+OutletDTO <|--- ChangeOutletRequest
+ApiResponse <|--- CreateChatResponse
+ApiResponse <|--- CreateOutletResponse
+ApiResponse <|--- DeleteCampaignOffersResponse
+ApiResponse <|--- DeleteOffersFromArchiveResponse
+ApiResponse <|--- DeleteOffersResponse
+ApiResponse <|--- DeletePromoOffersResponse
+ApiResponse <|--- EmptyApiResponse
+MappingsOfferDTO <|--- EnrichedMappingsOfferDTO
+ModelDTO <|--- EnrichedModelDTO
+OrderBoxLayoutDTO <|--- EnrichedOrderBoxLayoutDTO
+OutletDTO <|--- FullOutletDTO
+OutletLicenseDTO <|--- FullOutletLicenseDTO
+ApiResponse <|--- GenerateReportResponse
+OffersDTO <|--- GetAllOffersResponse
+ApiResponse <|--- GetBidsInfoResponse
+ApiResponse <|--- GetBidsRecommendationsResponse
+ApiResponse <|--- GetBusinessBuyerInfoResponse
+ApiResponse <|--- GetBusinessDocumentsInfoResponse
+ApiResponse <|--- GetBusinessSettingsResponse
+BaseCampaignOfferDTO <|--- GetCampaignOfferDTO
+ApiResponse <|--- GetCampaignOffersResponse
+ApiResponse <|--- GetCategoriesMaxSaleQuantumResponse
+GetCategoriesMaxSaleQuantumDTO <|--- GetCategoriesMaxSaleQuantumResponse
+ApiResponse <|--- GetCategoriesResponse
+ApiResponse <|--- GetCategoryContentParametersResponse
+ApiResponse <|--- GetChatHistoryResponse
+ApiResponse <|--- GetChatsResponse
+ApiResponse <|--- GetFeedIndexLogsResponse
+ApiResponse <|--- GetFeedbackListResponse
+ApiResponse <|--- GetFulfillmentWarehousesResponse
+ApiResponse <|--- GetGoodsFeedbackCommentsResponse
+ApiResponse <|--- GetGoodsFeedbackResponse
+ApiResponse <|--- GetGoodsStatsResponse
+ApiResponse <|--- GetHiddenOffersResponse
+UpdateMappingDTO <|--- GetMappingDTO
+EnrichedModelsDTO <|--- GetModelsOffersResponse
+RegionalModelInfoDTO <|--- GetModelsOffersResponse
+ModelsDTO <|--- GetModelsResponse
+RegionalModelInfoDTO <|--- GetModelsResponse
+ApiResponse <|--- GetOfferCardsContentStatusResponse
+BaseOfferDTO <|--- GetOfferDTO
+ApiResponse <|--- GetOfferMappingEntriesResponse
+ApiResponse <|--- GetOfferMappingsResponse
+ApiResponse <|--- GetOfferRecommendationsResponse
+OffersDTO <|--- GetOffersResponse
+ApiResponse <|--- GetOrderBuyerInfoResponse
+ApiResponse <|--- GetOrderLabelsDataResponse
+ApiResponse <|--- GetOrdersStatsResponse
+ApiResponse <|--- GetOutletLicensesResponse
+BasePriceDTO <|--- GetPriceDTO
+UpdateTimeDTO <|--- GetPriceDTO
+UpdatePriceWithDiscountDTO <|--- GetPriceWithDiscountDTO
+UpdateTimeDTO <|--- GetPriceWithDiscountDTO
+PriceDTO <|--- GetPriceWithVatDTO
+UpdateTimeDTO <|--- GetPriceWithVatDTO
+ApiResponse <|--- GetPricesByOfferIdsResponse
+ApiResponse <|--- GetPricesResponse
+ApiResponse <|--- GetPromoOffersResponse
+ApiResponse <|--- GetPromosResponse
+ApiResponse <|--- GetQualityRatingDetailsResponse
+ApiResponse <|--- GetQualityRatingResponse
+ApiResponse <|--- GetQuarantineOffersResponse
+ApiResponse <|--- GetReportInfoResponse
+ApiResponse <|--- GetReturnResponse
+ApiResponse <|--- GetReturnsResponse
+ApiResponse <|--- GetShipmentOrdersInfoResponse
+ApiResponse <|--- GetShipmentResponse
+ApiResponse <|--- GetSuggestedOfferMappingEntriesResponse
+ApiResponse <|--- GetSuggestedOfferMappingsResponse
+ApiResponse <|--- GetWarehouseStocksResponse
+ApiResponse <|--- GetWarehousesResponse
+MappingsOfferInfoDTO <|--- MappingsOfferDTO
+OfferMappingInfoDTO <|--- OfferMappingEntryDTO
+OrderBuyerBasicInfoDTO <|--- OrderBuyerDTO
+OrderBuyerBasicInfoDTO <|--- OrderBuyerInfoDTO
+ApiResponse <|--- ProvideOrderItemIdentifiersResponse
+ForwardScrollingPagerDTO <|--- ScrollingPagerDTO
+GetModelsResponse <|--- SearchModelsResponse
+ApiResponse <|--- SearchShipmentsResponse
+ApiResponse <|--- SetOrderBoxLayoutResponse
+ParcelDTO <|--- SetOrderShipmentBoxesRequest
+ApiResponse <|--- SetOrderShipmentBoxesResponse
+BaseShipmentDTO <|--- ShipmentDTO
+ExtensionShipmentDTO <|--- ShipmentDTO
+BaseShipmentDTO <|--- ShipmentInfoDTO
+ApiResponse <|--- SuggestPricesResponse
+BaseCampaignOfferDTO <|--- UpdateCampaignOfferDTO
+ApiResponse <|--- UpdateGoodsFeedbackCommentResponse
+MappingsOfferInfoDTO <|--- UpdateMappingsOfferDTO
+ApiResponse <|--- UpdateOfferContentResponse
+BaseOfferDTO <|--- UpdateOfferDTO
+OfferMappingInfoDTO <|--- UpdateOfferMappingEntryDTO
+ApiResponse <|--- UpdateOfferMappingsResponse
+ApiResponse <|--- UpdateOrderStatusesResponse
+BasePriceDTO <|--- UpdatePriceWithDiscountDTO
+ApiResponse <|--- UpdatePromoOffersResponse
+ApiResponse <|--- VerifyOrderEacResponse
+
+GetWarehouseStocksDTO -- ScrollingPagerDTO : paging
+GetWarehouseStocksDTO -- "0..*" WarehouseOffersDTO : warehouses
+OrderBoxLayoutItemDTO -- OrderBoxLayoutPartialCountDTO : partialCount
+OrderBoxLayoutItemDTO -- "0..*" BriefOrderItemInstanceDTO : instances
+SuggestPricesRequest -- "0..*" SuggestOfferPriceDTO : offers
+CalculateTariffsRequest -- CalculateTariffsParametersDTO : parameters
+CalculateTariffsRequest -- "0..*" CalculateTariffsOfferDTO : offers
+FeedbackAuthorDTO -- RegionDTO : region
+SetOrderBoxLayoutRequest -- "0..*" OrderBoxLayoutDTO : boxes
+SuggestedOfferDTO -- BasePriceDTO : basicPrice
+OrdersStatsPaymentDTO -- OrdersStatsPaymentOrderDTO : paymentOrder
+MappingsOfferInfoDTO -- OfferWeightDimensionsDTO : weightDimensions
+MappingsOfferInfoDTO -- OfferProcessingStateDTO : processingState
+MappingsOfferInfoDTO -- TimePeriodDTO : shelfLife
+MappingsOfferInfoDTO -- TimePeriodDTO : lifeTime
+MappingsOfferInfoDTO -- TimePeriodDTO : guaranteePeriod
+GetChatsInfoDTO -- "0..*" GetChatInfoDTO : chats
+GetChatsInfoDTO -- ForwardScrollingPagerDTO : paging
+CampaignSettingsScheduleDTO -- CampaignSettingsTimePeriodDTO : period
+GetPromoDTO -- PromoPeriodDTO : period
+GetPromoDTO -- GetPromoAssortmentInfoDTO : assortmentInfo
+GetPromoDTO -- GetPromoMechanicsInfoDTO : mechanicsInfo
+GetPromoDTO -- GetPromoBestsellerInfoDTO : bestsellerInfo
+GetPromoDTO -- "0..*" ChannelType : channels
+GetPromoDTO -- GetPromoConstraintsDTO : constraints
+CalculateTariffsResponseDTO -- "0..*" CalculateTariffsOfferInfoDTO : offers
+GetCampaignOffersResultDTO -- ScrollingPagerDTO : paging
+GetCampaignOffersResultDTO -- "0..*" GetCampaignOfferDTO : offers
+OfferPriceByOfferIdsResponseDTO -- PriceDTO : price
+FeedbackListDTO -- ScrollingPagerDTO : paging
+FeedbackListDTO -- "0..*" FeedbackDTO : feedbackList
+QualityRatingDetailsDTO -- "0..*" QualityRatingAffectedOrderDTO : affectedOrders
+FeedIndexLogsResultDTO -- FeedIndexLogsFeedDTO : feed
+FeedIndexLogsResultDTO -- "0..*" FeedIndexLogsRecordDTO : indexLogRecords
+DeletePromoOffersResultDTO -- "0..*" RejectedPromoOfferDeleteDTO : rejectedOffers
+PutSkuBidsRequest -- "0..*" SkuBidItemDTO : bids
+ReturnItemDTO -- "0..*" ReturnDecisionDTO : decisions
+ReturnItemDTO -- "0..*" ReturnInstanceDTO : instances
+ReturnItemDTO -- "0..*" TrackDTO : tracks
+GetOutletsResponse -- "0..*" FullOutletDTO : outlets
+GetOutletsResponse -- ScrollingPagerDTO : paging
+GetOutletsResponse -- FlippingPagerDTO : pager
+UpdateOrderStatusRequest -- OrderStatusChangeDTO : order
+AddOffersToArchiveDTO -- "0..*" AddOffersToArchiveErrorDTO : notArchivedOffers
+OfferPriceListResponseDTO -- "0..*" OfferPriceResponseDTO : offers
+OfferPriceListResponseDTO -- ScrollingPagerDTO : paging
+GetSuggestedOfferMappingEntriesRequest -- "0..*" MappingsOfferDTO : offers
+UpdateGoodsFeedbackCommentRequest -- UpdateGoodsFeedbackCommentDTO : comment
+FulfillmentWarehouseDTO -- WarehouseAddressDTO : address
+CalculateTariffsOfferInfoDTO -- CalculateTariffsOfferDTO : offer
+CalculateTariffsOfferInfoDTO -- "0..*" CalculatedTariffDTO : tariffs
+OrdersStatsItemDTO -- "0..*" OrdersStatsPriceDTO : prices
+OrdersStatsItemDTO -- OrdersStatsWarehouseDTO : warehouse
+OrdersStatsItemDTO -- "0..*" OrdersStatsDetailsDTO : details
+OfferForRecommendationDTO -- BasePriceDTO : price
+OfferForRecommendationDTO -- GetPriceDTO : cofinancePrice
+UpdateBusinessPricesRequest -- "0..*" UpdateBusinessOfferPriceDTO : offers
+LogisticPickupPointDTO -- PickupAddressDTO : address
+OfferContentDTO -- "0..*" ParameterValueDTO : parameterValues
+WarehousesDTO -- "0..*" WarehouseDTO : warehouses
+WarehousesDTO -- "0..*" WarehouseGroupDTO : warehouseGroups
+ModelDTO -- ModelPriceDTO : prices
+CategoryDTO -- "0..*" CategoryDTO : children
+PriceCompetitivenessThresholdsDTO -- BasePriceDTO : optimalPrice
+PriceCompetitivenessThresholdsDTO -- BasePriceDTO : averagePrice
+CampaignSettingsDeliveryDTO -- CampaignSettingsScheduleDTO : schedule
+OrderLabelDTO -- "0..*" ParcelBoxLabelDTO : parcelBoxLabels
+CategoryParameterUnitDTO -- "0..*" UnitDTO : units
+UpdateOfferContentResultDTO -- "0..*" OfferContentErrorDTO : errors
+UpdateOfferContentResultDTO -- "0..*" OfferContentErrorDTO : warnings
+WarehouseDTO -- WarehouseAddressDTO : address
+CampaignDTO -- BusinessDTO : business
+ValueRestrictionDTO -- "0..*" OptionValuesLimitedDTO : limitedValues
+OfferRecommendationsResultDTO -- ScrollingPagerDTO : paging
+OfferRecommendationsResultDTO -- "0..*" OfferRecommendationDTO : offerRecommendations
+UpdateOfferMappingEntryRequest -- "0..*" UpdateOfferMappingEntryDTO : offerMappingEntries
+OrderItemsModificationResultDTO -- "0..*" BriefOrderItemDTO : items
+ProvideOrderDigitalCodesRequest -- "0..*" OrderDigitalItemDTO : items
+BaseCampaignOfferDTO -- QuantumDTO : quantum
+FeedbackGradesDTO -- "0..*" FeedbackFactorDTO : factors
+OrderDeliveryDTO -- OrderCourierDTO : courier
+OrderDeliveryDTO -- OrderDeliveryDatesDTO : dates
+OrderDeliveryDTO -- RegionDTO : region
+OrderDeliveryDTO -- OrderDeliveryAddressDTO : address
+OrderDeliveryDTO -- "0..*" OrderTrackDTO : tracks
+OrderDeliveryDTO -- "0..*" OrderShipmentDTO : shipments
+GoodsFeedbackCommentListDTO -- "0..*" GoodsFeedbackCommentDTO : comments
+GoodsFeedbackCommentListDTO -- ForwardScrollingPagerDTO : paging
+UpdatePromoOffersResultDTO -- "0..*" RejectedPromoOfferUpdateDTO : rejectedOffers
+UpdatePromoOffersResultDTO -- "0..*" WarningPromoOfferUpdateDTO : warningOffers
+GetRegionWithChildrenResponse -- FlippingPagerDTO : pager
+GetRegionWithChildrenResponse -- RegionDTO : regions
+CampaignSettingsLocalRegionDTO -- CampaignSettingsDeliveryDTO : delivery
+GoodsStatsWarehouseDTO -- "0..*" WarehouseStockDTO : stocks
+GetBidsInfoResponseDTO -- "0..*" SkuBidItemDTO : bids
+GetBidsInfoResponseDTO -- ForwardScrollingPagerDTO : paging
+OfferPriceDTO -- PriceDTO : price
+ModelsDTO -- "0..*" ModelDTO : models
+OfferRecommendationInfoDTO -- BasePriceDTO : recommendedCofinancePrice
+OfferRecommendationInfoDTO -- PriceCompetitivenessThresholdsDTO : competitivenessThresholds
+UpdateOutletLicenseRequest -- "0..*" OutletLicenseDTO : licenses
+OrderBusinessDocumentsDTO -- DocumentDTO : upd
+OrderBusinessDocumentsDTO -- DocumentDTO : ukd
+OrderBusinessDocumentsDTO -- DocumentDTO : torgTwelve
+OrderBusinessDocumentsDTO -- DocumentDTO : sf
+OrderBusinessDocumentsDTO -- DocumentDTO : ksf
+PriceSuggestOfferDTO -- "0..*" PriceSuggestDTO : priceSuggestion
+OrderStatusChangeDTO -- OrderStatusChangeDeliveryDTO : delivery
+GetOrderResponse -- OrderDTO : order
+GetPromoMechanicsInfoDTO -- GetPromoPromocodeInfoDTO : promocodeInfo
+OutletLicensesResponseDTO -- "0..*" FullOutletLicenseDTO : licenses
+CategoryParameterDTO -- CategoryParameterUnitDTO : unit
+CategoryParameterDTO -- "0..*" ParameterValueOptionDTO : values
+CategoryParameterDTO -- ParameterValueConstraintsDTO : constraints
+CategoryParameterDTO -- "0..*" ValueRestrictionDTO : valueRestrictions
+GoodsFeedbackDTO -- GoodsFeedbackIdentifiersDTO : identifiers
+GoodsFeedbackDTO -- GoodsFeedbackDescriptionDTO : description
+GoodsFeedbackDTO -- GoodsFeedbackMediaDTO : media
+GoodsFeedbackDTO -- GoodsFeedbackStatisticsDTO : statistics
+OrderShipmentDTO -- "0..*" OrderTrackDTO : tracks
+OrderShipmentDTO -- "0..*" OrderParcelBoxDTO : boxes
+UpdatePromoOfferDTO -- UpdatePromoOfferParamsDTO : params
+SkuBidRecommendationItemDTO -- "0..*" BidRecommendationItemDTO : bidRecommendations
+SkuBidRecommendationItemDTO -- "0..*" PriceRecommendationItemDTO : priceRecommendations
+GetFeedResponse -- FeedDTO : feed
+UpdatePricesRequest -- "0..*" OfferPriceDTO : offers
+WarehouseOfferDTO -- TurnoverDTO : turnoverSummary
+WarehouseOfferDTO -- "0..*" WarehouseStockDTO : stocks
+OrdersStatsDTO -- "0..*" OrdersStatsOrderDTO : orders
+OrdersStatsDTO -- ForwardScrollingPagerDTO : paging
+OrderDeliveryAddressDTO -- GpsDTO : gps
+GetSuggestedOfferMappingsResultDTO -- "0..*" SuggestedOfferMappingDTO : offers
+GetCategoriesMaxSaleQuantumDTO -- "0..*" MaxSaleQuantumDTO : results
+GetCategoriesMaxSaleQuantumDTO -- "0..*" CategoryErrorDTO : errors
+GetPromoOffersResultDTO -- "0..*" GetPromoOfferDTO : offers
+GetPromoOffersResultDTO -- ForwardScrollingPagerDTO : paging
+OrderItemInstanceModificationDTO -- "0..*" BriefOrderItemInstanceDTO : instances
+GetCampaignResponse -- CampaignDTO : campaign
+UpdateOfferMappingsRequest -- "0..*" UpdateOfferMappingDTO : offerMappings
+UpdateOrderStatusesRequest -- "0..*" OrderStateDTO : orders
+WarehouseOffersDTO -- "0..*" WarehouseOfferDTO : offers
+RegionDTO -- RegionDTO : parent
+RegionDTO -- "0..*" RegionDTO : children
+OrderBoxLayoutDTO -- "0..*" OrderBoxLayoutItemDTO : items
+ShipmentBoxesDTO -- "0..*" ParcelBoxDTO : boxes
+GetSuggestedOfferMappingsRequest -- "0..*" SuggestedOfferDTO : offers
+GetOfferMappingDTO -- GetOfferDTO : offer
+GetOfferMappingDTO -- GetMappingDTO : mapping
+GetBidsRecommendationsResponseDTO -- "0..*" SkuBidRecommendationItemDTO : recommendations
+OfferMappingInfoDTO -- OfferMappingDTO : mapping
+OfferMappingInfoDTO -- OfferMappingDTO : awaitingModerationMapping
+OfferMappingInfoDTO -- OfferMappingDTO : rejectedMapping
+CategoryContentParametersDTO -- "0..*" CategoryParameterDTO : parameters
+SetOrderDeliveryDateRequest -- OrderDeliveryDateDTO : dates
+GetCampaignRegionResponse -- RegionDTO : region
+GoodsFeedbackCommentDTO -- GoodsFeedbackCommentAuthorDTO : author
+GetQuarantineOffersResultDTO -- ScrollingPagerDTO : paging
+GetQuarantineOffersResultDTO -- "0..*" QuarantineOfferDTO : offers
+OfferProcessingStateDTO -- "0..*" OfferProcessingNoteDTO : notes
+QualityRatingDTO -- "0..*" QualityRatingComponentDTO : components
+GoodsStatsGoodsDTO -- GoodsStatsWeightDimensionsDTO : weightDimensions
+GoodsStatsGoodsDTO -- "0..*" GoodsStatsWarehouseDTO : warehouses
+GoodsStatsGoodsDTO -- "0..*" TariffDTO : tariffs
+DeleteHiddenOffersRequest -- "0..*" HiddenOfferDTO : hiddenOffers
+UpdateOfferMappingResultDTO -- "0..*" OfferMappingErrorDTO : errors
+UpdateOfferMappingResultDTO -- "0..*" OfferMappingErrorDTO : warnings
+WarehouseAddressDTO -- GpsDTO : gps
+ParcelDTO -- "0..*" ParcelBoxDTO : boxes
+PromoOfferParamsDTO -- PromoOfferDiscountParamsDTO : discountParams
+PromoOfferParamsDTO -- PromoOfferPromocodeParamsDTO : promocodeParams
+FeedbackDTO -- FeedbackAuthorDTO : author
+FeedbackDTO -- "0..*" FeedbackCommentDTO : comments
+FeedbackDTO -- FeedbackShopDTO : shop
+FeedbackDTO -- FeedbackGradesDTO : grades
+FeedbackDTO -- FeedbackOrderDTO : order
+PagedReturnsDTO -- ForwardScrollingPagerDTO : paging
+PagedReturnsDTO -- "0..*" ReturnDTO : returns
+OrderBoxesLayoutDTO -- "0..*" EnrichedOrderBoxLayoutDTO : boxes
+OrderItemDTO -- "0..*" OrderItemPromoDTO : promos
+OrderItemDTO -- "0..*" OrderItemInstanceDTO : instances
+OrderItemDTO -- "0..*" OrderItemDetailDTO : details
+OrderItemDTO -- "0..*" OrderItemSubsidyDTO : subsidies
+FeedDTO -- FeedContentDTO : content
+FeedDTO -- FeedDownloadDTO : download
+FeedDTO -- FeedPlacementDTO : placement
+FeedDTO -- FeedPublicationDTO : publication
+QuarantineOfferDTO -- BasePriceDTO : currentPrice
+QuarantineOfferDTO -- BasePriceDTO : lastValidPrice
+QuarantineOfferDTO -- "0..*" PriceQuarantineVerdictDTO : verdicts
+UpdateOfferMappingDTO -- UpdateOfferDTO : offer
+UpdateOfferMappingDTO -- UpdateMappingDTO : mapping
+ReturnDTO -- LogisticPickupPointDTO : logisticPickupPoint
+ReturnDTO -- "0..*" ReturnItemDTO : items
+FeedContentDTO -- FeedContentErrorDTO : error
+OfferPriceResponseDTO -- PriceDTO : price
+ChatMessagesResultDTO -- "0..*" ChatMessageDTO : messages
+ChatMessagesResultDTO -- ForwardScrollingPagerDTO : paging
+GetHiddenOffersResultDTO -- ScrollingPagerDTO : paging
+GetHiddenOffersResultDTO -- "0..*" HiddenOfferDTO : hiddenOffers
+OfferRecommendationDTO -- OfferForRecommendationDTO : offer
+OfferRecommendationDTO -- OfferRecommendationInfoDTO : recommendation
+ExtensionShipmentDTO -- ShipmentStatusChangeDTO : currentStatus
+AddHiddenOffersRequest -- "0..*" HiddenOfferDTO : hiddenOffers
+SearchShipmentsResponseDTO -- "0..*" ShipmentInfoDTO : shipments
+SearchShipmentsResponseDTO -- ForwardScrollingPagerDTO : paging
+UpdateOrderStatusesDTO -- "0..*" UpdateOrderStatusDTO : orders
+GoodsFeedbackListDTO -- "0..*" GoodsFeedbackDTO : feedbacks
+GoodsFeedbackListDTO -- ForwardScrollingPagerDTO : paging
+SuggestPricesResultDTO -- "0..*" PriceSuggestOfferDTO : offers
+UpdateStocksRequest -- "0..*" UpdateStockDTO : skus
+PriceQuarantineVerdictDTO -- "0..*" PriceQuarantineVerdictParameterDTO : params
+GetOrdersResponse -- FlippingPagerDTO : pager
+GetOrdersResponse -- "0..*" OrderDTO : orders
+GetOrdersResponse -- ForwardScrollingPagerDTO : paging
+WarehouseGroupDTO -- WarehouseDTO : mainWarehouse
+WarehouseGroupDTO -- "0..*" WarehouseDTO : warehouses
+GetOfferMappingsResultDTO -- ScrollingPagerDTO : paging
+GetOfferMappingsResultDTO -- "0..*" GetOfferMappingDTO : offerMappings
+FulfillmentWarehousesDTO -- "0..*" FulfillmentWarehouseDTO : warehouses
+OrdersStatsOrderDTO -- OrdersStatsDeliveryRegionDTO : deliveryRegion
+OrdersStatsOrderDTO -- "0..*" OrdersStatsItemDTO : items
+OrdersStatsOrderDTO -- "0..*" OrdersStatsItemDTO : initialItems
+OrdersStatsOrderDTO -- "0..*" OrdersStatsPaymentDTO : payments
+OrdersStatsOrderDTO -- "0..*" OrdersStatsCommissionDTO : commissions
+GetOutletResponse -- FullOutletDTO : outlet
+SetFeedParamsRequest -- "0..*" FeedParameterDTO : parameters
+WarningPromoOfferUpdateDTO -- "0..*" PromoOfferUpdateWarningDTO : warnings
+OrderDTO -- "0..*" OrderItemDTO : items
+OrderDTO -- "0..*" OrderSubsidyDTO : subsidies
+OrderDTO -- OrderDeliveryDTO : delivery
+OrderDTO -- OrderBuyerDTO : buyer
+GetRegionsResponse -- "0..*" RegionDTO : regions
+GetRegionsResponse -- ForwardScrollingPagerDTO : paging
+ProvideOrderItemIdentifiersRequest -- "0..*" OrderItemInstanceModificationDTO : items
+OfferMappingEntriesDTO -- ScrollingPagerDTO : paging
+OfferMappingEntriesDTO -- "0..*" OfferMappingEntryDTO : offerMappingEntries
+CampaignQualityRatingDTO -- "0..*" QualityRatingDTO : ratings
+BaseShipmentDTO -- PartnerShipmentWarehouseDTO : warehouse
+BaseShipmentDTO -- PartnerShipmentWarehouseDTO : warehouseTo
+BaseShipmentDTO -- DeliveryServiceDTO : deliveryService
+BaseShipmentDTO -- PalletsCountDTO : palletsCount
+GetPromosResultDTO -- "0..*" GetPromoDTO : promos
+UpdateOfferContentRequest -- "0..*" OfferContentDTO : offersContent
+FeedPublicationDTO -- FeedPublicationFullDTO : full
+FeedPublicationDTO -- FeedPublicationPriceAndStockUpdateDTO : priceAndStockUpdate
+OrderItemModificationDTO -- "0..*" BriefOrderItemInstanceDTO : instances
+OutletDTO -- OutletAddressDTO : address
+OutletDTO -- OutletWorkingScheduleDTO : workingSchedule
+OutletDTO -- "0..*" OutletDeliveryRuleDTO : deliveryRules
+DeliveryServicesDTO -- "0..*" DeliveryServiceInfoDTO : deliveryService
+CampaignSettingsDTO -- CampaignSettingsLocalRegionDTO : localRegion
+OutletWorkingScheduleDTO -- "0..*" OutletWorkingScheduleItemDTO : scheduleItems
+OfferMappingSuggestionsListDTO -- "0..*" EnrichedMappingsOfferDTO : offers
+FeedDownloadDTO -- FeedDownloadErrorDTO : error
+UpdateStockDTO -- "0..*" UpdateStockItemDTO : items
+OfferCardDTO -- GetMappingDTO : mapping
+OfferCardDTO -- "0..*" ParameterValueDTO : parameterValues
+OfferCardDTO -- "0..*" OfferCardRecommendationDTO : recommendations
+OfferCardDTO -- "0..*" OfferErrorDTO : errors
+OfferCardDTO -- "0..*" OfferErrorDTO : warnings
+GoodsStatsDTO -- "0..*" GoodsStatsGoodsDTO : shopSkus
+UpdatePromoOffersRequest -- "0..*" UpdatePromoOfferDTO : offers
+BriefOrderItemDTO -- "0..*" OrderItemInstanceDTO : instances
+EnrichedModelsDTO -- "0..*" EnrichedModelDTO : models
+OfferCardsContentStatusDTO -- "0..*" OfferCardDTO : offerCards
+OfferCardsContentStatusDTO -- ForwardScrollingPagerDTO : paging
+BaseOfferDTO -- "0..*" OfferManualDTO : manuals
+BaseOfferDTO -- OfferWeightDimensionsDTO : weightDimensions
+BaseOfferDTO -- TimePeriodDTO : shelfLife
+BaseOfferDTO -- TimePeriodDTO : lifeTime
+BaseOfferDTO -- TimePeriodDTO : guaranteePeriod
+BaseOfferDTO -- OfferConditionDTO : condition
+BaseOfferDTO -- AgeDTO : age
+BaseOfferDTO -- "0..*" OfferParamDTO : params
+FeedIndexLogsRecordDTO -- FeedIndexLogsErrorDTO : error
+FeedIndexLogsRecordDTO -- FeedIndexLogsOffersDTO : offers
+CampaignsQualityRatingDTO -- "0..*" CampaignQualityRatingDTO : campaignRatings
+UpdateOrderItemRequest -- "0..*" OrderItemModificationDTO : items
+UpdatePromoOfferParamsDTO -- UpdatePromoOfferDiscountParamsDTO : discountParams
+UpdateBusinessOfferPriceDTO -- UpdatePriceWithDiscountDTO : price
+ChatMessageDTO -- "0..*" ChatMessagePayloadDTO : payload
+UpdateOrderStatusResponse -- OrderDTO : order
+OfferPriceByOfferIdsListResponseDTO -- "0..*" OfferPriceByOfferIdsResponseDTO : offers
+OfferPriceByOfferIdsListResponseDTO -- ScrollingPagerDTO : paging
+TariffDTO -- "0..*" TariffParameterDTO : parameters
+CalculatedTariffDTO -- "0..*" TariffParameterDTO : parameters
+GetPromoOfferDTO -- PromoOfferParamsDTO : params
+GetPromoOfferDTO -- PromoOfferAutoParticipatingDetailsDTO : autoParticipatingDetails
+GetDeliveryServicesResponse -- DeliveryServicesDTO : result
+GetFeedsResponse -- "0..*" FeedDTO : feeds
+SuggestedOfferMappingDTO -- SuggestedOfferDTO : offer
+SuggestedOfferMappingDTO -- GetMappingDTO : mapping
+GetCampaignSettingsResponse -- CampaignSettingsDTO : settings
+OffersDTO -- "0..*" OfferDTO : offers
+GetBusinessSettingsInfoDTO -- BusinessDTO : info
+GetBusinessSettingsInfoDTO -- BusinessSettingsDTO : settings
+GetCampaignsResponse -- "0..*" CampaignDTO : campaigns
+GetCampaignsResponse -- FlippingPagerDTO : pager
+OrderStatusChangeDeliveryDTO -- OrderStatusChangeDeliveryDatesDTO : dates
+FeedbackCommentDTO -- FeedbackCommentAuthorDTO : author
+FeedbackCommentDTO -- "0..*" FeedbackCommentDTO : children
+UpdateCampaignOffersRequest -- "0..*" UpdateCampaignOfferDTO : offers
+
+@enduml
