@@ -1,0 +1,29 @@
+# RejectedPromoOfferUpdateReasonType
+
+## Enum
+
+
+* `OFFER_DOES_NOT_EXIST` (value: `"OFFER_DOES_NOT_EXIST"`)
+
+* `OFFER_DUPLICATION` (value: `"OFFER_DUPLICATION"`)
+
+* `OFFER_NOT_ELIGIBLE_FOR_PROMO` (value: `"OFFER_NOT_ELIGIBLE_FOR_PROMO"`)
+
+* `OFFER_PROMOS_MAX_BYTE_SIZE_EXCEEDED` (value: `"OFFER_PROMOS_MAX_BYTE_SIZE_EXCEEDED"`)
+
+* `DEADLINE_FOR_FOCUS_PROMOS_EXCEEDED` (value: `"DEADLINE_FOR_FOCUS_PROMOS_EXCEEDED"`)
+
+* `EMPTY_OLD_PRICE` (value: `"EMPTY_OLD_PRICE"`)
+
+* `EMPTY_PROMO_PRICE` (value: `"EMPTY_PROMO_PRICE"`)
+
+* `MAX_PROMO_PRICE_EXCEEDED` (value: `"MAX_PROMO_PRICE_EXCEEDED"`)
+
+* `PROMO_PRICE_BIGGER_THAN_MAX` (value: `"PROMO_PRICE_BIGGER_THAN_MAX"`)
+
+* `PROMO_PRICE_SMALLER_THAN_MIN` (value: `"PROMO_PRICE_SMALLER_THAN_MIN"`)
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

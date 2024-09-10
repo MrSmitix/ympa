@@ -1,0 +1,82 @@
+# CreateOutletResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Status** | Pointer to [**ApiResponseStatusType**](ApiResponseStatusType.md) |  | [optional] 
+**Result** | Pointer to [**OutletResponseDTO**](OutletResponseDTO.md) |  | [optional] 
+
+## Methods
+
+### NewCreateOutletResponse
+
+`func NewCreateOutletResponse() *CreateOutletResponse`
+
+NewCreateOutletResponse instantiates a new CreateOutletResponse object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewCreateOutletResponseWithDefaults
+
+`func NewCreateOutletResponseWithDefaults() *CreateOutletResponse`
+
+NewCreateOutletResponseWithDefaults instantiates a new CreateOutletResponse object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetStatus
+
+`func (o *CreateOutletResponse) GetStatus() ApiResponseStatusType`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *CreateOutletResponse) GetStatusOk() (*ApiResponseStatusType, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *CreateOutletResponse) SetStatus(v ApiResponseStatusType)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *CreateOutletResponse) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+### GetResult
+
+`func (o *CreateOutletResponse) GetResult() OutletResponseDTO`
+
+GetResult returns the Result field if non-nil, zero value otherwise.
+
+### GetResultOk
+
+`func (o *CreateOutletResponse) GetResultOk() (*OutletResponseDTO, bool)`
+
+GetResultOk returns a tuple with the Result field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResult
+
+`func (o *CreateOutletResponse) SetResult(v OutletResponseDTO)`
+
+SetResult sets Result field to given value.
+
+### HasResult
+
+`func (o *CreateOutletResponse) HasResult() bool`
+
+HasResult returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
