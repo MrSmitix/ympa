@@ -1,0 +1,62 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Параметры размещения товара в магазине.",
+  "name": "GetCampaignOfferDTO",
+  "fields": [
+    {
+      "name": "offerId",
+      "type": "string",
+      "doc": "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) "
+    },
+    {
+      "name": "quantum",
+      "type": ["null", "ympa_avro_schema.QuantumDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "available",
+      "type": ["null", "boolean"],
+      "doc": "Есть ли товар в продаже. ",
+      "default": null
+    },
+    {
+      "name": "basicPrice",
+      "type": ["null", "ympa_avro_schema.GetPriceWithDiscountDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "campaignPrice",
+      "type": ["null", "ympa_avro_schema.GetPriceWithVatDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.OfferCampaignStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "errors",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferErrorDTO"
+      }],
+      "doc": "Ошибки, препятствующие размещению товара на витрине. ",
+      "default": null
+    },
+    {
+      "name": "warnings",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferErrorDTO"
+      }],
+      "doc": "Предупреждения, не препятствующие размещению товара на витрине. ",
+      "default": null
+    }
+  ]
+
+}

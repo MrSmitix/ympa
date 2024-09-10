@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о магазине к данным идентификатора кампании.",
+  "name": "GetCampaignResponse",
+  "fields": [
+    {
+      "name": "campaign",
+      "type": ["null", "ympa_avro_schema.CampaignDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

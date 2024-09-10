@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Краткие сведения о промаркированных товарах. Параметр возвращается, если ответ `OK`. ",
+  "name": "OrderItemsModificationResultDTO",
+  "fields": [
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.BriefOrderItemDTO"
+      },
+      "doc": "Список позиций в заказе, подлежащих маркировке."
+    }
+  ]
+
+}

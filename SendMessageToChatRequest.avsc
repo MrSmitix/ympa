@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "В какой чат нужно отправить сообщение и текст сообщения.",
+  "name": "SendMessageToChatRequest",
+  "fields": [
+    {
+      "name": "message",
+      "type": "string",
+      "doc": "Текст сообщения. Максимальная длина — 4096 символа."
+    }
+  ]
+
+}

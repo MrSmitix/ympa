@@ -1,0 +1,25 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Годные/негодные ярлыки по заказам в отгрузке.",
+  "name": "OrdersShipmentInfoDTO",
+  "fields": [
+    {
+      "name": "orderIdsWithLabels",
+      "type": {
+        "type": "set",
+        "items": "long"
+      },
+      "doc": "Идентификаторы заказов в отгрузке, для которых можно распечатать ярлыки."
+    },
+    {
+      "name": "orderIdsWithoutLabels",
+      "type": {
+        "type": "set",
+        "items": "long"
+      },
+      "doc": "Идентификаторы заказов в отгрузке, для которых нельзя распечатать ярлыки."
+    }
+  ]
+
+}

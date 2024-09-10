@@ -1,0 +1,40 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Регион доставки.",
+  "name": "RegionDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор региона.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Название региона."
+    },
+    {
+      "name": "type",
+      "type": "ympa_avro_schema.RegionType",
+      "doc": ""
+    },
+    {
+      "name": "parent",
+      "type": ["null", "ympa_avro_schema.RegionDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "children",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.RegionDTO"
+      }],
+      "doc": "Дочерние регионы.",
+      "default": null
+    }
+  ]
+
+}

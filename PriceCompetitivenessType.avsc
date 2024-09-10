@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Привлекательность цены:  * `OPTIMAL` — привлекательная. * `AVERAGE` — умеренная. * `LOW` — непривлекательная. ",
+  "name": "PriceCompetitivenessType",
+  "symbols": [
+    "OPTIMAL",
+    "AVERAGE",
+    "LOW"
+  ]
+}

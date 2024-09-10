@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Возвраты.",
+  "name": "PagedReturnsDTO",
+  "fields": [
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ForwardScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "returns",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.ReturnDTO"
+      },
+      "doc": "Список возвратов."
+    }
+  ]
+
+}

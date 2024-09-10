@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "UpdateOfferMappingsRequest",
+  "fields": [
+    {
+      "name": "offerMappings",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.UpdateOfferMappingDTO"
+      },
+      "doc": "Перечень товаров, которые нужно добавить или обновить."
+    },
+    {
+      "name": "onlyPartnerMediaContent",
+      "type": ["null", "boolean"],
+      "doc": "Будут использоваться только переданные вами изображения товаров.  Значение по умолчанию — `false`. Если вы хотите заменить изображения, которые добавил Маркет, передайте значение `true`. ",
+      "default": null
+    }
+  ]
+
+}

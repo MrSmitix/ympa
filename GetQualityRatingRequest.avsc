@@ -1,0 +1,29 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос информации по индексу качества.",
+  "name": "GetQualityRatingRequest",
+  "fields": [
+    {
+      "name": "dateFrom",
+      "type": ["null", "string"],
+      "doc": "Начало периода.  Формат даты: `ГГГГ‑ММ‑ДД`.  Не может быть раньше 30 дней от текущей даты. ",
+      "default": null
+    },
+    {
+      "name": "dateTo",
+      "type": ["null", "string"],
+      "doc": "Конец периода.  Формат даты: `ГГГГ‑ММ‑ДД`.  Не может быть позже текущей даты. ",
+      "default": null
+    },
+    {
+      "name": "campaignIds",
+      "type": {
+        "type": "set",
+        "items": "long"
+      },
+      "doc": "Список идентификаторов магазинов."
+    }
+  ]
+
+}

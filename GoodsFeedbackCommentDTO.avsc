@@ -1,0 +1,41 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Комментарий к отзыву.",
+  "name": "GoodsFeedbackCommentDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор комментария к отзыву. "
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "doc": "Текст комментария."
+    },
+    {
+      "name": "canModify",
+      "type": ["null", "boolean"],
+      "doc": "Может ли продавец изменять комментарий или удалять его.",
+      "default": null
+    },
+    {
+      "name": "parentId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор комментария к отзыву. ",
+      "default": null
+    },
+    {
+      "name": "author",
+      "type": "ympa_avro_schema.GoodsFeedbackCommentAuthorDTO",
+      "doc": ""
+    },
+    {
+      "name": "status",
+      "type": "ympa_avro_schema.GoodsFeedbackCommentStatusType",
+      "doc": ""
+    }
+  ]
+
+}

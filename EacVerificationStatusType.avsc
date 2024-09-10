@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Статус проверки кода подтверждения:  * `ACCEPTED` — код верный. * `REJECTED` — код неверный. * `NEED_UPDATE` — Маркет отправит новый код. Значение возвращается, если превышено количество попыток отправки кода. ",
+  "name": "EacVerificationStatusType",
+  "symbols": [
+    "ACCEPTED",
+    "REJECTED",
+    "NEED_UPDATE"
+  ]
+}

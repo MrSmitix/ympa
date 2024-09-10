@@ -1,0 +1,24 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о статусе публикации товара на Маркете.",
+  "name": "OfferProcessingStateDTO",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.OfferProcessingStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "notes",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferProcessingNoteDTO"
+      }],
+      "doc": "Причины, по которым товар не прошел модерацию.",
+      "default": null
+    }
+  ]
+
+}

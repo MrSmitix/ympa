@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об остатках товара.",
+  "name": "WarehouseStockDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": "ympa_avro_schema.WarehouseStockType",
+      "doc": ""
+    },
+    {
+      "name": "count",
+      "type": "long",
+      "doc": "Значение остатков."
+    }
+  ]
+
+}

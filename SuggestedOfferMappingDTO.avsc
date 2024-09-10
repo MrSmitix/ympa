@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Товар с соответствующей карточкой на Маркете.",
+  "name": "SuggestedOfferMappingDTO",
+  "fields": [
+    {
+      "name": "offer",
+      "type": ["null", "ympa_avro_schema.SuggestedOfferDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "mapping",
+      "type": ["null", "ympa_avro_schema.GetMappingDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

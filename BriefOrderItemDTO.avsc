@@ -1,0 +1,54 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о маркированном товаре.",
+  "name": "BriefOrderItemDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор товара в заказе.  Позволяет идентифицировать товар в рамках данного заказа. ",
+      "default": null
+    },
+    {
+      "name": "vat",
+      "type": ["null", "ympa_avro_schema.OrderVatType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "count",
+      "type": ["null", "int"],
+      "doc": "Количество единиц товара.",
+      "default": null
+    },
+    {
+      "name": "price",
+      "type": ["null", "double"],
+      "doc": "Цена на товар. Указана в той валюте, которая была задана в каталоге. Разделитель целой и дробной части — точка. ",
+      "default": null
+    },
+    {
+      "name": "offerName",
+      "type": ["null", "string"],
+      "doc": "Название товара.",
+      "default": null
+    },
+    {
+      "name": "offerId",
+      "type": ["null", "string"],
+      "doc": "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) ",
+      "default": null
+    },
+    {
+      "name": "instances",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderItemInstanceDTO"
+      }],
+      "doc": "Переданные вами коды маркировки.",
+      "default": null
+    }
+  ]
+
+}

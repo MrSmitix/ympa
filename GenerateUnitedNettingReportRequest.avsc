@@ -1,0 +1,77 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации отчета: идентификатор магазина, период, за который нужен отчет, а также фильтры. ",
+  "name": "GenerateUnitedNettingReportRequest",
+  "fields": [
+    {
+      "name": "businessId",
+      "type": "long",
+      "doc": "Идентификатор бизнеса."
+    },
+    {
+      "name": "dateTimeFrom",
+      "type": ["null", "string"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Начало периода, включительно. ",
+      "default": null
+    },
+    {
+      "name": "dateTimeTo",
+      "type": ["null", "string"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Конец периода, включительно. Максимальный период — 1 год. ",
+      "default": null
+    },
+    {
+      "name": "dateFrom",
+      "type": ["null", "string"],
+      "doc": "Начало периода, включительно.",
+      "default": null
+    },
+    {
+      "name": "dateTo",
+      "type": ["null", "string"],
+      "doc": "Конец периода, включительно. Максимальный период — 1 год.",
+      "default": null
+    },
+    {
+      "name": "bankOrderId",
+      "type": ["null", "long"],
+      "doc": "Номер платежного поручения.",
+      "default": null
+    },
+    {
+      "name": "bankOrderDateTime",
+      "type": ["null", "string"],
+      "doc": "Дата платежного поручения.",
+      "default": null
+    },
+    {
+      "name": "placementPrograms",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.PlacementType"
+      }],
+      "doc": "Список моделей, которые нужны в отчете. ",
+      "default": null
+    },
+    {
+      "name": "inns",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Список ИНН, которые нужны в отчете.",
+      "default": null
+    },
+    {
+      "name": "campaignIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "long"
+      }],
+      "doc": "Список магазинов, которые нужны в отчете.",
+      "default": null
+    }
+  ]
+
+}

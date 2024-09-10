@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Количество палет в отгрузке.",
+  "name": "PalletsCountDTO",
+  "fields": [
+    {
+      "name": "planned",
+      "type": ["null", "int"],
+      "doc": "Количество палет, которое заявил продавец.",
+      "default": null
+    },
+    {
+      "name": "fact",
+      "type": ["null", "int"],
+      "doc": "Количество палет, которое приняли в сортировочном центре.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список предложений с пагинатором.",
+  "name": "GetOffersResponse",
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferDTO"
+      },
+      "doc": "Список предложений магазина."
+    },
+    {
+      "name": "pager",
+      "type": ["null", "ympa_avro_schema.FlippingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

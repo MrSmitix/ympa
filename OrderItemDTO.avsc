@@ -1,0 +1,126 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров в заказе.",
+  "name": "OrderItemDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор товара в заказе.  Позволяет идентифицировать товар в рамках данного заказа. ",
+      "default": null
+    },
+    {
+      "name": "offerId",
+      "type": ["null", "string"],
+      "doc": "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) ",
+      "default": null
+    },
+    {
+      "name": "offerName",
+      "type": ["null", "string"],
+      "doc": "Название товара.",
+      "default": null
+    },
+    {
+      "name": "price",
+      "type": ["null", "double"],
+      "doc": "Цена на товар в валюте заказа без учета вознаграждения партнеру за скидки по промокодам, купонам и акциям (параметр `subsidies`). ",
+      "default": null
+    },
+    {
+      "name": "buyerPrice",
+      "type": ["null", "double"],
+      "doc": "Цена на товар в валюте покупателя. В цене уже учтены скидки по:  * акциям; * купонам; * промокодам. ",
+      "default": null
+    },
+    {
+      "name": "buyerPriceBeforeDiscount",
+      "type": ["null", "double"],
+      "doc": "Стоимость товара в валюте покупателя до применения скидок по:  * акциям; * купонам; * промокодам. ",
+      "default": null
+    },
+    {
+      "name": "priceBeforeDiscount",
+      "type": ["null", "double"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел.  {% endnote %}  Стоимость товара в валюте магазина до применения скидок. ",
+      "default": null
+    },
+    {
+      "name": "count",
+      "type": ["null", "int"],
+      "doc": "Количество единиц товара.",
+      "default": null
+    },
+    {
+      "name": "vat",
+      "type": ["null", "ympa_avro_schema.OrderVatType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "shopSku",
+      "type": ["null", "string"],
+      "doc": "Ваш SKU — идентификатор товара в вашей системе.  Разрешена любая последовательность длиной до 255 знаков.  Правила использования SKU:  * У каждого товара SKU должен быть свой.  * SKU товара нельзя менять — можно только удалить товар и добавить заново с новым SKU.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  [Что такое SKU и как его назначать](https://yandex.ru/support/marketplace/assortment/add/index.html#fields) ",
+      "default": null
+    },
+    {
+      "name": "subsidy",
+      "type": ["null", "double"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел. Вместо него используйте `subsidies`.  {% endnote %}  Общее вознаграждение партнеру за DBS-доставку и все скидки на товар:  * по промокодам; * по купонам; * по баллам Плюса; * по акциям.  Передается в валюте заказа. ",
+      "default": null
+    },
+    {
+      "name": "partnerWarehouseId",
+      "type": ["null", "string"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Идентификатор склада в системе партнера, на который сформирован заказ. ",
+      "default": null
+    },
+    {
+      "name": "promos",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderItemPromoDTO"
+      }],
+      "doc": "Информация о вознаграждениях партнеру за скидки на товар по промокодам, купонам и акциям.",
+      "default": null
+    },
+    {
+      "name": "instances",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderItemInstanceDTO"
+      }],
+      "doc": "Информация о маркировке единиц товара.  Возвращаются данные для маркировки, переданные в запросе [PUT campaigns/{campaignId}/orders/{orderId}/cis](../../reference/orders/provideOrderItemCis.md).  Если магазин еще не передавал коды для этого заказа, `instances` отсутствует. ",
+      "default": null
+    },
+    {
+      "name": "details",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderItemDetailDTO"
+      }],
+      "doc": "Информация об удалении товара из заказа. ",
+      "default": null
+    },
+    {
+      "name": "subsidies",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderItemSubsidyDTO"
+      }],
+      "doc": "Список субсидий по типам.",
+      "default": null
+    },
+    {
+      "name": "requiredInstanceTypes",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderItemInstanceType"
+      }],
+      "doc": "Список необходимых маркировок товара.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "UpdateOrderStatusRequest",
+  "fields": [
+    {
+      "name": "order",
+      "type": "ympa_avro_schema.OrderStatusChangeDTO",
+      "doc": ""
+    }
+  ]
+
+}

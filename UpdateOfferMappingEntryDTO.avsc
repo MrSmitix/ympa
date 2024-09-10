@@ -1,0 +1,33 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров.  В теле запроса можно передать от одного до 500 товаров.  Обязательный параметр. ",
+  "name": "UpdateOfferMappingEntryDTO",
+  "fields": [
+    {
+      "name": "mapping",
+      "type": ["null", "ympa_avro_schema.OfferMappingDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "awaitingModerationMapping",
+      "type": ["null", "ympa_avro_schema.OfferMappingDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "rejectedMapping",
+      "type": ["null", "ympa_avro_schema.OfferMappingDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "offer",
+      "type": ["null", "ympa_avro_schema.UpdateMappingsOfferDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

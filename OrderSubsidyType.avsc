@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип субсидии:  * `YANDEX_CASHBACK` — скидка по подписке Яндекс Плюс.  * `SUBSIDY` — скидка Маркета (по акциям, промокодам, купонам и т. д.)  * `DELIVERY` — скидка за доставку (DBS). ",
+  "name": "OrderSubsidyType",
+  "symbols": [
+    "YANDEX_CASHBACK",
+    "SUBSIDY",
+    "DELIVERY"
+  ]
+}

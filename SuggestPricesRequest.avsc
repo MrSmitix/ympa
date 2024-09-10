@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на получение списка цен для продвижения.",
+  "name": "SuggestPricesRequest",
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.SuggestOfferPriceDTO"
+      },
+      "doc": "Список товаров."
+    }
+  ]
+
+}

@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Распределение товаров по коробкам.",
+  "name": "OrderBoxesLayoutDTO",
+  "fields": [
+    {
+      "name": "boxes",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.EnrichedOrderBoxLayoutDTO"
+      },
+      "doc": "Список коробок."
+    }
+  ]
+
+}

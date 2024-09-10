@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об индексе качества магазинов.",
+  "name": "CampaignsQualityRatingDTO",
+  "fields": [
+    {
+      "name": "campaignRatings",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.CampaignQualityRatingDTO"
+      },
+      "doc": "Список магазинов c информацией об их индексе качества."
+    }
+  ]
+
+}

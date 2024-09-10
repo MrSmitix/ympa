@@ -1,0 +1,22 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Единицы измерения характеристики товара.",
+  "name": "CategoryParameterUnitDTO",
+  "fields": [
+    {
+      "name": "defaultUnitId",
+      "type": "long",
+      "doc": "Единица измерения по умолчанию."
+    },
+    {
+      "name": "units",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.UnitDTO"
+      },
+      "doc": "Допустимые единицы измерения."
+    }
+  ]
+
+}

@@ -1,0 +1,28 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров в заказе.  Если магазин не передал информацию о товаре во входных данных, он будет удален из заказа.  Обязательный параметр. ",
+  "name": "OrderItemModificationDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор товара в рамках заказа.  Получить идентификатор можно с помощью ресурсов [GET campaigns/{campaignId}/orders](../../reference/orders/getOrders.md) или [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md).  Обязательный параметр. "
+    },
+    {
+      "name": "count",
+      "type": "int",
+      "doc": "Новое количество товара."
+    },
+    {
+      "name": "instances",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.BriefOrderItemInstanceDTO"
+      }],
+      "doc": "Информация о маркировке единиц товара.  Передавайте в запросе все единицы товара, который подлежит маркировке.  Обязательный параметр, если в заказе есть товары, подлежащие маркировке [в системе «Честный ЗНАК»](https://честныйзнак.рф/). ",
+      "default": null
+    }
+  ]
+
+}

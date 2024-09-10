@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на создание или изменение лицензий для точек продаж.",
+  "name": "UpdateOutletLicenseRequest",
+  "fields": [
+    {
+      "name": "licenses",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OutletLicenseDTO"
+      },
+      "doc": "Список лицензий. Обязательный параметр, должен содержать информацию хотя бы об одной лицензии. "
+    }
+  ]
+
+}

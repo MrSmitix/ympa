@@ -1,0 +1,12 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип оплаты заказа: - `CREDIT` — заказ оформлен в кредит. - `POSTPAID` — заказ оплачен после того, как был получен. - `PREPAID` — заказ оплачен до того, как был получен. ",
+  "name": "OrdersStatsOrderPaymentType",
+  "symbols": [
+    "CREDIT",
+    "POSTPAID",
+    "PREPAID",
+    "TINKOFF_CREDIT"
+  ]
+}

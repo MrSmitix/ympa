@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Время последнего обновления.",
+  "name": "UpdateTimeDTO",
+  "fields": [
+    {
+      "name": "updatedAt",
+      "type": "string",
+      "doc": "Время последнего обновления."
+    }
+  ]
+
+}

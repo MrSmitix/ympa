@@ -1,0 +1,26 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Категории и лимит на установку кванта и минимального количества товаров.",
+  "name": "GetCategoriesMaxSaleQuantumDTO",
+  "fields": [
+    {
+      "name": "results",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.MaxSaleQuantumDTO"
+      },
+      "doc": "Категории и лимит на установку кванта и минимального количества товаров."
+    },
+    {
+      "name": "errors",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.CategoryErrorDTO"
+      }],
+      "doc": "Ошибки, которые появились из-за переданных категорий.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,22 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об остатках товаров на складе.",
+  "name": "WarehouseOffersDTO",
+  "fields": [
+    {
+      "name": "warehouseId",
+      "type": "long",
+      "doc": "Идентификатор склада."
+    },
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.WarehouseOfferDTO"
+      },
+      "doc": "Информация об остатках."
+    }
+  ]
+
+}

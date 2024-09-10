@@ -1,0 +1,90 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о заказе.",
+  "name": "OrdersStatsOrderDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор заказа.",
+      "default": null
+    },
+    {
+      "name": "creationDate",
+      "type": ["null", "string"],
+      "doc": "Дата создания заказа.  Формат даты: `ГГГГ-ММ-ДД`. ",
+      "default": null
+    },
+    {
+      "name": "statusUpdateDate",
+      "type": ["null", "string"],
+      "doc": "Дата и время, когда статус заказа был изменен в последний раз.  Формат даты и времени: ISO 8601. Например, `2017-11-21T00:00:00`. Часовой пояс — UTC+03:00 (Москва). ",
+      "default": null
+    },
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.OrderStatsStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "partnerOrderId",
+      "type": ["null", "string"],
+      "doc": "Идентификатор заказа в информационной системе магазина.",
+      "default": null
+    },
+    {
+      "name": "paymentType",
+      "type": ["null", "ympa_avro_schema.OrdersStatsOrderPaymentType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "fake",
+      "type": ["null", "boolean"],
+      "doc": "Тип заказа:  * `false` — настоящий заказ покупателя.  * `true` — [тестовый](../../pushapi/concepts/sandbox.md) заказ Маркета. ",
+      "default": null
+    },
+    {
+      "name": "deliveryRegion",
+      "type": ["null", "ympa_avro_schema.OrdersStatsDeliveryRegionDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OrdersStatsItemDTO"
+      },
+      "doc": "Список товаров в заказе после возможных изменений."
+    },
+    {
+      "name": "initialItems",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrdersStatsItemDTO"
+      }],
+      "doc": "Список товаров в заказе до изменений.",
+      "default": null
+    },
+    {
+      "name": "payments",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OrdersStatsPaymentDTO"
+      },
+      "doc": "Информация о денежных переводах по заказу."
+    },
+    {
+      "name": "commissions",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OrdersStatsCommissionDTO"
+      },
+      "doc": "Информация о комиссиях за заказ."
+    }
+  ]
+
+}

@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на изменение информации по остаткам товаров.",
+  "name": "UpdateStocksRequest",
+  "fields": [
+    {
+      "name": "skus",
+      "type": {
+        "type": "set",
+        "items": "ympa_avro_schema.UpdateStockDTO"
+      },
+      "doc": "Данные об остатках товаров. "
+    }
+  ]
+
+}

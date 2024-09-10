@@ -1,0 +1,39 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список заказов.",
+  "name": "UpdateOrderStatusDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор заказа.",
+      "default": null
+    },
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.OrderStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "substatus",
+      "type": ["null", "ympa_avro_schema.OrderSubstatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "updateStatus",
+      "type": ["null", "ympa_avro_schema.OrderUpdateStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "errorDetails",
+      "type": ["null", "string"],
+      "doc": "Ошибка при изменении статуса заказа. Содержит описание ошибки и идентификатор заказа.  Возвращается, если параметр `updateStatus` принимает значение `ERROR`. ",
+      "default": null
+    }
+  ]
+
+}

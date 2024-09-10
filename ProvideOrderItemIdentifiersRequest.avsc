@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "ProvideOrderItemIdentifiersRequest",
+  "fields": [
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderItemInstanceModificationDTO"
+      },
+      "doc": "Список позиций, требующих маркировки. "
+    }
+  ]
+
+}

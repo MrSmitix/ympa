@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Параметры запроса категорий. ",
+  "name": "GetCategoriesRequest",
+  "fields": [
+    {
+      "name": "language",
+      "type": ["null", "ympa_avro_schema.LanguageType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

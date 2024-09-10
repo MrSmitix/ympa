@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о регионе доставки.",
+  "name": "OrdersStatsDeliveryRegionDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор региона доставки.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название региона доставки.",
+      "default": null
+    }
+  ]
+
+}

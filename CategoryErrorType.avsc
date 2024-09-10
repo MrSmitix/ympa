@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Типы ошибок:  * `UNKNOWN_CATEGORY` — указана неизвестная категория. * `CATEGORY_IS_NOT_LEAF` — указана нелистовая категория. Укажите ту, которая не имеет дочерних категорий. ",
+  "name": "CategoryErrorType",
+  "symbols": [
+    "UNKNOWN_CATEGORY",
+    "CATEGORY_IS_NOT_LEAF"
+  ]
+}

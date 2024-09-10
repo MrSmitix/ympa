@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Способ покупки, указанный в отзыве:  * `DELIVERY` — доставка. * `PICKUP` — самовывоз. * `INSTORE` — в магазине. ",
+  "name": "FeedbackDeliveryType",
+  "symbols": [
+    "DELIVERY",
+    "PICKUP",
+    "INSTORE"
+  ]
+}

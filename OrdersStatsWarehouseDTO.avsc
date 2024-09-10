@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о складе, на котором хранится товар.",
+  "name": "OrdersStatsWarehouseDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор склада.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название склада.",
+      "default": null
+    }
+  ]
+
+}

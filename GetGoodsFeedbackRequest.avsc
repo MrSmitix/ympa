@@ -1,0 +1,51 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фильтр запроса отзывов в кабинете. ",
+  "name": "GetGoodsFeedbackRequest",
+  "fields": [
+    {
+      "name": "dateTimeFrom",
+      "type": ["null", "string"],
+      "doc": "Начало периода. Не включительно.  Если параметр не указан, возвращается информация за 6 месяцев до указанной в `dateTimeTo` даты. ",
+      "default": null
+    },
+    {
+      "name": "dateTimeTo",
+      "type": ["null", "string"],
+      "doc": "Конец периода. Не включительно.  Если параметр не указан, используется текущая дата. ",
+      "default": null
+    },
+    {
+      "name": "reactionStatus",
+      "type": ["null", "ympa_avro_schema.FeedbackReactionStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "ratingValues",
+      "type": ["null", {
+        "type": "set",
+        "items": "int"
+      }],
+      "doc": "Оценка товара.",
+      "default": null
+    },
+    {
+      "name": "modelIds",
+      "type": ["null", {
+        "type": "set",
+        "items": "long"
+      }],
+      "doc": "Фильтр по идентификатору модели товара.  Получить идентификатор модели можно с помощью одного из запросов:  * [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md);  * [POST businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md);  * [POST models](../../reference/models/getModels.md). ",
+      "default": null
+    },
+    {
+      "name": "paid",
+      "type": ["null", "boolean"],
+      "doc": "Фильтр отзывов за баллы Плюса.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "SetOrderDeliveryDateRequest",
+  "fields": [
+    {
+      "name": "dates",
+      "type": "ympa_avro_schema.OrderDeliveryDateDTO",
+      "doc": ""
+    },
+    {
+      "name": "reason",
+      "type": "ympa_avro_schema.OrderDeliveryDateReasonType",
+      "doc": ""
+    }
+  ]
+
+}

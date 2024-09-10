@@ -1,0 +1,26 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Лимит на установку кванта и минимального количества товаров по категориям. ",
+  "name": "MaxSaleQuantumDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор категории."
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название категории.",
+      "default": null
+    },
+    {
+      "name": "maxSaleQuantum",
+      "type": ["null", "int"],
+      "doc": "Лимит на установку кванта и минимального количества товаров.",
+      "default": null
+    }
+  ]
+
+}

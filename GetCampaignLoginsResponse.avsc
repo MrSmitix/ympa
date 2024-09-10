@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ответ на запрос списка логинов, связанных с магазином.",
+  "name": "GetCampaignLoginsResponse",
+  "fields": [
+    {
+      "name": "logins",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "Список логинов."
+    }
+  ]
+
+}

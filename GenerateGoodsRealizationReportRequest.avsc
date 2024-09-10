@@ -1,0 +1,24 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации отчета: идентификатор магазина и период, за который нужен отчет. ",
+  "name": "GenerateGoodsRealizationReportRequest",
+  "fields": [
+    {
+      "name": "campaignId",
+      "type": "long",
+      "doc": "Идентификатор кампании."
+    },
+    {
+      "name": "year",
+      "type": "int",
+      "doc": "Год."
+    },
+    {
+      "name": "month",
+      "type": "int",
+      "doc": "Номер месяца."
+    }
+  ]
+
+}

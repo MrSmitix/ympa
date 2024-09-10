@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на обновление предложений товаров магазина.",
+  "name": "UpdateCampaignOffersRequest",
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.UpdateCampaignOfferDTO"
+      },
+      "doc": "Параметры размещения товаров в заданном магазине."
+    }
+  ]
+
+}

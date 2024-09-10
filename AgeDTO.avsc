@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Возраст в заданных единицах измерения.",
+  "name": "AgeDTO",
+  "fields": [
+    {
+      "name": "value",
+      "type": "double",
+      "doc": "Значение. "
+    },
+    {
+      "name": "ageUnit",
+      "type": "ympa_avro_schema.AgeUnitType",
+      "doc": ""
+    }
+  ]
+
+}

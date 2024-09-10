@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров, которые участвуют или могут участвовать в акции.",
+  "name": "GetPromoOffersResultDTO",
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.GetPromoOfferDTO"
+      },
+      "doc": "Товары, которые участвуют или могут участвовать в акции."
+    },
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ForwardScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

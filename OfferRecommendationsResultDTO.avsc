@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров с рекомендациями.",
+  "name": "OfferRecommendationsResultDTO",
+  "fields": [
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "offerRecommendations",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferRecommendationDTO"
+      },
+      "doc": "Страница списка товаров."
+    }
+  ]
+
+}

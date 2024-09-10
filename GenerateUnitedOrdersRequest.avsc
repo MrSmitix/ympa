@@ -1,0 +1,39 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации отчета. ",
+  "name": "GenerateUnitedOrdersRequest",
+  "fields": [
+    {
+      "name": "businessId",
+      "type": "long",
+      "doc": "Идентификатор бизнеса."
+    },
+    {
+      "name": "dateFrom",
+      "type": "string",
+      "doc": "Начало периода, включительно."
+    },
+    {
+      "name": "dateTo",
+      "type": "string",
+      "doc": "Конец периода, включительно. Максимальный период — 1 год."
+    },
+    {
+      "name": "campaignIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "long"
+      }],
+      "doc": "Список магазинов, которые нужны в отчете.",
+      "default": null
+    },
+    {
+      "name": "promoId",
+      "type": ["null", "string"],
+      "doc": "Идентификатор акции, товары из которой нужны в отчете.",
+      "default": null
+    }
+  ]
+
+}

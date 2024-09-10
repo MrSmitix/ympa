@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о документе.",
+  "name": "DocumentDTO",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.OrderDocumentStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "number",
+      "type": ["null", "string"],
+      "doc": "Номер документа.",
+      "default": null
+    },
+    {
+      "name": "date",
+      "type": ["null", "string"],
+      "doc": "Дата создания документа.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,39 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о покупателе.  Параметры `id`, `lastName`, `firstName` и `middleName` возвращаются, только если вы работаете по модели DBS. ",
+  "name": "OrderBuyerDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "string"],
+      "doc": "Идентификатор покупателя.",
+      "default": null
+    },
+    {
+      "name": "lastName",
+      "type": ["null", "string"],
+      "doc": "Фамилия покупателя.",
+      "default": null
+    },
+    {
+      "name": "firstName",
+      "type": ["null", "string"],
+      "doc": "Имя покупателя.",
+      "default": null
+    },
+    {
+      "name": "middleName",
+      "type": ["null", "string"],
+      "doc": "Отчество покупателя.",
+      "default": null
+    },
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.OrderBuyerType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

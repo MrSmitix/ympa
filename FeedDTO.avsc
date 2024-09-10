@@ -1,0 +1,69 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о прайс-листе.",
+  "name": "FeedDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор прайс-листа.",
+      "default": null
+    },
+    {
+      "name": "login",
+      "type": ["null", "string"],
+      "doc": "Логин для авторизации при скачивании прайс-листа. Параметр выводится при размещении прайс-листа на сайте магазина и в случае ограничения доступа к нему. ",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Имя файла, содержащего прайс-лист. Параметр выводится при размещении прайс-листа на сервере Маркета. ",
+      "default": null
+    },
+    {
+      "name": "password",
+      "type": ["null", "string"],
+      "doc": "Пароль для авторизации при скачивании прайс-листа. Параметр выводится при размещении прайс-листа на сайте магазина и в случае ограничения доступа к нему. ",
+      "default": null
+    },
+    {
+      "name": "uploadDate",
+      "type": ["null", "string"],
+      "doc": "Дата загрузки прайс-листа на Маркет.  Формат даты: `ДД-ММ-ГГГГ`.  Параметр выводится при размещении прайс-листа на сервере Маркета. ",
+      "default": null
+    },
+    {
+      "name": "url",
+      "type": ["null", "string"],
+      "doc": "URL прайс-листа. Параметр выводится при размещении прайс-листа на сайте магазина. ",
+      "default": null
+    },
+    {
+      "name": "content",
+      "type": ["null", "ympa_avro_schema.FeedContentDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "download",
+      "type": ["null", "ympa_avro_schema.FeedDownloadDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "placement",
+      "type": ["null", "ympa_avro_schema.FeedPlacementDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "publication",
+      "type": ["null", "ympa_avro_schema.FeedPublicationDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

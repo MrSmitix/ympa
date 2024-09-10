@@ -1,0 +1,24 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Описывает проблемы, которые появились при сохранении товара.",
+  "name": "UpdateOfferContentResponse",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.ApiResponseStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "results",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.UpdateOfferContentResultDTO"
+      }],
+      "doc": "Ошибки и предупреждения, которые появились при обработке переданных значений. Каждый элемент списка соответствует одному товару.  Если ошибок и предупреждений нет, поле не передается. ",
+      "default": null
+    }
+  ]
+
+}

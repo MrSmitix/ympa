@@ -1,0 +1,32 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные для печати ярлыка.",
+  "name": "OrderLabelDTO",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "long",
+      "doc": "Идентификатор заказа."
+    },
+    {
+      "name": "placesNumber",
+      "type": "int",
+      "doc": "Количество коробок в заказе."
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "doc": "URL файла с ярлыками‑наклейками на все коробки в заказе.  Соответствует URL, по которому выполняется запрос [GET campaigns/{campaignId}/orders/{orderId}/delivery/labels](../../reference/orders/generateOrderLabels.md). "
+    },
+    {
+      "name": "parcelBoxLabels",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.ParcelBoxLabelDTO"
+      },
+      "doc": "Информация на ярлыке."
+    }
+  ]
+
+}

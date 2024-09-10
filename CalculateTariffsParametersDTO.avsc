@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Параметры для расчета стоимости услуг.",
+  "name": "CalculateTariffsParametersDTO",
+  "fields": [
+    {
+      "name": "campaignId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор кампании. У пользователя, который выполняет запрос, должен быть доступ к этой кампании.  Используйте параметр `campaignId`, если уже завершили подключение магазина на Маркете. Иначе вернется пустой список.  Обязательный параметр, если не указан параметр `sellingProgram`. Совместное использование параметров приведет к ошибке. ",
+      "default": null
+    },
+    {
+      "name": "sellingProgram",
+      "type": ["null", "ympa_avro_schema.SellingProgramType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "frequency",
+      "type": ["null", "ympa_avro_schema.PaymentFrequencyType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

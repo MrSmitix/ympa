@@ -1,0 +1,39 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о курьере.",
+  "name": "OrderCourierDTO",
+  "fields": [
+    {
+      "name": "fullName",
+      "type": ["null", "string"],
+      "doc": "Полное имя курьера.",
+      "default": null
+    },
+    {
+      "name": "phone",
+      "type": ["null", "string"],
+      "doc": "Номер телефона курьера.",
+      "default": null
+    },
+    {
+      "name": "phoneExtension",
+      "type": ["null", "string"],
+      "doc": "Добавочный номер телефона.",
+      "default": null
+    },
+    {
+      "name": "vehicleNumber",
+      "type": ["null", "string"],
+      "doc": "Номер транспортного средства.",
+      "default": null
+    },
+    {
+      "name": "vehicleDescription",
+      "type": ["null", "string"],
+      "doc": "Описание машины. Например, модель и цвет.",
+      "default": null
+    }
+  ]
+
+}

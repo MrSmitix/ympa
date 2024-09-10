@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Цена или скидки на товар.",
+  "name": "OrdersStatsPriceDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.OrdersStatsPriceType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "costPerItem",
+      "type": ["null", "double"],
+      "doc": "Цена или скидка на единицу товара в заказе. Указана в рублях. Точность — два знака после запятой. ",
+      "default": null
+    },
+    {
+      "name": "total",
+      "type": ["null", "double"],
+      "doc": "Суммарная цена или скидка на все единицы товара в заказе. Указана в рублях. Точность — два знака после запятой. ",
+      "default": null
+    }
+  ]
+
+}

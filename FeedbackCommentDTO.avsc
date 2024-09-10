@@ -1,0 +1,54 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Комментарий к отзыву на магазин.",
+  "name": "FeedbackCommentDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор ответа.",
+      "default": null
+    },
+    {
+      "name": "parentId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор родительского ответа.",
+      "default": null
+    },
+    {
+      "name": "body",
+      "type": ["null", "string"],
+      "doc": "Текст ответа.",
+      "default": null
+    },
+    {
+      "name": "createdAt",
+      "type": ["null", "string"],
+      "doc": "Дата и время создания ответа.  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-21T00:00:00+03:00`. ",
+      "default": null
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", "string"],
+      "doc": "Дата и время изменения ответа.  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-21T00:00:00+03:00`. ",
+      "default": null
+    },
+    {
+      "name": "author",
+      "type": ["null", "ympa_avro_schema.FeedbackCommentAuthorDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "children",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.FeedbackCommentDTO"
+      }],
+      "doc": "Дочерние ответы.",
+      "default": null
+    }
+  ]
+
+}

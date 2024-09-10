@@ -1,0 +1,54 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фильтрации товаров  В запросе можно указать либо фильтр offerIds, либо любые другие фильтры товаров. Совместное использование фильтра offerIds с другими фильтрациями приведет к ошибке. ",
+  "name": "GetCampaignOffersRequest",
+  "fields": [
+    {
+      "name": "offerIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Идентификаторы товаров, информация о которых нужна.  {% note warning \"Такой список возвращается только целиком\" %}  Не используйте это поле одновременно с фильтрами по статусам карточек, категориям, брендам или тегам. Если вы хотите воспользоваться фильтрами, оставьте поле пустым.  Если вы запрашиваете информацию по конкретным SKU, не заполняйте:  * `page_token` * `limit`  {% endnote %}    ",
+      "default": null
+    },
+    {
+      "name": "statuses",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferCampaignStatusType"
+      }],
+      "doc": "Фильтр по статусам товаров. ",
+      "default": null
+    },
+    {
+      "name": "categoryIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "int"
+      }],
+      "doc": "Фильтр по категориям на Маркете.",
+      "default": null
+    },
+    {
+      "name": "vendorNames",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Фильтр по брендам.",
+      "default": null
+    },
+    {
+      "name": "tags",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Фильтр по тегам.",
+      "default": null
+    }
+  ]
+
+}

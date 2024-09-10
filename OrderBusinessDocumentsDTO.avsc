@@ -1,0 +1,39 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о документах. ",
+  "name": "OrderBusinessDocumentsDTO",
+  "fields": [
+    {
+      "name": "upd",
+      "type": ["null", "ympa_avro_schema.DocumentDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "ukd",
+      "type": ["null", "ympa_avro_schema.DocumentDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "torgTwelve",
+      "type": ["null", "ympa_avro_schema.DocumentDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "sf",
+      "type": ["null", "ympa_avro_schema.DocumentDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "ksf",
+      "type": ["null", "ympa_avro_schema.DocumentDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

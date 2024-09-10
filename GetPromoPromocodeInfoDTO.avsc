@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация для типа `MARKET_PROMOCODE`.  Параметр заполняется только для этого типа акции. ",
+  "name": "GetPromoPromocodeInfoDTO",
+  "fields": [
+    {
+      "name": "promocode",
+      "type": "string",
+      "doc": "Промокод."
+    },
+    {
+      "name": "discount",
+      "type": "int",
+      "doc": "Процент скидки по промокоду."
+    }
+  ]
+
+}

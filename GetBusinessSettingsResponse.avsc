@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ответ на запрос настроек кабинета.",
+  "name": "GetBusinessSettingsResponse",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.ApiResponseStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "result",
+      "type": ["null", "ympa_avro_schema.GetBusinessSettingsInfoDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

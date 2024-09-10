@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Общее вознаграждение партнеру за DBS-доставку и все скидки на товар:  * по промокодам, купонам и акциям; * по баллам Плюса; * по доставке (DBS).  Передается в валюте заказа. ",
+  "name": "OrderSubsidyDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.OrderSubsidyType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "amount",
+      "type": ["null", "double"],
+      "doc": "Сумма субсидии.",
+      "default": null
+    }
+  ]
+
+}

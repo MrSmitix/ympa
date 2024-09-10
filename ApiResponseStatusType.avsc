@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип ответа.",
+  "name": "ApiResponseStatusType",
+  "symbols": [
+    "OK",
+    "ERROR"
+  ]
+}

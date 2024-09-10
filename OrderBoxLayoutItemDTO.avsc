@@ -1,0 +1,35 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о товаре в коробке.",
+  "name": "OrderBoxLayoutItemDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор товара в заказе.  {% cut \"Где его взять\" %}  Идентификатор приходит в ответе на запрос [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) и в запросе Маркета [POST order/accept](../../pushapi/reference/orderAccept.md) — параметр `id` в `items`.  {% endcut %}   "
+    },
+    {
+      "name": "fullCount",
+      "type": ["null", "int"],
+      "doc": "Количество единиц товара в коробке.  Используйте это поле, если в коробке поедут целые товары, не разделенные на части. Не используйте это поле одновременно с `partialCount`. ",
+      "default": null
+    },
+    {
+      "name": "partialCount",
+      "type": ["null", "ympa_avro_schema.OrderBoxLayoutPartialCountDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "instances",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.BriefOrderItemInstanceDTO"
+      }],
+      "doc": "Переданные вами коды маркировки.",
+      "default": null
+    }
+  ]
+
+}

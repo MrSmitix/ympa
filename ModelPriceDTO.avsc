@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о ценах на модель товара.",
+  "name": "ModelPriceDTO",
+  "fields": [
+    {
+      "name": "avg",
+      "type": ["null", "double"],
+      "doc": "Средняя цена предложения для модели в регионе.",
+      "default": null
+    },
+    {
+      "name": "max",
+      "type": ["null", "double"],
+      "doc": "Максимальная цена предложения для модели в регионе.",
+      "default": null
+    },
+    {
+      "name": "min",
+      "type": ["null", "double"],
+      "doc": "Минимальная цена предложения для модели в регионе.",
+      "default": null
+    }
+  ]
+
+}

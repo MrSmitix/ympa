@@ -1,0 +1,33 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Логистическая информация по возврату.",
+  "name": "ReturnInstanceDTO",
+  "fields": [
+    {
+      "name": "stockType",
+      "type": ["null", "ympa_avro_schema.ReturnInstanceStockType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.ReturnInstanceStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "cis",
+      "type": ["null", "string"],
+      "doc": "Код идентификации единицы товара [в системе «Честный ЗНАК»](https://честныйзнак.рф/).",
+      "default": null
+    },
+    {
+      "name": "imei",
+      "type": ["null", "string"],
+      "doc": "Международный идентификатор мобильного оборудования.",
+      "default": null
+    }
+  ]
+
+}

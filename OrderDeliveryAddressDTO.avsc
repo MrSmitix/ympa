@@ -1,0 +1,99 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Адрес доставки.  Указывается, если `type=DELIVERY`, `type=POST` или `type=PICKUP` (адрес пункта выдачи). ",
+  "name": "OrderDeliveryAddressDTO",
+  "fields": [
+    {
+      "name": "country",
+      "type": ["null", "string"],
+      "doc": "Страна.  Обязательный параметр. ",
+      "default": null
+    },
+    {
+      "name": "postcode",
+      "type": ["null", "string"],
+      "doc": "Почтовый индекс.  Указывается, если выбрана доставка почтой (`delivery type=POST`). ",
+      "default": null
+    },
+    {
+      "name": "city",
+      "type": ["null", "string"],
+      "doc": "Город или населенный пункт.  Обязательный параметр. ",
+      "default": null
+    },
+    {
+      "name": "district",
+      "type": ["null", "string"],
+      "doc": "Район.",
+      "default": null
+    },
+    {
+      "name": "subway",
+      "type": ["null", "string"],
+      "doc": "Станция метро.",
+      "default": null
+    },
+    {
+      "name": "street",
+      "type": ["null", "string"],
+      "doc": "Улица.  Обязательный параметр. ",
+      "default": null
+    },
+    {
+      "name": "house",
+      "type": ["null", "string"],
+      "doc": "Дом или владение.  Обязательный параметр. ",
+      "default": null
+    },
+    {
+      "name": "block",
+      "type": ["null", "string"],
+      "doc": "Корпус или строение.",
+      "default": null
+    },
+    {
+      "name": "entrance",
+      "type": ["null", "string"],
+      "doc": "Подъезд.",
+      "default": null
+    },
+    {
+      "name": "entryphone",
+      "type": ["null", "string"],
+      "doc": "Код домофона.",
+      "default": null
+    },
+    {
+      "name": "floor",
+      "type": ["null", "string"],
+      "doc": "Этаж.",
+      "default": null
+    },
+    {
+      "name": "apartment",
+      "type": ["null", "string"],
+      "doc": "Квартира или офис.",
+      "default": null
+    },
+    {
+      "name": "phone",
+      "type": ["null", "string"],
+      "doc": "Телефон получателя заказа.  Обязательный параметр. ",
+      "default": null
+    },
+    {
+      "name": "recipient",
+      "type": ["null", "string"],
+      "doc": "Фамилия, имя и отчество получателя заказа.  Обязательный параметр. ",
+      "default": null
+    },
+    {
+      "name": "gps",
+      "type": ["null", "ympa_avro_schema.GpsDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

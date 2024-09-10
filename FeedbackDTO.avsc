@@ -1,0 +1,95 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Отзыв пользователя Яндекс Маркета об указанном магазине.",
+  "name": "FeedbackDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор отзыва.",
+      "default": null
+    },
+    {
+      "name": "createdAt",
+      "type": ["null", "string"],
+      "doc": "Дата и время создания отзыва.  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-21T00:00:00+03:00`. ",
+      "default": null
+    },
+    {
+      "name": "text",
+      "type": ["null", "string"],
+      "doc": "Комментарий автора отзыва.",
+      "default": null
+    },
+    {
+      "name": "state",
+      "type": ["null", "ympa_avro_schema.FeedbackStateType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "author",
+      "type": ["null", "ympa_avro_schema.FeedbackAuthorDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "pro",
+      "type": ["null", "string"],
+      "doc": "Достоинства магазина, описанные в отзыве.",
+      "default": null
+    },
+    {
+      "name": "contra",
+      "type": ["null", "string"],
+      "doc": "Недостатки магазина, описанные в отзыве.",
+      "default": null
+    },
+    {
+      "name": "comments",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.FeedbackCommentDTO"
+      },
+      "doc": "Переписка автора отзыва с магазином."
+    },
+    {
+      "name": "shop",
+      "type": ["null", "ympa_avro_schema.FeedbackShopDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "resolved",
+      "type": ["null", "boolean"],
+      "doc": "Решена ли проблема автора отзыва:  * `true` — да. * `false` — нет.  Если проблема решена, около отзыва на странице магазина появляется соответствующая надпись. ",
+      "default": null
+    },
+    {
+      "name": "verified",
+      "type": ["null", "boolean"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Является ли отзыв рекомендованным:  * `true` — да. * `false` — нет. ",
+      "default": null
+    },
+    {
+      "name": "recommend",
+      "type": ["null", "boolean"],
+      "doc": "Купил бы автор отзыва в магазине снова:  * `true` — да. * `false` — нет. ",
+      "default": null
+    },
+    {
+      "name": "grades",
+      "type": ["null", "ympa_avro_schema.FeedbackGradesDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "order",
+      "type": ["null", "ympa_avro_schema.FeedbackOrderDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип товара:  * `DEFECT` — товар бракованный.  * `FIT` — товар надлежащего качества. ",
+  "name": "OrdersStatsStockType",
+  "symbols": [
+    "FIT",
+    "FREEZE",
+    "AVAILABLE",
+    "QUARANTINE",
+    "UTILIZATION",
+    "DEFECT",
+    "EXPIRED"
+  ]
+}

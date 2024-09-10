@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Составляющая индекса качества.",
+  "name": "QualityRatingComponentDTO",
+  "fields": [
+    {
+      "name": "value",
+      "type": "double",
+      "doc": "Значение составляющей в процентах."
+    },
+    {
+      "name": "componentType",
+      "type": "ympa_avro_schema.QualityRatingComponentType",
+      "doc": ""
+    }
+  ]
+
+}

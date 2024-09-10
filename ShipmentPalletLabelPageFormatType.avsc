@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Формат страницы: * `A4` — формат страницы A4. * `A8` — формат страницы A8. ",
+  "name": "ShipmentPalletLabelPageFormatType",
+  "symbols": [
+    "A4",
+    "A8"
+  ]
+}

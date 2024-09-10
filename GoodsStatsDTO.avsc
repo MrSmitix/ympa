@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Отчет по товарам.",
+  "name": "GoodsStatsDTO",
+  "fields": [
+    {
+      "name": "shopSkus",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.GoodsStatsGoodsDTO"
+      },
+      "doc": "Список товаров."
+    }
+  ]
+
+}

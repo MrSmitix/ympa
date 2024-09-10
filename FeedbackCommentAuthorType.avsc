@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип автора:  * `USER` — пользователь. * `SHOP` — магазин. ",
+  "name": "FeedbackCommentAuthorType",
+  "symbols": [
+    "USER",
+    "SHOP"
+  ]
+}

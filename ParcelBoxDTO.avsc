@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Элемент отображает одно грузовое место. Вложенные поля больше не используются, передавайте элемент пустым в запросах и не обращайте внимание на содержимое в ответах.",
+  "name": "ParcelBoxDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел. Не используйте его.  {% endnote %} ",
+      "default": null
+    },
+    {
+      "name": "fulfilmentId",
+      "type": ["null", "string"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел. Не используйте его.  {% endnote %} ",
+      "default": null
+    }
+  ]
+
+}

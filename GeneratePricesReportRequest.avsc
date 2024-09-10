@@ -1,0 +1,42 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации отчета.",
+  "name": "GeneratePricesReportRequest",
+  "fields": [
+    {
+      "name": "businessId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор бизнеса.  В большинстве случаев обязателен. Не указывается, если задан `campaignId`. ",
+      "default": null
+    },
+    {
+      "name": "campaignId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор кампании.  Как правило, не используется. Передавайте только если в кабинете есть магазины с уникальными ценами и вы хотите получить отчет для них. В этом случае передавать `businessId` не нужно. ",
+      "default": null
+    },
+    {
+      "name": "categoryIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "long"
+      }],
+      "doc": "Фильтр по категориям на Маркете.",
+      "default": null
+    },
+    {
+      "name": "creationDateFrom",
+      "type": ["null", "string"],
+      "doc": "Фильтр по времени появления предложения — начало периода.  Формат даты: `ДД-ММ-ГГГГ`. ",
+      "default": null
+    },
+    {
+      "name": "creationDateTo",
+      "type": ["null", "string"],
+      "doc": "Фильтр по времени появления предложения — окончание периода.  Формат даты: `ДД-ММ-ГГГГ`. ",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Параметры товара в акции с типом `MARKET_PROMOCODE`.",
+  "name": "PromoOfferPromocodeParamsDTO",
+  "fields": [
+    {
+      "name": "maxPrice",
+      "type": "long",
+      "doc": "Максимально возможная цена для участия в акции до применения промокода.  Указывается в рублях.  Возвращается для всех товаров. "
+    }
+  ]
+
+}

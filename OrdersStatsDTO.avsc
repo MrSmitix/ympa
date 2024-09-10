@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация по заказам.",
+  "name": "OrdersStatsDTO",
+  "fields": [
+    {
+      "name": "orders",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OrdersStatsOrderDTO"
+      },
+      "doc": "Список заказов."
+    },
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ForwardScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,22 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Добавление товаров в акцию или обновление их параметров.  Чтобы добавить товары в акцию или обновить параметры каких-то товаров, передайте их в параметре `offers`. ",
+  "name": "UpdatePromoOffersRequest",
+  "fields": [
+    {
+      "name": "promoId",
+      "type": "string",
+      "doc": "Идентификатор акции."
+    },
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.UpdatePromoOfferDTO"
+      },
+      "doc": "Товары, которые необходимо добавить в акцию или цены которых нужно изменить."
+    }
+  ]
+
+}

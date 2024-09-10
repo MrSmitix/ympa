@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о трек-номерах.",
+  "name": "TrackDTO",
+  "fields": [
+    {
+      "name": "trackCode",
+      "type": ["null", "string"],
+      "doc": "Трек-код почтового отправления.",
+      "default": null
+    }
+  ]
+
+}

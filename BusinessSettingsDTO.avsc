@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Настройки кабинета.",
+  "name": "BusinessSettingsDTO",
+  "fields": [
+    {
+      "name": "onlyDefaultPrice",
+      "type": ["null", "boolean"],
+      "doc": "Можно ли установить только [базовую цену](*rule): * `false` — можно задать и базовую цену, и цены в конкретных магазинах. * `true` — можно задать только базовую цену. ",
+      "default": null
+    },
+    {
+      "name": "currency",
+      "type": ["null", "ympa_avro_schema.CurrencyType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

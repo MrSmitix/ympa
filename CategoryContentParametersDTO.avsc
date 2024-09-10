@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о параметрах категории.",
+  "name": "CategoryContentParametersDTO",
+  "fields": [
+    {
+      "name": "categoryId",
+      "type": "int",
+      "doc": "Идентификатор категории на Маркете. Чтобы узнать идентификатор категории, к которой относится товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md)."
+    },
+    {
+      "name": "parameters",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.CategoryParameterDTO"
+      }],
+      "doc": "Список характеристик.",
+      "default": null
+    }
+  ]
+
+}

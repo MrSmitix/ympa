@@ -1,0 +1,25 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Временной отрезок с комментарием. Требования к содержанию комментария зависят от контекста использования параметра и указаны в описании поля, которое его содержит.",
+  "name": "TimePeriodDTO",
+  "fields": [
+    {
+      "name": "timePeriod",
+      "type": "int",
+      "doc": "Продолжительность в указанных единицах."
+    },
+    {
+      "name": "timeUnit",
+      "type": "ympa_avro_schema.TimeUnitType",
+      "doc": ""
+    },
+    {
+      "name": "comment",
+      "type": ["null", "string"],
+      "doc": "Комментарий.",
+      "default": null
+    }
+  ]
+
+}

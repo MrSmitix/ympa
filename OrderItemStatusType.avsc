@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Возвращенный или невыкупленный товар:  * `REJECTED` — невыкупленный.  * `RETURNED` — возвращенный. ",
+  "name": "OrderItemStatusType",
+  "symbols": [
+    "REJECTED",
+    "RETURNED"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об ошибке, произошедшей во время индексации прайс-листа.  Выводится, если во время индексации произошли ошибки (`index-log-record status=ERROR`). ",
+  "name": "FeedIndexLogsErrorDTO",
+  "fields": [
+    {
+      "name": "httpStatusCode",
+      "type": ["null", "int"],
+      "doc": "HTTP-код ошибки индексации прайс-листа.  Выводится, если `type=DOWNLOAD_HTTP_ERROR`. ",
+      "default": null
+    },
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.FeedIndexLogsErrorType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "description",
+      "type": ["null", "string"],
+      "doc": "Описание ошибки.  Выводится, если `type=DOWNLOAD_ERROR`. ",
+      "default": null
+    }
+  ]
+
+}

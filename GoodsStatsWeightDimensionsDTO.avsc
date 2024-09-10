@@ -1,0 +1,33 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о весе и габаритах товара.  Если товар уже привязан к карточке (`marketSku`), в ответе вернутся габариты из карточки Маркета, а не размеры, которые вы передаете. ",
+  "name": "GoodsStatsWeightDimensionsDTO",
+  "fields": [
+    {
+      "name": "length",
+      "type": ["null", "double"],
+      "doc": "Длина товара в сантиметрах.",
+      "default": null
+    },
+    {
+      "name": "width",
+      "type": ["null", "double"],
+      "doc": "Ширина товара в сантиметрах.",
+      "default": null
+    },
+    {
+      "name": "height",
+      "type": ["null", "double"],
+      "doc": "Высота товара в сантиметрах.",
+      "default": null
+    },
+    {
+      "name": "weight",
+      "type": ["null", "double"],
+      "doc": "Вес товара в килограммах.",
+      "default": null
+    }
+  ]
+
+}

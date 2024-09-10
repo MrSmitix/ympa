@@ -1,0 +1,54 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фильтрации товаров  В запросе можно указать либо фильтр offerIds, либо любые другие фильтры товаров. Совместное использование фильтра offerIds с другими фильтрациями приведет к ошибке. ",
+  "name": "GetQuarantineOffersRequest",
+  "fields": [
+    {
+      "name": "offerIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Идентификаторы товаров, информация о которых нужна. <br><br> ⚠️ Не используйте это поле одновременно с фильтрами по статусам карточек, категориям, брендам или тегам. Если вы хотите воспользоваться фильтрами, оставьте поле пустым. ",
+      "default": null
+    },
+    {
+      "name": "cardStatuses",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferCardStatusType"
+      }],
+      "doc": "Фильтр по статусам карточек.  [Что такое карточка товара](https://yandex.ru/support/marketplace/assortment/content/index.html) ",
+      "default": null
+    },
+    {
+      "name": "categoryIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "int"
+      }],
+      "doc": "Фильтр по категориям на Маркете.",
+      "default": null
+    },
+    {
+      "name": "vendorNames",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Фильтр по брендам.",
+      "default": null
+    },
+    {
+      "name": "tags",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Фильтр по тегам.",
+      "default": null
+    }
+  ]
+
+}

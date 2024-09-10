@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Изменился ли статус заказа:  * `OK` — статус изменен.  * `ERROR` — статус не изменен. В этом случае появится сообщение об ошибке в параметре `errorDetails`. ",
+  "name": "OrderUpdateStatusType",
+  "symbols": [
+    "OK",
+    "ERROR"
+  ]
+}

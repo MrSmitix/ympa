@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о прайс-листе.",
+  "name": "FeedIndexLogsFeedDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор прайс-листа.",
+      "default": null
+    }
+  ]
+
+}

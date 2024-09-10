@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров в заданном магазине.",
+  "name": "GetCampaignOffersResultDTO",
+  "fields": [
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.GetCampaignOfferDTO"
+      },
+      "doc": "Страница списка товаров."
+    }
+  ]
+
+}

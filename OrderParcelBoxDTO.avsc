@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о грузоместе.",
+  "name": "OrderParcelBoxDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор грузоместа.",
+      "default": null
+    },
+    {
+      "name": "fulfilmentId",
+      "type": ["null", "string"],
+      "doc": "Идентификатор грузового места в информационной системе магазина.",
+      "default": null
+    }
+  ]
+
+}

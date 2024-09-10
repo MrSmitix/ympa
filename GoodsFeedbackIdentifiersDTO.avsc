@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Идентификаторы, которые связаны с отзывом.",
+  "name": "GoodsFeedbackIdentifiersDTO",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "long",
+      "doc": "Идентификатор заказа на Маркете."
+    },
+    {
+      "name": "modelId",
+      "type": "long",
+      "doc": "Идентификатор модели товара."
+    }
+  ]
+
+}

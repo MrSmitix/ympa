@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Комментарий к отзыву.",
+  "name": "UpdateGoodsFeedbackCommentRequest",
+  "fields": [
+    {
+      "name": "feedbackId",
+      "type": "long",
+      "doc": "Идентификатор отзыва. "
+    },
+    {
+      "name": "comment",
+      "type": "ympa_avro_schema.UpdateGoodsFeedbackCommentDTO",
+      "doc": ""
+    }
+  ]
+
+}

@@ -1,0 +1,36 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации отчета.",
+  "name": "GenerateShowsSalesReportRequest",
+  "fields": [
+    {
+      "name": "businessId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор бизнеса.  Указывается, если нужно составить отчет по всем магазинам бизнеса. В запросе обязательно должен быть либо `businessID`, либо `campaignId`, но не оба сразу. ",
+      "default": null
+    },
+    {
+      "name": "campaignId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор кампании.  Указывается, если нужно составить отчет по конкретному магазину. В запросе обязательно должен быть либо `businessID`, либо `campaignId`, но не оба сразу. ",
+      "default": null
+    },
+    {
+      "name": "dateFrom",
+      "type": "string",
+      "doc": "Начало периода, включительно."
+    },
+    {
+      "name": "dateTo",
+      "type": "string",
+      "doc": "Конец периода, включительно."
+    },
+    {
+      "name": "grouping",
+      "type": "ympa_avro_schema.ShowsSalesGroupingType",
+      "doc": ""
+    }
+  ]
+
+}

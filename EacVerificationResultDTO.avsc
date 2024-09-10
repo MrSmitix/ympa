@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Результат выполнения запроса.",
+  "name": "EacVerificationResultDTO",
+  "fields": [
+    {
+      "name": "verificationResult",
+      "type": ["null", "ympa_avro_schema.EacVerificationStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "attemptsLeft",
+      "type": ["null", "int"],
+      "doc": "Количество оставшихся попыток проверки кода.  Возвращается, если магазин отправил некорректный код.  Когда все попытки будут исчерпаны, код обновится. ",
+      "default": null
+    }
+  ]
+
+}

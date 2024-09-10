@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о кабинете и его настройках.",
+  "name": "GetBusinessSettingsInfoDTO",
+  "fields": [
+    {
+      "name": "info",
+      "type": ["null", "ympa_avro_schema.BusinessDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "settings",
+      "type": ["null", "ympa_avro_schema.BusinessSettingsDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

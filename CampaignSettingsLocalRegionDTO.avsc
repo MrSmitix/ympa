@@ -1,0 +1,39 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о своем регионе магазина.",
+  "name": "CampaignSettingsLocalRegionDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор региона.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название региона.",
+      "default": null
+    },
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.RegionType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "deliveryOptionsSource",
+      "type": ["null", "ympa_avro_schema.CampaignSettingsScheduleSourceType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "delivery",
+      "type": ["null", "ympa_avro_schema.CampaignSettingsDeliveryDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

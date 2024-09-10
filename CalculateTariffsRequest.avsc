@@ -1,0 +1,22 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "CalculateTariffsRequest",
+  "fields": [
+    {
+      "name": "parameters",
+      "type": "ympa_avro_schema.CalculateTariffsParametersDTO",
+      "doc": ""
+    },
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.CalculateTariffsOfferDTO"
+      },
+      "doc": "Товары, для которых нужно рассчитать стоимость услуг."
+    }
+  ]
+
+}

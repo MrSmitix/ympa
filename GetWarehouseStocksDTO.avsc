@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список складов с информацией об остатках на каждом из них.",
+  "name": "GetWarehouseStocksDTO",
+  "fields": [
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "warehouses",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.WarehouseOffersDTO"
+      },
+      "doc": "Страница списка складов."
+    }
+  ]
+
+}

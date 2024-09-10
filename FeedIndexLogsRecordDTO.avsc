@@ -1,0 +1,57 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список отчетов по индексации прайс-листа.",
+  "name": "FeedIndexLogsRecordDTO",
+  "fields": [
+    {
+      "name": "downloadTime",
+      "type": ["null", "string"],
+      "doc": "Дата и время загрузки прайс-листа.  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-21T00:42:42+03:00`. ",
+      "default": null
+    },
+    {
+      "name": "fileTime",
+      "type": ["null", "string"],
+      "doc": "Дата и время, которые магазин указал в прайс-листе.  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-21T00:42:42+03:00`. ",
+      "default": null
+    },
+    {
+      "name": "generationId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор индексации.",
+      "default": null
+    },
+    {
+      "name": "indexType",
+      "type": ["null", "ympa_avro_schema.FeedIndexLogsIndexType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "publishedTime",
+      "type": ["null", "string"],
+      "doc": "Дата и время публикации предложений из прайс-листа на Яндекс Маркете.  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-21T00:42:42+03:00`. ",
+      "default": null
+    },
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.FeedIndexLogsStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "error",
+      "type": ["null", "ympa_avro_schema.FeedIndexLogsErrorDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "offers",
+      "type": ["null", "ympa_avro_schema.FeedIndexLogsOffersDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

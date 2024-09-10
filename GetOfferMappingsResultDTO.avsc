@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о товарах.",
+  "name": "GetOfferMappingsResultDTO",
+  "fields": [
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "offerMappings",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.GetOfferMappingDTO"
+      },
+      "doc": "Информация о товарах."
+    }
+  ]
+
+}

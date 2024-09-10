@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на обновление изменение параметров прайс-листа.",
+  "name": "SetFeedParamsRequest",
+  "fields": [
+    {
+      "name": "parameters",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.FeedParameterDTO"
+      },
+      "doc": "Параметры прайс-листа.  Обязательный параметр. "
+    }
+  ]
+
+}

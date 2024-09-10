@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Время проведения акции.",
+  "name": "PromoPeriodDTO",
+  "fields": [
+    {
+      "name": "dateTimeFrom",
+      "type": "string",
+      "doc": "Дата и время начала акции."
+    },
+    {
+      "name": "dateTimeTo",
+      "type": "string",
+      "doc": "Дата и время окончания акции."
+    }
+  ]
+
+}

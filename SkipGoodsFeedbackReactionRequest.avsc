@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Идентификаторы отзывов.",
+  "name": "SkipGoodsFeedbackReactionRequest",
+  "fields": [
+    {
+      "name": "feedbackIds",
+      "type": {
+        "type": "set",
+        "items": "long"
+      },
+      "doc": "Список идентификаторов отзывов, на которые магазин не будет отвечать."
+    }
+  ]
+
+}

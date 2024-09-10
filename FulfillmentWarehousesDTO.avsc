@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список складов Маркета (FBY).",
+  "name": "FulfillmentWarehousesDTO",
+  "fields": [
+    {
+      "name": "warehouses",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.FulfillmentWarehouseDTO"
+      },
+      "doc": "Список складов Маркета (FBY)."
+    }
+  ]
+
+}

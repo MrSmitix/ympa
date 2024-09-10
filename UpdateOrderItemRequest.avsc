@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на обновление состава заказа.",
+  "name": "UpdateOrderItemRequest",
+  "fields": [
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderItemModificationDTO"
+      },
+      "doc": "Список товаров в заказе.  Если магазин не передал информацию о товаре во входных данных, он будет удален из заказа.  Обязательный параметр. "
+    },
+    {
+      "name": "reason",
+      "type": ["null", "ympa_avro_schema.OrderItemsModificationRequestReasonType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

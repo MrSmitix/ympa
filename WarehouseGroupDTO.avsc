@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о группе складов.",
+  "name": "WarehouseGroupDTO",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Название группы складов."
+    },
+    {
+      "name": "mainWarehouse",
+      "type": "ympa_avro_schema.WarehouseDTO",
+      "doc": ""
+    },
+    {
+      "name": "warehouses",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.WarehouseDTO"
+      },
+      "doc": "Список складов, входящих в группу."
+    }
+  ]
+
+}

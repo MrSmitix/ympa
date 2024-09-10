@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Отзывы пользователей Яндекс Маркета об указанном магазине.",
+  "name": "FeedbackListDTO",
+  "fields": [
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "feedbackList",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.FeedbackDTO"
+      },
+      "doc": "Список отзывов.  Содержит не более 20 отзывов. "
+    }
+  ]
+
+}

@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос отчета по товарам.",
+  "name": "GetGoodsStatsRequest",
+  "fields": [
+    {
+      "name": "shopSkus",
+      "type": {
+        "type": "set",
+        "items": "string"
+      },
+      "doc": "Список ваших идентификаторов SKU. "
+    }
+  ]
+
+}

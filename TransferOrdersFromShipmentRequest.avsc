@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос переноса заказов из отгрузки.",
+  "name": "TransferOrdersFromShipmentRequest",
+  "fields": [
+    {
+      "name": "orderIds",
+      "type": {
+        "type": "array",
+        "items": "long"
+      },
+      "doc": "Список заказов, которые вы не успеваете подготовить."
+    }
+  ]
+
+}

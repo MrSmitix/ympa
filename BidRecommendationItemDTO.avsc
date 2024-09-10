@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Рекомендованная ставка и возможная доля показов.",
+  "name": "BidRecommendationItemDTO",
+  "fields": [
+    {
+      "name": "bid",
+      "type": "int",
+      "doc": "Значение ставки."
+    },
+    {
+      "name": "showPercent",
+      "type": "long",
+      "doc": "Доля показов. "
+    }
+  ]
+
+}

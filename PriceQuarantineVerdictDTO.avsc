@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Причина попадания товара в карантин.",
+  "name": "PriceQuarantineVerdictDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.PriceQuarantineVerdictType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "params",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.PriceQuarantineVerdictParameterDTO"
+      },
+      "doc": "Цена, из-за которой товар попал в карантин, и значения для сравнения. Конкретный набор параметров зависит от типа карантина."
+    }
+  ]
+
+}

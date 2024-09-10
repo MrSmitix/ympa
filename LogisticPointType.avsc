@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип логистической точки:    * `WAREHOUSE` — склад.   * `PICKUP_POINT` — обычная точка выдачи заказов (ПВЗ).   * `PICKUP_TERMINAL` — постамат.   * `PICKUP_POST_OFFICE` — отделение почтовой связи (ОПС).   * `PICKUP_MIXED` — торговый зал и пункт выдачи заказов.   * `PICKUP_RETAIL` — торговый зал. ",
+  "name": "LogisticPointType",
+  "symbols": [
+    "WAREHOUSE",
+    "PICKUP_POINT",
+    "PICKUP_TERMINAL",
+    "PICKUP_POST_OFFICE",
+    "PICKUP_MIXED",
+    "PICKUP_RETAIL",
+    "UNKNOWN"
+  ]
+}

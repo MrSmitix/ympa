@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фильтр запроса комментариев отзыва. ",
+  "name": "GetGoodsFeedbackCommentsRequest",
+  "fields": [
+    {
+      "name": "feedbackId",
+      "type": "long",
+      "doc": "Идентификатор отзыва. "
+    }
+  ]
+
+}

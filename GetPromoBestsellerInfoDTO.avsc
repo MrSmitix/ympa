@@ -1,0 +1,20 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об акции «Бестселлеры Маркета».",
+  "name": "GetPromoBestsellerInfoDTO",
+  "fields": [
+    {
+      "name": "bestseller",
+      "type": "boolean",
+      "doc": "Является ли акция «Бестселлером Маркета». Подробнее об этой акции читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/promos/market/bestsellers)."
+    },
+    {
+      "name": "entryDeadline",
+      "type": ["null", "string"],
+      "doc": "До какой даты можно добавить товар в акцию «Бестселлеры Маркета».  Параметр возвращается только для текущих и будущих акций «Бестселлеры Маркета». ",
+      "default": null
+    }
+  ]
+
+}

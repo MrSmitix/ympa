@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Статус товара:  * `REJECTED` — товар был добавлен в созданный заказ, но не был оплачен. * `RETURNED` — товар вернули. ",
+  "name": "OrdersStatsItemStatusType",
+  "symbols": [
+    "REJECTED",
+    "RETURNED"
+  ]
+}

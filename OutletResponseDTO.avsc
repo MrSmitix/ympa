@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Результат выполнения запроса. Выводится, если `status=\"OK\"`. ",
+  "name": "OutletResponseDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор точки продаж, присвоенный Маркетом.",
+      "default": null
+    }
+  ]
+
+}

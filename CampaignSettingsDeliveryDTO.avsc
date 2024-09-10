@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о доставке в своем регионе магазина.",
+  "name": "CampaignSettingsDeliveryDTO",
+  "fields": [
+    {
+      "name": "schedule",
+      "type": ["null", "ympa_avro_schema.CampaignSettingsScheduleDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

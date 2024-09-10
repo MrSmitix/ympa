@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на передачу количества упаковок в отгрузке.",
+  "name": "SetShipmentPalletsCountRequest",
+  "fields": [
+    {
+      "name": "placesCount",
+      "type": "int",
+      "doc": "Количество упаковок в отгрузке."
+    }
+  ]
+
+}

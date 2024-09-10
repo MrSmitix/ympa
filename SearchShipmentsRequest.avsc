@@ -1,0 +1,43 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос информации об отгрузках.",
+  "name": "SearchShipmentsRequest",
+  "fields": [
+    {
+      "name": "dateFrom",
+      "type": "string",
+      "doc": "Начальная дата для фильтрации по дате отгрузки (включительно).  Формат даты: `ДД-ММ-ГГГГ`. "
+    },
+    {
+      "name": "dateTo",
+      "type": "string",
+      "doc": "Конечная дата для фильтрации по дате отгрузки (включительно).  Формат даты: `ДД-ММ-ГГГГ`. "
+    },
+    {
+      "name": "statuses",
+      "type": ["null", {
+        "type": "set",
+        "items": "ympa_avro_schema.ShipmentStatusType"
+      }],
+      "doc": "Список статусов отгрузок.",
+      "default": null
+    },
+    {
+      "name": "orderIds",
+      "type": ["null", {
+        "type": "set",
+        "items": "long"
+      }],
+      "doc": "Список идентификаторов заказов из отгрузок.",
+      "default": null
+    },
+    {
+      "name": "cancelledOrders",
+      "type": ["null", "boolean"],
+      "doc": "Возвращать ли отмененные заказы.  Значение по умолчанию — `true`. Если возвращать отмененные заказы не нужно, передайте значение `false`. ",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,22 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Значение ограничивающей характеристики и список допустимых значений ограничиваемой характеристики.",
+  "name": "OptionValuesLimitedDTO",
+  "fields": [
+    {
+      "name": "limitingOptionValueId",
+      "type": "long",
+      "doc": "Идентификатор значения ограничивающей характеристики."
+    },
+    {
+      "name": "optionValueIds",
+      "type": {
+        "type": "array",
+        "items": "long"
+      },
+      "doc": "Идентификаторы допустимых значений ограничиваемой характеристики. "
+    }
+  ]
+
+}

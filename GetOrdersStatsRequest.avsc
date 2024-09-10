@@ -1,0 +1,57 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос информации по заказам.",
+  "name": "GetOrdersStatsRequest",
+  "fields": [
+    {
+      "name": "dateFrom",
+      "type": ["null", "string"],
+      "doc": "Начальная дата, когда заказ был сформирован.  Формат даты: `ГГГГ‑ММ‑ДД`.  Нельзя использовать вместе с параметрами `updateFrom` и `updateTo`. ",
+      "default": null
+    },
+    {
+      "name": "dateTo",
+      "type": ["null", "string"],
+      "doc": "Конечная дата, когда заказ был сформирован.  Формат даты: `ГГГГ‑ММ‑ДД`.  Нельзя использовать вместе с параметрами `updateFrom` и `updateTo`. ",
+      "default": null
+    },
+    {
+      "name": "updateFrom",
+      "type": ["null", "string"],
+      "doc": "Начальная дата периода, за который были изменения статуса заказа.  Формат даты: `ГГГГ‑ММ‑ДД`.  Нельзя использовать вместе с параметрами `dateFrom` и `dateTo`. ",
+      "default": null
+    },
+    {
+      "name": "updateTo",
+      "type": ["null", "string"],
+      "doc": "Конечная дата периода, за который были изменения статуса заказа.  Формат даты: `ГГГГ‑ММ‑ДД`.  Нельзя использовать вместе с параметрами `dateFrom` и `dateTo`. ",
+      "default": null
+    },
+    {
+      "name": "orders",
+      "type": ["null", {
+        "type": "array",
+        "items": "long"
+      }],
+      "doc": "Список идентификаторов заказов.",
+      "default": null
+    },
+    {
+      "name": "statuses",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderStatsStatusType"
+      }],
+      "doc": "Список статусов заказов.",
+      "default": null
+    },
+    {
+      "name": "hasCis",
+      "type": ["null", "boolean"],
+      "doc": "Нужно ли вернуть только те заказы, в составе которых есть хотя бы один товар с кодом идентификации [в системе «Честный ЗНАК»](https://честныйзнак.рф/):  * `true` — да. * `false` — нет. Такие коды присваиваются товарам, которые подлежат маркировке и относятся к определенным категориям. ",
+      "default": null
+    }
+  ]
+
+}

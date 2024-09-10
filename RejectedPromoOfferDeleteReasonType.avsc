@@ -1,0 +1,9 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Описание ошибки:  * `OFFER_DOES_NOT_EXIST` — в кабинете нет товара с таким SKU. ",
+  "name": "RejectedPromoOfferDeleteReasonType",
+  "symbols": [
+    "OFFER_DOES_NOT_EXIST"
+  ]
+}

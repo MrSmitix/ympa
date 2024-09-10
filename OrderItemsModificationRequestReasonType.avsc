@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Причина обновления состава заказа.",
+  "name": "OrderItemsModificationRequestReasonType",
+  "symbols": [
+    "PARTNER_REQUESTED_REMOVE",
+    "USER_REQUESTED_REMOVE"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации документа. ",
+  "name": "GenerateShipmentListDocumentReportRequest",
+  "fields": [
+    {
+      "name": "campaignId",
+      "type": "long",
+      "doc": "Идентификатор кампании."
+    },
+    {
+      "name": "shipmentId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор отгрузки.",
+      "default": null
+    },
+    {
+      "name": "orderIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "long"
+      }],
+      "doc": "Фильтр по идентификаторам заказа в отгрузке.",
+      "default": null
+    }
+  ]
+
+}

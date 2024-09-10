@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации отчета. ",
+  "name": "GenerateGoodsFeedbackRequest",
+  "fields": [
+    {
+      "name": "businessId",
+      "type": "long",
+      "doc": "Идентификатор бизнеса."
+    }
+  ]
+
+}

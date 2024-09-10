@@ -1,0 +1,36 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фильтры по чатам, которые нужно вернуть. ",
+  "name": "GetChatsRequest",
+  "fields": [
+    {
+      "name": "orderIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "long"
+      }],
+      "doc": "Фильтр по идентификаторам заказов на Маркете.",
+      "default": null
+    },
+    {
+      "name": "types",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.ChatType"
+      }],
+      "doc": "Фильтр по типам чатов.",
+      "default": null
+    },
+    {
+      "name": "statuses",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.ChatStatusType"
+      }],
+      "doc": "Фильтр по статусам чатов.",
+      "default": null
+    }
+  ]
+
+}

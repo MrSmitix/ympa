@@ -1,0 +1,33 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров. ",
+  "name": "OfferMappingEntryDTO",
+  "fields": [
+    {
+      "name": "mapping",
+      "type": ["null", "ympa_avro_schema.OfferMappingDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "awaitingModerationMapping",
+      "type": ["null", "ympa_avro_schema.OfferMappingDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "rejectedMapping",
+      "type": ["null", "ympa_avro_schema.OfferMappingDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "offer",
+      "type": ["null", "ympa_avro_schema.MappingsOfferDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

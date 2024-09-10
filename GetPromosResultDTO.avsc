@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об акциях Маркета.",
+  "name": "GetPromosResultDTO",
+  "fields": [
+    {
+      "name": "promos",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.GetPromoDTO"
+      },
+      "doc": "Акции Маркета."
+    }
+  ]
+
+}

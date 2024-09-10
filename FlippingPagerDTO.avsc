@@ -1,0 +1,45 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Модель для пагинации.",
+  "name": "FlippingPagerDTO",
+  "fields": [
+    {
+      "name": "total",
+      "type": ["null", "int"],
+      "doc": "Сколько всего найдено элементов.",
+      "default": null
+    },
+    {
+      "name": "from",
+      "type": ["null", "int"],
+      "doc": "Начальный номер найденного элемента на странице.",
+      "default": null
+    },
+    {
+      "name": "to",
+      "type": ["null", "int"],
+      "doc": "Конечный номер найденного элемента на странице.",
+      "default": null
+    },
+    {
+      "name": "currentPage",
+      "type": ["null", "int"],
+      "doc": "Текущая страница.",
+      "default": null
+    },
+    {
+      "name": "pagesCount",
+      "type": ["null", "int"],
+      "doc": "Общее количество страниц.",
+      "default": null
+    },
+    {
+      "name": "pageSize",
+      "type": ["null", "int"],
+      "doc": "Размер страницы.",
+      "default": null
+    }
+  ]
+
+}

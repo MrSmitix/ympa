@@ -1,0 +1,18 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "GetSuggestedOfferMappingsRequest",
+  "fields": [
+    {
+      "name": "offers",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.SuggestedOfferDTO"
+      }],
+      "doc": "Список товаров.",
+      "default": null
+    }
+  ]
+
+}

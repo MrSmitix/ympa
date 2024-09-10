@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ответ на запрос информации о лицензиях для точек продаж.",
+  "name": "OutletLicensesResponseDTO",
+  "fields": [
+    {
+      "name": "licenses",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.FullOutletLicenseDTO"
+      },
+      "doc": "Список лицензий."
+    }
+  ]
+
+}

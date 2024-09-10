@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип чата:  * `CHAT` — чат с покупателем. * `ARBITRAGE` — спор. ",
+  "name": "ChatType",
+  "symbols": [
+    "CHAT",
+    "ARBITRAGE"
+  ]
+}

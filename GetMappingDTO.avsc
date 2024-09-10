@@ -1,0 +1,45 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о товарах в каталоге. ",
+  "name": "GetMappingDTO",
+  "fields": [
+    {
+      "name": "marketSku",
+      "type": ["null", "long"],
+      "doc": "SKU на Маркете.",
+      "default": null
+    },
+    {
+      "name": "marketSkuName",
+      "type": ["null", "string"],
+      "doc": "Название карточки товара.  Может отсутствовать в ответе, если товар еще не привязан к карточке. ",
+      "default": null
+    },
+    {
+      "name": "marketModelId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор модели на Маркете.  Может отсутствовать в ответе, если товар еще не привязан к карточке. ",
+      "default": null
+    },
+    {
+      "name": "marketModelName",
+      "type": ["null", "string"],
+      "doc": "Название модели на Маркете.  Может отсутствовать в ответе, если товар еще не привязан к карточке. ",
+      "default": null
+    },
+    {
+      "name": "marketCategoryId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор категории на Маркете, в которую попал товар.  Может отсутствовать в ответе, если Маркет еще не определил категорию товара. ",
+      "default": null
+    },
+    {
+      "name": "marketCategoryName",
+      "type": ["null", "string"],
+      "doc": "Название категории карточки на Маркете.  Может отсутствовать в ответе, если Маркет еще не определил категорию товара. ",
+      "default": null
+    }
+  ]
+
+}

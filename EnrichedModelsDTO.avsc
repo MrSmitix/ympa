@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список моделей товаров.",
+  "name": "EnrichedModelsDTO",
+  "fields": [
+    {
+      "name": "models",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.EnrichedModelDTO"
+      },
+      "doc": "Список моделей товаров."
+    }
+  ]
+
+}

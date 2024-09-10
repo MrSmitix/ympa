@@ -1,0 +1,95 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Характеристика товара.",
+  "name": "CategoryParameterDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор характеристики."
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название характеристики.",
+      "default": null
+    },
+    {
+      "name": "type",
+      "type": "ympa_avro_schema.ParameterType",
+      "doc": ""
+    },
+    {
+      "name": "unit",
+      "type": ["null", "ympa_avro_schema.CategoryParameterUnitDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "description",
+      "type": ["null", "string"],
+      "doc": "Описание характеристики.",
+      "default": null
+    },
+    {
+      "name": "recommendationTypes",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferCardRecommendationType"
+      }],
+      "doc": "Перечень возможных рекомендаций по заполнению карточки, к которым относится данная характеристика.",
+      "default": null
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "doc": "Обязательность характеристики."
+    },
+    {
+      "name": "filtering",
+      "type": "boolean",
+      "doc": "Используется ли характеристика в фильтре."
+    },
+    {
+      "name": "distinctive",
+      "type": "boolean",
+      "doc": "Является ли характеристика особенностью варианта."
+    },
+    {
+      "name": "multivalue",
+      "type": "boolean",
+      "doc": "Можно ли передать сразу несколько значений."
+    },
+    {
+      "name": "allowCustomValues",
+      "type": "boolean",
+      "doc": "Можно ли передавать собственное значение, которого нет в списке вариантов Маркета. Только для характеристик типа `ENUM`."
+    },
+    {
+      "name": "values",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.ParameterValueOptionDTO"
+      }],
+      "doc": "Список допустимых значений параметра. Только для характеристик типа `ENUM`.",
+      "default": null
+    },
+    {
+      "name": "constraints",
+      "type": ["null", "ympa_avro_schema.ParameterValueConstraintsDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "valueRestrictions",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.ValueRestrictionDTO"
+      }],
+      "doc": "Ограничения на значения, накладываемые другими характеристиками. Только для характеристик типа `ENUM`.",
+      "default": null
+    }
+  ]
+
+}

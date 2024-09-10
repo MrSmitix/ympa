@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фильтрации удаляемых товаров по offerIds. ",
+  "name": "DeleteCampaignOffersRequest",
+  "fields": [
+    {
+      "name": "offerIds",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "Идентификаторы товаров в каталоге."
+    }
+  ]
+
+}

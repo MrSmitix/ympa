@@ -1,0 +1,33 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об удалении товара из заказа.",
+  "name": "OrdersStatsDetailsDTO",
+  "fields": [
+    {
+      "name": "itemStatus",
+      "type": ["null", "ympa_avro_schema.OrdersStatsItemStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "itemCount",
+      "type": ["null", "long"],
+      "doc": "Количество товара со статусом, указанном в параметре `itemStatus`.",
+      "default": null
+    },
+    {
+      "name": "updateDate",
+      "type": ["null", "string"],
+      "doc": "Дата, когда товар получил статус, указанный в параметре `itemStatus`.  Формат даты: `ГГГГ-ММ-ДД`. ",
+      "default": null
+    },
+    {
+      "name": "stockType",
+      "type": ["null", "ympa_avro_schema.OrdersStatsStockType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Фильтр по заполненности или незаполненности поля:  * `SPECIFIED` — вывести товары, у которых поле заполнено. * `EMPTY` — вывести товары, у которых поле не заполнено. ",
+  "name": "FieldStateType",
+  "symbols": [
+    "SPECIFIED",
+    "EMPTY"
+  ]
+}

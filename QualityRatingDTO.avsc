@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об индексе качества.",
+  "name": "QualityRatingDTO",
+  "fields": [
+    {
+      "name": "rating",
+      "type": "long",
+      "doc": "Значение индекса качества."
+    },
+    {
+      "name": "calculationDate",
+      "type": "string",
+      "doc": "Дата вычисления.  Формат даты: `ГГГГ‑ММ‑ДД`. "
+    },
+    {
+      "name": "components",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.QualityRatingComponentDTO"
+      },
+      "doc": "Составляющие индекса качества."
+    }
+  ]
+
+}

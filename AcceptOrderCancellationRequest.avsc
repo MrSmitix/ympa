@@ -1,0 +1,20 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "AcceptOrderCancellationRequest",
+  "fields": [
+    {
+      "name": "accepted",
+      "type": "boolean",
+      "doc": "Решение об отмене заказа:  * `true` — заказ отменяется, служба доставки узнала об отмене до передачи заказа покупателю. * `false` — заказ не отменяется, так как он уже доставлен покупателю курьером или передан в пункт выдачи заказов. "
+    },
+    {
+      "name": "reason",
+      "type": ["null", "ympa_avro_schema.OrderCancellationReasonType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,60 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "GetOfferMappingsRequest",
+  "fields": [
+    {
+      "name": "offerIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Идентификаторы товаров, информация о которых нужна.  {% note warning \"Такой список возвращается только целиком\" %}  Если вы запрашиваете информацию по конкретным SKU, не заполняйте: * `page_token`; * `limit`; * `cardStatuses`; * `categoryIds`; * `vendorNames`; * `tags`; * `archived`.  {% endnote %}    ",
+      "default": null
+    },
+    {
+      "name": "cardStatuses",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferCardStatusType"
+      }],
+      "doc": "Фильтр по статусам карточек.  [Что такое карточка товара](https://yandex.ru/support/marketplace/assortment/content/index.html) ",
+      "default": null
+    },
+    {
+      "name": "categoryIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "int"
+      }],
+      "doc": "Фильтр по категориям на Маркете.",
+      "default": null
+    },
+    {
+      "name": "vendorNames",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Фильтр по брендам.",
+      "default": null
+    },
+    {
+      "name": "tags",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Фильтр по тегам.",
+      "default": null
+    },
+    {
+      "name": "archived",
+      "type": ["null", "boolean"],
+      "doc": "Фильтр по нахождению в архиве.  Передайте `true`, чтобы получить товары, находящиеся в архиве. Если фильтр не заполнен или передано `false`, в ответе возвращаются товары, не находящиеся в архиве. ",
+      "default": null
+    }
+  ]
+
+}

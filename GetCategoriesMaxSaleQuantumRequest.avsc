@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список категорий, для которых нужно вернуть лимит на установку кванта и минимального количества товаров. ",
+  "name": "GetCategoriesMaxSaleQuantumRequest",
+  "fields": [
+    {
+      "name": "marketCategoryIds",
+      "type": {
+        "type": "set",
+        "items": "long"
+      },
+      "doc": "Идентификаторы листовых категории на Маркете — тех, у которых нет дочерних категорий."
+    }
+  ]
+
+}

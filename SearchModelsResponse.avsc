@@ -1,0 +1,35 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "SearchModelsResponse",
+  "fields": [
+    {
+      "name": "models",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.ModelDTO"
+      },
+      "doc": "Список моделей товаров."
+    },
+    {
+      "name": "currency",
+      "type": ["null", "ympa_avro_schema.CurrencyType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "regionId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор региона, для которого выводится информация о предложениях модели (доставляемых в этот регион).  Информацию о регионе по идентификатору можно получить с помощью запроса [GET regions/{regionId}](../../reference/regions/searchRegionsById.md). ",
+      "default": null
+    },
+    {
+      "name": "pager",
+      "type": ["null", "ympa_avro_schema.FlippingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

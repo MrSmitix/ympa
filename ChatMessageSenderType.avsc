@@ -1,0 +1,12 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Кто отправил сообщение:  * `PARTNER` — магазин. * `CUSTOMER` — покупатель. * `MARKET` — Маркет. * `SUPPORT` — сотрудник службы поддержки Маркета. ",
+  "name": "ChatMessageSenderType",
+  "symbols": [
+    "PARTNER",
+    "CUSTOMER",
+    "MARKET",
+    "SUPPORT"
+  ]
+}

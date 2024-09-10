@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о заказах, которые повлияли на индекс качества.",
+  "name": "QualityRatingDetailsDTO",
+  "fields": [
+    {
+      "name": "affectedOrders",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.QualityRatingAffectedOrderDTO"
+      },
+      "doc": "Список заказов, которые повлияли на индекс качества."
+    }
+  ]
+
+}

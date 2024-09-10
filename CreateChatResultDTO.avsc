@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о созданном чате.",
+  "name": "CreateChatResultDTO",
+  "fields": [
+    {
+      "name": "chatId",
+      "type": "long",
+      "doc": "Идентификатор чата."
+    }
+  ]
+
+}

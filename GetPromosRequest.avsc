@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фильтры для получения списка акций.",
+  "name": "GetPromosRequest",
+  "fields": [
+    {
+      "name": "participation",
+      "type": ["null", "ympa_avro_schema.PromoParticipationType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "mechanics",
+      "type": ["null", "ympa_avro_schema.MechanicsType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

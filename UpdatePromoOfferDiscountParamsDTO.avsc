@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Параметры товара в акции с типом `DIRECT_DISCOUNT` или `BLUE_FLASH`.  Обязательный параметр для акций с этими типами. ",
+  "name": "UpdatePromoOfferDiscountParamsDTO",
+  "fields": [
+    {
+      "name": "price",
+      "type": ["null", "long"],
+      "doc": "Зачеркнутая цена — та, по которой товар продавался до акции.  Указывается в рублях.  Число должно быть целым. ",
+      "default": null
+    },
+    {
+      "name": "promoPrice",
+      "type": ["null", "long"],
+      "doc": "Цена по акции — та, по которой вы хотите продавать товар.  Указывается в рублях.  Число должно быть целым. ",
+      "default": null
+    }
+  ]
+
+}

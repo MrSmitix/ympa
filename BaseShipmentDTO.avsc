@@ -1,0 +1,89 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об отгрузке.",
+  "name": "BaseShipmentDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор отгрузки.",
+      "default": null
+    },
+    {
+      "name": "planIntervalFrom",
+      "type": ["null", "string"],
+      "doc": "Начало планового интервала отгрузки.",
+      "default": null
+    },
+    {
+      "name": "planIntervalTo",
+      "type": ["null", "string"],
+      "doc": "Конец планового интервала отгрузки.",
+      "default": null
+    },
+    {
+      "name": "shipmentType",
+      "type": ["null", "ympa_avro_schema.ShipmentType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "warehouse",
+      "type": ["null", "ympa_avro_schema.PartnerShipmentWarehouseDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "warehouseTo",
+      "type": ["null", "ympa_avro_schema.PartnerShipmentWarehouseDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "externalId",
+      "type": ["null", "string"],
+      "doc": "Идентификатор отгрузки в вашей системе. Если вы еще не передавали идентификатор, вернется идентификатор из параметра `id`.",
+      "default": null
+    },
+    {
+      "name": "deliveryService",
+      "type": ["null", "ympa_avro_schema.DeliveryServiceDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "palletsCount",
+      "type": ["null", "ympa_avro_schema.PalletsCountDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "orderIds",
+      "type": {
+        "type": "set",
+        "items": "long"
+      },
+      "doc": "Идентификаторы заказов в отгрузке."
+    },
+    {
+      "name": "draftCount",
+      "type": ["null", "int"],
+      "doc": "Количество заказов, которое Маркет запланировал к отгрузке.",
+      "default": null
+    },
+    {
+      "name": "plannedCount",
+      "type": ["null", "int"],
+      "doc": "Количество заказов, которое Маркет подтвердил к отгрузке.",
+      "default": null
+    },
+    {
+      "name": "factCount",
+      "type": ["null", "int"],
+      "doc": "Количество заказов, принятых в сортировочном центре или пункте приема.",
+      "default": null
+    }
+  ]
+
+}

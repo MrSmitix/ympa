@@ -1,0 +1,43 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Адрес склада.",
+  "name": "WarehouseAddressDTO",
+  "fields": [
+    {
+      "name": "city",
+      "type": "string",
+      "doc": "Город."
+    },
+    {
+      "name": "street",
+      "type": ["null", "string"],
+      "doc": "Улица.",
+      "default": null
+    },
+    {
+      "name": "number",
+      "type": ["null", "string"],
+      "doc": "Номер дома.",
+      "default": null
+    },
+    {
+      "name": "building",
+      "type": ["null", "string"],
+      "doc": "Номер строения.",
+      "default": null
+    },
+    {
+      "name": "block",
+      "type": ["null", "string"],
+      "doc": "Номер корпуса.",
+      "default": null
+    },
+    {
+      "name": "gps",
+      "type": "ympa_avro_schema.GpsDTO",
+      "doc": ""
+    }
+  ]
+
+}

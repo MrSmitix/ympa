@@ -1,0 +1,26 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Заказ.",
+  "name": "OrderStatusChangeDTO",
+  "fields": [
+    {
+      "name": "status",
+      "type": "ympa_avro_schema.OrderStatusType",
+      "doc": ""
+    },
+    {
+      "name": "substatus",
+      "type": ["null", "ympa_avro_schema.OrderSubstatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "delivery",
+      "type": ["null", "ympa_avro_schema.OrderStatusChangeDeliveryDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

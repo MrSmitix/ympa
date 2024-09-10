@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "GetRegionWithChildrenResponse",
+  "fields": [
+    {
+      "name": "pager",
+      "type": ["null", "ympa_avro_schema.FlippingPagerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "regions",
+      "type": ["null", "ympa_avro_schema.RegionDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,24 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о приложенных к сообщению файлах.",
+  "name": "ChatMessagePayloadDTO",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Имя файла."
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "doc": "Ссылка для скачивания файла."
+    },
+    {
+      "name": "size",
+      "type": "int",
+      "doc": "Размер файла в байтах."
+    }
+  ]
+
+}

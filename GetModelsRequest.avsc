@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос информации о моделях.",
+  "name": "GetModelsRequest",
+  "fields": [
+    {
+      "name": "models",
+      "type": {
+        "type": "array",
+        "items": "long"
+      },
+      "doc": "Список моделей."
+    }
+  ]
+
+}

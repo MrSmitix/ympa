@@ -1,0 +1,39 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о магазине.",
+  "name": "CampaignDTO",
+  "fields": [
+    {
+      "name": "domain",
+      "type": ["null", "string"],
+      "doc": "URL магазина.",
+      "default": null
+    },
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор кампании.",
+      "default": null
+    },
+    {
+      "name": "clientId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор плательщика в Яндекс Балансе.",
+      "default": null
+    },
+    {
+      "name": "business",
+      "type": ["null", "ympa_avro_schema.BusinessDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "placementType",
+      "type": ["null", "ympa_avro_schema.PlacementType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Причина, по которой товар не удалось поместить в архив:  * `OFFER_HAS_STOCKS` — товар хранится на складе Маркета. ",
+  "name": "AddOffersToArchiveErrorType",
+  "symbols": [
+    "OFFER_HAS_STOCKS",
+    "UNKNOWN"
+  ]
+}

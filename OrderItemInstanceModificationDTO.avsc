@@ -1,0 +1,22 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Позиция в корзине, требующая маркировки.",
+  "name": "OrderItemInstanceModificationDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор товара в заказе.  Он приходит в ответе на запрос [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) и в запросе Маркета [POST order/accept](../../pushapi/reference/orderAccept.md) — параметр `id` в `items`. "
+    },
+    {
+      "name": "instances",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.BriefOrderItemInstanceDTO"
+      },
+      "doc": "Список кодов маркировки единиц товара. "
+    }
+  ]
+
+}

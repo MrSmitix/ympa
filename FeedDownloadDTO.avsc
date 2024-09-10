@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о последней загрузке прайс-листа.",
+  "name": "FeedDownloadDTO",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.FeedStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "error",
+      "type": ["null", "ympa_avro_schema.FeedDownloadErrorDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

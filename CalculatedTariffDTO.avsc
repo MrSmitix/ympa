@@ -1,0 +1,28 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об услугах Маркета.",
+  "name": "CalculatedTariffDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": "ympa_avro_schema.CalculatedTariffType",
+      "doc": ""
+    },
+    {
+      "name": "amount",
+      "type": ["null", "double"],
+      "doc": "Стоимость услуги в рублях.",
+      "default": null
+    },
+    {
+      "name": "parameters",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.TariffParameterDTO"
+      },
+      "doc": "Параметры расчета тарифа."
+    }
+  ]
+
+}

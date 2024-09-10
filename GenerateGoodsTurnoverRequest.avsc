@@ -1,0 +1,20 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации отчета. ",
+  "name": "GenerateGoodsTurnoverRequest",
+  "fields": [
+    {
+      "name": "campaignId",
+      "type": "long",
+      "doc": "Идентификатор кампании."
+    },
+    {
+      "name": "date",
+      "type": ["null", "string"],
+      "doc": "Дата, за которую нужно рассчитать оборачиваемость. Если параметр не указан, используется текущая дата.",
+      "default": null
+    }
+  ]
+
+}

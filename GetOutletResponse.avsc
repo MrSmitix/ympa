@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ответ на запрос информации о точке продаж.",
+  "name": "GetOutletResponse",
+  "fields": [
+    {
+      "name": "outlet",
+      "type": ["null", "ympa_avro_schema.FullOutletDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

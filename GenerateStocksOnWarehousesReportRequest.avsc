@@ -1,0 +1,44 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации отчета. ",
+  "name": "GenerateStocksOnWarehousesReportRequest",
+  "fields": [
+    {
+      "name": "campaignId",
+      "type": "long",
+      "doc": "Идентификатор магазина."
+    },
+    {
+      "name": "warehouseIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "long"
+      }],
+      "doc": "Фильтр по идентификаторам складов (только модель FBY). Чтобы узнать идентификатор, воспользуйтесь запросом [GET warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).",
+      "default": null
+    },
+    {
+      "name": "reportDate",
+      "type": ["null", "string"],
+      "doc": "Фильтр по дате (для модели FBY). В отчет попадут данные за **предшествующий** дате день.",
+      "default": null
+    },
+    {
+      "name": "categoryIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "long"
+      }],
+      "doc": "Фильтр по категориям на Маркете (кроме модели FBY).",
+      "default": null
+    },
+    {
+      "name": "hasStocks",
+      "type": ["null", "boolean"],
+      "doc": "Фильтр по наличию остатков (кроме модели FBY).",
+      "default": null
+    }
+  ]
+
+}

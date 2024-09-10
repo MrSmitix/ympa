@@ -1,0 +1,152 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Заказ.",
+  "name": "OrderDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор заказа.",
+      "default": null
+    },
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.OrderStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "substatus",
+      "type": ["null", "ympa_avro_schema.OrderSubstatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "creationDate",
+      "type": ["null", "string"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", "string"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "currency",
+      "type": ["null", "ympa_avro_schema.CurrencyType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "itemsTotal",
+      "type": ["null", "double"],
+      "doc": "Платеж покупателя. ",
+      "default": null
+    },
+    {
+      "name": "deliveryTotal",
+      "type": ["null", "double"],
+      "doc": "Стоимость доставки. ",
+      "default": null
+    },
+    {
+      "name": "buyerItemsTotal",
+      "type": ["null", "double"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и без учета стоимости доставки. ",
+      "default": null
+    },
+    {
+      "name": "buyerTotal",
+      "type": ["null", "double"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и с учетом стоимости доставки. ",
+      "default": null
+    },
+    {
+      "name": "buyerItemsTotalBeforeDiscount",
+      "type": ["null", "double"],
+      "doc": "Стоимость всех товаров в заказе в валюте покупателя без учета стоимости доставки и до применения скидок по:  * акциям; * купонам; * промокодам. ",
+      "default": null
+    },
+    {
+      "name": "buyerTotalBeforeDiscount",
+      "type": ["null", "double"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя до применения скидок и с учетом стоимости доставки (`buyerItemsTotalBeforeDiscount` + стоимость доставки). ",
+      "default": null
+    },
+    {
+      "name": "paymentType",
+      "type": ["null", "ympa_avro_schema.OrderPaymentType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "paymentMethod",
+      "type": ["null", "ympa_avro_schema.OrderPaymentMethodType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "fake",
+      "type": ["null", "boolean"],
+      "doc": "Тип заказа:  * `false` — настоящий заказ покупателя.  * `true` — [тестовый](../../pushapi/concepts/sandbox.md) заказ Маркета. ",
+      "default": null
+    },
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderItemDTO"
+      },
+      "doc": "Список товаров в заказе."
+    },
+    {
+      "name": "subsidies",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderSubsidyDTO"
+      }],
+      "doc": "Список субсидий по типам.",
+      "default": null
+    },
+    {
+      "name": "delivery",
+      "type": ["null", "ympa_avro_schema.OrderDeliveryDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "buyer",
+      "type": ["null", "ympa_avro_schema.OrderBuyerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "notes",
+      "type": ["null", "string"],
+      "doc": "Комментарий к заказу.",
+      "default": null
+    },
+    {
+      "name": "taxSystem",
+      "type": ["null", "ympa_avro_schema.OrderTaxSystemType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "cancelRequested",
+      "type": ["null", "boolean"],
+      "doc": "**Только для модели DBS**  Запрошена ли отмена. ",
+      "default": null
+    },
+    {
+      "name": "expiryDate",
+      "type": ["null", "string"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

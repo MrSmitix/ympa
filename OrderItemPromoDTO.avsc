@@ -1,0 +1,38 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о вознаграждениях партнеру за скидки на товар по промокодам, купонам и акциям.",
+  "name": "OrderItemPromoDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": "ympa_avro_schema.OrderPromoType",
+      "doc": ""
+    },
+    {
+      "name": "discount",
+      "type": ["null", "double"],
+      "doc": "Размер пользовательской скидки в валюте покупателя. ",
+      "default": null
+    },
+    {
+      "name": "subsidy",
+      "type": ["null", "double"],
+      "doc": "Вознаграждение партнеру от Маркета за товар, проданный в рамках акции.  Передается в валюте заказа. ",
+      "default": null
+    },
+    {
+      "name": "shopPromoId",
+      "type": ["null", "string"],
+      "doc": "Идентификатор акции поставщика. ",
+      "default": null
+    },
+    {
+      "name": "marketPromoId",
+      "type": ["null", "string"],
+      "doc": "Идентификатор акции в рамках соглашения на оказание услуг по продвижению сервиса между Маркетом и партнером.  Параметр передается, только если параметр `type=MARKET_DEAL`. ",
+      "default": null
+    }
+  ]
+
+}

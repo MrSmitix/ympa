@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список отзывов о товарах. ",
+  "name": "GoodsFeedbackListDTO",
+  "fields": [
+    {
+      "name": "feedbacks",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.GoodsFeedbackDTO"
+      },
+      "doc": "Список отзывов."
+    },
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ForwardScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

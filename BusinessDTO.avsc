@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о кабинете.",
+  "name": "BusinessDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор кабинета.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название бизнеса.",
+      "default": null
+    }
+  ]
+
+}

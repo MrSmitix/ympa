@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фильтрации удаляемых товаров по offerIds. ",
+  "name": "DeleteOffersRequest",
+  "fields": [
+    {
+      "name": "offerIds",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "Список SKU товаров, которые нужно удалить."
+    }
+  ]
+
+}

@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Параметры товара, который участвует в акции.",
+  "name": "UpdatePromoOfferParamsDTO",
+  "fields": [
+    {
+      "name": "discountParams",
+      "type": ["null", "ympa_avro_schema.UpdatePromoOfferDiscountParamsDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

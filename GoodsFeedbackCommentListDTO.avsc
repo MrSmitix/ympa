@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Комментарии к отзыву.",
+  "name": "GoodsFeedbackCommentListDTO",
+  "fields": [
+    {
+      "name": "comments",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.GoodsFeedbackCommentDTO"
+      },
+      "doc": "Список комментариев."
+    },
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ForwardScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

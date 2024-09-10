@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Статус документа:  * `READY` — готов. * `NOT_READY` — не готов. ",
+  "name": "OrderDocumentStatusType",
+  "symbols": [
+    "READY",
+    "NOT_READY"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Текст ошибки.",
+  "name": "OfferContentErrorDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": "ympa_avro_schema.OfferContentErrorType",
+      "doc": ""
+    },
+    {
+      "name": "parameterId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор характеристики, с которой связана ошибка.",
+      "default": null
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "doc": "Текст ошибки."
+    }
+  ]
+
+}

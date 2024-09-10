@@ -1,0 +1,20 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Общий формат ошибки.",
+  "name": "ApiErrorDTO",
+  "fields": [
+    {
+      "name": "code",
+      "type": "string",
+      "doc": "Код ошибки."
+    },
+    {
+      "name": "message",
+      "type": ["null", "string"],
+      "doc": "Описание ошибки.",
+      "default": null
+    }
+  ]
+
+}

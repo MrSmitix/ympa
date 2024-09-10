@@ -1,0 +1,24 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Единица измерения.",
+  "name": "UnitDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор единицы измерения."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Сокращенное название единицы измерения."
+    },
+    {
+      "name": "fullName",
+      "type": "string",
+      "doc": "Полное название единицы измерения."
+    }
+  ]
+
+}

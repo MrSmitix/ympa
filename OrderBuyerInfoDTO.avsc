@@ -1,0 +1,45 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о покупателе и его номере телефона.",
+  "name": "OrderBuyerInfoDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "string"],
+      "doc": "Идентификатор покупателя.",
+      "default": null
+    },
+    {
+      "name": "lastName",
+      "type": ["null", "string"],
+      "doc": "Фамилия покупателя.",
+      "default": null
+    },
+    {
+      "name": "firstName",
+      "type": ["null", "string"],
+      "doc": "Имя покупателя.",
+      "default": null
+    },
+    {
+      "name": "middleName",
+      "type": ["null", "string"],
+      "doc": "Отчество покупателя.",
+      "default": null
+    },
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.OrderBuyerType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "phone",
+      "type": ["null", "string"],
+      "doc": "Подменный номер телефона покупателя. Подробнее о таких номерах читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/orders/dbs/call#fake-number).  Формат номера: `+<код_страны><код_региона><номер_телефона>`. ",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на установку цен на товары.",
+  "name": "UpdatePricesRequest",
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferPriceDTO"
+      },
+      "doc": "Список товаров."
+    }
+  ]
+
+}

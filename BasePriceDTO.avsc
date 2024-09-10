@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Цена на товар.",
+  "name": "BasePriceDTO",
+  "fields": [
+    {
+      "name": "value",
+      "type": "double",
+      "doc": "Значение."
+    },
+    {
+      "name": "currencyId",
+      "type": "ympa_avro_schema.CurrencyType",
+      "doc": ""
+    }
+  ]
+
+}

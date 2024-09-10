@@ -1,0 +1,12 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип точки продаж.  Возможные значения:  * `DEPOT` — пункт выдачи заказов. * `MIXED` — смешанный тип точки продаж (торговый зал и пункт выдачи заказов). * `RETAIL` — розничная точка продаж (торговый зал). ",
+  "name": "OutletType",
+  "symbols": [
+    "DEPOT",
+    "MIXED",
+    "RETAIL",
+    "NOT_DEFINED"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Статус отгрузки.",
+  "name": "ShipmentStatusChangeDTO",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.ShipmentStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "description",
+      "type": ["null", "string"],
+      "doc": "Описание статуса отгрузки.",
+      "default": null
+    },
+    {
+      "name": "updateTime",
+      "type": ["null", "string"],
+      "doc": "Время последнего изменения статуса отгрузки.",
+      "default": null
+    }
+  ]
+
+}

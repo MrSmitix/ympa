@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фото и видео.",
+  "name": "GoodsFeedbackMediaDTO",
+  "fields": [
+    {
+      "name": "photos",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Ссылки на фото.",
+      "default": null
+    },
+    {
+      "name": "videos",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Ссылки на видео.",
+      "default": null
+    }
+  ]
+
+}

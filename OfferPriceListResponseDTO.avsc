@@ -1,0 +1,29 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список цен на товары.",
+  "name": "OfferPriceListResponseDTO",
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferPriceResponseDTO"
+      },
+      "doc": "Страница списка."
+    },
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "total",
+      "type": ["null", "int"],
+      "doc": "Количество всех цен магазина, измененных через API.",
+      "default": null
+    }
+  ]
+
+}

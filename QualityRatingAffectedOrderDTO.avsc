@@ -1,0 +1,24 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о заказе, который повлиял на индекс качества.",
+  "name": "QualityRatingAffectedOrderDTO",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "long",
+      "doc": "Идентификатор заказа."
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "doc": "Описание проблемы."
+    },
+    {
+      "name": "componentType",
+      "type": "ympa_avro_schema.AffectedOrderQualityRatingComponentType",
+      "doc": ""
+    }
+  ]
+
+}

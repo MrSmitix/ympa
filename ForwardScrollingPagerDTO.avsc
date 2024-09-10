@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ссылка на следующую страницу. ",
+  "name": "ForwardScrollingPagerDTO",
+  "fields": [
+    {
+      "name": "nextPageToken",
+      "type": ["null", "string"],
+      "doc": "Идентификатор следующей страницы результатов.",
+      "default": null
+    }
+  ]
+
+}

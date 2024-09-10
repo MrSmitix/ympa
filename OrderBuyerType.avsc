@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип покупателя:  * `PERSON` — физическое лицо.  * `BUSINESS` — организация. ",
+  "name": "OrderBuyerType",
+  "symbols": [
+    "PERSON",
+    "BUSINESS"
+  ]
+}

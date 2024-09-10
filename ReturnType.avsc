@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип заказа для фильтрации:  * `RETURN` — возврат.  * `UNREDEEMED` — невыкуп.  Если не указывать, в ответе будут и возвраты, и невыкупы. ",
+  "name": "ReturnType",
+  "symbols": [
+    "UNREDEEMED",
+    "RETURN"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Пустой ответ сервера.",
+  "name": "EmptyApiResponse",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.ApiResponseStatusType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

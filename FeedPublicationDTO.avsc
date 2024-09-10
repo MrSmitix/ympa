@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о последней публикации предложений из прайс-листа на Маркете.",
+  "name": "FeedPublicationDTO",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.FeedStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "full",
+      "type": ["null", "ympa_avro_schema.FeedPublicationFullDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "priceAndStockUpdate",
+      "type": ["null", "ympa_avro_schema.FeedPublicationPriceAndStockUpdateDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

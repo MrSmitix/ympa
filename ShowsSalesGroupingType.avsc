@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Группировка данных отчета. Возможные значения: * `CATEGORIES` — группировка по категориям. * `OFFERS` — группировка по товарам. ",
+  "name": "ShowsSalesGroupingType",
+  "symbols": [
+    "CATEGORIES",
+    "OFFERS"
+  ]
+}

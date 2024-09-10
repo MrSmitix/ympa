@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ответ на запрос региона магазина.",
+  "name": "GetCampaignRegionResponse",
+  "fields": [
+    {
+      "name": "region",
+      "type": ["null", "ympa_avro_schema.RegionDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

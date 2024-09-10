@@ -1,0 +1,29 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Результат выполнения запроса отчета по индексации прайс-листа.",
+  "name": "FeedIndexLogsResultDTO",
+  "fields": [
+    {
+      "name": "feed",
+      "type": ["null", "ympa_avro_schema.FeedIndexLogsFeedDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "indexLogRecords",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.FeedIndexLogsRecordDTO"
+      },
+      "doc": "Список отчетов по индексации прайс-листа."
+    },
+    {
+      "name": "total",
+      "type": ["null", "long"],
+      "doc": "Количество отчетов на всех страницах выходных данных.",
+      "default": null
+    }
+  ]
+
+}

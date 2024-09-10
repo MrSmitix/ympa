@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров с указанными ставками.",
+  "name": "GetBidsInfoResponseDTO",
+  "fields": [
+    {
+      "name": "bids",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.SkuBidItemDTO"
+      },
+      "doc": "Страница списка товаров."
+    },
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ForwardScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,39 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Адрес доставки.",
+  "name": "PickupAddressDTO",
+  "fields": [
+    {
+      "name": "country",
+      "type": ["null", "string"],
+      "doc": "Страна.",
+      "default": null
+    },
+    {
+      "name": "city",
+      "type": ["null", "string"],
+      "doc": "Город.",
+      "default": null
+    },
+    {
+      "name": "street",
+      "type": ["null", "string"],
+      "doc": "Улица.",
+      "default": null
+    },
+    {
+      "name": "house",
+      "type": ["null", "string"],
+      "doc": "Номер дома.",
+      "default": null
+    },
+    {
+      "name": "postcode",
+      "type": ["null", "string"],
+      "doc": "Почтовый индекс.",
+      "default": null
+    }
+  ]
+
+}

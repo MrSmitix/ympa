@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Историю какого чата нужно получить — и начиная с какого сообщения. ",
+  "name": "GetChatHistoryRequest",
+  "fields": [
+    {
+      "name": "messageIdFrom",
+      "type": ["null", "long"],
+      "doc": "Идентификатор сообщения, начиная с которого нужно получить все последующие сообщения.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,35 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о складе.",
+  "name": "WarehouseDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор склада."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Название склада."
+    },
+    {
+      "name": "campaignId",
+      "type": "long",
+      "doc": "Идентификатор кампании в API и идентификатор магазина."
+    },
+    {
+      "name": "express",
+      "type": "boolean",
+      "doc": "Возможна ли доставка по модели Экспресс."
+    },
+    {
+      "name": "address",
+      "type": ["null", "ympa_avro_schema.WarehouseAddressDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

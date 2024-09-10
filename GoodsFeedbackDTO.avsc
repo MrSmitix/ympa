@@ -1,0 +1,52 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Отзыв о товаре.",
+  "name": "GoodsFeedbackDTO",
+  "fields": [
+    {
+      "name": "feedbackId",
+      "type": "long",
+      "doc": "Идентификатор отзыва. "
+    },
+    {
+      "name": "createdAt",
+      "type": "string",
+      "doc": "Дата и время создания отзыва."
+    },
+    {
+      "name": "needReaction",
+      "type": "boolean",
+      "doc": "Нужен ли ответ на отзыв."
+    },
+    {
+      "name": "identifiers",
+      "type": "ympa_avro_schema.GoodsFeedbackIdentifiersDTO",
+      "doc": ""
+    },
+    {
+      "name": "author",
+      "type": ["null", "string"],
+      "doc": "Имя автора отзыва.",
+      "default": null
+    },
+    {
+      "name": "description",
+      "type": ["null", "ympa_avro_schema.GoodsFeedbackDescriptionDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "media",
+      "type": ["null", "ympa_avro_schema.GoodsFeedbackMediaDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "statistics",
+      "type": "ympa_avro_schema.GoodsFeedbackStatisticsDTO",
+      "doc": ""
+    }
+  ]
+
+}

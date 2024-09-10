@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Статус отзыва:  * `LAST` — актуален. * `PREVIOUS` — устарел. * `DELETED` — удален. ",
+  "name": "FeedbackStateType",
+  "symbols": [
+    "LAST",
+    "PREVIOUS",
+    "DELETED"
+  ]
+}

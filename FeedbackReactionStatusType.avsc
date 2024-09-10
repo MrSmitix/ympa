@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Статус реакции на отзыв:  * `ALL` — все отзывы.  * `NEED_REACTION` — отзывы, на которые нужно ответить. ",
+  "name": "FeedbackReactionStatusType",
+  "symbols": [
+    "ALL",
+    "NEED_REACTION"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ключ цифрового товара.",
+  "name": "OrderDigitalItemDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор товара в заказе.  Он приходит в ответе на запрос [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) и в запросе Маркета [POST order/accept](../../pushapi/reference/orderAccept.md) — параметр `id` в `items`. "
+    },
+    {
+      "name": "code",
+      "type": "string",
+      "doc": "Сам ключ."
+    },
+    {
+      "name": "slip",
+      "type": "string",
+      "doc": "Инструкция по активации."
+    },
+    {
+      "name": "activate_till",
+      "type": "string",
+      "doc": "Дата, до которой нужно активировать ключ. Если ключ действует бессрочно, укажите любую дату в отдаленном будущем.  Формат даты: `ГГГГ-ММ-ДД`. "
+    }
+  ]
+
+}

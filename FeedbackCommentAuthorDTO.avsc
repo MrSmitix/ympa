@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об авторе комментария.",
+  "name": "FeedbackCommentAuthorDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.FeedbackCommentAuthorType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Имя автора отзыва или название магазина.",
+      "default": null
+    }
+  ]
+
+}

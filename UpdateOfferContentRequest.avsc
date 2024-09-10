@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на установку новых значений для параметров.",
+  "name": "UpdateOfferContentRequest",
+  "fields": [
+    {
+      "name": "offersContent",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferContentDTO"
+      },
+      "doc": "Список товаров с указанными характеристиками."
+    }
+  ]
+
+}

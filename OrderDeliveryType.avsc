@@ -1,0 +1,13 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Способ доставки заказа:  * `DELIVERY` — курьерская доставка.  * `PICKUP` — самовывоз.  * `POST` — почта.  * `DIGITAL` — для цифровых товаров.  * `UNKNOWN` — неизвестный тип. ",
+  "name": "OrderDeliveryType",
+  "symbols": [
+    "DELIVERY",
+    "PICKUP",
+    "POST",
+    "DIGITAL",
+    "UNKNOWN"
+  ]
+}

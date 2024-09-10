@@ -1,0 +1,43 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Статус генерации и ссылка на готовый отчет.",
+  "name": "ReportInfoDTO",
+  "fields": [
+    {
+      "name": "status",
+      "type": "ympa_avro_schema.ReportStatusType",
+      "doc": ""
+    },
+    {
+      "name": "subStatus",
+      "type": ["null", "ympa_avro_schema.ReportSubStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "generationRequestedAt",
+      "type": "string",
+      "doc": "Дата и время запроса на генерацию."
+    },
+    {
+      "name": "generationFinishedAt",
+      "type": ["null", "string"],
+      "doc": "Дата и время завершения генерации.",
+      "default": null
+    },
+    {
+      "name": "file",
+      "type": ["null", "string"],
+      "doc": "Ссылка на готовый отчет.",
+      "default": null
+    },
+    {
+      "name": "estimatedGenerationTime",
+      "type": ["null", "long"],
+      "doc": "Ожидаемая продолжительность генерации в миллисекундах.",
+      "default": null
+    }
+  ]
+
+}

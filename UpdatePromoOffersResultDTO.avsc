@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ошибки и предупреждения, которые появились при добавлении товаров в акцию.",
+  "name": "UpdatePromoOffersResultDTO",
+  "fields": [
+    {
+      "name": "rejectedOffers",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.RejectedPromoOfferUpdateDTO"
+      }],
+      "doc": "Изменения, которые были отклонены.  Возвращается, только если есть отклоненные изменения. ",
+      "default": null
+    },
+    {
+      "name": "warningOffers",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.WarningPromoOfferUpdateDTO"
+      }],
+      "doc": "Изменения, по которым есть предупреждения. Они информируют о возможных проблемах. Информация о товарах обновится.  Возвращается, только если есть предупреждения. ",
+      "default": null
+    }
+  ]
+
+}

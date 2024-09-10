@@ -1,0 +1,18 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "description.",
+  "name": "GetBidsInfoRequest",
+  "fields": [
+    {
+      "name": "skus",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Список товаров, для которых нужно получить значения ставок.  Если список не задан, постранично возвращаются все товары со ставками.  Если список задан, результаты возвращаются одной страницей, а параметры `page_token` и `limit` игнорируются. ",
+      "default": null
+    }
+  ]
+
+}

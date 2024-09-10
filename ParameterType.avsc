@@ -1,0 +1,12 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип данных:  * `TEXT` — текст. * `ENUM` — список возможных значений. * `BOOLEAN` — `true` или `false`. * `NUMERIC` — число. ",
+  "name": "ParameterType",
+  "symbols": [
+    "TEXT",
+    "ENUM",
+    "BOOLEAN",
+    "NUMERIC"
+  ]
+}

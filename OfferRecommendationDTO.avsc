@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о состоянии цен и рекомендации. ",
+  "name": "OfferRecommendationDTO",
+  "fields": [
+    {
+      "name": "offer",
+      "type": ["null", "ympa_avro_schema.OfferForRecommendationDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "recommendation",
+      "type": ["null", "ympa_avro_schema.OfferRecommendationInfoDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

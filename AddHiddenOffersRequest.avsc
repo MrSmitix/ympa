@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на скрытие оферов.",
+  "name": "AddHiddenOffersRequest",
+  "fields": [
+    {
+      "name": "hiddenOffers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.HiddenOfferDTO"
+      },
+      "doc": "Список скрытых товаров. "
+    }
+  ]
+
+}

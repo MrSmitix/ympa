@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Состояние точки продаж.  Возможные значения:  * `HIDDEN` — точка продаж выключена. * `VISIBLE` — точка продаж включена. ",
+  "name": "OutletVisibilityType",
+  "symbols": [
+    "HIDDEN",
+    "VISIBLE",
+    "UNKNOWN"
+  ]
+}

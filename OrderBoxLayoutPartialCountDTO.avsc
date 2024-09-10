@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о части товара в коробке.",
+  "name": "OrderBoxLayoutPartialCountDTO",
+  "fields": [
+    {
+      "name": "current",
+      "type": "int",
+      "doc": "Номер части, начиная с 1."
+    },
+    {
+      "name": "total",
+      "type": "int",
+      "doc": "На сколько всего частей разделен товар."
+    }
+  ]
+
+}

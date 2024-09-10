@@ -1,0 +1,13 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Единица измерения времени:  * `HOUR` — час. * `DAY` — сутки. * `WEEK` — неделя. * `MONTH` — месяц. * `YEAR` — год. ",
+  "name": "TimeUnitType",
+  "symbols": [
+    "HOUR",
+    "DAY",
+    "WEEK",
+    "MONTH",
+    "YEAR"
+  ]
+}

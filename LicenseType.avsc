@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип лицензии:  * `ALCOHOL` — лицензия на розничную продажу алкогольной продукции. ",
+  "name": "LicenseType",
+  "symbols": [
+    "ALCOHOL",
+    "UNKNOWN"
+  ]
+}

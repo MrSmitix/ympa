@@ -1,0 +1,12 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Внешний вид товара:  * `PERFECT` — идеальный. * `EXCELLENT` — отличный. * `GOOD` — хороший. * `NOT_SPECIFIED` — не выбран. ",
+  "name": "OfferConditionQualityType",
+  "symbols": [
+    "PERFECT",
+    "EXCELLENT",
+    "GOOD",
+    "NOT_SPECIFIED"
+  ]
+}

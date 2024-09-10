@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Детали по товару в заказе.",
+  "name": "OrderItemDetailDTO",
+  "fields": [
+    {
+      "name": "itemCount",
+      "type": ["null", "long"],
+      "doc": "Количество единиц товара.",
+      "default": null
+    },
+    {
+      "name": "itemStatus",
+      "type": ["null", "ympa_avro_schema.OrderItemStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "updateDate",
+      "type": ["null", "string"],
+      "doc": "Формат даты: `ДД-ММ-ГГГГ`. ",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Модель, по которой работает магазин:  * `FBS` — FBS или Экспресс. * `FBY` — FBY. * `DBS` — DBS. ",
+  "name": "PlacementType",
+  "symbols": [
+    "FBS",
+    "FBY",
+    "DBS"
+  ]
+}

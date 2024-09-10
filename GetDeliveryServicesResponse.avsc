@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ответ на запрос списка служб доставки.",
+  "name": "GetDeliveryServicesResponse",
+  "fields": [
+    {
+      "name": "result",
+      "type": ["null", "ympa_avro_schema.DeliveryServicesDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

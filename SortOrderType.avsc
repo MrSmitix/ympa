@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Направление сортировки.  Возможные значения: - `ASC` — сортировка по возрастанию. - `DESC` — сортировка по убыванию. ",
+  "name": "SortOrderType",
+  "symbols": [
+    "ASC",
+    "DESC"
+  ]
+}

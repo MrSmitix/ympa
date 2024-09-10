@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ответ на запрос списка прайс-листов.",
+  "name": "GetFeedsResponse",
+  "fields": [
+    {
+      "name": "feeds",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.FeedDTO"
+      },
+      "doc": "Список прайс-листов."
+    }
+  ]
+
+}

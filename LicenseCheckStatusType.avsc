@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Статус проверки лицензии:  * `NEW` — лицензия проверяется. * `SUCCESS` — лицензия прошла проверку. * `FAIL` — лицензия не прошла проверку. ",
+  "name": "LicenseCheckStatusType",
+  "symbols": [
+    "NEW",
+    "SUCCESS",
+    "FAIL",
+    "REVOKE",
+    "DONT_WANT",
+    "FAIL_MANUAL"
+  ]
+}

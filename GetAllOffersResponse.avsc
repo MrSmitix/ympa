@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список предложений.",
+  "name": "GetAllOffersResponse",
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OfferDTO"
+      },
+      "doc": "Список предложений магазина."
+    }
+  ]
+
+}

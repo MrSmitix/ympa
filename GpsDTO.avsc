@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "GPS-координаты широты и долготы. ",
+  "name": "GpsDTO",
+  "fields": [
+    {
+      "name": "latitude",
+      "type": "double",
+      "doc": "Широта."
+    },
+    {
+      "name": "longitude",
+      "type": "double",
+      "doc": "Долгота."
+    }
+  ]
+
+}

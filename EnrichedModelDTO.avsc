@@ -1,0 +1,48 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Модель товара.",
+  "name": "EnrichedModelDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор модели товара.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название модели товара.",
+      "default": null
+    },
+    {
+      "name": "prices",
+      "type": ["null", "ympa_avro_schema.ModelPriceDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "offers",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.ModelOfferDTO"
+      }],
+      "doc": "Список первых десяти предложений, расположенных на карточке модели.  В ответе на запрос возвращаются предложения различных магазинов. Если есть несколько предложений от одного магазина, в ответе отображается только одно, наиболее релевантное из них. ",
+      "default": null
+    },
+    {
+      "name": "offlineOffers",
+      "type": ["null", "int"],
+      "doc": "Суммарное количество предложений в розничных магазинах в регионе. Учитываются все предложения от каждого магазина.",
+      "default": null
+    },
+    {
+      "name": "onlineOffers",
+      "type": ["null", "int"],
+      "doc": "Суммарное количество предложений в интернет-магазинах в регионе. Учитываются все предложения от каждого магазина.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,29 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Расписание работы точки продаж.",
+  "name": "OutletWorkingScheduleItemDTO",
+  "fields": [
+    {
+      "name": "startDay",
+      "type": "ympa_avro_schema.DayOfWeekType",
+      "doc": ""
+    },
+    {
+      "name": "endDay",
+      "type": "ympa_avro_schema.DayOfWeekType",
+      "doc": ""
+    },
+    {
+      "name": "startTime",
+      "type": "string",
+      "doc": "Точка продаж работает c указанного часа.  Формат: `ЧЧ:ММ`. "
+    },
+    {
+      "name": "endTime",
+      "type": "string",
+      "doc": "Точка продаж работает до указанного часа.  Формат: `ЧЧ:ММ`. "
+    }
+  ]
+
+}

@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Формат отчета:  * `FILE` — файл с электронной таблицей. * `CSV` — ZIP-архив с CSV-файлами на каждый лист отчета. ",
+  "name": "ReportFormatType",
+  "symbols": [
+    "FILE",
+    "CSV"
+  ]
+}

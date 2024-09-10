@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о том, по каким моделям можно продавать товар, а по каким нельзя.",
+  "name": "OfferSellingProgramDTO",
+  "fields": [
+    {
+      "name": "sellingProgram",
+      "type": "ympa_avro_schema.SellingProgramType",
+      "doc": ""
+    },
+    {
+      "name": "status",
+      "type": "ympa_avro_schema.OfferSellingProgramStatusType",
+      "doc": ""
+    }
+  ]
+
+}

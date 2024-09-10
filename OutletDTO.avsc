@@ -1,0 +1,76 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о точке продаж.",
+  "name": "OutletDTO",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Название точки продаж. "
+    },
+    {
+      "name": "type",
+      "type": "ympa_avro_schema.OutletType",
+      "doc": ""
+    },
+    {
+      "name": "coords",
+      "type": ["null", "string"],
+      "doc": "Координаты точки продаж.  Формат: долгота, широта. Разделители: запятая и / или пробел. Например, `20.4522144, 54.7104264`.  Если параметр не передан, координаты будут определены по значениям параметров, вложенных в `address`. ",
+      "default": null
+    },
+    {
+      "name": "isMain",
+      "type": ["null", "boolean"],
+      "doc": "Признак основной точки продаж.  Возможные значения:  * `false` — неосновная точка продаж. * `true` — основная точка продаж. ",
+      "default": null
+    },
+    {
+      "name": "shopOutletCode",
+      "type": ["null", "string"],
+      "doc": "Идентификатор точки продаж, присвоенный магазином.",
+      "default": null
+    },
+    {
+      "name": "visibility",
+      "type": ["null", "ympa_avro_schema.OutletVisibilityType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "address",
+      "type": "ympa_avro_schema.OutletAddressDTO",
+      "doc": ""
+    },
+    {
+      "name": "phones",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "Номера телефонов точки продаж. Передавайте в формате: `+7 (999) 999-99-99`. "
+    },
+    {
+      "name": "workingSchedule",
+      "type": "ympa_avro_schema.OutletWorkingScheduleDTO",
+      "doc": ""
+    },
+    {
+      "name": "deliveryRules",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OutletDeliveryRuleDTO"
+      }],
+      "doc": "Информация об условиях доставки для данной точки продаж.  Обязательный параметр, если параметр `type=DEPOT` или `type=MIXED`. ",
+      "default": null
+    },
+    {
+      "name": "storagePeriod",
+      "type": ["null", "long"],
+      "doc": "Срок хранения заказа в собственном пункте выдачи заказов. Считается в днях.",
+      "default": null
+    }
+  ]
+
+}

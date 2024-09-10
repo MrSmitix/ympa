@@ -1,0 +1,29 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные, необходимые для генерации отчета. ",
+  "name": "GenerateShelfsStatisticsRequest",
+  "fields": [
+    {
+      "name": "businessId",
+      "type": "long",
+      "doc": "Идентификатор бизнеса."
+    },
+    {
+      "name": "dateFrom",
+      "type": "string",
+      "doc": "Начало периода, включительно."
+    },
+    {
+      "name": "dateTo",
+      "type": "string",
+      "doc": "Конец периода, включительно."
+    },
+    {
+      "name": "attributionType",
+      "type": "ympa_avro_schema.ShelfsStatisticsAttributionType",
+      "doc": ""
+    }
+  ]
+
+}

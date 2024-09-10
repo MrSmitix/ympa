@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о новой дате доставки заказа.",
+  "name": "OrderDeliveryDateDTO",
+  "fields": [
+    {
+      "name": "toDate",
+      "type": "string",
+      "doc": "Новая дата доставки заказа.  Формат даты: `ГГГГ-ММ-ДД`. "
+    }
+  ]
+
+}

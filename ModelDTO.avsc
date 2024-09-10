@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Модель товара.",
+  "name": "ModelDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор модели товара.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название модели товара.",
+      "default": null
+    },
+    {
+      "name": "prices",
+      "type": ["null", "ympa_avro_schema.ModelPriceDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

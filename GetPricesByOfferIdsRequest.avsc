@@ -1,0 +1,18 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос списка цен.",
+  "name": "GetPricesByOfferIdsRequest",
+  "fields": [
+    {
+      "name": "offerIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Список SKU.  {% note warning \"Такой список возвращается только целиком\" %}  Если вы запрашиваете информацию по конкретным SKU, не заполняйте:  * `page_token` * `limit`  {% endnote %}    ",
+      "default": null
+    }
+  ]
+
+}

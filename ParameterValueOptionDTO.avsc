@@ -1,0 +1,25 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Значение характеристики.",
+  "name": "ParameterValueOptionDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор значения."
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "doc": "Значение."
+    },
+    {
+      "name": "description",
+      "type": ["null", "string"],
+      "doc": "Описание значения.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,12 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Статус генерации отчета:  * `PENDING` — отчет ожидает генерации. * `PROCESSING` — отчет генерируется. * `FAILED` — во время генерации произошла ошибка. * `DONE` — отчет готов. ",
+  "name": "ReportStatusType",
+  "symbols": [
+    "PENDING",
+    "PROCESSING",
+    "FAILED",
+    "DONE"
+  ]
+}

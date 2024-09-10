@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Состояние уцененного товара. ",
+  "name": "OfferConditionDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.OfferConditionType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "quality",
+      "type": ["null", "ympa_avro_schema.OfferConditionQualityType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "reason",
+      "type": ["null", "string"],
+      "doc": "Описание товара. Подробно опишите дефекты, насколько они заметны и где их искать. ",
+      "default": null
+    }
+  ]
+
+}

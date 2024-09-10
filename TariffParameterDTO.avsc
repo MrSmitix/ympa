@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Детали расчета конкретной услуги Маркета.",
+  "name": "TariffParameterDTO",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Название параметра."
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "doc": "Значение параметра."
+    }
+  ]
+
+}

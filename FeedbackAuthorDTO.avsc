@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об авторе отзыва.  Если отзыв оставлен анонимно, параметр не возвращается. ",
+  "name": "FeedbackAuthorDTO",
+  "fields": [
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Имя автора отзыва.",
+      "default": null
+    },
+    {
+      "name": "region",
+      "type": ["null", "ympa_avro_schema.RegionDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

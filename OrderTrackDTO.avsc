@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о трек-номере посылки (DBS).",
+  "name": "OrderTrackDTO",
+  "fields": [
+    {
+      "name": "trackCode",
+      "type": ["null", "string"],
+      "doc": "Трек‑номер посылки.",
+      "default": null
+    },
+    {
+      "name": "deliveryServiceId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md).",
+      "default": null
+    }
+  ]
+
+}

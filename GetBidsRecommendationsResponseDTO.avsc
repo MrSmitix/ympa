@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров с рекомендованными ставками.",
+  "name": "GetBidsRecommendationsResponseDTO",
+  "fields": [
+    {
+      "name": "recommendations",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.SkuBidRecommendationItemDTO"
+      },
+      "doc": "Список товаров с рекомендованными ставками."
+    }
+  ]
+
+}

@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип скидки или цена на товар: - `BUYER` — цена на товар с учетом скидок, в том числе купонов. - `CASHBACK` — баллы Плюса. - `MARKETPLACE` — купоны. ",
+  "name": "OrdersStatsPriceType",
+  "symbols": [
+    "BUYER",
+    "CASHBACK",
+    "MARKETPLACE"
+  ]
+}

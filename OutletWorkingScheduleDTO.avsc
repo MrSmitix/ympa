@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список режимов работы точки продаж. ",
+  "name": "OutletWorkingScheduleDTO",
+  "fields": [
+    {
+      "name": "workInHoliday",
+      "type": ["null", "boolean"],
+      "doc": "Признак, работает ли точка продаж в дни государственных праздников.  Возможные значения:  * `false` — точка продаж не работает в дни государственных праздников. * `true` — точка продаж работает в дни государственных праздников. ",
+      "default": null
+    },
+    {
+      "name": "scheduleItems",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OutletWorkingScheduleItemDTO"
+      },
+      "doc": "Список расписаний работы точки продаж. "
+    }
+  ]
+
+}

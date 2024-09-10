@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "В ответе Маркет возвращает переданный вами список грузовых мест. Не обращайте на это поле внимания. ",
+  "name": "ShipmentBoxesDTO",
+  "fields": [
+    {
+      "name": "boxes",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.ParcelBoxDTO"
+      },
+      "doc": "Список грузовых мест. Маркет определил количество мест по длине этого списка. "
+    }
+  ]
+
+}

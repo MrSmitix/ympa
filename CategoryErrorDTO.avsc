@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Текст ошибки.",
+  "name": "CategoryErrorDTO",
+  "fields": [
+    {
+      "name": "categoryId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор категории.",
+      "default": null
+    },
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.CategoryErrorType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

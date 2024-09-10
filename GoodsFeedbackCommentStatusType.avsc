@@ -1,0 +1,12 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Статус комментария:  * `PUBLISHED` — опубликован. * `UNMODERATED` — не проверен. * `BANNED` — заблокирован. * `DELETED` — удален. ",
+  "name": "GoodsFeedbackCommentStatusType",
+  "symbols": [
+    "PUBLISHED",
+    "UNMODERATED",
+    "BANNED",
+    "DELETED"
+  ]
+}

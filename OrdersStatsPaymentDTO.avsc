@@ -1,0 +1,45 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о денежных переводах по заказу.",
+  "name": "OrdersStatsPaymentDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "string"],
+      "doc": "Идентификатор денежного перевода.",
+      "default": null
+    },
+    {
+      "name": "date",
+      "type": ["null", "string"],
+      "doc": "Дата денежного перевода.  Формат даты: `ГГГГ-ММ-ДД`. ",
+      "default": null
+    },
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.OrdersStatsPaymentType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "source",
+      "type": ["null", "ympa_avro_schema.OrdersStatsPaymentSourceType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "total",
+      "type": ["null", "double"],
+      "doc": "Сумма денежного перевода. Значение указывается в рублях независимо от способа денежного перевода. Точность — два знака после запятой. ",
+      "default": null
+    },
+    {
+      "name": "paymentOrder",
+      "type": ["null", "ympa_avro_schema.OrdersStatsPaymentOrderDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

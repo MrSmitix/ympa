@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "description.",
+  "name": "GetBidsRecommendationsRequest",
+  "fields": [
+    {
+      "name": "skus",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "Список товаров, для которых нужно получить рекомендации по ставкам. "
+    }
+  ]
+
+}

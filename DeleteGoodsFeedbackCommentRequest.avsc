@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Фильтр запроса отзывов по бизнесу. ",
+  "name": "DeleteGoodsFeedbackCommentRequest",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор комментария к отзыву. "
+    }
+  ]
+
+}

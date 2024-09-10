@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о службе доставки.",
+  "name": "DeliveryServiceInfoDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "Идентификатор службы доставки."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Наименование службы доставки."
+    }
+  ]
+
+}

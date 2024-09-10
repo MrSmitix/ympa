@@ -1,0 +1,62 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Адрес точки продаж. ",
+  "name": "OutletAddressDTO",
+  "fields": [
+    {
+      "name": "regionId",
+      "type": "long",
+      "doc": "Идентификатор региона.  Идентификатор можно получить c помощью запроса [GET regions](../../reference/regions/searchRegionsByName.md).  {% note alert %}  При создании и редактировании точек продаж можно указывать только регионы типов `TOWN` (город), `CITY` (крупный город) и `REPUBLIC_AREA` (район субъекта федерации). Тип региона указан в выходных параметрах type запросов [GET regions](../../reference/regions/searchRegionsByName.md) и [GET regions/{regionId}](../../reference/regions/searchRegionsById.md).  {% endnote %} "
+    },
+    {
+      "name": "street",
+      "type": ["null", "string"],
+      "doc": "Улица.",
+      "default": null
+    },
+    {
+      "name": "number",
+      "type": ["null", "string"],
+      "doc": "Номер дома.",
+      "default": null
+    },
+    {
+      "name": "building",
+      "type": ["null", "string"],
+      "doc": "Номер строения.",
+      "default": null
+    },
+    {
+      "name": "estate",
+      "type": ["null", "string"],
+      "doc": "Номер владения.",
+      "default": null
+    },
+    {
+      "name": "block",
+      "type": ["null", "string"],
+      "doc": "Номер корпуса.",
+      "default": null
+    },
+    {
+      "name": "additional",
+      "type": ["null", "string"],
+      "doc": "Дополнительная информация.",
+      "default": null
+    },
+    {
+      "name": "km",
+      "type": ["null", "int"],
+      "doc": "Порядковый номер километра дороги, на котором располагается точка продаж, если отсутствует улица.",
+      "default": null
+    },
+    {
+      "name": "city",
+      "type": ["null", "string"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел. Не используйте его. Город или населенный пункт возвращается в параметре `regionId`.  {% endnote %} ",
+      "default": null
+    }
+  ]
+
+}

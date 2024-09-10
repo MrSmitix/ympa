@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Текстовая часть отзыва.",
+  "name": "GoodsFeedbackDescriptionDTO",
+  "fields": [
+    {
+      "name": "advantages",
+      "type": ["null", "string"],
+      "doc": "Описание плюсов товара в отзыве.",
+      "default": null
+    },
+    {
+      "name": "disadvantages",
+      "type": ["null", "string"],
+      "doc": "Описание минусов товара в отзыве.",
+      "default": null
+    },
+    {
+      "name": "comment",
+      "type": ["null", "string"],
+      "doc": "Комментарий в отзыве.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об отгрузках.",
+  "name": "SearchShipmentsResponseDTO",
+  "fields": [
+    {
+      "name": "shipments",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.ShipmentInfoDTO"
+      },
+      "doc": "Список с информацией об отгрузках."
+    },
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ForwardScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

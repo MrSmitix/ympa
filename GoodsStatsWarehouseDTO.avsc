@@ -1,0 +1,29 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о складе.",
+  "name": "GoodsStatsWarehouseDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор склада.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название склада.",
+      "default": null
+    },
+    {
+      "name": "stocks",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.WarehouseStockDTO"
+      },
+      "doc": "Информация об остатках товаров на складе."
+    }
+  ]
+
+}

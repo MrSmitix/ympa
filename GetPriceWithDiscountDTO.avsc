@@ -1,0 +1,30 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Цена с указанием скидки и времени последнего обновления.",
+  "name": "GetPriceWithDiscountDTO",
+  "fields": [
+    {
+      "name": "value",
+      "type": "double",
+      "doc": "Значение."
+    },
+    {
+      "name": "currencyId",
+      "type": "ympa_avro_schema.CurrencyType",
+      "doc": ""
+    },
+    {
+      "name": "discountBase",
+      "type": ["null", "double"],
+      "doc": "Цена до скидки.  Число должно быть целым. Вы можете указать цену со скидкой от 5 до 99%.  Передавайте этот параметр при каждом обновлении цены, если предоставляете скидку на товар. ",
+      "default": null
+    },
+    {
+      "name": "updatedAt",
+      "type": "string",
+      "doc": "Время последнего обновления."
+    }
+  ]
+
+}

@@ -1,0 +1,20 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о товаре.",
+  "name": "UpdateOfferMappingDTO",
+  "fields": [
+    {
+      "name": "offer",
+      "type": "ympa_avro_schema.UpdateOfferDTO",
+      "doc": ""
+    },
+    {
+      "name": "mapping",
+      "type": ["null", "ympa_avro_schema.UpdateMappingDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

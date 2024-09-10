@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о предложениях прайс-листа.",
+  "name": "FeedIndexLogsOffersDTO",
+  "fields": [
+    {
+      "name": "rejectedCount",
+      "type": ["null", "long"],
+      "doc": "Количество предложений, который не опубликованы на Маркете из-за найденных ошибок.",
+      "default": null
+    },
+    {
+      "name": "totalCount",
+      "type": ["null", "long"],
+      "doc": "Количество предложений в прайс-листе.",
+      "default": null
+    }
+  ]
+
+}

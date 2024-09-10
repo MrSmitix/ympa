@@ -1,0 +1,33 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о тарифах, по которым нужно заплатить за услуги Маркета.",
+  "name": "TariffDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": "ympa_avro_schema.TariffType",
+      "doc": ""
+    },
+    {
+      "name": "percent",
+      "type": ["null", "double"],
+      "doc": "{% note warning \"\" %}  Этот параметр устарел. Не используйте его.  {% endnote %}  Значение тарифа в процентах. ",
+      "default": null
+    },
+    {
+      "name": "amount",
+      "type": "double",
+      "doc": "Значение тарифа в рублях."
+    },
+    {
+      "name": "parameters",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.TariffParameterDTO"
+      },
+      "doc": "Параметры расчета тарифа."
+    }
+  ]
+
+}

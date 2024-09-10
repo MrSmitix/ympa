@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Результаты поиска магазинов.",
+  "name": "GetCampaignsResponse",
+  "fields": [
+    {
+      "name": "campaigns",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.CampaignDTO"
+      },
+      "doc": "Список с информацией по каждому магазину."
+    },
+    {
+      "name": "pager",
+      "type": ["null", "ympa_avro_schema.FlippingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип денежного перевода: - `PAYMENT` — оплата. - `REFUND` — возврат. ",
+  "name": "OrdersStatsPaymentType",
+  "symbols": [
+    "PAYMENT",
+    "REFUND",
+    "UNKNOWN"
+  ]
+}

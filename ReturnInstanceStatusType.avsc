@@ -1,0 +1,20 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Логистический статус конкретного товара.",
+  "name": "ReturnInstanceStatusType",
+  "symbols": [
+    "CREATED",
+    "RECEIVED",
+    "IN_TRANSIT",
+    "READY_FOR_PICKUP",
+    "PICKED",
+    "RECEIVED_ON_FULFILLMENT",
+    "CANCELLED",
+    "LOST",
+    "UTILIZED",
+    "PREPARED_FOR_UTILIZATION",
+    "EXPROPRIATED",
+    "NOT_IN_DEMAND"
+  ]
+}

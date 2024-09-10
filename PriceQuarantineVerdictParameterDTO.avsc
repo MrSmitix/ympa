@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Параметр карантина.",
+  "name": "PriceQuarantineVerdictParameterDTO",
+  "fields": [
+    {
+      "name": "name",
+      "type": "ympa_avro_schema.PriceQuarantineVerdictParamNameType",
+      "doc": ""
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "doc": "Значение параметра."
+    }
+  ]
+
+}

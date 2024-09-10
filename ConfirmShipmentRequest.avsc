@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос для подтверждения отгрузки.",
+  "name": "ConfirmShipmentRequest",
+  "fields": [
+    {
+      "name": "externalShipmentId",
+      "type": ["null", "string"],
+      "doc": "Идентификатор отгрузки в системе поставщика.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о магазине.",
+  "name": "FeedbackShopDTO",
+  "fields": [
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название магазина.",
+      "default": null
+    }
+  ]
+
+}

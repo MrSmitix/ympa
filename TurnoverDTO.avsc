@@ -1,0 +1,20 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация об оборачиваемости товара.",
+  "name": "TurnoverDTO",
+  "fields": [
+    {
+      "name": "turnover",
+      "type": "ympa_avro_schema.TurnoverType",
+      "doc": ""
+    },
+    {
+      "name": "turnoverDays",
+      "type": ["null", "double"],
+      "doc": "Значение в днях. [Что это за число?](https://yandex.ru/support/marketplace/analytics/turnover.html)",
+      "default": null
+    }
+  ]
+
+}

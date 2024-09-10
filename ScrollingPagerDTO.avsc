@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о страницах результатов.",
+  "name": "ScrollingPagerDTO",
+  "fields": [
+    {
+      "name": "nextPageToken",
+      "type": ["null", "string"],
+      "doc": "Идентификатор следующей страницы результатов.",
+      "default": null
+    },
+    {
+      "name": "prevPageToken",
+      "type": ["null", "string"],
+      "doc": "Идентификатор предыдущей страницы результатов.",
+      "default": null
+    }
+  ]
+
+}

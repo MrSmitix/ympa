@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о службах доставки.",
+  "name": "DeliveryServicesDTO",
+  "fields": [
+    {
+      "name": "deliveryService",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.DeliveryServiceInfoDTO"
+      },
+      "doc": "Информация о службе доставки."
+    }
+  ]
+
+}

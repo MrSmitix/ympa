@@ -1,0 +1,66 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Решения по возвратам.",
+  "name": "ReturnDecisionDTO",
+  "fields": [
+    {
+      "name": "returnItemId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор товара в возврате.",
+      "default": null
+    },
+    {
+      "name": "count",
+      "type": ["null", "int"],
+      "doc": "Количество единиц товара.",
+      "default": null
+    },
+    {
+      "name": "comment",
+      "type": ["null", "string"],
+      "doc": "Комментарий.",
+      "default": null
+    },
+    {
+      "name": "reasonType",
+      "type": ["null", "ympa_avro_schema.ReturnDecisionReasonType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "subreasonType",
+      "type": ["null", "ympa_avro_schema.ReturnDecisionSubreasonType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "decisionType",
+      "type": ["null", "ympa_avro_schema.ReturnDecisionType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "refundAmount",
+      "type": ["null", "long"],
+      "doc": "Сумма возврата.",
+      "default": null
+    },
+    {
+      "name": "partnerCompensation",
+      "type": ["null", "long"],
+      "doc": "Компенсация за обратную доставку.",
+      "default": null
+    },
+    {
+      "name": "images",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Список хеш-кодов фотографий товара от покупателя.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,45 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список посылок.  В параметре может указываться несколько посылок. ",
+  "name": "OrderShipmentDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор посылки, присвоенный Маркетом.",
+      "default": null
+    },
+    {
+      "name": "shipmentDate",
+      "type": ["null", "string"],
+      "doc": "Формат даты: `ДД-ММ-ГГГГ`. ",
+      "default": null
+    },
+    {
+      "name": "shipmentTime",
+      "type": ["null", "string"],
+      "doc": "**Только для модели Экспресс**  Время, к которому магазин должен упаковать заказ и перевести его в статус `READY_TO_SHIP`. После смены статуса за заказом приедет курьер.  Поле может появиться не сразу. Запрашивайте информацию о заказе в течении 5–10 минут, пока оно не вернется.  Формат времени: 24-часовой, `ЧЧ:ММ`.  Если заказ сделан организацией, параметр не возвращается до согласования даты доставки. ",
+      "default": null
+    },
+    {
+      "name": "tracks",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderTrackDTO"
+      }],
+      "doc": "**Только для модели DBS**  Информация для отслеживания перемещений посылки. ",
+      "default": null
+    },
+    {
+      "name": "boxes",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderParcelBoxDTO"
+      }],
+      "doc": "Список грузовых мест.",
+      "default": null
+    }
+  ]
+
+}

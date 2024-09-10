@@ -1,0 +1,11 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Тип акции:  * `DIRECT_DISCOUNT` — прямая скидка.  * `BLUE_FLASH` — флеш-акция.  * `MARKET_PROMOCODE` — скидка по промокоду. ",
+  "name": "MechanicsType",
+  "symbols": [
+    "DIRECT_DISCOUNT",
+    "BLUE_FLASH",
+    "MARKET_PROMOCODE"
+  ]
+}

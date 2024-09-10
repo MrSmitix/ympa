@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Стандартная обертка для ответов сервера.",
+  "name": "ApiResponse",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.ApiResponseStatusType"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

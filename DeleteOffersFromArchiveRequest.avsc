@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Товары, которые нужно восстановить из архива. ",
+  "name": "DeleteOffersFromArchiveRequest",
+  "fields": [
+    {
+      "name": "offerIds",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "Список товаров, которые нужно восстановить из архива."
+    }
+  ]
+
+}

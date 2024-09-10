@@ -1,0 +1,33 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о проверке содержимого прайс-листа, загруженного на Маркет.",
+  "name": "FeedContentDTO",
+  "fields": [
+    {
+      "name": "rejectedOffersCount",
+      "type": ["null", "long"],
+      "doc": "Количество предложений, в которых найдены ошибки на этапе загрузки прайс-листа. Выводится, если параметр `content status=OK`. ",
+      "default": null
+    },
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.FeedStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "totalOffersCount",
+      "type": ["null", "long"],
+      "doc": "Количество предложений в прайс-листе. Выводится, если параметр `content status=OK`. ",
+      "default": null
+    },
+    {
+      "name": "error",
+      "type": ["null", "ympa_avro_schema.FeedContentErrorDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

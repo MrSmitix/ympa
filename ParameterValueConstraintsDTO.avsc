@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ограничения на значения характеристик.",
+  "name": "ParameterValueConstraintsDTO",
+  "fields": [
+    {
+      "name": "minValue",
+      "type": ["null", "double"],
+      "doc": "Минимальное число.",
+      "default": null
+    },
+    {
+      "name": "maxValue",
+      "type": ["null", "double"],
+      "doc": "Максимальное число.",
+      "default": null
+    },
+    {
+      "name": "maxLength",
+      "type": ["null", "int"],
+      "doc": "Максимальная длина текста.",
+      "default": null
+    }
+  ]
+
+}

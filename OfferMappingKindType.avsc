@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Вид маппинга.",
+  "name": "OfferMappingKindType",
+  "symbols": [
+    "ACTIVE",
+    "ALL"
+  ]
+}

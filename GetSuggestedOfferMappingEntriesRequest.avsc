@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос рекомендованных карточек товара.",
+  "name": "GetSuggestedOfferMappingEntriesRequest",
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.MappingsOfferDTO"
+      },
+      "doc": "Список товаров."
+    }
+  ]
+
+}

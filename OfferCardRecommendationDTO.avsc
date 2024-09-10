@@ -1,0 +1,20 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Рекомендация по заполнению карточки товара.",
+  "name": "OfferCardRecommendationDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": "ympa_avro_schema.OfferCardRecommendationType",
+      "doc": ""
+    },
+    {
+      "name": "percent",
+      "type": ["null", "int"],
+      "doc": "Процент выполнения рекомендации. Указывается для рекомендаций некоторых типов.",
+      "default": null
+    }
+  ]
+
+}

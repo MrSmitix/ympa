@@ -1,0 +1,20 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Инструкция по использованию товара. ",
+  "name": "OfferManualDTO",
+  "fields": [
+    {
+      "name": "url",
+      "type": "string",
+      "doc": "Ссылка на инструкцию."
+    },
+    {
+      "name": "title",
+      "type": ["null", "string"],
+      "doc": "Название инструкции, которое будет отображаться на карточке товара. ",
+      "default": null
+    }
+  ]
+
+}

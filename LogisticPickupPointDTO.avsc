@@ -1,0 +1,45 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Описание пункта вывоза для возврата.",
+  "name": "LogisticPickupPointDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор пункта вывоза.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Название пункта вывоза.",
+      "default": null
+    },
+    {
+      "name": "address",
+      "type": ["null", "ympa_avro_schema.PickupAddressDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "instruction",
+      "type": ["null", "string"],
+      "doc": "Дополнительные инструкции к вывозу.",
+      "default": null
+    },
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.LogisticPointType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "logisticPartnerId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор логистического партнера, к которому относится логистическая точка.",
+      "default": null
+    }
+  ]
+
+}

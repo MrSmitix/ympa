@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список чатов.",
+  "name": "GetChatsInfoDTO",
+  "fields": [
+    {
+      "name": "chats",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.GetChatInfoDTO"
+      },
+      "doc": "Информация о чатах."
+    },
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ForwardScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

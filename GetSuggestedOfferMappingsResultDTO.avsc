@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Подобранные карточки на Маркете.",
+  "name": "GetSuggestedOfferMappingsResultDTO",
+  "fields": [
+    {
+      "name": "offers",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.SuggestedOfferMappingDTO"
+      },
+      "doc": "Список товаров."
+    }
+  ]
+
+}

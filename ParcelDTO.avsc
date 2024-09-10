@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о грузовых местах в заказе.",
+  "name": "ParcelDTO",
+  "fields": [
+    {
+      "name": "boxes",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.ParcelBoxDTO"
+      },
+      "doc": "Список грузовых мест. Маркет определяет количество мест по длине этого списка."
+    }
+  ]
+
+}

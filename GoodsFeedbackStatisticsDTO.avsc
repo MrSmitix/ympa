@@ -1,0 +1,31 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Статистическая информация по отзыву.",
+  "name": "GoodsFeedbackStatisticsDTO",
+  "fields": [
+    {
+      "name": "rating",
+      "type": "int",
+      "doc": "Оценка товара."
+    },
+    {
+      "name": "commentsCount",
+      "type": "long",
+      "doc": "Количество комментариев к отзыву.  Учитываются только ответы на отзывы, а не дочерние комментарии. "
+    },
+    {
+      "name": "recommended",
+      "type": ["null", "boolean"],
+      "doc": "Рекомендуют ли этот товар.",
+      "default": null
+    },
+    {
+      "name": "paidAmount",
+      "type": ["null", "long"],
+      "doc": "Количество баллов Плюса, которое автор получил за отзыв.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,24 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Цена с указанием времени последнего обновления.",
+  "name": "GetPriceDTO",
+  "fields": [
+    {
+      "name": "value",
+      "type": "double",
+      "doc": "Значение."
+    },
+    {
+      "name": "currencyId",
+      "type": "ympa_avro_schema.CurrencyType",
+      "doc": ""
+    },
+    {
+      "name": "updatedAt",
+      "type": "string",
+      "doc": "Время последнего обновления."
+    }
+  ]
+
+}

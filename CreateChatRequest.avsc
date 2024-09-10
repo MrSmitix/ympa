@@ -1,0 +1,14 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Заказ, для которого нужно создать чат. ",
+  "name": "CreateChatRequest",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "long",
+      "doc": "Идентификатор заказа на Маркете."
+    }
+  ]
+
+}

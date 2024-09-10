@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Тип цены.",
+  "name": "PriceSuggestDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.PriceSuggestType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "price",
+      "type": ["null", "double"],
+      "doc": "Цена в рублях.",
+      "default": null
+    }
+  ]
+
+}

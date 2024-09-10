@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Параметры товара в акции.  Возвращается параметр, который соответствует типу акции. ",
+  "name": "PromoOfferParamsDTO",
+  "fields": [
+    {
+      "name": "discountParams",
+      "type": ["null", "ympa_avro_schema.PromoOfferDiscountParamsDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "promocodeParams",
+      "type": ["null", "ympa_avro_schema.PromoOfferPromocodeParamsDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "SetOrderDeliveryTrackCodeRequest",
+  "fields": [
+    {
+      "name": "trackCode",
+      "type": "string",
+      "doc": "Трек‑номер посылки."
+    },
+    {
+      "name": "deliveryServiceId",
+      "type": "long",
+      "doc": "Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md)."
+    }
+  ]
+
+}

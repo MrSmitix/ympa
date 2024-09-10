@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Данные о складе отправления.",
+  "name": "PartnerShipmentWarehouseDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор склада отправления.",
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "Наименование склада отправления.",
+      "default": null
+    },
+    {
+      "name": "address",
+      "type": ["null", "string"],
+      "doc": "Адрес склада отправления.",
+      "default": null
+    }
+  ]
+
+}

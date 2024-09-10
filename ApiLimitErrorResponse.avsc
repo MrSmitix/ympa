@@ -1,0 +1,24 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Превышено ограничение на доступ к ресурсу.",
+  "name": "ApiLimitErrorResponse",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.ApiResponseStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "errors",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.ApiErrorDTO"
+      }],
+      "doc": "Список ошибок.",
+      "default": null
+    }
+  ]
+
+}

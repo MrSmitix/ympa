@@ -1,0 +1,18 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Товары, которые не удалось восстановить из архива.",
+  "name": "DeleteOffersFromArchiveDTO",
+  "fields": [
+    {
+      "name": "notUnarchivedOfferIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Список товаров, которые не удалось восстановить из архива.",
+      "default": null
+    }
+  ]
+
+}

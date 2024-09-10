@@ -1,0 +1,18 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список товаров, которые не удалось удалить, потому что они хранятся на складе Маркета.",
+  "name": "DeleteOffersDTO",
+  "fields": [
+    {
+      "name": "notDeletedOfferIds",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "Список SKU товаров, которые не удалось удалить.",
+      "default": null
+    }
+  ]
+
+}

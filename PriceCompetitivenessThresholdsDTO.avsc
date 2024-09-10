@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Максимальные значения цены, при которых она является привлекательной или умеренной.",
+  "name": "PriceCompetitivenessThresholdsDTO",
+  "fields": [
+    {
+      "name": "optimalPrice",
+      "type": ["null", "ympa_avro_schema.BasePriceDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "averagePrice",
+      "type": ["null", "ympa_avro_schema.BasePriceDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о размещении предложений из прайс-листа на Маркете на момент выполнения запроса.",
+  "name": "FeedPlacementDTO",
+  "fields": [
+    {
+      "name": "status",
+      "type": ["null", "ympa_avro_schema.FeedStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "totalOffersCount",
+      "type": ["null", "int"],
+      "doc": "Количество предложений из прайс-листа, которые размещаются на Яндекс Маркете в момент выполнения запроса.",
+      "default": null
+    }
+  ]
+
+}

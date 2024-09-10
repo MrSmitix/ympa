@@ -1,0 +1,15 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "VerifyOrderEacRequest",
+  "fields": [
+    {
+      "name": "code",
+      "type": ["null", "string"],
+      "doc": "Код для подтверждения ЭАПП.",
+      "default": null
+    }
+  ]
+
+}

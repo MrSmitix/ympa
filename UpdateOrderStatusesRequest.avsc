@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Список заказов.",
+  "name": "UpdateOrderStatusesRequest",
+  "fields": [
+    {
+      "name": "orders",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderStateDTO"
+      },
+      "doc": "Список заказов."
+    }
+  ]
+
+}

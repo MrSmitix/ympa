@@ -1,0 +1,19 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Статус товара в магазине.",
+  "name": "OfferCampaignStatusDTO",
+  "fields": [
+    {
+      "name": "campaignId",
+      "type": "long",
+      "doc": "Идентификатор кампании. "
+    },
+    {
+      "name": "status",
+      "type": "ympa_avro_schema.OfferCampaignStatusType",
+      "doc": ""
+    }
+  ]
+
+}

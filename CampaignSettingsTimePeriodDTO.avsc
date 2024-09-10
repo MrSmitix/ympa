@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Период, за который рассчитывается итоговый список нерабочих дней службы доставки.",
+  "name": "CampaignSettingsTimePeriodDTO",
+  "fields": [
+    {
+      "name": "fromDate",
+      "type": ["null", "string"],
+      "doc": "Формат даты: `ДД-ММ-ГГГГ`. ",
+      "default": null
+    },
+    {
+      "name": "toDate",
+      "type": ["null", "string"],
+      "doc": "Формат даты: `ДД-ММ-ГГГГ`. ",
+      "default": null
+    }
+  ]
+
+}

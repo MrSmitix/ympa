@@ -1,0 +1,83 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Возврат заказа.",
+  "name": "ReturnDTO",
+  "fields": [
+    {
+      "name": "id",
+      "type": ["null", "long"],
+      "doc": "Идентификатор возврата.",
+      "default": null
+    },
+    {
+      "name": "orderId",
+      "type": ["null", "long"],
+      "doc": "Номер заказа.",
+      "default": null
+    },
+    {
+      "name": "creationDate",
+      "type": ["null", "string"],
+      "doc": "Дата создания возврата клиентом.",
+      "default": null
+    },
+    {
+      "name": "updateDate",
+      "type": ["null", "string"],
+      "doc": "Дата обновления возврата.",
+      "default": null
+    },
+    {
+      "name": "refundStatus",
+      "type": ["null", "ympa_avro_schema.RefundStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "logisticPickupPoint",
+      "type": ["null", "ympa_avro_schema.LogisticPickupPointDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "shipmentRecipientType",
+      "type": ["null", "ympa_avro_schema.RecipientType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "shipmentStatus",
+      "type": ["null", "ympa_avro_schema.ReturnShipmentStatusType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "refundAmount",
+      "type": ["null", "long"],
+      "doc": "Сумма возврата.",
+      "default": null
+    },
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.ReturnItemDTO"
+      },
+      "doc": "Список товаров в возврате."
+    },
+    {
+      "name": "returnType",
+      "type": ["null", "ympa_avro_schema.ReturnType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "fastReturn",
+      "type": ["null", "boolean"],
+      "doc": "Используется ли опция **Быстрый возврат денег за дешевый брак**. ",
+      "default": null
+    }
+  ]
+
+}

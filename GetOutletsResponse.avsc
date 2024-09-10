@@ -1,0 +1,29 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Ответ на запрос информации о точках продаж.",
+  "name": "GetOutletsResponse",
+  "fields": [
+    {
+      "name": "outlets",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.FullOutletDTO"
+      },
+      "doc": "Информация о точках продаж."
+    },
+    {
+      "name": "paging",
+      "type": ["null", "ympa_avro_schema.ScrollingPagerDTO"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "pager",
+      "type": ["null", "ympa_avro_schema.FlippingPagerDTO"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

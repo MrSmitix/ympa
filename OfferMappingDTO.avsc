@@ -1,0 +1,27 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о текущей карточке товара на Маркете.",
+  "name": "OfferMappingDTO",
+  "fields": [
+    {
+      "name": "marketSku",
+      "type": ["null", "long"],
+      "doc": "SKU на Маркете.",
+      "default": null
+    },
+    {
+      "name": "modelId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор модели для текущей карточки товара на Маркете.  Например, две лопатки разных цветов имеют разные SKU на Маркете (параметр `marketSku`), но одинаковый идентификатор модели товара. ",
+      "default": null
+    },
+    {
+      "name": "categoryId",
+      "type": ["null", "long"],
+      "doc": "Идентификатор категории для текущей карточки товара на Маркете.",
+      "default": null
+    }
+  ]
+
+}

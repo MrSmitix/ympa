@@ -1,0 +1,12 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Модель размещения:  * `FBY` — FBY. * `FBS` — FBS. * `DBS` — DBS. * `EXPRESS` — Экспресс. ",
+  "name": "SellingProgramType",
+  "symbols": [
+    "FBY",
+    "FBS",
+    "DBS",
+    "EXPRESS"
+  ]
+}

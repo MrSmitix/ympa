@@ -1,0 +1,23 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "",
+  "name": "SetOrderBoxLayoutRequest",
+  "fields": [
+    {
+      "name": "boxes",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.OrderBoxLayoutDTO"
+      },
+      "doc": "Список коробок."
+    },
+    {
+      "name": "allowRemove",
+      "type": ["null", "boolean"],
+      "doc": "Передайте `true`, если вы собираетесь удалить часть товаров из заказа.",
+      "default": null
+    }
+  ]
+
+}

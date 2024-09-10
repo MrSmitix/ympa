@@ -1,0 +1,10 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "enum",
+  "doc": "Единицы измерения возраста:  * `YEAR` — год. * `MONTH` — месяц. ",
+  "name": "AgeUnitType",
+  "symbols": [
+    "YEAR",
+    "MONTH"
+  ]
+}

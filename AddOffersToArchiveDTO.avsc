@@ -1,0 +1,18 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Товары, которые не удалось поместить в архив.",
+  "name": "AddOffersToArchiveDTO",
+  "fields": [
+    {
+      "name": "notArchivedOffers",
+      "type": ["null", {
+        "type": "array",
+        "items": "ympa_avro_schema.AddOffersToArchiveErrorDTO"
+      }],
+      "doc": "Список товаров, которые не удалось поместить в архив.",
+      "default": null
+    }
+  ]
+
+}

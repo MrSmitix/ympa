@@ -1,0 +1,33 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Информация о покупателе. ",
+  "name": "OrderBusinessBuyerDTO",
+  "fields": [
+    {
+      "name": "inn",
+      "type": ["null", "string"],
+      "doc": "ИНН.",
+      "default": null
+    },
+    {
+      "name": "kpp",
+      "type": ["null", "string"],
+      "doc": "КПП.",
+      "default": null
+    },
+    {
+      "name": "organizationName",
+      "type": ["null", "string"],
+      "doc": "Наименование юридического лица.",
+      "default": null
+    },
+    {
+      "name": "organizationJurAddress",
+      "type": ["null", "string"],
+      "doc": "Юридический адрес.",
+      "default": null
+    }
+  ]
+
+}

@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на подтверждение цены. ",
+  "name": "ConfirmPricesRequest",
+  "fields": [
+    {
+      "name": "offerIds",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "Идентификаторы товаров, у которых подтверждается цена."
+    }
+  ]
+
+}

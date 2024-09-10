@@ -1,0 +1,17 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Запрос на обновление товаров.",
+  "name": "UpdateOfferMappingEntryRequest",
+  "fields": [
+    {
+      "name": "offerMappingEntries",
+      "type": {
+        "type": "array",
+        "items": "ympa_avro_schema.UpdateOfferMappingEntryDTO"
+      },
+      "doc": "Информация о товарах в каталоге."
+    }
+  ]
+
+}

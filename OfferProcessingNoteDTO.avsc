@@ -1,0 +1,21 @@
+{
+  "namespace": "ympa_avro_schema",
+  "type": "record",
+  "doc": "Причины, по которым товар не прошел модерацию.",
+  "name": "OfferProcessingNoteDTO",
+  "fields": [
+    {
+      "name": "type",
+      "type": ["null", "ympa_avro_schema.OfferProcessingNoteType"],
+      "doc": "",
+      "default": null
+    },
+    {
+      "name": "payload",
+      "type": ["null", "string"],
+      "doc": "Дополнительная информация о причине отклонения товара. ",
+      "default": null
+    }
+  ]
+
+}
