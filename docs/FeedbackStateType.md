@@ -1,0 +1,10 @@
+
+
+# FeedbackStateType
+
+## Enum
+
+
+
+
+

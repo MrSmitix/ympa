@@ -1,0 +1,10 @@
+
+
+# TariffType
+
+## Enum
+
+
+
+
+

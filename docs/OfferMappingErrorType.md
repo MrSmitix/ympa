@@ -1,0 +1,10 @@
+
+
+# OfferMappingErrorType
+
+## Enum
+
+
+
+
+

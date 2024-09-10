@@ -1,0 +1,10 @@
+
+
+# OfferMappingKindType
+
+## Enum
+
+
+
+
+

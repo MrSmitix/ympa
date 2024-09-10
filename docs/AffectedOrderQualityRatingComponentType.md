@@ -1,0 +1,10 @@
+
+
+# AffectedOrderQualityRatingComponentType
+
+## Enum
+
+
+
+
+

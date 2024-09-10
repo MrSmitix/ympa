@@ -1,0 +1,10 @@
+
+
+# OfferCampaignStatusType
+
+## Enum
+
+
+
+
+

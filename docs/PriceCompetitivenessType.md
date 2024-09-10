@@ -1,0 +1,10 @@
+
+
+# PriceCompetitivenessType
+
+## Enum
+
+
+
+
+

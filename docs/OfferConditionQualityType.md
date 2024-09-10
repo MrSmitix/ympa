@@ -1,0 +1,10 @@
+
+
+# OfferConditionQualityType
+
+## Enum
+
+
+
+
+

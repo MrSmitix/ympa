@@ -1,0 +1,10 @@
+
+
+# ShowsSalesGroupingType
+
+## Enum
+
+
+
+
+

@@ -1,0 +1,10 @@
+
+
+# OrderPromoType
+
+## Enum
+
+
+
+
+

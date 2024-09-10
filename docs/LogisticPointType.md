@@ -1,0 +1,10 @@
+
+
+# LogisticPointType
+
+## Enum
+
+
+
+
+

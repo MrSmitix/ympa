@@ -1,0 +1,10 @@
+
+
+# PaymentFrequencyType
+
+## Enum
+
+
+
+
+

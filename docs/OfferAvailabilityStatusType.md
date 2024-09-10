@@ -1,0 +1,10 @@
+
+
+# OfferAvailabilityStatusType
+
+## Enum
+
+
+
+
+
