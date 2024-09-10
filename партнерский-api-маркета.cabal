@@ -1,0 +1,150 @@
+name:           партнерский-api-маркета
+version:        0.1.0.0
+synopsis:       Auto-generated партнерский-api-маркета API Client
+description:    .
+                Client library for calling the Партнерский API Маркета API based on http-client.
+                .
+                host: api.partner.market.yandex.ru
+                .
+                base path: https://api.partner.market.yandex.ru
+                .
+                Партнерский API Маркета API version: LATEST
+                .
+                OpenAPI version: 3.0.3
+                .
+                Generator version: 7.8.0
+                .
+category:       Web
+homepage:       https://openapi-generator.tech
+author:         Author Name Here
+maintainer:     author.name@email.com
+copyright:      YEAR - AUTHOR
+license:        UnspecifiedLicense
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    README.md
+    openapi.yaml
+
+Flag UseKatip
+  Description: Use the katip package to provide logging (if false, use the default monad-logger package)
+  Default:     True
+  Manual:      True
+
+library
+  hs-source-dirs:
+      lib
+  ghc-options: -Wall -funbox-strict-fields
+  build-depends:
+      aeson >=1.0 && <3.0
+    , base >=4.7 && <5.0
+    , base64-bytestring >1.0 && <2.0
+    , bytestring >=0.10.0
+    , case-insensitive
+    , containers >=0.5.0.0 && <0.8
+    , deepseq >= 1.4 && <1.6
+    , exceptions >= 0.4
+    , http-api-data >= 0.3.4 && <0.6
+    , http-client >=0.5 && <0.8
+    , http-client-tls
+    , http-media >= 0.4 && < 0.9
+    , http-types >=0.8 && <0.13
+    , iso8601-time >=0.1.3 && <0.2.0
+    , microlens >= 0.4.3
+    , mtl >=2.2.1
+    , network >=2.6.2 && <3.9
+    , random >=1.1
+    , safe-exceptions <0.2
+    , text >=0.11 && <3
+    , time >=1.5
+    , transformers >=0.4.0.0
+    , unordered-containers
+    , vector >=0.10.9 && <0.14
+  other-modules:
+      Paths_партнерский_api_маркета
+  exposed-modules:
+      ПартнерскийAPIМаркета
+      ПартнерскийAPIМаркета.API
+      ПартнерскийAPIМаркета.API.Bids
+      ПартнерскийAPIМаркета.API.BusinessOfferMappings
+      ПартнерскийAPIМаркета.API.Businesses
+      ПартнерскийAPIМаркета.API.Campaigns
+      ПартнерскийAPIМаркета.API.Categories
+      ПартнерскийAPIМаркета.API.Chats
+      ПартнерскийAPIМаркета.API.Content
+      ПартнерскийAPIМаркета.API.Dbs
+      ПартнерскийAPIМаркета.API.DeliveryServices
+      ПартнерскийAPIМаркета.API.Express
+      ПартнерскийAPIМаркета.API.Fbs
+      ПартнерскийAPIМаркета.API.Fby
+      ПартнерскийAPIМаркета.API.Feedbacks
+      ПартнерскийAPIМаркета.API.Feeds
+      ПартнерскийAPIМаркета.API.GoodsFeedback
+      ПартнерскийAPIМаркета.API.GoodsStats
+      ПартнерскийAPIМаркета.API.HiddenOffers
+      ПартнерскийAPIМаркета.API.Models
+      ПартнерскийAPIМаркета.API.OfferMappings
+      ПартнерскийAPIМаркета.API.Offers
+      ПартнерскийAPIМаркета.API.OrderBusinessInformation
+      ПартнерскийAPIМаркета.API.OrderDelivery
+      ПартнерскийAPIМаркета.API.OrderLabels
+      ПартнерскийAPIМаркета.API.Orders
+      ПартнерскийAPIМаркета.API.OrdersStats
+      ПартнерскийAPIМаркета.API.OutletLicenses
+      ПартнерскийAPIМаркета.API.Outlets
+      ПартнерскийAPIМаркета.API.PriceQuarantine
+      ПартнерскийAPIМаркета.API.Prices
+      ПартнерскийAPIМаркета.API.Promos
+      ПартнерскийAPIМаркета.API.Ratings
+      ПартнерскийAPIМаркета.API.Regions
+      ПартнерскийAPIМаркета.API.Reports
+      ПартнерскийAPIМаркета.API.Returns
+      ПартнерскийAPIМаркета.API.Shipments
+      ПартнерскийAPIМаркета.API.Stocks
+      ПартнерскийAPIМаркета.API.Tariffs
+      ПартнерскийAPIМаркета.API.Warehouses
+      ПартнерскийAPIМаркета.Client
+      ПартнерскийAPIМаркета.Core
+      ПартнерскийAPIМаркета.Logging
+      ПартнерскийAPIМаркета.MimeTypes
+      ПартнерскийAPIМаркета.Model
+      ПартнерскийAPIМаркета.ModelLens
+  default-language: Haskell2010
+
+  if flag(UseKatip)
+      build-depends: katip >=0.8 && < 1.0
+      other-modules: ПартнерскийAPIМаркета.LoggingKatip
+      cpp-options: -DUSE_KATIP
+  else
+      build-depends: monad-logger >=0.3 && <0.4
+      other-modules: ПартнерскийAPIМаркета.LoggingMonadLogger
+      cpp-options: -DUSE_MONAD_LOGGER
+
+test-suite tests
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+  hs-source-dirs:
+      tests
+  ghc-options: -Wall -fno-warn-orphans
+  build-depends:
+      партнерский-api-маркета
+    , QuickCheck
+    , aeson
+    , base >=4.7 && <5.0
+    , bytestring >=0.10.0
+    , containers
+    , hspec >=1.8
+    , iso8601-time
+    , mtl >=2.2.1
+    , semigroups
+    , text
+    , time
+    , transformers >=0.4.0.0
+    , unordered-containers
+    , vector
+  other-modules:
+      ApproxEq
+      Instances
+      PropMime
+  default-language: Haskell2010
