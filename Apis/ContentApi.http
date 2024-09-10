@@ -1,0 +1,30 @@
+## ContentApi
+
+### Списки характеристик товаров по категориям
+## Списки характеристик товаров по категориям
+POST https://api.partner.market.yandex.ru/category/{{categoryId}}/parameters
+Accept: application/json
+
+### Получение информации о заполненности карточек магазина
+## Получение информации о заполненности карточек магазина
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-cards?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cardStatuses": "<string>",
+ "categoryIds": "<string>"
+}
+
+
+### Редактирование категорийных характеристик товара
+## Редактирование категорийных характеристик товара
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-cards/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offersContent": "<string>"
+}
+

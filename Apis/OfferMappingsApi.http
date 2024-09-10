@@ -1,0 +1,28 @@
+## OfferMappingsApi
+
+### Список товаров в каталоге
+## Список товаров в каталоге
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-mapping-entries?offerId={{offerId}}&shopSku={{shopSku}}&mappingKind={{mappingKind}}&status={{status}}&availability={{availability}}&categoryId={{categoryId}}&vendor={{vendor}}&pageToken={{pageToken}}&limit={{limit}}
+Accept: application/json
+
+### Рекомендованные карточки для товаров
+## Рекомендованные карточки для товаров
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-mapping-entries/suggestions
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Добавление и редактирование товаров в каталоге
+## Добавление и редактирование товаров в каталоге
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-mapping-entries/updates
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerMappingEntries": "<string>"
+}
+

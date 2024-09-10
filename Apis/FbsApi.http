@@ -1,0 +1,1142 @@
+## FbsApi
+
+### Скрытие товаров и настройки скрытия
+## Скрытие товаров и настройки скрытия
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/hidden-offers
+Content-Type: application/json
+Accept: application/json
+
+{
+ "hiddenOffers": "<string>"
+}
+
+
+### Добавление товаров в архив
+## Добавление товаров в архив
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/archive
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Калькулятор стоимости услуг
+## Калькулятор стоимости услуг
+POST https://api.partner.market.yandex.ru/tariffs/calculate
+Content-Type: application/json
+Accept: application/json
+
+{
+ "parameters": "<string>",
+ "offers": "<string>"
+}
+
+
+### Удаление товара из карантина по цене в кабинете
+## Удаление товара из карантина по цене в кабинете
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/price-quarantine/confirm
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Удаление товара из карантина по цене в магазине
+## Удаление товара из карантина по цене в магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/price-quarantine/confirm
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Подтверждение отгрузки
+## Подтверждение отгрузки
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/confirm
+Content-Type: application/json
+Accept: application/json
+
+{
+ "externalShipmentId": "<string>"
+}
+
+
+### Создание нового чата с покупателем
+## Создание нового чата с покупателем
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats/new
+Content-Type: application/json
+Accept: application/json
+
+{
+ "orderId": "<number>"
+}
+
+
+### Удаление товаров из ассортимента магазина
+## Удаление товаров из ассортимента магазина
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Удаление комментария к отзыву
+## Удаление комментария к отзыву
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback/comments/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "id": "<number>"
+}
+
+
+### Возобновление показа товаров
+## Возобновление показа товаров
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/hidden-offers/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "hiddenOffers": "<string>"
+}
+
+
+### Удаление товаров из каталога
+## Удаление товаров из каталога
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Удаление товаров из архива
+## Удаление товаров из архива
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/unarchive
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Удаление товаров из акции
+## Удаление товаров из акции
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/promos/offers/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "promoId": "<string>",
+ "deleteAllOffers": "<string>",
+ "offerIds": "<string>"
+}
+
+
+### Получение акта приема-передачи
+## Получение акта приема-передачи
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/act
+Accept: application/pdf
+Accept: application/json
+
+### Получение акта расхождений
+## Получение акта расхождений
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/discrepancy-act
+Accept: application/vnd.ms-excel
+Accept: application/json
+
+### Получение фактического акта приема-передачи
+## Получение фактического акта приема-передачи
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/inbound-act
+Accept: application/pdf
+Accept: application/json
+
+### Ярлыки для доверительной приемки (FBS)
+## Ярлыки для доверительной приемки (FBS)
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/pallet/labels?format={{format}}
+Accept: application/pdf
+Accept: application/json
+
+### Подтверждение ближайшей отгрузки и получение акта приема-передачи для нее
+## Подтверждение ближайшей отгрузки и получение акта приема-передачи для нее
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/shipments/reception-transfer-act?warehouseId={{warehouseId}}
+Accept: application/pdf
+Accept: application/json
+
+### Получение транспортной накладной
+## Получение транспортной накладной
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/transportation-waybill
+Accept: application/vnd.ms-excel
+Accept: application/json
+
+### Отчет по бусту продаж
+## Отчет по бусту продаж
+POST https://api.partner.market.yandex.ru/reports/boost-consolidated/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>"
+}
+
+
+### Отчет «Конкурентная позиция»
+## Отчет «Конкурентная позиция»
+POST https://api.partner.market.yandex.ru/reports/competitors-position/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "categoryId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>"
+}
+
+
+### Отчет по отзывам о товарах
+## Отчет по отзывам о товарах
+POST https://api.partner.market.yandex.ru/reports/goods-feedback/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>"
+}
+
+
+### Отчет по реализации
+## Отчет по реализации
+POST https://api.partner.market.yandex.ru/reports/goods-realization/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "campaignId": "<number>",
+ "year": "<number>",
+ "month": "<number>"
+}
+
+
+### Готовые ярлыки‑наклейки на все коробки в нескольких заказах
+## Готовые ярлыки‑наклейки на все коробки в нескольких заказах
+POST https://api.partner.market.yandex.ru/reports/documents/labels/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "orderIds": "<string>"
+}
+
+
+### Готовый ярлык‑наклейка для коробки в заказе
+## Готовый ярлык‑наклейка для коробки в заказе
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/shipments/{{shipmentId}}/boxes/{{boxId}}/label?format={{format}}
+Accept: application/pdf
+Accept: application/json
+
+### Готовые ярлыки‑наклейки на все коробки в одном заказе
+## Готовые ярлыки‑наклейки на все коробки в одном заказе
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/labels?format={{format}}
+Accept: application/pdf
+Accept: application/json
+
+### Отчет «Цены на рынке»
+## Отчет «Цены на рынке»
+POST https://api.partner.market.yandex.ru/reports/prices/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "campaignId": "<number>",
+ "categoryIds": "<string>",
+ "creationDateFrom": "<date>",
+ "creationDateTo": "<date>"
+}
+
+
+### Отчет по полкам
+## Отчет по полкам
+POST https://api.partner.market.yandex.ru/reports/shelf-statistics/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "attributionType": "<string>"
+}
+
+
+### Получение листа сборки
+## Получение листа сборки
+POST https://api.partner.market.yandex.ru/reports/documents/shipment-list/generate
+Content-Type: application/json
+Accept: application/json
+
+{
+ "campaignId": "<number>",
+ "shipmentId": "<number>",
+ "orderIds": "<string>"
+}
+
+
+### Отчет «Аналитика продаж»
+## Отчет «Аналитика продаж»
+POST https://api.partner.market.yandex.ru/reports/shows-sales/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "campaignId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "grouping": "<string>"
+}
+
+
+### Отчет по остаткам на складах
+## Отчет по остаткам на складах
+POST https://api.partner.market.yandex.ru/reports/stocks-on-warehouses/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "campaignId": "<number>",
+ "warehouseIds": "<string>",
+ "reportDate": "<date>",
+ "categoryIds": "<string>",
+ "hasStocks": "<string>"
+}
+
+
+### Отчет по стоимости услуг
+## Отчет по стоимости услуг
+POST https://api.partner.market.yandex.ru/reports/united-marketplace-services/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateTimeFrom": "<string>",
+ "dateTimeTo": "<string>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "yearFrom": "<number>",
+ "monthFrom": "<number>",
+ "yearTo": "<number>",
+ "monthTo": "<number>",
+ "placementPrograms": "<string>",
+ "inns": "<string>",
+ "campaignIds": "<string>"
+}
+
+
+### Отчет по платежам
+## Отчет по платежам
+POST https://api.partner.market.yandex.ru/reports/united-netting/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateTimeFrom": "<string>",
+ "dateTimeTo": "<string>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "bankOrderId": "<number>",
+ "bankOrderDateTime": "<string>",
+ "placementPrograms": "<string>",
+ "inns": "<string>",
+ "campaignIds": "<string>"
+}
+
+
+### Отчет по заказам
+## Отчет по заказам
+POST https://api.partner.market.yandex.ru/reports/united-orders/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "campaignIds": "<string>",
+ "promoId": "<string>"
+}
+
+
+### Все предложения магазина
+## Все предложения магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/all?feedId={{feedId}}&chunk={{chunk}}
+Accept: application/json
+
+### Информация об установленных ставках
+## Информация об установленных ставках
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/bids/info?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "skus": "<string>"
+}
+
+
+### Рекомендованные ставки для заданных товаров
+## Рекомендованные ставки для заданных товаров
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/bids/recommendations
+Content-Type: application/json
+Accept: application/json
+
+{
+ "skus": "<string>"
+}
+
+
+### Список товаров, находящихся в карантине по цене в кабинете
+## Список товаров, находящихся в карантине по цене в кабинете
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/price-quarantine?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cardStatuses": "<string>",
+ "categoryIds": "<string>",
+ "vendorNames": "<string>",
+ "tags": "<string>"
+}
+
+
+### Настройки кабинета
+## Настройки кабинета
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/settings
+Accept: application/json
+
+### Информация о магазине
+## Информация о магазине
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}
+Accept: application/json
+
+### Логины, связанные с магазином
+## Логины, связанные с магазином
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/logins
+Accept: application/json
+
+### Информация о товарах, которые размещены в заданном магазине
+## Информация о товарах, которые размещены в заданном магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "statuses": "<string>",
+ "categoryIds": "<string>",
+ "vendorNames": "<string>",
+ "tags": "<string>"
+}
+
+
+### Список товаров, находящихся в карантине по цене в магазине
+## Список товаров, находящихся в карантине по цене в магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/price-quarantine?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cardStatuses": "<string>",
+ "categoryIds": "<string>",
+ "vendorNames": "<string>",
+ "tags": "<string>"
+}
+
+
+### Регион магазина
+## Регион магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/region
+Accept: application/json
+
+### Настройки магазина
+## Настройки магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/settings
+Accept: application/json
+
+### Список магазинов пользователя
+## Список магазинов пользователя
+GET https://api.partner.market.yandex.ru/campaigns?page={{page}}&pageSize={{pageSize}}
+Accept: application/json
+
+### Магазины, доступные логину
+## Магазины, доступные логину
+GET https://api.partner.market.yandex.ru/campaigns/by_login/{{login}}?page={{page}}&pageSize={{pageSize}}
+Accept: application/json
+
+### Лимит на установку кванта продажи и минимального количества товаров в заказе
+## Лимит на установку кванта продажи и минимального количества товаров в заказе
+POST https://api.partner.market.yandex.ru/categories/max-sale-quantum
+Content-Type: application/json
+Accept: application/json
+
+{
+ "marketCategoryIds": "<string>"
+}
+
+
+### Дерево категорий
+## Дерево категорий
+POST https://api.partner.market.yandex.ru/categories/tree
+Content-Type: application/json
+Accept: application/json
+
+{
+ "language": "<string>"
+}
+
+
+### Списки характеристик товаров по категориям
+## Списки характеристик товаров по категориям
+POST https://api.partner.market.yandex.ru/category/{{categoryId}}/parameters
+Accept: application/json
+
+### Получение истории сообщений в чате
+## Получение истории сообщений в чате
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats/history?chatId={{chatId}}&pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "messageIdFrom": "<number>"
+}
+
+
+### Получение доступных чатов
+## Получение доступных чатов
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "orderIds": "<string>",
+ "types": "<string>",
+ "statuses": "<string>"
+}
+
+
+### Справочник служб доставки
+## Справочник служб доставки
+GET https://api.partner.market.yandex.ru/delivery/services
+Accept: application/json
+
+### Информация о прайс-листе
+## Информация о прайс-листе
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds/{{feedId}}
+Accept: application/json
+
+### Отчет по индексации прайс-листа
+## Отчет по индексации прайс-листа
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds/{{feedId}}/index-logs?limit={{limit}}&publishedTimeFrom={{publishedTimeFrom}}&publishedTimeTo={{publishedTimeTo}}&status={{status}}
+Accept: application/json
+
+### Новые и обновленные отзывы о магазине
+## Новые и обновленные отзывы о магазине
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feedback/updates?pageToken={{pageToken}}&limit={{limit}}&fromDate={{fromDate}}
+Accept: application/json
+
+### Список прайс-листов магазина
+## Список прайс-листов магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds
+Accept: application/json
+
+### Получение комментариев к отзыву
+## Получение комментариев к отзыву
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback/comments?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "feedbackId": "<number>"
+}
+
+
+### Получение отзывов о товарах продавца
+## Получение отзывов о товарах продавца
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "dateTimeFrom": "<string>",
+ "dateTimeTo": "<string>",
+ "reactionStatus": "<string>",
+ "ratingValues": "<string>",
+ "modelIds": "<string>",
+ "paid": "<string>"
+}
+
+
+### Отчет по товарам
+## Отчет по товарам
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/stats/skus
+Content-Type: application/json
+Accept: application/json
+
+{
+ "shopSkus": "<string>"
+}
+
+
+### Информация о скрытых вами товарах
+## Информация о скрытых вами товарах
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/hidden-offers?offerId={{offerId}}&pageToken={{pageToken}}&limit={{limit}}&offset={{offset}}&page={{page}}&pageSize={{pageSize}}
+Accept: application/json
+
+### Получение информации о заполненности карточек магазина
+## Получение информации о заполненности карточек магазина
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-cards?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cardStatuses": "<string>",
+ "categoryIds": "<string>"
+}
+
+
+### Список товаров в каталоге
+## Список товаров в каталоге
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-mapping-entries?offerId={{offerId}}&shopSku={{shopSku}}&mappingKind={{mappingKind}}&status={{status}}&availability={{availability}}&categoryId={{categoryId}}&vendor={{vendor}}&pageToken={{pageToken}}&limit={{limit}}
+Accept: application/json
+
+### Информация о товарах в каталоге
+## Информация о товарах в каталоге
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cardStatuses": "<string>",
+ "categoryIds": "<string>",
+ "vendorNames": "<string>",
+ "tags": "<string>",
+ "archived": "<string>"
+}
+
+
+### Рекомендации Маркета, касающиеся цен
+## Рекомендации Маркета, касающиеся цен
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offers/recommendations?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cofinancePriceFilter": "<string>",
+ "recommendedCofinancePriceFilter": "<string>",
+ "competitivenessFilter": "<string>"
+}
+
+
+### Предложения магазина
+## Предложения магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers?query={{query}}&feedId={{feedId}}&shopCategoryId={{shopCategoryId}}&currency={{currency}}&matched={{matched}}&page={{page}}&pageSize={{pageSize}}
+Accept: application/json
+
+### Информация об одном заказе
+## Информация об одном заказе
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}
+Accept: application/json
+
+### Информация о покупателе — юридическом лице
+## Информация о покупателе — юридическом лице
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/business-buyer
+Accept: application/json
+
+### Информация о документах
+## Информация о документах
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/documents
+Accept: application/json
+
+### Данные для самостоятельного изготовления ярлыков
+## Данные для самостоятельного изготовления ярлыков
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/labels/data
+Accept: application/json
+
+### Информация о нескольких заказах
+## Информация о нескольких заказах
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders?orderIds={{orderIds}}&status={{status}}&substatus={{substatus}}&fromDate={{fromDate}}&toDate={{toDate}}&supplierShipmentDateFrom={{supplierShipmentDateFrom}}&supplierShipmentDateTo={{supplierShipmentDateTo}}&updatedAtFrom={{updatedAtFrom}}&updatedAtTo={{updatedAtTo}}&dispatchType={{dispatchType}}&fake={{fake}}&hasCis={{hasCis}}&onlyWaitingForCancellationApprove={{onlyWaitingForCancellationApprove}}&onlyEstimatedDelivery={{onlyEstimatedDelivery}}&buyerType={{buyerType}}&page={{page}}&pageSize={{pageSize}}&pageToken={{pageToken}}&limit={{limit}}
+Accept: application/json
+
+### Детальная информация по заказам
+## Детальная информация по заказам
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/stats/orders?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "updateFrom": "<date>",
+ "updateTo": "<date>",
+ "orders": "<string>",
+ "statuses": "<string>",
+ "hasCis": "<string>"
+}
+
+
+### Список цен
+## Список цен
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-prices?pageToken={{pageToken}}&limit={{limit}}&archived={{archived}}
+Accept: application/json
+
+### Просмотр цен на указанные товары в магазине
+## Просмотр цен на указанные товары в магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-prices?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Получение списка товаров, которые участвуют или могут участвовать в акции
+## Получение списка товаров, которые участвуют или могут участвовать в акции
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/promos/offers?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "promoId": "<string>",
+ "statusType": "<string>"
+}
+
+
+### Получение списка акций
+## Получение списка акций
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/promos
+Content-Type: application/json
+Accept: application/json
+
+{
+ "participation": "<string>",
+ "mechanics": "<string>"
+}
+
+
+### Заказы, которые повлияли на индекс качества
+## Заказы, которые повлияли на индекс качества
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/ratings/quality/details
+Accept: application/json
+
+### Индекс качества магазинов
+## Индекс качества магазинов
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/ratings/quality
+Content-Type: application/json
+Accept: application/json
+
+{
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "campaignIds": "<string>"
+}
+
+
+### Получение заданного отчета
+## Получение заданного отчета
+GET https://api.partner.market.yandex.ru/reports/info/{{reportId}}
+Accept: application/json
+
+### Информация о невыкупе или возврате
+## Информация о невыкупе или возврате
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/returns/{{returnId}}
+Accept: application/json
+
+### Получение заявления на возврат
+## Получение заявления на возврат
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/returns/{{returnId}}/application
+Accept: application/octet-stream
+Accept: application/json
+
+### Получение фотографии возврата
+## Получение фотографии возврата
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/returns/{{returnId}}/decision/{{itemId}}/image/{{imageHash}}
+Accept: application/octet-stream
+Accept: application/json
+
+### Список невыкупов и возвратов
+## Список невыкупов и возвратов
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/returns?pageToken={{pageToken}}&limit={{limit}}&orderIds={{orderIds}}&statuses={{statuses}}&type={{type}}&fromDate={{fromDate}}&toDate={{toDate}}&fromDate2={{fromDate2}}&toDate2={{toDate2}}
+Accept: application/json
+
+### Получение информации об одной отгрузке
+## Получение информации об одной отгрузке
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}?cancelledOrders={{cancelledOrders}}
+Accept: application/json
+
+### Получение информации о возможности печати ярлыков (FBS)
+## Получение информации о возможности печати ярлыков (FBS)
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/orders/info
+Accept: application/json
+
+### Информация об остатках и оборачиваемости
+## Информация об остатках и оборачиваемости
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/stocks?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "withTurnover": "<string>",
+ "archived": "<string>",
+ "offerIds": "<string>"
+}
+
+
+### Рекомендованные карточки для товаров
+## Рекомендованные карточки для товаров
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-mapping-entries/suggestions
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Просмотр карточек на Маркете, которые подходят вашим товарам
+## Просмотр карточек на Маркете, которые подходят вашим товарам
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/suggestions
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Цены для продвижения товаров
+## Цены для продвижения товаров
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-prices/suggestions
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Список складов и групп складов
+## Список складов и групп складов
+GET https://api.partner.market.yandex.ru/businesses/{{businessId}}/warehouses
+Accept: application/json
+
+### Передача кодов маркировки единиц товара
+## Передача кодов маркировки единиц товара
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/identifiers
+Content-Type: application/json
+Accept: application/json
+
+{
+ "items": "<string>"
+}
+
+
+### Включение буста продаж и установка ставок
+## Включение буста продаж и установка ставок
+PUT https://api.partner.market.yandex.ru/businesses/{{businessId}}/bids
+Content-Type: application/json
+Accept: application/json
+
+{
+ "bids": "<string>"
+}
+
+
+### Включение буста продаж и установка ставок для магазина
+## Включение буста продаж и установка ставок для магазина
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/bids
+Content-Type: application/json
+Accept: application/json
+
+{
+ "bids": "<string>"
+}
+
+
+### Сообщить, что прайс-лист обновился
+## Сообщить, что прайс-лист обновился
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds/{{feedId}}/refresh
+Accept: application/json
+
+### Информация о дочерних регионах
+## Информация о дочерних регионах
+GET https://api.partner.market.yandex.ru/regions/{{regionId}}/children?page={{page}}&pageSize={{pageSize}}
+Accept: application/json
+
+### Информация о регионе
+## Информация о регионе
+GET https://api.partner.market.yandex.ru/regions/{{regionId}}
+Accept: application/json
+
+### Поиск регионов по их имени
+## Поиск регионов по их имени
+GET https://api.partner.market.yandex.ru/regions?name={{name}}&pageToken={{pageToken}}&limit={{limit}}
+Accept: application/json
+
+### Получение информации о нескольких отгрузках
+## Получение информации о нескольких отгрузках
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "statuses": "<string>",
+ "orderIds": "<string>",
+ "cancelledOrders": "<string>"
+}
+
+
+### Отправка файла в чат
+## Отправка файла в чат
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats/file/send?chatId={{chatId}}
+Content-Type: multipart/form-data
+Accept: application/json
+
+### Отправка сообщения в чат
+## Отправка сообщения в чат
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats/message?chatId={{chatId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "message": "<string>"
+}
+
+
+### Изменение параметров прайс-листа
+## Изменение параметров прайс-листа
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds/{{feedId}}/params
+Content-Type: application/json
+Accept: application/json
+
+{
+ "parameters": "<string>"
+}
+
+
+### Подготовка заказа
+## Подготовка заказа
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/boxes
+Content-Type: application/json
+Accept: application/json
+
+{
+ "boxes": "<string>",
+ "allowRemove": "<string>"
+}
+
+
+### Передача количества грузовых мест в заказе
+## Передача количества грузовых мест в заказе
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/shipments/{{shipmentId}}/boxes
+Content-Type: application/json
+Accept: application/json
+
+{
+ 
+}
+
+
+### Передача количества упаковок в отгрузке
+## Передача количества упаковок в отгрузке
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/pallets
+Content-Type: application/json
+Accept: application/json
+
+{
+ "placesCount": "<number>"
+}
+
+
+### Отказ от ответа на отзывы
+## Отказ от ответа на отзывы
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback/skip-reaction
+Content-Type: application/json
+Accept: application/json
+
+{
+ "feedbackIds": "<string>"
+}
+
+
+### Перенос заказов в следующую отгрузку
+## Перенос заказов в следующую отгрузку
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/orders/transfer
+Content-Type: application/json
+Accept: application/json
+
+{
+ "orderIds": "<string>"
+}
+
+
+### Установка цен на товары во всех магазинах
+## Установка цен на товары во всех магазинах
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-prices/updates
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Изменение условий продажи товаров в магазине
+## Изменение условий продажи товаров в магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Добавление нового или изменение созданного комментария
+## Добавление нового или изменение созданного комментария
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback/comments/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "feedbackId": "<number>",
+ "comment": "<string>"
+}
+
+
+### Редактирование категорийных характеристик товара
+## Редактирование категорийных характеристик товара
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-cards/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offersContent": "<string>"
+}
+
+
+### Добавление и редактирование товаров в каталоге
+## Добавление и редактирование товаров в каталоге
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-mapping-entries/updates
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerMappingEntries": "<string>"
+}
+
+
+### Добавление товаров в каталог и изменение информации о них
+## Добавление товаров в каталог и изменение информации о них
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerMappings": "<string>",
+ "onlyPartnerMediaContent": "<string>"
+}
+
+
+### Удаление товара из заказа или уменьшение числа единиц
+## Удаление товара из заказа или уменьшение числа единиц
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/items
+Content-Type: application/json
+Accept: application/json
+
+{
+ "items": "<string>",
+ "reason": "<string>"
+}
+
+
+### Изменение статуса одного заказа
+## Изменение статуса одного заказа
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/status
+Content-Type: application/json
+Accept: application/json
+
+{
+ "order": "<string>"
+}
+
+
+### Изменение статусов нескольких заказов
+## Изменение статусов нескольких заказов
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/status-update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "orders": "<string>"
+}
+
+
+### Установка цен на товары в конкретном магазине
+## Установка цен на товары в конкретном магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-prices/updates
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Добавление товаров в акцию или изменение их цен
+## Добавление товаров в акцию или изменение их цен
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/promos/offers/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "promoId": "<string>",
+ "offers": "<string>"
+}
+
+
+### Передача информации об остатках
+## Передача информации об остатках
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/stocks
+Content-Type: application/json
+Accept: application/json
+
+{
+ "skus": "<string>"
+}
+

@@ -1,0 +1,6 @@
+## DeliveryServicesApi
+
+### Справочник служб доставки
+## Справочник служб доставки
+GET https://api.partner.market.yandex.ru/delivery/services
+Accept: application/json

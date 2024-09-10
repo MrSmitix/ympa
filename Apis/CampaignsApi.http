@@ -1,0 +1,31 @@
+## CampaignsApi
+
+### Информация о магазине
+## Информация о магазине
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}
+Accept: application/json
+
+### Логины, связанные с магазином
+## Логины, связанные с магазином
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/logins
+Accept: application/json
+
+### Регион магазина
+## Регион магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/region
+Accept: application/json
+
+### Настройки магазина
+## Настройки магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/settings
+Accept: application/json
+
+### Список магазинов пользователя
+## Список магазинов пользователя
+GET https://api.partner.market.yandex.ru/campaigns?page={{page}}&pageSize={{pageSize}}
+Accept: application/json
+
+### Магазины, доступные логину
+## Магазины, доступные логину
+GET https://api.partner.market.yandex.ru/campaigns/by_login/{{login}}?page={{page}}&pageSize={{pageSize}}
+Accept: application/json

@@ -1,0 +1,12 @@
+## GoodsStatsApi
+
+### Отчет по товарам
+## Отчет по товарам
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/stats/skus
+Content-Type: application/json
+Accept: application/json
+
+{
+ "shopSkus": "<string>"
+}
+

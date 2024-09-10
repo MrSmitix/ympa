@@ -1,0 +1,22 @@
+## OutletLicensesApi
+
+### Удаление лицензий для точек продаж
+## Удаление лицензий для точек продаж
+DELETE https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/outlets/licenses?ids={{ids}}
+Accept: application/json
+
+### Информация о лицензиях для точек продаж
+## Информация о лицензиях для точек продаж
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/outlets/licenses?outletIds={{outletIds}}&ids={{ids}}
+Accept: application/json
+
+### Создание и изменение лицензий для точек продаж
+## Создание и изменение лицензий для точек продаж
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/outlets/licenses
+Content-Type: application/json
+Accept: application/json
+
+{
+ "licenses": "<string>"
+}
+

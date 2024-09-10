@@ -1,0 +1,18 @@
+## OrderLabelsApi
+
+### Готовый ярлык‑наклейка для коробки в заказе
+## Готовый ярлык‑наклейка для коробки в заказе
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/shipments/{{shipmentId}}/boxes/{{boxId}}/label?format={{format}}
+Accept: application/pdf
+Accept: application/json
+
+### Готовые ярлыки‑наклейки на все коробки в одном заказе
+## Готовые ярлыки‑наклейки на все коробки в одном заказе
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/labels?format={{format}}
+Accept: application/pdf
+Accept: application/json
+
+### Данные для самостоятельного изготовления ярлыков
+## Данные для самостоятельного изготовления ярлыков
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/labels/data
+Accept: application/json

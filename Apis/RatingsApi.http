@@ -1,0 +1,19 @@
+## RatingsApi
+
+### Заказы, которые повлияли на индекс качества
+## Заказы, которые повлияли на индекс качества
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/ratings/quality/details
+Accept: application/json
+
+### Индекс качества магазинов
+## Индекс качества магазинов
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/ratings/quality
+Content-Type: application/json
+Accept: application/json
+
+{
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "campaignIds": "<string>"
+}
+

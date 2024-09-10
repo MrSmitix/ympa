@@ -1,0 +1,28 @@
+## HiddenOffersApi
+
+### Скрытие товаров и настройки скрытия
+## Скрытие товаров и настройки скрытия
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/hidden-offers
+Content-Type: application/json
+Accept: application/json
+
+{
+ "hiddenOffers": "<string>"
+}
+
+
+### Возобновление показа товаров
+## Возобновление показа товаров
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/hidden-offers/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "hiddenOffers": "<string>"
+}
+
+
+### Информация о скрытых вами товарах
+## Информация о скрытых вами товарах
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/hidden-offers?offerId={{offerId}}&pageToken={{pageToken}}&limit={{limit}}&offset={{offset}}&page={{page}}&pageSize={{pageSize}}
+Accept: application/json

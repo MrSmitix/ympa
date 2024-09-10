@@ -1,0 +1,102 @@
+## OrdersApi
+
+### Отмена заказа покупателем
+## Отмена заказа покупателем
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/cancellation/accept
+Content-Type: application/json
+Accept: application/json
+
+{
+ "accepted": "<string>",
+ "reason": "<string>"
+}
+
+
+### Информация об одном заказе
+## Информация об одном заказе
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}
+Accept: application/json
+
+### Информация о нескольких заказах
+## Информация о нескольких заказах
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders?orderIds={{orderIds}}&status={{status}}&substatus={{substatus}}&fromDate={{fromDate}}&toDate={{toDate}}&supplierShipmentDateFrom={{supplierShipmentDateFrom}}&supplierShipmentDateTo={{supplierShipmentDateTo}}&updatedAtFrom={{updatedAtFrom}}&updatedAtTo={{updatedAtTo}}&dispatchType={{dispatchType}}&fake={{fake}}&hasCis={{hasCis}}&onlyWaitingForCancellationApprove={{onlyWaitingForCancellationApprove}}&onlyEstimatedDelivery={{onlyEstimatedDelivery}}&buyerType={{buyerType}}&page={{page}}&pageSize={{pageSize}}&pageToken={{pageToken}}&limit={{limit}}
+Accept: application/json
+
+### Передача ключей цифровых товаров
+## Передача ключей цифровых товаров
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/deliverDigitalGoods
+Content-Type: application/json
+Accept: application/json
+
+{
+ "items": "<string>"
+}
+
+
+### Передача кодов маркировки единиц товара
+## Передача кодов маркировки единиц товара
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/identifiers
+Content-Type: application/json
+Accept: application/json
+
+{
+ "items": "<string>"
+}
+
+
+### Подготовка заказа
+## Подготовка заказа
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/boxes
+Content-Type: application/json
+Accept: application/json
+
+{
+ "boxes": "<string>",
+ "allowRemove": "<string>"
+}
+
+
+### Передача количества грузовых мест в заказе
+## Передача количества грузовых мест в заказе
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/shipments/{{shipmentId}}/boxes
+Content-Type: application/json
+Accept: application/json
+
+{
+ 
+}
+
+
+### Удаление товара из заказа или уменьшение числа единиц
+## Удаление товара из заказа или уменьшение числа единиц
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/items
+Content-Type: application/json
+Accept: application/json
+
+{
+ "items": "<string>",
+ "reason": "<string>"
+}
+
+
+### Изменение статуса одного заказа
+## Изменение статуса одного заказа
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/status
+Content-Type: application/json
+Accept: application/json
+
+{
+ "order": "<string>"
+}
+
+
+### Изменение статусов нескольких заказов
+## Изменение статусов нескольких заказов
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/status-update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "orders": "<string>"
+}
+

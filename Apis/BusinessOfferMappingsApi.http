@@ -1,0 +1,73 @@
+## BusinessOfferMappingsApi
+
+### Добавление товаров в архив
+## Добавление товаров в архив
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/archive
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Удаление товаров из каталога
+## Удаление товаров из каталога
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Удаление товаров из архива
+## Удаление товаров из архива
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/unarchive
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Информация о товарах в каталоге
+## Информация о товарах в каталоге
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cardStatuses": "<string>",
+ "categoryIds": "<string>",
+ "vendorNames": "<string>",
+ "tags": "<string>",
+ "archived": "<string>"
+}
+
+
+### Просмотр карточек на Маркете, которые подходят вашим товарам
+## Просмотр карточек на Маркете, которые подходят вашим товарам
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/suggestions
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Добавление товаров в каталог и изменение информации о них
+## Добавление товаров в каталог и изменение информации о них
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-mappings/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerMappings": "<string>",
+ "onlyPartnerMediaContent": "<string>"
+}
+

@@ -1,0 +1,6 @@
+## BusinessesApi
+
+### Настройки кабинета
+## Настройки кабинета
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/settings
+Accept: application/json

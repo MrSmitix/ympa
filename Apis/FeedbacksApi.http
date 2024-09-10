@@ -1,0 +1,6 @@
+## FeedbacksApi
+
+### Новые и обновленные отзывы о магазине
+## Новые и обновленные отзывы о магазине
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feedback/updates?pageToken={{pageToken}}&limit={{limit}}&fromDate={{fromDate}}
+Accept: application/json

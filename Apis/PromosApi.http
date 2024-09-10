@@ -1,0 +1,50 @@
+## PromosApi
+
+### Удаление товаров из акции
+## Удаление товаров из акции
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/promos/offers/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "promoId": "<string>",
+ "deleteAllOffers": "<string>",
+ "offerIds": "<string>"
+}
+
+
+### Получение списка товаров, которые участвуют или могут участвовать в акции
+## Получение списка товаров, которые участвуют или могут участвовать в акции
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/promos/offers?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "promoId": "<string>",
+ "statusType": "<string>"
+}
+
+
+### Получение списка акций
+## Получение списка акций
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/promos
+Content-Type: application/json
+Accept: application/json
+
+{
+ "participation": "<string>",
+ "mechanics": "<string>"
+}
+
+
+### Добавление товаров в акцию или изменение их цен
+## Добавление товаров в акцию или изменение их цен
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/promos/offers/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "promoId": "<string>",
+ "offers": "<string>"
+}
+

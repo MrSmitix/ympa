@@ -1,0 +1,23 @@
+## CategoriesApi
+
+### Лимит на установку кванта продажи и минимального количества товаров в заказе
+## Лимит на установку кванта продажи и минимального количества товаров в заказе
+POST https://api.partner.market.yandex.ru/categories/max-sale-quantum
+Content-Type: application/json
+Accept: application/json
+
+{
+ "marketCategoryIds": "<string>"
+}
+
+
+### Дерево категорий
+## Дерево категорий
+POST https://api.partner.market.yandex.ru/categories/tree
+Content-Type: application/json
+Accept: application/json
+
+{
+ "language": "<string>"
+}
+

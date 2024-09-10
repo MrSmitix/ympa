@@ -1,0 +1,32 @@
+## FeedsApi
+
+### Информация о прайс-листе
+## Информация о прайс-листе
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds/{{feedId}}
+Accept: application/json
+
+### Отчет по индексации прайс-листа
+## Отчет по индексации прайс-листа
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds/{{feedId}}/index-logs?limit={{limit}}&publishedTimeFrom={{publishedTimeFrom}}&publishedTimeTo={{publishedTimeTo}}&status={{status}}
+Accept: application/json
+
+### Список прайс-листов магазина
+## Список прайс-листов магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds
+Accept: application/json
+
+### Сообщить, что прайс-лист обновился
+## Сообщить, что прайс-лист обновился
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds/{{feedId}}/refresh
+Accept: application/json
+
+### Изменение параметров прайс-листа
+## Изменение параметров прайс-листа
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/feeds/{{feedId}}/params
+Content-Type: application/json
+Accept: application/json
+
+{
+ "parameters": "<string>"
+}
+

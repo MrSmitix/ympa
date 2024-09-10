@@ -1,0 +1,25 @@
+## StocksApi
+
+### Информация об остатках и оборачиваемости
+## Информация об остатках и оборачиваемости
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/stocks?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "withTurnover": "<string>",
+ "archived": "<string>",
+ "offerIds": "<string>"
+}
+
+
+### Передача информации об остатках
+## Передача информации об остатках
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/stocks
+Content-Type: application/json
+Accept: application/json
+
+{
+ "skus": "<string>"
+}
+

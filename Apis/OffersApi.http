@@ -1,0 +1,62 @@
+## OffersApi
+
+### Удаление товаров из ассортимента магазина
+## Удаление товаров из ассортимента магазина
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Все предложения магазина
+## Все предложения магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/all?feedId={{feedId}}&chunk={{chunk}}
+Accept: application/json
+
+### Информация о товарах, которые размещены в заданном магазине
+## Информация о товарах, которые размещены в заданном магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "statuses": "<string>",
+ "categoryIds": "<string>",
+ "vendorNames": "<string>",
+ "tags": "<string>"
+}
+
+
+### Рекомендации Маркета, касающиеся цен
+## Рекомендации Маркета, касающиеся цен
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offers/recommendations?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cofinancePriceFilter": "<string>",
+ "recommendedCofinancePriceFilter": "<string>",
+ "competitivenessFilter": "<string>"
+}
+
+
+### Предложения магазина
+## Предложения магазина
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers?query={{query}}&feedId={{feedId}}&shopCategoryId={{shopCategoryId}}&currency={{currency}}&matched={{matched}}&page={{page}}&pageSize={{pageSize}}
+Accept: application/json
+
+### Изменение условий продажи товаров в магазине
+## Изменение условий продажи товаров в магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offers/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+

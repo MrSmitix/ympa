@@ -1,0 +1,50 @@
+## PricesApi
+
+### Список цен
+## Список цен
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-prices?pageToken={{pageToken}}&limit={{limit}}&archived={{archived}}
+Accept: application/json
+
+### Просмотр цен на указанные товары в магазине
+## Просмотр цен на указанные товары в магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-prices?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Цены для продвижения товаров
+## Цены для продвижения товаров
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-prices/suggestions
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Установка цен на товары во всех магазинах
+## Установка цен на товары во всех магазинах
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/offer-prices/updates
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+
+
+### Установка цен на товары в конкретном магазине
+## Установка цен на товары в конкретном магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/offer-prices/updates
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offers": "<string>"
+}
+

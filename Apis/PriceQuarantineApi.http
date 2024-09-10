@@ -1,0 +1,53 @@
+## PriceQuarantineApi
+
+### Удаление товара из карантина по цене в кабинете
+## Удаление товара из карантина по цене в кабинете
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/price-quarantine/confirm
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Удаление товара из карантина по цене в магазине
+## Удаление товара из карантина по цене в магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/price-quarantine/confirm
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>"
+}
+
+
+### Список товаров, находящихся в карантине по цене в кабинете
+## Список товаров, находящихся в карантине по цене в кабинете
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/price-quarantine?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cardStatuses": "<string>",
+ "categoryIds": "<string>",
+ "vendorNames": "<string>",
+ "tags": "<string>"
+}
+
+
+### Список товаров, находящихся в карантине по цене в магазине
+## Список товаров, находящихся в карантине по цене в магазине
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/price-quarantine?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "offerIds": "<string>",
+ "cardStatuses": "<string>",
+ "categoryIds": "<string>",
+ "vendorNames": "<string>",
+ "tags": "<string>"
+}
+

@@ -1,0 +1,38 @@
+## ModelsApi
+
+### Информация об одной модели
+## Информация об одной модели
+GET https://api.partner.market.yandex.ru/models/{{modelId}}?regionId={{regionId}}&currency={{currency}}
+Accept: application/json
+
+### Список предложений для одной модели
+## Список предложений для одной модели
+GET https://api.partner.market.yandex.ru/models/{{modelId}}/offers?regionId={{regionId}}&currency={{currency}}&orderByPrice={{orderByPrice}}&count={{count}}&page={{page}}
+Accept: application/json
+
+### Информация о нескольких моделях
+## Информация о нескольких моделях
+POST https://api.partner.market.yandex.ru/models?regionId={{regionId}}&currency={{currency}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "models": "<string>"
+}
+
+
+### Список предложений для нескольких моделей
+## Список предложений для нескольких моделей
+POST https://api.partner.market.yandex.ru/models/offers?regionId={{regionId}}&currency={{currency}}&orderByPrice={{orderByPrice}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "models": "<string>"
+}
+
+
+### Поиск модели товара
+## Поиск модели товара
+GET https://api.partner.market.yandex.ru/models?query={{query}}&regionId={{regionId}}&currency={{currency}}&page={{page}}&pageSize={{pageSize}}
+Accept: application/json

@@ -1,0 +1,11 @@
+## WarehousesApi
+
+### Идентификаторы складов Маркета (FBY)
+## Идентификаторы складов Маркета (FBY)
+GET https://api.partner.market.yandex.ru/warehouses
+Accept: application/json
+
+### Список складов и групп складов
+## Список складов и групп складов
+GET https://api.partner.market.yandex.ru/businesses/{{businessId}}/warehouses
+Accept: application/json

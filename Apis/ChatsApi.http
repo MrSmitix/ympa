@@ -1,0 +1,53 @@
+## ChatsApi
+
+### Создание нового чата с покупателем
+## Создание нового чата с покупателем
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats/new
+Content-Type: application/json
+Accept: application/json
+
+{
+ "orderId": "<number>"
+}
+
+
+### Получение истории сообщений в чате
+## Получение истории сообщений в чате
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats/history?chatId={{chatId}}&pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "messageIdFrom": "<number>"
+}
+
+
+### Получение доступных чатов
+## Получение доступных чатов
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "orderIds": "<string>",
+ "types": "<string>",
+ "statuses": "<string>"
+}
+
+
+### Отправка файла в чат
+## Отправка файла в чат
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats/file/send?chatId={{chatId}}
+Content-Type: multipart/form-data
+Accept: application/json
+
+### Отправка сообщения в чат
+## Отправка сообщения в чат
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/chats/message?chatId={{chatId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "message": "<string>"
+}
+

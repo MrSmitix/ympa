@@ -1,0 +1,11 @@
+## OrderBusinessInformationApi
+
+### Информация о покупателе — юридическом лице
+## Информация о покупателе — юридическом лице
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/business-buyer
+Accept: application/json
+
+### Информация о документах
+## Информация о документах
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/documents
+Accept: application/json

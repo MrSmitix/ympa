@@ -1,0 +1,95 @@
+## ShipmentsApi
+
+### Подтверждение отгрузки
+## Подтверждение отгрузки
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/confirm
+Content-Type: application/json
+Accept: application/json
+
+{
+ "externalShipmentId": "<string>"
+}
+
+
+### Получение акта приема-передачи
+## Получение акта приема-передачи
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/act
+Accept: application/pdf
+Accept: application/json
+
+### Получение акта расхождений
+## Получение акта расхождений
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/discrepancy-act
+Accept: application/vnd.ms-excel
+Accept: application/json
+
+### Получение фактического акта приема-передачи
+## Получение фактического акта приема-передачи
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/inbound-act
+Accept: application/pdf
+Accept: application/json
+
+### Ярлыки для доверительной приемки (FBS)
+## Ярлыки для доверительной приемки (FBS)
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/pallet/labels?format={{format}}
+Accept: application/pdf
+Accept: application/json
+
+### Подтверждение ближайшей отгрузки и получение акта приема-передачи для нее
+## Подтверждение ближайшей отгрузки и получение акта приема-передачи для нее
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/shipments/reception-transfer-act?warehouseId={{warehouseId}}
+Accept: application/pdf
+Accept: application/json
+
+### Получение транспортной накладной
+## Получение транспортной накладной
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/transportation-waybill
+Accept: application/vnd.ms-excel
+Accept: application/json
+
+### Получение информации об одной отгрузке
+## Получение информации об одной отгрузке
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}?cancelledOrders={{cancelledOrders}}
+Accept: application/json
+
+### Получение информации о возможности печати ярлыков (FBS)
+## Получение информации о возможности печати ярлыков (FBS)
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/orders/info
+Accept: application/json
+
+### Получение информации о нескольких отгрузках
+## Получение информации о нескольких отгрузках
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "statuses": "<string>",
+ "orderIds": "<string>",
+ "cancelledOrders": "<string>"
+}
+
+
+### Передача количества упаковок в отгрузке
+## Передача количества упаковок в отгрузке
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/pallets
+Content-Type: application/json
+Accept: application/json
+
+{
+ "placesCount": "<number>"
+}
+
+
+### Перенос заказов в следующую отгрузку
+## Перенос заказов в следующую отгрузку
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/first-mile/shipments/{{shipmentId}}/orders/transfer
+Content-Type: application/json
+Accept: application/json
+
+{
+ "orderIds": "<string>"
+}
+

@@ -1,0 +1,13 @@
+## TariffsApi
+
+### Калькулятор стоимости услуг
+## Калькулятор стоимости услуг
+POST https://api.partner.market.yandex.ru/tariffs/calculate
+Content-Type: application/json
+Accept: application/json
+
+{
+ "parameters": "<string>",
+ "offers": "<string>"
+}
+

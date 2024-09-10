@@ -1,0 +1,41 @@
+## ReturnsApi
+
+### Информация о невыкупе или возврате
+## Информация о невыкупе или возврате
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/returns/{{returnId}}
+Accept: application/json
+
+### Получение заявления на возврат
+## Получение заявления на возврат
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/returns/{{returnId}}/application
+Accept: application/octet-stream
+Accept: application/json
+
+### Получение фотографии возврата
+## Получение фотографии возврата
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/returns/{{returnId}}/decision/{{itemId}}/image/{{imageHash}}
+Accept: application/octet-stream
+Accept: application/json
+
+### Список невыкупов и возвратов
+## Список невыкупов и возвратов
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/returns?pageToken={{pageToken}}&limit={{limit}}&orderIds={{orderIds}}&statuses={{statuses}}&type={{type}}&fromDate={{fromDate}}&toDate={{toDate}}&fromDate2={{fromDate2}}&toDate2={{toDate2}}
+Accept: application/json
+
+### Принятие или изменение решения по возврату
+## Принятие или изменение решения по возврату
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/returns/{{returnId}}/decision
+Content-Type: application/json
+Accept: application/json
+
+{
+ "returnItemId": "<number>",
+ "decisionType": "<string>",
+ "comment": "<string>"
+}
+
+
+### Подтверждение решения по возврату
+## Подтверждение решения по возврату
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/returns/{{returnId}}/decision/submit
+Accept: application/json

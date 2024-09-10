@@ -1,0 +1,45 @@
+## BidsApi
+
+### Информация об установленных ставках
+## Информация об установленных ставках
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/bids/info?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "skus": "<string>"
+}
+
+
+### Рекомендованные ставки для заданных товаров
+## Рекомендованные ставки для заданных товаров
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/bids/recommendations
+Content-Type: application/json
+Accept: application/json
+
+{
+ "skus": "<string>"
+}
+
+
+### Включение буста продаж и установка ставок
+## Включение буста продаж и установка ставок
+PUT https://api.partner.market.yandex.ru/businesses/{{businessId}}/bids
+Content-Type: application/json
+Accept: application/json
+
+{
+ "bids": "<string>"
+}
+
+
+### Включение буста продаж и установка ставок для магазина
+## Включение буста продаж и установка ставок для магазина
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/bids
+Content-Type: application/json
+Accept: application/json
+
+{
+ "bids": "<string>"
+}
+

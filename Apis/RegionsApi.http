@@ -1,0 +1,16 @@
+## RegionsApi
+
+### Информация о дочерних регионах
+## Информация о дочерних регионах
+GET https://api.partner.market.yandex.ru/regions/{{regionId}}/children?page={{page}}&pageSize={{pageSize}}
+Accept: application/json
+
+### Информация о регионе
+## Информация о регионе
+GET https://api.partner.market.yandex.ru/regions/{{regionId}}
+Accept: application/json
+
+### Поиск регионов по их имени
+## Поиск регионов по их имени
+GET https://api.partner.market.yandex.ru/regions?name={{name}}&pageToken={{pageToken}}&limit={{limit}}
+Accept: application/json

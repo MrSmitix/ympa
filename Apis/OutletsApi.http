@@ -1,0 +1,38 @@
+## OutletsApi
+
+### Создание точки продаж
+## Создание точки продаж
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/outlets
+Content-Type: application/json
+Accept: application/json
+
+{
+ 
+}
+
+
+### Удаление точки продаж
+## Удаление точки продаж
+DELETE https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/outlets/{{outletId}}
+Accept: application/json
+
+### Информация об одной точке продаж
+## Информация об одной точке продаж
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/outlets/{{outletId}}
+Accept: application/json
+
+### Информация о нескольких точках продаж
+## Информация о нескольких точках продаж
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/outlets?pageToken={{pageToken}}&regionId={{regionId}}&shopOutletCode={{shopOutletCode}}&regionId2={{regionId2}}
+Accept: application/json
+
+### Изменение информации о точке продаж
+## Изменение информации о точке продаж
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/outlets/{{outletId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ 
+}
+

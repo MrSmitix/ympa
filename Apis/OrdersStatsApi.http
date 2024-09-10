@@ -1,0 +1,18 @@
+## OrdersStatsApi
+
+### Детальная информация по заказам
+## Детальная информация по заказам
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/stats/orders?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "updateFrom": "<date>",
+ "updateTo": "<date>",
+ "orders": "<string>",
+ "statuses": "<string>",
+ "hasCis": "<string>"
+}
+

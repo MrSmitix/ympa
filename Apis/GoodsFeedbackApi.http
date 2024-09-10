@@ -1,0 +1,62 @@
+## GoodsFeedbackApi
+
+### Удаление комментария к отзыву
+## Удаление комментария к отзыву
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback/comments/delete
+Content-Type: application/json
+Accept: application/json
+
+{
+ "id": "<number>"
+}
+
+
+### Получение комментариев к отзыву
+## Получение комментариев к отзыву
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback/comments?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "feedbackId": "<number>"
+}
+
+
+### Получение отзывов о товарах продавца
+## Получение отзывов о товарах продавца
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback?pageToken={{pageToken}}&limit={{limit}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "dateTimeFrom": "<string>",
+ "dateTimeTo": "<string>",
+ "reactionStatus": "<string>",
+ "ratingValues": "<string>",
+ "modelIds": "<string>",
+ "paid": "<string>"
+}
+
+
+### Отказ от ответа на отзывы
+## Отказ от ответа на отзывы
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback/skip-reaction
+Content-Type: application/json
+Accept: application/json
+
+{
+ "feedbackIds": "<string>"
+}
+
+
+### Добавление нового или изменение созданного комментария
+## Добавление нового или изменение созданного комментария
+POST https://api.partner.market.yandex.ru/businesses/{{businessId}}/goods-feedback/comments/update
+Content-Type: application/json
+Accept: application/json
+
+{
+ "feedbackId": "<number>",
+ "comment": "<string>"
+}
+

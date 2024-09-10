@@ -1,0 +1,52 @@
+## OrderDeliveryApi
+
+### Информация о покупателе — физическом лице
+## Информация о покупателе — физическом лице
+GET https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/buyer
+Accept: application/json
+
+### Изменение даты доставки заказа
+## Изменение даты доставки заказа
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/date
+Content-Type: application/json
+Accept: application/json
+
+{
+ "dates": "<string>",
+ "reason": "<string>"
+}
+
+
+### Передача трек‑номера посылки
+## Передача трек‑номера посылки
+POST https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/track
+Content-Type: application/json
+Accept: application/json
+
+{
+ "trackCode": "<string>",
+ "deliveryServiceId": "<number>"
+}
+
+
+### Продление срока хранения заказа
+## Продление срока хранения заказа
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/delivery/storage-limit
+Content-Type: application/json
+Accept: application/json
+
+{
+ "newDate": "<date>"
+}
+
+
+### Передача кода подтверждения
+## Передача кода подтверждения
+PUT https://api.partner.market.yandex.ru/campaigns/{{campaignId}}/orders/{{orderId}}/verifyEac
+Content-Type: application/json
+Accept: application/json
+
+{
+ "code": "<string>"
+}
+

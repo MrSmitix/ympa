@@ -1,0 +1,224 @@
+## ReportsApi
+
+### Отчет по бусту продаж
+## Отчет по бусту продаж
+POST https://api.partner.market.yandex.ru/reports/boost-consolidated/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>"
+}
+
+
+### Отчет «Конкурентная позиция»
+## Отчет «Конкурентная позиция»
+POST https://api.partner.market.yandex.ru/reports/competitors-position/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "categoryId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>"
+}
+
+
+### Отчет по отзывам о товарах
+## Отчет по отзывам о товарах
+POST https://api.partner.market.yandex.ru/reports/goods-feedback/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>"
+}
+
+
+### Отчет по движению товаров
+## Отчет по движению товаров
+POST https://api.partner.market.yandex.ru/reports/goods-movement/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "campaignId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "shopSku": "<string>"
+}
+
+
+### Отчет по реализации
+## Отчет по реализации
+POST https://api.partner.market.yandex.ru/reports/goods-realization/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "campaignId": "<number>",
+ "year": "<number>",
+ "month": "<number>"
+}
+
+
+### Отчет по оборачиваемости
+## Отчет по оборачиваемости
+POST https://api.partner.market.yandex.ru/reports/goods-turnover/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "campaignId": "<number>",
+ "date": "<date>"
+}
+
+
+### Готовые ярлыки‑наклейки на все коробки в нескольких заказах
+## Готовые ярлыки‑наклейки на все коробки в нескольких заказах
+POST https://api.partner.market.yandex.ru/reports/documents/labels/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "orderIds": "<string>"
+}
+
+
+### Отчет «Цены на рынке»
+## Отчет «Цены на рынке»
+POST https://api.partner.market.yandex.ru/reports/prices/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "campaignId": "<number>",
+ "categoryIds": "<string>",
+ "creationDateFrom": "<date>",
+ "creationDateTo": "<date>"
+}
+
+
+### Отчет по полкам
+## Отчет по полкам
+POST https://api.partner.market.yandex.ru/reports/shelf-statistics/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "attributionType": "<string>"
+}
+
+
+### Получение листа сборки
+## Получение листа сборки
+POST https://api.partner.market.yandex.ru/reports/documents/shipment-list/generate
+Content-Type: application/json
+Accept: application/json
+
+{
+ "campaignId": "<number>",
+ "shipmentId": "<number>",
+ "orderIds": "<string>"
+}
+
+
+### Отчет «Аналитика продаж»
+## Отчет «Аналитика продаж»
+POST https://api.partner.market.yandex.ru/reports/shows-sales/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "campaignId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "grouping": "<string>"
+}
+
+
+### Отчет по остаткам на складах
+## Отчет по остаткам на складах
+POST https://api.partner.market.yandex.ru/reports/stocks-on-warehouses/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "campaignId": "<number>",
+ "warehouseIds": "<string>",
+ "reportDate": "<date>",
+ "categoryIds": "<string>",
+ "hasStocks": "<string>"
+}
+
+
+### Отчет по стоимости услуг
+## Отчет по стоимости услуг
+POST https://api.partner.market.yandex.ru/reports/united-marketplace-services/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateTimeFrom": "<string>",
+ "dateTimeTo": "<string>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "yearFrom": "<number>",
+ "monthFrom": "<number>",
+ "yearTo": "<number>",
+ "monthTo": "<number>",
+ "placementPrograms": "<string>",
+ "inns": "<string>",
+ "campaignIds": "<string>"
+}
+
+
+### Отчет по платежам
+## Отчет по платежам
+POST https://api.partner.market.yandex.ru/reports/united-netting/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateTimeFrom": "<string>",
+ "dateTimeTo": "<string>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "bankOrderId": "<number>",
+ "bankOrderDateTime": "<string>",
+ "placementPrograms": "<string>",
+ "inns": "<string>",
+ "campaignIds": "<string>"
+}
+
+
+### Отчет по заказам
+## Отчет по заказам
+POST https://api.partner.market.yandex.ru/reports/united-orders/generate?format={{format}}
+Content-Type: application/json
+Accept: application/json
+
+{
+ "businessId": "<number>",
+ "dateFrom": "<date>",
+ "dateTo": "<date>",
+ "campaignIds": "<string>",
+ "promoId": "<string>"
+}
+
+
+### Получение заданного отчета
+## Получение заданного отчета
+GET https://api.partner.market.yandex.ru/reports/info/{{reportId}}
+Accept: application/json
