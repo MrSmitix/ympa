@@ -1,0 +1,49 @@
+package org.openapitools.server.model;
+
+import jakarta.validation.constraints.*;
+import jakarta.validation.Valid;
+
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+/**
+ * Тип подъема заказа на этаж:  * `NOT_NEEDED` — не требуется.  * `MANUAL` — ручной.  * `ELEVATOR` — лифт.  * `CARGO_ELEVATOR` — грузовой лифт.  * `FREE` — любой из перечисленных выше, если включена опция бесплатного подъема.  * `UNKNOWN` — неизвестный тип. 
+ */
+
+public enum OrderLiftType {
+
+    NOT_NEEDED("NOT_NEEDED"),
+    MANUAL("MANUAL"),
+    ELEVATOR("ELEVATOR"),
+    CARGO_ELEVATOR("CARGO_ELEVATOR"),
+    FREE("FREE"),
+    UNKNOWN("UNKNOWN");
+
+    private String value;
+
+    OrderLiftType(String value) {
+        this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static OrderLiftType fromValue(String text) {
+        for (OrderLiftType b : OrderLiftType.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    }
+}
+
