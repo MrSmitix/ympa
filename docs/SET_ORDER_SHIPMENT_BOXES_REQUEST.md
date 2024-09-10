@@ -1,0 +1,10 @@
+# SET_ORDER_SHIPMENT_BOXES_REQUEST
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**boxes** | [**LIST [PARCEL_BOX_DTO]**](ParcelBoxDTO.md) | Список грузовых мест. Маркет определяет количество мест по длине этого списка. | [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
