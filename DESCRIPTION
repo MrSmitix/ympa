@@ -1,0 +1,15 @@
+Package: ympa_r_client
+Title: R Package Client for Партнерский API Маркета
+Version: 24.08.29
+Author: person("OpenAPI Generator community", email = "team@openapitools.org", role = c("aut", "cre"))
+Maintainer: OpenAPI Generator community <team@openapitools.org>
+Description: API Яндекс Маркета помогает продавцам автоматизировать и упростить работу с маркетплейсом.  В числе возможностей интеграции:  * управление каталогом товаров и витриной,  * обработка заказов,  * изменение настроек магазина,  * получение отчетов. 
+URL: https://github.com/yandex-market/yandex-market-partner-api
+BugReports: https://github.com/yandex-market/yandex-market-partner-api/issues
+Depends: R (>= 3.3)
+Encoding: UTF-8
+License: BSD 3-Clause
+LazyData: true
+Suggests: testthat
+Imports: jsonlite, httr, R6, base64enc, stringr
+RoxygenNote: 7.2.1

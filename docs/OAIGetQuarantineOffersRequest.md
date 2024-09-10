@@ -1,0 +1,14 @@
+# OAIGetQuarantineOffersRequest
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**offerIds** | **NSArray&lt;NSString*&gt;*** | Идентификаторы товаров, информация о которых нужна. &lt;br&gt;&lt;br&gt; ⚠️ Не используйте это поле одновременно с фильтрами по статусам карточек, категориям, брендам или тегам. Если вы хотите воспользоваться фильтрами, оставьте поле пустым.  | [optional] 
+**cardStatuses** | [**NSArray&lt;OAIOfferCardStatusType&gt;***](OAIOfferCardStatusType.md) | Фильтр по статусам карточек.  [Что такое карточка товара](https://yandex.ru/support/marketplace/assortment/content/index.html)  | [optional] 
+**categoryIds** | **NSArray&lt;NSNumber*&gt;*** | Фильтр по категориям на Маркете. | [optional] 
+**vendorNames** | **NSArray&lt;NSString*&gt;*** | Фильтр по брендам. | [optional] 
+**tags** | **NSArray&lt;NSString*&gt;*** | Фильтр по тегам. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -1,0 +1,34 @@
+#import "OAIShipmentDTO.h"
+
+@implementation OAIShipmentDTO
+
+- (instancetype)init {
+  self = [super init];
+  if (self) {
+    // initialize property's default value, if any
+    
+  }
+  return self;
+}
+
+
+/**
+ * Maps json key to property name.
+ * This method is used by `JSONModel`.
+ */
++ (JSONKeyMapper *)keyMapper {
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"planIntervalFrom": @"planIntervalFrom", @"planIntervalTo": @"planIntervalTo", @"shipmentType": @"shipmentType", @"warehouse": @"warehouse", @"warehouseTo": @"warehouseTo", @"externalId": @"externalId", @"deliveryService": @"deliveryService", @"palletsCount": @"palletsCount", @"orderIds": @"orderIds", @"draftCount": @"draftCount", @"plannedCount": @"plannedCount", @"factCount": @"factCount", @"currentStatus": @"currentStatus", @"availableActions": @"availableActions" }];
+}
+
+/**
+ * Indicates whether the property with the given name is optional.
+ * If `propertyName` is optional, then return `YES`, otherwise return `NO`.
+ * This method is used by `JSONModel`.
+ */
++ (BOOL)propertyIsOptional:(NSString *)propertyName {
+
+  NSArray *optionalProperties = @[@"_id", @"planIntervalFrom", @"planIntervalTo", @"shipmentType", @"warehouse", @"warehouseTo", @"externalId", @"deliveryService", @"palletsCount", @"draftCount", @"plannedCount", @"factCount", @"currentStatus", ];
+  return [optionalProperties containsObject:propertyName];
+}
+
+@end
