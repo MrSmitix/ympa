@@ -1,0 +1,12 @@
+# ParameterValueConstraintsDTO
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**minValue** | **float** |  | [optional] [default to null]
+**maxValue** | **float** |  | [optional] [default to null]
+**maxLength** | **integer** |  | [optional] [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -1,0 +1,1877 @@
+#  completion                               -*- shell-script -*-
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !
+# ! Note:
+# !
+# ! THIS SCRIPT HAS BEEN AUTOMATICALLY GENERATED USING
+# ! openapi-generator (https://openapi-generator.tech)
+# ! FROM OPENAPI SPECIFICATION IN JSON.
+# !
+# ! Generator version: 7.8.0
+# !
+# !
+# ! System wide installation:
+# !
+# ! $ sudo cp .bash-completion /etc/bash-completion.d/
+# !
+# !
+# ! User home installation (add this line to .bash_profile):
+# !
+# ! [ -r ~/.bash-completion ] && source ~/.bash-completion
+# !
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+declare -A mime_type_abbreviations
+# text/*
+mime_type_abbreviations["text"]="text/plain"
+mime_type_abbreviations["html"]="text/html"
+mime_type_abbreviations["md"]="text/x-markdown"
+mime_type_abbreviations["csv"]="text/csv"
+mime_type_abbreviations["css"]="text/css"
+mime_type_abbreviations["rtf"]="text/rtf"
+# application/*
+mime_type_abbreviations["json"]="application/json"
+mime_type_abbreviations["xml"]="application/xml"
+mime_type_abbreviations["yaml"]="application/yaml"
+mime_type_abbreviations["js"]="application/javascript"
+mime_type_abbreviations["bin"]="application/octet-stream"
+mime_type_abbreviations["rdf"]="application/rdf+xml"
+# image/*
+mime_type_abbreviations["jpg"]="image/jpeg"
+mime_type_abbreviations["png"]="image/png"
+mime_type_abbreviations["gif"]="image/gif"
+mime_type_abbreviations["bmp"]="image/bmp"
+mime_type_abbreviations["tiff"]="image/tiff"
+
+
+#
+# Check if this is OSX, if so defined custom init_completion
+#
+if [[ `uname` =~ "Darwin" ]]; then
+    __osx_init_completion()
+    {
+        COMPREPLY=()
+        _get_comp_words_by_ref cur prev words cword
+    }
+fi
+
+_()
+{
+    local cur
+    local prev
+    local words
+    local cword
+
+    # The reference of currently selected REST operation
+    local operation=""
+
+    # The list of available operation in the REST service
+    # It's modelled as an associative array for efficient key lookup
+    declare -A operations
+    operations["getBidsInfoForBusiness"]=1
+    operations["getBidsRecommendations"]=1
+    operations["putBidsForBusiness"]=1
+    operations["putBidsForCampaign"]=1
+    operations["addOffersToArchive"]=1
+    operations["deleteOffers"]=1
+    operations["deleteOffersFromArchive"]=1
+    operations["getOfferMappings"]=1
+    operations["getSuggestedOfferMappings"]=1
+    operations["updateOfferMappings"]=1
+    operations["getBusinessSettings"]=1
+    operations["getCampaign"]=1
+    operations["getCampaignLogins"]=1
+    operations["getCampaignRegion"]=1
+    operations["getCampaignSettings"]=1
+    operations["getCampaigns"]=1
+    operations["getCampaignsByLogin"]=1
+    operations["getCategoriesMaxSaleQuantum"]=1
+    operations["getCategoriesTree"]=1
+    operations["createChat"]=1
+    operations["getChatHistory"]=1
+    operations["getChats"]=1
+    operations["sendFileToChat"]=1
+    operations["sendMessageToChat"]=1
+    operations["getCategoryContentParameters"]=1
+    operations["getOfferCardsContentStatus"]=1
+    operations["updateOfferContent"]=1
+    operations["acceptOrderCancellation"]=1
+    operations["addHiddenOffers"]=1
+    operations["addOffersToArchive"]=1
+    operations["calculateTariffs"]=1
+    operations["confirmBusinessPrices"]=1
+    operations["confirmCampaignPrices"]=1
+    operations["createChat"]=1
+    operations["createOutlet"]=1
+    operations["deleteCampaignOffers"]=1
+    operations["deleteGoodsFeedbackComment"]=1
+    operations["deleteHiddenOffers"]=1
+    operations["deleteOffers"]=1
+    operations["deleteOffersFromArchive"]=1
+    operations["deleteOutlet"]=1
+    operations["deleteOutletLicenses"]=1
+    operations["deletePromoOffers"]=1
+    operations["generateBoostConsolidatedReport"]=1
+    operations["generateCompetitorsPositionReport"]=1
+    operations["generateGoodsFeedbackReport"]=1
+    operations["generateMassOrderLabelsReport"]=1
+    operations["generateOrderLabel"]=1
+    operations["generateOrderLabels"]=1
+    operations["generatePricesReport"]=1
+    operations["generateShelfsStatisticsReport"]=1
+    operations["generateShowsSalesReport"]=1
+    operations["generateStocksOnWarehousesReport"]=1
+    operations["generateUnitedMarketplaceServicesReport"]=1
+    operations["generateUnitedNettingReport"]=1
+    operations["generateUnitedOrdersReport"]=1
+    operations["getAllOffers"]=1
+    operations["getBidsInfoForBusiness"]=1
+    operations["getBidsRecommendations"]=1
+    operations["getBusinessQuarantineOffers"]=1
+    operations["getBusinessSettings"]=1
+    operations["getCampaign"]=1
+    operations["getCampaignLogins"]=1
+    operations["getCampaignOffers"]=1
+    operations["getCampaignQuarantineOffers"]=1
+    operations["getCampaignRegion"]=1
+    operations["getCampaignSettings"]=1
+    operations["getCampaigns"]=1
+    operations["getCampaignsByLogin"]=1
+    operations["getCategoriesMaxSaleQuantum"]=1
+    operations["getCategoriesTree"]=1
+    operations["getCategoryContentParameters"]=1
+    operations["getChatHistory"]=1
+    operations["getChats"]=1
+    operations["getDeliveryServices"]=1
+    operations["getFeed"]=1
+    operations["getFeedIndexLogs"]=1
+    operations["getFeedbackAndCommentUpdates"]=1
+    operations["getFeeds"]=1
+    operations["getGoodsFeedbackComments"]=1
+    operations["getGoodsFeedbacks"]=1
+    operations["getGoodsStats"]=1
+    operations["getHiddenOffers"]=1
+    operations["getModel"]=1
+    operations["getModelOffers"]=1
+    operations["getModels"]=1
+    operations["getModelsOffers"]=1
+    operations["getOfferCardsContentStatus"]=1
+    operations["getOfferMappingEntries"]=1
+    operations["getOfferMappings"]=1
+    operations["getOfferRecommendations"]=1
+    operations["getOffers"]=1
+    operations["getOrder"]=1
+    operations["getOrderBusinessBuyerInfo"]=1
+    operations["getOrderBusinessDocumentsInfo"]=1
+    operations["getOrderBuyerInfo"]=1
+    operations["getOrderLabelsData"]=1
+    operations["getOrders"]=1
+    operations["getOrdersStats"]=1
+    operations["getOutlet"]=1
+    operations["getOutletLicenses"]=1
+    operations["getOutlets"]=1
+    operations["getPrices"]=1
+    operations["getPricesByOfferIds"]=1
+    operations["getPromoOffers"]=1
+    operations["getPromos"]=1
+    operations["getQualityRatingDetails"]=1
+    operations["getQualityRatings"]=1
+    operations["getReportInfo"]=1
+    operations["getReturn"]=1
+    operations["getReturnApplication"]=1
+    operations["getReturnPhoto"]=1
+    operations["getReturns"]=1
+    operations["getStocks"]=1
+    operations["getSuggestedOfferMappingEntries"]=1
+    operations["getSuggestedOfferMappings"]=1
+    operations["getSuggestedPrices"]=1
+    operations["getWarehouses"]=1
+    operations["provideOrderDigitalCodes"]=1
+    operations["provideOrderItemIdentifiers"]=1
+    operations["putBidsForBusiness"]=1
+    operations["putBidsForCampaign"]=1
+    operations["refreshFeed"]=1
+    operations["searchModels"]=1
+    operations["searchRegionChildren"]=1
+    operations["searchRegionsById"]=1
+    operations["searchRegionsByName"]=1
+    operations["sendFileToChat"]=1
+    operations["sendMessageToChat"]=1
+    operations["setFeedParams"]=1
+    operations["setOrderBoxLayout"]=1
+    operations["setOrderDeliveryDate"]=1
+    operations["setOrderDeliveryTrackCode"]=1
+    operations["setOrderShipmentBoxes"]=1
+    operations["setReturnDecision"]=1
+    operations["skipGoodsFeedbacksReaction"]=1
+    operations["submitReturnDecision"]=1
+    operations["updateBusinessPrices"]=1
+    operations["updateCampaignOffers"]=1
+    operations["updateGoodsFeedbackComment"]=1
+    operations["updateOfferContent"]=1
+    operations["updateOfferMappingEntries"]=1
+    operations["updateOfferMappings"]=1
+    operations["updateOrderItems"]=1
+    operations["updateOrderStatus"]=1
+    operations["updateOrderStatuses"]=1
+    operations["updateOrderStorageLimit"]=1
+    operations["updateOutlet"]=1
+    operations["updateOutletLicenses"]=1
+    operations["updatePrices"]=1
+    operations["updatePromoOffers"]=1
+    operations["updateStocks"]=1
+    operations["getDeliveryServices"]=1
+    operations["addHiddenOffers"]=1
+    operations["addOffersToArchive"]=1
+    operations["calculateTariffs"]=1
+    operations["confirmBusinessPrices"]=1
+    operations["confirmCampaignPrices"]=1
+    operations["createChat"]=1
+    operations["deleteCampaignOffers"]=1
+    operations["deleteGoodsFeedbackComment"]=1
+    operations["deleteHiddenOffers"]=1
+    operations["deleteOffers"]=1
+    operations["deleteOffersFromArchive"]=1
+    operations["deletePromoOffers"]=1
+    operations["generateBoostConsolidatedReport"]=1
+    operations["generateCompetitorsPositionReport"]=1
+    operations["generateGoodsFeedbackReport"]=1
+    operations["generateGoodsRealizationReport"]=1
+    operations["generateMassOrderLabelsReport"]=1
+    operations["generateOrderLabel"]=1
+    operations["generateOrderLabels"]=1
+    operations["generatePricesReport"]=1
+    operations["generateShelfsStatisticsReport"]=1
+    operations["generateShowsSalesReport"]=1
+    operations["generateStocksOnWarehousesReport"]=1
+    operations["generateUnitedMarketplaceServicesReport"]=1
+    operations["generateUnitedNettingReport"]=1
+    operations["generateUnitedOrdersReport"]=1
+    operations["getAllOffers"]=1
+    operations["getBidsInfoForBusiness"]=1
+    operations["getBidsRecommendations"]=1
+    operations["getBusinessQuarantineOffers"]=1
+    operations["getBusinessSettings"]=1
+    operations["getCampaign"]=1
+    operations["getCampaignLogins"]=1
+    operations["getCampaignOffers"]=1
+    operations["getCampaignQuarantineOffers"]=1
+    operations["getCampaignRegion"]=1
+    operations["getCampaignSettings"]=1
+    operations["getCampaigns"]=1
+    operations["getCampaignsByLogin"]=1
+    operations["getCategoriesMaxSaleQuantum"]=1
+    operations["getCategoriesTree"]=1
+    operations["getCategoryContentParameters"]=1
+    operations["getChatHistory"]=1
+    operations["getChats"]=1
+    operations["getDeliveryServices"]=1
+    operations["getFeed"]=1
+    operations["getFeedIndexLogs"]=1
+    operations["getFeedbackAndCommentUpdates"]=1
+    operations["getFeeds"]=1
+    operations["getGoodsFeedbackComments"]=1
+    operations["getGoodsFeedbacks"]=1
+    operations["getGoodsStats"]=1
+    operations["getHiddenOffers"]=1
+    operations["getOfferCardsContentStatus"]=1
+    operations["getOfferMappingEntries"]=1
+    operations["getOfferMappings"]=1
+    operations["getOfferRecommendations"]=1
+    operations["getOffers"]=1
+    operations["getOrder"]=1
+    operations["getOrderBusinessBuyerInfo"]=1
+    operations["getOrderBusinessDocumentsInfo"]=1
+    operations["getOrderLabelsData"]=1
+    operations["getOrders"]=1
+    operations["getOrdersStats"]=1
+    operations["getPrices"]=1
+    operations["getPricesByOfferIds"]=1
+    operations["getPromoOffers"]=1
+    operations["getPromos"]=1
+    operations["getQualityRatingDetails"]=1
+    operations["getQualityRatings"]=1
+    operations["getReportInfo"]=1
+    operations["getReturn"]=1
+    operations["getReturnApplication"]=1
+    operations["getReturnPhoto"]=1
+    operations["getReturns"]=1
+    operations["getStocks"]=1
+    operations["getSuggestedOfferMappingEntries"]=1
+    operations["getSuggestedOfferMappings"]=1
+    operations["getSuggestedPrices"]=1
+    operations["getWarehouses"]=1
+    operations["provideOrderItemIdentifiers"]=1
+    operations["putBidsForBusiness"]=1
+    operations["putBidsForCampaign"]=1
+    operations["refreshFeed"]=1
+    operations["searchRegionChildren"]=1
+    operations["searchRegionsById"]=1
+    operations["searchRegionsByName"]=1
+    operations["sendFileToChat"]=1
+    operations["sendMessageToChat"]=1
+    operations["setFeedParams"]=1
+    operations["setOrderBoxLayout"]=1
+    operations["setOrderShipmentBoxes"]=1
+    operations["skipGoodsFeedbacksReaction"]=1
+    operations["updateBusinessPrices"]=1
+    operations["updateCampaignOffers"]=1
+    operations["updateGoodsFeedbackComment"]=1
+    operations["updateOfferContent"]=1
+    operations["updateOfferMappingEntries"]=1
+    operations["updateOfferMappings"]=1
+    operations["updateOrderItems"]=1
+    operations["updateOrderStatus"]=1
+    operations["updateOrderStatuses"]=1
+    operations["updatePrices"]=1
+    operations["updatePromoOffers"]=1
+    operations["updateStocks"]=1
+    operations["verifyOrderEac"]=1
+    operations["addHiddenOffers"]=1
+    operations["addOffersToArchive"]=1
+    operations["calculateTariffs"]=1
+    operations["confirmBusinessPrices"]=1
+    operations["confirmCampaignPrices"]=1
+    operations["confirmShipment"]=1
+    operations["createChat"]=1
+    operations["deleteCampaignOffers"]=1
+    operations["deleteGoodsFeedbackComment"]=1
+    operations["deleteHiddenOffers"]=1
+    operations["deleteOffers"]=1
+    operations["deleteOffersFromArchive"]=1
+    operations["deletePromoOffers"]=1
+    operations["downloadShipmentAct"]=1
+    operations["downloadShipmentDiscrepancyAct"]=1
+    operations["downloadShipmentInboundAct"]=1
+    operations["downloadShipmentPalletLabels"]=1
+    operations["downloadShipmentReceptionTransferAct"]=1
+    operations["downloadShipmentTransportationWaybill"]=1
+    operations["generateBoostConsolidatedReport"]=1
+    operations["generateCompetitorsPositionReport"]=1
+    operations["generateGoodsFeedbackReport"]=1
+    operations["generateGoodsRealizationReport"]=1
+    operations["generateMassOrderLabelsReport"]=1
+    operations["generateOrderLabel"]=1
+    operations["generateOrderLabels"]=1
+    operations["generatePricesReport"]=1
+    operations["generateShelfsStatisticsReport"]=1
+    operations["generateShipmentListDocumentReport"]=1
+    operations["generateShowsSalesReport"]=1
+    operations["generateStocksOnWarehousesReport"]=1
+    operations["generateUnitedMarketplaceServicesReport"]=1
+    operations["generateUnitedNettingReport"]=1
+    operations["generateUnitedOrdersReport"]=1
+    operations["getAllOffers"]=1
+    operations["getBidsInfoForBusiness"]=1
+    operations["getBidsRecommendations"]=1
+    operations["getBusinessQuarantineOffers"]=1
+    operations["getBusinessSettings"]=1
+    operations["getCampaign"]=1
+    operations["getCampaignLogins"]=1
+    operations["getCampaignOffers"]=1
+    operations["getCampaignQuarantineOffers"]=1
+    operations["getCampaignRegion"]=1
+    operations["getCampaignSettings"]=1
+    operations["getCampaigns"]=1
+    operations["getCampaignsByLogin"]=1
+    operations["getCategoriesMaxSaleQuantum"]=1
+    operations["getCategoriesTree"]=1
+    operations["getCategoryContentParameters"]=1
+    operations["getChatHistory"]=1
+    operations["getChats"]=1
+    operations["getDeliveryServices"]=1
+    operations["getFeed"]=1
+    operations["getFeedIndexLogs"]=1
+    operations["getFeedbackAndCommentUpdates"]=1
+    operations["getFeeds"]=1
+    operations["getGoodsFeedbackComments"]=1
+    operations["getGoodsFeedbacks"]=1
+    operations["getGoodsStats"]=1
+    operations["getHiddenOffers"]=1
+    operations["getOfferCardsContentStatus"]=1
+    operations["getOfferMappingEntries"]=1
+    operations["getOfferMappings"]=1
+    operations["getOfferRecommendations"]=1
+    operations["getOffers"]=1
+    operations["getOrder"]=1
+    operations["getOrderBusinessBuyerInfo"]=1
+    operations["getOrderBusinessDocumentsInfo"]=1
+    operations["getOrderLabelsData"]=1
+    operations["getOrders"]=1
+    operations["getOrdersStats"]=1
+    operations["getPrices"]=1
+    operations["getPricesByOfferIds"]=1
+    operations["getPromoOffers"]=1
+    operations["getPromos"]=1
+    operations["getQualityRatingDetails"]=1
+    operations["getQualityRatings"]=1
+    operations["getReportInfo"]=1
+    operations["getReturn"]=1
+    operations["getReturnApplication"]=1
+    operations["getReturnPhoto"]=1
+    operations["getReturns"]=1
+    operations["getShipment"]=1
+    operations["getShipmentOrdersInfo"]=1
+    operations["getStocks"]=1
+    operations["getSuggestedOfferMappingEntries"]=1
+    operations["getSuggestedOfferMappings"]=1
+    operations["getSuggestedPrices"]=1
+    operations["getWarehouses"]=1
+    operations["provideOrderItemIdentifiers"]=1
+    operations["putBidsForBusiness"]=1
+    operations["putBidsForCampaign"]=1
+    operations["refreshFeed"]=1
+    operations["searchRegionChildren"]=1
+    operations["searchRegionsById"]=1
+    operations["searchRegionsByName"]=1
+    operations["searchShipments"]=1
+    operations["sendFileToChat"]=1
+    operations["sendMessageToChat"]=1
+    operations["setFeedParams"]=1
+    operations["setOrderBoxLayout"]=1
+    operations["setOrderShipmentBoxes"]=1
+    operations["setShipmentPalletsCount"]=1
+    operations["skipGoodsFeedbacksReaction"]=1
+    operations["transferOrdersFromShipment"]=1
+    operations["updateBusinessPrices"]=1
+    operations["updateCampaignOffers"]=1
+    operations["updateGoodsFeedbackComment"]=1
+    operations["updateOfferContent"]=1
+    operations["updateOfferMappingEntries"]=1
+    operations["updateOfferMappings"]=1
+    operations["updateOrderItems"]=1
+    operations["updateOrderStatus"]=1
+    operations["updateOrderStatuses"]=1
+    operations["updatePrices"]=1
+    operations["updatePromoOffers"]=1
+    operations["updateStocks"]=1
+    operations["addHiddenOffers"]=1
+    operations["addOffersToArchive"]=1
+    operations["calculateTariffs"]=1
+    operations["confirmBusinessPrices"]=1
+    operations["confirmCampaignPrices"]=1
+    operations["createChat"]=1
+    operations["deleteCampaignOffers"]=1
+    operations["deleteGoodsFeedbackComment"]=1
+    operations["deleteHiddenOffers"]=1
+    operations["deleteOffers"]=1
+    operations["deleteOffersFromArchive"]=1
+    operations["deletePromoOffers"]=1
+    operations["generateBoostConsolidatedReport"]=1
+    operations["generateCompetitorsPositionReport"]=1
+    operations["generateGoodsFeedbackReport"]=1
+    operations["generateGoodsMovementReport"]=1
+    operations["generateGoodsRealizationReport"]=1
+    operations["generateGoodsTurnoverReport"]=1
+    operations["generatePricesReport"]=1
+    operations["generateShelfsStatisticsReport"]=1
+    operations["generateShowsSalesReport"]=1
+    operations["generateStocksOnWarehousesReport"]=1
+    operations["generateUnitedMarketplaceServicesReport"]=1
+    operations["generateUnitedNettingReport"]=1
+    operations["generateUnitedOrdersReport"]=1
+    operations["getAllOffers"]=1
+    operations["getBidsInfoForBusiness"]=1
+    operations["getBidsRecommendations"]=1
+    operations["getBusinessQuarantineOffers"]=1
+    operations["getBusinessSettings"]=1
+    operations["getCampaign"]=1
+    operations["getCampaignLogins"]=1
+    operations["getCampaignOffers"]=1
+    operations["getCampaignQuarantineOffers"]=1
+    operations["getCampaignRegion"]=1
+    operations["getCampaignSettings"]=1
+    operations["getCampaigns"]=1
+    operations["getCampaignsByLogin"]=1
+    operations["getCategoriesMaxSaleQuantum"]=1
+    operations["getCategoriesTree"]=1
+    operations["getCategoryContentParameters"]=1
+    operations["getChatHistory"]=1
+    operations["getChats"]=1
+    operations["getFeed"]=1
+    operations["getFeedIndexLogs"]=1
+    operations["getFeedbackAndCommentUpdates"]=1
+    operations["getFeeds"]=1
+    operations["getFulfillmentWarehouses"]=1
+    operations["getGoodsFeedbackComments"]=1
+    operations["getGoodsFeedbacks"]=1
+    operations["getGoodsStats"]=1
+    operations["getHiddenOffers"]=1
+    operations["getOfferCardsContentStatus"]=1
+    operations["getOfferMappingEntries"]=1
+    operations["getOfferMappings"]=1
+    operations["getOfferRecommendations"]=1
+    operations["getOffers"]=1
+    operations["getOrder"]=1
+    operations["getOrderBusinessBuyerInfo"]=1
+    operations["getOrderBusinessDocumentsInfo"]=1
+    operations["getOrders"]=1
+    operations["getOrdersStats"]=1
+    operations["getPrices"]=1
+    operations["getPricesByOfferIds"]=1
+    operations["getPromoOffers"]=1
+    operations["getPromos"]=1
+    operations["getQualityRatings"]=1
+    operations["getReportInfo"]=1
+    operations["getReturn"]=1
+    operations["getReturnPhoto"]=1
+    operations["getReturns"]=1
+    operations["getStocks"]=1
+    operations["getSuggestedOfferMappingEntries"]=1
+    operations["getSuggestedOfferMappings"]=1
+    operations["getSuggestedPrices"]=1
+    operations["putBidsForBusiness"]=1
+    operations["putBidsForCampaign"]=1
+    operations["refreshFeed"]=1
+    operations["searchRegionChildren"]=1
+    operations["searchRegionsById"]=1
+    operations["searchRegionsByName"]=1
+    operations["sendFileToChat"]=1
+    operations["sendMessageToChat"]=1
+    operations["setFeedParams"]=1
+    operations["skipGoodsFeedbacksReaction"]=1
+    operations["updateBusinessPrices"]=1
+    operations["updateCampaignOffers"]=1
+    operations["updateGoodsFeedbackComment"]=1
+    operations["updateOfferContent"]=1
+    operations["updateOfferMappingEntries"]=1
+    operations["updateOfferMappings"]=1
+    operations["updatePrices"]=1
+    operations["updatePromoOffers"]=1
+    operations["getFeedbackAndCommentUpdates"]=1
+    operations["getFeed"]=1
+    operations["getFeedIndexLogs"]=1
+    operations["getFeeds"]=1
+    operations["refreshFeed"]=1
+    operations["setFeedParams"]=1
+    operations["deleteGoodsFeedbackComment"]=1
+    operations["getGoodsFeedbackComments"]=1
+    operations["getGoodsFeedbacks"]=1
+    operations["skipGoodsFeedbacksReaction"]=1
+    operations["updateGoodsFeedbackComment"]=1
+    operations["getGoodsStats"]=1
+    operations["addHiddenOffers"]=1
+    operations["deleteHiddenOffers"]=1
+    operations["getHiddenOffers"]=1
+    operations["getModel"]=1
+    operations["getModelOffers"]=1
+    operations["getModels"]=1
+    operations["getModelsOffers"]=1
+    operations["searchModels"]=1
+    operations["getOfferMappingEntries"]=1
+    operations["getSuggestedOfferMappingEntries"]=1
+    operations["updateOfferMappingEntries"]=1
+    operations["deleteCampaignOffers"]=1
+    operations["getAllOffers"]=1
+    operations["getCampaignOffers"]=1
+    operations["getOfferRecommendations"]=1
+    operations["getOffers"]=1
+    operations["updateCampaignOffers"]=1
+    operations["getOrderBusinessBuyerInfo"]=1
+    operations["getOrderBusinessDocumentsInfo"]=1
+    operations["getOrderBuyerInfo"]=1
+    operations["setOrderDeliveryDate"]=1
+    operations["setOrderDeliveryTrackCode"]=1
+    operations["updateOrderStorageLimit"]=1
+    operations["verifyOrderEac"]=1
+    operations["generateOrderLabel"]=1
+    operations["generateOrderLabels"]=1
+    operations["getOrderLabelsData"]=1
+    operations["acceptOrderCancellation"]=1
+    operations["getOrder"]=1
+    operations["getOrders"]=1
+    operations["provideOrderDigitalCodes"]=1
+    operations["provideOrderItemIdentifiers"]=1
+    operations["setOrderBoxLayout"]=1
+    operations["setOrderShipmentBoxes"]=1
+    operations["updateOrderItems"]=1
+    operations["updateOrderStatus"]=1
+    operations["updateOrderStatuses"]=1
+    operations["getOrdersStats"]=1
+    operations["deleteOutletLicenses"]=1
+    operations["getOutletLicenses"]=1
+    operations["updateOutletLicenses"]=1
+    operations["createOutlet"]=1
+    operations["deleteOutlet"]=1
+    operations["getOutlet"]=1
+    operations["getOutlets"]=1
+    operations["updateOutlet"]=1
+    operations["confirmBusinessPrices"]=1
+    operations["confirmCampaignPrices"]=1
+    operations["getBusinessQuarantineOffers"]=1
+    operations["getCampaignQuarantineOffers"]=1
+    operations["getPrices"]=1
+    operations["getPricesByOfferIds"]=1
+    operations["getSuggestedPrices"]=1
+    operations["updateBusinessPrices"]=1
+    operations["updatePrices"]=1
+    operations["deletePromoOffers"]=1
+    operations["getPromoOffers"]=1
+    operations["getPromos"]=1
+    operations["updatePromoOffers"]=1
+    operations["getQualityRatingDetails"]=1
+    operations["getQualityRatings"]=1
+    operations["searchRegionChildren"]=1
+    operations["searchRegionsById"]=1
+    operations["searchRegionsByName"]=1
+    operations["generateBoostConsolidatedReport"]=1
+    operations["generateCompetitorsPositionReport"]=1
+    operations["generateGoodsFeedbackReport"]=1
+    operations["generateGoodsMovementReport"]=1
+    operations["generateGoodsRealizationReport"]=1
+    operations["generateGoodsTurnoverReport"]=1
+    operations["generateMassOrderLabelsReport"]=1
+    operations["generatePricesReport"]=1
+    operations["generateShelfsStatisticsReport"]=1
+    operations["generateShipmentListDocumentReport"]=1
+    operations["generateShowsSalesReport"]=1
+    operations["generateStocksOnWarehousesReport"]=1
+    operations["generateUnitedMarketplaceServicesReport"]=1
+    operations["generateUnitedNettingReport"]=1
+    operations["generateUnitedOrdersReport"]=1
+    operations["getReportInfo"]=1
+    operations["getReturn"]=1
+    operations["getReturnApplication"]=1
+    operations["getReturnPhoto"]=1
+    operations["getReturns"]=1
+    operations["setReturnDecision"]=1
+    operations["submitReturnDecision"]=1
+    operations["confirmShipment"]=1
+    operations["downloadShipmentAct"]=1
+    operations["downloadShipmentDiscrepancyAct"]=1
+    operations["downloadShipmentInboundAct"]=1
+    operations["downloadShipmentPalletLabels"]=1
+    operations["downloadShipmentReceptionTransferAct"]=1
+    operations["downloadShipmentTransportationWaybill"]=1
+    operations["getShipment"]=1
+    operations["getShipmentOrdersInfo"]=1
+    operations["searchShipments"]=1
+    operations["setShipmentPalletsCount"]=1
+    operations["transferOrdersFromShipment"]=1
+    operations["getStocks"]=1
+    operations["updateStocks"]=1
+    operations["calculateTariffs"]=1
+    operations["getFulfillmentWarehouses"]=1
+    operations["getWarehouses"]=1
+
+    # An associative array of operations to their parameters
+    # Only include path, query and header parameters
+    declare -A operation_parameters
+    operation_parameters["getBidsInfoForBusiness"]="businessId= page_token= limit= "
+    operation_parameters["getBidsRecommendations"]="businessId= "
+    operation_parameters["putBidsForBusiness"]="businessId= "
+    operation_parameters["putBidsForCampaign"]="campaignId= "
+    operation_parameters["addOffersToArchive"]="businessId= "
+    operation_parameters["deleteOffers"]="businessId= "
+    operation_parameters["deleteOffersFromArchive"]="businessId= "
+    operation_parameters["getOfferMappings"]="businessId= page_token= limit= "
+    operation_parameters["getSuggestedOfferMappings"]="businessId= "
+    operation_parameters["updateOfferMappings"]="businessId= "
+    operation_parameters["getBusinessSettings"]="businessId= "
+    operation_parameters["getCampaign"]="campaignId= "
+    operation_parameters["getCampaignLogins"]="campaignId= "
+    operation_parameters["getCampaignRegion"]="campaignId= "
+    operation_parameters["getCampaignSettings"]="campaignId= "
+    operation_parameters["getCampaigns"]="page= pageSize= "
+    operation_parameters["getCampaignsByLogin"]="login= page= pageSize= "
+    operation_parameters["getCategoriesMaxSaleQuantum"]=""
+    operation_parameters["getCategoriesTree"]=""
+    operation_parameters["createChat"]="businessId= "
+    operation_parameters["getChatHistory"]="businessId= chatId= page_token= limit= "
+    operation_parameters["getChats"]="businessId= page_token= limit= "
+    operation_parameters["sendFileToChat"]="businessId= chatId= "
+    operation_parameters["sendMessageToChat"]="businessId= chatId= "
+    operation_parameters["getCategoryContentParameters"]="categoryId= "
+    operation_parameters["getOfferCardsContentStatus"]="businessId= page_token= limit= "
+    operation_parameters["updateOfferContent"]="businessId= "
+    operation_parameters["acceptOrderCancellation"]="campaignId= orderId= "
+    operation_parameters["addHiddenOffers"]="campaignId= "
+    operation_parameters["addOffersToArchive"]="businessId= "
+    operation_parameters["calculateTariffs"]=""
+    operation_parameters["confirmBusinessPrices"]="businessId= "
+    operation_parameters["confirmCampaignPrices"]="campaignId= "
+    operation_parameters["createChat"]="businessId= "
+    operation_parameters["createOutlet"]="campaignId= "
+    operation_parameters["deleteCampaignOffers"]="campaignId= "
+    operation_parameters["deleteGoodsFeedbackComment"]="businessId= "
+    operation_parameters["deleteHiddenOffers"]="campaignId= "
+    operation_parameters["deleteOffers"]="businessId= "
+    operation_parameters["deleteOffersFromArchive"]="businessId= "
+    operation_parameters["deleteOutlet"]="campaignId= outletId= "
+    operation_parameters["deleteOutletLicenses"]="campaignId= ids= "
+    operation_parameters["deletePromoOffers"]="businessId= "
+    operation_parameters["generateBoostConsolidatedReport"]="format= "
+    operation_parameters["generateCompetitorsPositionReport"]="format= "
+    operation_parameters["generateGoodsFeedbackReport"]="format= "
+    operation_parameters["generateMassOrderLabelsReport"]="format= "
+    operation_parameters["generateOrderLabel"]="campaignId= orderId= shipmentId= boxId= format= "
+    operation_parameters["generateOrderLabels"]="campaignId= orderId= format= "
+    operation_parameters["generatePricesReport"]="format= "
+    operation_parameters["generateShelfsStatisticsReport"]="format= "
+    operation_parameters["generateShowsSalesReport"]="format= "
+    operation_parameters["generateStocksOnWarehousesReport"]="format= "
+    operation_parameters["generateUnitedMarketplaceServicesReport"]="format= "
+    operation_parameters["generateUnitedNettingReport"]="format= "
+    operation_parameters["generateUnitedOrdersReport"]="format= "
+    operation_parameters["getAllOffers"]="campaignId= feedId= chunk= "
+    operation_parameters["getBidsInfoForBusiness"]="businessId= page_token= limit= "
+    operation_parameters["getBidsRecommendations"]="businessId= "
+    operation_parameters["getBusinessQuarantineOffers"]="businessId= page_token= limit= "
+    operation_parameters["getBusinessSettings"]="businessId= "
+    operation_parameters["getCampaign"]="campaignId= "
+    operation_parameters["getCampaignLogins"]="campaignId= "
+    operation_parameters["getCampaignOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getCampaignQuarantineOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getCampaignRegion"]="campaignId= "
+    operation_parameters["getCampaignSettings"]="campaignId= "
+    operation_parameters["getCampaigns"]="page= pageSize= "
+    operation_parameters["getCampaignsByLogin"]="login= page= pageSize= "
+    operation_parameters["getCategoriesMaxSaleQuantum"]=""
+    operation_parameters["getCategoriesTree"]=""
+    operation_parameters["getCategoryContentParameters"]="categoryId= "
+    operation_parameters["getChatHistory"]="businessId= chatId= page_token= limit= "
+    operation_parameters["getChats"]="businessId= page_token= limit= "
+    operation_parameters["getDeliveryServices"]=""
+    operation_parameters["getFeed"]="campaignId= feedId= "
+    operation_parameters["getFeedIndexLogs"]="campaignId= feedId= limit= published_time_from= published_time_to= status= "
+    operation_parameters["getFeedbackAndCommentUpdates"]="campaignId= page_token= limit= from_date= "
+    operation_parameters["getFeeds"]="campaignId= "
+    operation_parameters["getGoodsFeedbackComments"]="businessId= page_token= limit= "
+    operation_parameters["getGoodsFeedbacks"]="businessId= page_token= limit= "
+    operation_parameters["getGoodsStats"]="campaignId= "
+    operation_parameters["getHiddenOffers"]="campaignId= offer_id= page_token= limit= offset= page= pageSize= "
+    operation_parameters["getModel"]="modelId= regionId= currency= "
+    operation_parameters["getModelOffers"]="modelId= regionId= currency= orderByPrice= count= page= "
+    operation_parameters["getModels"]="regionId= currency= "
+    operation_parameters["getModelsOffers"]="regionId= currency= orderByPrice= "
+    operation_parameters["getOfferCardsContentStatus"]="businessId= page_token= limit= "
+    operation_parameters["getOfferMappingEntries"]="campaignId= offer_id= shop_sku= mapping_kind= status= availability= category_id= vendor= page_token= limit= "
+    operation_parameters["getOfferMappings"]="businessId= page_token= limit= "
+    operation_parameters["getOfferRecommendations"]="businessId= page_token= limit= "
+    operation_parameters["getOffers"]="campaignId= query= feedId= shopCategoryId= currency= matched= page= pageSize= "
+    operation_parameters["getOrder"]="campaignId= orderId= "
+    operation_parameters["getOrderBusinessBuyerInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderBusinessDocumentsInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderBuyerInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderLabelsData"]="campaignId= orderId= "
+    operation_parameters["getOrders"]="campaignId= orderIds= status= substatus= fromDate= toDate= supplierShipmentDateFrom= supplierShipmentDateTo= updatedAtFrom= updatedAtTo= dispatchType= fake= hasCis= onlyWaitingForCancellationApprove= onlyEstimatedDelivery= buyerType= page= pageSize= page_token= limit= "
+    operation_parameters["getOrdersStats"]="campaignId= page_token= limit= "
+    operation_parameters["getOutlet"]="campaignId= outletId= "
+    operation_parameters["getOutletLicenses"]="campaignId= outletIds= ids= "
+    operation_parameters["getOutlets"]="campaignId= page_token= region_id= shop_outlet_code= regionId= "
+    operation_parameters["getPrices"]="campaignId= page_token= limit= archived= "
+    operation_parameters["getPricesByOfferIds"]="campaignId= page_token= limit= "
+    operation_parameters["getPromoOffers"]="businessId= page_token= limit= "
+    operation_parameters["getPromos"]="businessId= "
+    operation_parameters["getQualityRatingDetails"]="campaignId= "
+    operation_parameters["getQualityRatings"]="businessId= "
+    operation_parameters["getReportInfo"]="reportId= "
+    operation_parameters["getReturn"]="campaignId= orderId= returnId= "
+    operation_parameters["getReturnApplication"]="campaignId= orderId= returnId= "
+    operation_parameters["getReturnPhoto"]="campaignId= orderId= returnId= itemId= imageHash= "
+    operation_parameters["getReturns"]="campaignId= page_token= limit= orderIds= statuses= type= fromDate= toDate= from_date= to_date= "
+    operation_parameters["getStocks"]="campaignId= page_token= limit= "
+    operation_parameters["getSuggestedOfferMappingEntries"]="campaignId= "
+    operation_parameters["getSuggestedOfferMappings"]="businessId= "
+    operation_parameters["getSuggestedPrices"]="campaignId= "
+    operation_parameters["getWarehouses"]="businessId= "
+    operation_parameters["provideOrderDigitalCodes"]="campaignId= orderId= "
+    operation_parameters["provideOrderItemIdentifiers"]="campaignId= orderId= "
+    operation_parameters["putBidsForBusiness"]="businessId= "
+    operation_parameters["putBidsForCampaign"]="campaignId= "
+    operation_parameters["refreshFeed"]="campaignId= feedId= "
+    operation_parameters["searchModels"]="query= regionId= currency= page= pageSize= "
+    operation_parameters["searchRegionChildren"]="regionId= page= pageSize= "
+    operation_parameters["searchRegionsById"]="regionId= "
+    operation_parameters["searchRegionsByName"]="name= page_token= limit= "
+    operation_parameters["sendFileToChat"]="businessId= chatId= "
+    operation_parameters["sendMessageToChat"]="businessId= chatId= "
+    operation_parameters["setFeedParams"]="campaignId= feedId= "
+    operation_parameters["setOrderBoxLayout"]="campaignId= orderId= "
+    operation_parameters["setOrderDeliveryDate"]="campaignId= orderId= "
+    operation_parameters["setOrderDeliveryTrackCode"]="campaignId= orderId= "
+    operation_parameters["setOrderShipmentBoxes"]="campaignId= orderId= shipmentId= "
+    operation_parameters["setReturnDecision"]="campaignId= orderId= returnId= "
+    operation_parameters["skipGoodsFeedbacksReaction"]="businessId= "
+    operation_parameters["submitReturnDecision"]="campaignId= orderId= returnId= "
+    operation_parameters["updateBusinessPrices"]="businessId= "
+    operation_parameters["updateCampaignOffers"]="campaignId= "
+    operation_parameters["updateGoodsFeedbackComment"]="businessId= "
+    operation_parameters["updateOfferContent"]="businessId= "
+    operation_parameters["updateOfferMappingEntries"]="campaignId= "
+    operation_parameters["updateOfferMappings"]="businessId= "
+    operation_parameters["updateOrderItems"]="campaignId= orderId= "
+    operation_parameters["updateOrderStatus"]="campaignId= orderId= "
+    operation_parameters["updateOrderStatuses"]="campaignId= "
+    operation_parameters["updateOrderStorageLimit"]="campaignId= orderId= "
+    operation_parameters["updateOutlet"]="campaignId= outletId= "
+    operation_parameters["updateOutletLicenses"]="campaignId= "
+    operation_parameters["updatePrices"]="campaignId= "
+    operation_parameters["updatePromoOffers"]="businessId= "
+    operation_parameters["updateStocks"]="campaignId= "
+    operation_parameters["getDeliveryServices"]=""
+    operation_parameters["addHiddenOffers"]="campaignId= "
+    operation_parameters["addOffersToArchive"]="businessId= "
+    operation_parameters["calculateTariffs"]=""
+    operation_parameters["confirmBusinessPrices"]="businessId= "
+    operation_parameters["confirmCampaignPrices"]="campaignId= "
+    operation_parameters["createChat"]="businessId= "
+    operation_parameters["deleteCampaignOffers"]="campaignId= "
+    operation_parameters["deleteGoodsFeedbackComment"]="businessId= "
+    operation_parameters["deleteHiddenOffers"]="campaignId= "
+    operation_parameters["deleteOffers"]="businessId= "
+    operation_parameters["deleteOffersFromArchive"]="businessId= "
+    operation_parameters["deletePromoOffers"]="businessId= "
+    operation_parameters["generateBoostConsolidatedReport"]="format= "
+    operation_parameters["generateCompetitorsPositionReport"]="format= "
+    operation_parameters["generateGoodsFeedbackReport"]="format= "
+    operation_parameters["generateGoodsRealizationReport"]="format= "
+    operation_parameters["generateMassOrderLabelsReport"]="format= "
+    operation_parameters["generateOrderLabel"]="campaignId= orderId= shipmentId= boxId= format= "
+    operation_parameters["generateOrderLabels"]="campaignId= orderId= format= "
+    operation_parameters["generatePricesReport"]="format= "
+    operation_parameters["generateShelfsStatisticsReport"]="format= "
+    operation_parameters["generateShowsSalesReport"]="format= "
+    operation_parameters["generateStocksOnWarehousesReport"]="format= "
+    operation_parameters["generateUnitedMarketplaceServicesReport"]="format= "
+    operation_parameters["generateUnitedNettingReport"]="format= "
+    operation_parameters["generateUnitedOrdersReport"]="format= "
+    operation_parameters["getAllOffers"]="campaignId= feedId= chunk= "
+    operation_parameters["getBidsInfoForBusiness"]="businessId= page_token= limit= "
+    operation_parameters["getBidsRecommendations"]="businessId= "
+    operation_parameters["getBusinessQuarantineOffers"]="businessId= page_token= limit= "
+    operation_parameters["getBusinessSettings"]="businessId= "
+    operation_parameters["getCampaign"]="campaignId= "
+    operation_parameters["getCampaignLogins"]="campaignId= "
+    operation_parameters["getCampaignOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getCampaignQuarantineOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getCampaignRegion"]="campaignId= "
+    operation_parameters["getCampaignSettings"]="campaignId= "
+    operation_parameters["getCampaigns"]="page= pageSize= "
+    operation_parameters["getCampaignsByLogin"]="login= page= pageSize= "
+    operation_parameters["getCategoriesMaxSaleQuantum"]=""
+    operation_parameters["getCategoriesTree"]=""
+    operation_parameters["getCategoryContentParameters"]="categoryId= "
+    operation_parameters["getChatHistory"]="businessId= chatId= page_token= limit= "
+    operation_parameters["getChats"]="businessId= page_token= limit= "
+    operation_parameters["getDeliveryServices"]=""
+    operation_parameters["getFeed"]="campaignId= feedId= "
+    operation_parameters["getFeedIndexLogs"]="campaignId= feedId= limit= published_time_from= published_time_to= status= "
+    operation_parameters["getFeedbackAndCommentUpdates"]="campaignId= page_token= limit= from_date= "
+    operation_parameters["getFeeds"]="campaignId= "
+    operation_parameters["getGoodsFeedbackComments"]="businessId= page_token= limit= "
+    operation_parameters["getGoodsFeedbacks"]="businessId= page_token= limit= "
+    operation_parameters["getGoodsStats"]="campaignId= "
+    operation_parameters["getHiddenOffers"]="campaignId= offer_id= page_token= limit= offset= page= pageSize= "
+    operation_parameters["getOfferCardsContentStatus"]="businessId= page_token= limit= "
+    operation_parameters["getOfferMappingEntries"]="campaignId= offer_id= shop_sku= mapping_kind= status= availability= category_id= vendor= page_token= limit= "
+    operation_parameters["getOfferMappings"]="businessId= page_token= limit= "
+    operation_parameters["getOfferRecommendations"]="businessId= page_token= limit= "
+    operation_parameters["getOffers"]="campaignId= query= feedId= shopCategoryId= currency= matched= page= pageSize= "
+    operation_parameters["getOrder"]="campaignId= orderId= "
+    operation_parameters["getOrderBusinessBuyerInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderBusinessDocumentsInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderLabelsData"]="campaignId= orderId= "
+    operation_parameters["getOrders"]="campaignId= orderIds= status= substatus= fromDate= toDate= supplierShipmentDateFrom= supplierShipmentDateTo= updatedAtFrom= updatedAtTo= dispatchType= fake= hasCis= onlyWaitingForCancellationApprove= onlyEstimatedDelivery= buyerType= page= pageSize= page_token= limit= "
+    operation_parameters["getOrdersStats"]="campaignId= page_token= limit= "
+    operation_parameters["getPrices"]="campaignId= page_token= limit= archived= "
+    operation_parameters["getPricesByOfferIds"]="campaignId= page_token= limit= "
+    operation_parameters["getPromoOffers"]="businessId= page_token= limit= "
+    operation_parameters["getPromos"]="businessId= "
+    operation_parameters["getQualityRatingDetails"]="campaignId= "
+    operation_parameters["getQualityRatings"]="businessId= "
+    operation_parameters["getReportInfo"]="reportId= "
+    operation_parameters["getReturn"]="campaignId= orderId= returnId= "
+    operation_parameters["getReturnApplication"]="campaignId= orderId= returnId= "
+    operation_parameters["getReturnPhoto"]="campaignId= orderId= returnId= itemId= imageHash= "
+    operation_parameters["getReturns"]="campaignId= page_token= limit= orderIds= statuses= type= fromDate= toDate= from_date= to_date= "
+    operation_parameters["getStocks"]="campaignId= page_token= limit= "
+    operation_parameters["getSuggestedOfferMappingEntries"]="campaignId= "
+    operation_parameters["getSuggestedOfferMappings"]="businessId= "
+    operation_parameters["getSuggestedPrices"]="campaignId= "
+    operation_parameters["getWarehouses"]="businessId= "
+    operation_parameters["provideOrderItemIdentifiers"]="campaignId= orderId= "
+    operation_parameters["putBidsForBusiness"]="businessId= "
+    operation_parameters["putBidsForCampaign"]="campaignId= "
+    operation_parameters["refreshFeed"]="campaignId= feedId= "
+    operation_parameters["searchRegionChildren"]="regionId= page= pageSize= "
+    operation_parameters["searchRegionsById"]="regionId= "
+    operation_parameters["searchRegionsByName"]="name= page_token= limit= "
+    operation_parameters["sendFileToChat"]="businessId= chatId= "
+    operation_parameters["sendMessageToChat"]="businessId= chatId= "
+    operation_parameters["setFeedParams"]="campaignId= feedId= "
+    operation_parameters["setOrderBoxLayout"]="campaignId= orderId= "
+    operation_parameters["setOrderShipmentBoxes"]="campaignId= orderId= shipmentId= "
+    operation_parameters["skipGoodsFeedbacksReaction"]="businessId= "
+    operation_parameters["updateBusinessPrices"]="businessId= "
+    operation_parameters["updateCampaignOffers"]="campaignId= "
+    operation_parameters["updateGoodsFeedbackComment"]="businessId= "
+    operation_parameters["updateOfferContent"]="businessId= "
+    operation_parameters["updateOfferMappingEntries"]="campaignId= "
+    operation_parameters["updateOfferMappings"]="businessId= "
+    operation_parameters["updateOrderItems"]="campaignId= orderId= "
+    operation_parameters["updateOrderStatus"]="campaignId= orderId= "
+    operation_parameters["updateOrderStatuses"]="campaignId= "
+    operation_parameters["updatePrices"]="campaignId= "
+    operation_parameters["updatePromoOffers"]="businessId= "
+    operation_parameters["updateStocks"]="campaignId= "
+    operation_parameters["verifyOrderEac"]="campaignId= orderId= "
+    operation_parameters["addHiddenOffers"]="campaignId= "
+    operation_parameters["addOffersToArchive"]="businessId= "
+    operation_parameters["calculateTariffs"]=""
+    operation_parameters["confirmBusinessPrices"]="businessId= "
+    operation_parameters["confirmCampaignPrices"]="campaignId= "
+    operation_parameters["confirmShipment"]="campaignId= shipmentId= "
+    operation_parameters["createChat"]="businessId= "
+    operation_parameters["deleteCampaignOffers"]="campaignId= "
+    operation_parameters["deleteGoodsFeedbackComment"]="businessId= "
+    operation_parameters["deleteHiddenOffers"]="campaignId= "
+    operation_parameters["deleteOffers"]="businessId= "
+    operation_parameters["deleteOffersFromArchive"]="businessId= "
+    operation_parameters["deletePromoOffers"]="businessId= "
+    operation_parameters["downloadShipmentAct"]="campaignId= shipmentId= "
+    operation_parameters["downloadShipmentDiscrepancyAct"]="campaignId= shipmentId= "
+    operation_parameters["downloadShipmentInboundAct"]="campaignId= shipmentId= "
+    operation_parameters["downloadShipmentPalletLabels"]="campaignId= shipmentId= format= "
+    operation_parameters["downloadShipmentReceptionTransferAct"]="campaignId= warehouse_id= "
+    operation_parameters["downloadShipmentTransportationWaybill"]="campaignId= shipmentId= "
+    operation_parameters["generateBoostConsolidatedReport"]="format= "
+    operation_parameters["generateCompetitorsPositionReport"]="format= "
+    operation_parameters["generateGoodsFeedbackReport"]="format= "
+    operation_parameters["generateGoodsRealizationReport"]="format= "
+    operation_parameters["generateMassOrderLabelsReport"]="format= "
+    operation_parameters["generateOrderLabel"]="campaignId= orderId= shipmentId= boxId= format= "
+    operation_parameters["generateOrderLabels"]="campaignId= orderId= format= "
+    operation_parameters["generatePricesReport"]="format= "
+    operation_parameters["generateShelfsStatisticsReport"]="format= "
+    operation_parameters["generateShipmentListDocumentReport"]=""
+    operation_parameters["generateShowsSalesReport"]="format= "
+    operation_parameters["generateStocksOnWarehousesReport"]="format= "
+    operation_parameters["generateUnitedMarketplaceServicesReport"]="format= "
+    operation_parameters["generateUnitedNettingReport"]="format= "
+    operation_parameters["generateUnitedOrdersReport"]="format= "
+    operation_parameters["getAllOffers"]="campaignId= feedId= chunk= "
+    operation_parameters["getBidsInfoForBusiness"]="businessId= page_token= limit= "
+    operation_parameters["getBidsRecommendations"]="businessId= "
+    operation_parameters["getBusinessQuarantineOffers"]="businessId= page_token= limit= "
+    operation_parameters["getBusinessSettings"]="businessId= "
+    operation_parameters["getCampaign"]="campaignId= "
+    operation_parameters["getCampaignLogins"]="campaignId= "
+    operation_parameters["getCampaignOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getCampaignQuarantineOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getCampaignRegion"]="campaignId= "
+    operation_parameters["getCampaignSettings"]="campaignId= "
+    operation_parameters["getCampaigns"]="page= pageSize= "
+    operation_parameters["getCampaignsByLogin"]="login= page= pageSize= "
+    operation_parameters["getCategoriesMaxSaleQuantum"]=""
+    operation_parameters["getCategoriesTree"]=""
+    operation_parameters["getCategoryContentParameters"]="categoryId= "
+    operation_parameters["getChatHistory"]="businessId= chatId= page_token= limit= "
+    operation_parameters["getChats"]="businessId= page_token= limit= "
+    operation_parameters["getDeliveryServices"]=""
+    operation_parameters["getFeed"]="campaignId= feedId= "
+    operation_parameters["getFeedIndexLogs"]="campaignId= feedId= limit= published_time_from= published_time_to= status= "
+    operation_parameters["getFeedbackAndCommentUpdates"]="campaignId= page_token= limit= from_date= "
+    operation_parameters["getFeeds"]="campaignId= "
+    operation_parameters["getGoodsFeedbackComments"]="businessId= page_token= limit= "
+    operation_parameters["getGoodsFeedbacks"]="businessId= page_token= limit= "
+    operation_parameters["getGoodsStats"]="campaignId= "
+    operation_parameters["getHiddenOffers"]="campaignId= offer_id= page_token= limit= offset= page= pageSize= "
+    operation_parameters["getOfferCardsContentStatus"]="businessId= page_token= limit= "
+    operation_parameters["getOfferMappingEntries"]="campaignId= offer_id= shop_sku= mapping_kind= status= availability= category_id= vendor= page_token= limit= "
+    operation_parameters["getOfferMappings"]="businessId= page_token= limit= "
+    operation_parameters["getOfferRecommendations"]="businessId= page_token= limit= "
+    operation_parameters["getOffers"]="campaignId= query= feedId= shopCategoryId= currency= matched= page= pageSize= "
+    operation_parameters["getOrder"]="campaignId= orderId= "
+    operation_parameters["getOrderBusinessBuyerInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderBusinessDocumentsInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderLabelsData"]="campaignId= orderId= "
+    operation_parameters["getOrders"]="campaignId= orderIds= status= substatus= fromDate= toDate= supplierShipmentDateFrom= supplierShipmentDateTo= updatedAtFrom= updatedAtTo= dispatchType= fake= hasCis= onlyWaitingForCancellationApprove= onlyEstimatedDelivery= buyerType= page= pageSize= page_token= limit= "
+    operation_parameters["getOrdersStats"]="campaignId= page_token= limit= "
+    operation_parameters["getPrices"]="campaignId= page_token= limit= archived= "
+    operation_parameters["getPricesByOfferIds"]="campaignId= page_token= limit= "
+    operation_parameters["getPromoOffers"]="businessId= page_token= limit= "
+    operation_parameters["getPromos"]="businessId= "
+    operation_parameters["getQualityRatingDetails"]="campaignId= "
+    operation_parameters["getQualityRatings"]="businessId= "
+    operation_parameters["getReportInfo"]="reportId= "
+    operation_parameters["getReturn"]="campaignId= orderId= returnId= "
+    operation_parameters["getReturnApplication"]="campaignId= orderId= returnId= "
+    operation_parameters["getReturnPhoto"]="campaignId= orderId= returnId= itemId= imageHash= "
+    operation_parameters["getReturns"]="campaignId= page_token= limit= orderIds= statuses= type= fromDate= toDate= from_date= to_date= "
+    operation_parameters["getShipment"]="campaignId= shipmentId= cancelledOrders= "
+    operation_parameters["getShipmentOrdersInfo"]="campaignId= shipmentId= "
+    operation_parameters["getStocks"]="campaignId= page_token= limit= "
+    operation_parameters["getSuggestedOfferMappingEntries"]="campaignId= "
+    operation_parameters["getSuggestedOfferMappings"]="businessId= "
+    operation_parameters["getSuggestedPrices"]="campaignId= "
+    operation_parameters["getWarehouses"]="businessId= "
+    operation_parameters["provideOrderItemIdentifiers"]="campaignId= orderId= "
+    operation_parameters["putBidsForBusiness"]="businessId= "
+    operation_parameters["putBidsForCampaign"]="campaignId= "
+    operation_parameters["refreshFeed"]="campaignId= feedId= "
+    operation_parameters["searchRegionChildren"]="regionId= page= pageSize= "
+    operation_parameters["searchRegionsById"]="regionId= "
+    operation_parameters["searchRegionsByName"]="name= page_token= limit= "
+    operation_parameters["searchShipments"]="campaignId= page_token= limit= "
+    operation_parameters["sendFileToChat"]="businessId= chatId= "
+    operation_parameters["sendMessageToChat"]="businessId= chatId= "
+    operation_parameters["setFeedParams"]="campaignId= feedId= "
+    operation_parameters["setOrderBoxLayout"]="campaignId= orderId= "
+    operation_parameters["setOrderShipmentBoxes"]="campaignId= orderId= shipmentId= "
+    operation_parameters["setShipmentPalletsCount"]="campaignId= shipmentId= "
+    operation_parameters["skipGoodsFeedbacksReaction"]="businessId= "
+    operation_parameters["transferOrdersFromShipment"]="campaignId= shipmentId= "
+    operation_parameters["updateBusinessPrices"]="businessId= "
+    operation_parameters["updateCampaignOffers"]="campaignId= "
+    operation_parameters["updateGoodsFeedbackComment"]="businessId= "
+    operation_parameters["updateOfferContent"]="businessId= "
+    operation_parameters["updateOfferMappingEntries"]="campaignId= "
+    operation_parameters["updateOfferMappings"]="businessId= "
+    operation_parameters["updateOrderItems"]="campaignId= orderId= "
+    operation_parameters["updateOrderStatus"]="campaignId= orderId= "
+    operation_parameters["updateOrderStatuses"]="campaignId= "
+    operation_parameters["updatePrices"]="campaignId= "
+    operation_parameters["updatePromoOffers"]="businessId= "
+    operation_parameters["updateStocks"]="campaignId= "
+    operation_parameters["addHiddenOffers"]="campaignId= "
+    operation_parameters["addOffersToArchive"]="businessId= "
+    operation_parameters["calculateTariffs"]=""
+    operation_parameters["confirmBusinessPrices"]="businessId= "
+    operation_parameters["confirmCampaignPrices"]="campaignId= "
+    operation_parameters["createChat"]="businessId= "
+    operation_parameters["deleteCampaignOffers"]="campaignId= "
+    operation_parameters["deleteGoodsFeedbackComment"]="businessId= "
+    operation_parameters["deleteHiddenOffers"]="campaignId= "
+    operation_parameters["deleteOffers"]="businessId= "
+    operation_parameters["deleteOffersFromArchive"]="businessId= "
+    operation_parameters["deletePromoOffers"]="businessId= "
+    operation_parameters["generateBoostConsolidatedReport"]="format= "
+    operation_parameters["generateCompetitorsPositionReport"]="format= "
+    operation_parameters["generateGoodsFeedbackReport"]="format= "
+    operation_parameters["generateGoodsMovementReport"]="format= "
+    operation_parameters["generateGoodsRealizationReport"]="format= "
+    operation_parameters["generateGoodsTurnoverReport"]="format= "
+    operation_parameters["generatePricesReport"]="format= "
+    operation_parameters["generateShelfsStatisticsReport"]="format= "
+    operation_parameters["generateShowsSalesReport"]="format= "
+    operation_parameters["generateStocksOnWarehousesReport"]="format= "
+    operation_parameters["generateUnitedMarketplaceServicesReport"]="format= "
+    operation_parameters["generateUnitedNettingReport"]="format= "
+    operation_parameters["generateUnitedOrdersReport"]="format= "
+    operation_parameters["getAllOffers"]="campaignId= feedId= chunk= "
+    operation_parameters["getBidsInfoForBusiness"]="businessId= page_token= limit= "
+    operation_parameters["getBidsRecommendations"]="businessId= "
+    operation_parameters["getBusinessQuarantineOffers"]="businessId= page_token= limit= "
+    operation_parameters["getBusinessSettings"]="businessId= "
+    operation_parameters["getCampaign"]="campaignId= "
+    operation_parameters["getCampaignLogins"]="campaignId= "
+    operation_parameters["getCampaignOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getCampaignQuarantineOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getCampaignRegion"]="campaignId= "
+    operation_parameters["getCampaignSettings"]="campaignId= "
+    operation_parameters["getCampaigns"]="page= pageSize= "
+    operation_parameters["getCampaignsByLogin"]="login= page= pageSize= "
+    operation_parameters["getCategoriesMaxSaleQuantum"]=""
+    operation_parameters["getCategoriesTree"]=""
+    operation_parameters["getCategoryContentParameters"]="categoryId= "
+    operation_parameters["getChatHistory"]="businessId= chatId= page_token= limit= "
+    operation_parameters["getChats"]="businessId= page_token= limit= "
+    operation_parameters["getFeed"]="campaignId= feedId= "
+    operation_parameters["getFeedIndexLogs"]="campaignId= feedId= limit= published_time_from= published_time_to= status= "
+    operation_parameters["getFeedbackAndCommentUpdates"]="campaignId= page_token= limit= from_date= "
+    operation_parameters["getFeeds"]="campaignId= "
+    operation_parameters["getFulfillmentWarehouses"]=""
+    operation_parameters["getGoodsFeedbackComments"]="businessId= page_token= limit= "
+    operation_parameters["getGoodsFeedbacks"]="businessId= page_token= limit= "
+    operation_parameters["getGoodsStats"]="campaignId= "
+    operation_parameters["getHiddenOffers"]="campaignId= offer_id= page_token= limit= offset= page= pageSize= "
+    operation_parameters["getOfferCardsContentStatus"]="businessId= page_token= limit= "
+    operation_parameters["getOfferMappingEntries"]="campaignId= offer_id= shop_sku= mapping_kind= status= availability= category_id= vendor= page_token= limit= "
+    operation_parameters["getOfferMappings"]="businessId= page_token= limit= "
+    operation_parameters["getOfferRecommendations"]="businessId= page_token= limit= "
+    operation_parameters["getOffers"]="campaignId= query= feedId= shopCategoryId= currency= matched= page= pageSize= "
+    operation_parameters["getOrder"]="campaignId= orderId= "
+    operation_parameters["getOrderBusinessBuyerInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderBusinessDocumentsInfo"]="campaignId= orderId= "
+    operation_parameters["getOrders"]="campaignId= orderIds= status= substatus= fromDate= toDate= supplierShipmentDateFrom= supplierShipmentDateTo= updatedAtFrom= updatedAtTo= dispatchType= fake= hasCis= onlyWaitingForCancellationApprove= onlyEstimatedDelivery= buyerType= page= pageSize= page_token= limit= "
+    operation_parameters["getOrdersStats"]="campaignId= page_token= limit= "
+    operation_parameters["getPrices"]="campaignId= page_token= limit= archived= "
+    operation_parameters["getPricesByOfferIds"]="campaignId= page_token= limit= "
+    operation_parameters["getPromoOffers"]="businessId= page_token= limit= "
+    operation_parameters["getPromos"]="businessId= "
+    operation_parameters["getQualityRatings"]="businessId= "
+    operation_parameters["getReportInfo"]="reportId= "
+    operation_parameters["getReturn"]="campaignId= orderId= returnId= "
+    operation_parameters["getReturnPhoto"]="campaignId= orderId= returnId= itemId= imageHash= "
+    operation_parameters["getReturns"]="campaignId= page_token= limit= orderIds= statuses= type= fromDate= toDate= from_date= to_date= "
+    operation_parameters["getStocks"]="campaignId= page_token= limit= "
+    operation_parameters["getSuggestedOfferMappingEntries"]="campaignId= "
+    operation_parameters["getSuggestedOfferMappings"]="businessId= "
+    operation_parameters["getSuggestedPrices"]="campaignId= "
+    operation_parameters["putBidsForBusiness"]="businessId= "
+    operation_parameters["putBidsForCampaign"]="campaignId= "
+    operation_parameters["refreshFeed"]="campaignId= feedId= "
+    operation_parameters["searchRegionChildren"]="regionId= page= pageSize= "
+    operation_parameters["searchRegionsById"]="regionId= "
+    operation_parameters["searchRegionsByName"]="name= page_token= limit= "
+    operation_parameters["sendFileToChat"]="businessId= chatId= "
+    operation_parameters["sendMessageToChat"]="businessId= chatId= "
+    operation_parameters["setFeedParams"]="campaignId= feedId= "
+    operation_parameters["skipGoodsFeedbacksReaction"]="businessId= "
+    operation_parameters["updateBusinessPrices"]="businessId= "
+    operation_parameters["updateCampaignOffers"]="campaignId= "
+    operation_parameters["updateGoodsFeedbackComment"]="businessId= "
+    operation_parameters["updateOfferContent"]="businessId= "
+    operation_parameters["updateOfferMappingEntries"]="campaignId= "
+    operation_parameters["updateOfferMappings"]="businessId= "
+    operation_parameters["updatePrices"]="campaignId= "
+    operation_parameters["updatePromoOffers"]="businessId= "
+    operation_parameters["getFeedbackAndCommentUpdates"]="campaignId= page_token= limit= from_date= "
+    operation_parameters["getFeed"]="campaignId= feedId= "
+    operation_parameters["getFeedIndexLogs"]="campaignId= feedId= limit= published_time_from= published_time_to= status= "
+    operation_parameters["getFeeds"]="campaignId= "
+    operation_parameters["refreshFeed"]="campaignId= feedId= "
+    operation_parameters["setFeedParams"]="campaignId= feedId= "
+    operation_parameters["deleteGoodsFeedbackComment"]="businessId= "
+    operation_parameters["getGoodsFeedbackComments"]="businessId= page_token= limit= "
+    operation_parameters["getGoodsFeedbacks"]="businessId= page_token= limit= "
+    operation_parameters["skipGoodsFeedbacksReaction"]="businessId= "
+    operation_parameters["updateGoodsFeedbackComment"]="businessId= "
+    operation_parameters["getGoodsStats"]="campaignId= "
+    operation_parameters["addHiddenOffers"]="campaignId= "
+    operation_parameters["deleteHiddenOffers"]="campaignId= "
+    operation_parameters["getHiddenOffers"]="campaignId= offer_id= page_token= limit= offset= page= pageSize= "
+    operation_parameters["getModel"]="modelId= regionId= currency= "
+    operation_parameters["getModelOffers"]="modelId= regionId= currency= orderByPrice= count= page= "
+    operation_parameters["getModels"]="regionId= currency= "
+    operation_parameters["getModelsOffers"]="regionId= currency= orderByPrice= "
+    operation_parameters["searchModels"]="query= regionId= currency= page= pageSize= "
+    operation_parameters["getOfferMappingEntries"]="campaignId= offer_id= shop_sku= mapping_kind= status= availability= category_id= vendor= page_token= limit= "
+    operation_parameters["getSuggestedOfferMappingEntries"]="campaignId= "
+    operation_parameters["updateOfferMappingEntries"]="campaignId= "
+    operation_parameters["deleteCampaignOffers"]="campaignId= "
+    operation_parameters["getAllOffers"]="campaignId= feedId= chunk= "
+    operation_parameters["getCampaignOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getOfferRecommendations"]="businessId= page_token= limit= "
+    operation_parameters["getOffers"]="campaignId= query= feedId= shopCategoryId= currency= matched= page= pageSize= "
+    operation_parameters["updateCampaignOffers"]="campaignId= "
+    operation_parameters["getOrderBusinessBuyerInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderBusinessDocumentsInfo"]="campaignId= orderId= "
+    operation_parameters["getOrderBuyerInfo"]="campaignId= orderId= "
+    operation_parameters["setOrderDeliveryDate"]="campaignId= orderId= "
+    operation_parameters["setOrderDeliveryTrackCode"]="campaignId= orderId= "
+    operation_parameters["updateOrderStorageLimit"]="campaignId= orderId= "
+    operation_parameters["verifyOrderEac"]="campaignId= orderId= "
+    operation_parameters["generateOrderLabel"]="campaignId= orderId= shipmentId= boxId= format= "
+    operation_parameters["generateOrderLabels"]="campaignId= orderId= format= "
+    operation_parameters["getOrderLabelsData"]="campaignId= orderId= "
+    operation_parameters["acceptOrderCancellation"]="campaignId= orderId= "
+    operation_parameters["getOrder"]="campaignId= orderId= "
+    operation_parameters["getOrders"]="campaignId= orderIds= status= substatus= fromDate= toDate= supplierShipmentDateFrom= supplierShipmentDateTo= updatedAtFrom= updatedAtTo= dispatchType= fake= hasCis= onlyWaitingForCancellationApprove= onlyEstimatedDelivery= buyerType= page= pageSize= page_token= limit= "
+    operation_parameters["provideOrderDigitalCodes"]="campaignId= orderId= "
+    operation_parameters["provideOrderItemIdentifiers"]="campaignId= orderId= "
+    operation_parameters["setOrderBoxLayout"]="campaignId= orderId= "
+    operation_parameters["setOrderShipmentBoxes"]="campaignId= orderId= shipmentId= "
+    operation_parameters["updateOrderItems"]="campaignId= orderId= "
+    operation_parameters["updateOrderStatus"]="campaignId= orderId= "
+    operation_parameters["updateOrderStatuses"]="campaignId= "
+    operation_parameters["getOrdersStats"]="campaignId= page_token= limit= "
+    operation_parameters["deleteOutletLicenses"]="campaignId= ids= "
+    operation_parameters["getOutletLicenses"]="campaignId= outletIds= ids= "
+    operation_parameters["updateOutletLicenses"]="campaignId= "
+    operation_parameters["createOutlet"]="campaignId= "
+    operation_parameters["deleteOutlet"]="campaignId= outletId= "
+    operation_parameters["getOutlet"]="campaignId= outletId= "
+    operation_parameters["getOutlets"]="campaignId= page_token= region_id= shop_outlet_code= regionId= "
+    operation_parameters["updateOutlet"]="campaignId= outletId= "
+    operation_parameters["confirmBusinessPrices"]="businessId= "
+    operation_parameters["confirmCampaignPrices"]="campaignId= "
+    operation_parameters["getBusinessQuarantineOffers"]="businessId= page_token= limit= "
+    operation_parameters["getCampaignQuarantineOffers"]="campaignId= page_token= limit= "
+    operation_parameters["getPrices"]="campaignId= page_token= limit= archived= "
+    operation_parameters["getPricesByOfferIds"]="campaignId= page_token= limit= "
+    operation_parameters["getSuggestedPrices"]="campaignId= "
+    operation_parameters["updateBusinessPrices"]="businessId= "
+    operation_parameters["updatePrices"]="campaignId= "
+    operation_parameters["deletePromoOffers"]="businessId= "
+    operation_parameters["getPromoOffers"]="businessId= page_token= limit= "
+    operation_parameters["getPromos"]="businessId= "
+    operation_parameters["updatePromoOffers"]="businessId= "
+    operation_parameters["getQualityRatingDetails"]="campaignId= "
+    operation_parameters["getQualityRatings"]="businessId= "
+    operation_parameters["searchRegionChildren"]="regionId= page= pageSize= "
+    operation_parameters["searchRegionsById"]="regionId= "
+    operation_parameters["searchRegionsByName"]="name= page_token= limit= "
+    operation_parameters["generateBoostConsolidatedReport"]="format= "
+    operation_parameters["generateCompetitorsPositionReport"]="format= "
+    operation_parameters["generateGoodsFeedbackReport"]="format= "
+    operation_parameters["generateGoodsMovementReport"]="format= "
+    operation_parameters["generateGoodsRealizationReport"]="format= "
+    operation_parameters["generateGoodsTurnoverReport"]="format= "
+    operation_parameters["generateMassOrderLabelsReport"]="format= "
+    operation_parameters["generatePricesReport"]="format= "
+    operation_parameters["generateShelfsStatisticsReport"]="format= "
+    operation_parameters["generateShipmentListDocumentReport"]=""
+    operation_parameters["generateShowsSalesReport"]="format= "
+    operation_parameters["generateStocksOnWarehousesReport"]="format= "
+    operation_parameters["generateUnitedMarketplaceServicesReport"]="format= "
+    operation_parameters["generateUnitedNettingReport"]="format= "
+    operation_parameters["generateUnitedOrdersReport"]="format= "
+    operation_parameters["getReportInfo"]="reportId= "
+    operation_parameters["getReturn"]="campaignId= orderId= returnId= "
+    operation_parameters["getReturnApplication"]="campaignId= orderId= returnId= "
+    operation_parameters["getReturnPhoto"]="campaignId= orderId= returnId= itemId= imageHash= "
+    operation_parameters["getReturns"]="campaignId= page_token= limit= orderIds= statuses= type= fromDate= toDate= from_date= to_date= "
+    operation_parameters["setReturnDecision"]="campaignId= orderId= returnId= "
+    operation_parameters["submitReturnDecision"]="campaignId= orderId= returnId= "
+    operation_parameters["confirmShipment"]="campaignId= shipmentId= "
+    operation_parameters["downloadShipmentAct"]="campaignId= shipmentId= "
+    operation_parameters["downloadShipmentDiscrepancyAct"]="campaignId= shipmentId= "
+    operation_parameters["downloadShipmentInboundAct"]="campaignId= shipmentId= "
+    operation_parameters["downloadShipmentPalletLabels"]="campaignId= shipmentId= format= "
+    operation_parameters["downloadShipmentReceptionTransferAct"]="campaignId= warehouse_id= "
+    operation_parameters["downloadShipmentTransportationWaybill"]="campaignId= shipmentId= "
+    operation_parameters["getShipment"]="campaignId= shipmentId= cancelledOrders= "
+    operation_parameters["getShipmentOrdersInfo"]="campaignId= shipmentId= "
+    operation_parameters["searchShipments"]="campaignId= page_token= limit= "
+    operation_parameters["setShipmentPalletsCount"]="campaignId= shipmentId= "
+    operation_parameters["transferOrdersFromShipment"]="campaignId= shipmentId= "
+    operation_parameters["getStocks"]="campaignId= page_token= limit= "
+    operation_parameters["updateStocks"]="campaignId= "
+    operation_parameters["calculateTariffs"]=""
+    operation_parameters["getFulfillmentWarehouses"]=""
+    operation_parameters["getWarehouses"]="businessId= "
+
+    # An associative array of possible values for enum parameters
+    declare -A operation_parameters_enum_values
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getShipment::cancelledOrders"]="true false"
+    operation_parameters_enum_values["getShipment::cancelledOrders"]="true false"
+    operation_parameters_enum_values["getShipment::cancelledOrders"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOffers::matched"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getOrders::fake"]="true false"
+    operation_parameters_enum_values["getOrders::hasCis"]="true false"
+    operation_parameters_enum_values["getOrders::onlyWaitingForCancellationApprove"]="true false"
+    operation_parameters_enum_values["getOrders::onlyEstimatedDelivery"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getPrices::archived"]="true false"
+    operation_parameters_enum_values["getShipment::cancelledOrders"]="true false"
+    operation_parameters_enum_values["getShipment::cancelledOrders"]="true false"
+    operation_parameters_enum_values["getShipment::cancelledOrders"]="true false"
+
+    #
+    # Check if this is OSX and use special __osx_init_completion function
+    #
+    if [[ `uname` =~ "Darwin" ]]; then
+        __osx_init_completion || return
+    else
+        _init_completion -s || return
+    fi
+
+
+    # Check if operation is already in the command line provided
+    for word in "${words[@]}"; do
+        if [[ -n $word && ${operations[$word]} ]]; then
+            operation="${word}"
+        fi
+    done
+
+    if [[ -z $operation ]]; then
+        case $prev in
+            --ciphers|--connect-timeout|-C|--continue-at|-F|--form|--form-string|\
+            --ftp-account|--ftp-alternative-to-user|-P|--ftp-port|-H|--header|-h|\
+            --help|--hostpubmd5|--keepalive-time|--krb|--limit-rate|--local-port|\
+            --mail-from|--mail-rcpt|--max-filesize|--max-redirs|-m|--max-time|\
+            --pass|--proto|--proto-redir|--proxy-user|--proxy1.0|-Q|--quote|-r|\
+            --range|-X|--request|--retry|--retry-delay|--retry-max-time|\
+            --socks5-gssapi-service|-t|--telnet-option|--tftp-blksize|-z|\
+            --time-cond|--url|-u|--user|-A|--user-agent|-V|--version|-w|\
+            --write-out|--resolve|--tlsuser|--tlspassword|--about)
+                return
+                ;;
+            -K|--config|-b|--cookie|-c|--cookie-jar|-D|--dump-header|--egd-file|\
+            --key|--libcurl|-o|--output|--random-file|-T|--upload-file|--trace|\
+            --trace-ascii|--netrc-file)
+                _filedir
+                return
+                ;;
+            --cacert|-E|--cert)
+                _filedir '@(c?(e)rt|cer|pem|der)'
+                return
+                ;;
+            --capath)
+                _filedir -d
+                return
+                ;;
+            --cert-type|--key-type)
+                COMPREPLY=( $( compgen -W 'DER PEM ENG' -- "$cur" ) )
+                return
+                ;;
+            --crlfile)
+                _filedir crl
+                return
+                ;;
+            -d|--data|--data-ascii|--data-binary|--data-urlencode)
+                if [[ $cur == \@* ]]; then
+                    cur=${cur:1}
+                    _filedir
+                    COMPREPLY=( "${COMPREPLY[@]/#/@}" )
+                fi
+                return
+                ;;
+            --delegation)
+                COMPREPLY=( $( compgen -W 'none policy always' -- "$cur" ) )
+                return
+                ;;
+            --engine)
+                COMPREPLY=( $( compgen -W 'list' -- "$cur" ) )
+                return
+                ;;
+            --ftp-method)
+                COMPREPLY=( $( compgen -W 'multicwd nocwd singlecwd' -- "$cur" ) )
+                return
+                ;;
+            --ftp-ssl-ccc-mode)
+                COMPREPLY=( $( compgen -W 'active passive' -- "$cur" ) )
+                return
+                ;;
+            --interface)
+                _available_interfaces -a
+                return
+                ;;
+            -x|--proxy|--socks4|--socks4a|--socks5|--socks5-hostname)
+                _known_hosts_real
+                return
+                ;;
+            --pubkey)
+                _filedir pub
+                return
+                ;;
+            --stderr)
+                COMPREPLY=( $( compgen -W '-' -- "$cur" ) )
+                _filedir
+                return
+                ;;
+            --tlsauthtype)
+                COMPREPLY=( $( compgen -W 'SRP' -- "$cur" ) )
+                return
+                ;;
+            --host)
+                COMPREPLY=( $( compgen -W 'http:// https://' -- "$cur" ) )
+                return
+                ;;
+            -ct|--content-type|-ac|--accept)
+                COMPREPLY=( $( compgen -W '${!mime_type_abbreviations[*]}' -- "$cur" ) )
+                return
+                ;;
+        esac
+    fi
+
+    #
+    # Complete the server address based on ~/.ssh/known_hosts
+    # and ~/.ssh/config
+    #
+    local prefix=${COMP_WORDS[COMP_CWORD-2]}
+    local colon=${COMP_WORDS[COMP_CWORD-1]}
+    if [[ "$colon" == ":" && ( $prefix == "https" || $prefix == "http" ) ]]; then
+        COMPREPLY=()
+        local comp_ssh_hosts=`[[ -f ~/.ssh/known_hosts ]] && \
+                              ( cat ~/.ssh/known_hosts | \
+                              grep '^[a-zA-Z0-9]' | \
+                              cut -f 1 -d ' ' | \
+                              sed -e s/,.*//g | \
+                              grep -v ^# | \
+                              uniq | \
+                              grep -v "\[" ) ;
+                              [[ -f ~/.ssh/config ]] && \
+                              ( cat ~/.ssh/config | \
+                              grep "^Host " | \
+                              awk '{print $2}' )`
+        COMPREPLY=( $( compgen -P '//' -W '${comp_ssh_hosts}' -- "${cur:2}") )
+        return
+    fi
+
+    #
+    # Complete the  and cURL's arguments
+    #
+    if [[ $cur == -* ]]; then
+        COMPREPLY=( $( compgen -W '$(_parse_help curl) $(_parse_help $1)' -- "$cur" ) )
+        return
+    fi
+
+    #
+    # If the argument starts with a letter this could be either an operation
+    # or an operation parameter
+    # When $cur is empty, suggest the list of operations by default
+    #
+    if [[ $cur =~ ^[A-Za-z_0-9]* ]]; then
+        # If operation has not been yet selected, suggest the list of operations
+        # otherwise suggest arguments of this operation as declared in the
+        # OpenAPI specification
+        if [[ -z $operation ]]; then
+            COMPREPLY=( $(compgen -W '${!operations[*]}' -- ${cur}) )
+        else
+            COMPREPLY=( $(compgen -W '${operation_parameters[$operation]}' -- ${cur}) )
+            compopt -o nospace
+        fi
+        return
+    fi
+
+} &&
+complete -F _ 
+
+# ex: ts=4 sw=4 et filetype=sh
