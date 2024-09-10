@@ -1,0 +1,62 @@
+#ifndef get_feedback_list_response_TEST
+#define get_feedback_list_response_TEST
+
+// the following is to include only the main from the first c file
+#ifndef TEST_MAIN
+#define TEST_MAIN
+#define get_feedback_list_response_MAIN
+#endif // TEST_MAIN
+
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include "../external/cJSON.h"
+
+#include "../model/get_feedback_list_response.h"
+get_feedback_list_response_t* instantiate_get_feedback_list_response(int include_optional);
+
+#include "test_feedback_list_dto.c"
+
+
+get_feedback_list_response_t* instantiate_get_feedback_list_response(int include_optional) {
+  get_feedback_list_response_t* get_feedback_list_response = NULL;
+  if (include_optional) {
+    get_feedback_list_response = get_feedback_list_response_create(
+      _api__get_feedback_list_response__OK,
+       // false, not to have infinite recursion
+      instantiate_feedback_list_dto(0)
+    );
+  } else {
+    get_feedback_list_response = get_feedback_list_response_create(
+      _api__get_feedback_list_response__OK,
+      NULL
+    );
+  }
+
+  return get_feedback_list_response;
+}
+
+
+#ifdef get_feedback_list_response_MAIN
+
+void test_get_feedback_list_response(int include_optional) {
+    get_feedback_list_response_t* get_feedback_list_response_1 = instantiate_get_feedback_list_response(include_optional);
+
+	cJSON* jsonget_feedback_list_response_1 = get_feedback_list_response_convertToJSON(get_feedback_list_response_1);
+	printf("get_feedback_list_response :\n%s\n", cJSON_Print(jsonget_feedback_list_response_1));
+	get_feedback_list_response_t* get_feedback_list_response_2 = get_feedback_list_response_parseFromJSON(jsonget_feedback_list_response_1);
+	cJSON* jsonget_feedback_list_response_2 = get_feedback_list_response_convertToJSON(get_feedback_list_response_2);
+	printf("repeating get_feedback_list_response:\n%s\n", cJSON_Print(jsonget_feedback_list_response_2));
+}
+
+int main() {
+  test_get_feedback_list_response(1);
+  test_get_feedback_list_response(0);
+
+  printf("Hello world \n");
+  return 0;
+}
+
+#endif // get_feedback_list_response_MAIN
+#endif // get_feedback_list_response_TEST

@@ -1,0 +1,32 @@
+/*
+ * order_items_modification_request_reason_type.h
+ *
+ * Причина обновления состава заказа.
+ */
+
+#ifndef _order_items_modification_request_reason_type_H_
+#define _order_items_modification_request_reason_type_H_
+
+#include <string.h>
+#include "../external/cJSON.h"
+#include "../include/list.h"
+#include "../include/keyValuePair.h"
+#include "../include/binary.h"
+
+typedef struct order_items_modification_request_reason_type_t order_items_modification_request_reason_type_t;
+
+
+// Enum  for order_items_modification_request_reason_type
+
+typedef enum { _api__order_items_modification_request_reason_type__NULL = 0, _api__order_items_modification_request_reason_type__PARTNER_REQUESTED_REMOVE, _api__order_items_modification_request_reason_type__USER_REQUESTED_REMOVE } _api__order_items_modification_request_reason_type__e;
+
+char* order_items_modification_request_reason_type_order_items_modification_request_reason_type_ToString(_api__order_items_modification_request_reason_type__e order_items_modification_request_reason_type);
+
+_api__order_items_modification_request_reason_type__e order_items_modification_request_reason_type_order_items_modification_request_reason_type_FromString(char* order_items_modification_request_reason_type);
+
+//cJSON *order_items_modification_request_reason_type_order_items_modification_request_reason_type_convertToJSON(_api__order_items_modification_request_reason_type__e order_items_modification_request_reason_type);
+
+//_api__order_items_modification_request_reason_type__e order_items_modification_request_reason_type_order_items_modification_request_reason_type_parseFromJSON(cJSON *order_items_modification_request_reason_typeJSON);
+
+#endif /* _order_items_modification_request_reason_type_H_ */
+

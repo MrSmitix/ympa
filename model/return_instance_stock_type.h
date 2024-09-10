@@ -1,0 +1,32 @@
+/*
+ * return_instance_stock_type.h
+ *
+ * Тип остатка на складе.
+ */
+
+#ifndef _return_instance_stock_type_H_
+#define _return_instance_stock_type_H_
+
+#include <string.h>
+#include "../external/cJSON.h"
+#include "../include/list.h"
+#include "../include/keyValuePair.h"
+#include "../include/binary.h"
+
+typedef struct return_instance_stock_type_t return_instance_stock_type_t;
+
+
+// Enum  for return_instance_stock_type
+
+typedef enum { _api__return_instance_stock_type__NULL = 0, _api__return_instance_stock_type__FIT, _api__return_instance_stock_type__DEFECT, _api__return_instance_stock_type__ANOMALY, _api__return_instance_stock_type__SURPLUS, _api__return_instance_stock_type__EXPIRED, _api__return_instance_stock_type__MISGRADING, _api__return_instance_stock_type__UNDEFINED, _api__return_instance_stock_type__INCORRECT_IMEI, _api__return_instance_stock_type__INCORRECT_SERIAL_NUMBER, _api__return_instance_stock_type__INCORRECT_CIS, _api__return_instance_stock_type__PART_MISSING, _api__return_instance_stock_type__NON_COMPLIENT, _api__return_instance_stock_type__NOT_ACCEPTABLE, _api__return_instance_stock_type__SERVICE, _api__return_instance_stock_type__MARKDOWN, _api__return_instance_stock_type__DEMO, _api__return_instance_stock_type__REPAIR, _api__return_instance_stock_type__FIRMWARE, _api__return_instance_stock_type__UNKNOWN } _api__return_instance_stock_type__e;
+
+char* return_instance_stock_type_return_instance_stock_type_ToString(_api__return_instance_stock_type__e return_instance_stock_type);
+
+_api__return_instance_stock_type__e return_instance_stock_type_return_instance_stock_type_FromString(char* return_instance_stock_type);
+
+//cJSON *return_instance_stock_type_return_instance_stock_type_convertToJSON(_api__return_instance_stock_type__e return_instance_stock_type);
+
+//_api__return_instance_stock_type__e return_instance_stock_type_return_instance_stock_type_parseFromJSON(cJSON *return_instance_stock_typeJSON);
+
+#endif /* _return_instance_stock_type_H_ */
+

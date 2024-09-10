@@ -1,0 +1,13 @@
+# get_price_with_discount_dto_t
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**value** | **double** | Значение. | 
+**currency_id** | **currency_type_t \*** |  | 
+**discount_base** | **double** | Цена до скидки.  Число должно быть целым. Вы можете указать цену со скидкой от 5 до 99%.  Передавайте этот параметр при каждом обновлении цены, если предоставляете скидку на товар.  | [optional] 
+**updated_at** | **char \*** | Время последнего обновления. | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
